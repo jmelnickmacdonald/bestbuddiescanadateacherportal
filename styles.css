@@ -16,7 +16,33 @@
   --max:1240px;
   --radius:18px;
 }
+
 *{box-sizing:border-box}
+
+/* PLAYFUL BEST BUDDIES DETAILS */
+.text-purple{color:var(--purple)}
+.text-orange{color:var(--orange)}
+.text-teal{color:#2f786f}
+.text-yellow-mark{
+  background:linear-gradient(transparent 62%,rgba(255,212,32,.78) 62%);
+  padding:0 .04em;
+}
+.fun-word{
+  position:relative;
+  display:inline-block;
+}
+.fun-word::after{
+  content:"";
+  position:absolute;
+  left:2%;
+  right:1%;
+  bottom:-.12em;
+  height:.11em;
+  background:var(--yellow);
+  border-radius:999px 999px 999px 3px;
+  transform:rotate(-1.25deg);
+}
+
 html{scroll-behavior:smooth}
 body{
   margin:0;background:#fff;color:var(--text);
@@ -49,7 +75,28 @@ h3{font-size:1.55rem;line-height:1.2;margin-bottom:10px}
 .eyeline{width:64px;height:7px;background:var(--yellow);margin:0 0 25px}
 
 /* HEADER */
-.site-header{background:var(--purple);color:#fff;border-top:8px solid var(--yellow)}
+
+.site-header::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-14px;
+  height:18px;
+  z-index:1;
+  background:
+    radial-gradient(56px 15px at 8% 0,var(--purple) 98%,transparent 100%)
+    0 0/190px 18px repeat-x;
+  pointer-events:none;
+}
+
+.site-header{
+  background:var(--purple);
+  color:#fff;
+  border-top:8px solid var(--yellow);
+  position:relative;
+  margin-bottom:14px;
+}
 .header-inner{
   min-height:94px;display:flex;align-items:center;justify-content:space-between;gap:30px
 }
@@ -58,8 +105,16 @@ h3{font-size:1.55rem;line-height:1.2;margin-bottom:10px}
 .logo-shell img{height:76px;width:auto;max-width:190px;object-fit:contain}
 .brand-name{color:#fff;font-size:21px;font-weight:800}
 .nav{display:flex;align-items:center;gap:28px}
-.nav a{color:#fff;text-decoration:none;font-size:17px;font-weight:700}
-.nav a:hover{text-decoration:underline;text-underline-offset:7px}
+.nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:17px;
+  font-weight:800;
+}
+.nav a:hover{
+  text-decoration:none;
+  background:rgba(255,255,255,.12);
+}
 .lang{
   display:flex;gap:3px;background:#fff;border-radius:7px;padding:4px;margin-left:5px
 }
@@ -73,10 +128,11 @@ h3{font-size:1.55rem;line-height:1.2;margin-bottom:10px}
 .home-hero{
   display:grid;
   grid-template-columns:minmax(0,1.12fr) minmax(360px,.88fr);
-  min-height:440px;
-  max-height:520px;
+  min-height:430px;
+  max-height:500px;
   overflow:hidden;
   background:#fff;
+  position:relative;
 }
 .home-hero-copy{display:flex;align-items:center;position:relative;z-index:2}
 .home-hero-copy-inner{
@@ -123,17 +179,28 @@ h3{font-size:1.55rem;line-height:1.2;margin-bottom:10px}
 /* PROGRAM CHOICES */
 .program-choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
 .program-choice{
-  display:grid;grid-template-rows:310px auto;background:#fff;
-  border:2px solid var(--line);text-decoration:none;color:var(--text);overflow:hidden
+  display:grid;
+  grid-template-rows:300px auto;
+  background:#fff;
+  border:2px solid var(--line);
+  text-decoration:none;
+  color:var(--text);
+  overflow:hidden;
+  border-radius:28px 28px 88px 28px;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
 }
-.program-choice img{width:100%;height:310px;object-fit:cover}
+.program-choice img{width:100%;height:300px;object-fit:cover}
 .program-choice-copy{padding:30px 32px 34px;position:relative}
 .program-choice:nth-child(1) .program-choice-copy{border-top:9px solid var(--teal)}
 .program-choice:nth-child(2) .program-choice-copy{border-top:9px solid var(--orange)}
 .program-choice h3{font-size:1.9rem;margin-bottom:10px}
 .program-choice p{color:var(--muted);margin:0 0 20px}
 .program-choice .go{font-weight:800;color:var(--purple)}
-.program-choice:hover{border-color:var(--purple)}
+.program-choice:hover{
+  border-color:var(--purple);
+  transform:translateY(-4px);
+  box-shadow:0 14px 30px rgba(46,31,80,.10);
+}
 
 /* NEW CHAPTER BAND */
 .start-band{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center}
@@ -142,8 +209,15 @@ h3{font-size:1.55rem;line-height:1.2;margin-bottom:10px}
 .start-step strong{display:block;font-size:1.1rem;margin-bottom:5px}
 .start-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .btn{
-  display:inline-flex;align-items:center;justify-content:center;min-height:54px;
-  padding:13px 20px;border-radius:7px;font-weight:800;text-decoration:none
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:54px;
+  padding:13px 24px;
+  border-radius:999px;
+  font-weight:800;
+  text-decoration:none;
+  transition:transform .16s ease,box-shadow .16s ease;
 }
 .btn-yellow{background:var(--yellow);color:var(--ink)}
 .btn-white{background:#fff;color:var(--purple)}
@@ -385,4 +459,75 @@ footer a{color:#fff}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
+}
+
+.nav>a{
+  padding:10px 13px;
+  border-radius:10px;
+}
+
+.btn:hover{transform:translateY(-2px)}
+
+
+/* ORGANIC SHAPES + LIVELIER RHYTHM */
+.section-heading::after{
+  content:"";
+  display:block;
+  width:78px;
+  height:9px;
+  margin-top:26px;
+  background:var(--yellow);
+  border-radius:999px 999px 999px 3px;
+  transform:rotate(-1.5deg);
+}
+.section-purple .section-heading::after{background:var(--yellow)}
+
+.start-band{position:relative}
+.start-band::before{
+  content:"";
+  position:absolute;
+  width:92px;
+  height:92px;
+  right:2%;
+  top:-28px;
+  border:12px solid rgba(255,212,32,.95);
+  border-radius:48% 52% 58% 42%;
+  transform:rotate(9deg);
+  pointer-events:none;
+}
+
+.explain-block{border-radius:0 0 44px 0}
+.explain-block.companion{border-radius:0 0 0 44px}
+
+.official-calendar{
+  border-radius:28px 28px 76px 28px;
+}
+
+.path{
+  border-radius:18px 18px 52px 18px;
+}
+.path:nth-child(2){border-radius:18px 52px 18px 18px}
+.path:nth-child(3){border-radius:52px 18px 18px 18px}
+
+.activity{
+  border-radius:22px 22px 62px 22px;
+}
+.activity:nth-child(even){
+  border-radius:22px 62px 22px 22px;
+}
+
+.training-band{
+  border-radius:0 28px 72px 0;
+}
+
+.article-teaser h3{font-size:1.62rem}
+.article-teaser:nth-child(2){
+  background:linear-gradient(180deg,rgba(143,209,196,.13),rgba(255,255,255,0));
+}
+.article-teaser:nth-child(3){
+  background:linear-gradient(180deg,rgba(255,212,32,.12),rgba(255,255,255,0));
+}
+
+.support-photo{
+  border-radius:30px 30px 88px 30px;
 }
