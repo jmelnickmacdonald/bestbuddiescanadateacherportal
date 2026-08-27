@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-CA">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,20 @@
 
   <style>
     :root {
-      --purple: #5A3F98;
-      --violet: #9396CA;
-      --yellow: #FFD420;
-      --teal: #8FD1C4;
-      --orange: #F37735;
+      --bb-purple: #5A3F98;
+      --bb-violet: #9396CA;
+      --bb-yellow: #FFD420;
+      --bb-teal: #8FD1C4;
+      --bb-orange: #F37735;
 
       --black: #111111;
-      --text: #27232d;
-      --muted: #5c5665;
+      --text: #29252f;
+      --muted: #59545f;
       --white: #ffffff;
-      --soft-purple: #f5f2f9;
-      --border: #d9d4df;
+      --soft-purple: #f7f5fa;
+      --border: #d7d1dc;
 
-      --max-width: 1220px;
+      --max-width: 1240px;
     }
 
     * {
@@ -36,338 +37,414 @@
       margin: 0;
       background: var(--white);
       color: var(--text);
-      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-family: Arial, "Helvetica Neue", sans-serif;
       font-size: 18px;
       line-height: 1.65;
     }
 
     img {
+      display: block;
       max-width: 100%;
       height: auto;
     }
 
     a {
-      color: var(--purple);
+      color: var(--bb-purple);
       text-decoration-thickness: 2px;
-      text-underline-offset: 4px;
+      text-underline-offset: 5px;
     }
 
-    a:hover {
-      text-decoration-thickness: 3px;
+    button,
+    input {
+      font: inherit;
     }
 
     a:focus-visible,
-    button:focus-visible {
-      outline: 4px solid var(--yellow);
+    button:focus-visible,
+    input:focus-visible {
+      outline: 4px solid var(--bb-yellow);
       outline-offset: 4px;
     }
 
-    button {
-      font: inherit;
+    .container {
+      width: min(calc(100% - 48px), var(--max-width));
+      margin: 0 auto;
     }
+
+
+    /* ACCESSIBILITY */
 
     .skip-link {
       position: absolute;
       left: 20px;
       top: -100px;
-      background: var(--yellow);
+      background: var(--bb-yellow);
       color: var(--black);
-      padding: 12px 18px;
+      padding: 14px 20px;
       font-weight: 700;
-      z-index: 999;
+      z-index: 9999;
     }
 
     .skip-link:focus {
-      top: 18px;
+      top: 20px;
     }
 
-    .container {
-      width: min(calc(100% - 40px), var(--max-width));
-      margin: 0 auto;
-    }
 
     /* HEADER */
 
     .site-header {
-      background: var(--purple);
+      background: var(--bb-purple);
       color: var(--white);
     }
 
     .header-inner {
-      min-height: 96px;
+      min-height: 112px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 32px;
+      gap: 38px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 22px;
       min-width: 0;
     }
 
-    .brand img {
-      width: 145px;
-      display: block;
+    /*
+      The full-colour Best Buddies logo is kept on white
+      so the approved logo itself is not altered.
+    */
+
+    .logo-wrap {
+      background: var(--white);
+      padding: 9px 11px;
+      border-radius: 8px;
+      flex: 0 0 auto;
+    }
+
+    .logo-wrap img {
+      height: 76px;
+      width: auto;
     }
 
     .site-name {
       color: var(--white);
-      font-size: 1.2rem;
+      font-size: 23px;
       font-weight: 700;
+      line-height: 1.2;
       white-space: nowrap;
     }
 
     .main-nav {
       display: flex;
       align-items: center;
-      gap: 30px;
-      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 32px;
     }
 
     .main-nav a {
       color: var(--white);
       font-size: 17px;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
-      padding: 12px 0;
+      padding: 16px 0;
     }
 
     .main-nav a:hover {
       text-decoration: underline;
-      text-underline-offset: 6px;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 7px;
     }
 
+
+    /* LANGUAGE SELECTOR */
+
     .language {
-      border-left: 1px solid rgba(255,255,255,0.45);
-      padding-left: 24px;
       display: flex;
-      gap: 10px;
       align-items: center;
+      gap: 4px;
+      background: var(--white);
+      border-radius: 8px;
+      padding: 5px;
+      flex-shrink: 0;
     }
 
     .language a {
+      color: var(--bb-purple);
+      font-size: 17px;
       font-weight: 700;
+      line-height: 1;
+      text-decoration: none;
+
+      min-width: 48px;
+      min-height: 48px;
+
+      padding: 10px 12px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 5px;
     }
+
+    .language a:hover {
+      background: #f1edf7;
+    }
+
+    .language a[aria-current="page"] {
+      background: var(--bb-purple);
+      color: var(--white);
+    }
+
+    .language a:focus-visible {
+      outline: 4px solid var(--bb-yellow);
+      outline-offset: 3px;
+    }
+
 
     /* HERO */
 
     .hero {
-      padding: 110px 0 120px;
-      overflow: hidden;
+      padding: 120px 0 125px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 80px;
+      grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
+      gap: 95px;
       align-items: center;
     }
 
     .eyebrow {
-      color: var(--purple);
-      font-size: 16px;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      margin-bottom: 20px;
+      color: var(--bb-purple);
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 24px;
     }
 
     h1,
     h2,
     h3 {
-      line-height: 1.12;
       margin-top: 0;
       color: var(--black);
     }
 
     h1 {
-      font-size: clamp(3rem, 6vw, 5rem);
-      margin-bottom: 28px;
-      max-width: 800px;
+      font-size: clamp(3.3rem, 6vw, 5.4rem);
+      line-height: 1.03;
+      letter-spacing: -0.035em;
+      margin-bottom: 32px;
+      max-width: 850px;
     }
 
     h2 {
-      font-size: clamp(2.25rem, 4vw, 3.6rem);
-      margin-bottom: 24px;
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin-bottom: 28px;
     }
 
     h3 {
       font-size: 1.45rem;
+      line-height: 1.25;
       margin-bottom: 12px;
     }
 
     .hero-copy {
+      max-width: 760px;
+      margin: 0;
       font-size: 1.25rem;
-      max-width: 720px;
+      line-height: 1.6;
       color: var(--muted);
-      margin-bottom: 34px;
     }
 
-    .hero-note {
-      font-size: 1rem;
+    .hero-emphasis {
+      margin-top: 38px;
+      font-size: 1.08rem;
       font-weight: 700;
-      color: var(--purple);
+      color: var(--bb-purple);
     }
 
-    .hero-art {
-      min-height: 410px;
-      position: relative;
+    .welcome-panel {
+      background: var(--bb-yellow);
+      padding: 42px;
+      border-radius: 18px;
     }
 
-    .shape {
-      position: absolute;
-      border-radius: 42px;
+    .welcome-panel .small-heading {
+      display: block;
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--black);
     }
 
-    .shape-purple {
-      width: 300px;
-      height: 330px;
-      background: var(--purple);
-      right: 25px;
-      top: 20px;
-      transform: rotate(5deg);
+    .welcome-panel p {
+      margin: 0;
+      color: #272100;
+      font-size: 1.16rem;
+      line-height: 1.55;
     }
 
-    .shape-yellow {
-      width: 190px;
-      height: 190px;
-      background: var(--yellow);
-      right: 190px;
-      top: 165px;
-      transform: rotate(-8deg);
-    }
 
-    .shape-teal {
-      width: 130px;
-      height: 130px;
-      background: var(--teal);
-      right: 10px;
-      bottom: 0;
-      border-radius: 50%;
-    }
-
-    .hero-heart {
-      position: absolute;
-      right: 108px;
-      top: 125px;
-      font-size: 90px;
-      color: var(--white);
-      z-index: 2;
-      line-height: 1;
-    }
-
-    /* SHARED SECTIONS */
+    /* GENERAL SECTIONS */
 
     .section {
-      padding: 110px 0;
+      padding: 115px 0;
     }
 
-    .section-soft {
+    .section-light {
       background: var(--soft-purple);
     }
 
     .section-heading {
-      max-width: 760px;
-      margin-bottom: 55px;
+      max-width: 800px;
+      margin-bottom: 62px;
     }
 
     .section-heading p {
-      font-size: 1.15rem;
+      margin: 0;
       color: var(--muted);
-      margin-bottom: 0;
+      font-size: 1.18rem;
+      line-height: 1.65;
     }
 
-    /* PROGRAM CHOICE */
+
+    /* PROGRAM SELECTION */
 
     .program-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 28px;
     }
 
-    .program-button {
-      min-height: 230px;
-      text-align: left;
-      padding: 34px;
+    .program-option {
+      position: relative;
+      min-height: 280px;
+
+      padding: 38px 34px 36px;
+
       background: var(--white);
-      border: 3px solid var(--purple);
-      border-radius: 18px;
+      border: 3px solid var(--bb-purple);
+      border-radius: 16px;
+
+      text-align: left;
       cursor: pointer;
       color: var(--text);
-      transition:
-        transform 0.15s ease,
-        background 0.15s ease;
     }
 
-    .program-button:hover {
-      transform: translateY(-3px);
-      background: #fbf9fd;
+    .program-option::before {
+      content: "";
+      display: block;
+      width: 56px;
+      height: 8px;
+      margin-bottom: 28px;
+      background: var(--bb-yellow);
     }
 
-    .program-button[aria-pressed="true"] {
-      background: var(--purple);
-      color: var(--white);
+    .program-option:nth-child(2)::before {
+      background: var(--bb-teal);
     }
 
-    .program-button[aria-pressed="true"] h3,
-    .program-button[aria-pressed="true"] p {
-      color: var(--white);
+    .program-option:nth-child(3)::before {
+      background: var(--bb-orange);
     }
 
-    .program-button h3 {
-      font-size: 1.55rem;
+    .program-option h3 {
+      font-size: 1.65rem;
+      margin-bottom: 17px;
     }
 
-    .program-button p {
+    .program-option p {
       margin: 0;
       color: var(--muted);
-      font-size: 1rem;
+      font-size: 1.02rem;
+      line-height: 1.6;
+    }
+
+    .program-option:hover {
+      background: #fbfafd;
+    }
+
+    .program-option[aria-pressed="true"] {
+      background: var(--bb-purple);
+      color: var(--white);
+    }
+
+    .program-option[aria-pressed="true"] h3,
+    .program-option[aria-pressed="true"] p {
+      color: var(--white);
     }
 
     .program-message {
-      margin-top: 32px;
-      max-width: 800px;
-      padding-left: 24px;
-      border-left: 6px solid var(--yellow);
-      font-size: 1.1rem;
+      max-width: 850px;
+      margin-top: 44px;
+      padding-left: 28px;
+
+      border-left: 7px solid var(--bb-yellow);
+
+      font-size: 1.16rem;
+      line-height: 1.6;
     }
+
 
     /* GETTING STARTED */
 
     .getting-started-grid {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 90px;
+      grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+      gap: 100px;
       align-items: start;
     }
 
-    .intro-copy {
-      font-size: 1.15rem;
+    .large-copy {
       color: var(--muted);
+      font-size: 1.18rem;
+      line-height: 1.65;
     }
 
-    .flexibility-note {
-      margin-top: 32px;
-      padding: 28px;
-      background: var(--yellow);
+    .warm-note {
+      margin-top: 38px;
+      padding: 30px;
+
+      border-left: 8px solid var(--bb-yellow);
+      background: #fffbea;
+    }
+
+    .warm-note strong {
+      display: block;
       color: var(--black);
-      border-radius: 16px;
+      margin-bottom: 7px;
+    }
+
+    .warm-note p {
+      margin: 0;
+    }
+
+    .sample-label {
+      display: block;
+      margin-bottom: 29px;
+      color: var(--bb-purple);
+      font-size: 16px;
       font-weight: 700;
     }
 
     .checklist {
       list-style: none;
-      margin: 0;
       padding: 0;
+      margin: 0;
     }
 
     .checklist-item {
       display: grid;
-      grid-template-columns: 34px 1fr;
-      gap: 18px;
-      padding: 25px 0;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 19px;
+
+      padding: 28px 0;
+
       border-bottom: 2px solid var(--border);
     }
 
@@ -376,10 +453,12 @@
     }
 
     .checklist-item input {
-      width: 25px;
-      height: 25px;
-      margin-top: 4px;
-      accent-color: var(--purple);
+      width: 26px;
+      height: 26px;
+      margin: 5px 0 0;
+
+      accent-color: var(--bb-purple);
+      cursor: pointer;
     }
 
     .checklist-item label {
@@ -388,126 +467,166 @@
 
     .checklist-item strong {
       display: block;
-      font-size: 1.12rem;
-      margin-bottom: 5px;
+
+      margin-bottom: 6px;
+
       color: var(--black);
+      font-size: 1.13rem;
     }
 
     .checklist-item span {
       display: block;
+
       color: var(--muted);
-      font-size: 0.98rem;
+      font-size: 1rem;
+      line-height: 1.55;
     }
 
-    .sample-label {
-      display: inline-block;
-      margin-bottom: 26px;
-      color: var(--purple);
-      font-weight: 800;
-      font-size: 0.9rem;
-    }
 
-    /* RESOURCE LINKS */
+    /* RESOURCES */
 
     .resource-list {
-      border-top: 2px solid var(--black);
+      border-top: 3px solid var(--black);
     }
 
     .resource-row {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 30px;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 45px;
       align-items: center;
-      padding: 30px 0;
+
+      padding: 35px 0;
+
       border-bottom: 1px solid var(--border);
     }
 
     .resource-row h3 {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      font-size: 1.45rem;
     }
 
     .resource-row p {
+      max-width: 760px;
+
       margin: 0;
+
       color: var(--muted);
-      max-width: 720px;
+      font-size: 1rem;
     }
 
-    .resource-row a {
-      font-weight: 800;
+    .resource-link {
+      font-weight: 700;
       white-space: nowrap;
     }
 
-    /* YEAR */
 
-    .year-block {
+    /* CALENDAR */
+
+    .year-grid {
       display: grid;
-      grid-template-columns: 1fr 0.8fr;
-      gap: 90px;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, .8fr);
+      gap: 95px;
       align-items: center;
     }
 
-    .calendar-preview {
-      background: var(--purple);
+    .calendar-panel {
+      background: var(--bb-purple);
       color: var(--white);
-      padding: 42px;
-      border-radius: 20px;
+
+      padding: 48px;
+
+      border-radius: 18px;
     }
 
-    .calendar-preview h3 {
+    .calendar-panel h3 {
       color: var(--white);
-      font-size: 1.8rem;
+      font-size: 2rem;
+      margin-bottom: 18px;
     }
 
-    .calendar-preview p {
+    .calendar-panel p {
+      margin-top: 0;
+      margin-bottom: 30px;
+
       color: var(--white);
-      margin-bottom: 26px;
+      font-size: 1.08rem;
     }
 
-    .button-light {
-      display: inline-block;
-      background: var(--white);
-      color: var(--purple);
-      padding: 14px 20px;
-      border-radius: 8px;
-      font-weight: 800;
-      text-decoration: none;
-      min-height: 52px;
-    }
+    .light-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
 
-    /* ADVISOR */
-
-    .advisor {
-      background: var(--teal);
-      padding: 80px 0;
-    }
-
-    .advisor-inner {
-      max-width: 850px;
-    }
-
-    .advisor p {
-      font-size: 1.2rem;
-      margin-bottom: 28px;
-      color: #1c332e;
-    }
-
-    .advisor-link {
-      display: inline-block;
-      background: var(--purple);
-      color: var(--white);
-      padding: 15px 22px;
-      border-radius: 8px;
-      font-weight: 800;
-      text-decoration: none;
       min-height: 54px;
+      padding: 14px 21px;
+
+      background: var(--white);
+      color: var(--bb-purple);
+
+      border-radius: 7px;
+
+      font-weight: 700;
+      text-decoration: none;
     }
+
+
+    /* SUPPORT */
+
+    .support {
+      background: var(--bb-teal);
+      padding: 100px 0;
+    }
+
+    .support-inner {
+      max-width: 900px;
+    }
+
+    .support h2 {
+      max-width: 700px;
+    }
+
+    .support p {
+      max-width: 800px;
+      margin-bottom: 22px;
+
+      color: #17322d;
+      font-size: 1.2rem;
+    }
+
+    .support-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 13px;
+
+      min-height: 56px;
+      padding: 15px 23px;
+
+      background: var(--bb-purple);
+      color: var(--white);
+
+      border-radius: 7px;
+
+      font-weight: 700;
+      text-decoration: none;
+    }
+
 
     /* FOOTER */
 
     footer {
-      background: var(--purple);
+      background: var(--bb-purple);
       color: var(--white);
-      padding: 48px 0;
+      padding: 55px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
     footer p {
@@ -518,82 +637,180 @@
       color: var(--white);
     }
 
-    /* RESPONSIVE */
 
-    @media (max-width: 950px) {
+    /* TABLET */
+
+    @media (max-width: 1050px) {
+
+      .header-inner {
+        flex-wrap: wrap;
+        padding: 18px 0 20px;
+      }
+
       .main-nav {
-        display: none;
+        order: 3;
+        width: 100%;
+
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        gap: 12px 28px;
+
+        padding-top: 14px;
+
+        border-top: 1px solid rgba(255,255,255,.35);
       }
 
       .hero-grid,
       .getting-started-grid,
-      .year-block {
+      .year-grid {
         grid-template-columns: 1fr;
-        gap: 50px;
-      }
-
-      .hero-art {
-        min-height: 320px;
-        max-width: 460px;
+        gap: 60px;
       }
 
       .program-grid {
         grid-template-columns: 1fr;
       }
 
-      .program-button {
+      .program-option {
         min-height: auto;
+      }
+
+      .welcome-panel {
+        max-width: 760px;
       }
     }
 
-    @media (max-width: 650px) {
-      body {
-        font-size: 18px;
-      }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
 
       .container {
-        width: min(calc(100% - 30px), var(--max-width));
+        width: min(calc(100% - 32px), var(--max-width));
       }
 
       .header-inner {
-        min-height: 86px;
+        gap: 18px;
       }
 
-      .brand img {
-        width: 125px;
+      .brand {
+        gap: 12px;
+      }
+
+      .logo-wrap {
+        padding: 6px 8px;
+      }
+
+      .logo-wrap img {
+        height: 58px;
       }
 
       .site-name {
-        font-size: 1rem;
+        font-size: 18px;
       }
 
       .language {
-        padding-left: 14px;
+        margin-left: auto;
+      }
+
+      .language a {
+        min-width: 44px;
+        min-height: 44px;
+        font-size: 16px;
+        padding: 8px;
+      }
+
+      .main-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px 20px;
+      }
+
+      .main-nav a {
+        font-size: 16px;
+        padding: 10px 0;
       }
 
       .hero {
-        padding: 72px 0 80px;
+        padding: 80px 0 90px;
       }
 
-      .section {
-        padding: 76px 0;
+      h1 {
+        font-size: clamp(3rem, 14vw, 4.4rem);
+      }
+
+      h2 {
+        font-size: clamp(2.3rem, 10vw, 3.3rem);
       }
 
       .hero-copy {
-        font-size: 1.1rem;
+        font-size: 1.12rem;
       }
 
-      .hero-art {
-        display: none;
+      .welcome-panel {
+        padding: 32px 27px;
+      }
+
+      .section {
+        padding: 82px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 45px;
+      }
+
+      .program-option {
+        padding: 30px 27px;
+      }
+
+      .getting-started-grid {
+        gap: 60px;
       }
 
       .resource-row {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 15px;
+      }
+
+      .calendar-panel {
+        padding: 35px 28px;
+      }
+
+      .support {
+        padding: 80px 0;
       }
     }
 
+
+    @media (max-width: 460px) {
+
+      .brand {
+        width: 100%;
+      }
+
+      .language {
+        margin-left: 0;
+      }
+
+      .main-nav {
+        grid-template-columns: 1fr;
+      }
+
+      .logo-wrap img {
+        height: 54px;
+      }
+
+      h1 {
+        font-size: 2.9rem;
+      }
+    }
+
+
+    /* REDUCED MOTION */
+
     @media (prefers-reduced-motion: reduce) {
+
       html {
         scroll-behavior: auto;
       }
@@ -602,10 +819,14 @@
       *::before,
       *::after {
         transition: none !important;
+        animation: none !important;
       }
     }
+
   </style>
+
 </head>
+
 
 <body>
 
@@ -613,147 +834,278 @@
     Skip to main content
   </a>
 
+
+  <!-- HEADER -->
+
   <header class="site-header">
+
     <div class="container header-inner">
+
 
       <div class="brand">
 
-        <!-- Replace this filename with your approved reversed/white SVG -->
-        <img
-          src="assets/best-buddies-canada-white.svg"
-          alt="Best Buddies Canada"
-        >
+        <div class="logo-wrap">
 
-        <span class="site-name">Teacher Hub</span>
+          <img
+            src="assets/bb-colour-logo.svg"
+            alt="Best Buddies Canada"
+          >
+
+        </div>
+
+        <span class="site-name">
+          Teacher Hub
+        </span>
+
       </div>
 
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="#getting-started">Getting Started</a>
-        <a href="#resources">Forms & Resources</a>
-        <a href="#year">Your Best Buddies Year</a>
-        <a href="#support">Get Support</a>
+
+      <nav
+        class="main-nav"
+        aria-label="Main navigation"
+      >
+
+        <a href="#getting-started">
+          Getting Started
+        </a>
+
+        <a href="#resources">
+          Forms & Resources
+        </a>
+
+        <a href="#year">
+          Your Best Buddies Year
+        </a>
+
+        <a href="#support">
+          Get Support
+        </a>
+
       </nav>
 
-      <div class="language" aria-label="Language">
-        <a href="#" aria-current="page">EN</a>
-        <span aria-hidden="true">|</span>
 
-        <!-- French page can be connected later -->
-        <a href="#" lang="fr" hreflang="fr">FR</a>
+      <div
+        class="language"
+        aria-label="Language selection"
+      >
+
+        <a
+          href="#"
+          aria-current="page"
+        >
+          EN
+        </a>
+
+        <a
+          href="#"
+          lang="fr-CA"
+          hreflang="fr-CA"
+          aria-label="Français"
+        >
+          FR
+        </a>
+
       </div>
 
+
     </div>
+
   </header>
+
 
 
   <main id="main-content">
 
+
     <!-- HERO -->
 
     <section class="hero">
+
       <div class="container hero-grid">
 
+
         <div>
-          <div class="eyebrow">Welcome to the Best Buddies Teacher Hub</div>
+
+          <div class="eyebrow">
+            Welcome to the Best Buddies Teacher Hub
+          </div>
+
 
           <h1>
             Friendship and inclusion can look different in every school.
           </h1>
 
+
           <p class="hero-copy">
-            This space brings together the information, resources, forms,
-            ideas, and support that can help you create meaningful
-            opportunities for connection in your school community.
+
+            This space brings together the information, resources,
+            ideas, forms, and support that can help you create
+            meaningful opportunities for friendship and inclusion
+            in your school community.
+
           </p>
 
-          <p class="hero-note">
-            Start where you are. Build what works for your students.
+
+          <p class="hero-emphasis">
+
+            Start where you are. Make it work for your community.
+
           </p>
+
         </div>
 
-        <!-- Temporary visual treatment.
-             We can replace this with one of Hilde's custom banners later. -->
 
-        <div class="hero-art" aria-hidden="true">
-          <div class="shape shape-purple"></div>
-          <div class="shape shape-yellow"></div>
-          <div class="shape shape-teal"></div>
-          <div class="hero-heart">♥</div>
-        </div>
+
+        <aside class="welcome-panel">
+
+          <span class="small-heading">
+            A chapter can be what you make of it.
+          </span>
+
+
+          <p>
+
+            You might begin with a few simple group activities,
+            build toward one-to-one friendships, involve student
+            leaders, or find another approach that works well for
+            your students.
+
+            You don’t have to do everything at once.
+
+          </p>
+
+        </aside>
+
 
       </div>
+
     </section>
 
 
-    <!-- PROGRAM SELECTION -->
 
-    <section class="section section-soft" aria-labelledby="program-heading">
+    <!-- PROGRAM CHOICE -->
+
+    <section
+      class="section section-light"
+      aria-labelledby="program-heading"
+    >
+
       <div class="container">
 
+
         <div class="section-heading">
-          <h2 id="program-heading">Which program are you supporting?</h2>
+
+          <h2 id="program-heading">
+            Which program are you supporting?
+          </h2>
+
 
           <p>
-            Choose your program and we’ll point you toward the information
-            that is most useful to you.
+
+            Choose your program and we’ll point you toward the
+            information and resources that are most useful to you.
+
           </p>
+
         </div>
+
+
 
         <div class="program-grid">
 
+
           <button
-            class="program-button"
+            class="program-option"
             type="button"
             data-program="elementary"
             aria-pressed="false"
           >
-            <h3>Elementary & Middle School</h3>
+
+            <h3>
+              Elementary & Middle School
+            </h3>
+
+
             <p>
-              Create welcoming opportunities for students to connect,
-              participate, and build a more inclusive school community.
+
+              Create welcoming opportunities for students to
+              connect, participate, and help build a more inclusive
+              school community.
+
             </p>
+
           </button>
 
 
+
           <button
-            class="program-button"
+            class="program-option"
             type="button"
             data-program="high-school"
             aria-pressed="false"
           >
-            <h3>High School</h3>
+
+            <h3>
+              High School
+            </h3>
+
+
             <p>
-              Build friendship and inclusion through group experiences,
-              student leadership, and one-to-one friendship opportunities.
+
+              Create opportunities for friendship and inclusion
+              through shared activities, student leadership, and
+              one-to-one connections where they make sense.
+
             </p>
+
           </button>
 
 
+
           <button
-            class="program-button"
+            class="program-option"
             type="button"
             data-program="post-secondary"
             aria-pressed="false"
           >
-            <h3>University & College</h3>
+
+            <h3>
+              University & College
+            </h3>
+
+
             <p>
+
               Bring students and community members together through
-              friendship, leadership, and shared experiences.
+              friendship, leadership, and meaningful shared
+              experiences.
+
             </p>
+
           </button>
 
+
         </div>
+
+
 
         <div
           class="program-message"
           id="program-message"
           aria-live="polite"
         >
-          Your chapter can grow into what works best for your community.
+
+          There isn’t one perfect way to run a Best Buddies chapter.
+          Start with what is realistic for your community and build
+          from there.
+
         </div>
 
+
       </div>
+
     </section>
+
 
 
     <!-- GETTING STARTED -->
@@ -766,28 +1118,52 @@
 
       <div class="container getting-started-grid">
 
+
         <div>
 
-          <div class="eyebrow">New to Best Buddies?</div>
+          <div class="eyebrow">
+            New to Best Buddies?
+          </div>
+
 
           <h2 id="getting-started-heading">
             Start here.
           </h2>
 
-          <p class="intro-copy">
-            Getting a chapter underway doesn’t have to happen all at once.
-            These are some of the pieces that can help you get oriented,
-            understand the program, and begin creating opportunities for
-            friendship and inclusion.
+
+          <p class="large-copy">
+
+            Getting started doesn’t have to feel like another big
+            thing on your list.
+
+            We’ll help you find the information you need,
+            understand what comes next, and get your chapter
+            underway in a way that feels manageable.
+
           </p>
 
-          <div class="flexibility-note">
-            There isn’t one perfect way to build your chapter.
-            Your Program Advisor can help you find an approach that makes
-            sense for your school.
+
+          <div class="warm-note">
+
+
+            <strong>
+              Your chapter doesn’t have to look like anyone else’s.
+            </strong>
+
+
+            <p>
+
+              Your Program Advisor can help you think through what
+              will work best for your students, staff, and school
+              community.
+
+            </p>
+
+
           </div>
 
         </div>
+
 
 
         <div>
@@ -796,190 +1172,406 @@
             SAMPLE GETTING STARTED CHECKLIST
           </span>
 
+
           <ul class="checklist">
 
-            <li class="checklist-item">
-              <input type="checkbox" id="step-1">
 
-              <label for="step-1">
-                <strong>Get familiar with your program</strong>
+            <li class="checklist-item">
+
+
+              <input
+                type="checkbox"
+                id="step-one"
+              >
+
+
+              <label for="step-one">
+
+
+                <strong>
+                  Get familiar with your Best Buddies program
+                </strong>
+
+
                 <span>
-                  Take a quick look at what Best Buddies can look like
-                  in your school.
+
+                  Take a quick look at the program overview and
+                  what a chapter can look like.
+
                 </span>
+
+
               </label>
+
+
             </li>
 
 
-            <li class="checklist-item">
-              <input type="checkbox" id="step-2">
 
-              <label for="step-2">
-                <strong>Connect with your Program Advisor</strong>
+            <li class="checklist-item">
+
+
+              <input
+                type="checkbox"
+                id="step-two"
+              >
+
+
+              <label for="step-two">
+
+
+                <strong>
+                  Connect with your Program Advisor
+                </strong>
+
+
                 <span>
-                  Talk through your school, your students, and what you
-                  would like your chapter to become.
+
+                  Talk through your school community, ask questions,
+                  and explore what you would like your chapter to
+                  become.
+
                 </span>
+
+
               </label>
+
+
             </li>
 
 
-            <li class="checklist-item">
-              <input type="checkbox" id="step-3">
 
-              <label for="step-3">
-                <strong>Complete the forms that apply to your chapter</strong>
+            <li class="checklist-item">
+
+
+              <input
+                type="checkbox"
+                id="step-three"
+              >
+
+
+              <label for="step-three">
+
+
+                <strong>
+                  Take care of the forms that apply to your chapter
+                </strong>
+
+
                 <span>
-                  We’ll make the right forms easy to find when you need them.
+
+                  We’ll point you toward the right Best Buddies
+                  forms and existing processes when you need them.
+
                 </span>
+
+
               </label>
+
+
             </li>
 
 
-            <li class="checklist-item">
-              <input type="checkbox" id="step-4">
 
-              <label for="step-4">
-                <strong>Invite students to get involved</strong>
+            <li class="checklist-item">
+
+
+              <input
+                type="checkbox"
+                id="step-four"
+              >
+
+
+              <label for="step-four">
+
+
+                <strong>
+                  Invite students to get involved
+                </strong>
+
+
                 <span>
-                  Start with a group that feels manageable. Your chapter
-                  can grow over time.
+
+                  Start with something manageable. Your chapter can
+                  grow and change throughout the year.
+
                 </span>
+
+
               </label>
+
+
             </li>
 
 
-            <li class="checklist-item">
-              <input type="checkbox" id="step-5">
 
-              <label for="step-5">
-                <strong>Plan your first gathering</strong>
+            <li class="checklist-item">
+
+
+              <input
+                type="checkbox"
+                id="step-five"
+              >
+
+
+              <label for="step-five">
+
+
+                <strong>
+                  Plan your first get-together
+                </strong>
+
+
                 <span>
-                  Keep it simple and give people a comfortable way
-                  to meet and connect.
+
+                  Keep it simple. The goal is to give people a
+                  comfortable opportunity to meet, connect, and
+                  enjoy being together.
+
                 </span>
+
+
               </label>
+
+
             </li>
+
 
           </ul>
 
+
         </div>
 
+
       </div>
+
     </section>
 
 
-    <!-- FORMS + RESOURCES -->
+
+    <!-- FORMS AND RESOURCES -->
 
     <section
-      class="section section-soft"
+      class="section section-light"
       id="resources"
       aria-labelledby="resources-heading"
     >
 
       <div class="container">
 
+
         <div class="section-heading">
 
-          <div class="eyebrow">When you need something</div>
+
+          <div class="eyebrow">
+            Find what you need
+          </div>
+
 
           <h2 id="resources-heading">
-            Forms and resources, without the hunt.
+            Forms and resources, all in one place.
           </h2>
 
+
           <p>
-            The existing Best Buddies resources stay where they are.
-            This hub simply makes it easier to understand what they are
-            and when you might need them.
+
+            Best Buddies already has lots of helpful tools and
+            resources.
+
+            The Teacher Hub gives you a simple way to find the
+            right one when you need it.
+
           </p>
 
+
         </div>
+
 
 
         <div class="resource-list">
 
+
           <div class="resource-row">
+
+
             <div>
-              <h3>Program overview</h3>
+
+
+              <h3>
+                Program information
+              </h3>
+
+
               <p>
-                Learn what the program can look like and find the guide
-                for the chapter you’re supporting.
+
+                Learn more about your program and find the existing
+                Best Buddies guides that support your chapter.
+
               </p>
+
+
             </div>
 
-            <a href="#">
+
+            <a
+              class="resource-link"
+              href="#"
+            >
               View program information
             </a>
+
+
           </div>
 
 
+
           <div class="resource-row">
+
+
             <div>
-              <h3>Chapter roster</h3>
+
+
+              <h3>
+                Chapter roster
+              </h3>
+
+
               <p>
-                Keep your chapter information up to date using the
-                existing Best Buddies roster process.
+
+                Access the existing Best Buddies roster process and
+                keep your chapter information current.
+
               </p>
+
+
             </div>
 
-            <!-- Replace # with current roster form URL -->
-            <a href="#">
+
+            <a
+              class="resource-link"
+              href="#"
+            >
               Open roster form
             </a>
+
+
           </div>
 
 
+
           <div class="resource-row">
+
+
             <div>
-              <h3>Registration and forms</h3>
+
+
+              <h3>
+                Registration and forms
+              </h3>
+
+
               <p>
-                Find the registration, pledge, and other forms that
-                apply to your program.
+
+                Find registration, pledge, application, and other
+                forms that apply to your program.
+
               </p>
+
+
             </div>
 
-            <a href="#">
+
+            <a
+              class="resource-link"
+              href="#"
+            >
               Find a form
             </a>
+
+
           </div>
 
 
+
           <div class="resource-row">
+
+
             <div>
-              <h3>Training</h3>
+
+
+              <h3>
+                Training
+              </h3>
+
+
               <p>
-                Access Best Buddies training and resources to support
-                a welcoming and inclusive chapter.
+
+                Find Best Buddies training and information to help
+                create a welcoming, inclusive chapter experience.
+
               </p>
+
+
             </div>
 
-            <a href="#">
+
+            <a
+              class="resource-link"
+              href="#"
+            >
               View training
             </a>
+
+
           </div>
+
 
 
           <div class="resource-row">
+
+
             <div>
-              <h3>Activities and ideas</h3>
+
+
+              <h3>
+                Activities and ideas
+              </h3>
+
+
               <p>
-                Find ideas for bringing people together, whether you
-                have ten minutes, a lunch period, or a full event.
+
+                Looking for something to do together?
+
+                Find ideas that can work for different groups,
+                schedules, and chapter styles.
+
               </p>
+
+
             </div>
 
-            <a href="#">
+
+            <a
+              class="resource-link"
+              href="#"
+            >
               Explore ideas
             </a>
+
+
           </div>
+
 
         </div>
 
+
       </div>
+
     </section>
 
 
-    <!-- YEAR / CALENDAR -->
+
+    <!-- YOUR BEST BUDDIES YEAR -->
 
     <section
       class="section"
@@ -987,115 +1579,176 @@
       aria-labelledby="year-heading"
     >
 
-      <div class="container year-block">
+      <div class="container year-grid">
+
 
         <div>
 
-          <div class="eyebrow">Your Best Buddies year</div>
+
+          <div class="eyebrow">
+            Your Best Buddies year
+          </div>
+
 
           <h2 id="year-heading">
-            Know what’s coming without carrying it all in your head.
+            A little help knowing what’s coming next.
           </h2>
 
-          <p class="intro-copy">
-            The Best Buddies Program Calendar can help you see important
-            dates and moments throughout the year. Over time, this space
-            can also point you toward timely ideas and resources when they
-            are most useful.
+
+          <p class="large-copy">
+
+            The Best Buddies Program Calendar brings important dates
+            and moments throughout the year together in one place.
+
+            Over time, the Teacher Hub can also help surface timely
+            resources and ideas without asking you to keep everything
+            in your head.
+
           </p>
+
 
         </div>
 
 
-        <div class="calendar-preview">
 
-          <h3>Program Calendar</h3>
+        <div class="calendar-panel">
+
+
+          <h3>
+            Program Calendar
+          </h3>
+
 
           <p>
-            Important dates and reminders for your Best Buddies year,
-            all in one place.
+
+            See important dates and reminders throughout your
+            Best Buddies year.
+
           </p>
 
-          <!-- Replace # with current Best Buddies calendar URL -->
 
-          <a class="button-light" href="#">
-            View the calendar
+          <a
+            class="light-button"
+            href="#"
+          >
+            View the Program Calendar
           </a>
+
 
         </div>
 
+
       </div>
+
     </section>
 
 
-    <!-- PROGRAM ADVISOR -->
+
+    <!-- PROGRAM ADVISOR SUPPORT -->
 
     <section
-      class="advisor"
+      class="support"
       id="support"
       aria-labelledby="support-heading"
     >
 
-      <div class="container advisor-inner">
+      <div class="container support-inner">
 
-        <div class="eyebrow">Support when you need it</div>
+
+        <div class="eyebrow">
+          Support when you need it
+        </div>
+
 
         <h2 id="support-heading">
           We’re here to help.
         </h2>
 
-        <p>
-          Your Program Advisor is here to answer questions, help you
-          think through what will work for your school, and support you
-          as your chapter grows.
-        </p>
 
         <p>
-          If something feels unclear, unusual, or simply easier to talk
-          through with a person, reach out.
+
+          Your Program Advisor is here to answer questions,
+          help you think through what Best Buddies can look like
+          in your community, and support you as your chapter
+          develops.
+
         </p>
 
-        <a class="advisor-link" href="#">
+
+        <p>
+
+          If something feels unclear, unusual, or simply easier to
+          talk through with a person, reach out.
+
+        </p>
+
+
+        <a
+          class="support-button"
+          href="#"
+        >
           Connect with your Program Advisor
         </a>
 
+
       </div>
+
     </section>
+
 
   </main>
 
 
+
+  <!-- FOOTER -->
+
   <footer>
-    <div class="container">
+
+
+    <div class="container footer-inner">
+
 
       <p>
         Best Buddies Canada Teacher Hub
-        &nbsp;·&nbsp;
+      </p>
+
+
+      <p>
+
         <a href="https://bestbuddies.ca">
           Visit Best Buddies Canada
         </a>
+
       </p>
 
+
     </div>
+
+
   </footer>
 
 
+
   <script>
+
     const programButtons =
-      document.querySelectorAll(".program-button");
+      document.querySelectorAll(".program-option");
 
     const programMessage =
       document.getElementById("program-message");
 
-    const messages = {
+
+    const programMessages = {
+
       elementary:
-        "Elementary & Middle School chapters can focus on welcoming group experiences, friendship, belonging, and inclusion.",
+        "Elementary & Middle School chapters can create welcoming opportunities for students to spend time together, participate, build friendships, and strengthen inclusion throughout the school community.",
 
       "high-school":
-        "High School chapters can create opportunities through group activities, student leadership, one-to-one friendship matches, or a combination that works for their school.",
+        "High School chapters can include shared activities, student leadership, one-to-one friendship opportunities, or a mix that makes sense for the students and school.",
 
       "post-secondary":
-        "University & College chapters bring campus and community together through friendship, leadership, and shared experiences."
+        "University & College chapters bring students and community members together through friendship, leadership, and shared experiences."
+
     };
 
 
@@ -1104,26 +1757,35 @@
       button.addEventListener("click", () => {
 
         programButtons.forEach((otherButton) => {
+
           otherButton.setAttribute(
             "aria-pressed",
             "false"
           );
+
         });
+
 
         button.setAttribute(
           "aria-pressed",
           "true"
         );
 
+
         const selectedProgram =
           button.dataset.program;
 
+
         programMessage.textContent =
-          messages[selectedProgram];
+          programMessages[selectedProgram];
+
       });
 
     });
+
   </script>
 
+
 </body>
+
 </html>
