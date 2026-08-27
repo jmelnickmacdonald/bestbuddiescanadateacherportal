@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Best Buddies Canada Teacher Hub concept prototype" />
+  <title>Best Buddies Teacher Hub — Concept</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Best Buddies Teacher Hub home">
+        <img id="mainLogo" src="assets/bb-colour-logo.svg" alt="Best Buddies Canada" />
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-label" data-i18n="hubLabel">Teacher Hub</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#getting-started" data-i18n="navStart">Getting Started</a>
+        <a href="#year" data-i18n="navYear">Your Year</a>
+        <a href="#resources" data-i18n="navResources">Forms & Resources</a>
+        <a href="#support" data-i18n="navSupport">Support</a>
+      </nav>
+
+      <button class="language-button" id="languageButton" type="button" aria-label="Switch language">
+        <span class="language-current">EN</span>
+        <span aria-hidden="true">/</span>
+        <span class="language-alt">FR</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="heroEyebrow">Welcome to your Best Buddies year</p>
+          <h1 data-i18n="heroTitle">Start with friendship.<br />Make it your own.</h1>
+          <p class="hero-lead" data-i18n="heroLead">Every chapter can look a little different. Use the ideas, resources, and support that fit your school and your students, and build from there.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#getting-started" data-i18n="heroPrimary">Show me where to start</a>
+            <a class="button button-ghost" href="#resources" data-i18n="heroSecondary">Find a form or resource</a>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="shape shape-violet"></div>
+          <div class="shape shape-yellow"></div>
+          <div class="shape shape-teal"></div>
+          <div class="shape shape-orange"></div>
+          <div class="friendship-card">
+            <span class="tiny-label">BEST BUDDIES</span>
+            <strong data-i18n="artTitle">Friendship + inclusion</strong>
+            <p data-i18n="artCopy">There is more than one way to create meaningful connection.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="program-strip" aria-labelledby="program-title">
+      <div class="shell">
+        <div class="section-heading compact-heading">
+          <div>
+            <p class="eyebrow purple" data-i18n="programEyebrow">Make this space useful for you</p>
+            <h2 id="program-title" data-i18n="programTitle">Choose your program</h2>
+          </div>
+          <p class="section-note" data-i18n="programNote">We’ll surface the most relevant information first. You can switch anytime.</p>
+        </div>
+
+        <div class="program-options" role="group" aria-label="Program type">
+          <button class="program-card is-active" type="button" data-program="elementary" aria-pressed="true">
+            <span class="program-number">01</span>
+            <span>
+              <strong data-i18n="elementaryTitle">Elementary & Middle</strong>
+              <small data-i18n="elementaryCopy">A flexible friendship club built around inclusive group experiences.</small>
+            </span>
+          </button>
+          <button class="program-card" type="button" data-program="high" aria-pressed="false">
+            <span class="program-number">02</span>
+            <span>
+              <strong data-i18n="highTitle">High School</strong>
+              <small data-i18n="highCopy">Group activities, student leadership, and one-to-one friendships where they fit.</small>
+            </span>
+          </button>
+          <button class="program-card" type="button" data-program="postsecondary" aria-pressed="false">
+            <span class="program-number">03</span>
+            <span>
+              <strong data-i18n="postTitle">University & College</strong>
+              <small data-i18n="postCopy">Campus leadership and meaningful friendships with a community partner.</small>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="getting-started">
+      <div class="shell two-column">
+        <div class="main-column">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow purple" data-i18n="startEyebrow">Getting started</p>
+              <h2 data-i18n="startTitle">A simple place to begin.</h2>
+            </div>
+            <p class="section-note" data-i18n="startNote">This is a guide, not a rigid recipe. Your Program Advisor can help you shape the chapter around what works in your setting.</p>
+          </div>
+
+          <div class="chapter-shape" id="chapterShape">
+            <div class="chapter-shape-icon" aria-hidden="true">♥</div>
+            <div>
+              <strong id="chapterShapeTitle">Friendship club</strong>
+              <p id="chapterShapeCopy">Start with simple, inclusive group activities that give students time to connect. Your chapter can grow and evolve over time.</p>
+            </div>
+          </div>
+
+          <div class="checklist" id="checklist" aria-live="polite"></div>
+        </div>
+
+        <aside class="side-column">
+          <section class="advisor-card" id="support">
+            <div class="advisor-accent"></div>
+            <p class="eyebrow" data-i18n="advisorEyebrow">Your human support</p>
+            <h3 data-i18n="advisorTitle">Your Program Advisor is part of the plan.</h3>
+            <p data-i18n="advisorCopy">Use the hub for the easy-to-find information. Reach out to your advisor for chapter-specific questions, problem-solving, or anything you’d rather talk through.</p>
+            <a class="text-link" href="mailto:info@bestbuddies.ca" data-i18n="advisorLink">Connect with Best Buddies →</a>
+          </section>
+
+          <section class="principle-card">
+            <span class="principle-icon" aria-hidden="true">✦</span>
+            <div>
+              <strong data-i18n="principleTitle">You don’t have to do everything.</strong>
+              <p data-i18n="principleCopy">A chapter can start small. The goal is to create meaningful opportunities for friendship, belonging, and inclusion.</p>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content-section white-section" id="resources">
+      <div class="shell">
+        <div class="section-heading resource-heading">
+          <div>
+            <p class="eyebrow purple" data-i18n="resourceEyebrow">Quick access</p>
+            <h2 data-i18n="resourceTitle">The things you’re most likely looking for.</h2>
+          </div>
+          <a class="quiet-link" href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener" data-i18n="allResources">See all current resources ↗</a>
+        </div>
+
+        <div class="resource-grid">
+          <a class="resource-card" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Best-Buddies-Canada-Program-Application-2020-fillable.pdf" target="_blank" rel="noopener">
+            <span class="resource-kicker" data-i18n="newChapter">NEW CHAPTER</span>
+            <h3 data-i18n="applicationTitle">Program Application</h3>
+            <p data-i18n="applicationCopy">The current Best Buddies Canada application for starting a school chapter.</p>
+            <span class="resource-link" data-i18n="openPdf">Open current PDF ↗</span>
+          </a>
+
+          <a class="resource-card feature-resource" href="https://bestbuddiescanada.my.salesforce-sites.com/publicportal/rosterUpdate/" target="_blank" rel="noopener">
+            <span class="resource-kicker" data-i18n="onlineForm">ONLINE FORM</span>
+            <h3 data-i18n="rosterTitle">Roster Update</h3>
+            <p data-i18n="rosterCopy">Update your chapter roster through the existing secure online form.</p>
+            <span class="resource-link" data-i18n="openRoster">Open roster form ↗</span>
+          </a>
+
+          <a class="resource-card" href="https://calendar.google.com/calendar/embed?ctz=America/Toronto&src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com" target="_blank" rel="noopener">
+            <span class="resource-kicker" data-i18n="calendarKicker">PROGRAM YEAR</span>
+            <h3 data-i18n="calendarTitle">Program Calendar</h3>
+            <p data-i18n="calendarCopy">See dates and reminders from the existing Best Buddies program calendar.</p>
+            <span class="resource-link" data-i18n="openCalendar">Open calendar ↗</span>
+          </a>
+
+          <a class="resource-card" href="https://learn.bestbuddies.ca/" target="_blank" rel="noopener">
+            <span class="resource-kicker" data-i18n="learnKicker">LEARN @ BEST BUDDIES</span>
+            <h3 data-i18n="trainingTitle">Training</h3>
+            <p data-i18n="trainingCopy">Access current sensitivity and chapter leadership training.</p>
+            <span class="resource-link" data-i18n="openTraining">Go to training ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section year-section" id="year">
+      <div class="shell year-grid">
+        <div>
+          <p class="eyebrow purple" data-i18n="yearEyebrow">Your Best Buddies year</p>
+          <h2 data-i18n="yearTitle">Know what’s coming without carrying it all in your head.</h2>
+          <p class="year-copy" data-i18n="yearCopy">The official calendar remains the source of truth. This hub can simply bring the next useful reminder forward when you need it.</p>
+        </div>
+        <div class="year-card">
+          <span class="year-card-label" data-i18n="yearCardLabel">FOR THIS PROTOTYPE</span>
+          <strong data-i18n="yearCardTitle">Calendar integration comes next.</strong>
+          <p data-i18n="yearCardCopy">We’ll use the real Best Buddies calendar, not invent dates or deadlines.</p>
+          <a href="https://calendar.google.com/calendar/embed?ctz=America/Toronto&src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com" target="_blank" rel="noopener" class="text-link" data-i18n="viewCalendar">View current calendar →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <div>
+        <img id="footerLogo" src="assets/bb-colour-logo.svg" alt="Best Buddies Canada" />
+        <p data-i18n="footerCopy">Teacher Hub concept · Built to complement existing Best Buddies Canada resources and Program Advisor support.</p>
+      </div>
+      <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca ↗</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
