@@ -1,273 +1,890 @@
-<!DOCTYPE html>
-<html lang="en-CA">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Elementary & Middle School Teacher Page | Best Buddies Canada</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
+/* =========================================================
+   ELEMENTARY + HIGH SCHOOL PAGE STYLES
+   Compatibility with existing teacher-page HTML
+   ========================================================= */
 
-<a class="skip-link" href="#main-content">Skip to main content</a>
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="Best Buddies Canada Teacher Hub home">
-      <span class="logo-shell"><img src="assets/bb-reversed-logo.png" alt="Best Buddies Canada"></span>
-      <span class="brand-name">Teacher Hub</span>
-    </a>
-    <nav class="nav" aria-label="Main navigation">
-      <a class="hide-tablet" href="index.html#programs">For teachers</a>
-      <a class="hide-tablet" href="https://calendar.google.com/calendar/u/0/embed?ctz=America/Toronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com" target="_blank" rel="noopener">Official calendar</a>
-      <a class="hide-tablet" href="https://bestbuddies.ca/get-started/" target="_blank" rel="noopener">Get started</a>
-      <a class="keep-mobile" href="#support">Get support</a>
-      <span class="lang" aria-label="Language">
-        <a class="current" href="#" aria-current="page">EN</a>
-        <a href="fr.html" lang="fr-CA" hreflang="fr-CA">FR</a>
-      </span>
-    </nav>
-  </div>
-  <svg class="header-wave" viewBox="0 0 1440 34" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-    <path d="M0 0H1440V11
-      C1360 7 1315 20 1236 12
-      C1158 5 1106 20 1028 12
-      C947 4 891 20 809 12
-      C727 5 668 20 586 12
-      C503 5 447 20 364 12
-      C281 6 225 20 143 12
-      C87 7 46 16 0 11Z"/>
-  </svg>
-</header>
+/* Header logo used on the existing program pages */
+.logo-shell {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background: transparent;
+}
 
-<main id="main-content">
-  <section class="page-hero">
-    <div class="page-hero-copy">
-      <div class="page-hero-copy-inner">
-        <a class="back-link" href="index.html">← Teacher Hub</a>
-        <div class="kicker">Elementary &amp; Middle School</div>
-        <div class="eyeline"></div>
-        <h1>Your chapter can grow in a way that <span class="text-purple">works for your school.</span></h1>
-        <p class="program-summary">At the elementary level, Best Buddies is an in-school friendship club. At the middle school level, the program continues those values while beginning to foster friendships between students with and without intellectual and developmental disabilities. School staff lead the chapter with support from Best Buddies.</p>
-      </div>
-    </div>
-    <div class="page-hero-photo">
-      <img src="assets/elementary-hero.png" alt="Two Best Buddies participants smiling together">
-    </div>
-  </section>
+.logo-shell img {
+  width: auto;
+  height: 76px;
+  max-width: 190px;
+  object-fit: contain;
+}
 
-  <section class="section">
-    <div class="container teacher-orientation">
-      <div>
-        <div class="kicker">A teacher-first view</div>
-        <h2>You know <span class="text-purple">your students.</span></h2>
-        <p class="quote">This page adds the Best Buddies friendship lens and brings the pieces you may need into one place.</p>
-      </div>
-      <div>
-        <p class="lede">Best Buddies Canada’s current Elementary &amp; Middle School materials describe the chapter as teacher-led, with support from Best Buddies staff. The program guides are there to help schools organize their chapter and offer simple activities for weekly or bi-weekly meetings.</p>
-        <div class="role-lines" style="margin-top:34px;">
-          <div class="role-line"><strong>Your school team</strong><span>Leads the chapter, recruits participants, communicates with families and creates the space for students to connect.</span></div>
-          <div class="role-line"><strong>Best Buddies</strong><span>Helps chapters get started and provides program guidance, resources and ongoing support.</span></div>
-          <div class="role-line"><strong>The chapter</strong><span>Can start small. Group activities are a valid way to run the program; one-to-one matching is not required for every school.</span></div>
-        </div>
 
-        <div class="starting-fresh-box">
-          <h3>Starting a new chapter?</h3>
-          <p>Use the current Best Buddies process first. You do not need to create your whole year before you begin.</p>
-          <div class="fresh-grid">
-            <div class="fresh-step"><div class="fresh-num">Step 1</div><strong>Check whether your school already participates.</strong></div>
-            <div class="fresh-step"><div class="fresh-num">Step 2</div><strong>Complete the Program Application with principal approval.</strong></div>
-            <div class="fresh-step"><div class="fresh-num">Step 3</div><strong>Connect with Best Buddies for help getting started.</strong></div>
-          </div>
-          <div class="inline-links">
-            <a class="btn btn-purple" href="https://bestbuddies.ca/find-a-school/" target="_blank" rel="noopener">Check your school</a>
-            <a href="assets/best-buddies-program-application.pdf" target="_blank">Open the application</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+/* --------------------------------------------------
+   PROGRAM PAGE HERO
+-------------------------------------------------- */
 
-  <section class="section section-wash">
-    <div class="container">
+.page-hero {
+  width: min(calc(100% - 48px), var(--max));
+  margin: 0 auto;
 
-      <section class="program-calendar-inline" aria-labelledby="official-calendar-heading">
-        <div class="program-calendar-heading">
-          <div>
-            <div class="kicker">Official Program Calendar</div>
-            <h2 id="official-calendar-heading">See the year <span class="text-purple">right here.</span></h2>
-            <p>Use the live calendar for official dates and monthly priorities. The month-by-month teacher companion below adds practical context and ideas.</p>
-          </div>
-          <a href="https://calendar.google.com/calendar/u/0/embed?ctz=America/Toronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com" target="_blank" rel="noopener">Open full calendar ↗</a>
-        </div>
-        <div class="calendar-embed-shell compact">
-          <div class="calendar-frame-wrap">
-            <iframe
-              src="https://calendar.google.com/calendar/embed?ctz=America%2FToronto&src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec%40group.calendar.google.com&mode=AGENDA&showTitle=0&showPrint=0&showTabs=0&showCalendars=0"
-              title="Best Buddies Canada official Program Calendar"
-              loading="lazy"
-              frameborder="0"
-              scrolling="no"></iframe>
-          </div>
-        </div>
-      </section>
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
 
-      <div class="year-intro">
-        <div>
-          <div class="kicker">Your Best Buddies year</div>
-          <h2>The calendar sets the rhythm. <span class="text-purple">You choose what fits.</span></h2>
-          <p class="lede">The purple calendar sections below reflect the current Best Buddies school-year guidance you shared. The companion sections underneath are optional ways to make those priorities feel manageable in your school.</p>
-        </div>
-        <aside class="calendar-key">
-          <strong>Purple = official calendar</strong>
-          <span>What Best Buddies is asking chapters to focus on.</span><br><br>
-          <strong>Yellow / teal / orange = teacher companion</strong>
-          <span>Ways you could approach the month, not additional requirements.</span>
-        </aside>
-      </div>
+  align-items: center;
+  gap: 60px;
 
-      <nav class="year-strip" aria-label="School year">
-        <a class="loaded current" href="#september">SEP<small>Getting set up</small></a>
-        <a class="loaded" href="#october">OCT<small>Getting to know you</small></a>
-        <span>NOV<small>coming</small></span><span>DEC<small>coming</small></span><span>JAN<small>coming</small></span>
-        <span>FEB<small>coming</small></span><span>MAR<small>coming</small></span><span>APR<small>coming</small></span>
-        <span>MAY<small>coming</small></span><span>JUN<small>coming</small></span>
-      </nav>
+  padding: 66px 0 82px;
+}
 
-      <section class="month-section" id="september">
-        <div class="month-heading">
-          <div class="month-title">
-            <span class="month">September</span>
-            <h2>Getting Set Up</h2>
-            <p>September is mainly about getting organized, reconnecting with Best Buddies and bringing students into the chapter. You do not need to manufacture a big event yet.</p>
-          </div>
-          <aside class="official-calendar">
-            <div class="official-tag">From the official Program Calendar</div>
-            <h3>Elementary &amp; High School checklist</h3>
-            <ul class="official-list">
-              <li>Check in with your Program Coordinator / Program Advisor.</li>
-              <li>Recruit chapter members and promote Best Buddies to new students.</li>
-              <li>Share program information and registration details with parents or guardians.</li>
-              <li>Coordinate and plan your chapter’s first Meet &amp; Greet.</li>
-            </ul>
-            <a class="calendar-link" href="https://calendar.google.com/calendar/u/0/embed?ctz=America/Toronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com" target="_blank" rel="noopener">Open the full official calendar →</a>
-          </aside>
-        </div>
+.page-hero-copy {
+  min-width: 0;
+}
 
-        <div class="companion-head">
-          <div class="label">Teacher companion</div>
-          <h3>What could September look like?</h3>
-          <p>You are not choosing an event package. These are three reasonable lanes depending on where your chapter is starting from.</p>
-        </div>
-        <div class="path-grid">
-          <article class="path"><div class="meta">Starting or rebuilding</div><h3>Keep the focus on recruitment.</h3><p>Introduce Best Buddies, invite interested students, get family information out and decide what a realistic first gathering could look like.</p></article>
-          <article class="path"><div class="meta">Returning chapter</div><h3>Reconnect the group.</h3><p>Welcome returning students, bring in new members and take care of the pieces that need refreshing for a new school year.</p></article>
-          <article class="path"><div class="meta">Already moving</div><h3>Keep it informal.</h3><p>If students are eager to reconnect, a simple lunch table or welcome-back drop-in can happen without turning September into a full event month.</p></article>
-        </div>
-      </section>
+.page-hero-copy-inner {
+  padding: 0;
+}
 
-      <section class="month-section" id="october">
-        <div class="month-heading">
-          <div class="month-title">
-            <span class="month">October</span>
-            <h2>Getting to Know You</h2>
-            <p>October is where the chapter begins spending intentional time together. The focus is connection: helping students understand Best Buddies, get to know one another and build a welcoming chapter community.</p>
-          </div>
-          <aside class="official-calendar">
-            <div class="official-tag">From the official Program Calendar</div>
-            <h3>Elementary &amp; High School checklist</h3>
-            <ul class="official-list">
-              <li>Plan and host your Meet &amp; Greet.</li>
-              <li>Complete Sensitivity Training.</li>
-              <li>Share program information and updates with parents or guardians.</li>
-              <li>Continue recruiting students as needed.</li>
-              <li>Begin learning about members’ interests, strengths and availability to support future buddy pairings where applicable.</li>
-            </ul>
-            <a class="calendar-link" href="https://calendar.google.com/calendar/u/0/embed?ctz=America/Toronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com" target="_blank" rel="noopener">Open the full official calendar →</a>
-          </aside>
-        </div>
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
 
-        <div class="companion-head">
-          <div class="label">Teacher companion</div>
-          <h3>Pick the kind of gathering that works for your group.</h3>
-          <p>These ideas are drawn from the Best Buddies activity resources you provided. Keep the plan simple, combine pieces, or adapt them around your students.</p>
-        </div>
-        <div class="activity-grid">
-          <article class="activity">
-            <div class="meta">Lunch-friendly / low prep</div>
-            <h3>All About Me + Human Bingo</h3>
-            <p>Give students an easy way to share interests, then use Human Bingo to help them find things they have in common with people they may not know yet.</p>
-            <p class="source-note">Best Buddies sources: All About Me Meet &amp; Greet worksheet; Elementary Activity Guide.</p>
-          </article>
-          <article class="activity">
-            <div class="meta">Full chapter session</div>
-            <h3>Time Capsule + shared chapter banner</h3>
-            <p>Use the Time Capsule activity to learn about one another, then create something together that gives the chapter a shared presence in the school.</p>
-            <p class="source-note">Best Buddies sources: Elementary Activity Guide; October Meet &amp; Greet guidance.</p>
-          </article>
-          <article class="activity">
-            <div class="meta">Seasonal / social</div>
-            <h3>Accessible pumpkin decorating</h3>
-            <p>Offer paint, markers, stickers, craft supplies or pre-cut designs so carving is not the only way to take part. Keep the activity collaborative and low-pressure.</p>
-            <p class="source-note">Best Buddies source: October Meet &amp; Greet guidance.</p>
-          </article>
-          <article class="activity">
-            <div class="meta">Different ways to communicate</div>
-            <h3>Gesture Chain or Sign Language Bingo</h3>
-            <p>Choose an activity that does not depend on spoken conversation. Best Buddies’ Non-Verbal Activity Guide includes options built around gesture, sign and AAC.</p>
-            <p class="source-note">Best Buddies source: Non-Verbal Activity Guide.</p>
-          </article>
-        </div>
+  color: var(--purple);
 
-        <div class="training-band">
-          <div>
-            <h3>Required this month: Sensitivity Training</h3>
-            <p>The official course lives at Learn @ Best Buddies. Keep the training in its existing home; this page simply makes it easy to find at the point in the year when teachers and students need it.</p>
-          </div>
-          <div class="training-actions">
-            <a class="btn btn-purple" href="https://learn.bestbuddies.ca/" target="_blank" rel="noopener">Open Learn @ Best Buddies</a>
-            <a href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener">See official training links</a>
-          </div>
-        </div>
-      </section>
-    </div>
-  </section>
+  font-weight: 800;
+  text-decoration: none;
+}
 
-  <section class="section">
-    <div class="container">
-      <div class="section-heading">
-        <div class="kicker">Helpful to know</div>
-        <h2>A little extra support, <span class="text-purple">when it’s useful.</span></h2>
-        <p class="lede">Teachers already bring deep expertise about their students and schools. These pieces can focus narrowly on the friendship and inclusion lens that is particular to Best Buddies.</p>
-      </div>
-      <div class="article-grid">
-        <article class="article-teaser"><div class="readtime">2-minute read</div><h3>Leave room for natural friendship.</h3><p>An activity can open the door, but every minute does not need to be programmed.</p><a href="#">Read the quick thought →</a></article>
-        <article class="article-teaser"><div class="readtime">2-minute read</div><h3>Participation doesn’t have one look.</h3><p>Talking, writing, moving and presenting are not the only signs that someone is fully part of the group.</p><a href="#">Read the quick thought →</a></article>
-        <article class="article-teaser"><div class="readtime">2-minute read</div><h3>Ask before assuming.</h3><p>If you are unsure what support someone wants, asking can be more respectful than deciding for them.</p><a href="#">Read the quick thought →</a></article>
-      </div>
-    </div>
-  </section>
+.eyeline {
+  width: 72px;
+  height: 8px;
 
-  <section class="section section-teal" id="support">
-    <div class="container support-band">
-      <div>
-        <div class="kicker">Need a hand?</div>
-        <h2>You don’t have to figure out <span class="fun-word">everything alone.</span></h2>
-        <p class="lede">Use the Hub for the information. Reach out when you want to talk through your particular school, a chapter question, an unusual situation or simply what might work best next.</p>
-        <div class="inline-links">
-          <a class="btn btn-purple" href="https://bestbuddies.ca/get-started/" target="_blank" rel="noopener">Connect with Best Buddies</a>
-          <a href="https://bestbuddiescanada.my.salesforce-sites.com/publicportal/rosterUpdate/" target="_blank" rel="noopener">Roster Update</a>
-        </div>
-      </div>
-      <div class="support-photo"><img src="assets/support-photo.jpg" alt="Best Buddies participants together at an event"></div>
-    </div>
-  </section>
-</main>
+  margin: 0 0 28px;
 
-<footer>
-  <div class="container footer-inner">
-    <p>Best Buddies Canada Teacher Hub <span aria-hidden="true">·</span> Prototype for internal review</p>
-    <p><a href="https://bestbuddies.ca/" target="_blank" rel="noopener">Visit Best Buddies Canada</a></p>
-  </div>
-</footer>
+  background: var(--yellow);
 
-</body>
-</html>
+  border-radius: 999px;
+
+  transform: rotate(-1deg);
+}
+
+.page-hero h1 {
+  max-width: 760px;
+
+  margin-bottom: 24px;
+
+  font-size: clamp(3rem, 4.8vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.page-hero .program-summary {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.page-hero-photo {
+  position: relative;
+
+  height: 360px;
+}
+
+.page-hero-photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 32px 32px 92px 32px;
+}
+
+.page-hero-photo::before {
+  content: "";
+
+  position: absolute;
+  left: -16px;
+  bottom: -14px;
+
+  width: 76%;
+  height: 62%;
+
+  z-index: -1;
+
+  background: var(--teal);
+
+  border-radius: 30px 30px 30px 76px;
+}
+
+.page-hero-photo::after {
+  content: "";
+
+  position: absolute;
+  right: -10px;
+  top: -12px;
+
+  width: 58px;
+  height: 58px;
+
+  z-index: -1;
+
+  background: var(--yellow);
+
+  border-radius: 50%;
+}
+
+
+/* --------------------------------------------------
+   TEACHER ORIENTATION
+-------------------------------------------------- */
+
+.teacher-orientation {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+
+  gap: 78px;
+
+  align-items: start;
+}
+
+.teacher-orientation .quote {
+  margin: 0;
+
+  padding-left: 25px;
+
+  border-left: 8px solid var(--yellow);
+
+  color: var(--purple);
+
+  font-size: 1.45rem;
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+.role-lines {
+  margin-top: 34px;
+
+  border-top: 3px solid var(--ink);
+}
+
+.role-line {
+  display: grid;
+  grid-template-columns: 185px 1fr;
+
+  gap: 25px;
+
+  padding: 23px 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.role-line strong {
+  color: var(--ink);
+}
+
+
+/* --------------------------------------------------
+   STARTING FRESH
+-------------------------------------------------- */
+
+.starting-fresh-box {
+  margin-top: 40px;
+
+  padding: 36px 39px;
+
+  background: #fff8d8;
+
+  border-left: 11px solid var(--yellow);
+  border-radius: 0 24px 68px 0;
+}
+
+.starting-fresh-box h3 {
+  margin-bottom: 10px;
+
+  font-size: 1.85rem;
+}
+
+.fresh-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+
+  margin: 28px 0;
+}
+
+.fresh-step {
+  padding-top: 16px;
+
+  border-top: 3px solid var(--ink);
+}
+
+.fresh-num {
+  margin-bottom: 7px;
+
+  color: var(--purple);
+
+  font-size: 0.76rem;
+  font-weight: 900;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.inline-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+  margin-top: 24px;
+}
+
+
+/* --------------------------------------------------
+   YEAR INTRO
+-------------------------------------------------- */
+
+.year-intro {
+  display: grid;
+  grid-template-columns: 1fr 0.72fr;
+
+  gap: 65px;
+
+  align-items: end;
+}
+
+.calendar-key {
+  padding: 22px 24px;
+
+  background: var(--white);
+
+  border-left: 8px solid var(--purple);
+  border-radius: 0 22px 56px 0;
+}
+
+.calendar-key strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--ink);
+}
+
+
+/* --------------------------------------------------
+   INLINE PROGRAM CALENDAR
+-------------------------------------------------- */
+
+.program-calendar-inline {
+  margin-bottom: 70px;
+}
+
+.program-calendar-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+
+  gap: 35px;
+
+  margin-bottom: 27px;
+}
+
+.program-calendar-heading > div {
+  max-width: 800px;
+}
+
+.program-calendar-heading h2 {
+  margin-bottom: 13px;
+}
+
+.program-calendar-heading p {
+  margin: 0;
+
+  color: var(--muted);
+}
+
+.program-calendar-heading > a {
+  flex: 0 0 auto;
+
+  font-weight: 800;
+}
+
+
+/* Existing calendar shell from v5 */
+.calendar-embed-shell {
+  overflow: hidden;
+
+  background: var(--white);
+
+  border: 2px solid var(--line);
+  border-radius: 28px 28px 78px 28px;
+
+  box-shadow: 0 16px 38px rgba(50, 35, 80, 0.08);
+}
+
+.calendar-frame-wrap {
+  width: 100%;
+  height: 540px;
+
+  background: var(--white);
+}
+
+.calendar-frame-wrap iframe {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+}
+
+
+/* --------------------------------------------------
+   SCHOOL YEAR NAVIGATION
+-------------------------------------------------- */
+
+.year-strip {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+
+  margin: 46px 0 72px;
+
+  border-top: 2px solid var(--line);
+  border-bottom: 2px solid var(--line);
+}
+
+.year-strip a,
+.year-strip span {
+  min-height: 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 9px 5px;
+
+  border-right: 1px solid var(--line);
+
+  color: var(--muted);
+
+  font-size: 0.76rem;
+  font-weight: 900;
+
+  text-align: center;
+  text-decoration: none;
+}
+
+.year-strip > *:first-child {
+  border-left: 1px solid var(--line);
+}
+
+.year-strip a:hover {
+  background: var(--white);
+}
+
+.year-strip .loaded {
+  color: var(--purple);
+}
+
+.year-strip .current {
+  background: var(--purple);
+  color: var(--white);
+}
+
+.year-strip small {
+  margin-top: 3px;
+
+  font-size: 0.66rem;
+  font-weight: 400;
+}
+
+
+/* --------------------------------------------------
+   MONTH SECTIONS
+-------------------------------------------------- */
+
+.month-section {
+  padding: 82px 0;
+
+  border-top: 1px solid var(--line);
+
+  scroll-margin-top: 30px;
+}
+
+.month-heading {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+
+  gap: 65px;
+
+  margin-bottom: 52px;
+}
+
+.month-title .month {
+  color: var(--purple);
+
+  font-size: 0.8rem;
+  font-weight: 900;
+
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.month-title h2 {
+  margin: 8px 0 18px;
+
+  font-size: clamp(3rem, 5vw, 4.7rem);
+}
+
+.month-title p {
+  color: var(--muted);
+
+  font-size: 1.08rem;
+}
+
+
+/* --------------------------------------------------
+   OFFICIAL CALENDAR CARD
+-------------------------------------------------- */
+
+.official-calendar {
+  padding: 34px 37px;
+
+  background: var(--purple);
+  color: var(--white);
+
+  border-radius: 28px 28px 82px 28px;
+}
+
+.official-calendar h3,
+.official-calendar p {
+  color: var(--white);
+}
+
+.official-tag {
+  color: var(--yellow);
+
+  font-size: 0.75rem;
+  font-weight: 900;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.official-list {
+  margin: 20px 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.official-list li {
+  padding: 12px 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.official-list li:last-child {
+  border-bottom: 0;
+}
+
+.calendar-link {
+  display: inline-block;
+
+  margin-top: 18px;
+
+  color: var(--white);
+
+  font-weight: 800;
+}
+
+
+/* --------------------------------------------------
+   TEACHER COMPANION
+-------------------------------------------------- */
+
+.companion-head {
+  max-width: 830px;
+
+  margin: 62px 0 34px;
+}
+
+.companion-head .label {
+  color: var(--orange);
+
+  font-size: 0.76rem;
+  font-weight: 900;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.companion-head h3 {
+  margin-top: 8px;
+
+  font-size: 2.2rem;
+}
+
+.companion-head p {
+  color: var(--muted);
+}
+
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 23px;
+}
+
+.path {
+  min-height: 240px;
+
+  padding: 28px;
+
+  background: var(--white);
+
+  border-top: 8px solid var(--yellow);
+  border-radius: 20px 20px 62px 20px;
+}
+
+.path:nth-child(2) {
+  border-top-color: var(--teal);
+  border-radius: 20px 62px 20px 20px;
+}
+
+.path:nth-child(3) {
+  border-top-color: var(--orange);
+  border-radius: 62px 20px 20px 20px;
+}
+
+.path .meta {
+  color: var(--purple);
+
+  font-size: 0.74rem;
+  font-weight: 900;
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.path h3 {
+  margin: 11px 0;
+
+  font-size: 1.52rem;
+}
+
+.path p {
+  margin-bottom: 0;
+
+  color: var(--muted);
+}
+
+
+/* --------------------------------------------------
+   ACTIVITIES
+-------------------------------------------------- */
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 24px;
+}
+
+.activity {
+  padding: 29px;
+
+  background: var(--white);
+
+  border: 2px solid var(--line);
+  border-radius: 22px 22px 66px 22px;
+}
+
+.activity:nth-child(even) {
+  border-radius: 22px 66px 22px 22px;
+}
+
+.activity::before {
+  content: "";
+
+  display: block;
+
+  width: 54px;
+  height: 7px;
+
+  margin-bottom: 21px;
+
+  background: var(--yellow);
+
+  border-radius: 999px;
+}
+
+.activity:nth-child(2)::before {
+  background: var(--teal);
+}
+
+.activity:nth-child(3)::before {
+  background: var(--orange);
+}
+
+.activity:nth-child(4)::before {
+  background: var(--violet);
+}
+
+.activity .meta {
+  color: var(--purple);
+
+  font-size: 0.74rem;
+  font-weight: 900;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.activity h3 {
+  margin: 9px 0;
+
+  font-size: 1.52rem;
+}
+
+.activity p {
+  color: var(--muted);
+}
+
+.activity .source-note {
+  margin-top: 18px;
+
+  color: var(--muted);
+
+  font-size: 0.88rem;
+}
+
+
+/* --------------------------------------------------
+   TRAINING
+-------------------------------------------------- */
+
+.training-band {
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  align-items: center;
+
+  gap: 45px;
+
+  margin-top: 52px;
+
+  padding: 37px 39px;
+
+  background: #fff8d8;
+
+  border-left: 10px solid var(--yellow);
+  border-radius: 0 28px 74px 0;
+}
+
+.training-band h3 {
+  margin-bottom: 8px;
+
+  font-size: 1.75rem;
+}
+
+.training-band p {
+  max-width: 760px;
+
+  margin-bottom: 0;
+}
+
+.training-actions {
+  min-width: 230px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+/* --------------------------------------------------
+   HELPFUL TO KNOW / ARTICLES
+-------------------------------------------------- */
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 3px solid var(--ink);
+}
+
+.article-teaser {
+  padding: 30px 30px 31px 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.article-teaser + .article-teaser {
+  padding-left: 30px;
+
+  border-left: 1px solid var(--line);
+}
+
+.article-teaser .readtime {
+  color: var(--purple);
+
+  font-size: 0.74rem;
+  font-weight: 900;
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.article-teaser h3 {
+  margin-top: 10px;
+
+  font-size: 1.58rem;
+}
+
+.article-teaser p {
+  color: var(--muted);
+}
+
+.article-teaser a {
+  font-weight: 800;
+}
+
+
+/* --------------------------------------------------
+   OLD SUPPORT LAYOUT USED ON PROGRAM PAGES
+-------------------------------------------------- */
+
+.support-band {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+
+/* --------------------------------------------------
+   PROGRAM PAGE RESPONSIVE
+-------------------------------------------------- */
+
+@media (max-width: 1050px) {
+
+  .page-hero {
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+  }
+
+  .page-hero-photo {
+    height: 320px;
+  }
+
+  .teacher-orientation,
+  .year-intro,
+  .month-heading,
+  .support-band {
+    grid-template-columns: 1fr;
+  }
+
+  .fresh-grid,
+  .path-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .year-strip {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .program-calendar-heading {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-teaser,
+  .article-teaser + .article-teaser {
+    padding: 26px 0;
+
+    border-left: 0;
+  }
+
+}
+
+
+@media (max-width: 760px) {
+
+  .logo-shell img {
+    height: 58px;
+    max-width: 145px;
+  }
+
+  .page-hero {
+    width: min(calc(100% - 32px), var(--max));
+
+    padding: 48px 0 62px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+  }
+
+  .page-hero-photo {
+    height: 245px;
+  }
+
+  .page-hero-photo img {
+    border-radius: 24px 24px 58px 24px;
+  }
+
+  .role-line {
+    grid-template-columns: 1fr;
+
+    gap: 5px;
+  }
+
+  .fresh-grid,
+  .activity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .year-strip {
+    display: flex;
+
+    overflow-x: auto;
+  }
+
+  .year-strip a,
+  .year-strip span {
+    min-width: 92px;
+  }
+
+  .training-band {
+    grid-template-columns: 1fr;
+  }
+
+  .training-actions {
+    min-width: 0;
+  }
+
+  .calendar-frame-wrap {
+    height: 475px;
+  }
+
+}
