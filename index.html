@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en-CA">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,20 +8,20 @@
 
   <style>
     :root {
-      --bb-purple: #5A3F98;
-      --bb-violet: #9396CA;
-      --bb-yellow: #FFD420;
-      --bb-teal: #8FD1C4;
-      --bb-orange: #F37735;
+      --purple: #5A3F98;
+      --violet: #9396CA;
+      --yellow: #FFD420;
+      --teal: #8FD1C4;
+      --orange: #F37735;
 
+      --white: #ffffff;
       --black: #111111;
       --text: #29252f;
       --muted: #59545f;
-      --white: #ffffff;
-      --soft-purple: #f7f5fa;
-      --border: #d7d1dc;
+      --soft: #f8f6fb;
+      --border: #d8d2df;
 
-      --max-width: 1240px;
+      --max: 1220px;
     }
 
     * {
@@ -42,32 +41,30 @@
       line-height: 1.65;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-
-    a {
-      color: var(--bb-purple);
-      text-decoration-thickness: 2px;
-      text-underline-offset: 5px;
-    }
-
     button,
     input {
       font: inherit;
     }
 
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--purple);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 5px;
+    }
+
     a:focus-visible,
-    button:focus-visible,
-    input:focus-visible {
-      outline: 4px solid var(--bb-yellow);
+    button:focus-visible {
+      outline: 4px solid var(--yellow);
       outline-offset: 4px;
     }
 
     .container {
-      width: min(calc(100% - 48px), var(--max-width));
+      width: min(calc(100% - 48px), var(--max));
       margin: 0 auto;
     }
 
@@ -76,13 +73,13 @@
 
     .skip-link {
       position: absolute;
-      left: 20px;
       top: -100px;
-      background: var(--bb-yellow);
-      color: var(--black);
-      padding: 14px 20px;
-      font-weight: 700;
+      left: 20px;
       z-index: 9999;
+      padding: 14px 18px;
+      background: var(--yellow);
+      color: var(--black);
+      font-weight: 700;
     }
 
     .skip-link:focus {
@@ -92,826 +89,620 @@
 
     /* HEADER */
 
-    .site-header {
-      background: var(--bb-purple);
+    header {
+      background: var(--purple);
       color: var(--white);
     }
 
     .header-inner {
-      min-height: 112px;
+      min-height: 108px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 38px;
+      gap: 34px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 22px;
-      min-width: 0;
+      gap: 18px;
     }
 
-    /*
-      The full-colour Best Buddies logo is kept on white
-      so the approved logo itself is not altered.
-    */
-
-    .logo-wrap {
+    .logo-box {
       background: var(--white);
-      padding: 9px 11px;
+      padding: 8px 10px;
       border-radius: 8px;
-      flex: 0 0 auto;
     }
 
-    .logo-wrap img {
-      height: 76px;
+    .logo-box img {
+      height: 70px;
       width: auto;
     }
 
-    .site-name {
+    .hub-name {
       color: var(--white);
-      font-size: 23px;
       font-weight: 700;
-      line-height: 1.2;
-      white-space: nowrap;
+      font-size: 22px;
     }
 
-    .main-nav {
+    .header-right {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      gap: 32px;
+      gap: 24px;
     }
 
-    .main-nav a {
+    .header-link {
       color: var(--white);
-      font-size: 17px;
       font-weight: 700;
       text-decoration: none;
-      padding: 16px 0;
+      font-size: 17px;
     }
 
-    .main-nav a:hover {
+    .header-link:hover {
       text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 7px;
+      text-underline-offset: 6px;
     }
-
-
-    /* LANGUAGE SELECTOR */
 
     .language {
       display: flex;
-      align-items: center;
       gap: 4px;
-      background: var(--white);
-      border-radius: 8px;
       padding: 5px;
-      flex-shrink: 0;
+      border-radius: 8px;
+      background: var(--white);
     }
 
     .language a {
-      color: var(--bb-purple);
-      font-size: 17px;
-      font-weight: 700;
-      line-height: 1;
-      text-decoration: none;
-
-      min-width: 48px;
-      min-height: 48px;
-
-      padding: 10px 12px;
-
+      min-width: 46px;
+      min-height: 46px;
       display: flex;
       align-items: center;
       justify-content: center;
-
       border-radius: 5px;
-    }
-
-    .language a:hover {
-      background: #f1edf7;
+      color: var(--purple);
+      font-weight: 700;
+      text-decoration: none;
     }
 
     .language a[aria-current="page"] {
-      background: var(--bb-purple);
+      background: var(--purple);
       color: var(--white);
-    }
-
-    .language a:focus-visible {
-      outline: 4px solid var(--bb-yellow);
-      outline-offset: 3px;
     }
 
 
     /* HERO */
 
     .hero {
-      padding: 120px 0 125px;
+      position: relative;
+      overflow: hidden;
+      padding: 110px 0 115px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -180px;
+      top: -120px;
+      border-radius: 50%;
+      background: var(--yellow);
+      z-index: -1;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
-      gap: 95px;
+      grid-template-columns: 1.15fr .65fr;
+      gap: 90px;
       align-items: center;
     }
 
     .eyebrow {
-      color: var(--bb-purple);
+      margin-bottom: 20px;
+      color: var(--purple);
       font-size: 17px;
       font-weight: 700;
-      margin-bottom: 24px;
     }
 
     h1,
     h2,
     h3 {
-      margin-top: 0;
       color: var(--black);
+      margin-top: 0;
     }
 
     h1 {
-      font-size: clamp(3.3rem, 6vw, 5.4rem);
-      line-height: 1.03;
-      letter-spacing: -0.035em;
-      margin-bottom: 32px;
       max-width: 850px;
+      margin-bottom: 28px;
+      font-size: clamp(3.4rem, 6vw, 5.5rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
     }
 
     h2 {
-      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      margin-bottom: 24px;
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
       line-height: 1.08;
       letter-spacing: -0.025em;
-      margin-bottom: 28px;
     }
 
     h3 {
-      font-size: 1.45rem;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
       line-height: 1.25;
-      margin-bottom: 12px;
     }
 
     .hero-copy {
       max-width: 760px;
       margin: 0;
-      font-size: 1.25rem;
-      line-height: 1.6;
       color: var(--muted);
+      font-size: 1.22rem;
     }
 
-    .hero-emphasis {
-      margin-top: 38px;
+    .hero-note {
+      margin-top: 35px;
+      color: var(--purple);
+      font-weight: 700;
       font-size: 1.08rem;
-      font-weight: 700;
-      color: var(--bb-purple);
     }
 
-    .welcome-panel {
-      background: var(--bb-yellow);
-      padding: 42px;
-      border-radius: 18px;
+    .hero-side {
+      position: relative;
+      min-height: 320px;
     }
 
-    .welcome-panel .small-heading {
-      display: block;
-      font-size: 19px;
-      font-weight: 700;
-      margin-bottom: 14px;
-      color: var(--black);
+    .hero-block {
+      position: absolute;
+      border-radius: 22px;
     }
 
-    .welcome-panel p {
-      margin: 0;
-      color: #272100;
-      font-size: 1.16rem;
-      line-height: 1.55;
+    .hero-purple {
+      width: 260px;
+      height: 265px;
+      right: 25px;
+      top: 20px;
+      background: var(--purple);
+    }
+
+    .hero-teal {
+      width: 125px;
+      height: 125px;
+      right: 205px;
+      top: 170px;
+      background: var(--teal);
+      transform: rotate(-6deg);
+    }
+
+    .hero-orange {
+      width: 80px;
+      height: 80px;
+      right: 0;
+      top: 0;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    .hero-heart {
+      position: absolute;
+      right: 105px;
+      top: 95px;
+      z-index: 2;
+      color: var(--white);
+      font-size: 82px;
+      line-height: 1;
     }
 
 
-    /* GENERAL SECTIONS */
+    /* PROGRAM CHOICE */
 
-    .section {
-      padding: 115px 0;
+    .program-section {
+      padding: 105px 0 115px;
+      background: var(--soft);
     }
 
-    .section-light {
-      background: var(--soft-purple);
+    .section-intro {
+      max-width: 760px;
+      margin-bottom: 55px;
     }
 
-    .section-heading {
-      max-width: 800px;
-      margin-bottom: 62px;
-    }
-
-    .section-heading p {
-      margin: 0;
+    .section-intro p {
       color: var(--muted);
-      font-size: 1.18rem;
-      line-height: 1.65;
+      font-size: 1.16rem;
+      margin: 0;
     }
-
-
-    /* PROGRAM SELECTION */
 
     .program-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 26px;
     }
 
-    .program-option {
-      position: relative;
-      min-height: 280px;
-
-      padding: 38px 34px 36px;
-
+    .program-card {
+      min-height: 290px;
+      padding: 36px 32px;
       background: var(--white);
-      border: 3px solid var(--bb-purple);
+      border: 3px solid var(--purple);
       border-radius: 16px;
-
       text-align: left;
       cursor: pointer;
-      color: var(--text);
     }
 
-    .program-option::before {
-      content: "";
-      display: block;
-      width: 56px;
-      height: 8px;
-      margin-bottom: 28px;
-      background: var(--bb-yellow);
+    .program-mark {
+      width: 58px;
+      height: 9px;
+      margin-bottom: 30px;
+      background: var(--yellow);
     }
 
-    .program-option:nth-child(2)::before {
-      background: var(--bb-teal);
+    .program-card:nth-child(2) .program-mark {
+      background: var(--teal);
     }
 
-    .program-option:nth-child(3)::before {
-      background: var(--bb-orange);
+    .program-card:nth-child(3) .program-mark {
+      background: var(--orange);
     }
 
-    .program-option h3 {
+    .program-card h3 {
       font-size: 1.65rem;
-      margin-bottom: 17px;
     }
 
-    .program-option p {
+    .program-card p {
       margin: 0;
       color: var(--muted);
-      font-size: 1.02rem;
-      line-height: 1.6;
     }
 
-    .program-option:hover {
-      background: #fbfafd;
+    .program-card:hover {
+      background: #fcfbfd;
     }
 
-    .program-option[aria-pressed="true"] {
-      background: var(--bb-purple);
+    .program-card[aria-pressed="true"] {
+      background: var(--purple);
       color: var(--white);
     }
 
-    .program-option[aria-pressed="true"] h3,
-    .program-option[aria-pressed="true"] p {
+    .program-card[aria-pressed="true"] h3,
+    .program-card[aria-pressed="true"] p {
       color: var(--white);
     }
 
-    .program-message {
-      max-width: 850px;
-      margin-top: 44px;
-      padding-left: 28px;
 
-      border-left: 7px solid var(--bb-yellow);
+    /* PROGRAM HOME */
 
-      font-size: 1.16rem;
-      line-height: 1.6;
+    .program-home {
+      display: none;
+      padding: 105px 0 120px;
     }
 
+    .program-home.visible {
+      display: block;
+    }
 
-    /* GETTING STARTED */
-
-    .getting-started-grid {
+    .program-home-top {
       display: grid;
-      grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
-      gap: 100px;
+      grid-template-columns: 1fr .55fr;
+      gap: 80px;
+      align-items: start;
+      margin-bottom: 100px;
+    }
+
+    .program-label {
+      color: var(--purple);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .new-chapter {
+      padding: 34px;
+      background: var(--yellow);
+      border-radius: 16px;
+    }
+
+    .new-chapter h3 {
+      font-size: 1.6rem;
+    }
+
+    .new-chapter p {
+      margin-bottom: 22px;
+      color: #302900;
+    }
+
+    .purple-button {
+      display: inline-flex;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 21px;
+      border-radius: 7px;
+      background: var(--purple);
+      color: var(--white);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+
+    /* YEAR */
+
+    .year-header {
+      margin-bottom: 38px;
+    }
+
+    .year-header p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    .months {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 42px 0 55px;
+    }
+
+    .month-button {
+      min-height: 52px;
+      padding: 12px 18px;
+      border: 2px solid var(--purple);
+      border-radius: 7px;
+      background: var(--white);
+      color: var(--purple);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .month-button[aria-pressed="true"] {
+      background: var(--purple);
+      color: var(--white);
+    }
+
+    .month-button:disabled {
+      border-color: var(--border);
+      background: #f2f0f4;
+      color: #77717c;
+      cursor: not-allowed;
+    }
+
+
+    /* MONTH CONTENT */
+
+    .month-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 95px;
       align-items: start;
     }
 
-    .large-copy {
-      color: var(--muted);
-      font-size: 1.18rem;
-      line-height: 1.65;
+    .month-title {
+      position: sticky;
+      top: 30px;
     }
 
-    .warm-note {
-      margin-top: 38px;
-      padding: 30px;
-
-      border-left: 8px solid var(--bb-yellow);
-      background: #fffbea;
-    }
-
-    .warm-note strong {
-      display: block;
-      color: var(--black);
-      margin-bottom: 7px;
-    }
-
-    .warm-note p {
-      margin: 0;
-    }
-
-    .sample-label {
-      display: block;
-      margin-bottom: 29px;
-      color: var(--bb-purple);
-      font-size: 16px;
+    .month-name {
+      margin-bottom: 8px;
+      color: var(--purple);
+      font-size: 18px;
       font-weight: 700;
     }
 
-    .checklist {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .month-focus {
+      margin-bottom: 22px;
+      font-size: clamp(2.6rem, 5vw, 4rem);
     }
 
-    .checklist-item {
-      display: grid;
-      grid-template-columns: 34px minmax(0, 1fr);
-      gap: 19px;
-
-      padding: 28px 0;
-
-      border-bottom: 2px solid var(--border);
-    }
-
-    .checklist-item:first-child {
-      padding-top: 0;
-    }
-
-    .checklist-item input {
-      width: 26px;
-      height: 26px;
-      margin: 5px 0 0;
-
-      accent-color: var(--bb-purple);
-      cursor: pointer;
-    }
-
-    .checklist-item label {
-      cursor: pointer;
-    }
-
-    .checklist-item strong {
-      display: block;
-
-      margin-bottom: 6px;
-
-      color: var(--black);
-      font-size: 1.13rem;
-    }
-
-    .checklist-item span {
-      display: block;
-
+    .month-description {
       color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.55;
+      font-size: 1.15rem;
     }
 
+    .official-label {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 7px 11px;
+      border-radius: 5px;
+      background: var(--purple);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 700;
+    }
 
-    /* RESOURCES */
-
-    .resource-list {
+    .month-content {
       border-top: 3px solid var(--black);
     }
 
-    .resource-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 45px;
-      align-items: center;
-
-      padding: 35px 0;
-
+    .month-item {
+      padding: 30px 0;
       border-bottom: 1px solid var(--border);
     }
 
-    .resource-row h3 {
-      margin-bottom: 8px;
-      font-size: 1.45rem;
+    .month-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--black);
+      font-size: 1.18rem;
     }
 
-    .resource-row p {
-      max-width: 760px;
-
+    .month-item p {
       margin: 0;
-
       color: var(--muted);
-      font-size: 1rem;
     }
 
-    .resource-link {
-      font-weight: 700;
-      white-space: nowrap;
+    .returning-note {
+      margin-top: 45px;
+      padding: 28px 30px;
+      border-left: 8px solid var(--teal);
+      background: #f2fbf9;
     }
 
-
-    /* CALENDAR */
-
-    .year-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(300px, .8fr);
-      gap: 95px;
-      align-items: center;
-    }
-
-    .calendar-panel {
-      background: var(--bb-purple);
-      color: var(--white);
-
-      padding: 48px;
-
-      border-radius: 18px;
-    }
-
-    .calendar-panel h3 {
-      color: var(--white);
-      font-size: 2rem;
-      margin-bottom: 18px;
-    }
-
-    .calendar-panel p {
-      margin-top: 0;
-      margin-bottom: 30px;
-
-      color: var(--white);
-      font-size: 1.08rem;
-    }
-
-    .light-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      min-height: 54px;
-      padding: 14px 21px;
-
-      background: var(--white);
-      color: var(--bb-purple);
-
-      border-radius: 7px;
-
-      font-weight: 700;
-      text-decoration: none;
+    .returning-note strong {
+      display: block;
+      margin-bottom: 6px;
     }
 
 
     /* SUPPORT */
 
     .support {
-      background: var(--bb-teal);
-      padding: 100px 0;
+      padding: 85px 0;
+      background: var(--teal);
     }
 
     .support-inner {
-      max-width: 900px;
-    }
-
-    .support h2 {
-      max-width: 700px;
+      max-width: 850px;
     }
 
     .support p {
-      max-width: 800px;
-      margin-bottom: 22px;
-
-      color: #17322d;
-      font-size: 1.2rem;
-    }
-
-    .support-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      margin-top: 13px;
-
-      min-height: 56px;
-      padding: 15px 23px;
-
-      background: var(--bb-purple);
-      color: var(--white);
-
-      border-radius: 7px;
-
-      font-weight: 700;
-      text-decoration: none;
+      font-size: 1.17rem;
+      color: #17332d;
     }
 
 
     /* FOOTER */
 
     footer {
-      background: var(--bb-purple);
+      padding: 48px 0;
+      background: var(--purple);
       color: var(--white);
-      padding: 55px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      align-items: center;
-      flex-wrap: wrap;
     }
 
     footer p {
       margin: 0;
     }
 
-    footer a {
-      color: var(--white);
-    }
 
+    /* RESPONSIVE */
 
-    /* TABLET */
-
-    @media (max-width: 1050px) {
-
-      .header-inner {
-        flex-wrap: wrap;
-        padding: 18px 0 20px;
-      }
-
-      .main-nav {
-        order: 3;
-        width: 100%;
-
-        justify-content: flex-start;
-        flex-wrap: wrap;
-
-        gap: 12px 28px;
-
-        padding-top: 14px;
-
-        border-top: 1px solid rgba(255,255,255,.35);
-      }
+    @media (max-width: 950px) {
 
       .hero-grid,
-      .getting-started-grid,
-      .year-grid {
+      .program-home-top,
+      .month-layout {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 55px;
       }
 
       .program-grid {
         grid-template-columns: 1fr;
       }
 
-      .program-option {
-        min-height: auto;
+      .hero-side {
+        display: none;
       }
 
-      .welcome-panel {
-        max-width: 760px;
+      .month-title {
+        position: static;
       }
     }
 
-
-    /* MOBILE */
-
-    @media (max-width: 700px) {
+    @media (max-width: 720px) {
 
       .container {
-        width: min(calc(100% - 32px), var(--max-width));
+        width: min(calc(100% - 32px), var(--max));
       }
 
       .header-inner {
-        gap: 18px;
+        min-height: 94px;
+        gap: 16px;
       }
 
-      .brand {
-        gap: 12px;
+      .logo-box img {
+        height: 56px;
       }
 
-      .logo-wrap {
-        padding: 6px 8px;
-      }
-
-      .logo-wrap img {
-        height: 58px;
-      }
-
-      .site-name {
+      .hub-name {
         font-size: 18px;
       }
 
-      .language {
-        margin-left: auto;
-      }
-
-      .language a {
-        min-width: 44px;
-        min-height: 44px;
-        font-size: 16px;
-        padding: 8px;
-      }
-
-      .main-nav {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 5px 20px;
-      }
-
-      .main-nav a {
-        font-size: 16px;
-        padding: 10px 0;
+      .header-link {
+        display: none;
       }
 
       .hero {
-        padding: 80px 0 90px;
+        padding: 78px 0 85px;
       }
 
-      h1 {
-        font-size: clamp(3rem, 14vw, 4.4rem);
-      }
-
-      h2 {
-        font-size: clamp(2.3rem, 10vw, 3.3rem);
-      }
-
-      .hero-copy {
-        font-size: 1.12rem;
-      }
-
-      .welcome-panel {
-        padding: 32px 27px;
-      }
-
-      .section {
-        padding: 82px 0;
-      }
-
-      .section-heading {
-        margin-bottom: 45px;
-      }
-
-      .program-option {
-        padding: 30px 27px;
-      }
-
-      .getting-started-grid {
-        gap: 60px;
-      }
-
-      .resource-row {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-
-      .calendar-panel {
-        padding: 35px 28px;
-      }
-
-      .support {
+      .program-section,
+      .program-home {
         padding: 80px 0;
       }
-    }
 
+      .program-card {
+        min-height: auto;
+      }
 
-    @media (max-width: 460px) {
+      .months {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-      .brand {
+      .month-button {
         width: 100%;
       }
-
-      .language {
-        margin-left: 0;
-      }
-
-      .main-nav {
-        grid-template-columns: 1fr;
-      }
-
-      .logo-wrap img {
-        height: 54px;
-      }
-
-      h1 {
-        font-size: 2.9rem;
-      }
     }
 
-
-    /* REDUCED MOTION */
-
     @media (prefers-reduced-motion: reduce) {
-
       html {
         scroll-behavior: auto;
       }
-
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
-        animation: none !important;
-      }
     }
-
   </style>
-
 </head>
 
 
 <body>
 
-  <a class="skip-link" href="#main-content">
+  <a href="#main-content" class="skip-link">
     Skip to main content
   </a>
 
 
-  <!-- HEADER -->
-
-  <header class="site-header">
+  <header>
 
     <div class="container header-inner">
 
-
       <div class="brand">
 
-        <div class="logo-wrap">
-
+        <div class="logo-box">
           <img
             src="assets/bb-colour-logo.svg"
             alt="Best Buddies Canada"
           >
-
         </div>
 
-        <span class="site-name">
+        <span class="hub-name">
           Teacher Hub
         </span>
 
       </div>
 
 
-      <nav
-        class="main-nav"
-        aria-label="Main navigation"
-      >
+      <div class="header-right">
 
-        <a href="#getting-started">
-          Getting Started
+        <a class="header-link" href="#support">
+          Get support
         </a>
 
-        <a href="#resources">
-          Forms & Resources
-        </a>
+        <div class="language" aria-label="Language selection">
 
-        <a href="#year">
-          Your Best Buddies Year
-        </a>
+          <a href="#" aria-current="page">
+            EN
+          </a>
 
-        <a href="#support">
-          Get Support
-        </a>
+          <a
+            href="#"
+            lang="fr-CA"
+            hreflang="fr-CA"
+            aria-label="Français"
+          >
+            FR
+          </a>
 
-      </nav>
-
-
-      <div
-        class="language"
-        aria-label="Language selection"
-      >
-
-        <a
-          href="#"
-          aria-current="page"
-        >
-          EN
-        </a>
-
-        <a
-          href="#"
-          lang="fr-CA"
-          hreflang="fr-CA"
-          aria-label="Français"
-        >
-          FR
-        </a>
+        </div>
 
       </div>
-
 
     </div>
 
   </header>
-
 
 
   <main id="main-content">
@@ -923,59 +714,39 @@
 
       <div class="container hero-grid">
 
-
         <div>
 
           <div class="eyebrow">
             Welcome to the Best Buddies Teacher Hub
           </div>
 
-
           <h1>
             Friendship and inclusion can look different in every school.
           </h1>
 
-
           <p class="hero-copy">
 
-            This space brings together the information, resources,
-            ideas, forms, and support that can help you create
-            meaningful opportunities for friendship and inclusion
-            in your school community.
+            Find the information, ideas, and support that can help
+            you create meaningful opportunities for connection in
+            your school or campus community.
 
           </p>
 
-
-          <p class="hero-emphasis">
-
-            Start where you are. Make it work for your community.
-
+          <p class="hero-note">
+            Start where you are. Make it your own.
           </p>
 
         </div>
 
 
+        <div class="hero-side" aria-hidden="true">
 
-        <aside class="welcome-panel">
+          <div class="hero-block hero-purple"></div>
+          <div class="hero-block hero-teal"></div>
+          <div class="hero-block hero-orange"></div>
+          <div class="hero-heart">♥</div>
 
-          <span class="small-heading">
-            A chapter can be what you make of it.
-          </span>
-
-
-          <p>
-
-            You might begin with a few simple group activities,
-            build toward one-to-one friendships, involve student
-            leaders, or find another approach that works well for
-            your students.
-
-            You don’t have to do everything at once.
-
-          </p>
-
-        </aside>
-
+        </div>
 
       </div>
 
@@ -983,124 +754,94 @@
 
 
 
-    <!-- PROGRAM CHOICE -->
+    <!-- PROGRAM SELECTION -->
 
     <section
-      class="section section-light"
+      class="program-section"
       aria-labelledby="program-heading"
     >
 
       <div class="container">
 
-
-        <div class="section-heading">
+        <div class="section-intro">
 
           <h2 id="program-heading">
-            Which program are you supporting?
+            Where are you supporting Best Buddies?
           </h2>
 
-
           <p>
-
-            Choose your program and we’ll point you toward the
-            information and resources that are most useful to you.
-
+            Choose your program and we’ll take you to the information
+            that fits your chapter.
           </p>
 
         </div>
 
 
-
         <div class="program-grid">
 
-
           <button
-            class="program-option"
+            class="program-card"
             type="button"
             data-program="elementary"
             aria-pressed="false"
           >
 
+            <div class="program-mark"></div>
+
             <h3>
               Elementary & Middle School
             </h3>
 
-
             <p>
-
-              Create welcoming opportunities for students to
-              connect, participate, and help build a more inclusive
-              school community.
-
+              Friendship, belonging, and inclusive experiences
+              within the school community.
             </p>
 
           </button>
 
 
-
           <button
-            class="program-option"
+            class="program-card"
             type="button"
-            data-program="high-school"
+            data-program="high"
             aria-pressed="false"
           >
+
+            <div class="program-mark"></div>
 
             <h3>
               High School
             </h3>
 
-
             <p>
-
-              Create opportunities for friendship and inclusion
-              through shared activities, student leadership, and
-              one-to-one connections where they make sense.
-
+              Shared activities, student leadership, and friendship
+              opportunities that work for your school.
             </p>
 
           </button>
 
 
-
           <button
-            class="program-option"
+            class="program-card"
             type="button"
-            data-program="post-secondary"
+            data-program="university"
             aria-pressed="false"
           >
+
+            <div class="program-mark"></div>
 
             <h3>
               University & College
             </h3>
 
-
             <p>
-
-              Bring students and community members together through
-              friendship, leadership, and meaningful shared
-              experiences.
-
+              Campus leadership, community partnership, and meaningful
+              friendship-building.
             </p>
 
           </button>
 
-
         </div>
-
-
-
-        <div
-          class="program-message"
-          id="program-message"
-          aria-live="polite"
-        >
-
-          There isn’t one perfect way to run a Best Buddies chapter.
-          Start with what is realistic for your community and build
-          from there.
-
-        </div>
-
 
       </div>
 
@@ -1108,532 +849,206 @@
 
 
 
-    <!-- GETTING STARTED -->
+    <!-- PROGRAM HOME -->
 
     <section
-      class="section"
-      id="getting-started"
-      aria-labelledby="getting-started-heading"
-    >
-
-      <div class="container getting-started-grid">
-
-
-        <div>
-
-          <div class="eyebrow">
-            New to Best Buddies?
-          </div>
-
-
-          <h2 id="getting-started-heading">
-            Start here.
-          </h2>
-
-
-          <p class="large-copy">
-
-            Getting started doesn’t have to feel like another big
-            thing on your list.
-
-            We’ll help you find the information you need,
-            understand what comes next, and get your chapter
-            underway in a way that feels manageable.
-
-          </p>
-
-
-          <div class="warm-note">
-
-
-            <strong>
-              Your chapter doesn’t have to look like anyone else’s.
-            </strong>
-
-
-            <p>
-
-              Your Program Advisor can help you think through what
-              will work best for your students, staff, and school
-              community.
-
-            </p>
-
-
-          </div>
-
-        </div>
-
-
-
-        <div>
-
-          <span class="sample-label">
-            SAMPLE GETTING STARTED CHECKLIST
-          </span>
-
-
-          <ul class="checklist">
-
-
-            <li class="checklist-item">
-
-
-              <input
-                type="checkbox"
-                id="step-one"
-              >
-
-
-              <label for="step-one">
-
-
-                <strong>
-                  Get familiar with your Best Buddies program
-                </strong>
-
-
-                <span>
-
-                  Take a quick look at the program overview and
-                  what a chapter can look like.
-
-                </span>
-
-
-              </label>
-
-
-            </li>
-
-
-
-            <li class="checklist-item">
-
-
-              <input
-                type="checkbox"
-                id="step-two"
-              >
-
-
-              <label for="step-two">
-
-
-                <strong>
-                  Connect with your Program Advisor
-                </strong>
-
-
-                <span>
-
-                  Talk through your school community, ask questions,
-                  and explore what you would like your chapter to
-                  become.
-
-                </span>
-
-
-              </label>
-
-
-            </li>
-
-
-
-            <li class="checklist-item">
-
-
-              <input
-                type="checkbox"
-                id="step-three"
-              >
-
-
-              <label for="step-three">
-
-
-                <strong>
-                  Take care of the forms that apply to your chapter
-                </strong>
-
-
-                <span>
-
-                  We’ll point you toward the right Best Buddies
-                  forms and existing processes when you need them.
-
-                </span>
-
-
-              </label>
-
-
-            </li>
-
-
-
-            <li class="checklist-item">
-
-
-              <input
-                type="checkbox"
-                id="step-four"
-              >
-
-
-              <label for="step-four">
-
-
-                <strong>
-                  Invite students to get involved
-                </strong>
-
-
-                <span>
-
-                  Start with something manageable. Your chapter can
-                  grow and change throughout the year.
-
-                </span>
-
-
-              </label>
-
-
-            </li>
-
-
-
-            <li class="checklist-item">
-
-
-              <input
-                type="checkbox"
-                id="step-five"
-              >
-
-
-              <label for="step-five">
-
-
-                <strong>
-                  Plan your first get-together
-                </strong>
-
-
-                <span>
-
-                  Keep it simple. The goal is to give people a
-                  comfortable opportunity to meet, connect, and
-                  enjoy being together.
-
-                </span>
-
-
-              </label>
-
-
-            </li>
-
-
-          </ul>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- FORMS AND RESOURCES -->
-
-    <section
-      class="section section-light"
-      id="resources"
-      aria-labelledby="resources-heading"
+      class="program-home"
+      id="program-home"
+      aria-live="polite"
     >
 
       <div class="container">
 
 
-        <div class="section-heading">
+        <div class="program-home-top">
 
+          <div>
 
-          <div class="eyebrow">
-            Find what you need
+            <div
+              class="program-label"
+              id="selected-program-label"
+            >
+              High School
+            </div>
+
+            <h2 id="program-welcome">
+              Welcome to your Best Buddies year.
+            </h2>
+
+            <p
+              class="hero-copy"
+              id="program-welcome-copy"
+            >
+              We’ll bring forward the information that is most useful
+              at this point in the year while keeping the bigger picture
+              easy to reach.
+            </p>
+
           </div>
 
 
-          <h2 id="resources-heading">
-            Forms and resources, all in one place.
-          </h2>
+          <aside class="new-chapter">
 
+            <h3>
+              Starting a new chapter?
+            </h3>
 
-          <p>
+            <p>
+              Best Buddies will help you get started. Follow the
+              starting-fresh pathway for the first steps and support.
+            </p>
 
-            Best Buddies already has lots of helpful tools and
-            resources.
+            <a
+              class="purple-button"
+              href="#"
+            >
+              Start a new chapter
+            </a>
 
-            The Teacher Hub gives you a simple way to find the
-            right one when you need it.
-
-          </p>
-
+          </aside>
 
         </div>
 
 
 
-        <div class="resource-list">
+        <!-- YEAR -->
 
-
-          <div class="resource-row">
-
-
-            <div>
-
-
-              <h3>
-                Program information
-              </h3>
-
-
-              <p>
-
-                Learn more about your program and find the existing
-                Best Buddies guides that support your chapter.
-
-              </p>
-
-
-            </div>
-
-
-            <a
-              class="resource-link"
-              href="#"
-            >
-              View program information
-            </a>
-
-
-          </div>
-
-
-
-          <div class="resource-row">
-
-
-            <div>
-
-
-              <h3>
-                Chapter roster
-              </h3>
-
-
-              <p>
-
-                Access the existing Best Buddies roster process and
-                keep your chapter information current.
-
-              </p>
-
-
-            </div>
-
-
-            <a
-              class="resource-link"
-              href="#"
-            >
-              Open roster form
-            </a>
-
-
-          </div>
-
-
-
-          <div class="resource-row">
-
-
-            <div>
-
-
-              <h3>
-                Registration and forms
-              </h3>
-
-
-              <p>
-
-                Find registration, pledge, application, and other
-                forms that apply to your program.
-
-              </p>
-
-
-            </div>
-
-
-            <a
-              class="resource-link"
-              href="#"
-            >
-              Find a form
-            </a>
-
-
-          </div>
-
-
-
-          <div class="resource-row">
-
-
-            <div>
-
-
-              <h3>
-                Training
-              </h3>
-
-
-              <p>
-
-                Find Best Buddies training and information to help
-                create a welcoming, inclusive chapter experience.
-
-              </p>
-
-
-            </div>
-
-
-            <a
-              class="resource-link"
-              href="#"
-            >
-              View training
-            </a>
-
-
-          </div>
-
-
-
-          <div class="resource-row">
-
-
-            <div>
-
-
-              <h3>
-                Activities and ideas
-              </h3>
-
-
-              <p>
-
-                Looking for something to do together?
-
-                Find ideas that can work for different groups,
-                schedules, and chapter styles.
-
-              </p>
-
-
-            </div>
-
-
-            <a
-              class="resource-link"
-              href="#"
-            >
-              Explore ideas
-            </a>
-
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- YOUR BEST BUDDIES YEAR -->
-
-    <section
-      class="section"
-      id="year"
-      aria-labelledby="year-heading"
-    >
-
-      <div class="container year-grid">
-
-
-        <div>
-
+        <div class="year-header">
 
           <div class="eyebrow">
             Your Best Buddies year
           </div>
 
-
-          <h2 id="year-heading">
-            A little help knowing what’s coming next.
+          <h2>
+            Here’s what’s useful right now.
           </h2>
 
-
-          <p class="large-copy">
-
-            The Best Buddies Program Calendar brings important dates
-            and moments throughout the year together in one place.
-
-            Over time, the Teacher Hub can also help surface timely
-            resources and ideas without asking you to keep everything
-            in your head.
-
+          <p>
+            Use the monthly guide as a helpful rhythm for the year.
+            You can always look ahead or skip anything that doesn’t
+            apply to your chapter.
           </p>
-
 
         </div>
 
 
+        <div
+          class="months"
+          aria-label="Choose a month"
+        >
 
-        <div class="calendar-panel">
-
-
-          <h3>
-            Program Calendar
-          </h3>
-
-
-          <p>
-
-            See important dates and reminders throughout your
-            Best Buddies year.
-
-          </p>
-
-
-          <a
-            class="light-button"
-            href="#"
+          <button
+            class="month-button"
+            type="button"
+            data-month="september"
+            aria-pressed="true"
           >
-            View the Program Calendar
-          </a>
+            September
+          </button>
 
+          <button
+            class="month-button"
+            type="button"
+            data-month="october"
+            aria-pressed="false"
+          >
+            October
+          </button>
+
+          <button class="month-button" type="button" disabled>
+            November
+          </button>
+
+          <button class="month-button" type="button" disabled>
+            December
+          </button>
+
+          <button class="month-button" type="button" disabled>
+            January
+          </button>
+
+          <button class="month-button" type="button" disabled>
+            February
+          </button>
+
+          <button class="month-button" type="button" disabled>
+            March
+          </button>
+
+          <button class="month-button" type="button" disabled>
+            April
+          </button>
+
+          <button class="month-button" type="button" disabled>
+            May
+          </button>
+
+          <button class="month-button" type="button" disabled>
+            June
+          </button>
+
+        </div>
+
+
+        <div class="month-layout">
+
+          <div class="month-title">
+
+            <div
+              class="month-name"
+              id="month-name"
+            >
+              September
+            </div>
+
+            <h2
+              class="month-focus"
+              id="month-focus"
+            >
+              Getting Set Up
+            </h2>
+
+            <p
+              class="month-description"
+              id="month-description"
+            >
+              September is mostly about getting organized,
+              welcoming interest, and putting the pieces in place
+              for the year ahead.
+            </p>
+
+            <span class="official-label">
+              From the Best Buddies Program Calendar
+            </span>
+
+          </div>
+
+
+          <div>
+
+            <div
+              class="month-content"
+              id="month-content"
+            >
+            </div>
+
+
+            <div
+              class="returning-note"
+              id="returning-note"
+            >
+
+              <strong>
+                Returning chapter?
+              </strong>
+
+              Welcome back. If some of these pieces are already in
+              place, skip them and focus on what is useful for your
+              chapter this year.
+
+            </div>
+
+          </div>
 
         </div>
 
@@ -1644,52 +1059,29 @@
 
 
 
-    <!-- PROGRAM ADVISOR SUPPORT -->
+    <!-- SUPPORT -->
 
     <section
       class="support"
       id="support"
-      aria-labelledby="support-heading"
     >
 
       <div class="container support-inner">
 
-
         <div class="eyebrow">
-          Support when you need it
+          Need a hand?
         </div>
 
-
-        <h2 id="support-heading">
-          We’re here to help.
+        <h2>
+          Your Program Advisor is here.
         </h2>
 
-
         <p>
-
-          Your Program Advisor is here to answer questions,
-          help you think through what Best Buddies can look like
-          in your community, and support you as your chapter
-          develops.
-
+          The Hub can help you find information and ideas.
+          Your Program Advisor is here for questions, chapter-specific
+          guidance, problem-solving, and anything that is simply easier
+          to talk through with a person.
         </p>
-
-
-        <p>
-
-          If something feels unclear, unusual, or simply easier to
-          talk through with a person, reach out.
-
-        </p>
-
-
-        <a
-          class="support-button"
-          href="#"
-        >
-          Connect with your Program Advisor
-        </a>
-
 
       </div>
 
@@ -1699,31 +1091,13 @@
   </main>
 
 
-
-  <!-- FOOTER -->
-
   <footer>
 
-
-    <div class="container footer-inner">
-
-
+    <div class="container">
       <p>
-        Best Buddies Canada Teacher Hub
+        Best Buddies Canada Teacher Hub · Prototype for internal review
       </p>
-
-
-      <p>
-
-        <a href="https://bestbuddies.ca">
-          Visit Best Buddies Canada
-        </a>
-
-      </p>
-
-
     </div>
-
 
   </footer>
 
@@ -1732,52 +1106,338 @@
   <script>
 
     const programButtons =
-      document.querySelectorAll(".program-option");
+      document.querySelectorAll(".program-card");
 
-    const programMessage =
-      document.getElementById("program-message");
+    const programHome =
+      document.getElementById("program-home");
+
+    const selectedProgramLabel =
+      document.getElementById("selected-program-label");
+
+    const programWelcome =
+      document.getElementById("program-welcome");
+
+    const programWelcomeCopy =
+      document.getElementById("program-welcome-copy");
+
+    const monthButtons =
+      document.querySelectorAll(".month-button[data-month]");
+
+    const monthName =
+      document.getElementById("month-name");
+
+    const monthFocus =
+      document.getElementById("month-focus");
+
+    const monthDescription =
+      document.getElementById("month-description");
+
+    const monthContent =
+      document.getElementById("month-content");
 
 
-    const programMessages = {
+    let selectedProgram = "high";
 
-      elementary:
-        "Elementary & Middle School chapters can create welcoming opportunities for students to spend time together, participate, build friendships, and strengthen inclusion throughout the school community.",
 
-      "high-school":
-        "High School chapters can include shared activities, student leadership, one-to-one friendship opportunities, or a mix that makes sense for the students and school.",
+    const programs = {
 
-      "post-secondary":
-        "University & College chapters bring students and community members together through friendship, leadership, and shared experiences."
+      elementary: {
+        label: "Elementary & Middle School",
+        welcome:
+          "Welcome to your Elementary & Middle School year.",
+        copy:
+          "Find the pieces that can help your chapter get organized, bring students together, and create welcoming opportunities for friendship and inclusion."
+      },
+
+      high: {
+        label: "High School",
+        welcome:
+          "Welcome to your High School year.",
+        copy:
+          "Find the pieces that can help student leaders and staff advisors get organized, welcome members, and build a chapter that works for your school."
+      },
+
+      university: {
+        label: "University & College",
+        welcome:
+          "Welcome to your University & College year.",
+        copy:
+          "Find the information that can help your student leadership team, Staff Advisor, Host Site Coordinator, and Best Buddies team get the year underway."
+      }
 
     };
 
 
-    programButtons.forEach((button) => {
+    const monthData = {
+
+      elementary: {
+
+        september: {
+          focus: "Getting Set Up",
+          description:
+            "September is mostly about getting organized, promoting the chapter, welcoming interest, and planning ahead for your first gathering.",
+          items: [
+            [
+              "Reconnect with Best Buddies",
+              "Check in with your Program Advisor and make sure you have what you need for the year ahead."
+            ],
+            [
+              "Recruit and spread the word",
+              "Let students and families know about Best Buddies and how they can get involved."
+            ],
+            [
+              "Share registration information",
+              "Make the appropriate program information and registration details easy for families to find."
+            ],
+            [
+              "Start planning your Meet & Greet",
+              "You don’t need to host a full event yet. September is a good time to think about the date, location, and what might help everyone feel welcome."
+            ]
+          ]
+        },
+
+        october: {
+          focus: "Getting to Know You",
+          description:
+            "October is a chance for members to meet, learn more about one another, and start building connections.",
+          items: [
+            [
+              "Host your Meet & Greet",
+              "Create a welcoming first gathering where new and returning members can spend time together."
+            ],
+            [
+              "Complete Sensitivity Training",
+              "Use the Best Buddies training resources that apply to your chapter."
+            ],
+            [
+              "Keep welcoming new members",
+              "Recruitment can continue as your chapter begins to take shape."
+            ],
+            [
+              "Get to know one another",
+              "Use simple activities that help members discover interests, strengths, communication styles, and things they have in common."
+            ]
+          ]
+        }
+
+      },
+
+
+      high: {
+
+        september: {
+          focus: "Getting Set Up",
+          description:
+            "September is mostly about getting organized, recruiting, sharing information, and preparing for the first gathering of the year.",
+          items: [
+            [
+              "Reconnect with Best Buddies",
+              "Check in with your Program Advisor and make sure you have the information you need for the year."
+            ],
+            [
+              "Recruit members and student leaders",
+              "Promote the chapter and start building the group that will help shape the year."
+            ],
+            [
+              "Share program and registration information",
+              "Make sure students and families can access the information they need."
+            ],
+            [
+              "Start planning your Meet & Greet",
+              "Think ahead to October. Choose a date, location, and a simple approach that will help members feel comfortable meeting one another."
+            ]
+          ]
+        },
+
+        october: {
+          focus: "Getting to Know You",
+          description:
+            "October is about bringing members together, learning more about one another, and beginning to build meaningful connections.",
+          items: [
+            [
+              "Host your Meet & Greet",
+              "Bring new and returning members together in a welcoming, low-pressure way."
+            ],
+            [
+              "Complete Sensitivity Training",
+              "Use the Best Buddies training materials that support your chapter."
+            ],
+            [
+              "Continue recruitment if needed",
+              "Keep the door open for students who are still interested in joining."
+            ],
+            [
+              "Learn about your members",
+              "Use conversations and activities to learn about interests, strengths, communication styles, and potential friendship connections."
+            ]
+          ]
+        }
+
+      },
+
+
+      university: {
+
+        september: {
+          focus: "Getting Set Up",
+          description:
+            "September is focused on recruitment, volunteer onboarding, roster review, VSCs, and preparing the chapter for its first gathering.",
+          items: [
+            [
+              "Connect with Best Buddies",
+              "Check in with your Program Advisor and confirm the pieces needed to get the campus chapter underway."
+            ],
+            [
+              "Recruit at your Club Fair",
+              "Use campus recruitment opportunities to introduce students to Best Buddies and grow the chapter."
+            ],
+            [
+              "Host a volunteer information session",
+              "Give interested students a chance to learn how the chapter works and what participation can involve."
+            ],
+            [
+              "Review your roster and begin VSCs",
+              "Start the administrative pieces that apply to returning and new volunteers."
+            ],
+            [
+              "Plan your Meet & Greet",
+              "Begin coordinating your first gathering with your chapter leadership and community partners."
+            ]
+          ]
+        },
+
+        october: {
+          focus: "Getting to Know You",
+          description:
+            "October is a chance to bring campus and community members together, continue onboarding, and begin building relationships.",
+          items: [
+            [
+              "Host your Meet & Greet",
+              "Create a welcoming gathering where chapter and community members can begin connecting."
+            ],
+            [
+              "Complete Leadership Training",
+              "Support your student executive team with the Best Buddies leadership training."
+            ],
+            [
+              "Continue the VSC process",
+              "Follow up on any outstanding volunteer screening requirements."
+            ],
+            [
+              "Help members get to know one another",
+              "Use simple activities and conversations to explore shared interests and potential friendship connections."
+            ]
+          ]
+        }
+
+      }
+
+    };
+
+
+    function renderMonth(month) {
+
+      const data =
+        monthData[selectedProgram][month];
+
+      monthName.textContent =
+        month.charAt(0).toUpperCase() + month.slice(1);
+
+      monthFocus.textContent =
+        data.focus;
+
+      monthDescription.textContent =
+        data.description;
+
+      monthContent.innerHTML = "";
+
+      data.items.forEach(item => {
+
+        const row =
+          document.createElement("div");
+
+        row.className =
+          "month-item";
+
+        const title =
+          document.createElement("strong");
+
+        title.textContent =
+          item[0];
+
+        const copy =
+          document.createElement("p");
+
+        copy.textContent =
+          item[1];
+
+        row.appendChild(title);
+        row.appendChild(copy);
+
+        monthContent.appendChild(row);
+
+      });
+
+    }
+
+
+    programButtons.forEach(button => {
 
       button.addEventListener("click", () => {
 
-        programButtons.forEach((otherButton) => {
-
-          otherButton.setAttribute(
-            "aria-pressed",
-            "false"
-          );
-
+        programButtons.forEach(otherButton => {
+          otherButton.setAttribute("aria-pressed", "false");
         });
 
+        button.setAttribute("aria-pressed", "true");
 
-        button.setAttribute(
-          "aria-pressed",
-          "true"
-        );
-
-
-        const selectedProgram =
+        selectedProgram =
           button.dataset.program;
 
+        selectedProgramLabel.textContent =
+          programs[selectedProgram].label;
 
-        programMessage.textContent =
-          programMessages[selectedProgram];
+        programWelcome.textContent =
+          programs[selectedProgram].welcome;
+
+        programWelcomeCopy.textContent =
+          programs[selectedProgram].copy;
+
+        programHome.classList.add("visible");
+
+        monthButtons.forEach(button => {
+          button.setAttribute("aria-pressed", "false");
+        });
+
+        document
+          .querySelector('[data-month="september"]')
+          .setAttribute("aria-pressed", "true");
+
+        renderMonth("september");
+
+        programHome.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      });
+
+    });
+
+
+    monthButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        monthButtons.forEach(otherButton => {
+          otherButton.setAttribute("aria-pressed", "false");
+        });
+
+        button.setAttribute("aria-pressed", "true");
+
+        renderMonth(
+          button.dataset.month
+        );
 
       });
 
@@ -1785,7 +1445,5 @@
 
   </script>
 
-
 </body>
-
 </html>
