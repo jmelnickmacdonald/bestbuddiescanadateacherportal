@@ -1,191 +1,552 @@
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Teacher Hub | Best Buddies Canada</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teacher Hub | Best Buddies Canada</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
 <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <header class="site-header">
   <div class="container header-inner">
+
     <a class="brand" href="index.html" aria-label="Best Buddies Canada Teacher Hub home">
-      <span class="logo-shell"><img src="assets/bb-reversed-logo.png" alt="Best Buddies Canada"></span>
+      <img
+        src="assets/bb-reversed-logo.png"
+        alt="Best Buddies Canada"
+        class="header-logo"
+      >
       <span class="brand-name">Teacher Hub</span>
     </a>
+
     <nav class="nav" aria-label="Main navigation">
-      <a class="hide-tablet" href="index.html#programs">For teachers</a>
-      <a class="hide-tablet" href="https://calendar.google.com/calendar/u/0/embed?ctz=America/Toronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com" target="_blank" rel="noopener">Official calendar</a>
-      <a class="hide-tablet" href="https://bestbuddies.ca/get-started/" target="_blank" rel="noopener">Get started</a>
-      <a class="keep-mobile" href="#support">Get support</a>
-      <span class="lang" aria-label="Language">
-        <a class="current" href="#" aria-current="page">EN</a>
+      <a href="#programs">For Teachers</a>
+
+      <a href="#calendar">
+        Calendar
+      </a>
+
+      <a
+        href="https://bestbuddies.ca/get-started/"
+        target="_blank"
+        rel="noopener"
+      >
+        Get Started
+      </a>
+
+      <a href="#support">
+        Get Support
+      </a>
+
+      <div class="lang" aria-label="Language">
+        <a href="#" class="current" aria-current="page">EN</a>
         <a href="fr.html" lang="fr-CA" hreflang="fr-CA">FR</a>
-      </span>
+      </div>
     </nav>
+
   </div>
-  <svg class="header-wave" viewBox="0 0 1440 34" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-    <path d="M0 0H1440V11
-      C1360 7 1315 20 1236 12
-      C1158 5 1106 20 1028 12
-      C947 4 891 20 809 12
-      C727 5 668 20 586 12
-      C503 5 447 20 364 12
-      C281 6 225 20 143 12
-      C87 7 46 16 0 11Z"/>
+
+  <svg
+    class="header-wave"
+    viewBox="0 0 1440 36"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path
+      d="M0 0H1440V13
+      C1355 7 1314 21 1235 13
+      C1155 6 1105 20 1024 13
+      C944 5 890 21 807 13
+      C725 6 668 21 584 13
+      C503 6 445 20 362 13
+      C280 7 224 21 141 13
+      C85 8 45 16 0 12Z"
+    />
   </svg>
 </header>
 
+
 <main id="main-content">
-  <section class="home-hero">
-    <div class="home-hero-copy">
-      <div class="home-hero-copy-inner">
-        <div class="kicker">For teachers supporting Best Buddies</div>
-        <div class="eyeline"></div>
-        <h1><span class="text-purple">Friendship</span> and inclusion are at the heart of Best Buddies.</h1>
-        <p class="lede">Everything here is designed to help you spend less time looking for information and more time creating opportunities for friendship.</p>
-        <p class="hero-lastline">The goal stays the same. <span class="text-purple">How your chapter brings it to life</span> can reflect your students, your school, and the time you have.</p>
-        <div class="inline-links">
-          <a class="btn btn-purple" href="#programs">Choose your program</a>
-          <a href="https://calendar.google.com/calendar/u/0/embed?ctz=America/Toronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com" target="_blank" rel="noopener">View the official calendar</a>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+
+      <div class="hero-copy">
+
+        <div class="kicker">
+          For teachers supporting Best Buddies
+        </div>
+
+        <div class="yellow-stroke" aria-hidden="true"></div>
+
+        <h1>
+          <span class="purple">Friendship</span> and inclusion
+          are at the heart of Best Buddies.
+        </h1>
+
+        <p class="hero-lede">
+          Your chapter already has enough going on. This Hub brings the
+          calendar, resources, ideas, and support together so you can spend
+          less time looking for information and more time creating
+          opportunities for friendship.
+        </p>
+
+        <p class="hero-thought">
+          <strong>The goal stays the same.</strong>
+          How your chapter brings it to life can reflect your students,
+          your school, and the time you have.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-purple" href="#programs">
+            Choose your program
+          </a>
+
+          <a class="text-link" href="#calendar">
+            See what’s coming up ↓
+          </a>
+        </div>
+
+      </div>
+
+
+      <div class="hero-play" aria-hidden="true">
+        <div class="hero-shape hero-shape-yellow"></div>
+        <div class="hero-shape hero-shape-teal"></div>
+        <div class="hero-shape hero-shape-orange"></div>
+
+        <div class="hero-message">
+          <span>FRIENDSHIP</span>
+          <strong>FIRST.</strong>
         </div>
       </div>
-    </div>
-    <div class="home-hero-photo">
-      <img src="assets/home-hero.png" alt="Two Best Buddies participants smiling together">
+
     </div>
   </section>
 
-  <section class="section" id="programs">
+
+  <!-- PROGRAMS -->
+  <section class="section programs-section" id="programs">
+
     <div class="container">
+
       <div class="section-heading">
-        <div class="kicker">Your teacher page</div>
-        <h2>Choose the program <span class="text-purple">you support.</span></h2>
-        <p class="lede">Same mission. Different school realities. Choose your program and go straight to the pieces that matter for your chapter.</p>
+        <div class="kicker">
+          Your teacher page
+        </div>
+
+        <h2>
+          Same mission.
+          <span class="purple">Different school realities.</span>
+        </h2>
+
+        <p class="lede">
+          Choose your program and go straight to the information,
+          ideas, and support that make sense for your chapter.
+        </p>
       </div>
 
-      <div class="program-choice-grid">
-        <a class="program-choice" href="elementary-middle.html">
-          <img src="assets/elementary-hero.png" alt="Best Buddies participants spending time together">
-          <div class="program-choice-copy">
-            <div class="program-overline">Friendship club</div><h3>Elementary &amp; Middle School</h3>
-            <p>An in-school friendship club led by school staff, with support from the Best Buddies team.</p>
-            <span class="go">Open teacher page</span>
+
+      <div class="program-grid">
+
+        <a class="program-card" href="elementary-middle.html">
+
+          <div class="program-image elementary">
+            <img
+              src="assets/elementary-hero.png"
+              alt="Best Buddies participants spending time together"
+            >
           </div>
+
+          <div class="program-copy">
+
+            <span class="program-label">
+              Friendship club
+            </span>
+
+            <h3>
+              Elementary &amp;<br>
+              Middle School
+            </h3>
+
+            <p>
+              An in-school friendship club led by school staff,
+              with support from the Best Buddies team.
+            </p>
+
+            <span class="program-button">
+              Open teacher page →
+            </span>
+
+          </div>
+
         </a>
 
-        <a class="program-choice" href="high-school.html">
-          <img src="assets/high-school-hero.png" alt="A high school Best Buddies chapter group">
-          <div class="program-choice-copy">
-            <div class="program-overline">Student-led chapter</div><h3>High School</h3>
-            <p>A student-led chapter supported by a Staff Advisor, with group activities and one-to-one friendships where they work for the school.</p>
-            <span class="go">Open teacher page</span>
+
+        <a class="program-card" href="high-school.html">
+
+          <div class="program-image highschool">
+            <img
+              src="assets/high-school-hero.png"
+              alt="A Best Buddies high school chapter group"
+            >
           </div>
+
+          <div class="program-copy">
+
+            <span class="program-label">
+              Student-led chapter
+            </span>
+
+            <h3>
+              High School
+            </h3>
+
+            <p>
+              A student-led chapter supported by a Staff Advisor,
+              with group activities and meaningful friendships.
+            </p>
+
+            <span class="program-button">
+              Open teacher page →
+            </span>
+
+          </div>
+
         </a>
+
       </div>
+
     </div>
+
   </section>
 
 
-  <section class="friendship-pop" aria-label="Best Buddies teacher support">
-    <div class="container friendship-pop-inner">
-      <p><strong>Friendship first.</strong> The calendar, resources and forms should support the chapter — not become the chapter.</p>
-    </div>
-  </section>
+  <!-- FRIENDSHIP POP -->
+  <section class="friendship-pop">
 
-  <section class="section section-purple">
-    <div class="container start-band">
-      <div>
-        <div class="kicker">Starting fresh?</div>
-        <h2>Starting a chapter should feel <span class="text-yellow-mark">doable.</span></h2>
-        <p class="lede">For Elementary, Middle and High School chapters, the current process starts by checking whether your school already participates, completing the Program Application with principal approval, and connecting with Best Buddies.</p>
-        <div class="start-steps">
-          <div class="start-step"><strong>1. Check your school</strong><span>See whether an active chapter is already in place.</span></div>
-          <div class="start-step"><strong>2. Complete the application</strong><span>Use the current Best Buddies Program Application with principal approval.</span></div>
-          <div class="start-step"><strong>3. Connect with us</strong><span>A Program Advisor can help you work through what comes next.</span></div>
-        </div>
-        <div class="start-actions">
-          <a class="btn btn-yellow" href="https://bestbuddies.ca/find-a-school/" target="_blank" rel="noopener">Find a participating school</a>
-          <a class="btn btn-white" href="assets/best-buddies-program-application.pdf" target="_blank">Open the Program Application</a>
-        </div>
-      </div>
-      <div>
-        <p style="font-size:1.35rem;font-weight:700;line-height:1.45;margin:0;">You do not need to arrive with a finished chapter plan. Start with what is realistic, and build from there with Best Buddies support.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-wash" id="calendar">
     <div class="container">
-      <div class="calendar-intro-grid">
-        <div class="section-heading">
-          <div class="kicker">Official Program Calendar</div>
-          <h2>Know what’s coming. <span class="text-purple">Keep it manageable.</span></h2>
-          <p class="lede">This is the live Best Buddies Program Calendar. It remains the official source for monthly focus, reminders and national program dates.</p>
+
+      <div class="friendship-pop-inner">
+
+        <div class="friendship-pop-small">
+          One thing worth remembering
         </div>
-        <div class="calendar-note">
-          <strong>The calendar tells you what’s happening.</strong>
-          <span>Your teacher page adds practical ways to bring those priorities to life in your own school.</span>
-        </div>
+
+        <p>
+          <strong>Friendship first.</strong>
+          The calendar, resources, forms, and activities should support
+          the chapter — not become the chapter.
+        </p>
+
       </div>
 
-      <div class="calendar-embed-shell">
-        <div class="calendar-embed-top">
-          <span class="calendar-live-dot" aria-hidden="true"></span>
-          <strong>Live Best Buddies calendar</strong>
-          <a href="https://calendar.google.com/calendar/u/0/embed?ctz=America/Toronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com" target="_blank" rel="noopener">Open full calendar ↗</a>
+    </div>
+
+  </section>
+
+
+  <!-- STARTING A CHAPTER -->
+  <section class="section start-section">
+
+    <div class="container start-grid">
+
+      <div>
+
+        <div class="kicker light">
+          Starting fresh?
         </div>
-        <div class="calendar-frame-wrap">
+
+        <h2>
+          Starting a chapter should feel
+          <span class="yellow-highlight">doable.</span>
+        </h2>
+
+        <p class="start-lede">
+          You don’t need to arrive with the whole year planned.
+          Start with the current Best Buddies process, and we’ll help
+          you build from there.
+        </p>
+
+      </div>
+
+
+      <div class="start-steps">
+
+        <div class="start-step">
+          <span>01</span>
+          <div>
+            <strong>Check your school.</strong>
+            <p>
+              See whether a Best Buddies chapter is already active.
+            </p>
+          </div>
+        </div>
+
+        <div class="start-step">
+          <span>02</span>
+          <div>
+            <strong>Complete the application.</strong>
+            <p>
+              Fill out the current Program Application with
+              principal approval.
+            </p>
+          </div>
+        </div>
+
+        <div class="start-step">
+          <span>03</span>
+          <div>
+            <strong>Connect with Best Buddies.</strong>
+            <p>
+              Your Program Advisor can help you figure out what comes next.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="start-actions">
+
+          <a
+            class="btn btn-yellow"
+            href="https://bestbuddies.ca/find-a-school/"
+            target="_blank"
+            rel="noopener"
+          >
+            Find a participating school
+          </a>
+
+          <a
+            class="start-link"
+            href="assets/best-buddies-program-application.pdf"
+            target="_blank"
+          >
+            Open Program Application ↗
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CALENDAR -->
+  <section class="section calendar-section" id="calendar">
+
+    <div class="container">
+
+      <div class="calendar-heading">
+
+        <div>
+
+          <div class="kicker">
+            Official Program Calendar
+          </div>
+
+          <h2>
+            Know what’s coming.
+            <span class="purple">Keep it manageable.</span>
+          </h2>
+
+          <p class="lede">
+            This is the live Best Buddies Program Calendar.
+            It remains the official source for monthly focus,
+            reminders, and program dates.
+          </p>
+
+        </div>
+
+
+        <div class="calendar-thought">
+          <strong>The calendar tells you what’s happening.</strong>
+          <span>
+            Your teacher page helps answer:
+            “Okay — what could that actually look like here?”
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="calendar-shell">
+
+        <div class="calendar-toolbar">
+
+          <div>
+            <span class="live-dot" aria-hidden="true"></span>
+            <strong>Live Best Buddies Calendar</strong>
+          </div>
+
+          <a
+            href="https://calendar.google.com/calendar/u/0/embed?ctz=America/Toronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com"
+            target="_blank"
+            rel="noopener"
+          >
+            Open full calendar ↗
+          </a>
+
+        </div>
+
+
+        <div class="calendar-frame">
+
           <iframe
-            src="https://calendar.google.com/calendar/embed?ctz=America%2FToronto&src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec%40group.calendar.google.com&mode=AGENDA&showTitle=0&showPrint=0&showTabs=0&showCalendars=0"
+            src="https://calendar.google.com/calendar/embed?ctz=America%2FToronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec%40group.calendar.google.com&amp;mode=AGENDA&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0"
             title="Best Buddies Canada official Program Calendar"
             loading="lazy"
             frameborder="0"
-            scrolling="no"></iframe>
+            scrolling="no"
+          ></iframe>
+
         </div>
+
       </div>
 
-      <div class="dual-explainer calendar-dual">
-        <div class="explain-block">
-          <span class="explain-label">Official Program Calendar</span>
-          <h3>The “what” and “when.”</h3>
-          <p>Monthly focus, required pieces, important reminders and national program dates come directly from Best Buddies.</p>
+
+      <div class="calendar-explainers">
+
+        <div class="calendar-explainer official">
+
+          <span class="explainer-label">
+            Official Program Calendar
+          </span>
+
+          <h3>
+            The “what” and “when.”
+          </h3>
+
+          <p>
+            Monthly focus, required pieces, important reminders,
+            and national program dates come directly from Best Buddies.
+          </p>
+
         </div>
-        <div class="explain-block companion">
-          <span class="explain-label">Teacher Companion</span>
-          <h3>The “how could this look?”</h3>
-          <p>A few realistic ways to approach the month, with options for different schedules, chapter capacity and ways to participate.</p>
-          <p><strong>Ideas, not extra requirements.</strong></p>
+
+
+        <div class="calendar-explainer companion">
+
+          <span class="explainer-label">
+            Teacher Companion
+          </span>
+
+          <h3>
+            The “how could this look?”
+          </h3>
+
+          <p>
+            Practical options for different schedules, chapter capacity,
+            group sizes, and ways to participate.
+          </p>
+
+          <strong>
+            Ideas, not extra requirements.
+          </strong>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
 
-  <section class="section section-teal" id="support">
-    <div class="container support-band">
+
+  <!-- SUPPORT -->
+  <section class="section support-section" id="support">
+
+    <div class="container support-grid">
+
       <div>
-        <div class="kicker">Support stays human</div>
-        <h2>Questions are easier with <span class="fun-word">a person.</span></h2>
-        <p class="lede">This Hub is meant to make existing information easier to reach. Your Program Advisor is here for chapter-specific questions, planning, problem-solving and the things that are simply better talked through with a person.</p>
-        <div class="inline-links">
-          <a class="btn btn-purple" href="https://bestbuddies.ca/get-started/" target="_blank" rel="noopener">Connect with Best Buddies</a>
-          <a href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener">Current Helpful Resources</a>
+
+        <div class="kicker">
+          Support stays human
         </div>
+
+        <h2>
+          Some things are just better
+          <span class="underlined">talked through.</span>
+        </h2>
+
+        <p class="lede">
+          Use the Hub for the information. Your Program Advisor is here
+          for chapter-specific questions, planning, problem-solving,
+          and the things that need an actual conversation.
+        </p>
+
+        <div class="support-actions">
+
+          <a
+            class="btn btn-purple"
+            href="https://bestbuddies.ca/get-started/"
+            target="_blank"
+            rel="noopener"
+          >
+            Connect with Best Buddies
+          </a>
+
+          <a
+            class="text-link"
+            href="https://bestbuddies.ca/helpful-resources/"
+            target="_blank"
+            rel="noopener"
+          >
+            Browse current Helpful Resources ↗
+          </a>
+
+        </div>
+
       </div>
+
+
       <div class="support-photo">
-        <img src="assets/support-photo.jpg" alt="Best Buddies participants together at a community event">
+
+        <img
+          src="assets/support-photo.jpg"
+          alt="Best Buddies participants together at an event"
+        >
+
       </div>
+
     </div>
+
   </section>
+
 </main>
 
+
 <footer>
+
   <div class="container footer-inner">
-    <p>Best Buddies Canada Teacher Hub <span aria-hidden="true">·</span> Prototype for internal review</p>
-    <p><a href="https://bestbuddies.ca/" target="_blank" rel="noopener">Visit Best Buddies Canada</a></p>
+
+    <img
+      src="assets/bb-reversed-logo.png"
+      alt="Best Buddies Canada"
+      class="footer-logo"
+    >
+
+    <p>
+      Teacher Hub · Prototype for internal review
+    </p>
+
+    <a
+      href="https://bestbuddies.ca/"
+      target="_blank"
+      rel="noopener"
+    >
+      bestbuddies.ca ↗
+    </a>
+
   </div>
+
 </footer>
 
 </body>
