@@ -76,19 +76,7 @@ h3{font-size:1.55rem;line-height:1.2;margin-bottom:10px}
 
 /* HEADER */
 
-.site-header::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:-14px;
-  height:18px;
-  z-index:1;
-  background:
-    radial-gradient(56px 15px at 8% 0,var(--purple) 98%,transparent 100%)
-    0 0/190px 18px repeat-x;
-  pointer-events:none;
-}
+
 
 .site-header{
   background:var(--purple);
@@ -530,4 +518,370 @@ footer a{color:#fff}
 
 .support-photo{
   border-radius:30px 30px 88px 30px;
+}
+
+
+/* =========================================================
+   V5 — closer to Best Buddies Canada: playful, people-first,
+   photo-led, organic shapes, live calendar.
+   ========================================================= */
+
+/* Clean organic header divider */
+.site-header{
+  position:relative;
+  margin-bottom:24px;
+  overflow:visible;
+}
+.header-inner{position:relative;z-index:3}
+.header-wave{
+  position:absolute;
+  left:0;
+  bottom:-23px;
+  width:100%;
+  height:34px;
+  display:block;
+  z-index:2;
+  pointer-events:none;
+}
+.header-wave path{fill:var(--purple)}
+
+/* Make typography feel stronger / younger without inventing a new font */
+h1,h2,h3{font-weight:900}
+.kicker{
+  font-weight:900;
+  letter-spacing:.065em;
+}
+.section-heading::after{
+  width:72px;
+  height:8px;
+  margin-top:22px;
+  border-radius:999px;
+  transform:rotate(-1deg);
+}
+
+/* Home hero — smaller photo object, less giant split-screen */
+.home-hero{
+  width:min(calc(100% - 48px),var(--max));
+  margin:0 auto;
+  min-height:0;
+  max-height:none;
+  display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(340px,.88fr);
+  gap:54px;
+  align-items:center;
+  overflow:visible;
+  padding:54px 0 66px;
+}
+.home-hero-copy-inner{padding:0}
+.home-hero h1{
+  font-size:clamp(3rem,5vw,5rem);
+  line-height:.99;
+  letter-spacing:-.052em;
+}
+.home-hero .lede{
+  max-width:665px;
+  font-size:1.08rem;
+}
+.home-hero-photo{
+  min-height:0;
+  height:345px;
+  overflow:visible;
+  position:relative;
+  isolation:isolate;
+}
+.home-hero-photo img{
+  position:relative;
+  z-index:2;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 42%;
+  border-radius:32px 32px 98px 32px;
+}
+.home-hero-photo::before{
+  content:"";
+  position:absolute;
+  left:-20px;
+  bottom:-18px;
+  width:82%;
+  height:70%;
+  z-index:0;
+  background:var(--teal);
+  border-radius:34px 34px 34px 86px;
+  opacity:1;
+}
+.home-hero-photo::after{
+  content:"";
+  position:absolute;
+  right:-12px;
+  top:-14px;
+  width:68px;
+  height:68px;
+  z-index:0;
+  background:var(--yellow);
+  border-radius:50%;
+}
+
+/* Program selector — photo first, not boxed SaaS cards */
+.program-choice-grid{
+  gap:54px;
+  align-items:start;
+}
+.program-choice,
+.program-choice:nth-child(2){
+  display:block;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  overflow:visible;
+  box-shadow:none;
+}
+.program-choice:hover{
+  border-color:transparent;
+  box-shadow:none;
+  transform:translateY(-3px);
+}
+.program-choice img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:34px 34px 84px 34px;
+  border-bottom:9px solid var(--teal);
+}
+.program-choice:nth-child(2) img{
+  border-radius:34px 84px 34px 34px;
+  border-bottom-color:var(--orange);
+}
+.program-choice-copy{
+  padding:24px 14px 8px;
+  border-top:0 !important;
+}
+.program-choice h3{
+  font-size:2rem;
+  line-height:1.08;
+  margin-bottom:12px;
+}
+.program-overline{
+  color:var(--purple);
+  font-size:.78rem;
+  line-height:1;
+  text-transform:uppercase;
+  font-weight:900;
+  letter-spacing:.08em;
+  margin-bottom:10px;
+}
+.program-choice p{
+  max-width:590px;
+  font-size:1rem;
+}
+.program-choice .go{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:11px 22px;
+  border-radius:999px;
+  background:var(--purple);
+  color:#fff;
+  font-weight:900;
+}
+.program-choice .go::after{
+  content:" →";
+  margin-left:7px;
+}
+
+/* One energetic message between sections */
+.friendship-pop{
+  padding:0 0 78px;
+  background:#fff;
+}
+.friendship-pop-inner{
+  position:relative;
+  padding:29px 42px;
+  background:var(--yellow);
+  border-radius:28px 28px 86px 28px;
+}
+.friendship-pop-inner::after{
+  content:"";
+  position:absolute;
+  right:36px;
+  top:-17px;
+  width:34px;
+  height:34px;
+  background:var(--orange);
+  border-radius:50%;
+}
+.friendship-pop p{
+  margin:0;
+  color:var(--ink);
+  font-size:clamp(1.28rem,2.25vw,1.95rem);
+  line-height:1.25;
+  font-weight:700;
+}
+.friendship-pop strong{
+  color:var(--purple);
+  font-weight:900;
+}
+
+/* Live calendar */
+.calendar-intro-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:58px;
+  align-items:end;
+  margin-bottom:34px;
+}
+.calendar-note{
+  padding:22px 24px;
+  border-left:8px solid var(--yellow);
+  background:#fff;
+  border-radius:0 20px 44px 0;
+}
+.calendar-note strong,
+.calendar-note span{display:block}
+.calendar-note strong{
+  color:var(--ink);
+  margin-bottom:7px;
+}
+.calendar-note span{color:var(--muted)}
+
+.calendar-embed-shell{
+  background:#fff;
+  border:2px solid var(--line);
+  border-radius:30px 30px 88px 30px;
+  overflow:hidden;
+  box-shadow:0 16px 40px rgba(57,41,89,.08);
+}
+.calendar-embed-shell.compact{
+  margin-bottom:56px;
+  border-radius:26px 26px 74px 26px;
+}
+.calendar-embed-top{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:17px 22px;
+  background:var(--purple);
+  color:#fff;
+}
+.calendar-embed-top strong{font-size:1rem}
+.calendar-embed-top a{
+  margin-left:auto;
+  color:#fff;
+  font-weight:800;
+  text-decoration:none;
+}
+.calendar-live-dot{
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  background:var(--yellow);
+  box-shadow:0 0 0 5px rgba(255,212,32,.18);
+}
+.calendar-frame-wrap{
+  width:100%;
+  height:560px;
+  background:#fff;
+}
+.calendar-frame-wrap iframe{
+  width:100%;
+  height:100%;
+  display:block;
+  border:0;
+}
+.calendar-dual{margin-top:48px}
+
+.program-calendar-inline{
+  margin-bottom:58px;
+}
+.program-calendar-heading{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:36px;
+  margin-bottom:26px;
+}
+.program-calendar-heading > div{max-width:800px}
+.program-calendar-heading h2{margin-bottom:14px}
+.program-calendar-heading p{margin:0;color:var(--muted)}
+.program-calendar-heading > a{
+  flex:0 0 auto;
+  font-weight:800;
+}
+
+/* Organic corners without overdoing it */
+.official-calendar{border-radius:30px 30px 88px 30px}
+.path{border-radius:22px 22px 64px 22px}
+.path:nth-child(2){border-radius:22px 64px 22px 22px}
+.path:nth-child(3){border-radius:64px 22px 22px 22px}
+.activity{border-radius:24px 24px 68px 24px}
+.activity:nth-child(even){border-radius:24px 68px 24px 24px}
+.support-photo{border-radius:30px 30px 84px 30px}
+
+/* Keep access easy on tablets/mobile */
+@media(max-width:1050px){
+  .home-hero{
+    width:min(calc(100% - 36px),var(--max));
+    grid-template-columns:1fr;
+    gap:34px;
+    padding-top:40px;
+  }
+  .home-hero-photo{
+    height:320px;
+    max-height:none;
+  }
+  .calendar-intro-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .program-calendar-heading{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:12px;
+  }
+  .calendar-frame-wrap{height:520px}
+}
+
+@media(max-width:760px){
+  .site-header{margin-bottom:18px}
+  .header-wave{height:24px;bottom:-17px}
+  .home-hero{
+    width:min(calc(100% - 32px),var(--max));
+    padding:38px 0 54px;
+  }
+  .home-hero-photo{
+    min-height:0;
+    height:250px;
+  }
+  .home-hero-photo img{
+    border-radius:24px 24px 58px 24px;
+  }
+  .home-hero-photo::before{
+    left:-10px;
+    bottom:-10px;
+  }
+  .home-hero-photo::after{
+    right:-5px;
+    top:-8px;
+    width:48px;
+    height:48px;
+  }
+  .program-choice img{height:235px}
+  .friendship-pop{padding-bottom:58px}
+  .friendship-pop-inner{
+    padding:24px 25px;
+    border-radius:22px 22px 58px 22px;
+  }
+  .calendar-embed-shell{
+    border-radius:22px 22px 54px 22px;
+  }
+  .calendar-embed-top{
+    align-items:flex-start;
+    flex-wrap:wrap;
+  }
+  .calendar-embed-top a{
+    width:100%;
+    margin-left:23px;
+  }
+  .calendar-frame-wrap{height:475px}
 }
