@@ -30,9 +30,11 @@
   box-sizing: border-box;
 }
 
+
 html {
   scroll-behavior: smooth;
 }
+
 
 body {
   margin: 0;
@@ -40,7 +42,11 @@ body {
   background: var(--white);
   color: var(--text);
 
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family:
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
 
   font-size: 19px;
   line-height: 1.62;
@@ -48,10 +54,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+
 img {
   display: block;
+
   max-width: 100%;
+  height: auto;
 }
+
 
 a {
   color: var(--purple);
@@ -60,10 +70,13 @@ a {
   text-underline-offset: 4px;
 }
 
+
 button,
-input {
+input,
+summary {
   font: inherit;
 }
+
 
 a:focus-visible,
 button:focus-visible,
@@ -72,6 +85,7 @@ input:focus-visible {
   outline: 4px solid var(--yellow);
   outline-offset: 4px;
 }
+
 
 .skip-link {
   position: absolute;
@@ -88,12 +102,15 @@ input:focus-visible {
   font-weight: 900;
 }
 
+
 .skip-link:focus {
   top: 16px;
 }
 
+
 .portal-container {
   width: min(calc(100% - 56px), var(--max));
+
   margin-inline: auto;
 }
 
@@ -114,29 +131,34 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
+
 .portal-display {
   margin: 0;
 
   color: var(--ink);
 
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family:
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
 
-  font-size: clamp(4rem, 6.4vw, 7rem);
+  font-size: clamp(4rem, 6.3vw, 7rem);
   font-weight: 900;
 
   line-height: 0.82;
   letter-spacing: -0.07em;
 
   text-transform: uppercase;
-
-  -webkit-text-stroke: 0.3px currentColor;
 }
+
 
 .portal-display .purple {
   display: block;
 
   color: var(--purple);
 }
+
 
 .portal-heading {
   margin: 0;
@@ -150,13 +172,13 @@ input:focus-visible {
   letter-spacing: -0.06em;
 
   text-transform: uppercase;
-
-  -webkit-text-stroke: 0.25px currentColor;
 }
+
 
 .portal-heading .purple {
   color: var(--purple);
 }
+
 
 .portal-lede {
   max-width: 770px;
@@ -174,12 +196,14 @@ input:focus-visible {
 
 .portal-header {
   position: relative;
+
   z-index: 1000;
 
   background: var(--purple);
 
   border-top: 7px solid var(--yellow);
 }
+
 
 .portal-header-inner {
   min-height: 104px;
@@ -190,6 +214,7 @@ input:focus-visible {
 
   gap: 35px;
 }
+
 
 .portal-brand {
   display: flex;
@@ -202,10 +227,12 @@ input:focus-visible {
   text-decoration: none;
 }
 
+
 .portal-brand img {
   width: auto;
   height: 77px;
 }
+
 
 .portal-brand-copy {
   display: flex;
@@ -213,6 +240,7 @@ input:focus-visible {
 
   gap: 2px;
 }
+
 
 .portal-brand-copy strong {
   color: var(--white);
@@ -222,6 +250,7 @@ input:focus-visible {
 
   line-height: 1.05;
 }
+
 
 .portal-brand-copy span {
   color: var(--yellow);
@@ -235,7 +264,7 @@ input:focus-visible {
 
 
 /* =========================================================
-   NAVIGATION
+   DESKTOP NAVIGATION
 ========================================================= */
 
 .header-actions {
@@ -244,6 +273,7 @@ input:focus-visible {
 
   gap: 12px;
 }
+
 
 .portal-nav {
   display: flex;
@@ -257,8 +287,11 @@ input:focus-visible {
 
   border-radius: 999px;
 
-  box-shadow: 0 7px 20px rgba(38, 24, 68, 0.14);
+  box-shadow:
+    0 7px 20px
+    rgba(38, 24, 68, 0.14);
 }
+
 
 .portal-nav > a {
   min-height: 45px;
@@ -281,10 +314,12 @@ input:focus-visible {
   text-decoration: none;
 }
 
+
 .portal-nav > a:hover {
   background: var(--yellow);
   color: var(--ink);
 }
+
 
 .portal-lang {
   display: flex;
@@ -297,8 +332,11 @@ input:focus-visible {
 
   border-radius: 999px;
 
-  box-shadow: 0 7px 20px rgba(38, 24, 68, 0.14);
+  box-shadow:
+    0 7px 20px
+    rgba(38, 24, 68, 0.14);
 }
+
 
 .portal-lang a {
   min-width: 44px;
@@ -317,6 +355,7 @@ input:focus-visible {
 
   text-decoration: none;
 }
+
 
 .portal-lang .current {
   background: var(--purple);
@@ -350,6 +389,7 @@ input:focus-visible {
   display: none;
 }
 
+
 .portal-menu summary {
   min-height: 47px;
 
@@ -372,9 +412,11 @@ input:focus-visible {
   list-style: none;
 }
 
+
 .portal-menu summary::-webkit-details-marker {
   display: none;
 }
+
 
 .portal-menu-panel {
   position: absolute;
@@ -391,8 +433,11 @@ input:focus-visible {
 
   border-radius: 22px 22px 58px 22px;
 
-  box-shadow: 0 20px 50px rgba(32, 20, 56, 0.24);
+  box-shadow:
+    0 20px 50px
+    rgba(32, 20, 56, 0.24);
 }
+
 
 .portal-menu-panel > a {
   min-height: 52px;
@@ -411,9 +456,11 @@ input:focus-visible {
   text-decoration: none;
 }
 
+
 .portal-menu-panel > a:hover {
   color: var(--purple);
 }
+
 
 .portal-menu-languages {
   display: flex;
@@ -422,6 +469,7 @@ input:focus-visible {
 
   padding-top: 15px;
 }
+
 
 .portal-menu-languages a {
   min-width: 52px;
@@ -440,6 +488,7 @@ input:focus-visible {
 
   text-decoration: none;
 }
+
 
 .portal-menu-languages .current {
   background: var(--purple);
@@ -476,11 +525,15 @@ input:focus-visible {
     box-shadow 0.16s ease;
 }
 
+
 .portal-button:hover {
   transform: translateY(-2px);
 
-  box-shadow: 0 8px 20px rgba(53, 34, 89, 0.15);
+  box-shadow:
+    0 8px 20px
+    rgba(53, 34, 89, 0.15);
 }
+
 
 .portal-button.yellow {
   background: var(--yellow);
@@ -490,21 +543,26 @@ input:focus-visible {
 
 /* =========================================================
    HOMEPAGE HERO
+   WIDE DESKTOP ONLY
 ========================================================= */
 
 .home-banner {
   position: relative;
 
   width: 100%;
-  height: clamp(515px, 33vw, 590px);
+
+  aspect-ratio: 1800 / 700;
+
+  min-height: 560px;
+  max-height: 690px;
 
   overflow: hidden;
 
   background: var(--white);
 }
 
-.home-banner picture,
-.home-banner picture img {
+
+.home-banner > picture {
   position: absolute;
   inset: 0;
 
@@ -512,41 +570,41 @@ input:focus-visible {
   height: 100%;
 }
 
-.home-banner picture img {
+
+.home-banner > picture img {
+  width: 100%;
+  height: 100%;
+
   object-fit: cover;
   object-position: center;
 }
+
 
 .home-banner-content {
   position: absolute;
   inset: 0;
 
+  z-index: 2;
+
   display: flex;
   align-items: center;
 }
 
+
 .home-banner-copy {
-  width: 46%;
-  max-width: 715px;
+  width: 43%;
+  max-width: 670px;
 }
 
-.home-banner-copy h1 {
-  margin: 0 0 26px;
 
-  color: var(--ink);
+.home-banner-copy .portal-kicker {
+  max-width: 540px;
 
-  font-size: clamp(3.5rem, 4.7vw, 5.35rem);
-  font-weight: 900;
+  margin-bottom: 14px;
 
-  line-height: 0.92;
-  letter-spacing: -0.064em;
-
-  -webkit-text-stroke: 0.25px currentColor;
+  font-size: 0.81rem;
 }
 
-.home-banner-copy h1 span {
-  color: var(--purple);
-}
 
 .hero-line {
   width: 72px;
@@ -559,24 +617,56 @@ input:focus-visible {
   border-radius: 999px;
 }
 
+
+.home-banner-copy h1 {
+  max-width: 650px;
+
+  margin: 0 0 27px;
+
+  color: var(--ink);
+
+  font-size:
+    clamp(
+      3.4rem,
+      4.15vw,
+      5rem
+    );
+
+  font-weight: 900;
+
+  line-height: 0.91;
+  letter-spacing: -0.064em;
+}
+
+
+.hero-purple {
+  color: var(--purple);
+}
+
+
 .hero-copy {
-  max-width: 700px;
+  max-width: 610px;
 
   margin: 0;
 
   color: var(--muted);
 
-  font-size: 1.14rem;
-  line-height: 1.63;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
+
 .hero-thank-you {
+  max-width: 600px;
+
   margin: 14px 0 0;
 
   color: var(--purple);
 
-  font-size: 1rem;
+  font-size: 0.97rem;
   font-weight: 850;
+
+  line-height: 1.45;
 }
 
 
@@ -592,6 +682,7 @@ input:focus-visible {
   background: var(--white);
 }
 
+
 .program-launch-heading {
   position: relative;
 
@@ -600,9 +691,16 @@ input:focus-visible {
   margin-bottom: 52px;
 }
 
+
 .program-launch-heading .portal-display {
-  font-size: clamp(3.7rem, 5.8vw, 6.2rem);
+  font-size:
+    clamp(
+      3.7rem,
+      5.8vw,
+      6.2rem
+    );
 }
+
 
 .program-heading-row {
   display: flex;
@@ -610,6 +708,7 @@ input:focus-visible {
 
   gap: 35px;
 }
+
 
 .program-arrow {
   width: 118px;
@@ -619,6 +718,7 @@ input:focus-visible {
 
   flex: 0 0 auto;
 }
+
 
 .program-arrow path,
 .program-arrow polyline {
@@ -631,12 +731,14 @@ input:focus-visible {
   stroke-linejoin: round;
 }
 
+
 .program-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
   gap: 72px;
 }
+
 
 .program-tile {
   display: block;
@@ -645,6 +747,7 @@ input:focus-visible {
 
   text-decoration: none;
 }
+
 
 .program-photo {
   position: relative;
@@ -658,6 +761,7 @@ input:focus-visible {
   border-radius: 34px;
 }
 
+
 .program-photo img {
   width: 100%;
   height: 100%;
@@ -667,17 +771,21 @@ input:focus-visible {
   transition: transform 0.2s ease;
 }
 
+
 .program-tile:hover .program-photo img {
   transform: scale(1.018);
 }
+
 
 .program-tile.elementary .program-photo {
   border-bottom: 9px solid var(--teal);
 }
 
+
 .program-tile.highschool .program-photo {
   border-bottom: 9px solid var(--orange);
 }
+
 
 .program-info {
   display: flex;
@@ -689,6 +797,7 @@ input:focus-visible {
   padding: 27px 10px 0;
 }
 
+
 .program-info h2 {
   max-width: 590px;
 
@@ -696,26 +805,31 @@ input:focus-visible {
 
   color: var(--ink);
 
-  font-size: clamp(2.25rem, 3.1vw, 3.4rem);
+  font-size:
+    clamp(
+      2.25rem,
+      3.1vw,
+      3.4rem
+    );
+
   font-weight: 900;
 
   line-height: 0.9;
   letter-spacing: -0.055em;
 
   text-transform: uppercase;
-
-  -webkit-text-stroke: 0.2px currentColor;
 }
+
 
 .program-title-arrow {
   flex: 0 0 auto;
 
+  width: 55px;
+  height: 55px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  width: 55px;
-  height: 55px;
 
   background: var(--purple);
   color: var(--white);
@@ -727,6 +841,7 @@ input:focus-visible {
 
   transition: transform 0.18s ease;
 }
+
 
 .program-tile:hover .program-title-arrow {
   transform: translateX(5px);
@@ -743,6 +858,7 @@ input:focus-visible {
   background: var(--wash);
 }
 
+
 .calendar-intro {
   display: grid;
   grid-template-columns: 1fr 0.72fr;
@@ -754,6 +870,7 @@ input:focus-visible {
   margin-bottom: 35px;
 }
 
+
 .calendar-intro p {
   margin: 0 0 6px;
 
@@ -763,6 +880,7 @@ input:focus-visible {
   line-height: 1.64;
 }
 
+
 .calendar-tags {
   display: flex;
   flex-wrap: wrap;
@@ -771,6 +889,7 @@ input:focus-visible {
 
   margin-bottom: 28px;
 }
+
 
 .calendar-tags span {
   padding: 8px 15px;
@@ -785,6 +904,7 @@ input:focus-visible {
   font-weight: 850;
 }
 
+
 .calendar-box {
   overflow: hidden;
 
@@ -793,6 +913,7 @@ input:focus-visible {
   border: 2px solid var(--line);
   border-radius: 28px 28px 82px 28px;
 }
+
 
 .calendar-bar {
   min-height: 65px;
@@ -809,12 +930,14 @@ input:focus-visible {
   color: var(--white);
 }
 
+
 .calendar-bar strong {
   display: flex;
   align-items: center;
 
   gap: 11px;
 }
+
 
 .calendar-dot {
   width: 11px;
@@ -825,6 +948,7 @@ input:focus-visible {
   border-radius: 50%;
 }
 
+
 .calendar-bar a {
   color: var(--white);
 
@@ -833,9 +957,11 @@ input:focus-visible {
   text-decoration: none;
 }
 
+
 .calendar-frame {
   height: 520px;
 }
+
 
 .calendar-frame iframe {
   display: block;
@@ -857,6 +983,7 @@ input:focus-visible {
   background: var(--white);
 }
 
+
 .tool-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -865,6 +992,7 @@ input:focus-visible {
 
   border-top: 4px solid var(--ink);
 }
+
 
 .tool-link {
   min-height: 245px;
@@ -882,9 +1010,11 @@ input:focus-visible {
   text-decoration: none;
 }
 
+
 .tool-link:last-child {
   border-right: 0;
 }
+
 
 .tool-link > span {
   color: var(--purple);
@@ -895,6 +1025,7 @@ input:focus-visible {
   letter-spacing: 0.07em;
   text-transform: uppercase;
 }
+
 
 .tool-link h3 {
   margin: 13px 0;
@@ -908,6 +1039,7 @@ input:focus-visible {
   letter-spacing: -0.035em;
 }
 
+
 .tool-link p {
   margin: 0 0 20px;
 
@@ -915,6 +1047,7 @@ input:focus-visible {
 
   font-size: 0.98rem;
 }
+
 
 .tool-link strong {
   margin-top: auto;
@@ -933,6 +1066,7 @@ input:focus-visible {
   background: var(--teal);
 }
 
+
 .support-grid {
   display: grid;
   grid-template-columns: 1fr 390px;
@@ -942,6 +1076,7 @@ input:focus-visible {
   align-items: center;
 }
 
+
 .support-photo {
   height: 290px;
 
@@ -949,6 +1084,7 @@ input:focus-visible {
 
   border-radius: 30px 30px 82px 30px;
 }
+
 
 .support-photo img {
   width: 100%;
@@ -968,6 +1104,7 @@ input:focus-visible {
   background: var(--white);
 }
 
+
 .switch-program {
   display: inline-flex;
   align-items: center;
@@ -984,6 +1121,7 @@ input:focus-visible {
   text-decoration: none;
 }
 
+
 .program-page-hero-grid {
   display: grid;
   grid-template-columns: 1fr 0.84fr;
@@ -992,6 +1130,7 @@ input:focus-visible {
 
   align-items: center;
 }
+
 
 .program-page-label {
   color: var(--purple);
@@ -1003,27 +1142,34 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
+
 .program-page-hero h1 {
   margin: 12px 0 22px;
 
   color: var(--ink);
 
-  font-size: clamp(3.9rem, 6.2vw, 6.7rem);
+  font-size:
+    clamp(
+      3.9rem,
+      6.2vw,
+      6.7rem
+    );
+
   font-weight: 900;
 
   line-height: 0.82;
   letter-spacing: -0.07em;
 
   text-transform: uppercase;
-
-  -webkit-text-stroke: 0.3px currentColor;
 }
+
 
 .program-page-hero h1 .purple {
   display: block;
 
   color: var(--purple);
 }
+
 
 .program-page-hero p {
   max-width: 720px;
@@ -1036,6 +1182,7 @@ input:focus-visible {
   line-height: 1.64;
 }
 
+
 .program-page-image {
   height: 345px;
 
@@ -1045,9 +1192,11 @@ input:focus-visible {
   border-radius: 32px 32px 85px 32px;
 }
 
+
 .high-school-page .program-page-image {
   border-bottom-color: var(--orange);
 }
+
 
 .program-page-image img {
   width: 100%;
@@ -1067,6 +1216,7 @@ input:focus-visible {
   background: var(--wash);
 }
 
+
 .program-calendar-heading {
   display: grid;
   grid-template-columns: 1fr 0.72fr;
@@ -1078,6 +1228,7 @@ input:focus-visible {
   margin-bottom: 34px;
 }
 
+
 .program-calendar-heading p {
   margin: 0 0 6px;
 
@@ -1086,8 +1237,14 @@ input:focus-visible {
   font-size: 1.1rem;
 }
 
+
 .program-calendar-heading .portal-display {
-  font-size: clamp(3.5rem, 5.3vw, 5.8rem);
+  font-size:
+    clamp(
+      3.5rem,
+      5.3vw,
+      5.8rem
+    );
 }
 
 
@@ -1101,6 +1258,7 @@ input:focus-visible {
   background: var(--white);
 }
 
+
 .month-board-heading {
   display: grid;
   grid-template-columns: 1fr 0.72fr;
@@ -1112,6 +1270,7 @@ input:focus-visible {
   margin-bottom: 42px;
 }
 
+
 .month-board-heading p {
   margin: 0 0 4px;
 
@@ -1120,12 +1279,14 @@ input:focus-visible {
   font-size: 1.1rem;
 }
 
+
 .month-board {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 
   gap: 14px;
 }
+
 
 .month-tile {
   position: relative;
@@ -1152,27 +1313,35 @@ input:focus-visible {
     box-shadow 0.18s ease;
 }
 
+
 .month-tile:nth-child(even) {
   border-radius: 20px 48px 20px 20px;
 }
+
 
 .month-tile.available {
   border: 0;
 }
 
+
 .month-tile.september {
   background: var(--yellow);
 }
+
 
 .month-tile.october {
   background: var(--lavender);
 }
 
+
 .month-tile.available:hover {
   transform: translateY(-4px);
 
-  box-shadow: 0 13px 30px rgba(46, 31, 78, 0.1);
+  box-shadow:
+    0 13px 30px
+    rgba(46, 31, 78, 0.1);
 }
+
 
 .month-tile .month-number {
   color: var(--purple);
@@ -1184,12 +1353,19 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
+
 .month-tile h3 {
   margin: 12px 0 5px;
 
   color: var(--ink);
 
-  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-size:
+    clamp(
+      1.45rem,
+      2vw,
+      2rem
+    );
+
   font-weight: 900;
 
   line-height: 0.95;
@@ -1197,6 +1373,7 @@ input:focus-visible {
 
   text-transform: uppercase;
 }
+
 
 .month-tile p {
   margin: 0;
@@ -1206,6 +1383,7 @@ input:focus-visible {
   font-size: 0.86rem;
   line-height: 1.42;
 }
+
 
 .month-tile-arrow {
   margin-top: auto;
@@ -1217,9 +1395,11 @@ input:focus-visible {
   font-weight: 900;
 }
 
+
 .month-tile.future {
   opacity: 0.65;
 }
+
 
 .month-tile.future h3 {
   color: var(--muted);
@@ -1238,9 +1418,11 @@ input:focus-visible {
   scroll-margin-top: 20px;
 }
 
+
 .month-detail.alt {
   background: var(--wash);
 }
+
 
 .month-detail-heading {
   display: grid;
@@ -1250,6 +1432,7 @@ input:focus-visible {
 
   align-items: start;
 }
+
 
 .month-big-name {
   color: var(--purple);
@@ -1261,21 +1444,27 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
+
 .month-detail-title {
   margin: 7px 0 18px;
 
   color: var(--ink);
 
-  font-size: clamp(3.7rem, 6vw, 6.2rem);
+  font-size:
+    clamp(
+      3.7rem,
+      6vw,
+      6.2rem
+    );
+
   font-weight: 900;
 
   line-height: 0.81;
   letter-spacing: -0.07em;
 
   text-transform: uppercase;
-
-  -webkit-text-stroke: 0.3px currentColor;
 }
+
 
 .month-detail-intro {
   max-width: 570px;
@@ -1285,6 +1474,7 @@ input:focus-visible {
   font-size: 1.08rem;
 }
 
+
 .month-checklist {
   padding: 33px 36px;
 
@@ -1293,6 +1483,7 @@ input:focus-visible {
 
   border-radius: 28px 28px 74px 28px;
 }
+
 
 .month-checklist-label {
   color: var(--yellow);
@@ -1304,6 +1495,7 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
+
 .month-checklist h3 {
   margin: 9px 0 16px;
 
@@ -1313,6 +1505,7 @@ input:focus-visible {
   font-weight: 900;
 }
 
+
 .month-checklist ul {
   margin: 0;
   padding: 0;
@@ -1320,11 +1513,15 @@ input:focus-visible {
   list-style: none;
 }
 
+
 .month-checklist li {
   padding: 11px 0;
 
-  border-bottom: 1px solid rgba(255,255,255,0.24);
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.24);
 }
+
 
 .month-checklist li:last-child {
   border-bottom: 0;
@@ -1332,18 +1529,20 @@ input:focus-visible {
 
 
 /* =========================================================
-   MONTH SECTION HEADERS
+   MONTH SUBSECTIONS
 ========================================================= */
 
 .month-subsection {
   margin-top: 55px;
 }
 
+
 .month-subsection-heading {
   max-width: 850px;
 
   margin-bottom: 28px;
 }
+
 
 .month-subsection-heading span {
   color: var(--purple);
@@ -1355,12 +1554,19 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
+
 .month-subsection-heading h3 {
-  margin: 8px 0 8px;
+  margin: 8px 0;
 
   color: var(--ink);
 
-  font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+  font-size:
+    clamp(
+      2.2rem,
+      3.5vw,
+      3.5rem
+    );
+
   font-weight: 900;
 
   line-height: 0.94;
@@ -1368,6 +1574,7 @@ input:focus-visible {
 
   text-transform: uppercase;
 }
+
 
 .month-subsection-heading p {
   max-width: 720px;
@@ -1379,7 +1586,7 @@ input:focus-visible {
 
 
 /* =========================================================
-   READY-TO-RUN IDEAS
+   ACTIVITY BOARD
 ========================================================= */
 
 .activity-board {
@@ -1388,6 +1595,7 @@ input:focus-visible {
 
   gap: 16px;
 }
+
 
 .activity-block {
   min-height: 245px;
@@ -1399,11 +1607,13 @@ input:focus-visible {
   border-radius: 20px 20px 55px 20px;
 }
 
+
 .activity-block:nth-child(2) {
   background: var(--teal-soft);
 
   border-radius: 20px 55px 20px 20px;
 }
+
 
 .activity-block:nth-child(3) {
   background: var(--orange-soft);
@@ -1411,9 +1621,11 @@ input:focus-visible {
   border-radius: 55px 20px 20px 20px;
 }
 
+
 .activity-block:nth-child(4) {
   background: var(--lavender);
 }
+
 
 .activity-block .meta {
   color: var(--purple);
@@ -1425,6 +1637,7 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
+
 .activity-block h4 {
   margin: 11px 0;
 
@@ -1435,6 +1648,7 @@ input:focus-visible {
 
   line-height: 1;
 }
+
 
 .activity-block p {
   margin: 0;
@@ -1457,6 +1671,7 @@ input:focus-visible {
   gap: 18px;
 }
 
+
 .path-block {
   min-height: 225px;
 
@@ -1468,13 +1683,16 @@ input:focus-visible {
   border-radius: 20px 20px 55px 20px;
 }
 
+
 .path-block:nth-child(2) {
   border-top-color: var(--teal);
 }
 
+
 .path-block:nth-child(3) {
   border-top-color: var(--orange);
 }
+
 
 .path-block .meta {
   color: var(--purple);
@@ -1486,6 +1704,7 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
+
 .path-block h4 {
   margin: 11px 0;
 
@@ -1496,6 +1715,7 @@ input:focus-visible {
 
   line-height: 0.98;
 }
+
 
 .path-block p {
   color: var(--muted);
@@ -1515,6 +1735,7 @@ input:focus-visible {
   gap: 14px;
 }
 
+
 .month-resource {
   min-height: 150px;
 
@@ -1532,6 +1753,7 @@ input:focus-visible {
   text-decoration: none;
 }
 
+
 .month-resource span {
   color: var(--purple);
 
@@ -1542,6 +1764,7 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
+
 .month-resource strong {
   margin-top: 8px;
 
@@ -1549,6 +1772,7 @@ input:focus-visible {
 
   font-size: 1.15rem;
 }
+
 
 .month-resource b {
   margin-top: auto;
@@ -1579,6 +1803,7 @@ input:focus-visible {
   border-radius: 30px 30px 82px 30px;
 }
 
+
 .leadership-feature-label {
   color: var(--purple);
 
@@ -1589,12 +1814,19 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
+
 .leadership-feature h3 {
   margin: 9px 0 0;
 
   color: var(--ink);
 
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size:
+    clamp(
+      2rem,
+      3vw,
+      3rem
+    );
+
   font-weight: 900;
 
   line-height: 0.92;
@@ -1603,6 +1835,7 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
+
 .leadership-list {
   margin: 0;
   padding: 0;
@@ -1610,13 +1843,17 @@ input:focus-visible {
   list-style: none;
 }
 
+
 .leadership-list li {
   padding: 11px 0;
 
-  border-bottom: 1px solid rgba(23,19,29,0.18);
+  border-bottom:
+    1px solid
+    rgba(23, 19, 29, 0.18);
 
   font-weight: 700;
 }
+
 
 .leadership-list li:last-child {
   border-bottom: 0;
@@ -1624,7 +1861,7 @@ input:focus-visible {
 
 
 /* =========================================================
-   OPTIONAL FEATURE BOX
+   FEATURE BOX
 ========================================================= */
 
 .month-feature-box {
@@ -1638,6 +1875,7 @@ input:focus-visible {
   border-radius: 0 24px 62px 0;
 }
 
+
 .month-feature-box h3 {
   margin: 0 0 8px;
 
@@ -1646,6 +1884,7 @@ input:focus-visible {
   font-size: 1.45rem;
   font-weight: 900;
 }
+
 
 .month-feature-box p {
   max-width: 900px;
@@ -1664,6 +1903,7 @@ input:focus-visible {
   background: var(--wash);
 }
 
+
 .role-grid {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
@@ -1673,9 +1913,11 @@ input:focus-visible {
   align-items: start;
 }
 
+
 .role-list {
   border-top: 4px solid var(--ink);
 }
+
 
 .role-line {
   display: grid;
@@ -1687,6 +1929,7 @@ input:focus-visible {
 
   border-bottom: 1px solid var(--line);
 }
+
 
 .role-line strong {
   color: var(--ink);
@@ -1706,6 +1949,7 @@ input:focus-visible {
   color: var(--white);
 }
 
+
 .portal-footer-inner {
   display: flex;
   align-items: center;
@@ -1713,16 +1957,25 @@ input:focus-visible {
   gap: 27px;
 }
 
+
 .portal-footer img {
   width: auto;
   height: 63px;
 }
 
+
 .portal-footer p {
   margin: 0;
 
-  color: rgba(255,255,255,0.78);
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.78
+    );
 }
+
 
 .portal-footer a {
   margin-left: auto;
@@ -1734,52 +1987,165 @@ input:focus-visible {
 
 
 /* =========================================================
-   NARROW DESKTOP
+   LAPTOP / TABLET
+   TEXT FIRST, FULL TABLET ART BELOW
 ========================================================= */
 
-@media (max-width: 1160px) {
+@media (max-width: 1249px) {
 
   .portal-container {
-    width: min(calc(100% - 44px), var(--max));
+    width:
+      min(
+        calc(100% - 44px),
+        var(--max)
+      );
   }
+
+
+  /* NAV COLLAPSES EARLY */
 
   .portal-nav,
   .portal-lang {
     display: none;
   }
 
+
   .portal-menu {
     display: block;
   }
+
 
   .portal-header-inner {
     min-height: 92px;
   }
 
+
+  /* =====================================================
+     HERO
+  ===================================================== */
+
   .home-banner {
-    height: 680px;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    aspect-ratio: auto;
+
+    min-height: 0;
+    max-height: none;
+
+    overflow: visible;
+
+    background: var(--white);
   }
+
+
+  .home-banner-content {
+    position: relative;
+    inset: auto;
+
+    order: 1;
+
+    display: block;
+
+    width: 100%;
+
+    background: var(--white);
+  }
+
+
+  .home-banner-content .portal-container {
+    padding-top: 58px;
+    padding-bottom: 48px;
+  }
+
 
   .home-banner-copy {
-    width: 45%;
-    max-width: 480px;
+    width: 100%;
+    max-width: 760px;
   }
+
+
+  .home-banner-copy .portal-kicker {
+    max-width: 600px;
+
+    font-size: 0.8rem;
+  }
+
 
   .home-banner-copy h1 {
-    font-size: clamp(2.6rem, 4.8vw, 3.6rem);
+    max-width: 720px;
+
+    margin-bottom: 26px;
+
+    font-size:
+      clamp(
+        3.5rem,
+        7vw,
+        5.4rem
+      );
   }
 
+
   .hero-copy {
-    font-size: 0.98rem;
+    max-width: 720px;
+
+    font-size: 1.08rem;
   }
+
+
+  .hero-thank-you {
+    max-width: 700px;
+
+    font-size: 0.96rem;
+  }
+
+
+  /* FULL TABLET ART */
+
+  .home-banner > picture {
+    position: relative;
+    inset: auto;
+
+    order: 2;
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    overflow: hidden;
+  }
+
+
+  .home-banner > picture img {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+    object-position: center;
+
+    content:
+      url("assets/tabletbanner.png");
+  }
+
+
+  /* =====================================================
+     REST OF LAYOUT
+  ===================================================== */
 
   .program-grid {
     gap: 38px;
   }
 
+
   .program-photo {
     height: 300px;
   }
+
 
   .calendar-intro,
   .program-page-hero-grid,
@@ -1791,31 +2157,41 @@ input:focus-visible {
     grid-template-columns: 1fr;
   }
 
+
   .program-page-image {
     max-width: 720px;
   }
+
 
   .month-board {
     grid-template-columns: repeat(3, 1fr);
   }
 
+
   .activity-board {
     grid-template-columns: 1fr 1fr;
   }
+
 
   .leadership-feature {
     grid-template-columns: 1fr;
   }
 
+
   .tool-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+
+  .tool-link:nth-child(2) {
+    border-right: 0;
   }
 
 }
 
 
 /* =========================================================
-   TABLET / MOBILE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 760px) {
@@ -1824,108 +2200,147 @@ input:focus-visible {
     font-size: 17px;
   }
 
+
   .portal-container {
-    width: min(calc(100% - 32px), var(--max));
+    width:
+      min(
+        calc(100% - 32px),
+        var(--max)
+      );
   }
+
 
   .portal-header {
     border-top-width: 6px;
   }
 
+
   .portal-header-inner {
     min-height: 84px;
   }
+
 
   .portal-brand img {
     height: 59px;
   }
 
+
   .portal-brand-copy strong {
     font-size: 0.9rem;
   }
 
+
   .portal-brand-copy span {
     display: none;
   }
+
 
   .portal-wave {
     height: 14px;
   }
 
 
-  /* HERO */
+  /* =====================================================
+     MOBILE HERO
+  ===================================================== */
 
-  .home-banner {
-    display: flex;
-    flex-direction: column;
-
-    height: auto;
-
-    overflow: visible;
+  .home-banner-content .portal-container {
+    padding-top: 46px;
+    padding-bottom: 35px;
   }
 
-  .home-banner-content {
-    position: relative;
-
-    order: 1;
-
-    padding: 48px 0 34px;
-  }
-
-  .home-banner picture {
-    position: relative;
-
-    order: 2;
-
-    height: 440px;
-  }
-
-  .home-banner picture img {
-    object-position: center bottom;
-  }
 
   .home-banner-copy {
-    width: 100%;
-    max-width: none;
+    max-width: 620px;
   }
+
+
+  .home-banner-copy .portal-kicker {
+    max-width: 450px;
+
+    font-size: 0.72rem;
+  }
+
+
+  .hero-line {
+    width: 60px;
+    height: 7px;
+
+    margin: 15px 0 24px;
+  }
+
 
   .home-banner-copy h1 {
-    font-size: clamp(2.8rem, 11vw, 4rem);
+    max-width: 610px;
+
+    font-size:
+      clamp(
+        2.8rem,
+        11vw,
+        4rem
+      );
   }
 
+
   .hero-copy {
+    max-width: 590px;
+
     font-size: 1rem;
   }
 
 
-  /* PROGRAMS */
+  .hero-thank-you {
+    max-width: 570px;
+
+    font-size: 0.88rem;
+  }
+
+
+  /* FULL MOBILE ART */
+
+  .home-banner > picture img {
+    content:
+      url("assets/mobilebanner.png");
+  }
+
+
+  /* =====================================================
+     PROGRAMS
+  ===================================================== */
 
   .program-launch {
     padding: 68px 0 80px;
   }
 
+
   .program-heading-row {
     display: block;
   }
+
 
   .program-arrow {
     display: none;
   }
 
+
   .program-grid {
     grid-template-columns: 1fr;
   }
 
+
   .program-photo {
     height: 260px;
   }
+
 
   .program-info h2 {
     font-size: 2.35rem;
   }
 
 
-  /* CALENDAR */
+  /* =====================================================
+     SECTIONS
+  ===================================================== */
 
   .calendar-home,
   .program-calendar-section,
@@ -1937,6 +2352,7 @@ input:focus-visible {
     padding: 70px 0;
   }
 
+
   .calendar-bar {
     flex-direction: column;
     align-items: flex-start;
@@ -1944,33 +2360,46 @@ input:focus-visible {
     gap: 8px;
   }
 
+
   .calendar-frame {
     height: 470px;
   }
 
 
-  /* PROGRAM PAGE */
+  /* =====================================================
+     PROGRAM PAGE
+  ===================================================== */
 
   .program-page-hero {
     padding: 44px 0 50px;
   }
 
+
   .program-page-hero h1 {
-    font-size: clamp(3.2rem, 14vw, 4.8rem);
+    font-size:
+      clamp(
+        3.2rem,
+        14vw,
+        4.8rem
+      );
   }
+
 
   .program-page-image {
     height: 245px;
   }
 
 
-  /* MONTH BOARD */
+  /* =====================================================
+     MONTH BOARD
+  ===================================================== */
 
   .month-board {
     grid-template-columns: 1fr 1fr;
 
     gap: 10px;
   }
+
 
   .month-tile {
     min-height: 155px;
@@ -1979,7 +2408,9 @@ input:focus-visible {
   }
 
 
-  /* MONTH DETAILS */
+  /* =====================================================
+     MONTH DETAIL
+  ===================================================== */
 
   .activity-board,
   .path-board,
@@ -1987,9 +2418,16 @@ input:focus-visible {
     grid-template-columns: 1fr;
   }
 
+
   .month-detail-title {
-    font-size: clamp(3.3rem, 14vw, 4.8rem);
+    font-size:
+      clamp(
+        3.3rem,
+        14vw,
+        4.8rem
+      );
   }
+
 
   .role-line {
     grid-template-columns: 1fr;
@@ -1998,11 +2436,14 @@ input:focus-visible {
   }
 
 
-  /* RESOURCES */
+  /* =====================================================
+     RESOURCES
+  ===================================================== */
 
   .tool-grid {
     grid-template-columns: 1fr;
   }
+
 
   .tool-link {
     min-height: 190px;
@@ -2011,12 +2452,15 @@ input:focus-visible {
   }
 
 
-  /* FOOTER */
+  /* =====================================================
+     FOOTER
+  ===================================================== */
 
   .portal-footer-inner {
     flex-direction: column;
     align-items: flex-start;
   }
+
 
   .portal-footer a {
     margin-left: 0;
@@ -2035,9 +2479,6 @@ input:focus-visible {
     display: none;
   }
 
-  .home-banner picture {
-    height: 390px;
-  }
 
   .month-board {
     grid-template-columns: 1fr;
@@ -2056,395 +2497,12 @@ input:focus-visible {
     scroll-behavior: auto;
   }
 
+
   .portal-button,
   .program-photo img,
   .program-title-arrow,
   .month-tile {
     transition: none;
-  }
-
-}
-
-/* =========================================================
-   FINAL HOMEPAGE HERO LAYOUT
-   Text and artwork are physically separate.
-   Keep this block at the VERY BOTTOM of the stylesheet.
-========================================================= */
-
-
-/* =========================================================
-   LARGE DESKTOP
-========================================================= */
-
-.home-banner {
-  position: relative !important;
-
-  display: grid !important;
-  grid-template-columns:
-    minmax(500px, 44%)
-    minmax(0, 56%) !important;
-
-  width: 100% !important;
-  height: auto !important;
-  min-height: 620px !important;
-
-  overflow: hidden !important;
-
-  background: #ffffff !important;
-}
-
-
-/* LEFT: COPY */
-
-.home-banner-content {
-  position: relative !important;
-  inset: auto !important;
-
-  grid-column: 1 !important;
-  grid-row: 1 !important;
-
-  z-index: 2 !important;
-
-  display: flex !important;
-  align-items: center !important;
-
-  width: 100% !important;
-  height: 100% !important;
-
-  background: #ffffff !important;
-}
-
-
-.home-banner-content .portal-container {
-  width: 100% !important;
-  max-width: none !important;
-
-  margin: 0 !important;
-
-  padding:
-    58px
-    48px
-    58px
-    max(
-      50px,
-      calc((100vw - var(--max)) / 2)
-    ) !important;
-}
-
-
-.home-banner-copy {
-  width: 100% !important;
-  max-width: 665px !important;
-}
-
-
-.home-banner-copy .portal-kicker {
-  max-width: 520px;
-
-  margin-bottom: 14px;
-
-  font-size: 0.82rem;
-  line-height: 1.35;
-}
-
-
-.home-banner-copy .hero-line {
-  width: 72px;
-  height: 8px;
-
-  margin: 17px 0 30px;
-}
-
-
-.home-banner-copy h1 {
-  max-width: 650px !important;
-
-  margin: 0 0 29px !important;
-
-  font-size: clamp(
-    3.65rem,
-    4.25vw,
-    5.15rem
-  ) !important;
-
-  line-height: 0.91 !important;
-  letter-spacing: -0.065em !important;
-}
-
-
-.home-banner-copy .hero-purple {
-  color: var(--purple) !important;
-}
-
-
-.home-banner-copy .hero-copy {
-  max-width: 610px !important;
-
-  margin: 0 !important;
-
-  color: var(--muted) !important;
-
-  font-size: 1.12rem !important;
-  line-height: 1.62 !important;
-}
-
-
-.home-banner-copy .hero-thank-you {
-  max-width: 600px !important;
-
-  margin: 16px 0 0 !important;
-
-  color: var(--purple) !important;
-
-  font-size: 0.98rem !important;
-  font-weight: 850 !important;
-
-  line-height: 1.45 !important;
-}
-
-
-/* RIGHT: ARTWORK */
-
-.home-banner > picture {
-  position: relative !important;
-  inset: auto !important;
-
-  grid-column: 2 !important;
-  grid-row: 1 !important;
-
-  display: block !important;
-
-  width: 100% !important;
-  height: 100% !important;
-  min-height: 620px !important;
-
-  overflow: hidden !important;
-
-  background: #ffffff !important;
-}
-
-
-.home-banner > picture img {
-  position: absolute !important;
-  inset: 0 !important;
-
-  display: block !important;
-
-  width: 100% !important;
-  height: 100% !important;
-
-  object-fit: cover !important;
-
-  /*
-     The source banner has the people on the right.
-     This keeps them centred in their OWN panel.
-  */
-  object-position: 74% center !important;
-}
-
-
-
-/* =========================================================
-   LAPTOP / SMALL DESKTOP
-   Still two columns. Nothing overlays.
-========================================================= */
-
-@media (min-width: 761px) and (max-width: 1160px) {
-
-  .home-banner {
-    grid-template-columns:
-      minmax(350px, 43%)
-      minmax(0, 57%) !important;
-
-    min-height: 600px !important;
-  }
-
-
-  .home-banner-content .portal-container {
-    padding:
-      44px
-      30px
-      44px
-      clamp(28px, 4vw, 46px) !important;
-  }
-
-
-  .home-banner-copy {
-    max-width: 440px !important;
-  }
-
-
-  .home-banner-copy .portal-kicker {
-    max-width: 350px;
-
-    font-size: 0.72rem !important;
-  }
-
-
-  .home-banner-copy .hero-line {
-    width: 59px;
-    height: 7px;
-
-    margin: 15px 0 23px;
-  }
-
-
-  .home-banner-copy h1 {
-    max-width: 430px !important;
-
-    margin-bottom: 22px !important;
-
-    font-size: clamp(
-      2.55rem,
-      4.2vw,
-      3.35rem
-    ) !important;
-
-    line-height: 0.92 !important;
-  }
-
-
-  .home-banner-copy .hero-copy {
-    max-width: 420px !important;
-
-    font-size: 0.93rem !important;
-    line-height: 1.53 !important;
-  }
-
-
-  .home-banner-copy .hero-thank-you {
-    max-width: 410px !important;
-
-    margin-top: 12px !important;
-
-    font-size: 0.85rem !important;
-  }
-
-
-  .home-banner > picture {
-    min-height: 600px !important;
-  }
-
-
-  .home-banner > picture img {
-    object-position: 72% center !important;
-  }
-
-}
-
-
-
-/* =========================================================
-   MOBILE
-   Copy first, artwork underneath.
-   Still zero overlap.
-========================================================= */
-
-@media (max-width: 760px) {
-
-  .home-banner {
-    display: flex !important;
-    flex-direction: column !important;
-
-    min-height: 0 !important;
-
-    overflow: visible !important;
-  }
-
-
-  .home-banner-content {
-    order: 1 !important;
-
-    display: block !important;
-
-    width: 100% !important;
-    height: auto !important;
-
-    background: #ffffff !important;
-  }
-
-
-  .home-banner-content .portal-container {
-    width: min(
-      calc(100% - 32px),
-      var(--max)
-    ) !important;
-
-    margin: 0 auto !important;
-
-    padding: 47px 0 36px !important;
-  }
-
-
-  .home-banner-copy {
-    width: 100% !important;
-    max-width: 620px !important;
-  }
-
-
-  .home-banner-copy .portal-kicker {
-    max-width: 430px;
-
-    font-size: 0.72rem !important;
-  }
-
-
-  .home-banner-copy h1 {
-    max-width: 610px !important;
-
-    font-size: clamp(
-      2.8rem,
-      11vw,
-      4rem
-    ) !important;
-  }
-
-
-  .home-banner-copy .hero-copy {
-    max-width: 590px !important;
-
-    font-size: 1rem !important;
-  }
-
-
-  .home-banner-copy .hero-thank-you {
-    font-size: 0.88rem !important;
-  }
-
-
-  .home-banner > picture {
-    position: relative !important;
-
-    order: 2 !important;
-
-    width: 100% !important;
-    height: 470px !important;
-    min-height: 0 !important;
-  }
-
-
-  .home-banner > picture img {
-    position: absolute !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    object-fit: cover !important;
-    object-position: center bottom !important;
-  }
-
-}
-
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 480px) {
-
-  .home-banner > picture {
-    height: 405px !important;
   }
 
 }
