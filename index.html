@@ -16,13 +16,13 @@
 
   <link
     rel="stylesheet"
-    href="styles.css"
+    href="portal-refresh.css"
   >
 
 </head>
 
 
-<body class="home-page">
+<body>
 
 <a
   class="skip-link"
@@ -32,16 +32,12 @@
 </a>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<header class="portal-header">
 
-<header class="site-header">
-
-  <div class="container header-inner">
+  <div class="portal-container portal-header-inner">
 
     <a
-      class="brand"
+      class="portal-brand"
       href="index.html"
       aria-label="Best Buddies Canada Teacher Hub home"
     >
@@ -49,20 +45,17 @@
       <img
         src="assets/bb-reversed-logo.png"
         alt="Best Buddies Canada"
-        class="header-logo"
       >
 
-      <span class="brand-name">
+      <span>
         Teacher Hub
       </span>
 
     </a>
 
 
-    <!-- DESKTOP NAV -->
-
     <nav
-      class="nav desktop-nav"
+      class="portal-nav"
       aria-label="Main navigation"
     >
 
@@ -83,10 +76,7 @@
       </a>
 
 
-      <div
-        class="lang"
-        aria-label="Language"
-      >
+      <div class="portal-lang">
 
         <a
           href="#"
@@ -99,7 +89,6 @@
         <a
           href="fr.html"
           lang="fr-CA"
-          hreflang="fr-CA"
         >
           FR
         </a>
@@ -109,15 +98,13 @@
     </nav>
 
 
-    <!-- NARROW DESKTOP / TABLET / MOBILE NAV -->
-
-    <details class="mobile-nav">
+    <details class="portal-menu">
 
       <summary>
         Menu
       </summary>
 
-      <div class="mobile-nav-panel">
+      <div class="portal-menu-panel">
 
         <a href="#programs">
           Programs
@@ -135,22 +122,16 @@
           Support
         </a>
 
-
-        <div class="mobile-language">
+        <div class="portal-menu-languages">
 
           <a
             href="#"
             class="current"
-            aria-current="page"
           >
             EN
           </a>
 
-          <a
-            href="fr.html"
-            lang="fr-CA"
-            hreflang="fr-CA"
-          >
+          <a href="fr.html">
             FR
           </a>
 
@@ -164,24 +145,20 @@
 
 
   <svg
-    class="header-wave"
-    viewBox="0 0 1440 36"
+    class="portal-wave"
+    viewBox="0 0 1440 28"
     preserveAspectRatio="none"
     aria-hidden="true"
-    focusable="false"
   >
-
     <path
-      d="M0 0H1440V13
-      C1355 7 1314 21 1235 13
-      C1155 6 1105 20 1024 13
-      C944 5 890 21 807 13
-      C725 6 668 21 584 13
-      C503 6 445 20 362 13
-      C280 7 224 21 141 13
-      C85 8 45 16 0 12Z"
+      d="M0 0H1440V11
+      C1340 5 1290 19 1190 11
+      C1090 5 1035 18 935 11
+      C835 5 775 19 675 11
+      C575 5 515 18 415 11
+      C315 5 255 19 155 11
+      C95 7 45 15 0 10Z"
     />
-
   </svg>
 
 </header>
@@ -191,14 +168,11 @@
 <main id="main-content">
 
 
-  <!-- =====================================================
-       HERO
-  ===================================================== -->
+  <!-- HERO -->
 
-  <section class="home-hero">
+  <section class="home-banner">
 
-
-    <picture class="home-hero-art">
+    <picture>
 
       <source
         media="(max-width: 760px)"
@@ -206,7 +180,7 @@
       >
 
       <source
-        media="(max-width: 1180px)"
+        media="(max-width: 1160px)"
         srcset="assets/tabletbanner.png"
       >
 
@@ -219,57 +193,51 @@
     </picture>
 
 
+    <div class="home-banner-content">
 
-    <div class="home-hero-content">
+      <div class="portal-container">
 
-      <div class="container">
+        <div class="home-banner-copy">
 
-        <div class="home-hero-copy">
-
-
-          <div class="kicker">
+          <div class="portal-kicker">
             For teachers supporting Best Buddies
           </div>
 
-
           <div
-            class="yellow-stroke"
+            class="hero-line"
             aria-hidden="true"
           ></div>
 
-
           <h1>
-            <span class="purple">
+            <span>
               Friendship
             </span>
             and inclusion are at the heart of Best Buddies.
           </h1>
 
-
-          <p class="home-hero-lede">
+          <p>
             You know your students and your school.
             We’re here to make the Best Buddies part easier,
             with the calendar, resources, ideas, and support
             to help friendship grow.
           </p>
 
-
-          <p class="hero-thanks">
+          <p class="hero-thank-you">
             Thank you for making space for connection in your school.
           </p>
 
-
-          <div class="home-hero-actions">
+          <div class="hero-actions">
 
             <a
-              class="btn btn-purple"
+              class="portal-button"
               href="#programs"
             >
               Choose your program
+              <span aria-hidden="true">↓</span>
             </a>
 
             <a
-              class="hero-text-link"
+              class="hero-secondary"
               href="#calendar"
             >
               Program Calendar ↓
@@ -287,94 +255,59 @@
 
 
 
-  <!-- =====================================================
-       CHOOSE YOUR PROGRAM
-  ===================================================== -->
+  <!-- PROGRAM LAUNCH -->
 
   <section
-    class="section program-launch"
+    class="program-launch"
     id="programs"
   >
 
-    <div class="container">
+    <div class="portal-container">
 
+      <div class="program-launch-heading">
 
-      <div class="portal-section-heading">
-
-        <div>
-
-          <div class="kicker">
-            Start here
-          </div>
-
-
-          <h2 class="brand-display">
-
-            <span>
-              CHOOSE YOUR
-            </span>
-
-            <strong>
-              PROGRAM
-            </strong>
-
-          </h2>
-
-        </div>
-
-
-        <p>
-          Pick the program you support.
-          From there, your page will guide you through
-          the Best Buddies year.
-        </p>
+        <h2 class="portal-display">
+          CHOOSE YOUR
+          <span class="purple">
+            PROGRAM
+          </span>
+        </h2>
 
       </div>
 
 
+      <div class="program-grid">
 
-      <div class="program-choice-grid">
-
-
-        <!-- ELEMENTARY & MIDDLE -->
 
         <a
-          class="program-choice"
+          class="program-tile elementary"
           href="elementary-middle.html"
         >
 
-          <div class="program-choice-photo elementary">
+          <div class="program-photo">
 
             <img
               src="assets/elementary-hero.png"
-              alt="Best Buddies participants spending time together"
+              alt="Best Buddies elementary and middle school participants"
             >
 
           </div>
 
+          <div class="program-info">
 
-          <div class="program-choice-copy">
-
-            <span class="program-choice-label">
-              Friendship club
-            </span>
-
-
-            <h3>
-              Elementary
-              <br>
-              &amp; Middle School
-            </h3>
-
+            <h2>
+              Elementary &amp;
+              Middle School
+            </h2>
 
             <p>
-              Staff-led chapter support, monthly programming,
-              activity ideas, resources, and guidance for your school.
+              Your monthly programming, resources,
+              activities, and Staff Advisor support.
             </p>
 
-
-            <span class="program-choice-link">
-              Enter program →
+            <span class="program-enter">
+              Enter teacher page
+              <span aria-hidden="true">→</span>
             </span>
 
           </div>
@@ -383,45 +316,34 @@
 
 
 
-        <!-- HIGH SCHOOL -->
-
         <a
-          class="program-choice"
+          class="program-tile highschool"
           href="high-school.html"
         >
 
-          <div class="program-choice-photo highschool">
+          <div class="program-photo">
 
             <img
               src="assets/high-school-hero.png"
-              alt="Students participating in a Best Buddies chapter"
+              alt="Students participating in a Best Buddies high school chapter"
             >
 
           </div>
 
+          <div class="program-info">
 
-          <div class="program-choice-copy">
-
-            <span class="program-choice-label">
-              Student-led chapter
-            </span>
-
-
-            <h3>
-              High
-              <br>
-              School
-            </h3>
-
+            <h2>
+              High School
+            </h2>
 
             <p>
-              Month-by-month chapter guidance with a focus
-              on friendship, student leadership, and Staff Advisor support.
+              Monthly chapter programming, student leadership,
+              resources, and Staff Advisor support.
             </p>
 
-
-            <span class="program-choice-link">
-              Enter program →
+            <span class="program-enter">
+              Enter teacher page
+              <span aria-hidden="true">→</span>
             </span>
 
           </div>
@@ -436,103 +358,65 @@
 
 
 
-  <!-- =====================================================
-       PROGRAM CALENDAR
-  ===================================================== -->
+  <!-- PROGRAM CALENDAR -->
 
   <section
-    class="section calendar-section"
+    class="calendar-home"
     id="calendar"
   >
 
-    <div class="container">
+    <div class="portal-container">
 
-
-      <div class="portal-section-heading calendar-intro">
+      <div class="calendar-intro">
 
         <div>
 
-          <div class="kicker">
+          <div class="portal-kicker">
             Program Calendar
           </div>
 
-
-          <h2 class="brand-display">
-
-            <span>
-              YOUR BEST BUDDIES
-            </span>
-
-            <strong>
+          <h2 class="portal-display">
+            YOUR BEST BUDDIES
+            <span class="purple">
               YEAR
-            </strong>
-
+            </span>
           </h2>
 
         </div>
 
 
         <p>
-          The Program Calendar was created to help chapters
-          feel prepared, stay organized, and make the most
-          of the program year.
+          Monthly checklists, activity ideas, important dates,
+          community events, chapter start-up tasks, and helpful
+          tips to keep your chapter organized throughout the year.
         </p>
 
       </div>
 
 
+      <div class="calendar-tags">
 
-      <div
-        class="calendar-feature-list"
-        aria-label="Program Calendar includes"
-      >
-
-        <span>
-          Monthly checklists
-        </span>
-
-        <span>
-          Activity ideas
-        </span>
-
-        <span>
-          Important dates
-        </span>
-
-        <span>
-          Community events
-        </span>
-
-        <span>
-          Chapter start-up tasks
-        </span>
-
-        <span>
-          Tips &amp; tricks
-        </span>
+        <span>Monthly checklists</span>
+        <span>Activity ideas</span>
+        <span>Important dates</span>
+        <span>Community events</span>
+        <span>Start-up tasks</span>
+        <span>Tips &amp; tricks</span>
 
       </div>
 
 
+      <div class="calendar-box">
 
-      <div class="calendar-shell">
+        <div class="calendar-bar">
 
-
-        <div class="calendar-toolbar">
-
-          <div>
-
+          <strong>
             <span
-              class="live-dot"
+              class="calendar-dot"
               aria-hidden="true"
             ></span>
-
-            <strong>
-              Live Best Buddies Program Calendar
-            </strong>
-
-          </div>
-
+            Live Program Calendar
+          </strong>
 
           <a
             href="https://calendar.google.com/calendar/u/0/embed?ctz=America/Toronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com"
@@ -545,29 +429,17 @@
         </div>
 
 
-
         <div class="calendar-frame">
 
           <iframe
             src="https://calendar.google.com/calendar/embed?ctz=America%2FToronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec%40group.calendar.google.com&amp;mode=AGENDA&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0"
             title="Best Buddies Canada Program Calendar"
             loading="lazy"
-            frameborder="0"
-            scrolling="no"
           ></iframe>
 
         </div>
 
       </div>
-
-
-      <p class="calendar-return-note">
-        <strong>
-          Keep checking back.
-        </strong>
-        New dates, activities, and resources are added
-        throughout the year.
-      </p>
 
     </div>
 
@@ -575,63 +447,36 @@
 
 
 
-  <!-- =====================================================
-       RESOURCES
-  ===================================================== -->
+  <!-- RESOURCES -->
 
   <section
-    class="section resources-section"
+    class="home-tools"
     id="resources"
   >
 
-    <div class="container">
+    <div class="portal-container">
 
-
-      <div class="portal-section-heading">
-
-        <div>
-
-          <div class="kicker">
-            Resources
-          </div>
-
-
-          <h2 class="brand-display">
-
-            <span>
-              TOOLS FOR
-            </span>
-
-            <strong>
-              YOUR CHAPTER
-            </strong>
-
-          </h2>
-
-        </div>
-
-
-        <p>
-          Need something outside your monthly program page?
-          Start with the type of help you’re looking for.
-        </p>
-
+      <div class="portal-kicker">
+        Resources
       </div>
 
+      <h2 class="portal-display">
+        FIND WHAT
+        <span class="purple">
+          YOU NEED
+        </span>
+      </h2>
 
 
-      <div class="resource-grid">
-
-
-        <!-- QUICK GUIDES -->
+      <div class="tool-grid">
 
         <a
-          class="resource-card resource-yellow"
+          class="tool-link"
           href="teacher-companion.html"
         >
 
-          <span class="resource-type">
-            Practical support
+          <span>
+            Practical guidance
           </span>
 
           <h3>
@@ -639,29 +484,25 @@
           </h3>
 
           <p>
-            Short guidance for Staff Advisors,
-            chapter meetings, buddy pairs,
-            student leadership, and getting started.
+            Staff Advisor support, buddy pairs,
+            student leadership, and chapter meetings.
           </p>
 
           <strong>
-            Explore Quick Guides →
+            Open guides →
           </strong>
 
         </a>
 
 
-
-        <!-- HELPFUL RESOURCES -->
-
         <a
-          class="resource-card resource-violet"
+          class="tool-link"
           href="https://bestbuddies.ca/helpful-resources/"
           target="_blank"
           rel="noopener"
         >
 
-          <span class="resource-type">
+          <span>
             Resource library
           </span>
 
@@ -670,9 +511,8 @@
           </h3>
 
           <p>
-            Current Best Buddies manuals,
-            activity resources, forms, guides,
-            and chapter materials.
+            Manuals, forms, activities,
+            and current chapter resources.
           </p>
 
           <strong>
@@ -682,27 +522,23 @@
         </a>
 
 
-
-        <!-- TRAINING -->
-
         <a
-          class="resource-card resource-teal"
+          class="tool-link"
           href="https://learn.bestbuddies.ca/"
           target="_blank"
           rel="noopener"
         >
 
-          <span class="resource-type">
-            Learning
+          <span>
+            Training
           </span>
 
           <h3>
-            Training
+            Learn @ Best Buddies
           </h3>
 
           <p>
-            Access current Best Buddies training
-            through Learn @ Best Buddies.
+            Access current Best Buddies training.
           </p>
 
           <strong>
@@ -712,17 +548,14 @@
         </a>
 
 
-
-        <!-- APPLICATION -->
-
         <a
-          class="resource-card resource-orange"
+          class="tool-link"
           href="assets/best-buddies-program-application.pdf"
           target="_blank"
         >
 
-          <span class="resource-type">
-            Starting a chapter
+          <span>
+            New chapter
           </span>
 
           <h3>
@@ -731,7 +564,6 @@
 
           <p>
             Starting Best Buddies at a new school?
-            Begin with the current Program Application.
           </p>
 
           <strong>
@@ -748,61 +580,43 @@
 
 
 
-  <!-- =====================================================
-       SUPPORT
-  ===================================================== -->
+  <!-- SUPPORT -->
 
   <section
-    class="section support-section"
+    class="portal-support"
     id="support"
   >
 
-    <div class="container support-grid">
-
+    <div class="portal-container support-grid">
 
       <div>
 
-        <div class="kicker">
+        <div class="portal-kicker">
           Support
         </div>
 
-
-        <h2 class="brand-display support-display">
-
-          <span>
-            SUPPORT STAYS
-          </span>
-
-          <strong>
+        <h2 class="portal-display">
+          SUPPORT STAYS
+          <span class="purple">
             HUMAN
-          </strong>
-
+          </span>
         </h2>
 
-
-        <p class="support-lede">
-          Resources can answer a lot.
-          Your Program Advisor is here for questions
-          that depend on your students, your school,
-          and your chapter.
+        <p class="portal-lede">
+          Your Program Advisor is here when a question
+          depends on your students, your school, or your chapter.
         </p>
 
-
-        <div class="support-actions">
-
-          <a
-            class="btn btn-purple"
-            href="https://bestbuddies.ca/get-started/"
-            target="_blank"
-            rel="noopener"
-          >
-            Connect with Best Buddies
-          </a>
-
-        </div>
+        <a
+          class="portal-button"
+          href="https://bestbuddies.ca/get-started/"
+          target="_blank"
+          rel="noopener"
+        >
+          Connect with Best Buddies →
+        </a>
 
       </div>
-
 
 
       <div class="support-photo">
@@ -823,18 +637,13 @@
 
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<footer class="portal-footer">
 
-<footer>
-
-  <div class="container footer-inner">
+  <div class="portal-container portal-footer-inner">
 
     <img
       src="assets/bb-reversed-logo.png"
       alt="Best Buddies Canada"
-      class="footer-logo"
     >
 
     <p>
@@ -855,5 +664,4 @@
 
 
 </body>
-
 </html>
