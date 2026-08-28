@@ -1,31 +1,77 @@
 <!DOCTYPE html>
 <html lang="en-CA">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Teacher Companion | Best Buddies Canada</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    Teacher Companion | Best Buddies Canada Teacher Hub
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="access.css"
+  >
+
+  <script
+    src="access.js"
+    defer
+  ></script>
+
 </head>
 
-<body>
 
-<a class="skip-link" href="#main-content">Skip to main content</a>
+<body
+  data-protected="true"
+  class="access-pending"
+>
+
+<a
+  class="skip-link"
+  href="#main-content"
+>
+  Skip to main content
+</a>
+
 
 <header class="site-header">
 
   <div class="container header-inner">
 
-    <a class="brand" href="index.html" aria-label="Best Buddies Canada Teacher Hub home">
+    <a
+      class="brand"
+      href="index.html"
+      aria-label="Best Buddies Canada Teacher Hub home"
+    >
+
       <img
         src="assets/bb-reversed-logo.png"
         alt="Best Buddies Canada"
         class="header-logo"
       >
 
-      <span class="brand-name">Teacher Hub</span>
+      <span class="brand-name">
+        Teacher Hub
+      </span>
+
     </a>
 
-    <nav class="nav" aria-label="Main navigation">
+
+    <nav
+      class="nav"
+      aria-label="Main navigation"
+    >
 
       <a href="index.html">
         Home
@@ -35,7 +81,10 @@
         Programs
       </a>
 
-      <a href="teacher-companion.html">
+      <a
+        href="teacher-companion.html"
+        aria-current="page"
+      >
         Teacher Companion
       </a>
 
@@ -43,13 +92,32 @@
         Calendar
       </a>
 
-      <a href="index.html#support">
+      <a href="#support">
         Get Support
       </a>
 
-      <div class="lang" aria-label="Language">
-        <a href="#" class="current" aria-current="page">EN</a>
-        <a href="fr.html" lang="fr-CA" hreflang="fr-CA">FR</a>
+
+      <div
+        class="lang"
+        aria-label="Language"
+      >
+
+        <a
+          href="#"
+          class="current"
+          aria-current="page"
+        >
+          EN
+        </a>
+
+        <a
+          href="fr.html"
+          lang="fr-CA"
+          hreflang="fr-CA"
+        >
+          FR
+        </a>
+
       </div>
 
     </nav>
@@ -64,6 +132,7 @@
     aria-hidden="true"
     focusable="false"
   >
+
     <path
       d="M0 0H1440V13
       C1355 7 1314 21 1235 13
@@ -74,67 +143,74 @@
       C280 7 224 21 141 13
       C85 8 45 16 0 12Z"
     />
+
   </svg>
 
 </header>
 
 
+
 <main id="main-content">
 
-  <!-- INTRO -->
+
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
+
   <section class="companion-hero">
 
     <div class="container companion-hero-inner">
 
       <div>
 
-        <a class="back-link" href="index.html">
-          ← Teacher Hub
-        </a>
-
         <div class="kicker">
           Teacher Companion
         </div>
 
-        <div class="yellow-stroke" aria-hidden="true"></div>
-
         <h1>
           A little help with the
-          <span class="purple">Best Buddies part.</span>
+          <span class="purple">
+            Best Buddies part.
+          </span>
         </h1>
 
         <p class="companion-intro">
-          You already know your students and your school.
-          These short pieces focus on the things that are a little more
-          specific to Best Buddies: friendship, chapter leadership,
-          buddy pairs, meetings, and getting a chapter off the ground.
+          You already know how to support students.
+          These short pieces focus on the friendship,
+          inclusion, leadership, and chapter questions
+          that come with Best Buddies.
         </p>
 
       </div>
 
 
-      <aside class="companion-not-training">
+      <div class="companion-not-training">
 
-        <span>Good to know</span>
+        <span>
+          Helpful to know
+        </span>
 
         <strong>
-          This is not another training course.
+          This is practical support, not another training course.
         </strong>
 
         <p>
-          These are optional, practical reads you can open when they’re useful.
-          Official Best Buddies training, forms, and program requirements
-          remain in their existing homes.
+          Open what is useful when you need it.
+          Leave the rest until you do.
         </p>
 
-      </aside>
+      </div>
 
     </div>
 
   </section>
 
 
-  <!-- MAIN ARTICLES -->
+
+  <!-- =====================================================
+       MAIN GUIDES
+  ===================================================== -->
+
   <section class="section companion-library">
 
     <div class="container">
@@ -142,17 +218,19 @@
       <div class="section-heading">
 
         <div class="kicker">
-          Start with what you need
+          Quick guides
         </div>
 
         <h2>
-          Four things that come up
-          <span class="purple">all the time.</span>
+          Start with the question
+          <span class="purple">
+            in front of you.
+          </span>
         </h2>
 
         <p class="lede">
-          No need to read them in order. Open the one that answers the
-          question you have right now.
+          Each guide opens here, so you can get what you need
+          without disappearing into another part of the site.
         </p>
 
       </div>
@@ -161,11 +239,10 @@
       <div class="companion-card-grid">
 
 
-        <!-- CARD 1 -->
         <button
           class="companion-card companion-card-yellow"
           type="button"
-          data-dialog="first-30-days"
+          data-template="first-30-days"
         >
 
           <div class="companion-card-top">
@@ -186,8 +263,9 @@
           </h3>
 
           <p>
-            What to do first, what can wait, and how to get from
-            “we’d like a chapter” to your first gathering.
+            What matters first, what can wait,
+            and how to start building the chapter
+            without planning the whole year at once.
           </p>
 
           <span class="companion-open">
@@ -197,17 +275,17 @@
         </button>
 
 
-        <!-- CARD 2 -->
+
         <button
           class="companion-card companion-card-teal"
           type="button"
-          data-dialog="great-meeting"
+          data-template="chapter-meeting"
         >
 
           <div class="companion-card-top">
 
             <span class="companion-type">
-              Meetings &amp; activities
+              Meetings
             </span>
 
             <span class="companion-time">
@@ -217,13 +295,12 @@
           </div>
 
           <h3>
-            Plan a Great
-            Chapter Meeting
+            Plan a Great Chapter Meeting
           </h3>
 
           <p>
-            A simple structure for a lunch period, regular meeting,
-            or something a little bigger.
+            A simple way to think about lunch meetings,
+            regular chapter gatherings, and larger socials.
           </p>
 
           <span class="companion-open">
@@ -233,11 +310,11 @@
         </button>
 
 
-        <!-- CARD 3 -->
+
         <button
           class="companion-card companion-card-orange"
           type="button"
-          data-dialog="buddy-pairs"
+          data-template="buddy-pairs"
         >
 
           <div class="companion-card-top">
@@ -247,19 +324,19 @@
             </span>
 
             <span class="companion-time">
-              3 min
+              4 min
             </span>
 
           </div>
 
           <h3>
-            Supporting
-            Buddy Pairs
+            Supporting Buddy Pairs
           </h3>
 
           <p>
-            Shared interests, different communication styles,
-            awkward first hangouts, and what to do when a match isn’t clicking.
+            Shared interests, communication,
+            first hangouts, and what to do when
+            a friendship needs a little support.
           </p>
 
           <span class="companion-open">
@@ -269,33 +346,32 @@
         </button>
 
 
-        <!-- CARD 4 -->
+
         <button
           class="companion-card companion-card-violet"
           type="button"
-          data-dialog="advisor-guide"
+          data-template="staff-advisor"
         >
 
           <div class="companion-card-top">
 
             <span class="companion-type">
-              Your role
+              Staff Advisor
             </span>
 
             <span class="companion-time">
-              2 min
+              4 min
             </span>
 
           </div>
 
           <h3>
-            Staff Advisor
-            Quick Guide
+            Staff Advisor Quick Guide
           </h3>
 
           <p>
-            What you own, what students can own, and where
-            Best Buddies fits into the picture.
+            What you may own, what students can own,
+            and where Best Buddies fits in.
           </p>
 
           <span class="companion-open">
@@ -303,7 +379,6 @@
           </span>
 
         </button>
-
 
       </div>
 
@@ -312,8 +387,12 @@
   </section>
 
 
-  <!-- QUICK THOUGHTS -->
-  <section class="section quick-thought-section">
+
+  <!-- =====================================================
+       QUICK THOUGHTS
+  ===================================================== -->
+
+  <section class="section">
 
     <div class="container">
 
@@ -326,15 +405,17 @@
           </div>
 
           <h2>
-            Sometimes you only need
-            <span class="purple">one idea.</span>
+            Small ideas that can make
+            <span class="purple">
+              a big difference.
+            </span>
           </h2>
 
         </div>
 
         <p>
-          Tiny Best Buddies-specific reminders for the moments
-          that don’t need a whole guide.
+          Not rules. Just useful Best Buddies lenses
+          to keep in your back pocket.
         </p>
 
       </div>
@@ -345,11 +426,11 @@
         <button
           class="quick-thought"
           type="button"
-          data-dialog="natural-friendship"
+          data-template="natural-friendship"
         >
 
           <span>
-            2-minute read
+            Friendship
           </span>
 
           <strong>
@@ -357,7 +438,8 @@
           </strong>
 
           <p>
-            Activities can open the door. They don’t need to fill every minute.
+            Activities can help people connect,
+            but not every minute needs to be structured.
           </p>
 
         </button>
@@ -366,11 +448,11 @@
         <button
           class="quick-thought"
           type="button"
-          data-dialog="participation"
+          data-template="participation"
         >
 
           <span>
-            2-minute read
+            Inclusion
           </span>
 
           <strong>
@@ -378,7 +460,8 @@
           </strong>
 
           <p>
-            Connection doesn’t depend on everyone joining in the same way.
+            Connection does not depend on everyone
+            communicating or participating in the same way.
           </p>
 
         </button>
@@ -387,11 +470,11 @@
         <button
           class="quick-thought"
           type="button"
-          data-dialog="student-leaders"
+          data-template="student-leaders"
         >
 
           <span>
-            2-minute read
+            Leadership
           </span>
 
           <strong>
@@ -399,7 +482,8 @@
           </strong>
 
           <p>
-            Give them something meaningful to own, not just jobs to complete.
+            Give students meaningful ownership,
+            not just a list of small jobs.
           </p>
 
         </button>
@@ -411,84 +495,98 @@
   </section>
 
 
-  <!-- MORE TOOLS -->
+
+  <!-- =====================================================
+       MORE TOOLS
+  ===================================================== -->
+
   <section class="section companion-more">
 
-    <div class="container">
+    <div class="container companion-more-grid">
 
-      <div class="companion-more-grid">
+      <div>
 
-        <div>
-
-          <div class="kicker light">
-            More tools
-          </div>
-
-          <h2>
-            The useful stuff should be
-            <span class="yellow-highlight">easy to find.</span>
-          </h2>
-
+        <div class="kicker light">
+          More tools
         </div>
 
+        <h2>
+          Looking for something
+          <span class="yellow-highlight">
+            specific?
+          </span>
+        </h2>
 
-        <div class="more-tools-list">
+        <p>
+          The Companion does not need to duplicate every Best Buddies
+          resource. These links take you to the current places
+          where those materials live.
+        </p>
 
-          <a
-            href="https://bestbuddies.ca/helpful-resources/"
-            target="_blank"
-            rel="noopener"
-          >
-            <span>
-              Activity ideas &amp; guides
-            </span>
-
-            <strong>
-              Browse official resources ↗
-            </strong>
-          </a>
+      </div>
 
 
-          <a
-            href="https://learn.bestbuddies.ca/"
-            target="_blank"
-            rel="noopener"
-          >
-            <span>
-              Official training
-            </span>
+      <div class="more-tools-list">
 
-            <strong>
-              Learn @ Best Buddies ↗
-            </strong>
-          </a>
+        <a
+          href="https://bestbuddies.ca/helpful-resources/"
+          target="_blank"
+          rel="noopener"
+        >
 
+          <span>
+            Activities, manuals, forms, and resources
+          </span>
 
-          <a
-            href="assets/best-buddies-program-application.pdf"
-            target="_blank"
-          >
-            <span>
-              Starting a chapter
-            </span>
+          <strong>
+            Helpful Resources ↗
+          </strong>
 
-            <strong>
-              Program Application ↗
-            </strong>
-          </a>
+        </a>
 
 
-          <div class="more-tool-placeholder">
+        <a
+          href="https://learn.bestbuddies.ca/"
+          target="_blank"
+          rel="noopener"
+        >
 
-            <span>
-              Parent &amp; school templates
-            </span>
+          <span>
+            Current Best Buddies training
+          </span>
 
-            <strong>
-              Best Buddies Canada version coming soon
-            </strong>
+          <strong>
+            Learn @ Best Buddies ↗
+          </strong>
 
-          </div>
+        </a>
+
+
+        <a
+          href="assets/best-buddies-program-application.pdf"
+          target="_blank"
+        >
+
+          <span>
+            Starting a new chapter
+          </span>
+
+          <strong>
+            Program Application ↗
+          </strong>
+
+        </a>
+
+
+        <div class="more-tool-placeholder">
+
+          <span>
+            Parent and school communication templates
+          </span>
+
+          <strong>
+            Best Buddies Canada version coming soon
+          </strong>
 
         </div>
 
@@ -499,28 +597,38 @@
   </section>
 
 
-  <!-- SUPPORT -->
-  <section class="section support-section">
+
+  <!-- =====================================================
+       SUPPORT
+  ===================================================== -->
+
+  <section
+    class="section support-section"
+    id="support"
+  >
 
     <div class="container support-grid">
 
       <div>
 
         <div class="kicker">
-          Still not sure?
+          Support stays human
         </div>
 
         <h2>
-          That’s what your
-          <span class="underlined">Program Advisor</span>
-          is for.
+          When it depends on your chapter,
+          <span class="underlined">
+            talk to us.
+          </span>
         </h2>
 
         <p class="lede">
-          The Companion can give you a starting point.
-          Your Program Advisor can help you work through what makes sense
-          for your particular students, school, and chapter.
+          Your Program Advisor can help with questions
+          about your students, leadership, buddy pairs,
+          school circumstances, and anything that needs
+          more context than a webpage can give.
         </p>
+
 
         <div class="support-actions">
 
@@ -533,7 +641,26 @@
             Connect with Best Buddies
           </a>
 
+          <a
+            class="text-link"
+            href="https://bestbuddies.ca/helpful-resources/"
+            target="_blank"
+            rel="noopener"
+          >
+            Helpful Resources ↗
+          </a>
+
         </div>
+
+      </div>
+
+
+      <div class="support-photo">
+
+        <img
+          src="assets/support-photo.jpg"
+          alt="Best Buddies participants together"
+        >
 
       </div>
 
@@ -544,18 +671,22 @@
 </main>
 
 
-<!-- ======================================================
-     ARTICLE DIALOG
-======================================================= -->
 
-<dialog class="article-dialog" id="article-dialog">
+<!-- =====================================================
+     DIALOG
+===================================================== -->
+
+<dialog
+  class="article-dialog"
+  id="article-dialog"
+>
 
   <div class="article-dialog-shell">
 
     <button
       class="dialog-close"
       type="button"
-      aria-label="Close article"
+      aria-label="Close guide"
     >
       ×
     </button>
@@ -567,91 +698,92 @@
 </dialog>
 
 
-<!-- ======================================================
-     ARTICLE CONTENT
-======================================================= -->
+
+<!-- =====================================================
+     ARTICLE TEMPLATES
+===================================================== -->
+
 
 <template id="first-30-days">
 
   <article class="companion-article">
 
     <div class="article-meta">
-      Starting a chapter · About 4 minutes
+      Starting a chapter · Quick guide
     </div>
 
     <h2>
       Starting Fresh:
-      <span class="purple">Your First 30 Days</span>
+      Your First 30 Days
     </h2>
 
     <p class="article-lede">
-      You do not need to have the entire year figured out before
-      your chapter can begin.
+      Start with what is realistic.
+      You do not need the entire school year planned
+      before your chapter can begin.
     </p>
 
 
-    <h3>1. Start with the school-side pieces.</h3>
+    <h3>
+      1. Take care of the school-side pieces.
+    </h3>
 
     <p>
-      Check whether your school already has an active Best Buddies chapter.
-      If not, complete the current Best Buddies Canada Program Application
+      Check whether your school already has a chapter.
+      If it is new, complete the current Program Application
       and obtain principal approval.
     </p>
 
 
-    <h3>2. Connect with Best Buddies.</h3>
+    <h3>
+      2. Connect with Best Buddies.
+    </h3>
 
     <p>
-      Your Program Advisor can help you understand what comes next,
-      answer program questions, and support the chapter as it gets established.
+      Your Program Advisor can help you understand the next steps,
+      current resources, training, and what needs to happen
+      before the chapter gets underway.
     </p>
 
 
-    <h3>3. Begin building your group.</h3>
+    <h3>
+      3. Start building the group.
+    </h3>
 
     <p>
-      Recruit interested students, share the appropriate program information
-      with families, and start thinking about who may want to take on
-      leadership responsibilities.
-    </p>
-
-    <div class="article-callout">
-
-      <strong>
-        High School?
-      </strong>
-
-      <p>
-        Student leadership should become part of the chapter early.
-        A Chapter President and executive members can take meaningful
-        ownership of recruitment, activities, meetings, and chapter culture.
-      </p>
-
-    </div>
-
-
-    <h3>4. Plan the first gathering.</h3>
-
-    <p>
-      Keep it welcoming and manageable. Your first Meet &amp; Greet
-      does not have to be elaborate. The goal is simply to help people
-      meet, understand what Best Buddies is about, and begin connecting.
+      Promote the chapter, welcome interested students,
+      and share the information families need.
+      High school chapters can also begin identifying
+      a Chapter President and other student leaders.
     </p>
 
 
-    <h3>5. Let the rest of the year come later.</h3>
+    <h3>
+      4. Plan the first gathering.
+    </h3>
 
     <p>
-      Once the chapter is moving, use the official Program Calendar
-      for monthly priorities and your teacher page for ideas about
-      how those priorities could look in your school.
+      The first meeting does not need to be elaborate.
+      Give students a reason to come together,
+      something comfortable to do, and time to get acquainted.
+    </p>
+
+
+    <h3>
+      5. Let the rest of the year come later.
+    </h3>
+
+    <p>
+      Use the Program Calendar to guide the year.
+      You can build chapter routines as you learn
+      what works for your students and your school.
     </p>
 
 
     <div class="article-quick-thought">
 
       <span>
-        Quick thought
+        Quick Thought
       </span>
 
       <strong>
@@ -662,10 +794,6 @@
 
 
     <div class="article-resources">
-
-      <strong>
-        Useful links
-      </strong>
 
       <a
         href="https://bestbuddies.ca/find-a-school/"
@@ -687,7 +815,7 @@
         target="_blank"
         rel="noopener"
       >
-        Connect with Best Buddies ↗
+        Get Started ↗
       </a>
 
     </div>
@@ -697,26 +825,24 @@
 </template>
 
 
-<template id="great-meeting">
+
+<template id="chapter-meeting">
 
   <article class="companion-article">
 
     <div class="article-meta">
-      Meetings &amp; activities · About 3 minutes
+      Meetings · Quick guide
     </div>
 
     <h2>
-      Plan a Great
-      <span class="purple">Chapter Meeting</span>
+      Plan a Great Chapter Meeting
     </h2>
 
     <p class="article-lede">
-      A good meeting does not need an elaborate theme,
-      expensive supplies, or sixty minutes of programmed activity.
+      A good meeting does not need to be complicated.
+      Think about the time you actually have
+      and give students something easy to do together.
     </p>
-
-
-    <h3>Start with the time you actually have.</h3>
 
 
     <div class="meeting-options">
@@ -732,7 +858,8 @@
         </strong>
 
         <p>
-          Quick welcome, one simple activity, and time to talk or eat together.
+          One simple activity, time to connect,
+          and a clear finish.
         </p>
 
       </div>
@@ -749,8 +876,8 @@
         </strong>
 
         <p>
-          Welcome, an activity that gives people something to do together,
-          connection time, and a quick wrap-up.
+          Welcome, shared activity, time together,
+          and a quick closing.
         </p>
 
       </div>
@@ -759,7 +886,7 @@
       <div>
 
         <span>
-          Something bigger
+          Bigger gathering
         </span>
 
         <strong>
@@ -767,8 +894,8 @@
         </strong>
 
         <p>
-          Give student leaders clear pieces to own and leave enough room
-          for people to actually spend time together.
+          Add more choice and activity stations
+          without losing the friendship focus.
         </p>
 
       </div>
@@ -776,27 +903,55 @@
     </div>
 
 
-    <h3>A simple formula that works.</h3>
+    <h3>
+      Welcome people in.
+    </h3>
 
-    <ol class="article-list">
-      <li><strong>Welcome people.</strong> Especially anyone new.</li>
-      <li><strong>Do something together.</strong> Keep it accessible and low-pressure.</li>
-      <li><strong>Leave some space.</strong> Friendship does not need to be scheduled minute by minute.</li>
-      <li><strong>Finish clearly.</strong> Let everyone know what is coming next.</li>
-    </ol>
+    <p>
+      Make it clear what is happening and give members
+      a comfortable way to join the group.
+    </p>
+
+
+    <h3>
+      Do something together.
+    </h3>
+
+    <p>
+      A shared activity can make conversation easier,
+      especially when people are still getting acquainted.
+    </p>
+
+
+    <h3>
+      Leave space.
+    </h3>
+
+    <p>
+      Not every minute needs a planned activity.
+      Friendship also needs time to develop naturally.
+    </p>
+
+
+    <h3>
+      Finish clearly.
+    </h3>
+
+    <p>
+      Let students know what is happening next
+      and when they will see the chapter again.
+    </p>
 
 
     <div class="article-callout">
 
       <strong>
-        Before choosing an activity
+        Best Buddies lens
       </strong>
 
       <p>
-        Think about whether it depends heavily on speaking, reading,
-        writing, movement, fine-motor skills, noise tolerance, or quick
-        processing. Often you do not need a different activity — just
-        another way to participate.
+        Before the meeting, ask whether students have more than
+        one way to participate, communicate, and connect.
       </p>
 
     </div>
@@ -805,7 +960,7 @@
     <div class="article-quick-thought">
 
       <span>
-        Quick thought
+        Quick Thought
       </span>
 
       <strong>
@@ -818,16 +973,12 @@
 
     <div class="article-resources">
 
-      <strong>
-        Keep exploring
-      </strong>
-
       <a
         href="https://bestbuddies.ca/helpful-resources/"
         target="_blank"
         rel="noopener"
       >
-        Best Buddies Canada activity guides ↗
+        Find activity resources ↗
       </a>
 
     </div>
@@ -835,6 +986,7 @@
   </article>
 
 </template>
+
 
 
 <template id="buddy-pairs">
@@ -842,106 +994,99 @@
   <article class="companion-article">
 
     <div class="article-meta">
-      Friendship support · About 3 minutes
+      Friendship support · Quick guide
     </div>
 
     <h2>
-      Supporting
-      <span class="purple">Buddy Pairs</span>
+      Supporting Buddy Pairs
     </h2>
 
     <p class="article-lede">
-      A match can look great on paper and still take a little time
-      to feel natural.
+      A buddy pair does not need to look a particular way.
+      The goal is meaningful connection, not a perfect script.
     </p>
 
 
-    <h3>Look for real points of connection.</h3>
+    <h3>
+      Start with real points of connection.
+    </h3>
 
     <p>
-      Shared interests, humour, routines, music, games, sports,
-      personality, schedules, or simply enjoying the same kinds of
-      activities can all give a friendship somewhere to begin.
+      Shared interests, humour, routines, activities,
+      and preferences can give a friendship somewhere natural to begin.
     </p>
 
 
-    <h3>Give people something to do together.</h3>
+    <h3>
+      Give them something to do together.
+    </h3>
 
     <p>
-      Conversation can feel awkward when two people are just getting
-      to know each other. Lunch, drawing, a game, music, walking around
-      the school, or attending a school event can make connection feel
-      much more natural.
+      Conversation is not the only way to connect.
+      A game, shared task, craft, music, walk,
+      or chapter activity can take pressure off talking.
     </p>
 
 
-    <h3>Remember that communication looks different.</h3>
+    <h3>
+      Communication may look different.
+    </h3>
 
     <p>
-      Friendship does not depend on spoken conversation.
-      Someone may communicate through AAC, sign, gesture, facial expression,
-      writing, or another communication style.
+      Some students may communicate verbally,
+      through gestures, sign, communication devices,
+      facial expression, movement, or other methods.
+      Give people time to learn one another.
     </p>
 
 
-    <h3>If the match is not clicking, check in.</h3>
+    <h3>
+      Check in when something feels off.
+    </h3>
 
     <p>
-      Talk with each person individually. Look for practical barriers,
-      misunderstandings, or things that could make spending time
-      together easier.
+      If a pair is not connecting, ask what each person is enjoying,
+      what feels difficult, and what might make spending time together
+      more comfortable.
     </p>
 
 
     <div class="article-callout">
 
       <strong>
-        Try asking:
+        Questions that can help
       </strong>
 
       <p>
-        “How is this feeling for you?”<br>
-        “Is there something that would make hanging out easier?”<br>
-        “Would you like to keep working on this match?”
+        What do you both enjoy?
+        What would you like to do together?
+        Is there anything that would make hanging out easier?
+        Would you rather try something different next time?
       </p>
 
     </div>
 
 
+    <h3>
+      Do not force the friendship.
+    </h3>
+
     <p>
-      Friendship should not be forced simply because a match was made.
-      If a pairing truly is not working, changing the match does not
-      mean the chapter failed.
+      Sometimes a pairing may need more support or a different approach.
+      Talk with your Program Advisor when you are unsure.
     </p>
 
 
     <div class="article-quick-thought">
 
       <span>
-        Quick thought
+        Quick Thought
       </span>
 
       <strong>
-        The goal is not to preserve every pairing.
-        The goal is meaningful friendship.
+        Protect the goal of meaningful friendship,
+        not simply the existence of a pairing.
       </strong>
-
-    </div>
-
-
-    <div class="article-resources">
-
-      <strong>
-        Helpful resources
-      </strong>
-
-      <a
-        href="https://bestbuddies.ca/helpful-resources/"
-        target="_blank"
-        rel="noopener"
-      >
-        Buddy, Peer Buddy &amp; Non-Verbal Activity resources ↗
-      </a>
 
     </div>
 
@@ -950,40 +1095,22 @@
 </template>
 
 
-<template id="advisor-guide">
+
+<template id="staff-advisor">
 
   <article class="companion-article">
 
     <div class="article-meta">
-      Staff Advisor support · About 2 minutes
+      Staff Advisor · Quick guide
     </div>
 
     <h2>
-      Staff Advisor
-      <span class="purple">Quick Guide</span>
+      Staff Advisor Quick Guide
     </h2>
 
     <p class="article-lede">
-      Your role matters. That does not mean every piece of the
-      chapter needs to sit on your shoulders.
-    </p>
-
-
-    <h3>At Elementary &amp; Middle School</h3>
-
-    <p>
-      School staff lead the chapter with support from Best Buddies.
-      You know your students and school context; Best Buddies provides
-      program guidance, resources, and ongoing support.
-    </p>
-
-
-    <h3>At High School</h3>
-
-    <p>
-      The Staff Advisor supports the chapter while the Chapter President
-      and student leadership team can take real ownership of recruitment,
-      meetings, activities, communication, and chapter culture.
+      Your role is important, but that does not mean
+      every chapter task has to become your task.
     </p>
 
 
@@ -995,13 +1122,15 @@
           You may own
         </span>
 
-        <ul>
-          <li>school-side coordination</li>
-          <li>family communication</li>
-          <li>adult oversight</li>
-          <li>supporting student leaders</li>
-          <li>stepping in when something needs adult help</li>
-        </ul>
+        <strong>
+          Adult oversight
+        </strong>
+
+        <p>
+          School communication, family communication,
+          program contact, safety, funds, and the pieces
+          that require an adult at school.
+        </p>
 
       </div>
 
@@ -1012,14 +1141,15 @@
           Students can own
         </span>
 
-        <ul>
-          <li>meeting ideas</li>
-          <li>recruitment</li>
-          <li>welcoming members</li>
-          <li>activity planning</li>
-          <li>chapter culture</li>
-          <li>leadership roles</li>
-        </ul>
+        <strong>
+          Chapter life
+        </strong>
+
+        <p>
+          Recruitment, meeting ideas, activities,
+          welcoming members, communication,
+          and shaping chapter culture.
+        </p>
 
       </div>
 
@@ -1027,30 +1157,55 @@
       <div>
 
         <span>
-          Best Buddies can help with
+          Best Buddies can help
         </span>
 
-        <ul>
-          <li>getting started</li>
-          <li>program questions</li>
-          <li>chapter challenges</li>
-          <li>resources</li>
-          <li>planning support</li>
-        </ul>
+        <strong>
+          Program support
+        </strong>
+
+        <p>
+          Calendar guidance, resources, training,
+          chapter questions, problem-solving,
+          and support from your Program Advisor.
+        </p>
 
       </div>
 
     </div>
 
 
+    <h3>
+      Elementary and Middle School
+    </h3>
+
+    <p>
+      Staff naturally provide more of the chapter structure.
+      Students can still have meaningful choices,
+      contribute ideas, and help shape activities.
+    </p>
+
+
+    <h3>
+      High School
+    </h3>
+
+    <p>
+      Student leaders should have meaningful responsibilities.
+      The Staff Advisor supports the work without needing
+      to become the chapter’s entire leadership team.
+    </p>
+
+
     <div class="article-quick-thought">
 
       <span>
-        Quick thought
+        Quick Thought
       </span>
 
       <strong>
-        Before saying “Here’s what we’re going to do,” try:
+        Before solving the next chapter problem,
+        try asking your student leaders,
         “What do you think we should do?”
       </strong>
 
@@ -1061,44 +1216,47 @@
 </template>
 
 
+
 <template id="natural-friendship">
 
   <article class="companion-article">
 
     <div class="article-meta">
-      Quick Thought · About 2 minutes
+      Quick Thought · Friendship
     </div>
 
     <h2>
-      Leave room for
-      <span class="purple">natural friendship.</span>
+      Leave room for natural friendship.
     </h2>
 
     <p class="article-lede">
-      An activity can open the door.
-      Every minute does not need to be programmed.
+      Activities are useful because they give people
+      an easy way to begin. They do not need to fill every minute.
     </p>
 
     <p>
-      Sometimes the most useful part of a meeting is the ten minutes
-      when students are eating, comparing playlists, talking about a game,
-      or laughing about something that happened at school.
-    </p>
-
-    <p>
-      When planning, try asking:
-      <strong>“Will this give people a chance to actually connect?”</strong>
+      A chapter can have a plan while still leaving space
+      for students to talk, laugh, sit together,
+      move around, or choose what they want to do next.
     </p>
 
     <div class="article-quick-thought">
+
+      <span>
+        Best Buddies lens
+      </span>
+
       <strong>
-        Friendship is the point. The activity is one way to help it happen.
+        Structure can open the door.
+        Friendship still needs room to walk through it.
       </strong>
+
     </div>
 
   </article>
 
 </template>
+
 
 
 <template id="participation">
@@ -1106,39 +1264,41 @@
   <article class="companion-article">
 
     <div class="article-meta">
-      Quick Thought · About 2 minutes
+      Quick Thought · Inclusion
     </div>
 
     <h2>
-      Participation doesn’t
-      <span class="purple">have one look.</span>
+      Participation doesn’t have one look.
     </h2>
 
     <p class="article-lede">
-      Being fully part of a Best Buddies chapter should not depend on
-      everyone participating in exactly the same way.
+      Students do not need to participate in exactly
+      the same way for an activity to be shared or meaningful.
     </p>
 
     <p>
-      Someone may talk constantly. Someone else may communicate through
-      AAC, gesture, sign, facial expression, or writing. Another person
-      may prefer to watch before joining or take part for a shorter period.
-    </p>
-
-    <p>
-      Those differences do not automatically mean someone is less engaged.
+      Connection may involve conversation, movement,
+      gestures, AAC, observation, helping with a task,
+      making choices, creating something, or simply
+      enjoying time in the group.
     </p>
 
     <div class="article-quick-thought">
+
+      <span>
+        Best Buddies lens
+      </span>
+
       <strong>
-        Instead of asking “Can everyone do this?” try:
-        “How many ways can someone take part?”
+        Look for connection, not sameness.
       </strong>
+
     </div>
 
   </article>
 
 </template>
+
 
 
 <template id="student-leaders">
@@ -1146,39 +1306,48 @@
   <article class="companion-article">
 
     <div class="article-meta">
-      Quick Thought · About 2 minutes
+      Quick Thought · Leadership
     </div>
 
     <h2>
-      Let strong student leaders
-      <span class="purple">lead.</span>
+      Let strong student leaders lead.
     </h2>
 
     <p class="article-lede">
-      Student leadership means more than assigning setup and cleanup jobs.
+      Student leadership is most useful when students
+      are trusted with meaningful responsibility.
     </p>
 
     <p>
-      Chapter Presidents and executive members can take meaningful ownership
-      of recruitment, communication, activities, welcoming new members,
-      and creating the culture of the chapter.
+      Ask students to help make decisions about recruitment,
+      meetings, activities, communications, and chapter culture.
+      Give guidance where they need it without automatically
+      taking the work back.
     </p>
 
     <p>
-      Your role is not to disappear. It is to stay close enough to guide,
-      support, and step in when needed while still leaving room for students
-      to make decisions.
+      Leadership also does not have to mean being the loudest
+      student in the room. Look for different strengths
+      and different ways students can contribute.
     </p>
 
     <div class="article-quick-thought">
+
+      <span>
+        Best Buddies lens
+      </span>
+
       <strong>
-        Give students something meaningful to own — with you nearby.
+        Create opportunities for leadership,
+        not just a list of jobs.
       </strong>
+
     </div>
 
   </article>
 
 </template>
+
 
 
 <footer>
@@ -1192,7 +1361,7 @@
     >
 
     <p>
-      Teacher Companion · Prototype for internal review
+      Teacher Hub · Prototype for internal review
     </p>
 
     <a
@@ -1208,56 +1377,68 @@
 </footer>
 
 
+
 <script>
 
-const articleDialog = document.getElementById("article-dialog");
-const dialogContent = document.getElementById("dialog-content");
-const closeButton = document.querySelector(".dialog-close");
+  const articleDialog =
+    document.getElementById("article-dialog");
+
+  const dialogContent =
+    document.getElementById("dialog-content");
+
+  const closeButton =
+    articleDialog.querySelector(".dialog-close");
 
 
-document.querySelectorAll("[data-dialog]").forEach((button) => {
+  document
+    .querySelectorAll("[data-template]")
+    .forEach(function (button) {
 
-  button.addEventListener("click", () => {
+      button.addEventListener("click", function () {
 
-    const templateId = button.getAttribute("data-dialog");
-    const template = document.getElementById(templateId);
+        const templateId =
+          button.dataset.template;
 
-    if (!template) return;
+        const template =
+          document.getElementById(templateId);
 
-    dialogContent.innerHTML = "";
-    dialogContent.appendChild(template.content.cloneNode(true));
+        if (!template) {
+          return;
+        }
 
-    articleDialog.showModal();
+        dialogContent.innerHTML = "";
 
-    closeButton.focus();
+        dialogContent.appendChild(
+          template.content.cloneNode(true)
+        );
+
+        articleDialog.showModal();
+      });
+
+    });
+
+
+  closeButton.addEventListener("click", function () {
+    articleDialog.close();
+  });
+
+
+  articleDialog.addEventListener("click", function (event) {
+
+    if (event.target === articleDialog) {
+      articleDialog.close();
+    }
 
   });
 
-});
 
-
-closeButton.addEventListener("click", () => {
-  articleDialog.close();
-});
-
-
-articleDialog.addEventListener("click", (event) => {
-
-  const rect = articleDialog.getBoundingClientRect();
-
-  const clickedOutside =
-    event.clientX < rect.left ||
-    event.clientX > rect.right ||
-    event.clientY < rect.top ||
-    event.clientY > rect.bottom;
-
-  if (clickedOutside) {
-    articleDialog.close();
-  }
-
-});
+  articleDialog.addEventListener("close", function () {
+    dialogContent.innerHTML = "";
+  });
 
 </script>
 
+
 </body>
+
 </html>
