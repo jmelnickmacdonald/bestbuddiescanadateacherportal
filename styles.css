@@ -2633,3 +2633,243 @@ footer {
   }
 
 }
+
+/* =========================================================
+   PROTOTYPE TEACHER HUB ACCESS
+========================================================= */
+
+body.access-locked {
+  overflow: hidden;
+}
+
+
+.access-gate {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(90, 63, 152, 0.98),
+      rgba(90, 63, 152, 0.94)
+    );
+
+  overflow-y: auto;
+}
+
+
+.access-gate-card {
+  position: relative;
+
+  width: min(100%, 560px);
+
+  padding: 44px 48px 46px;
+
+  background: #ffffff;
+
+  border-radius: 30px 30px 88px 30px;
+
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.24);
+}
+
+
+.access-gate-card::after {
+  content: "";
+
+  position: absolute;
+
+  right: 32px;
+  top: -20px;
+
+  width: 48px;
+  height: 48px;
+
+  background: #FFD420;
+
+  border-radius: 50%;
+}
+
+
+.access-logo {
+  width: auto;
+  height: 78px;
+
+  margin-bottom: 29px;
+
+  object-fit: contain;
+}
+
+
+.access-kicker {
+  margin-bottom: 10px;
+
+  color: #5A3F98;
+
+  font-size: 0.76rem;
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+.access-gate-card h1 {
+  margin-bottom: 17px;
+
+  color: #17131d;
+
+  font-size: clamp(2.75rem, 7vw, 4rem);
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+}
+
+
+.access-intro {
+  margin: 0 0 30px;
+
+  color: #625c68;
+
+  font-size: 1.04rem;
+  line-height: 1.6;
+}
+
+
+#access-form label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #17131d;
+
+  font-weight: 800;
+}
+
+
+#teacher-password {
+  width: 100%;
+  min-height: 54px;
+
+  padding: 12px 15px;
+
+  background: #ffffff;
+
+  border: 2px solid #ded9e2;
+  border-radius: 10px;
+
+  color: #17131d;
+
+  font-size: 1rem;
+}
+
+
+#teacher-password:focus {
+  border-color: #5A3F98;
+
+  outline: 4px solid rgba(255, 212, 32, 0.75);
+  outline-offset: 2px;
+}
+
+
+.access-error {
+  min-height: 25px;
+
+  margin: 8px 0 5px;
+
+  color: #9d2535;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+
+.access-button {
+  width: 100%;
+  min-height: 55px;
+
+  margin-top: 8px;
+  padding: 13px 22px;
+
+  background: #5A3F98;
+  color: #ffffff;
+
+  border: 0;
+  border-radius: 999px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+}
+
+
+.access-button:hover {
+  transform: translateY(-1px);
+}
+
+
+.access-help {
+  margin: 24px 0 8px;
+
+  color: #625c68;
+
+  font-size: 0.9rem;
+}
+
+
+.access-back {
+  color: #5A3F98;
+
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+
+.access-gate-exit {
+  opacity: 0;
+
+  transition: opacity 0.25s ease;
+}
+
+
+@media (max-width: 600px) {
+
+  .access-gate {
+    align-items: flex-start;
+
+    padding: 24px 17px;
+  }
+
+
+  .access-gate-card {
+    margin-top: 35px;
+
+    padding: 34px 25px 38px;
+
+    border-radius: 24px 24px 62px 24px;
+  }
+
+
+  .access-logo {
+    height: 64px;
+  }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  .access-gate-exit {
+    transition: none;
+  }
+
+}
