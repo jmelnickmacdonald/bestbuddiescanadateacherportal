@@ -11,10 +11,12 @@
 
   --white: #ffffff;
   --wash: #f7f6f9;
-  --lavender: #e8e5f8;
-  --warm: #fff6cf;
+  --lavender: #e9e6f8;
+  --yellow-soft: #fff6c8;
+  --teal-soft: #dff4ef;
+  --orange-soft: #fff0e7;
 
-  --line: #ded9e3;
+  --line: #ddd9e2;
 
   --max: 1380px;
 }
@@ -41,7 +43,7 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
 
   font-size: 19px;
-  line-height: 1.58;
+  line-height: 1.62;
 
   -webkit-font-smoothing: antialiased;
 }
@@ -100,26 +102,12 @@ input:focus-visible {
    TYPOGRAPHY
 ========================================================= */
 
-.display-font {
-  font-family:
-    "Helvetica Neue",
-    "Arial Black",
-    Arial,
-    sans-serif;
-
-  font-weight: 900;
-
-  letter-spacing: -0.065em;
-
-  -webkit-text-stroke: 0.15px currentColor;
-}
-
 .portal-kicker {
-  margin-bottom: 13px;
+  margin-bottom: 14px;
 
   color: var(--purple);
 
-  font-size: 0.83rem;
+  font-size: 0.84rem;
   font-weight: 900;
 
   letter-spacing: 0.075em;
@@ -131,21 +119,17 @@ input:focus-visible {
 
   color: var(--ink);
 
-  font-family:
-    "Helvetica Neue",
-    "Arial Black",
-    Arial,
-    sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
 
-  font-size: clamp(3.8rem, 6vw, 6.7rem);
+  font-size: clamp(4rem, 6.4vw, 7rem);
   font-weight: 900;
 
-  line-height: 0.84;
-  letter-spacing: -0.068em;
+  line-height: 0.82;
+  letter-spacing: -0.07em;
 
   text-transform: uppercase;
 
-  -webkit-text-stroke: 0.15px currentColor;
+  -webkit-text-stroke: 0.3px currentColor;
 }
 
 .portal-display .purple {
@@ -159,21 +143,15 @@ input:focus-visible {
 
   color: var(--ink);
 
-  font-family:
-    "Helvetica Neue",
-    "Arial Black",
-    Arial,
-    sans-serif;
-
-  font-size: clamp(3rem, 4.8vw, 5.1rem);
+  font-size: clamp(3rem, 5vw, 5.2rem);
   font-weight: 900;
 
-  line-height: 0.9;
+  line-height: 0.88;
   letter-spacing: -0.06em;
 
   text-transform: uppercase;
 
-  -webkit-text-stroke: 0.15px currentColor;
+  -webkit-text-stroke: 0.25px currentColor;
 }
 
 .portal-heading .purple {
@@ -181,12 +159,12 @@ input:focus-visible {
 }
 
 .portal-lede {
-  max-width: 760px;
+  max-width: 770px;
 
   color: var(--muted);
 
   font-size: 1.16rem;
-  line-height: 1.62;
+  line-height: 1.64;
 }
 
 
@@ -204,13 +182,13 @@ input:focus-visible {
 }
 
 .portal-header-inner {
-  min-height: 108px;
+  min-height: 104px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  gap: 34px;
+  gap: 35px;
 }
 
 .portal-brand {
@@ -219,8 +197,6 @@ input:focus-visible {
 
   gap: 17px;
 
-  flex: 0 0 auto;
-
   color: var(--white);
 
   text-decoration: none;
@@ -228,40 +204,38 @@ input:focus-visible {
 
 .portal-brand img {
   width: auto;
-  height: 78px;
+  height: 77px;
 }
 
-.portal-brand-text {
-  position: relative;
+.portal-brand-copy {
+  display: flex;
+  flex-direction: column;
 
-  padding-bottom: 7px;
+  gap: 2px;
+}
 
+.portal-brand-copy strong {
   color: var(--white);
 
-  font-size: 1.1rem;
+  font-size: 1.13rem;
   font-weight: 900;
 
-  white-space: nowrap;
+  line-height: 1.05;
 }
 
-.portal-brand-text::after {
-  content: "";
+.portal-brand-copy span {
+  color: var(--yellow);
 
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  font-size: 0.66rem;
+  font-weight: 900;
 
-  width: 47px;
-  height: 5px;
-
-  background: var(--yellow);
-
-  border-radius: 999px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 
 /* =========================================================
-   DESKTOP NAV
+   NAVIGATION
 ========================================================= */
 
 .header-actions {
@@ -283,12 +257,11 @@ input:focus-visible {
 
   border-radius: 999px;
 
-  box-shadow:
-    0 8px 22px rgba(35, 21, 65, 0.12);
+  box-shadow: 0 7px 20px rgba(38, 24, 68, 0.14);
 }
 
 .portal-nav > a {
-  min-height: 46px;
+  min-height: 45px;
 
   display: flex;
   align-items: center;
@@ -300,7 +273,7 @@ input:focus-visible {
 
   border-radius: 999px;
 
-  font-size: 0.88rem;
+  font-size: 0.87rem;
   font-weight: 900;
 
   white-space: nowrap;
@@ -324,13 +297,12 @@ input:focus-visible {
 
   border-radius: 999px;
 
-  box-shadow:
-    0 8px 22px rgba(35, 21, 65, 0.12);
+  box-shadow: 0 7px 20px rgba(38, 24, 68, 0.14);
 }
 
 .portal-lang a {
-  min-width: 45px;
-  min-height: 45px;
+  min-width: 44px;
+  min-height: 44px;
 
   display: flex;
   align-items: center;
@@ -360,7 +332,7 @@ input:focus-visible {
   display: block;
 
   width: 100%;
-  height: 19px;
+  height: 18px;
 
   margin-bottom: -1px;
 
@@ -369,7 +341,7 @@ input:focus-visible {
 
 
 /* =========================================================
-   MOBILE MENU
+   COLLAPSED MENU
 ========================================================= */
 
 .portal-menu {
@@ -409,6 +381,8 @@ input:focus-visible {
   top: calc(100% + 13px);
   right: 0;
 
+  z-index: 5000;
+
   width: min(330px, calc(100vw - 32px));
 
   padding: 17px;
@@ -417,8 +391,7 @@ input:focus-visible {
 
   border-radius: 22px 22px 58px 22px;
 
-  box-shadow:
-    0 20px 50px rgba(32, 20, 56, 0.24);
+  box-shadow: 0 20px 50px rgba(32, 20, 56, 0.24);
 }
 
 .portal-menu-panel > a {
@@ -479,7 +452,7 @@ input:focus-visible {
 ========================================================= */
 
 .portal-button {
-  min-height: 53px;
+  min-height: 54px;
 
   display: inline-flex;
   align-items: center;
@@ -498,11 +471,15 @@ input:focus-visible {
 
   text-decoration: none;
 
-  transition: transform 0.16s ease;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease;
 }
 
 .portal-button:hover {
   transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(53, 34, 89, 0.15);
 }
 
 .portal-button.yellow {
@@ -519,7 +496,7 @@ input:focus-visible {
   position: relative;
 
   width: 100%;
-  height: clamp(500px, 35vw, 620px);
+  height: clamp(515px, 33vw, 590px);
 
   overflow: hidden;
 
@@ -550,27 +527,21 @@ input:focus-visible {
 
 .home-banner-copy {
   width: 46%;
-  max-width: 710px;
+  max-width: 715px;
 }
 
 .home-banner-copy h1 {
-  margin: 0 0 25px;
+  margin: 0 0 26px;
 
   color: var(--ink);
 
-  font-family:
-    "Helvetica Neue",
-    "Arial Black",
-    Arial,
-    sans-serif;
-
-  font-size: clamp(3.35rem, 4.65vw, 5.25rem);
+  font-size: clamp(3.5rem, 4.7vw, 5.35rem);
   font-weight: 900;
 
-  line-height: 0.93;
-  letter-spacing: -0.062em;
+  line-height: 0.92;
+  letter-spacing: -0.064em;
 
-  -webkit-text-stroke: 0.15px currentColor;
+  -webkit-text-stroke: 0.25px currentColor;
 }
 
 .home-banner-copy h1 span {
@@ -578,7 +549,7 @@ input:focus-visible {
 }
 
 .hero-line {
-  width: 70px;
+  width: 72px;
   height: 8px;
 
   margin: 16px 0 29px;
@@ -588,15 +559,15 @@ input:focus-visible {
   border-radius: 999px;
 }
 
-.home-banner-copy .hero-copy {
-  max-width: 690px;
+.hero-copy {
+  max-width: 700px;
 
   margin: 0;
 
   color: var(--muted);
 
-  font-size: 1.12rem;
-  line-height: 1.62;
+  font-size: 1.14rem;
+  line-height: 1.63;
 }
 
 .hero-thank-you {
@@ -610,7 +581,7 @@ input:focus-visible {
 
 
 /* =========================================================
-   PROGRAM LAUNCH
+   HOMEPAGE PROGRAM CHOICE
 ========================================================= */
 
 .program-launch {
@@ -624,24 +595,29 @@ input:focus-visible {
 .program-launch-heading {
   position: relative;
 
-  max-width: 960px;
+  max-width: 900px;
 
-  margin-bottom: 54px;
+  margin-bottom: 52px;
 }
 
 .program-launch-heading .portal-display {
   font-size: clamp(3.7rem, 5.8vw, 6.2rem);
 }
 
+.program-heading-row {
+  display: flex;
+  align-items: flex-end;
+
+  gap: 35px;
+}
+
 .program-arrow {
-  position: absolute;
-  right: 2%;
-  bottom: -10px;
+  width: 118px;
+  height: 65px;
 
-  width: 125px;
-  height: 70px;
+  margin-bottom: 6px;
 
-  overflow: visible;
+  flex: 0 0 auto;
 }
 
 .program-arrow path,
@@ -650,6 +626,7 @@ input:focus-visible {
 
   stroke: var(--purple);
   stroke-width: 5;
+
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -670,13 +647,15 @@ input:focus-visible {
 }
 
 .program-photo {
+  position: relative;
+
   height: 360px;
 
   overflow: hidden;
 
   background: var(--wash);
 
-  border-radius: 34px 34px 34px 34px;
+  border-radius: 34px;
 }
 
 .program-photo img {
@@ -685,7 +664,7 @@ input:focus-visible {
 
   object-fit: cover;
 
-  transition: transform 0.18s ease;
+  transition: transform 0.2s ease;
 }
 
 .program-tile:hover .program-photo img {
@@ -701,37 +680,23 @@ input:focus-visible {
 }
 
 .program-info {
-  padding: 27px 11px 0;
-}
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 
-.program-type {
-  display: block;
+  gap: 25px;
 
-  margin-bottom: 10px;
-
-  color: var(--purple);
-
-  font-size: 0.76rem;
-  font-weight: 900;
-
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
+  padding: 27px 10px 0;
 }
 
 .program-info h2 {
-  max-width: 640px;
+  max-width: 590px;
 
-  margin: 0 0 24px;
+  margin: 0;
 
   color: var(--ink);
 
-  font-family:
-    "Helvetica Neue",
-    "Arial Black",
-    Arial,
-    sans-serif;
-
-  font-size: clamp(2.3rem, 3.2vw, 3.45rem);
+  font-size: clamp(2.25rem, 3.1vw, 3.4rem);
   font-weight: 900;
 
   line-height: 0.9;
@@ -739,31 +704,37 @@ input:focus-visible {
 
   text-transform: uppercase;
 
-  -webkit-text-stroke: 0.15px currentColor;
+  -webkit-text-stroke: 0.2px currentColor;
 }
 
-.program-enter {
-  min-height: 52px;
+.program-title-arrow {
+  flex: 0 0 auto;
 
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 
-  gap: 11px;
-
-  padding: 11px 25px;
+  width: 55px;
+  height: 55px;
 
   background: var(--purple);
   color: var(--white);
 
-  border-radius: 999px;
+  border-radius: 50%;
 
-  font-size: 0.97rem;
+  font-size: 1.6rem;
   font-weight: 900;
+
+  transition: transform 0.18s ease;
+}
+
+.program-tile:hover .program-title-arrow {
+  transform: translateX(5px);
 }
 
 
 /* =========================================================
-   HOME CALENDAR
+   HOMEPAGE CALENDAR
 ========================================================= */
 
 .calendar-home {
@@ -788,8 +759,8 @@ input:focus-visible {
 
   color: var(--muted);
 
-  font-size: 1.11rem;
-  line-height: 1.62;
+  font-size: 1.12rem;
+  line-height: 1.64;
 }
 
 .calendar-tags {
@@ -824,7 +795,7 @@ input:focus-visible {
 }
 
 .calendar-bar {
-  min-height: 64px;
+  min-height: 65px;
 
   display: flex;
   align-items: center;
@@ -832,7 +803,7 @@ input:focus-visible {
 
   gap: 25px;
 
-  padding: 14px 23px;
+  padding: 15px 23px;
 
   background: var(--purple);
   color: var(--white);
@@ -877,7 +848,7 @@ input:focus-visible {
 
 
 /* =========================================================
-   RESOURCES
+   HOMEPAGE RESOURCES
 ========================================================= */
 
 .home-tools {
@@ -930,12 +901,6 @@ input:focus-visible {
 
   color: var(--ink);
 
-  font-family:
-    "Helvetica Neue",
-    "Arial Black",
-    Arial,
-    sans-serif;
-
   font-size: 1.85rem;
   font-weight: 900;
 
@@ -948,7 +913,7 @@ input:focus-visible {
 
   color: var(--muted);
 
-  font-size: 0.97rem;
+  font-size: 0.98rem;
 }
 
 .tool-link strong {
@@ -998,7 +963,7 @@ input:focus-visible {
 ========================================================= */
 
 .program-page-hero {
-  padding: 54px 0 62px;
+  padding: 52px 0 58px;
 
   background: var(--white);
 }
@@ -1009,11 +974,11 @@ input:focus-visible {
 
   gap: 7px;
 
-  margin-bottom: 28px;
+  margin-bottom: 27px;
 
   color: var(--purple);
 
-  font-size: 0.87rem;
+  font-size: 0.88rem;
   font-weight: 900;
 
   text-decoration: none;
@@ -1021,7 +986,7 @@ input:focus-visible {
 
 .program-page-hero-grid {
   display: grid;
-  grid-template-columns: 1fr 0.83fr;
+  grid-template-columns: 1fr 0.84fr;
 
   gap: 68px;
 
@@ -1031,11 +996,10 @@ input:focus-visible {
 .program-page-label {
   color: var(--purple);
 
-  font-size: 0.83rem;
+  font-size: 0.85rem;
   font-weight: 900;
 
   letter-spacing: 0.075em;
-
   text-transform: uppercase;
 }
 
@@ -1044,13 +1008,7 @@ input:focus-visible {
 
   color: var(--ink);
 
-  font-family:
-    "Helvetica Neue",
-    "Arial Black",
-    Arial,
-    sans-serif;
-
-  font-size: clamp(3.9rem, 6vw, 6.5rem);
+  font-size: clamp(3.9rem, 6.2vw, 6.7rem);
   font-weight: 900;
 
   line-height: 0.82;
@@ -1058,7 +1016,7 @@ input:focus-visible {
 
   text-transform: uppercase;
 
-  -webkit-text-stroke: 0.15px currentColor;
+  -webkit-text-stroke: 0.3px currentColor;
 }
 
 .program-page-hero h1 .purple {
@@ -1074,8 +1032,8 @@ input:focus-visible {
 
   color: var(--muted);
 
-  font-size: 1.12rem;
-  line-height: 1.62;
+  font-size: 1.14rem;
+  line-height: 1.64;
 }
 
 .program-page-image {
@@ -1100,107 +1058,138 @@ input:focus-visible {
 
 
 /* =========================================================
-   PROGRAM DASHBOARD
+   PROGRAM PAGE CALENDAR
 ========================================================= */
 
-.program-dashboard {
-  padding: 62px 0 72px;
+.program-calendar-section {
+  padding: 78px 0 88px;
 
-  background: var(--purple);
-  color: var(--white);
+  background: var(--wash);
 }
 
-.program-dashboard .portal-kicker {
-  color: var(--yellow);
-}
-
-.program-dashboard h2 {
-  margin: 0 0 37px;
-
-  color: var(--white);
-
-  font-family:
-    "Helvetica Neue",
-    "Arial Black",
-    Arial,
-    sans-serif;
-
-  font-size: clamp(2.8rem, 4.5vw, 4.7rem);
-  font-weight: 900;
-
-  line-height: 0.88;
-  letter-spacing: -0.058em;
-
-  text-transform: uppercase;
-
-  -webkit-text-stroke: 0.15px currentColor;
-}
-
-.dashboard-grid {
+.program-calendar-heading {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 0.72fr;
+
+  gap: 70px;
+
+  align-items: end;
+
+  margin-bottom: 34px;
+}
+
+.program-calendar-heading p {
+  margin: 0 0 6px;
+
+  color: var(--muted);
+
+  font-size: 1.1rem;
+}
+
+.program-calendar-heading .portal-display {
+  font-size: clamp(3.5rem, 5.3vw, 5.8rem);
+}
+
+
+/* =========================================================
+   MONTH BOARD
+========================================================= */
+
+.month-board-section {
+  padding: 88px 0 94px;
+
+  background: var(--white);
+}
+
+.month-board-heading {
+  display: grid;
+  grid-template-columns: 1fr 0.72fr;
+
+  gap: 70px;
+
+  align-items: end;
+
+  margin-bottom: 42px;
+}
+
+.month-board-heading p {
+  margin: 0 0 4px;
+
+  color: var(--muted);
+
+  font-size: 1.1rem;
+}
+
+.month-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 
   gap: 14px;
 }
 
-.dashboard-card {
-  min-height: 215px;
+.month-tile {
+  position: relative;
+
+  min-height: 180px;
 
   display: flex;
   flex-direction: column;
 
-  padding: 25px;
+  padding: 23px;
 
-  background: var(--white);
+  overflow: hidden;
+
+  background: var(--wash);
   color: var(--text);
 
-  border-radius: 21px 21px 55px 21px;
+  border: 2px solid var(--line);
+  border-radius: 20px 20px 48px 20px;
 
   text-decoration: none;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
-.dashboard-card:nth-child(2) {
-  border-radius: 21px 55px 21px 21px;
+.month-tile:nth-child(even) {
+  border-radius: 20px 48px 20px 20px;
 }
 
-.dashboard-card:nth-child(3) {
-  border-radius: 55px 21px 21px 21px;
+.month-tile.available {
+  border: 0;
 }
 
-.dashboard-card.primary {
+.month-tile.september {
   background: var(--yellow);
 }
 
-.dashboard-card.teal {
-  background: var(--teal);
-}
-
-.dashboard-card.violet {
+.month-tile.october {
   background: var(--lavender);
 }
 
-.dashboard-card > span {
+.month-tile.available:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 13px 30px rgba(46, 31, 78, 0.1);
+}
+
+.month-tile .month-number {
   color: var(--purple);
 
-  font-size: 0.71rem;
+  font-size: 0.72rem;
   font-weight: 900;
 
   letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
-.dashboard-card h3 {
-  margin: 13px 0 10px;
+.month-tile h3 {
+  margin: 12px 0 5px;
 
   color: var(--ink);
 
-  font-family:
-    "Helvetica Neue",
-    "Arial Black",
-    Arial,
-    sans-serif;
-
-  font-size: 1.72rem;
+  font-size: clamp(1.45rem, 2vw, 2rem);
   font-weight: 900;
 
   line-height: 0.95;
@@ -1209,164 +1198,95 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
-.dashboard-card p {
-  margin: 0 0 18px;
+.month-tile p {
+  margin: 0;
 
   color: var(--text);
 
-  font-size: 0.93rem;
-  line-height: 1.48;
+  font-size: 0.86rem;
+  line-height: 1.42;
 }
 
-.dashboard-card strong {
+.month-tile-arrow {
   margin-top: auto;
+  padding-top: 15px;
 
   color: var(--purple);
+
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.month-tile.future {
+  opacity: 0.65;
+}
+
+.month-tile.future h3 {
+  color: var(--muted);
 }
 
 
 /* =========================================================
-   MONTHS AREA
+   MONTH DETAIL
 ========================================================= */
 
-.months-area {
-  padding: 82px 0;
+.month-detail {
+  padding: 94px 0;
 
   background: var(--white);
-}
-
-.months-header {
-  display: grid;
-  grid-template-columns: 1fr 0.72fr;
-
-  gap: 62px;
-
-  align-items: end;
-
-  margin-bottom: 38px;
-}
-
-.months-header p {
-  margin: 0 0 5px;
-
-  color: var(--muted);
-
-  font-size: 1.08rem;
-}
-
-.month-nav {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-
-  margin-bottom: 70px;
-
-  border-top: 2px solid var(--line);
-  border-bottom: 2px solid var(--line);
-}
-
-.month-nav a,
-.month-nav span {
-  min-height: 78px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 8px 5px;
-
-  color: var(--muted);
-
-  border-right: 1px solid var(--line);
-
-  font-size: 0.74rem;
-  font-weight: 900;
-
-  text-align: center;
-
-  text-decoration: none;
-}
-
-.month-nav > *:first-child {
-  border-left: 1px solid var(--line);
-}
-
-.month-nav .available {
-  color: var(--purple);
-}
-
-.month-nav .current {
-  background: var(--purple);
-  color: var(--white);
-}
-
-
-/* =========================================================
-   MONTH MODULE
-========================================================= */
-
-.month-module {
-  padding: 20px 0 85px;
 
   scroll-margin-top: 20px;
 }
 
-.month-module + .month-module {
-  padding-top: 80px;
-
-  border-top: 2px solid var(--line);
+.month-detail.alt {
+  background: var(--wash);
 }
 
-.month-title-row {
+.month-detail-heading {
   display: grid;
-  grid-template-columns: 0.72fr 1.28fr;
+  grid-template-columns: 0.7fr 1.3fr;
 
-  gap: 58px;
+  gap: 62px;
 
   align-items: start;
-
-  margin-bottom: 36px;
 }
 
-.month-name {
+.month-big-name {
   color: var(--purple);
 
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 900;
 
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.month-title-row h2 {
-  margin: 7px 0 17px;
+.month-detail-title {
+  margin: 7px 0 18px;
 
   color: var(--ink);
 
-  font-family:
-    "Helvetica Neue",
-    "Arial Black",
-    Arial,
-    sans-serif;
-
-  font-size: clamp(3.6rem, 6vw, 6.2rem);
+  font-size: clamp(3.7rem, 6vw, 6.2rem);
   font-weight: 900;
 
-  line-height: 0.82;
+  line-height: 0.81;
   letter-spacing: -0.07em;
 
   text-transform: uppercase;
 
-  -webkit-text-stroke: 0.15px currentColor;
+  -webkit-text-stroke: 0.3px currentColor;
 }
 
-.month-title-row p {
+.month-detail-intro {
+  max-width: 570px;
+
   color: var(--muted);
 
-  font-size: 1.05rem;
+  font-size: 1.08rem;
 }
 
 .month-checklist {
-  padding: 32px 35px;
+  padding: 33px 36px;
 
   background: var(--purple);
   color: var(--white);
@@ -1374,10 +1294,10 @@ input:focus-visible {
   border-radius: 28px 28px 74px 28px;
 }
 
-.month-checklist > span {
+.month-checklist-label {
   color: var(--yellow);
 
-  font-size: 0.73rem;
+  font-size: 0.74rem;
   font-weight: 900;
 
   letter-spacing: 0.07em;
@@ -1385,11 +1305,11 @@ input:focus-visible {
 }
 
 .month-checklist h3 {
-  margin: 9px 0 15px;
+  margin: 9px 0 16px;
 
   color: var(--white);
 
-  font-size: 1.85rem;
+  font-size: 1.9rem;
   font-weight: 900;
 }
 
@@ -1403,61 +1323,160 @@ input:focus-visible {
 .month-checklist li {
   padding: 11px 0;
 
-  border-bottom:
-    1px solid rgba(255, 255, 255, 0.24);
+  border-bottom: 1px solid rgba(255,255,255,0.24);
 }
 
 .month-checklist li:last-child {
   border-bottom: 0;
 }
 
-.month-calendar-link {
-  display: inline-block;
 
-  margin-top: 18px;
+/* =========================================================
+   MONTH SECTION HEADERS
+========================================================= */
 
-  color: var(--white);
+.month-subsection {
+  margin-top: 55px;
+}
 
-  font-size: 0.9rem;
-  font-weight: 850;
+.month-subsection-heading {
+  max-width: 850px;
+
+  margin-bottom: 28px;
+}
+
+.month-subsection-heading span {
+  color: var(--purple);
+
+  font-size: 0.75rem;
+  font-weight: 900;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.month-subsection-heading h3 {
+  margin: 8px 0 8px;
+
+  color: var(--ink);
+
+  font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+  font-weight: 900;
+
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+
+  text-transform: uppercase;
+}
+
+.month-subsection-heading p {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: var(--muted);
 }
 
 
 /* =========================================================
-   MONTH CONTENT
+   READY-TO-RUN IDEAS
 ========================================================= */
 
-.month-content-grid {
+.activity-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 16px;
+}
+
+.activity-block {
+  min-height: 245px;
+
+  padding: 26px;
+
+  background: var(--yellow-soft);
+
+  border-radius: 20px 20px 55px 20px;
+}
+
+.activity-block:nth-child(2) {
+  background: var(--teal-soft);
+
+  border-radius: 20px 55px 20px 20px;
+}
+
+.activity-block:nth-child(3) {
+  background: var(--orange-soft);
+
+  border-radius: 55px 20px 20px 20px;
+}
+
+.activity-block:nth-child(4) {
+  background: var(--lavender);
+}
+
+.activity-block .meta {
+  color: var(--purple);
+
+  font-size: 0.71rem;
+  font-weight: 900;
+
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+}
+
+.activity-block h4 {
+  margin: 11px 0;
+
+  color: var(--ink);
+
+  font-size: 1.45rem;
+  font-weight: 900;
+
+  line-height: 1;
+}
+
+.activity-block p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   SEPTEMBER PATHS
+========================================================= */
+
+.path-board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 22px;
-
-  margin-top: 36px;
+  gap: 18px;
 }
 
-.month-card {
-  min-height: 245px;
+.path-block {
+  min-height: 225px;
 
   padding: 27px;
 
   background: var(--wash);
 
   border-top: 8px solid var(--yellow);
-  border-radius: 20px 20px 59px 20px;
+  border-radius: 20px 20px 55px 20px;
 }
 
-.month-card:nth-child(2) {
+.path-block:nth-child(2) {
   border-top-color: var(--teal);
-  border-radius: 20px 59px 20px 20px;
 }
 
-.month-card:nth-child(3) {
+.path-block:nth-child(3) {
   border-top-color: var(--orange);
-  border-radius: 59px 20px 20px 20px;
 }
 
-.month-card .meta {
+.path-block .meta {
   color: var(--purple);
 
   font-size: 0.72rem;
@@ -1467,41 +1486,159 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
-.month-card h3 {
+.path-block h4 {
   margin: 11px 0;
 
   color: var(--ink);
 
-  font-family:
-    "Helvetica Neue",
-    "Arial Black",
-    Arial,
-    sans-serif;
-
-  font-size: 1.65rem;
+  font-size: 1.55rem;
   font-weight: 900;
 
   line-height: 0.98;
-  letter-spacing: -0.035em;
 }
 
-.month-card p {
+.path-block p {
   color: var(--muted);
 
-  font-size: 0.96rem;
+  font-size: 0.95rem;
 }
 
-.month-extra {
-  margin-top: 29px;
-  padding: 28px 31px;
+
+/* =========================================================
+   MONTH RESOURCES
+========================================================= */
+
+.month-resources {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 14px;
+}
+
+.month-resource {
+  min-height: 150px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 23px;
+
+  background: var(--white);
+  color: var(--text);
+
+  border: 2px solid var(--line);
+  border-radius: 18px 18px 45px 18px;
+
+  text-decoration: none;
+}
+
+.month-resource span {
+  color: var(--purple);
+
+  font-size: 0.7rem;
+  font-weight: 900;
+
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+}
+
+.month-resource strong {
+  margin-top: 8px;
+
+  color: var(--ink);
+
+  font-size: 1.15rem;
+}
+
+.month-resource b {
+  margin-top: auto;
+  padding-top: 15px;
+
+  color: var(--purple);
+
+  font-size: 0.87rem;
+}
+
+
+/* =========================================================
+   HIGH SCHOOL LEADERSHIP FEATURE
+========================================================= */
+
+.leadership-feature {
+  margin-top: 45px;
+
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+
+  gap: 45px;
+
+  padding: 35px;
+
+  background: var(--yellow);
+
+  border-radius: 30px 30px 82px 30px;
+}
+
+.leadership-feature-label {
+  color: var(--purple);
+
+  font-size: 0.76rem;
+  font-weight: 900;
+
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.leadership-feature h3 {
+  margin: 9px 0 0;
+
+  color: var(--ink);
+
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 900;
+
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+
+  text-transform: uppercase;
+}
+
+.leadership-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.leadership-list li {
+  padding: 11px 0;
+
+  border-bottom: 1px solid rgba(23,19,29,0.18);
+
+  font-weight: 700;
+}
+
+.leadership-list li:last-child {
+  border-bottom: 0;
+}
+
+
+/* =========================================================
+   OPTIONAL FEATURE BOX
+========================================================= */
+
+.month-feature-box {
+  margin-top: 34px;
+
+  padding: 29px 32px;
 
   background: var(--lavender);
 
   border-left: 9px solid var(--violet);
-  border-radius: 0 24px 63px 0;
+  border-radius: 0 24px 62px 0;
 }
 
-.month-extra h3 {
+.month-feature-box h3 {
   margin: 0 0 8px;
 
   color: var(--purple);
@@ -1510,8 +1647,10 @@ input:focus-visible {
   font-weight: 900;
 }
 
-.month-extra p {
+.month-feature-box p {
   max-width: 900px;
+
+  margin-bottom: 0;
 }
 
 
@@ -1582,7 +1721,7 @@ input:focus-visible {
 .portal-footer p {
   margin: 0;
 
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255,255,255,0.78);
 }
 
 .portal-footer a {
@@ -1595,7 +1734,7 @@ input:focus-visible {
 
 
 /* =========================================================
-   NARROW DESKTOP / TABLET
+   NARROW DESKTOP
 ========================================================= */
 
 @media (max-width: 1160px) {
@@ -1614,32 +1753,24 @@ input:focus-visible {
   }
 
   .portal-header-inner {
-    min-height: 93px;
+    min-height: 92px;
   }
 
   .home-banner {
-    height: 690px;
-  }
-
-  .home-banner picture img {
-    content: url("assets/tabletbanner.png");
+    height: 680px;
   }
 
   .home-banner-copy {
-    width: 46%;
-    max-width: 470px;
+    width: 45%;
+    max-width: 480px;
   }
 
   .home-banner-copy h1 {
-    font-size: clamp(2.55rem, 4.9vw, 3.55rem);
+    font-size: clamp(2.6rem, 4.8vw, 3.6rem);
   }
 
-  .home-banner-copy .hero-copy {
-    font-size: 0.97rem;
-  }
-
-  .hero-thank-you {
-    font-size: 0.9rem;
+  .hero-copy {
+    font-size: 0.98rem;
   }
 
   .program-grid {
@@ -1652,10 +1783,27 @@ input:focus-visible {
 
   .calendar-intro,
   .program-page-hero-grid,
-  .months-header,
-  .month-title-row,
+  .program-calendar-heading,
+  .month-board-heading,
+  .month-detail-heading,
   .role-grid,
   .support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-page-image {
+    max-width: 720px;
+  }
+
+  .month-board {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .activity-board {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .leadership-feature {
     grid-template-columns: 1fr;
   }
 
@@ -1663,27 +1811,11 @@ input:focus-visible {
     grid-template-columns: 1fr 1fr;
   }
 
-  .tool-link:nth-child(2) {
-    border-right: 0;
-  }
-
-  .dashboard-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .month-nav {
-    grid-template-columns: repeat(5, 1fr);
-  }
-
-  .program-page-image {
-    max-width: 720px;
-  }
-
 }
 
 
 /* =========================================================
-   MOBILE
+   TABLET / MOBILE
 ========================================================= */
 
 @media (max-width: 760px) {
@@ -1708,12 +1840,16 @@ input:focus-visible {
     height: 59px;
   }
 
-  .portal-brand-text {
-    font-size: 0.88rem;
+  .portal-brand-copy strong {
+    font-size: 0.9rem;
+  }
+
+  .portal-brand-copy span {
+    display: none;
   }
 
   .portal-wave {
-    height: 15px;
+    height: 14px;
   }
 
 
@@ -1745,8 +1881,6 @@ input:focus-visible {
   }
 
   .home-banner picture img {
-    content: url("assets/mobilebanner.png");
-
     object-position: center bottom;
   }
 
@@ -1759,7 +1893,7 @@ input:focus-visible {
     font-size: clamp(2.8rem, 11vw, 4rem);
   }
 
-  .home-banner-copy .hero-copy {
+  .hero-copy {
     font-size: 1rem;
   }
 
@@ -1768,6 +1902,10 @@ input:focus-visible {
 
   .program-launch {
     padding: 68px 0 80px;
+  }
+
+  .program-heading-row {
+    display: block;
   }
 
   .program-arrow {
@@ -1790,9 +1928,11 @@ input:focus-visible {
   /* CALENDAR */
 
   .calendar-home,
+  .program-calendar-section,
+  .month-board-section,
+  .month-detail,
   .home-tools,
   .portal-support,
-  .months-area,
   .role-area {
     padding: 70px 0;
   }
@@ -1806,19 +1946,6 @@ input:focus-visible {
 
   .calendar-frame {
     height: 470px;
-  }
-
-
-  /* TOOLS */
-
-  .tool-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .tool-link {
-    min-height: 190px;
-
-    border-right: 0;
   }
 
 
@@ -1836,24 +1963,32 @@ input:focus-visible {
     height: 245px;
   }
 
-  .dashboard-grid,
-  .month-content-grid {
+
+  /* MONTH BOARD */
+
+  .month-board {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .month-tile {
+    min-height: 155px;
+
+    padding: 19px;
+  }
+
+
+  /* MONTH DETAILS */
+
+  .activity-board,
+  .path-board,
+  .month-resources {
     grid-template-columns: 1fr;
   }
 
-  .dashboard-card {
-    min-height: 175px;
-  }
-
-  .month-nav {
-    display: flex;
-
-    overflow-x: auto;
-  }
-
-  .month-nav a,
-  .month-nav span {
-    min-width: 90px;
+  .month-detail-title {
+    font-size: clamp(3.3rem, 14vw, 4.8rem);
   }
 
   .role-line {
@@ -1861,6 +1996,22 @@ input:focus-visible {
 
     gap: 5px;
   }
+
+
+  /* RESOURCES */
+
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-link {
+    min-height: 190px;
+
+    border-right: 0;
+  }
+
+
+  /* FOOTER */
 
   .portal-footer-inner {
     flex-direction: column;
@@ -1880,12 +2031,16 @@ input:focus-visible {
 
 @media (max-width: 480px) {
 
-  .portal-brand-text {
+  .portal-brand-copy {
     display: none;
   }
 
   .home-banner picture {
     height: 390px;
+  }
+
+  .month-board {
+    grid-template-columns: 1fr;
   }
 
 }
@@ -1902,7 +2057,9 @@ input:focus-visible {
   }
 
   .portal-button,
-  .program-photo img {
+  .program-photo img,
+  .program-title-arrow,
+  .month-tile {
     transition: none;
   }
 
