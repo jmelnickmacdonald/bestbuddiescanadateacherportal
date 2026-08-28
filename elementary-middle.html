@@ -1,890 +1,1172 @@
-/* =========================================================
-   ELEMENTARY + HIGH SCHOOL PAGE STYLES
-   Compatibility with existing teacher-page HTML
-   ========================================================= */
+<!DOCTYPE html>
+<html lang="en-CA">
 
-/* Header logo used on the existing program pages */
-.logo-shell {
-  display: flex;
-  align-items: center;
-  padding: 0;
-  background: transparent;
-}
+<head>
 
-.logo-shell img {
-  width: auto;
-  height: 76px;
-  max-width: 190px;
-  object-fit: contain;
-}
+  <meta charset="UTF-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
-/* --------------------------------------------------
-   PROGRAM PAGE HERO
--------------------------------------------------- */
+  <title>
+    Elementary & Middle School | Best Buddies Canada Teacher Hub
+  </title>
 
-.page-hero {
-  width: min(calc(100% - 48px), var(--max));
-  margin: 0 auto;
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
 
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  <link
+    rel="stylesheet"
+    href="access.css"
+  >
 
-  align-items: center;
-  gap: 60px;
+  <script
+    src="access.js"
+    defer
+  ></script>
 
-  padding: 66px 0 82px;
-}
+</head>
 
-.page-hero-copy {
-  min-width: 0;
-}
 
-.page-hero-copy-inner {
-  padding: 0;
-}
+<body
+  data-protected="true"
+  class="access-pending"
+>
 
-.back-link {
-  display: inline-block;
-  margin-bottom: 24px;
+<a
+  class="skip-link"
+  href="#main-content"
+>
+  Skip to main content
+</a>
 
-  color: var(--purple);
 
-  font-weight: 800;
-  text-decoration: none;
-}
+<header class="site-header">
 
-.eyeline {
-  width: 72px;
-  height: 8px;
+  <div class="container header-inner">
 
-  margin: 0 0 28px;
+    <a
+      class="brand"
+      href="index.html"
+      aria-label="Best Buddies Canada Teacher Hub home"
+    >
 
-  background: var(--yellow);
+      <img
+        src="assets/bb-reversed-logo.png"
+        alt="Best Buddies Canada"
+        class="header-logo"
+      >
 
-  border-radius: 999px;
+      <span class="brand-name">
+        Teacher Hub
+      </span>
 
-  transform: rotate(-1deg);
-}
+    </a>
 
-.page-hero h1 {
-  max-width: 760px;
 
-  margin-bottom: 24px;
+    <nav
+      class="nav"
+      aria-label="Main navigation"
+    >
 
-  font-size: clamp(3rem, 4.8vw, 5rem);
-  line-height: 1;
-  letter-spacing: -0.05em;
-}
+      <a href="index.html">
+        Home
+      </a>
 
-.page-hero .program-summary {
-  max-width: 720px;
+      <a href="index.html#programs">
+        Programs
+      </a>
 
-  margin: 0;
+      <a href="teacher-companion.html">
+        Teacher Companion
+      </a>
 
-  color: var(--muted);
+      <a href="#calendar">
+        Calendar
+      </a>
 
-  font-size: 1.08rem;
-  line-height: 1.65;
-}
+      <a href="#support">
+        Get Support
+      </a>
 
-.page-hero-photo {
-  position: relative;
 
-  height: 360px;
-}
+      <div
+        class="lang"
+        aria-label="Language"
+      >
 
-.page-hero-photo img {
-  width: 100%;
-  height: 100%;
+        <a
+          href="#"
+          class="current"
+          aria-current="page"
+        >
+          EN
+        </a>
 
-  object-fit: cover;
-  object-position: center;
+        <a
+          href="fr.html"
+          lang="fr-CA"
+          hreflang="fr-CA"
+        >
+          FR
+        </a>
 
-  border-radius: 32px 32px 92px 32px;
-}
+      </div>
 
-.page-hero-photo::before {
-  content: "";
+    </nav>
 
-  position: absolute;
-  left: -16px;
-  bottom: -14px;
+  </div>
 
-  width: 76%;
-  height: 62%;
 
-  z-index: -1;
+  <svg
+    class="header-wave"
+    viewBox="0 0 1440 36"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+    focusable="false"
+  >
 
-  background: var(--teal);
+    <path
+      d="M0 0H1440V13
+      C1355 7 1314 21 1235 13
+      C1155 6 1105 20 1024 13
+      C944 5 890 21 807 13
+      C725 6 668 21 584 13
+      C503 6 445 20 362 13
+      C280 7 224 21 141 13
+      C85 8 45 16 0 12Z"
+    />
 
-  border-radius: 30px 30px 30px 76px;
-}
+  </svg>
 
-.page-hero-photo::after {
-  content: "";
+</header>
 
-  position: absolute;
-  right: -10px;
-  top: -12px;
 
-  width: 58px;
-  height: 58px;
 
-  z-index: -1;
+<main id="main-content">
 
-  background: var(--yellow);
 
-  border-radius: 50%;
-}
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
 
+  <section class="page-hero">
 
-/* --------------------------------------------------
-   TEACHER ORIENTATION
--------------------------------------------------- */
+    <div class="page-hero-copy">
 
-.teacher-orientation {
-  display: grid;
-  grid-template-columns: 0.78fr 1.22fr;
+      <a
+        class="back-link"
+        href="index.html#programs"
+      >
+        ← Back to programs
+      </a>
 
-  gap: 78px;
 
-  align-items: start;
-}
+      <div
+        class="eyeline"
+        aria-hidden="true"
+      ></div>
 
-.teacher-orientation .quote {
-  margin: 0;
 
-  padding-left: 25px;
+      <h1>
+        Elementary &amp;
+        <span class="purple">
+          Middle School
+        </span>
+      </h1>
 
-  border-left: 8px solid var(--yellow);
 
-  color: var(--purple);
+      <p class="program-summary">
+        Your chapter can grow in a way that works for your school.
+        School staff provide the structure and support, while students
+        get the space to connect, participate, and build friendships
+        together.
+      </p>
 
-  font-size: 1.45rem;
-  font-weight: 800;
+    </div>
 
-  line-height: 1.4;
-}
 
-.role-lines {
-  margin-top: 34px;
+    <div class="page-hero-photo">
 
-  border-top: 3px solid var(--ink);
-}
+      <img
+        src="assets/elementary-hero.png"
+        alt="Best Buddies participants enjoying time together"
+      >
 
-.role-line {
-  display: grid;
-  grid-template-columns: 185px 1fr;
+    </div>
 
-  gap: 25px;
+  </section>
 
-  padding: 23px 0;
 
-  border-bottom: 1px solid var(--line);
-}
 
-.role-line strong {
-  color: var(--ink);
-}
+  <!-- =====================================================
+       YOUR ROLE
+  ===================================================== -->
 
+  <section class="section">
 
-/* --------------------------------------------------
-   STARTING FRESH
--------------------------------------------------- */
+    <div class="container teacher-orientation">
 
-.starting-fresh-box {
-  margin-top: 40px;
+      <div>
 
-  padding: 36px 39px;
+        <div class="kicker">
+          Your role
+        </div>
 
-  background: #fff8d8;
+        <h2>
+          You know your students.
+          <span class="purple">
+            We bring the Best Buddies lens.
+          </span>
+        </h2>
 
-  border-left: 11px solid var(--yellow);
-  border-radius: 0 24px 68px 0;
-}
+        <p class="quote">
+          You do not need to make friendship happen.
+          Your role is to help create the conditions where it can.
+        </p>
 
-.starting-fresh-box h3 {
-  margin-bottom: 10px;
+      </div>
 
-  font-size: 1.85rem;
-}
 
-.fresh-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+      <div>
 
-  gap: 24px;
+        <div class="role-lines">
 
-  margin: 28px 0;
-}
+          <div class="role-line">
 
-.fresh-step {
-  padding-top: 16px;
+            <strong>
+              School staff
+            </strong>
 
-  border-top: 3px solid var(--ink);
-}
+            <span>
+              Provide adult guidance, organize chapter logistics,
+              communicate with families and the school, and help
+              students participate in ways that work for them.
+            </span>
 
-.fresh-num {
-  margin-bottom: 7px;
+          </div>
 
-  color: var(--purple);
 
-  font-size: 0.76rem;
-  font-weight: 900;
+          <div class="role-line">
 
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
+            <strong>
+              Students
+            </strong>
 
-.inline-links {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+            <span>
+              Take part in activities, get to know one another,
+              contribute ideas, and help shape the chapter community.
+            </span>
 
-  gap: 18px;
+          </div>
 
-  margin-top: 24px;
-}
 
+          <div class="role-line">
 
-/* --------------------------------------------------
-   YEAR INTRO
--------------------------------------------------- */
+            <strong>
+              Best Buddies
+            </strong>
 
-.year-intro {
-  display: grid;
-  grid-template-columns: 1fr 0.72fr;
+            <span>
+              Provides program resources, the Program Calendar,
+              training, practical ideas, and support from your
+              Program Advisor throughout the year.
+            </span>
 
-  gap: 65px;
+          </div>
 
-  align-items: end;
-}
+        </div>
 
-.calendar-key {
-  padding: 22px 24px;
 
-  background: var(--white);
+        <div class="starting-fresh-box">
 
-  border-left: 8px solid var(--purple);
-  border-radius: 0 22px 56px 0;
-}
+          <div class="kicker">
+            New chapter?
+          </div>
 
-.calendar-key strong {
-  display: block;
+          <h3>
+            Start with the pieces that matter first.
+          </h3>
 
-  margin-bottom: 4px;
+          <p>
+            You do not need the entire year mapped out before
+            your chapter begins.
+          </p>
 
-  color: var(--ink);
-}
 
+          <div class="fresh-grid">
 
-/* --------------------------------------------------
-   INLINE PROGRAM CALENDAR
--------------------------------------------------- */
+            <div class="fresh-step">
 
-.program-calendar-inline {
-  margin-bottom: 70px;
-}
+              <div class="fresh-num">
+                Step 01
+              </div>
 
-.program-calendar-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
+              <strong>
+                Check your school.
+              </strong>
 
-  gap: 35px;
+              <p>
+                Confirm whether a Best Buddies chapter is already active.
+              </p>
 
-  margin-bottom: 27px;
-}
+            </div>
 
-.program-calendar-heading > div {
-  max-width: 800px;
-}
 
-.program-calendar-heading h2 {
-  margin-bottom: 13px;
-}
+            <div class="fresh-step">
 
-.program-calendar-heading p {
-  margin: 0;
+              <div class="fresh-num">
+                Step 02
+              </div>
 
-  color: var(--muted);
-}
+              <strong>
+                Complete the application.
+              </strong>
 
-.program-calendar-heading > a {
-  flex: 0 0 auto;
+              <p>
+                New chapters begin with the current Program Application
+                and principal approval.
+              </p>
 
-  font-weight: 800;
-}
+            </div>
 
 
-/* Existing calendar shell from v5 */
-.calendar-embed-shell {
-  overflow: hidden;
+            <div class="fresh-step">
 
-  background: var(--white);
+              <div class="fresh-num">
+                Step 03
+              </div>
 
-  border: 2px solid var(--line);
-  border-radius: 28px 28px 78px 28px;
+              <strong>
+                Connect with Best Buddies.
+              </strong>
 
-  box-shadow: 0 16px 38px rgba(50, 35, 80, 0.08);
-}
+              <p>
+                Your Program Advisor can help you work through
+                the next steps.
+              </p>
 
-.calendar-frame-wrap {
-  width: 100%;
-  height: 540px;
+            </div>
 
-  background: var(--white);
-}
+          </div>
 
-.calendar-frame-wrap iframe {
-  display: block;
 
-  width: 100%;
-  height: 100%;
+          <div class="inline-links">
 
-  border: 0;
-}
+            <a
+              class="btn btn-purple"
+              href="https://bestbuddies.ca/find-a-school/"
+              target="_blank"
+              rel="noopener"
+            >
+              Find a participating school
+            </a>
 
+            <a
+              href="assets/best-buddies-program-application.pdf"
+              target="_blank"
+            >
+              Program Application ↗
+            </a>
 
-/* --------------------------------------------------
-   SCHOOL YEAR NAVIGATION
--------------------------------------------------- */
+          </div>
 
-.year-strip {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
+        </div>
 
-  margin: 46px 0 72px;
+      </div>
 
-  border-top: 2px solid var(--line);
-  border-bottom: 2px solid var(--line);
-}
+    </div>
 
-.year-strip a,
-.year-strip span {
-  min-height: 80px;
+  </section>
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
-  padding: 9px 5px;
 
-  border-right: 1px solid var(--line);
+  <!-- =====================================================
+       PROGRAM CALENDAR
+  ===================================================== -->
 
-  color: var(--muted);
+  <section
+    class="section calendar-section"
+    id="calendar"
+  >
 
-  font-size: 0.76rem;
-  font-weight: 900;
+    <div class="container">
 
-  text-align: center;
-  text-decoration: none;
-}
+      <div class="program-calendar-inline">
 
-.year-strip > *:first-child {
-  border-left: 1px solid var(--line);
-}
+        <div class="program-calendar-heading">
 
-.year-strip a:hover {
-  background: var(--white);
-}
+          <div>
 
-.year-strip .loaded {
-  color: var(--purple);
-}
+            <div class="kicker">
+              Program Calendar
+            </div>
 
-.year-strip .current {
-  background: var(--purple);
-  color: var(--white);
-}
+            <h2>
+              Your Best Buddies year,
+              <span class="purple">
+                all in one place.
+              </span>
+            </h2>
 
-.year-strip small {
-  margin-top: 3px;
+            <p>
+              Use the Program Calendar for monthly checklists,
+              activity ideas, important dates, community events,
+              chapter start-up tasks, and tips throughout the year.
+            </p>
 
-  font-size: 0.66rem;
-  font-weight: 400;
-}
+          </div>
 
 
-/* --------------------------------------------------
-   MONTH SECTIONS
--------------------------------------------------- */
+          <a
+            href="https://calendar.google.com/calendar/u/0/embed?ctz=America/Toronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com"
+            target="_blank"
+            rel="noopener"
+          >
+            Open full calendar ↗
+          </a>
 
-.month-section {
-  padding: 82px 0;
+        </div>
 
-  border-top: 1px solid var(--line);
 
-  scroll-margin-top: 30px;
-}
+        <div class="calendar-shell">
 
-.month-heading {
-  display: grid;
-  grid-template-columns: 0.72fr 1.28fr;
+          <div class="calendar-toolbar">
 
-  gap: 65px;
+            <div>
 
-  margin-bottom: 52px;
-}
+              <span
+                class="live-dot"
+                aria-hidden="true"
+              ></span>
 
-.month-title .month {
-  color: var(--purple);
+              <strong>
+                Live Best Buddies Program Calendar
+              </strong>
 
-  font-size: 0.8rem;
-  font-weight: 900;
+            </div>
 
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-}
+            <span>
+              Check back throughout the year
+            </span>
 
-.month-title h2 {
-  margin: 8px 0 18px;
+          </div>
 
-  font-size: clamp(3rem, 5vw, 4.7rem);
-}
 
-.month-title p {
-  color: var(--muted);
+          <div class="calendar-frame">
 
-  font-size: 1.08rem;
-}
+            <iframe
+              src="https://calendar.google.com/calendar/embed?ctz=America%2FToronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec%40group.calendar.google.com&amp;mode=AGENDA&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0"
+              title="Best Buddies Canada official Program Calendar"
+              loading="lazy"
+              frameborder="0"
+              scrolling="no"
+            ></iframe>
 
+          </div>
 
-/* --------------------------------------------------
-   OFFICIAL CALENDAR CARD
--------------------------------------------------- */
+        </div>
 
-.official-calendar {
-  padding: 34px 37px;
+      </div>
 
-  background: var(--purple);
-  color: var(--white);
 
-  border-radius: 28px 28px 82px 28px;
-}
 
-.official-calendar h3,
-.official-calendar p {
-  color: var(--white);
-}
+      <!-- =================================================
+           YEAR AT A GLANCE
+      ================================================= -->
 
-.official-tag {
-  color: var(--yellow);
+      <div class="year-intro">
 
-  font-size: 0.75rem;
-  font-weight: 900;
+        <div>
 
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
+          <div class="kicker">
+            A little extra context
+          </div>
 
-.official-list {
-  margin: 20px 0 0;
-  padding: 0;
+          <h2>
+            What might this look like
+            <span class="purple">
+              in your school?
+            </span>
+          </h2>
 
-  list-style: none;
-}
+          <p class="lede">
+            The Program Calendar is your main guide.
+            These notes add a teacher-focused view of a few common
+            chapter moments without creating extra requirements.
+          </p>
 
-.official-list li {
-  padding: 12px 0;
+        </div>
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
-}
 
-.official-list li:last-child {
-  border-bottom: 0;
-}
+        <div class="calendar-key">
 
-.calendar-link {
-  display: inline-block;
+          <strong>
+            Keep it realistic.
+          </strong>
 
-  margin-top: 18px;
+          <span>
+            A strong chapter does not have to look identical
+            from one school to the next.
+          </span>
 
-  color: var(--white);
+        </div>
 
-  font-weight: 800;
-}
+      </div>
 
 
-/* --------------------------------------------------
-   TEACHER COMPANION
--------------------------------------------------- */
+      <div
+        class="year-strip"
+        aria-label="Program year"
+      >
 
-.companion-head {
-  max-width: 830px;
+        <a
+          href="#september"
+          class="loaded current"
+        >
+          SEP
+          <small>
+            Getting set up
+          </small>
+        </a>
 
-  margin: 62px 0 34px;
-}
+        <a
+          href="#october"
+          class="loaded"
+        >
+          OCT
+          <small>
+            Getting acquainted
+          </small>
+        </a>
 
-.companion-head .label {
-  color: var(--orange);
+        <span>
+          NOV
+        </span>
 
-  font-size: 0.76rem;
-  font-weight: 900;
+        <span>
+          DEC
+        </span>
 
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
+        <span>
+          JAN
+        </span>
 
-.companion-head h3 {
-  margin-top: 8px;
+        <span>
+          FEB
+        </span>
 
-  font-size: 2.2rem;
-}
+        <span>
+          MAR
+        </span>
 
-.companion-head p {
-  color: var(--muted);
-}
+        <span>
+          APR
+        </span>
 
-.path-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+        <span>
+          MAY
+        </span>
 
-  gap: 23px;
-}
+        <span>
+          JUN
+        </span>
 
-.path {
-  min-height: 240px;
+      </div>
 
-  padding: 28px;
 
-  background: var(--white);
 
-  border-top: 8px solid var(--yellow);
-  border-radius: 20px 20px 62px 20px;
-}
+      <!-- =================================================
+           SEPTEMBER
+      ================================================= -->
 
-.path:nth-child(2) {
-  border-top-color: var(--teal);
-  border-radius: 20px 62px 20px 20px;
-}
+      <section
+        class="month-section"
+        id="september"
+      >
 
-.path:nth-child(3) {
-  border-top-color: var(--orange);
-  border-radius: 62px 20px 20px 20px;
-}
+        <div class="month-heading">
 
-.path .meta {
-  color: var(--purple);
+          <div class="month-title">
 
-  font-size: 0.74rem;
-  font-weight: 900;
+            <span class="month">
+              September
+            </span>
 
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
+            <h2>
+              Getting set up
+            </h2>
 
-.path h3 {
-  margin: 11px 0;
+            <p>
+              September can be mostly about reconnecting,
+              recruiting, and getting the chapter organized.
+              It does not need to begin with a big event.
+            </p>
 
-  font-size: 1.52rem;
-}
+          </div>
 
-.path p {
-  margin-bottom: 0;
 
-  color: var(--muted);
-}
+          <div class="official-calendar">
 
+            <span class="official-tag">
+              Program Calendar focus
+            </span>
 
-/* --------------------------------------------------
-   ACTIVITIES
--------------------------------------------------- */
+            <h3>
+              Getting Set Up
+            </h3>
 
-.activity-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+            <ul class="official-list">
 
-  gap: 24px;
-}
+              <li>
+                Check in with your Program Coordinator.
+              </li>
 
-.activity {
-  padding: 29px;
+              <li>
+                Recruit chapter members and promote Best Buddies
+                to new students.
+              </li>
 
-  background: var(--white);
+              <li>
+                Share program information and registration information
+                with parents and guardians.
+              </li>
 
-  border: 2px solid var(--line);
-  border-radius: 22px 22px 66px 22px;
-}
+              <li>
+                Coordinate and plan your first Meet &amp; Greet.
+              </li>
 
-.activity:nth-child(even) {
-  border-radius: 22px 66px 22px 22px;
-}
+            </ul>
 
-.activity::before {
-  content: "";
 
-  display: block;
+            <a
+              class="calendar-link"
+              href="#calendar"
+            >
+              View live calendar ↑
+            </a>
 
-  width: 54px;
-  height: 7px;
+          </div>
 
-  margin-bottom: 21px;
+        </div>
 
-  background: var(--yellow);
 
-  border-radius: 999px;
-}
 
-.activity:nth-child(2)::before {
-  background: var(--teal);
-}
+        <div class="companion-head">
 
-.activity:nth-child(3)::before {
-  background: var(--orange);
-}
+          <span class="label">
+            Teacher Companion
+          </span>
 
-.activity:nth-child(4)::before {
-  background: var(--violet);
-}
+          <h3>
+            September can be simple.
+          </h3>
 
-.activity .meta {
-  color: var(--purple);
+          <p>
+            Choose what fits where your chapter is right now.
+            These are options, not additional program requirements.
+          </p>
 
-  font-size: 0.74rem;
-  font-weight: 900;
+        </div>
 
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
 
-.activity h3 {
-  margin: 9px 0;
+        <div class="path-grid">
 
-  font-size: 1.52rem;
-}
+          <article class="path">
 
-.activity p {
-  color: var(--muted);
-}
+            <div class="meta">
+              New or rebuilding chapter
+            </div>
 
-.activity .source-note {
-  margin-top: 18px;
+            <h3>
+              Focus on finding your people.
+            </h3>
 
-  color: var(--muted);
+            <p>
+              Promote the chapter, connect with interested students,
+              share information with families, and get a first gathering
+              on the calendar.
+            </p>
 
-  font-size: 0.88rem;
-}
+          </article>
 
 
-/* --------------------------------------------------
-   TRAINING
--------------------------------------------------- */
+          <article class="path">
 
-.training-band {
-  display: grid;
-  grid-template-columns: 1fr auto;
+            <div class="meta">
+              Returning chapter
+            </div>
 
-  align-items: center;
+            <h3>
+              Reconnect before you over-plan.
+            </h3>
 
-  gap: 45px;
+            <p>
+              Give returning students a chance to reconnect and invite
+              new members in before deciding what the first bigger
+              chapter activity needs to be.
+            </p>
 
-  margin-top: 52px;
+          </article>
 
-  padding: 37px 39px;
 
-  background: #fff8d8;
+          <article class="path">
 
-  border-left: 10px solid var(--yellow);
-  border-radius: 0 28px 74px 0;
-}
+            <div class="meta">
+              Already have momentum
+            </div>
 
-.training-band h3 {
-  margin-bottom: 8px;
+            <h3>
+              Let students help shape the year.
+            </h3>
 
-  font-size: 1.75rem;
-}
+            <p>
+              Ask what they enjoyed last year, what they would like
+              to repeat, and what they want friendship and inclusion
+              to look like this year.
+            </p>
 
-.training-band p {
-  max-width: 760px;
+          </article>
 
-  margin-bottom: 0;
-}
+        </div>
 
-.training-actions {
-  min-width: 230px;
+      </section>
 
-  display: flex;
-  flex-direction: column;
 
-  gap: 10px;
-}
 
+      <!-- =================================================
+           OCTOBER
+      ================================================= -->
 
-/* --------------------------------------------------
-   HELPFUL TO KNOW / ARTICLES
--------------------------------------------------- */
+      <section
+        class="month-section"
+        id="october"
+      >
 
-.article-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+        <div class="month-heading">
 
-  border-top: 3px solid var(--ink);
-}
+          <div class="month-title">
 
-.article-teaser {
-  padding: 30px 30px 31px 0;
+            <span class="month">
+              October
+            </span>
 
-  border-bottom: 1px solid var(--line);
-}
+            <h2>
+              Getting to know you
+            </h2>
 
-.article-teaser + .article-teaser {
-  padding-left: 30px;
+            <p>
+              The first Meet &amp; Greet is about making it easier
+              for students to connect, participate, and learn a little
+              more about one another.
+            </p>
 
-  border-left: 1px solid var(--line);
-}
+          </div>
 
-.article-teaser .readtime {
-  color: var(--purple);
 
-  font-size: 0.74rem;
-  font-weight: 900;
+          <div class="official-calendar">
 
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
+            <span class="official-tag">
+              Program Calendar focus
+            </span>
 
-.article-teaser h3 {
-  margin-top: 10px;
+            <h3>
+              Getting to Know You
+            </h3>
 
-  font-size: 1.58rem;
-}
+            <ul class="official-list">
 
-.article-teaser p {
-  color: var(--muted);
-}
+              <li>
+                Plan and host your Meet &amp; Greet.
+              </li>
 
-.article-teaser a {
-  font-weight: 800;
-}
+              <li>
+                Complete Sensitivity Training.
+              </li>
 
+              <li>
+                Share program information and updates
+                with parents and guardians.
+              </li>
 
-/* --------------------------------------------------
-   OLD SUPPORT LAYOUT USED ON PROGRAM PAGES
--------------------------------------------------- */
+              <li>
+                Continue recruitment as needed.
+              </li>
 
-.support-band {
-  display: grid;
-  grid-template-columns: 1fr 350px;
+              <li>
+                Learn about students’ interests, strengths,
+                and availability for future buddy pairings
+                where applicable.
+              </li>
 
-  align-items: center;
+            </ul>
 
-  gap: 70px;
-}
+          </div>
 
+        </div>
 
-/* --------------------------------------------------
-   PROGRAM PAGE RESPONSIVE
--------------------------------------------------- */
 
-@media (max-width: 1050px) {
 
-  .page-hero {
-    grid-template-columns: 1fr;
+        <div class="companion-head">
 
-    gap: 38px;
-  }
+          <span class="label">
+            Meet &amp; Greet ideas
+          </span>
 
-  .page-hero-photo {
-    height: 320px;
-  }
+          <h3>
+            Give people something easy to do together.
+          </h3>
 
-  .teacher-orientation,
-  .year-intro,
-  .month-heading,
-  .support-band {
-    grid-template-columns: 1fr;
-  }
+          <p>
+            Activities can help take the pressure off conversation.
+            Leave enough room for students to interact naturally too.
+          </p>
 
-  .fresh-grid,
-  .path-grid {
-    grid-template-columns: 1fr;
-  }
+        </div>
 
-  .year-strip {
-    grid-template-columns: repeat(5, 1fr);
-  }
 
-  .program-calendar-heading {
-    align-items: flex-start;
-    flex-direction: column;
+        <div class="activity-grid">
 
-    gap: 14px;
-  }
+          <article class="activity">
 
-  .article-grid {
-    grid-template-columns: 1fr;
-  }
+            <span class="meta">
+              Easy to run
+            </span>
 
-  .article-teaser,
-  .article-teaser + .article-teaser {
-    padding: 26px 0;
+            <h3>
+              Friendship Bingo
+            </h3>
 
-    border-left: 0;
-  }
+            <p>
+              Students move around the room finding people who match
+              different prompts. It can be an easy way to learn names,
+              interests, and shared experiences.
+            </p>
 
-}
+          </article>
 
 
-@media (max-width: 760px) {
+          <article class="activity">
 
-  .logo-shell img {
-    height: 58px;
-    max-width: 145px;
-  }
+            <span class="meta">
+              Creative
+            </span>
 
-  .page-hero {
-    width: min(calc(100% - 32px), var(--max));
+            <h3>
+              Chapter poster or mural
+            </h3>
 
-    padding: 48px 0 62px;
-  }
+            <p>
+              Create something together that represents the chapter.
+              Students can draw, write, choose images, contribute ideas,
+              or participate in another way that works for them.
+            </p>
 
-  .page-hero h1 {
-    font-size: clamp(2.8rem, 12vw, 4rem);
-  }
+          </article>
 
-  .page-hero-photo {
-    height: 245px;
-  }
 
-  .page-hero-photo img {
-    border-radius: 24px 24px 58px 24px;
-  }
+          <article class="activity">
 
-  .role-line {
-    grid-template-columns: 1fr;
+            <span class="meta">
+              Conversation support
+            </span>
 
-    gap: 5px;
-  }
+            <h3>
+              All About Me
+            </h3>
 
-  .fresh-grid,
-  .activity-grid {
-    grid-template-columns: 1fr;
-  }
+            <p>
+              Give students prompts about favourite things,
+              interests, activities, and preferences that can help
+              start natural conversations.
+            </p>
 
-  .year-strip {
-    display: flex;
+          </article>
 
-    overflow-x: auto;
-  }
 
-  .year-strip a,
-  .year-strip span {
-    min-width: 92px;
-  }
+          <article class="activity">
 
-  .training-band {
-    grid-template-columns: 1fr;
-  }
+            <span class="meta">
+              Show what you enjoy
+            </span>
 
-  .training-actions {
-    min-width: 0;
-  }
+            <h3>
+              Skills Showcase
+            </h3>
 
-  .calendar-frame-wrap {
-    height: 475px;
-  }
+            <p>
+              Invite students to share something they enjoy or are good at.
+              Participation can look different for every student.
+            </p>
 
-}
+          </article>
+
+        </div>
+
+
+
+        <div class="training-band">
+
+          <div>
+
+            <div class="kicker">
+              Program training
+            </div>
+
+            <h3>
+              Sensitivity Training
+            </h3>
+
+            <p>
+              Use the current Best Buddies training resources
+              to support respectful language, inclusion,
+              communication, and participation.
+            </p>
+
+          </div>
+
+
+          <div class="training-actions">
+
+            <a
+              class="btn btn-purple"
+              href="https://learn.bestbuddies.ca/"
+              target="_blank"
+              rel="noopener"
+            >
+              Open Learn @ Best Buddies
+            </a>
+
+            <a
+              href="https://bestbuddies.ca/helpful-resources/"
+              target="_blank"
+              rel="noopener"
+            >
+              Helpful Resources ↗
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       TEACHER COMPANION
+  ===================================================== -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="companion-head">
+
+        <span class="label">
+          Teacher Companion
+        </span>
+
+        <h2>
+          Helpful when you need
+          <span class="purple">
+            a little more than a checklist.
+          </span>
+        </h2>
+
+        <p>
+          Short, practical pieces focused on the Best Buddies part
+          of supporting a chapter.
+        </p>
+
+      </div>
+
+
+      <div class="article-grid">
+
+        <article class="article-teaser">
+
+          <span class="readtime">
+            Quick guide
+          </span>
+
+          <h3>
+            Your First 30 Days
+          </h3>
+
+          <p>
+            What matters first, what can wait,
+            and how to get the chapter moving.
+          </p>
+
+          <a href="teacher-companion.html">
+            Open guide →
+          </a>
+
+        </article>
+
+
+        <article class="article-teaser">
+
+          <span class="readtime">
+            Quick thought
+          </span>
+
+          <h3>
+            Participation doesn’t have one look.
+          </h3>
+
+          <p>
+            Connection can happen through conversation,
+            shared activity, movement, communication devices,
+            gestures, or simply spending time together.
+          </p>
+
+          <a href="teacher-companion.html">
+            Read more →
+          </a>
+
+        </article>
+
+
+        <article class="article-teaser">
+
+          <span class="readtime">
+            Friendship support
+          </span>
+
+          <h3>
+            Supporting buddy pairs
+          </h3>
+
+          <p>
+            Shared interests, communication,
+            first hangouts, and what to do when a match
+            needs a little support.
+          </p>
+
+          <a href="teacher-companion.html">
+            Open guide →
+          </a>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       SUPPORT
+  ===================================================== -->
+
+  <section
+    class="section support-section"
+    id="support"
+  >
+
+    <div class="container support-grid">
+
+      <div>
+
+        <div class="kicker">
+          Support stays human
+        </div>
+
+        <h2>
+          Some things are just better
+          <span class="underlined">
+            talked through.
+          </span>
+        </h2>
+
+        <p class="lede">
+          Your Program Advisor is here for questions about your
+          students, your school, your chapter, and anything that
+          does not fit neatly into a resource or checklist.
+        </p>
+
+
+        <div class="support-actions">
+
+          <a
+            class="btn btn-purple"
+            href="https://bestbuddies.ca/get-started/"
+            target="_blank"
+            rel="noopener"
+          >
+            Connect with Best Buddies
+          </a>
+
+          <a
+            class="text-link"
+            href="https://bestbuddies.ca/helpful-resources/"
+            target="_blank"
+            rel="noopener"
+          >
+            Helpful Resources ↗
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="support-photo">
+
+        <img
+          src="assets/support-photo.jpg"
+          alt="Best Buddies participants together"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <img
+      src="assets/bb-reversed-logo.png"
+      alt="Best Buddies Canada"
+      class="footer-logo"
+    >
+
+    <p>
+      Teacher Hub · Prototype for internal review
+    </p>
+
+    <a
+      href="https://bestbuddies.ca/"
+      target="_blank"
+      rel="noopener"
+    >
+      bestbuddies.ca ↗
+    </a>
+
+  </div>
+
+</footer>
+
+
+</body>
+
+</html>
