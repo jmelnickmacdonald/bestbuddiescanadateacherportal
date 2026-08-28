@@ -1,24 +1,27 @@
 :root {
-  --bb-purple: #5A3F98;
-  --bb-violet: #9396CA;
-  --bb-yellow: #FFD420;
-  --bb-teal: #8FD1C4;
-  --bb-orange: #F37735;
+  --purple: #5A3F98;
+  --violet: #9396CA;
+  --yellow: #FFD420;
+  --teal: #8FD1C4;
+  --orange: #F37735;
 
-  --ink: #151219;
-  --text: #38323e;
-  --muted: #665f6b;
+  --ink: #17131d;
+  --text: #39333f;
+  --muted: #615b66;
+
   --white: #ffffff;
   --wash: #f7f6f9;
-  --lavender: #e8e5fa;
-  --line: #ded9e4;
+  --lavender: #e8e5f8;
+  --warm: #fff6cf;
+
+  --line: #ded9e3;
 
   --max: 1380px;
 }
 
 
 /* =========================================================
-   BASE
+   GLOBAL
 ========================================================= */
 
 * {
@@ -31,12 +34,14 @@ html {
 
 body {
   margin: 0;
+
   background: var(--white);
   color: var(--text);
 
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.55;
+
+  font-size: 19px;
+  line-height: 1.58;
 
   -webkit-font-smoothing: antialiased;
 }
@@ -47,7 +52,8 @@ img {
 }
 
 a {
-  color: var(--bb-purple);
+  color: var(--purple);
+
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
@@ -61,8 +67,27 @@ a:focus-visible,
 button:focus-visible,
 summary:focus-visible,
 input:focus-visible {
-  outline: 4px solid var(--bb-yellow);
+  outline: 4px solid var(--yellow);
   outline-offset: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+
+  z-index: 99999;
+
+  padding: 12px 18px;
+
+  background: var(--yellow);
+  color: var(--ink);
+
+  font-weight: 900;
+}
+
+.skip-link:focus {
+  top: 16px;
 }
 
 .portal-container {
@@ -70,34 +95,34 @@ input:focus-visible {
   margin-inline: auto;
 }
 
-.skip-link {
-  position: absolute;
-  top: -100px;
-  left: 20px;
-  z-index: 99999;
-
-  padding: 12px 18px;
-  background: var(--bb-yellow);
-  color: var(--ink);
-  font-weight: 900;
-}
-
-.skip-link:focus {
-  top: 15px;
-}
-
 
 /* =========================================================
-   TYPE
+   TYPOGRAPHY
 ========================================================= */
+
+.display-font {
+  font-family:
+    "Helvetica Neue",
+    "Arial Black",
+    Arial,
+    sans-serif;
+
+  font-weight: 900;
+
+  letter-spacing: -0.065em;
+
+  -webkit-text-stroke: 0.15px currentColor;
+}
 
 .portal-kicker {
   margin-bottom: 13px;
 
-  color: var(--bb-purple);
-  font-size: .82rem;
+  color: var(--purple);
+
+  font-size: 0.83rem;
   font-weight: 900;
-  letter-spacing: .075em;
+
+  letter-spacing: 0.075em;
   text-transform: uppercase;
 }
 
@@ -106,19 +131,27 @@ input:focus-visible {
 
   color: var(--ink);
 
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(3.6rem, 6vw, 6.4rem);
+  font-family:
+    "Helvetica Neue",
+    "Arial Black",
+    Arial,
+    sans-serif;
+
+  font-size: clamp(3.8rem, 6vw, 6.7rem);
   font-weight: 900;
 
-  line-height: .84;
-  letter-spacing: -.065em;
+  line-height: 0.84;
+  letter-spacing: -0.068em;
 
   text-transform: uppercase;
+
+  -webkit-text-stroke: 0.15px currentColor;
 }
 
 .portal-display .purple {
   display: block;
-  color: var(--bb-purple);
+
+  color: var(--purple);
 }
 
 .portal-heading {
@@ -126,24 +159,34 @@ input:focus-visible {
 
   color: var(--ink);
 
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(2.75rem, 4.7vw, 5rem);
+  font-family:
+    "Helvetica Neue",
+    "Arial Black",
+    Arial,
+    sans-serif;
+
+  font-size: clamp(3rem, 4.8vw, 5.1rem);
   font-weight: 900;
 
-  line-height: .91;
-  letter-spacing: -.055em;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+
+  text-transform: uppercase;
+
+  -webkit-text-stroke: 0.15px currentColor;
 }
 
 .portal-heading .purple {
-  color: var(--bb-purple);
+  color: var(--purple);
 }
 
 .portal-lede {
-  max-width: 720px;
+  max-width: 760px;
 
   color: var(--muted);
-  font-size: 1.1rem;
-  line-height: 1.58;
+
+  font-size: 1.16rem;
+  line-height: 1.62;
 }
 
 
@@ -155,46 +198,93 @@ input:focus-visible {
   position: relative;
   z-index: 1000;
 
-  background: var(--bb-purple);
-  border-top: 7px solid var(--bb-yellow);
+  background: var(--purple);
+
+  border-top: 7px solid var(--yellow);
 }
 
 .portal-header-inner {
-  min-height: 104px;
+  min-height: 108px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  gap: 32px;
+  gap: 34px;
 }
 
 .portal-brand {
   display: flex;
   align-items: center;
-  gap: 16px;
+
+  gap: 17px;
 
   flex: 0 0 auto;
 
   color: var(--white);
+
   text-decoration: none;
 }
 
 .portal-brand img {
   width: auto;
-  height: 76px;
+  height: 78px;
 }
 
-.portal-brand span {
+.portal-brand-text {
+  position: relative;
+
+  padding-bottom: 7px;
+
   color: var(--white);
+
+  font-size: 1.1rem;
   font-weight: 900;
+
   white-space: nowrap;
+}
+
+.portal-brand-text::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 47px;
+  height: 5px;
+
+  background: var(--yellow);
+
+  border-radius: 999px;
+}
+
+
+/* =========================================================
+   DESKTOP NAV
+========================================================= */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
 }
 
 .portal-nav {
   display: flex;
   align-items: center;
-  gap: 5px;
+
+  gap: 2px;
+
+  padding: 5px;
+
+  background: var(--white);
+
+  border-radius: 999px;
+
+  box-shadow:
+    0 8px 22px rgba(35, 21, 65, 0.12);
 }
 
 .portal-nav > a {
@@ -202,74 +292,89 @@ input:focus-visible {
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  padding: 10px 15px;
+  padding: 9px 19px;
 
-  color: var(--white);
+  color: var(--purple);
 
   border-radius: 999px;
 
-  font-size: .91rem;
-  font-weight: 800;
+  font-size: 0.88rem;
+  font-weight: 900;
+
   white-space: nowrap;
 
   text-decoration: none;
 }
 
 .portal-nav > a:hover {
-  background: rgba(255,255,255,.12);
+  background: var(--yellow);
+  color: var(--ink);
 }
 
 .portal-lang {
   display: flex;
+
   gap: 3px;
 
-  margin-left: 8px;
   padding: 4px;
 
   background: var(--white);
+
   border-radius: 999px;
+
+  box-shadow:
+    0 8px 22px rgba(35, 21, 65, 0.12);
 }
 
 .portal-lang a {
-  width: 43px;
-  height: 43px;
+  min-width: 45px;
+  min-height: 45px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: var(--bb-purple);
+  color: var(--purple);
 
-  border-radius: 50%;
+  border-radius: 999px;
 
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 900;
 
   text-decoration: none;
 }
 
 .portal-lang .current {
-  background: var(--bb-purple);
+  background: var(--purple);
   color: var(--white);
 }
+
+
+/* =========================================================
+   HEADER WAVE
+========================================================= */
 
 .portal-wave {
   display: block;
 
   width: 100%;
-  height: 22px;
+  height: 19px;
 
   margin-bottom: -1px;
 
-  fill: var(--bb-purple);
+  fill: var(--purple);
 }
 
 
-/* MOBILE MENU */
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
 .portal-menu {
   position: relative;
+
   display: none;
 }
 
@@ -278,17 +383,20 @@ input:focus-visible {
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  padding: 10px 19px;
+  padding: 9px 19px;
 
   background: var(--white);
-  color: var(--bb-purple);
+  color: var(--purple);
 
   border-radius: 999px;
 
+  font-size: 0.88rem;
   font-weight: 900;
 
   cursor: pointer;
+
   list-style: none;
 }
 
@@ -298,39 +406,48 @@ input:focus-visible {
 
 .portal-menu-panel {
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + 13px);
   right: 0;
 
   width: min(330px, calc(100vw - 32px));
 
-  padding: 16px;
+  padding: 17px;
 
   background: var(--white);
 
   border-radius: 22px 22px 58px 22px;
 
-  box-shadow: 0 20px 50px rgba(32,20,56,.25);
+  box-shadow:
+    0 20px 50px rgba(32, 20, 56, 0.24);
 }
 
 .portal-menu-panel > a {
-  min-height: 51px;
+  min-height: 52px;
 
   display: flex;
   align-items: center;
 
   padding: 9px 12px;
 
+  color: var(--ink);
+
   border-bottom: 1px solid var(--line);
 
-  color: var(--ink);
   font-weight: 850;
+
   text-decoration: none;
+}
+
+.portal-menu-panel > a:hover {
+  color: var(--purple);
 }
 
 .portal-menu-languages {
   display: flex;
+
   gap: 8px;
-  padding-top: 14px;
+
+  padding-top: 15px;
 }
 
 .portal-menu-languages a {
@@ -342,16 +459,17 @@ input:focus-visible {
   justify-content: center;
 
   background: var(--wash);
-  color: var(--bb-purple);
+  color: var(--purple);
 
   border-radius: 999px;
 
   font-weight: 900;
+
   text-decoration: none;
 }
 
 .portal-menu-languages .current {
-  background: var(--bb-purple);
+  background: var(--purple);
   color: var(--white);
 }
 
@@ -371,15 +489,16 @@ input:focus-visible {
 
   padding: 12px 25px;
 
-  border-radius: 999px;
-
-  background: var(--bb-purple);
+  background: var(--purple);
   color: var(--white);
 
+  border-radius: 999px;
+
   font-weight: 900;
+
   text-decoration: none;
 
-  transition: transform .16s ease;
+  transition: transform 0.16s ease;
 }
 
 .portal-button:hover {
@@ -387,22 +506,24 @@ input:focus-visible {
 }
 
 .portal-button.yellow {
-  background: var(--bb-yellow);
+  background: var(--yellow);
   color: var(--ink);
 }
 
 
 /* =========================================================
-   HOME HERO
+   HOMEPAGE HERO
 ========================================================= */
 
 .home-banner {
   position: relative;
 
   width: 100%;
-  aspect-ratio: 1800 / 700;
+  height: clamp(500px, 35vw, 620px);
 
   overflow: hidden;
+
+  background: var(--white);
 }
 
 .home-banner picture,
@@ -416,6 +537,7 @@ input:focus-visible {
 
 .home-banner picture img {
   object-fit: cover;
+  object-position: center;
 }
 
 .home-banner-content {
@@ -428,103 +550,131 @@ input:focus-visible {
 
 .home-banner-copy {
   width: 46%;
-  max-width: 700px;
+  max-width: 710px;
 }
 
 .home-banner-copy h1 {
-  margin: 0 0 22px;
+  margin: 0 0 25px;
 
   color: var(--ink);
 
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(3.2rem, 4.7vw, 5.25rem);
+  font-family:
+    "Helvetica Neue",
+    "Arial Black",
+    Arial,
+    sans-serif;
+
+  font-size: clamp(3.35rem, 4.65vw, 5.25rem);
   font-weight: 900;
 
-  line-height: .94;
-  letter-spacing: -.06em;
+  line-height: 0.93;
+  letter-spacing: -0.062em;
+
+  -webkit-text-stroke: 0.15px currentColor;
 }
 
 .home-banner-copy h1 span {
-  color: var(--bb-purple);
+  color: var(--purple);
 }
 
 .hero-line {
-  width: 72px;
+  width: 70px;
   height: 8px;
 
-  margin: 16px 0 28px;
+  margin: 16px 0 29px;
 
-  background: var(--bb-yellow);
+  background: var(--yellow);
+
   border-radius: 999px;
 }
 
-.home-banner-copy p {
-  max-width: 660px;
+.home-banner-copy .hero-copy {
+  max-width: 690px;
+
   margin: 0;
 
   color: var(--muted);
 
-  font-size: 1.05rem;
+  font-size: 1.12rem;
+  line-height: 1.62;
 }
 
 .hero-thank-you {
-  margin-top: 12px !important;
+  margin: 14px 0 0;
 
-  color: var(--bb-purple) !important;
-  font-size: .91rem !important;
-  font-weight: 800;
-}
+  color: var(--purple);
 
-.hero-actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-
-  gap: 24px;
-
-  margin-top: 26px;
-}
-
-.hero-secondary {
-  font-weight: 900;
+  font-size: 1rem;
+  font-weight: 850;
 }
 
 
 /* =========================================================
-   HOME PROGRAM CHOICE
+   PROGRAM LAUNCH
 ========================================================= */
 
 .program-launch {
-  padding: 92px 0 105px;
+  position: relative;
+
+  padding: 82px 0 105px;
+
+  background: var(--white);
 }
 
 .program-launch-heading {
-  max-width: 980px;
-  margin-bottom: 55px;
+  position: relative;
+
+  max-width: 960px;
+
+  margin-bottom: 54px;
 }
 
 .program-launch-heading .portal-display {
-  font-size: clamp(3.5rem, 5.7vw, 6rem);
+  font-size: clamp(3.7rem, 5.8vw, 6.2rem);
+}
+
+.program-arrow {
+  position: absolute;
+  right: 2%;
+  bottom: -10px;
+
+  width: 125px;
+  height: 70px;
+
+  overflow: visible;
+}
+
+.program-arrow path,
+.program-arrow polyline {
+  fill: none;
+
+  stroke: var(--purple);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .program-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  gap: 68px;
+  gap: 72px;
 }
 
 .program-tile {
+  display: block;
+
   color: var(--text);
+
   text-decoration: none;
 }
 
 .program-photo {
-  position: relative;
-
-  height: 350px;
+  height: 360px;
 
   overflow: hidden;
+
+  background: var(--wash);
 
   border-radius: 34px 34px 34px 34px;
 }
@@ -535,63 +685,79 @@ input:focus-visible {
 
   object-fit: cover;
 
-  transition: transform .18s ease;
+  transition: transform 0.18s ease;
 }
 
 .program-tile:hover .program-photo img {
-  transform: scale(1.015);
+  transform: scale(1.018);
 }
 
 .program-tile.elementary .program-photo {
-  border-bottom: 9px solid var(--bb-teal);
+  border-bottom: 9px solid var(--teal);
 }
 
 .program-tile.highschool .program-photo {
-  border-bottom: 9px solid var(--bb-orange);
+  border-bottom: 9px solid var(--orange);
 }
 
 .program-info {
-  padding: 27px 10px 0;
+  padding: 27px 11px 0;
 }
 
-.program-info h2 {
-  margin: 0 0 12px;
+.program-type {
+  display: block;
 
-  color: var(--ink);
+  margin-bottom: 10px;
 
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(2rem, 3vw, 3.1rem);
+  color: var(--purple);
+
+  font-size: 0.76rem;
   font-weight: 900;
 
-  line-height: .94;
-  letter-spacing: -.05em;
-
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
-.program-info p {
-  max-width: 560px;
+.program-info h2 {
+  max-width: 640px;
 
-  margin: 0 0 23px;
+  margin: 0 0 24px;
 
-  color: var(--muted);
+  color: var(--ink);
+
+  font-family:
+    "Helvetica Neue",
+    "Arial Black",
+    Arial,
+    sans-serif;
+
+  font-size: clamp(2.3rem, 3.2vw, 3.45rem);
+  font-weight: 900;
+
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+
+  text-transform: uppercase;
+
+  -webkit-text-stroke: 0.15px currentColor;
 }
 
 .program-enter {
-  min-height: 51px;
+  min-height: 52px;
 
   display: inline-flex;
   align-items: center;
 
-  gap: 10px;
+  gap: 11px;
 
   padding: 11px 25px;
 
-  background: var(--bb-purple);
+  background: var(--purple);
   color: var(--white);
 
   border-radius: 999px;
 
+  font-size: 0.97rem;
   font-weight: 900;
 }
 
@@ -601,27 +767,29 @@ input:focus-visible {
 ========================================================= */
 
 .calendar-home {
-  padding: 93px 0;
+  padding: 92px 0;
 
   background: var(--wash);
 }
 
 .calendar-intro {
   display: grid;
-  grid-template-columns: 1fr .72fr;
+  grid-template-columns: 1fr 0.72fr;
 
   gap: 75px;
 
   align-items: end;
 
-  margin-bottom: 38px;
+  margin-bottom: 35px;
 }
 
 .calendar-intro p {
   margin: 0 0 6px;
 
   color: var(--muted);
-  font-size: 1.08rem;
+
+  font-size: 1.11rem;
+  line-height: 1.62;
 }
 
 .calendar-tags {
@@ -634,15 +802,15 @@ input:focus-visible {
 }
 
 .calendar-tags span {
-  padding: 7px 14px;
+  padding: 8px 15px;
 
   background: var(--white);
-  color: var(--bb-purple);
+  color: var(--purple);
 
   border: 2px solid var(--lavender);
   border-radius: 999px;
 
-  font-size: .8rem;
+  font-size: 0.81rem;
   font-weight: 850;
 }
 
@@ -652,11 +820,11 @@ input:focus-visible {
   background: var(--white);
 
   border: 2px solid var(--line);
-  border-radius: 28px 28px 80px 28px;
+  border-radius: 28px 28px 82px 28px;
 }
 
 .calendar-bar {
-  min-height: 63px;
+  min-height: 64px;
 
   display: flex;
   align-items: center;
@@ -664,15 +832,16 @@ input:focus-visible {
 
   gap: 25px;
 
-  padding: 14px 22px;
+  padding: 14px 23px;
 
-  background: var(--bb-purple);
+  background: var(--purple);
   color: var(--white);
 }
 
 .calendar-bar strong {
   display: flex;
   align-items: center;
+
   gap: 11px;
 }
 
@@ -680,14 +849,16 @@ input:focus-visible {
   width: 11px;
   height: 11px;
 
-  background: var(--bb-yellow);
+  background: var(--yellow);
 
   border-radius: 50%;
 }
 
 .calendar-bar a {
   color: var(--white);
+
   font-weight: 850;
+
   text-decoration: none;
 }
 
@@ -706,11 +877,13 @@ input:focus-visible {
 
 
 /* =========================================================
-   HOME RESOURCE LINKS
+   RESOURCES
 ========================================================= */
 
 .home-tools {
-  padding: 93px 0;
+  padding: 92px 0;
+
+  background: var(--white);
 }
 
 .tool-grid {
@@ -723,12 +896,12 @@ input:focus-visible {
 }
 
 .tool-link {
-  min-height: 235px;
+  min-height: 245px;
 
   display: flex;
   flex-direction: column;
 
-  padding: 27px;
+  padding: 28px;
 
   color: var(--text);
 
@@ -742,12 +915,13 @@ input:focus-visible {
   border-right: 0;
 }
 
-.tool-link span {
-  color: var(--bb-purple);
+.tool-link > span {
+  color: var(--purple);
 
-  font-size: .72rem;
+  font-size: 0.72rem;
   font-weight: 900;
-  letter-spacing: .07em;
+
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
@@ -756,23 +930,31 @@ input:focus-visible {
 
   color: var(--ink);
 
-  font-size: 1.7rem;
+  font-family:
+    "Helvetica Neue",
+    "Arial Black",
+    Arial,
+    sans-serif;
+
+  font-size: 1.85rem;
   font-weight: 900;
 
-  line-height: 1.02;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
 }
 
 .tool-link p {
   margin: 0 0 20px;
 
   color: var(--muted);
-  font-size: .94rem;
+
+  font-size: 0.97rem;
 }
 
 .tool-link strong {
   margin-top: auto;
 
-  color: var(--bb-purple);
+  color: var(--purple);
 }
 
 
@@ -783,7 +965,7 @@ input:focus-visible {
 .portal-support {
   padding: 88px 0;
 
-  background: var(--bb-teal);
+  background: var(--teal);
 }
 
 .support-grid {
@@ -800,12 +982,13 @@ input:focus-visible {
 
   overflow: hidden;
 
-  border-radius: 30px 30px 80px 30px;
+  border-radius: 30px 30px 82px 30px;
 }
 
 .support-photo img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
 }
 
@@ -815,188 +998,260 @@ input:focus-visible {
 ========================================================= */
 
 .program-page-hero {
-  padding: 60px 0 65px;
+  padding: 54px 0 62px;
+
+  background: var(--white);
+}
+
+.switch-program {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 28px;
+
+  color: var(--purple);
+
+  font-size: 0.87rem;
+  font-weight: 900;
+
+  text-decoration: none;
 }
 
 .program-page-hero-grid {
   display: grid;
-  grid-template-columns: 1fr .85fr;
+  grid-template-columns: 1fr 0.83fr;
 
-  gap: 65px;
+  gap: 68px;
 
   align-items: center;
 }
 
 .program-page-label {
-  color: var(--bb-purple);
+  color: var(--purple);
 
-  font-size: .78rem;
+  font-size: 0.83rem;
   font-weight: 900;
-  letter-spacing: .075em;
+
+  letter-spacing: 0.075em;
+
   text-transform: uppercase;
 }
 
 .program-page-hero h1 {
-  margin: 13px 0 20px;
+  margin: 12px 0 22px;
 
   color: var(--ink);
 
-  font-size: clamp(3.7rem, 6vw, 6.2rem);
+  font-family:
+    "Helvetica Neue",
+    "Arial Black",
+    Arial,
+    sans-serif;
+
+  font-size: clamp(3.9rem, 6vw, 6.5rem);
   font-weight: 900;
 
-  line-height: .84;
-  letter-spacing: -.065em;
+  line-height: 0.82;
+  letter-spacing: -0.07em;
 
   text-transform: uppercase;
+
+  -webkit-text-stroke: 0.15px currentColor;
 }
 
 .program-page-hero h1 .purple {
   display: block;
-  color: var(--bb-purple);
+
+  color: var(--purple);
 }
 
 .program-page-hero p {
-  max-width: 690px;
+  max-width: 720px;
+
+  margin: 0;
 
   color: var(--muted);
-  font-size: 1.08rem;
+
+  font-size: 1.12rem;
+  line-height: 1.62;
 }
 
 .program-page-image {
-  height: 330px;
+  height: 345px;
 
   overflow: hidden;
 
-  border-radius: 30px 30px 84px 30px;
+  border-bottom: 9px solid var(--teal);
+  border-radius: 32px 32px 85px 32px;
+}
+
+.high-school-page .program-page-image {
+  border-bottom-color: var(--orange);
 }
 
 .program-page-image img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
 }
 
 
 /* =========================================================
-   PROGRAM QUICK LAUNCH
+   PROGRAM DASHBOARD
 ========================================================= */
 
 .program-dashboard {
   padding: 62px 0 72px;
 
-  background: var(--bb-purple);
+  background: var(--purple);
   color: var(--white);
 }
 
 .program-dashboard .portal-kicker {
-  color: var(--bb-yellow);
+  color: var(--yellow);
 }
 
 .program-dashboard h2 {
-  margin: 0 0 34px;
+  margin: 0 0 37px;
 
   color: var(--white);
 
-  font-size: clamp(2.6rem, 4.4vw, 4.5rem);
+  font-family:
+    "Helvetica Neue",
+    "Arial Black",
+    Arial,
+    sans-serif;
+
+  font-size: clamp(2.8rem, 4.5vw, 4.7rem);
   font-weight: 900;
 
-  line-height: .9;
-  letter-spacing: -.055em;
+  line-height: 0.88;
+  letter-spacing: -0.058em;
 
   text-transform: uppercase;
+
+  -webkit-text-stroke: 0.15px currentColor;
 }
 
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 
-  gap: 13px;
+  gap: 14px;
 }
 
 .dashboard-card {
-  min-height: 205px;
+  min-height: 215px;
 
   display: flex;
   flex-direction: column;
 
-  padding: 24px;
+  padding: 25px;
 
   background: var(--white);
   color: var(--text);
 
-  border-radius: 20px 20px 52px 20px;
+  border-radius: 21px 21px 55px 21px;
 
   text-decoration: none;
 }
 
-.dashboard-card.current {
-  background: var(--bb-yellow);
+.dashboard-card:nth-child(2) {
+  border-radius: 21px 55px 21px 21px;
+}
+
+.dashboard-card:nth-child(3) {
+  border-radius: 55px 21px 21px 21px;
+}
+
+.dashboard-card.primary {
+  background: var(--yellow);
 }
 
 .dashboard-card.teal {
-  background: var(--bb-teal);
+  background: var(--teal);
 }
 
 .dashboard-card.violet {
   background: var(--lavender);
 }
 
-.dashboard-card span {
-  color: var(--bb-purple);
+.dashboard-card > span {
+  color: var(--purple);
 
-  font-size: .7rem;
+  font-size: 0.71rem;
   font-weight: 900;
-  letter-spacing: .07em;
 
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
 .dashboard-card h3 {
-  margin: 13px 0 9px;
+  margin: 13px 0 10px;
 
   color: var(--ink);
 
-  font-size: 1.65rem;
+  font-family:
+    "Helvetica Neue",
+    "Arial Black",
+    Arial,
+    sans-serif;
+
+  font-size: 1.72rem;
   font-weight: 900;
 
-  line-height: .97;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+
+  text-transform: uppercase;
 }
 
 .dashboard-card p {
   margin: 0 0 18px;
 
   color: var(--text);
-  font-size: .9rem;
+
+  font-size: 0.93rem;
+  line-height: 1.48;
 }
 
 .dashboard-card strong {
   margin-top: auto;
-  color: var(--bb-purple);
+
+  color: var(--purple);
 }
 
 
 /* =========================================================
-   MONTH NAV
+   MONTHS AREA
 ========================================================= */
 
 .months-area {
   padding: 82px 0;
+
+  background: var(--white);
 }
 
 .months-header {
   display: grid;
-  grid-template-columns: 1fr .72fr;
+  grid-template-columns: 1fr 0.72fr;
 
-  gap: 60px;
+  gap: 62px;
 
   align-items: end;
 
-  margin-bottom: 35px;
+  margin-bottom: 38px;
 }
 
 .months-header p {
-  margin: 0;
+  margin: 0 0 5px;
+
   color: var(--muted);
+
+  font-size: 1.08rem;
 }
 
 .month-nav {
@@ -1011,20 +1266,21 @@ input:focus-visible {
 
 .month-nav a,
 .month-nav span {
-  min-height: 76px;
+  min-height: 78px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 7px;
-
-  border-right: 1px solid var(--line);
+  padding: 8px 5px;
 
   color: var(--muted);
 
-  font-size: .72rem;
+  border-right: 1px solid var(--line);
+
+  font-size: 0.74rem;
   font-weight: 900;
+
   text-align: center;
 
   text-decoration: none;
@@ -1035,11 +1291,11 @@ input:focus-visible {
 }
 
 .month-nav .available {
-  color: var(--bb-purple);
+  color: var(--purple);
 }
 
 .month-nav .current {
-  background: var(--bb-purple);
+  background: var(--purple);
   color: var(--white);
 }
 
@@ -1050,76 +1306,90 @@ input:focus-visible {
 
 .month-module {
   padding: 20px 0 85px;
+
   scroll-margin-top: 20px;
 }
 
 .month-module + .month-module {
   padding-top: 80px;
+
   border-top: 2px solid var(--line);
 }
 
 .month-title-row {
   display: grid;
-  grid-template-columns: .7fr 1.3fr;
+  grid-template-columns: 0.72fr 1.28fr;
 
-  gap: 55px;
+  gap: 58px;
 
-  margin-bottom: 35px;
+  align-items: start;
+
+  margin-bottom: 36px;
 }
 
 .month-name {
-  color: var(--bb-purple);
+  color: var(--purple);
 
-  font-size: .8rem;
+  font-size: 0.82rem;
   font-weight: 900;
-  letter-spacing: .08em;
 
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .month-title-row h2 {
-  margin: 6px 0 16px;
+  margin: 7px 0 17px;
 
   color: var(--ink);
 
-  font-size: clamp(3.5rem, 6vw, 6rem);
+  font-family:
+    "Helvetica Neue",
+    "Arial Black",
+    Arial,
+    sans-serif;
+
+  font-size: clamp(3.6rem, 6vw, 6.2rem);
   font-weight: 900;
 
-  line-height: .84;
-  letter-spacing: -.065em;
+  line-height: 0.82;
+  letter-spacing: -0.07em;
 
   text-transform: uppercase;
+
+  -webkit-text-stroke: 0.15px currentColor;
 }
 
 .month-title-row p {
   color: var(--muted);
+
+  font-size: 1.05rem;
 }
 
 .month-checklist {
-  padding: 31px 34px;
+  padding: 32px 35px;
 
-  background: var(--bb-purple);
+  background: var(--purple);
   color: var(--white);
 
-  border-radius: 28px 28px 72px 28px;
+  border-radius: 28px 28px 74px 28px;
 }
 
-.month-checklist span {
-  color: var(--bb-yellow);
+.month-checklist > span {
+  color: var(--yellow);
 
-  font-size: .72rem;
+  font-size: 0.73rem;
   font-weight: 900;
-  letter-spacing: .07em;
 
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
 .month-checklist h3 {
-  margin: 9px 0 14px;
+  margin: 9px 0 15px;
 
   color: var(--white);
 
-  font-size: 1.8rem;
+  font-size: 1.85rem;
   font-weight: 900;
 }
 
@@ -1131,14 +1401,31 @@ input:focus-visible {
 }
 
 .month-checklist li {
-  padding: 10px 0;
+  padding: 11px 0;
 
-  border-bottom: 1px solid rgba(255,255,255,.25);
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.24);
 }
 
 .month-checklist li:last-child {
   border-bottom: 0;
 }
+
+.month-calendar-link {
+  display: inline-block;
+
+  margin-top: 18px;
+
+  color: var(--white);
+
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+
+/* =========================================================
+   MONTH CONTENT
+========================================================= */
 
 .month-content-grid {
   display: grid;
@@ -1146,73 +1433,90 @@ input:focus-visible {
 
   gap: 22px;
 
-  margin-top: 35px;
+  margin-top: 36px;
 }
 
 .month-card {
-  min-height: 240px;
+  min-height: 245px;
 
-  padding: 26px;
+  padding: 27px;
 
   background: var(--wash);
 
-  border-top: 8px solid var(--bb-yellow);
-  border-radius: 20px 20px 58px 20px;
+  border-top: 8px solid var(--yellow);
+  border-radius: 20px 20px 59px 20px;
 }
 
 .month-card:nth-child(2) {
-  border-top-color: var(--bb-teal);
+  border-top-color: var(--teal);
+  border-radius: 20px 59px 20px 20px;
 }
 
 .month-card:nth-child(3) {
-  border-top-color: var(--bb-orange);
+  border-top-color: var(--orange);
+  border-radius: 59px 20px 20px 20px;
 }
 
 .month-card .meta {
-  color: var(--bb-purple);
+  color: var(--purple);
 
-  font-size: .71rem;
+  font-size: 0.72rem;
   font-weight: 900;
-  letter-spacing: .065em;
 
+  letter-spacing: 0.065em;
   text-transform: uppercase;
 }
 
 .month-card h3 {
-  margin: 10px 0;
+  margin: 11px 0;
 
   color: var(--ink);
 
-  font-size: 1.55rem;
+  font-family:
+    "Helvetica Neue",
+    "Arial Black",
+    Arial,
+    sans-serif;
+
+  font-size: 1.65rem;
   font-weight: 900;
 
-  line-height: 1;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
 }
 
 .month-card p {
   color: var(--muted);
+
+  font-size: 0.96rem;
 }
 
 .month-extra {
-  margin-top: 28px;
-  padding: 27px 30px;
+  margin-top: 29px;
+  padding: 28px 31px;
 
   background: var(--lavender);
 
-  border-left: 9px solid var(--bb-violet);
-  border-radius: 0 24px 62px 0;
+  border-left: 9px solid var(--violet);
+  border-radius: 0 24px 63px 0;
 }
 
 .month-extra h3 {
-  margin: 0 0 7px;
+  margin: 0 0 8px;
 
-  color: var(--bb-purple);
+  color: var(--purple);
+
+  font-size: 1.45rem;
   font-weight: 900;
+}
+
+.month-extra p {
+  max-width: 900px;
 }
 
 
 /* =========================================================
-   PROGRAM ROLE
+   ROLE AREA
 ========================================================= */
 
 .role-area {
@@ -1223,9 +1527,9 @@ input:focus-visible {
 
 .role-grid {
   display: grid;
-  grid-template-columns: .8fr 1.2fr;
+  grid-template-columns: 0.8fr 1.2fr;
 
-  gap: 70px;
+  gap: 72px;
 
   align-items: start;
 }
@@ -1236,17 +1540,19 @@ input:focus-visible {
 
 .role-line {
   display: grid;
-  grid-template-columns: 170px 1fr;
+  grid-template-columns: 175px 1fr;
 
-  gap: 23px;
+  gap: 24px;
 
-  padding: 21px 0;
+  padding: 22px 0;
 
   border-bottom: 1px solid var(--line);
 }
 
 .role-line strong {
   color: var(--ink);
+
+  font-weight: 900;
 }
 
 
@@ -1255,9 +1561,9 @@ input:focus-visible {
 ========================================================= */
 
 .portal-footer {
-  padding: 38px 0;
+  padding: 39px 0;
 
-  background: var(--bb-purple);
+  background: var(--purple);
   color: var(--white);
 }
 
@@ -1265,35 +1571,41 @@ input:focus-visible {
   display: flex;
   align-items: center;
 
-  gap: 26px;
+  gap: 27px;
 }
 
 .portal-footer img {
   width: auto;
-  height: 62px;
+  height: 63px;
 }
 
 .portal-footer p {
   margin: 0;
 
-  color: rgba(255,255,255,.78);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .portal-footer a {
   margin-left: auto;
 
   color: var(--white);
-  font-weight: 800;
+
+  font-weight: 850;
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   NARROW DESKTOP / TABLET
 ========================================================= */
 
 @media (max-width: 1160px) {
 
-  .portal-nav {
+  .portal-container {
+    width: min(calc(100% - 44px), var(--max));
+  }
+
+  .portal-nav,
+  .portal-lang {
     display: none;
   }
 
@@ -1301,29 +1613,33 @@ input:focus-visible {
     display: block;
   }
 
+  .portal-header-inner {
+    min-height: 93px;
+  }
+
   .home-banner {
-    aspect-ratio: 1200 / 800;
+    height: 690px;
+  }
+
+  .home-banner picture img {
+    content: url("assets/tabletbanner.png");
   }
 
   .home-banner-copy {
-    width: 45%;
-    max-width: 490px;
+    width: 46%;
+    max-width: 470px;
   }
 
   .home-banner-copy h1 {
-    font-size: clamp(2.5rem, 4.8vw, 3.55rem);
+    font-size: clamp(2.55rem, 4.9vw, 3.55rem);
   }
 
-  .home-banner-copy p {
-    font-size: .92rem;
+  .home-banner-copy .hero-copy {
+    font-size: 0.97rem;
   }
 
-  .hero-actions {
-    flex-direction: column;
-    align-items: flex-start;
-
-    gap: 10px;
-    margin-top: 18px;
+  .hero-thank-you {
+    font-size: 0.9rem;
   }
 
   .program-grid {
@@ -1334,21 +1650,8 @@ input:focus-visible {
     height: 300px;
   }
 
-  .tool-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .tool-link:nth-child(2) {
-    border-right: 0;
-  }
-
-  .tool-link:nth-child(1),
-  .tool-link:nth-child(2) {
-    border-bottom: 1px solid var(--line);
-  }
-
-  .program-page-hero-grid,
   .calendar-intro,
+  .program-page-hero-grid,
   .months-header,
   .month-title-row,
   .role-grid,
@@ -1356,8 +1659,12 @@ input:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .program-page-image {
-    max-width: 720px;
+  .tool-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tool-link:nth-child(2) {
+    border-right: 0;
   }
 
   .dashboard-grid {
@@ -1368,8 +1675,16 @@ input:focus-visible {
     grid-template-columns: repeat(5, 1fr);
   }
 
+  .program-page-image {
+    max-width: 720px;
+  }
+
 }
 
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 760px) {
 
@@ -1381,44 +1696,57 @@ input:focus-visible {
     width: min(calc(100% - 32px), var(--max));
   }
 
+  .portal-header {
+    border-top-width: 6px;
+  }
+
   .portal-header-inner {
     min-height: 84px;
   }
 
   .portal-brand img {
-    height: 58px;
+    height: 59px;
   }
 
-  .portal-brand span {
-    font-size: .86rem;
+  .portal-brand-text {
+    font-size: 0.88rem;
   }
 
   .portal-wave {
-    height: 16px;
+    height: 15px;
   }
+
+
+  /* HERO */
 
   .home-banner {
     display: flex;
     flex-direction: column;
 
-    aspect-ratio: auto;
+    height: auto;
+
+    overflow: visible;
   }
 
   .home-banner-content {
     position: relative;
+
     order: 1;
 
-    padding: 48px 0 32px;
+    padding: 48px 0 34px;
   }
 
   .home-banner picture {
     position: relative;
+
     order: 2;
 
-    height: 460px;
+    height: 440px;
   }
 
   .home-banner picture img {
+    content: url("assets/mobilebanner.png");
+
     object-position: center bottom;
   }
 
@@ -1428,11 +1756,22 @@ input:focus-visible {
   }
 
   .home-banner-copy h1 {
-    font-size: clamp(2.7rem, 11vw, 4rem);
+    font-size: clamp(2.8rem, 11vw, 4rem);
   }
 
+  .home-banner-copy .hero-copy {
+    font-size: 1rem;
+  }
+
+
+  /* PROGRAMS */
+
   .program-launch {
-    padding: 72px 0 82px;
+    padding: 68px 0 80px;
+  }
+
+  .program-arrow {
+    display: none;
   }
 
   .program-grid {
@@ -1443,16 +1782,19 @@ input:focus-visible {
     height: 260px;
   }
 
+  .program-info h2 {
+    font-size: 2.35rem;
+  }
+
+
+  /* CALENDAR */
+
   .calendar-home,
   .home-tools,
   .portal-support,
   .months-area,
   .role-area {
-    padding: 72px 0;
-  }
-
-  .calendar-frame {
-    height: 470px;
+    padding: 70px 0;
   }
 
   .calendar-bar {
@@ -1462,9 +1804,14 @@ input:focus-visible {
     gap: 8px;
   }
 
-  .tool-grid,
-  .dashboard-grid,
-  .month-content-grid {
+  .calendar-frame {
+    height: 470px;
+  }
+
+
+  /* TOOLS */
+
+  .tool-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1474,8 +1821,11 @@ input:focus-visible {
     border-right: 0;
   }
 
+
+  /* PROGRAM PAGE */
+
   .program-page-hero {
-    padding: 48px 0 52px;
+    padding: 44px 0 50px;
   }
 
   .program-page-hero h1 {
@@ -1486,12 +1836,18 @@ input:focus-visible {
     height: 245px;
   }
 
+  .dashboard-grid,
+  .month-content-grid {
+    grid-template-columns: 1fr;
+  }
+
   .dashboard-card {
-    min-height: 170px;
+    min-height: 175px;
   }
 
   .month-nav {
     display: flex;
+
     overflow-x: auto;
   }
 
@@ -1502,6 +1858,7 @@ input:focus-visible {
 
   .role-line {
     grid-template-columns: 1fr;
+
     gap: 5px;
   }
 
@@ -1517,18 +1874,26 @@ input:focus-visible {
 }
 
 
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
 @media (max-width: 480px) {
 
-  .portal-brand span {
+  .portal-brand-text {
     display: none;
   }
 
   .home-banner picture {
-    height: 400px;
+    height: 390px;
   }
 
 }
 
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
