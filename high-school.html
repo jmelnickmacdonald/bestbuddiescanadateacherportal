@@ -11,7 +11,7 @@
   >
 
   <title>
-    High School | Best Buddies Canada Teacher Hub
+    High School Staff Advisor Page | Best Buddies Canada
   </title>
 
   <link
@@ -34,7 +34,7 @@
 
 <body
   data-protected="true"
-  class="access-pending"
+  class="access-pending high-school-page"
 >
 
 <a
@@ -45,9 +45,14 @@
 </a>
 
 
-<header class="portal-header">
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header portal-header">
 
   <div class="portal-container portal-header-inner">
+
 
     <a
       class="portal-brand"
@@ -59,33 +64,36 @@
         alt="Best Buddies Canada"
       >
 
-      <span>
+      <span class="portal-brand-text">
         Teacher Hub
       </span>
 
     </a>
 
 
-    <nav
-      class="portal-nav"
-      aria-label="Main navigation"
-    >
 
-      <a href="index.html#programs">
-        Programs
-      </a>
+    <div class="header-actions">
 
-      <a href="index.html#calendar">
-        Program Calendar
-      </a>
 
-      <a href="index.html#resources">
-        Resources
-      </a>
+      <nav
+        class="portal-nav"
+        aria-label="Main navigation"
+      >
 
-      <a href="#support">
-        Support
-      </a>
+        <a href="index.html#calendar">
+          Calendar
+        </a>
+
+        <a href="index.html#resources">
+          Resources
+        </a>
+
+        <a href="#support">
+          Support
+        </a>
+
+      </nav>
+
 
       <div class="portal-lang">
 
@@ -102,36 +110,37 @@
 
       </div>
 
-    </nav>
 
 
-    <details class="portal-menu">
+      <details class="portal-menu">
 
-      <summary>
-        Menu
-      </summary>
+        <summary>
+          Menu
+        </summary>
 
-      <div class="portal-menu-panel">
+        <div class="portal-menu-panel">
 
-        <a href="index.html#programs">
-          Programs
-        </a>
+          <a href="index.html#programs">
+            Switch Program
+          </a>
 
-        <a href="index.html#calendar">
-          Program Calendar
-        </a>
+          <a href="index.html#calendar">
+            Program Calendar
+          </a>
 
-        <a href="index.html#resources">
-          Resources
-        </a>
+          <a href="index.html#resources">
+            Resources
+          </a>
 
-        <a href="#support">
-          Support
-        </a>
+          <a href="#support">
+            Support
+          </a>
 
-      </div>
+        </div>
 
-    </details>
+      </details>
+
+    </div>
 
   </div>
 
@@ -142,6 +151,7 @@
     preserveAspectRatio="none"
     aria-hidden="true"
   >
+
     <path
       d="M0 0H1440V11
       C1340 5 1290 19 1190 11
@@ -151,6 +161,7 @@
       C315 5 255 19 155 11
       C95 7 45 15 0 10Z"
     />
+
   </svg>
 
 </header>
@@ -160,38 +171,63 @@
 <main id="main-content">
 
 
+  <!-- =====================================================
+       PAGE IDENTITY
+  ===================================================== -->
+
   <section class="program-page-hero">
 
-    <div class="portal-container program-page-hero-grid">
+    <div class="portal-container">
 
-      <div>
 
-        <div class="program-page-label">
-          High School Staff Advisor Page
+      <a
+        class="switch-program"
+        href="index.html#programs"
+      >
+        ← Switch program
+      </a>
+
+
+
+      <div class="program-page-hero-grid">
+
+
+        <div>
+
+          <div class="program-page-label">
+            High School
+          </div>
+
+
+          <h1>
+
+            STAFF ADVISOR
+
+            <span class="purple">
+              PAGE
+            </span>
+
+          </h1>
+
+
+          <p>
+            Month-by-month chapter programming, resources,
+            training, and practical support for you
+            and your student leadership team.
+          </p>
+
         </div>
 
-        <h1>
-          YOUR
-          <span class="purple">
-            PROGRAM
-          </span>
-        </h1>
-
-        <p>
-          Month-by-month chapter programming,
-          resources, and support for you and
-          your student leadership team.
-        </p>
-
-      </div>
 
 
-      <div class="program-page-image">
+        <div class="program-page-image">
 
-        <img
-          src="assets/high-school-hero.png"
-          alt="Students participating in a Best Buddies high school chapter"
-        >
+          <img
+            src="assets/high-school-hero.png"
+            alt="Students participating in a Best Buddies high school chapter"
+          >
+
+        </div>
 
       </div>
 
@@ -201,30 +237,35 @@
 
 
 
-  <!-- QUICK LAUNCH -->
+  <!-- =====================================================
+       WHERE DO YOU NEED TO GO?
+  ===================================================== -->
 
   <section class="program-dashboard">
 
     <div class="portal-container">
 
       <div class="portal-kicker">
-        Go where you need to go
+        Where do you need to go?
       </div>
 
+
       <h2>
-        YOUR CHAPTER AT A GLANCE
+        GET TO WHAT YOU NEED
       </h2>
+
 
 
       <div class="dashboard-grid">
 
+
         <a
-          class="dashboard-card current"
+          class="dashboard-card primary"
           href="#september"
         >
 
           <span>
-            This month
+            First up
           </span>
 
           <h3>
@@ -232,7 +273,7 @@
           </h3>
 
           <p>
-            Recruitment, leadership,
+            Recruitment, student leadership,
             and getting the chapter organized.
           </p>
 
@@ -243,33 +284,35 @@
         </a>
 
 
+
         <a
-          class="dashboard-card teal"
-          href="index.html#calendar"
+          class="dashboard-card"
+          href="#program-year"
         >
 
           <span>
-            Planning
+            Program year
           </span>
 
           <h3>
-            Program Calendar
+            Jump to a Month
           </h3>
 
           <p>
-            Checklists, activities,
-            dates, events, and reminders.
+            Go directly to the programming,
+            priorities, and resources you need.
           </p>
 
           <strong>
-            Open calendar →
+            See the year →
           </strong>
 
         </a>
 
 
+
         <a
-          class="dashboard-card violet"
+          class="dashboard-card teal"
           href="index.html#resources"
         >
 
@@ -282,8 +325,8 @@
           </h3>
 
           <p>
-            Training, chapter resources,
-            forms, and quick guides.
+            Activities, training, forms,
+            guides, and practical support.
           </p>
 
           <strong>
@@ -293,8 +336,9 @@
         </a>
 
 
+
         <a
-          class="dashboard-card"
+          class="dashboard-card violet"
           href="#support"
         >
 
@@ -303,7 +347,7 @@
           </span>
 
           <h3>
-            Get Support
+            Support
           </h3>
 
           <p>
@@ -312,7 +356,7 @@
           </p>
 
           <strong>
-            Go to support →
+            Get support →
           </strong>
 
         </a>
@@ -325,11 +369,17 @@
 
 
 
-  <!-- MONTHS -->
+  <!-- =====================================================
+       PROGRAM YEAR
+  ===================================================== -->
 
-  <section class="months-area">
+  <section
+    class="months-area"
+    id="program-year"
+  >
 
     <div class="portal-container">
+
 
       <div class="months-header">
 
@@ -339,26 +389,35 @@
             2026–2027 Program Year
           </div>
 
+
           <h2 class="portal-display">
+
             MONTH BY
+
             <span class="purple">
               MONTH
             </span>
+
           </h2>
 
         </div>
 
 
         <p>
-          Each month brings together the main program priorities,
-          activities, training, resources, dates, and chapter tasks.
-          We’ll also flag where student leaders can take the lead.
+          Each month brings the main program priorities,
+          activities, resources, and training together.
+          We’ll also flag where student leaders
+          can take meaningful ownership.
         </p>
 
       </div>
 
 
-      <div class="month-nav">
+
+      <nav
+        class="month-nav"
+        aria-label="Program year months"
+      >
 
         <a
           class="available current"
@@ -383,11 +442,13 @@
         <span>MAY</span>
         <span>JUN</span>
 
-      </div>
+      </nav>
 
 
 
-      <!-- SEPTEMBER -->
+      <!-- =================================================
+           SEPTEMBER
+      ================================================= -->
 
       <article
         class="month-module"
@@ -395,6 +456,7 @@
       >
 
         <div class="month-title-row">
+
 
           <div>
 
@@ -417,15 +479,17 @@
           </div>
 
 
+
           <div class="month-checklist">
 
             <span>
-              This month’s checklist
+              This month
             </span>
 
             <h3>
               Program Calendar priorities
             </h3>
+
 
             <ul>
 
@@ -449,14 +513,24 @@
 
             </ul>
 
+
+            <a
+              class="month-calendar-link"
+              href="index.html#calendar"
+            >
+              Open the full Program Calendar →
+            </a>
+
           </div>
 
         </div>
 
 
+
         <div class="month-content-grid">
 
-          <div class="month-card">
+
+          <article class="month-card">
 
             <div class="meta">
               Student leaders can own
@@ -472,10 +546,11 @@
               and welcoming interested students.
             </p>
 
-          </div>
+          </article>
 
 
-          <div class="month-card">
+
+          <article class="month-card">
 
             <div class="meta">
               Student leaders can own
@@ -487,13 +562,14 @@
 
             <p>
               Ask what made the chapter enjoyable last year
-              and what would make people want to return.
+              and what would make people want to come back.
             </p>
 
-          </div>
+          </article>
 
 
-          <div class="month-card">
+
+          <article class="month-card">
 
             <div class="meta">
               Staff Advisor lens
@@ -504,14 +580,16 @@
             </h3>
 
             <p>
-              Help students think through school expectations,
-              timing, accessibility, and practical details
-              without automatically taking the work back.
+              Help students think through timing,
+              school expectations, accessibility,
+              and practical details without automatically
+              taking the work back.
             </p>
 
-          </div>
+          </article>
 
         </div>
+
 
 
         <div class="month-extra">
@@ -532,7 +610,9 @@
 
 
 
-      <!-- OCTOBER -->
+      <!-- =================================================
+           OCTOBER
+      ================================================= -->
 
       <article
         class="month-module"
@@ -540,6 +620,7 @@
       >
 
         <div class="month-title-row">
+
 
           <div>
 
@@ -562,15 +643,17 @@
           </div>
 
 
+
           <div class="month-checklist">
 
             <span>
-              This month’s checklist
+              This month
             </span>
 
             <h3>
               Program Calendar priorities
             </h3>
+
 
             <ul>
 
@@ -592,21 +675,31 @@
               </li>
 
               <li>
-                Learn about interests, strengths,
-                and availability for future buddy pairings
-                where applicable.
+                Learn about students’ interests,
+                strengths, and availability for future
+                buddy pairings where applicable.
               </li>
 
             </ul>
+
+
+            <a
+              class="month-calendar-link"
+              href="index.html#calendar"
+            >
+              Open the full Program Calendar →
+            </a>
 
           </div>
 
         </div>
 
 
+
         <div class="month-content-grid">
 
-          <div class="month-card">
+
+          <article class="month-card">
 
             <div class="meta">
               Ready to run
@@ -621,10 +714,11 @@
               and discover shared interests.
             </p>
 
-          </div>
+          </article>
 
 
-          <div class="month-card">
+
+          <article class="month-card">
 
             <div class="meta">
               Student-led
@@ -639,10 +733,11 @@
               skill, hobby, or something they enjoy.
             </p>
 
-          </div>
+          </article>
 
 
-          <div class="month-card">
+
+          <article class="month-card">
 
             <div class="meta">
               Conversation support
@@ -657,9 +752,10 @@
               can make first conversations easier.
             </p>
 
-          </div>
+          </article>
 
         </div>
+
 
 
         <div class="month-extra">
@@ -672,6 +768,7 @@
             Sensitivity Training is part of the October
             program focus.
           </p>
+
 
           <a
             class="portal-button"
@@ -692,11 +789,14 @@
 
 
 
-  <!-- ROLE -->
+  <!-- =====================================================
+       STAFF ADVISOR ROLE
+  ===================================================== -->
 
   <section class="role-area">
 
     <div class="portal-container role-grid">
+
 
       <div>
 
@@ -704,22 +804,29 @@
           Staff Advisor role
         </div>
 
+
         <h2 class="portal-heading">
+
           SUPPORT THE CHAPTER.
+
           <span class="purple">
             LET STUDENTS LEAD.
           </span>
+
         </h2>
+
 
         <p class="portal-lede">
           Student leadership should make the chapter stronger
-          and make your role more manageable.
+          and make your Staff Advisor role more manageable.
         </p>
 
       </div>
 
 
+
       <div class="role-list">
+
 
         <div class="role-line">
 
@@ -733,6 +840,7 @@
           </span>
 
         </div>
+
 
 
         <div class="role-line">
@@ -749,6 +857,7 @@
         </div>
 
 
+
         <div class="role-line">
 
           <strong>
@@ -763,6 +872,7 @@
         </div>
 
 
+
         <div class="role-line">
 
           <strong>
@@ -771,7 +881,7 @@
 
           <span>
             Provides resources, training,
-            the Program Calendar, and ongoing support.
+            the Program Calendar, and ongoing program support.
           </span>
 
         </div>
@@ -784,7 +894,9 @@
 
 
 
-  <!-- SUPPORT -->
+  <!-- =====================================================
+       SUPPORT
+  ===================================================== -->
 
   <section
     class="portal-support"
@@ -793,24 +905,31 @@
 
     <div class="portal-container support-grid">
 
+
       <div>
 
         <div class="portal-kicker">
           Support
         </div>
 
+
         <h2 class="portal-display">
+
           NEED A
+
           <span class="purple">
             HAND?
           </span>
+
         </h2>
+
 
         <p class="portal-lede">
           Your Program Advisor can help with student leadership,
           matching, chapter planning, school-specific questions,
           and anything that needs more context than a webpage.
         </p>
+
 
         <a
           class="portal-button"
@@ -822,6 +941,7 @@
         </a>
 
       </div>
+
 
 
       <div class="support-photo">
@@ -869,4 +989,5 @@
 
 
 </body>
+
 </html>
