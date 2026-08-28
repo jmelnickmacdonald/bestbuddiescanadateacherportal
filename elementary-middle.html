@@ -11,7 +11,7 @@
   >
 
   <title>
-    Elementary & Middle School | Best Buddies Canada Teacher Hub
+    Elementary & Middle School Teacher Page | Best Buddies Canada
   </title>
 
   <link
@@ -34,7 +34,7 @@
 
 <body
   data-protected="true"
-  class="access-pending"
+  class="access-pending elementary-page"
 >
 
 <a
@@ -45,9 +45,14 @@
 </a>
 
 
-<header class="portal-header">
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header portal-header">
 
   <div class="portal-container portal-header-inner">
+
 
     <a
       class="portal-brand"
@@ -59,33 +64,36 @@
         alt="Best Buddies Canada"
       >
 
-      <span>
+      <span class="portal-brand-text">
         Teacher Hub
       </span>
 
     </a>
 
 
-    <nav
-      class="portal-nav"
-      aria-label="Main navigation"
-    >
 
-      <a href="index.html#programs">
-        Programs
-      </a>
+    <div class="header-actions">
 
-      <a href="index.html#calendar">
-        Program Calendar
-      </a>
 
-      <a href="index.html#resources">
-        Resources
-      </a>
+      <nav
+        class="portal-nav"
+        aria-label="Main navigation"
+      >
 
-      <a href="#support">
-        Support
-      </a>
+        <a href="index.html#calendar">
+          Calendar
+        </a>
+
+        <a href="index.html#resources">
+          Resources
+        </a>
+
+        <a href="#support">
+          Support
+        </a>
+
+      </nav>
+
 
       <div class="portal-lang">
 
@@ -102,36 +110,37 @@
 
       </div>
 
-    </nav>
 
 
-    <details class="portal-menu">
+      <details class="portal-menu">
 
-      <summary>
-        Menu
-      </summary>
+        <summary>
+          Menu
+        </summary>
 
-      <div class="portal-menu-panel">
+        <div class="portal-menu-panel">
 
-        <a href="index.html#programs">
-          Programs
-        </a>
+          <a href="index.html#programs">
+            Switch Program
+          </a>
 
-        <a href="index.html#calendar">
-          Program Calendar
-        </a>
+          <a href="index.html#calendar">
+            Program Calendar
+          </a>
 
-        <a href="index.html#resources">
-          Resources
-        </a>
+          <a href="index.html#resources">
+            Resources
+          </a>
 
-        <a href="#support">
-          Support
-        </a>
+          <a href="#support">
+            Support
+          </a>
 
-      </div>
+        </div>
 
-    </details>
+      </details>
+
+    </div>
 
   </div>
 
@@ -142,6 +151,7 @@
     preserveAspectRatio="none"
     aria-hidden="true"
   >
+
     <path
       d="M0 0H1440V11
       C1340 5 1290 19 1190 11
@@ -151,6 +161,7 @@
       C315 5 255 19 155 11
       C95 7 45 15 0 10Z"
     />
+
   </svg>
 
 </header>
@@ -160,40 +171,64 @@
 <main id="main-content">
 
 
-  <!-- PROGRAM IDENTITY -->
+  <!-- =====================================================
+       PAGE IDENTITY
+  ===================================================== -->
 
   <section class="program-page-hero">
 
-    <div class="portal-container program-page-hero-grid">
+    <div class="portal-container">
 
-      <div>
 
-        <div class="program-page-label">
-          Elementary &amp; Middle School Teacher Page
+      <a
+        class="switch-program"
+        href="index.html#programs"
+      >
+        ← Switch program
+      </a>
+
+
+
+      <div class="program-page-hero-grid">
+
+
+        <div>
+
+          <div class="program-page-label">
+            Elementary &amp; Middle School
+          </div>
+
+
+          <h1>
+
+            TEACHER
+
+            <span class="purple">
+              PAGE
+            </span>
+
+          </h1>
+
+
+          <p>
+            Everything you need to support your chapter through
+            the Best Buddies year, with monthly programming,
+            activity ideas, resources, training, and support
+            gathered in one place.
+          </p>
+
         </div>
 
-        <h1>
-          YOUR
-          <span class="purple">
-            PROGRAM
-          </span>
-        </h1>
-
-        <p>
-          Monthly programming, activities, resources,
-          and practical support for your Best Buddies
-          friendship club.
-        </p>
-
-      </div>
 
 
-      <div class="program-page-image">
+        <div class="program-page-image">
 
-        <img
-          src="assets/elementary-hero.png"
-          alt="Best Buddies elementary and middle school participants"
-        >
+          <img
+            src="assets/elementary-hero.png"
+            alt="Best Buddies elementary and middle school participants"
+          >
+
+        </div>
 
       </div>
 
@@ -203,30 +238,35 @@
 
 
 
-  <!-- QUICK LAUNCH -->
+  <!-- =====================================================
+       WHERE DO YOU NEED TO GO?
+  ===================================================== -->
 
   <section class="program-dashboard">
 
     <div class="portal-container">
 
       <div class="portal-kicker">
-        Go where you need to go
+        Where do you need to go?
       </div>
 
+
       <h2>
-        YOUR CHAPTER AT A GLANCE
+        GET TO WHAT YOU NEED
       </h2>
+
 
 
       <div class="dashboard-grid">
 
+
         <a
-          class="dashboard-card current"
+          class="dashboard-card primary"
           href="#september"
         >
 
           <span>
-            This month
+            First up
           </span>
 
           <h3>
@@ -235,7 +275,7 @@
 
           <p>
             Getting set up, recruiting,
-            and planning your first Meet &amp; Greet.
+            and planning the first Meet &amp; Greet.
           </p>
 
           <strong>
@@ -245,33 +285,35 @@
         </a>
 
 
+
         <a
-          class="dashboard-card teal"
-          href="index.html#calendar"
+          class="dashboard-card"
+          href="#program-year"
         >
 
           <span>
-            Planning
+            Program year
           </span>
 
           <h3>
-            Program Calendar
+            Jump to a Month
           </h3>
 
           <p>
-            Checklists, dates, events,
-            activities, and chapter reminders.
+            Go straight to the programming,
+            tasks, and resources for another month.
           </p>
 
           <strong>
-            Open calendar →
+            See the year →
           </strong>
 
         </a>
 
 
+
         <a
-          class="dashboard-card violet"
+          class="dashboard-card teal"
           href="index.html#resources"
         >
 
@@ -284,8 +326,8 @@
           </h3>
 
           <p>
-            Training, forms, activity guides,
-            and quick support.
+            Activities, training, forms,
+            guides, and practical support.
           </p>
 
           <strong>
@@ -295,8 +337,9 @@
         </a>
 
 
+
         <a
-          class="dashboard-card"
+          class="dashboard-card violet"
           href="#support"
         >
 
@@ -305,7 +348,7 @@
           </span>
 
           <h3>
-            Get Support
+            Support
           </h3>
 
           <p>
@@ -314,7 +357,7 @@
           </p>
 
           <strong>
-            Go to support →
+            Get support →
           </strong>
 
         </a>
@@ -327,11 +370,17 @@
 
 
 
-  <!-- MONTH BY MONTH -->
+  <!-- =====================================================
+       PROGRAM YEAR
+  ===================================================== -->
 
-  <section class="months-area">
+  <section
+    class="months-area"
+    id="program-year"
+  >
 
     <div class="portal-container">
+
 
       <div class="months-header">
 
@@ -341,25 +390,34 @@
             2026–2027 Program Year
           </div>
 
+
           <h2 class="portal-display">
+
             MONTH BY
+
             <span class="purple">
               MONTH
             </span>
+
           </h2>
 
         </div>
 
+
         <p>
-          Each month brings the main program checklist together
-          with practical ideas, resources, training, and other
-          chapter tasks when they’re relevant.
+          Choose a month and find the main program checklist,
+          practical ideas, relevant resources, training,
+          and other chapter tasks together in one place.
         </p>
 
       </div>
 
 
-      <div class="month-nav">
+
+      <nav
+        class="month-nav"
+        aria-label="Program year months"
+      >
 
         <a
           class="available current"
@@ -384,11 +442,13 @@
         <span>MAY</span>
         <span>JUN</span>
 
-      </div>
+      </nav>
 
 
 
-      <!-- SEPTEMBER -->
+      <!-- =================================================
+           SEPTEMBER
+      ================================================= -->
 
       <article
         class="month-module"
@@ -396,6 +456,7 @@
       >
 
         <div class="month-title-row">
+
 
           <div>
 
@@ -410,24 +471,26 @@
             </h2>
 
             <p>
-              September can be simple.
+              September does not have to be complicated.
               Focus on getting the chapter organized,
-              welcoming students, and preparing
-              for your first gathering.
+              welcoming students, and preparing for
+              your first gathering.
             </p>
 
           </div>
 
 
+
           <div class="month-checklist">
 
             <span>
-              This month’s checklist
+              This month
             </span>
 
             <h3>
               Program Calendar priorities
             </h3>
+
 
             <ul>
 
@@ -451,70 +514,83 @@
 
             </ul>
 
+
+            <a
+              class="month-calendar-link"
+              href="index.html#calendar"
+            >
+              Open the full Program Calendar →
+            </a>
+
           </div>
 
         </div>
 
 
+
         <div class="month-content-grid">
 
-          <div class="month-card">
+
+          <article class="month-card">
 
             <div class="meta">
               New or rebuilding
             </div>
 
             <h3>
-              Find your people.
+              Find Your People
             </h3>
 
             <p>
-              Focus on awareness, interested students,
-              family information, and getting a first
-              gathering on the calendar.
+              Promote the chapter, welcome interested students,
+              share the information families need,
+              and get a first gathering on the calendar.
             </p>
 
-          </div>
+          </article>
 
 
-          <div class="month-card">
+
+          <article class="month-card">
 
             <div class="meta">
               Returning chapter
             </div>
 
             <h3>
-              Reconnect first.
+              Reconnect First
             </h3>
 
             <p>
               Give returning members time to reconnect
-              and welcome new students before over-planning
-              the year.
+              and welcome new students before trying
+              to map out the whole year.
             </p>
 
-          </div>
+          </article>
 
 
-          <div class="month-card">
+
+          <article class="month-card">
 
             <div class="meta">
-              Already rolling
+              Already have momentum
             </div>
 
             <h3>
-              Let students shape it.
+              Ask Students
             </h3>
 
             <p>
-              Ask what students enjoyed last year
-              and what they want their chapter
-              to feel like this year.
+              Find out what students enjoyed last year
+              and what they want friendship and inclusion
+              to look like in the chapter this year.
             </p>
 
-          </div>
+          </article>
 
         </div>
+
 
 
         <div class="month-extra">
@@ -535,7 +611,9 @@
 
 
 
-      <!-- OCTOBER -->
+      <!-- =================================================
+           OCTOBER
+      ================================================= -->
 
       <article
         class="month-module"
@@ -543,6 +621,7 @@
       >
 
         <div class="month-title-row">
+
 
           <div>
 
@@ -558,22 +637,24 @@
 
             <p>
               October is about making connection easier
-              and helping students get comfortable
-              with one another.
+              and helping students become comfortable
+              spending time together.
             </p>
 
           </div>
 
 
+
           <div class="month-checklist">
 
             <span>
-              This month’s checklist
+              This month
             </span>
 
             <h3>
               Program Calendar priorities
             </h3>
+
 
             <ul>
 
@@ -595,21 +676,31 @@
               </li>
 
               <li>
-                Learn about interests, strengths,
-                and availability for future buddy pairings
-                where applicable.
+                Learn about students’ interests,
+                strengths, and availability for future
+                buddy pairings where applicable.
               </li>
 
             </ul>
+
+
+            <a
+              class="month-calendar-link"
+              href="index.html#calendar"
+            >
+              Open the full Program Calendar →
+            </a>
 
           </div>
 
         </div>
 
 
+
         <div class="month-content-grid">
 
-          <div class="month-card">
+
+          <article class="month-card">
 
             <div class="meta">
               Ready to run
@@ -620,14 +711,16 @@
             </h3>
 
             <p>
-              An easy way to help students move around,
-              meet people, and discover shared interests.
+              Help students meet one another
+              and discover shared interests
+              through an easy group activity.
             </p>
 
-          </div>
+          </article>
 
 
-          <div class="month-card">
+
+          <article class="month-card">
 
             <div class="meta">
               Shared activity
@@ -640,13 +733,14 @@
             <p>
               Create something together that represents
               the chapter, with different ways
-              for students to contribute.
+              for every student to contribute.
             </p>
 
-          </div>
+          </article>
 
 
-          <div class="month-card">
+
+          <article class="month-card">
 
             <div class="meta">
               Conversation support
@@ -657,14 +751,15 @@
             </h3>
 
             <p>
-              Use interests, favourites, and preferences
-              to give students easy starting points
-              for conversation.
+              Interests, favourites, and preferences
+              can give students comfortable starting
+              points for conversation.
             </p>
 
-          </div>
+          </article>
 
         </div>
+
 
 
         <div class="month-extra">
@@ -678,6 +773,7 @@
             program focus. Current training is available
             through Learn @ Best Buddies.
           </p>
+
 
           <a
             class="portal-button"
@@ -698,11 +794,14 @@
 
 
 
-  <!-- ROLE LOWER DOWN -->
+  <!-- =====================================================
+       ROLE
+  ===================================================== -->
 
   <section class="role-area">
 
     <div class="portal-container role-grid">
+
 
       <div>
 
@@ -710,23 +809,29 @@
           Your role
         </div>
 
+
         <h2 class="portal-heading">
+
           YOU KNOW
+
           <span class="purple">
             YOUR STUDENTS.
           </span>
+
         </h2>
 
+
         <p class="portal-lede">
-          Best Buddies adds the friendship and inclusion lens.
-          Your Program Advisor is there when you need help
-          applying it to your school.
+          Best Buddies brings the friendship and inclusion lens.
+          You bring the knowledge of your students and your school.
         </p>
 
       </div>
 
 
+
       <div class="role-list">
+
 
         <div class="role-line">
 
@@ -740,6 +845,7 @@
           </span>
 
         </div>
+
 
 
         <div class="role-line">
@@ -756,6 +862,7 @@
         </div>
 
 
+
         <div class="role-line">
 
           <strong>
@@ -764,7 +871,7 @@
 
           <span>
             Provides the Program Calendar, resources,
-            training, ideas, and ongoing support.
+            training, ideas, and ongoing program support.
           </span>
 
         </div>
@@ -777,7 +884,9 @@
 
 
 
-  <!-- SUPPORT -->
+  <!-- =====================================================
+       SUPPORT
+  ===================================================== -->
 
   <section
     class="portal-support"
@@ -786,24 +895,31 @@
 
     <div class="portal-container support-grid">
 
+
       <div>
 
         <div class="portal-kicker">
           Support
         </div>
 
+
         <h2 class="portal-display">
+
           NEED A
+
           <span class="purple">
             HAND?
           </span>
+
         </h2>
 
+
         <p class="portal-lede">
-          Your Program Advisor can help with the questions
-          that depend on your students, your school,
-          and your chapter.
+          Your Program Advisor can help when a question
+          depends on your students, your school,
+          or your chapter.
         </p>
+
 
         <a
           class="portal-button"
@@ -815,6 +931,7 @@
         </a>
 
       </div>
+
 
 
       <div class="support-photo">
@@ -862,4 +979,5 @@
 
 
 </body>
+
 </html>
