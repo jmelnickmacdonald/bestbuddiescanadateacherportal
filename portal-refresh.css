@@ -2064,3 +2064,387 @@ input:focus-visible {
   }
 
 }
+
+/* =========================================================
+   FINAL HOMEPAGE HERO LAYOUT
+   Text and artwork are physically separate.
+   Keep this block at the VERY BOTTOM of the stylesheet.
+========================================================= */
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+.home-banner {
+  position: relative !important;
+
+  display: grid !important;
+  grid-template-columns:
+    minmax(500px, 44%)
+    minmax(0, 56%) !important;
+
+  width: 100% !important;
+  height: auto !important;
+  min-height: 620px !important;
+
+  overflow: hidden !important;
+
+  background: #ffffff !important;
+}
+
+
+/* LEFT: COPY */
+
+.home-banner-content {
+  position: relative !important;
+  inset: auto !important;
+
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+
+  z-index: 2 !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  background: #ffffff !important;
+}
+
+
+.home-banner-content .portal-container {
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+
+  padding:
+    58px
+    48px
+    58px
+    max(
+      50px,
+      calc((100vw - var(--max)) / 2)
+    ) !important;
+}
+
+
+.home-banner-copy {
+  width: 100% !important;
+  max-width: 665px !important;
+}
+
+
+.home-banner-copy .portal-kicker {
+  max-width: 520px;
+
+  margin-bottom: 14px;
+
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+
+.home-banner-copy .hero-line {
+  width: 72px;
+  height: 8px;
+
+  margin: 17px 0 30px;
+}
+
+
+.home-banner-copy h1 {
+  max-width: 650px !important;
+
+  margin: 0 0 29px !important;
+
+  font-size: clamp(
+    3.65rem,
+    4.25vw,
+    5.15rem
+  ) !important;
+
+  line-height: 0.91 !important;
+  letter-spacing: -0.065em !important;
+}
+
+
+.home-banner-copy .hero-purple {
+  color: var(--purple) !important;
+}
+
+
+.home-banner-copy .hero-copy {
+  max-width: 610px !important;
+
+  margin: 0 !important;
+
+  color: var(--muted) !important;
+
+  font-size: 1.12rem !important;
+  line-height: 1.62 !important;
+}
+
+
+.home-banner-copy .hero-thank-you {
+  max-width: 600px !important;
+
+  margin: 16px 0 0 !important;
+
+  color: var(--purple) !important;
+
+  font-size: 0.98rem !important;
+  font-weight: 850 !important;
+
+  line-height: 1.45 !important;
+}
+
+
+/* RIGHT: ARTWORK */
+
+.home-banner > picture {
+  position: relative !important;
+  inset: auto !important;
+
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 620px !important;
+
+  overflow: hidden !important;
+
+  background: #ffffff !important;
+}
+
+
+.home-banner > picture img {
+  position: absolute !important;
+  inset: 0 !important;
+
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+
+  /*
+     The source banner has the people on the right.
+     This keeps them centred in their OWN panel.
+  */
+  object-position: 74% center !important;
+}
+
+
+
+/* =========================================================
+   LAPTOP / SMALL DESKTOP
+   Still two columns. Nothing overlays.
+========================================================= */
+
+@media (min-width: 761px) and (max-width: 1160px) {
+
+  .home-banner {
+    grid-template-columns:
+      minmax(350px, 43%)
+      minmax(0, 57%) !important;
+
+    min-height: 600px !important;
+  }
+
+
+  .home-banner-content .portal-container {
+    padding:
+      44px
+      30px
+      44px
+      clamp(28px, 4vw, 46px) !important;
+  }
+
+
+  .home-banner-copy {
+    max-width: 440px !important;
+  }
+
+
+  .home-banner-copy .portal-kicker {
+    max-width: 350px;
+
+    font-size: 0.72rem !important;
+  }
+
+
+  .home-banner-copy .hero-line {
+    width: 59px;
+    height: 7px;
+
+    margin: 15px 0 23px;
+  }
+
+
+  .home-banner-copy h1 {
+    max-width: 430px !important;
+
+    margin-bottom: 22px !important;
+
+    font-size: clamp(
+      2.55rem,
+      4.2vw,
+      3.35rem
+    ) !important;
+
+    line-height: 0.92 !important;
+  }
+
+
+  .home-banner-copy .hero-copy {
+    max-width: 420px !important;
+
+    font-size: 0.93rem !important;
+    line-height: 1.53 !important;
+  }
+
+
+  .home-banner-copy .hero-thank-you {
+    max-width: 410px !important;
+
+    margin-top: 12px !important;
+
+    font-size: 0.85rem !important;
+  }
+
+
+  .home-banner > picture {
+    min-height: 600px !important;
+  }
+
+
+  .home-banner > picture img {
+    object-position: 72% center !important;
+  }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+   Copy first, artwork underneath.
+   Still zero overlap.
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .home-banner {
+    display: flex !important;
+    flex-direction: column !important;
+
+    min-height: 0 !important;
+
+    overflow: visible !important;
+  }
+
+
+  .home-banner-content {
+    order: 1 !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    background: #ffffff !important;
+  }
+
+
+  .home-banner-content .portal-container {
+    width: min(
+      calc(100% - 32px),
+      var(--max)
+    ) !important;
+
+    margin: 0 auto !important;
+
+    padding: 47px 0 36px !important;
+  }
+
+
+  .home-banner-copy {
+    width: 100% !important;
+    max-width: 620px !important;
+  }
+
+
+  .home-banner-copy .portal-kicker {
+    max-width: 430px;
+
+    font-size: 0.72rem !important;
+  }
+
+
+  .home-banner-copy h1 {
+    max-width: 610px !important;
+
+    font-size: clamp(
+      2.8rem,
+      11vw,
+      4rem
+    ) !important;
+  }
+
+
+  .home-banner-copy .hero-copy {
+    max-width: 590px !important;
+
+    font-size: 1rem !important;
+  }
+
+
+  .home-banner-copy .hero-thank-you {
+    font-size: 0.88rem !important;
+  }
+
+
+  .home-banner > picture {
+    position: relative !important;
+
+    order: 2 !important;
+
+    width: 100% !important;
+    height: 470px !important;
+    min-height: 0 !important;
+  }
+
+
+  .home-banner > picture img {
+    position: absolute !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center bottom !important;
+  }
+
+}
+
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .home-banner > picture {
+    height: 405px !important;
+  }
+
+}
