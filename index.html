@@ -1,54 +1,93 @@
 <!DOCTYPE html>
 <html lang="en-CA">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Teacher Hub | Best Buddies Canada</title>
+
   <link rel="stylesheet" href="styles.css">
 </head>
 
+
 <body>
 
-<a class="skip-link" href="#main-content">Skip to main content</a>
+<a class="skip-link" href="#main-content">
+  Skip to main content
+</a>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header class="site-header">
+
   <div class="container header-inner">
 
-    <a class="brand" href="index.html" aria-label="Best Buddies Canada Teacher Hub home">
+    <a
+      class="brand"
+      href="index.html"
+      aria-label="Best Buddies Canada Teacher Hub home"
+    >
+
       <img
         src="assets/bb-reversed-logo.png"
         alt="Best Buddies Canada"
         class="header-logo"
       >
-      <span class="brand-name">Teacher Hub</span>
+
+      <span class="brand-name">
+        Teacher Hub
+      </span>
+
     </a>
 
+
     <nav class="nav" aria-label="Main navigation">
-      <a href="#programs">For Teachers</a>
+
+      <a href="#programs">
+        For Teachers
+      </a>
+
+      <a href="teacher-companion.html">
+        Teacher Companion
+      </a>
 
       <a href="#calendar">
         Calendar
-      </a>
-
-      <a
-        href="https://bestbuddies.ca/get-started/"
-        target="_blank"
-        rel="noopener"
-      >
-        Get Started
       </a>
 
       <a href="#support">
         Get Support
       </a>
 
+
       <div class="lang" aria-label="Language">
-        <a href="#" class="current" aria-current="page">EN</a>
-        <a href="fr.html" lang="fr-CA" hreflang="fr-CA">FR</a>
+
+        <a
+          href="#"
+          class="current"
+          aria-current="page"
+        >
+          EN
+        </a>
+
+        <a
+          href="fr.html"
+          lang="fr-CA"
+          hreflang="fr-CA"
+        >
+          FR
+        </a>
+
       </div>
+
     </nav>
 
   </div>
+
 
   <svg
     class="header-wave"
@@ -57,6 +96,7 @@
     aria-hidden="true"
     focusable="false"
   >
+
     <path
       d="M0 0H1440V13
       C1355 7 1314 21 1235 13
@@ -67,102 +107,158 @@
       C280 7 224 21 141 13
       C85 8 45 16 0 12Z"
     />
+
   </svg>
+
 </header>
+
 
 
 <main id="main-content">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-inner">
 
-      <div class="hero-copy">
+  <!-- =====================================================
+       RESPONSIVE HERO
+  ===================================================== -->
+
+  <section class="banner-hero">
+
+
+    <picture class="banner-picture">
+
+      <source
+        media="(max-width: 760px)"
+        srcset="assets/mobilebanner.png"
+      >
+
+      <source
+        media="(max-width: 1100px)"
+        srcset="assets/tabletbanner.png"
+      >
+
+      <img
+        src="assets/desktopbanner.png"
+        alt=""
+        aria-hidden="true"
+      >
+
+    </picture>
+
+
+
+    <div class="container banner-hero-content">
+
+      <div class="banner-copy">
+
 
         <div class="kicker">
           For teachers supporting Best Buddies
         </div>
 
-        <div class="yellow-stroke" aria-hidden="true"></div>
+
+        <div
+          class="yellow-stroke"
+          aria-hidden="true"
+        ></div>
+
 
         <h1>
-          <span class="purple">Friendship</span> and inclusion
-          are at the heart of Best Buddies.
+          <span class="purple">
+            Friendship
+          </span>
+          and inclusion are at the heart of Best Buddies.
         </h1>
 
-        <p class="hero-lede">
-          Your chapter already has enough going on. This Hub brings the
-          calendar, resources, ideas, and support together so you can spend
-          less time looking for information and more time creating
-          opportunities for friendship.
+
+        <p class="banner-lede">
+          Everything you need to support your chapter,
+          see what’s coming next, and make more room
+          for connection.
         </p>
 
-        <p class="hero-thought">
-          <strong>The goal stays the same.</strong>
-          How your chapter brings it to life can reflect your students,
-          your school, and the time you have.
-        </p>
 
-        <div class="hero-actions">
-          <a class="btn btn-purple" href="#programs">
+        <div class="banner-actions">
+
+          <a
+            class="btn btn-purple"
+            href="#programs"
+          >
             Choose your program
           </a>
 
-          <a class="text-link" href="#calendar">
-            See what’s coming up ↓
+
+          <a
+            class="banner-text-link"
+            href="#calendar"
+          >
+            View the calendar ↓
           </a>
+
         </div>
 
-      </div>
-
-
-      <div class="hero-play" aria-hidden="true">
-        <div class="hero-shape hero-shape-yellow"></div>
-        <div class="hero-shape hero-shape-teal"></div>
-        <div class="hero-shape hero-shape-orange"></div>
-
-        <div class="hero-message">
-          <span>FRIENDSHIP</span>
-          <strong>FIRST.</strong>
-        </div>
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- PROGRAMS -->
-  <section class="section programs-section" id="programs">
+
+  <!-- =====================================================
+       PROGRAMS
+  ===================================================== -->
+
+  <section
+    class="section programs-section"
+    id="programs"
+  >
 
     <div class="container">
 
+
       <div class="section-heading">
+
         <div class="kicker">
           Your teacher page
         </div>
 
+
         <h2>
           Same mission.
-          <span class="purple">Different school realities.</span>
+          <span class="purple">
+            Different school realities.
+          </span>
         </h2>
+
 
         <p class="lede">
           Choose your program and go straight to the information,
           ideas, and support that make sense for your chapter.
         </p>
+
       </div>
+
 
 
       <div class="program-grid">
 
-        <a class="program-card" href="elementary-middle.html">
+
+        <!-- ELEMENTARY -->
+
+        <a
+          class="program-card"
+          href="elementary-middle.html"
+        >
 
           <div class="program-image elementary">
+
             <img
               src="assets/elementary-hero.png"
               alt="Best Buddies participants spending time together"
             >
+
           </div>
+
 
           <div class="program-copy">
 
@@ -170,15 +266,17 @@
               Friendship club
             </span>
 
+
             <h3>
-              Elementary &amp;<br>
-              Middle School
+              Elementary &amp; Middle School
             </h3>
+
 
             <p>
               An in-school friendship club led by school staff,
               with support from the Best Buddies team.
             </p>
+
 
             <span class="program-button">
               Open teacher page →
@@ -189,14 +287,23 @@
         </a>
 
 
-        <a class="program-card" href="high-school.html">
+
+        <!-- HIGH SCHOOL -->
+
+        <a
+          class="program-card"
+          href="high-school.html"
+        >
 
           <div class="program-image highschool">
+
             <img
               src="assets/high-school-hero.png"
               alt="A Best Buddies high school chapter group"
             >
+
           </div>
+
 
           <div class="program-copy">
 
@@ -204,14 +311,17 @@
               Student-led chapter
             </span>
 
+
             <h3>
               High School
             </h3>
+
 
             <p>
               A student-led chapter supported by a Staff Advisor,
               with group activities and meaningful friendships.
             </p>
+
 
             <span class="program-button">
               Open teacher page →
@@ -228,34 +338,15 @@
   </section>
 
 
-  <!-- FRIENDSHIP POP -->
-  <section class="friendship-pop">
 
-    <div class="container">
+  <!-- =====================================================
+       STARTING FRESH
+  ===================================================== -->
 
-      <div class="friendship-pop-inner">
-
-        <div class="friendship-pop-small">
-          One thing worth remembering
-        </div>
-
-        <p>
-          <strong>Friendship first.</strong>
-          The calendar, resources, forms, and activities should support
-          the chapter — not become the chapter.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- STARTING A CHAPTER -->
   <section class="section start-section">
 
     <div class="container start-grid">
+
 
       <div>
 
@@ -263,52 +354,88 @@
           Starting fresh?
         </div>
 
+
         <h2>
           Starting a chapter should feel
-          <span class="yellow-highlight">doable.</span>
+          <span class="yellow-highlight">
+            doable.
+          </span>
         </h2>
+
 
         <p class="start-lede">
           You don’t need to arrive with the whole year planned.
-          Start with the current Best Buddies process, and we’ll help
-          you build from there.
+          Start with the current Best Buddies process, and we’ll
+          help you build from there.
         </p>
 
       </div>
 
 
+
       <div class="start-steps">
 
+
         <div class="start-step">
+
           <span>01</span>
+
           <div>
-            <strong>Check your school.</strong>
+
+            <strong>
+              Check your school.
+            </strong>
+
             <p>
               See whether a Best Buddies chapter is already active.
             </p>
+
           </div>
+
         </div>
 
+
+
         <div class="start-step">
+
           <span>02</span>
+
           <div>
-            <strong>Complete the application.</strong>
+
+            <strong>
+              Complete the application.
+            </strong>
+
             <p>
-              Fill out the current Program Application with
-              principal approval.
+              Fill out the current Program Application
+              with principal approval.
             </p>
+
           </div>
+
         </div>
 
+
+
         <div class="start-step">
+
           <span>03</span>
+
           <div>
-            <strong>Connect with Best Buddies.</strong>
+
+            <strong>
+              Connect with Best Buddies.
+            </strong>
+
             <p>
-              Your Program Advisor can help you figure out what comes next.
+              Your Program Advisor can help you figure out
+              what comes next.
             </p>
+
           </div>
+
         </div>
+
 
 
         <div class="start-actions">
@@ -321,6 +448,7 @@
           >
             Find a participating school
           </a>
+
 
           <a
             class="start-link"
@@ -339,12 +467,21 @@
   </section>
 
 
-  <!-- CALENDAR -->
-  <section class="section calendar-section" id="calendar">
+
+  <!-- =====================================================
+       LIVE CALENDAR
+  ===================================================== -->
+
+  <section
+    class="section calendar-section"
+    id="calendar"
+  >
 
     <div class="container">
 
+
       <div class="calendar-heading">
+
 
         <div>
 
@@ -352,39 +489,59 @@
             Official Program Calendar
           </div>
 
+
           <h2>
             Know what’s coming.
-            <span class="purple">Keep it manageable.</span>
+            <span class="purple">
+              Keep it manageable.
+            </span>
           </h2>
 
+
           <p class="lede">
-            This is the live Best Buddies Program Calendar.
-            It remains the official source for monthly focus,
-            reminders, and program dates.
+            The live Best Buddies Program Calendar remains the official
+            source for monthly focus, reminders, and program dates.
           </p>
 
         </div>
 
 
+
         <div class="calendar-thought">
-          <strong>The calendar tells you what’s happening.</strong>
+
+          <strong>
+            The calendar tells you what’s happening.
+          </strong>
+
           <span>
             Your teacher page helps answer:
             “Okay — what could that actually look like here?”
           </span>
+
         </div>
 
       </div>
 
 
+
       <div class="calendar-shell">
+
 
         <div class="calendar-toolbar">
 
           <div>
-            <span class="live-dot" aria-hidden="true"></span>
-            <strong>Live Best Buddies Calendar</strong>
+
+            <span
+              class="live-dot"
+              aria-hidden="true"
+            ></span>
+
+            <strong>
+              Live Best Buddies Calendar
+            </strong>
+
           </div>
+
 
           <a
             href="https://calendar.google.com/calendar/u/0/embed?ctz=America/Toronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com"
@@ -395,6 +552,7 @@
           </a>
 
         </div>
+
 
 
         <div class="calendar-frame">
@@ -412,7 +570,9 @@
       </div>
 
 
+
       <div class="calendar-explainers">
+
 
         <div class="calendar-explainer official">
 
@@ -420,9 +580,11 @@
             Official Program Calendar
           </span>
 
+
           <h3>
             The “what” and “when.”
           </h3>
+
 
           <p>
             Monthly focus, required pieces, important reminders,
@@ -432,20 +594,24 @@
         </div>
 
 
+
         <div class="calendar-explainer companion">
 
           <span class="explainer-label">
             Teacher Companion
           </span>
 
+
           <h3>
             The “how could this look?”
           </h3>
 
+
           <p>
-            Practical options for different schedules, chapter capacity,
-            group sizes, and ways to participate.
+            Practical options for different schedules,
+            chapter capacity, group sizes, and ways to participate.
           </p>
+
 
           <strong>
             Ideas, not extra requirements.
@@ -460,10 +626,151 @@
   </section>
 
 
-  <!-- SUPPORT -->
-  <section class="section support-section" id="support">
+
+  <!-- =====================================================
+       TEACHER COMPANION
+  ===================================================== -->
+
+  <section class="section companion-preview-section">
+
+    <div class="container">
+
+
+      <div class="companion-preview-heading">
+
+        <div>
+
+          <div class="kicker">
+            Teacher Companion
+          </div>
+
+
+          <h2>
+            A little help with the
+            <span class="purple">
+              Best Buddies part.
+            </span>
+          </h2>
+
+
+          <p class="lede">
+            Short, practical pieces about chapter meetings,
+            student leadership, buddy pairs, and getting started.
+            Open what’s useful and leave the rest.
+          </p>
+
+        </div>
+
+
+        <a
+          class="btn btn-purple"
+          href="teacher-companion.html"
+        >
+          Explore the Companion
+        </a>
+
+      </div>
+
+
+
+      <div class="companion-preview-grid">
+
+
+        <a
+          href="teacher-companion.html"
+          class="companion-preview-card yellow"
+        >
+
+          <span>
+            Starting a chapter
+          </span>
+
+          <h3>
+            Your First 30 Days
+          </h3>
+
+          <p>
+            What to do first, what can wait,
+            and how to get the chapter moving.
+          </p>
+
+          <strong>
+            Open guide →
+          </strong>
+
+        </a>
+
+
+
+        <a
+          href="teacher-companion.html"
+          class="companion-preview-card teal"
+        >
+
+          <span>
+            Meetings &amp; activities
+          </span>
+
+          <h3>
+            Plan a Great Chapter Meeting
+          </h3>
+
+          <p>
+            A simple structure for a lunch period,
+            regular meeting, or something bigger.
+          </p>
+
+          <strong>
+            Open guide →
+          </strong>
+
+        </a>
+
+
+
+        <a
+          href="teacher-companion.html"
+          class="companion-preview-card orange"
+        >
+
+          <span>
+            Friendship support
+          </span>
+
+          <h3>
+            Supporting Buddy Pairs
+          </h3>
+
+          <p>
+            Shared interests, communication,
+            first hangouts, and when a match feels tricky.
+          </p>
+
+          <strong>
+            Open guide →
+          </strong>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       SUPPORT
+  ===================================================== -->
+
+  <section
+    class="section support-section"
+    id="support"
+  >
 
     <div class="container support-grid">
+
 
       <div>
 
@@ -471,16 +778,22 @@
           Support stays human
         </div>
 
+
         <h2>
           Some things are just better
-          <span class="underlined">talked through.</span>
+          <span class="underlined">
+            talked through.
+          </span>
         </h2>
 
+
         <p class="lede">
-          Use the Hub for the information. Your Program Advisor is here
-          for chapter-specific questions, planning, problem-solving,
-          and the things that need an actual conversation.
+          Use the Hub for information and ideas.
+          Your Program Advisor is here for chapter-specific questions,
+          planning, problem-solving, and the things that need
+          an actual conversation.
         </p>
+
 
         <div class="support-actions">
 
@@ -493,18 +806,20 @@
             Connect with Best Buddies
           </a>
 
+
           <a
             class="text-link"
             href="https://bestbuddies.ca/helpful-resources/"
             target="_blank"
             rel="noopener"
           >
-            Browse current Helpful Resources ↗
+            Helpful Resources ↗
           </a>
 
         </div>
 
       </div>
+
 
 
       <div class="support-photo">
@@ -520,12 +835,19 @@
 
   </section>
 
+
 </main>
 
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
   <div class="container footer-inner">
+
 
     <img
       src="assets/bb-reversed-logo.png"
@@ -533,9 +855,11 @@
       class="footer-logo"
     >
 
+
     <p>
       Teacher Hub · Prototype for internal review
     </p>
+
 
     <a
       href="https://bestbuddies.ca/"
@@ -549,5 +873,7 @@
 
 </footer>
 
+
 </body>
+
 </html>
