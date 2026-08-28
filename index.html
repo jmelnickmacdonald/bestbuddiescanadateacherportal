@@ -52,6 +52,7 @@
         alt="Best Buddies Canada"
       >
 
+
       <span class="portal-brand-copy">
 
         <strong>
@@ -70,6 +71,8 @@
 
     <div class="header-actions">
 
+
+      <!-- DESKTOP NAV -->
 
       <nav
         class="portal-nav"
@@ -91,7 +94,13 @@
       </nav>
 
 
-      <div class="portal-lang">
+
+      <!-- LANGUAGE -->
+
+      <div
+        class="portal-lang"
+        aria-label="Language"
+      >
 
         <a
           href="#"
@@ -101,7 +110,11 @@
           EN
         </a>
 
-        <a href="fr.html">
+        <a
+          href="fr.html"
+          lang="fr-CA"
+          hreflang="fr-CA"
+        >
           FR
         </a>
 
@@ -109,11 +122,14 @@
 
 
 
+      <!-- COLLAPSED MENU -->
+
       <details class="portal-menu">
 
         <summary>
           Menu
         </summary>
+
 
         <div class="portal-menu-panel">
 
@@ -139,11 +155,15 @@
             <a
               class="current"
               href="#"
+              aria-current="page"
             >
               EN
             </a>
 
-            <a href="fr.html">
+            <a
+              href="fr.html"
+              lang="fr-CA"
+            >
               FR
             </a>
 
@@ -158,11 +178,13 @@
   </div>
 
 
+
   <svg
     class="portal-wave"
     viewBox="0 0 1440 28"
     preserveAspectRatio="none"
     aria-hidden="true"
+    focusable="false"
   >
 
     <path
@@ -191,6 +213,8 @@
   <section class="home-banner">
 
 
+    <!-- RESPONSIVE ARTWORK -->
+
     <picture>
 
       <source
@@ -213,6 +237,8 @@
 
 
 
+    <!-- HERO COPY -->
+
     <div class="home-banner-content">
 
       <div class="portal-container">
@@ -233,11 +259,17 @@
 
           <h1>
 
-            <span>
+            <span class="hero-purple">
               Friendship
             </span>
 
-            and inclusion are at the heart of Best Buddies.
+            and
+
+            <span class="hero-purple">
+              inclusion
+            </span>
+
+            are at the heart of Best Buddies.
 
           </h1>
 
@@ -265,7 +297,7 @@
 
 
   <!-- =====================================================
-       PROGRAMS
+       CHOOSE PROGRAM
   ===================================================== -->
 
   <section
@@ -278,12 +310,14 @@
 
       <div class="program-launch-heading">
 
+
         <div class="portal-kicker">
           Programs
         </div>
 
 
         <div class="program-heading-row">
+
 
           <h2 class="portal-display">
 
@@ -296,10 +330,12 @@
           </h2>
 
 
+
           <svg
             class="program-arrow"
             viewBox="0 0 140 80"
             aria-hidden="true"
+            focusable="false"
           >
 
             <path
@@ -321,18 +357,19 @@
       <div class="program-grid">
 
 
-        <!-- ELEMENTARY -->
+        <!-- ELEMENTARY & MIDDLE -->
 
         <a
           class="program-tile elementary"
           href="elementary-middle.html"
+          aria-label="Open Elementary and Middle School Best Buddies program"
         >
 
           <div class="program-photo">
 
             <img
               src="assets/elementary-hero.png"
-              alt="Best Buddies elementary and middle school participants"
+              alt="Best Buddies elementary and middle school participants together"
             >
 
           </div>
@@ -364,6 +401,7 @@
         <a
           class="program-tile highschool"
           href="high-school.html"
+          aria-label="Open High School Best Buddies program"
         >
 
           <div class="program-photo">
@@ -448,14 +486,34 @@
 
 
 
-      <div class="calendar-tags">
+      <div
+        class="calendar-tags"
+        aria-label="Program Calendar includes"
+      >
 
-        <span>Monthly checklists</span>
-        <span>Activity ideas</span>
-        <span>Important dates</span>
-        <span>Community events</span>
-        <span>Start-up tasks</span>
-        <span>Tips &amp; tricks</span>
+        <span>
+          Monthly checklists
+        </span>
+
+        <span>
+          Activity ideas
+        </span>
+
+        <span>
+          Important dates
+        </span>
+
+        <span>
+          Community events
+        </span>
+
+        <span>
+          Start-up tasks
+        </span>
+
+        <span>
+          Tips &amp; tricks
+        </span>
 
       </div>
 
@@ -540,6 +598,8 @@
       <div class="tool-grid">
 
 
+        <!-- QUICK GUIDES -->
+
         <a
           class="tool-link"
           href="teacher-companion.html"
@@ -565,6 +625,8 @@
         </a>
 
 
+
+        <!-- HELPFUL RESOURCES -->
 
         <a
           class="tool-link"
@@ -594,6 +656,8 @@
 
 
 
+        <!-- TRAINING -->
+
         <a
           class="tool-link"
           href="https://learn.bestbuddies.ca/"
@@ -620,6 +684,8 @@
         </a>
 
 
+
+        <!-- PROGRAM APPLICATION -->
 
         <a
           class="tool-link"
@@ -706,7 +772,7 @@
 
         <img
           src="assets/support-photo.jpg"
-          alt="Best Buddies participants together"
+          alt="Best Buddies participants spending time together"
         >
 
       </div>
@@ -720,6 +786,10 @@
 
 
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer class="portal-footer">
 
   <div class="portal-container portal-footer-inner">
@@ -729,9 +799,11 @@
       alt="Best Buddies Canada"
     >
 
+
     <p>
       Teacher Hub · Prototype for internal review
     </p>
+
 
     <a
       href="https://bestbuddies.ca/"
