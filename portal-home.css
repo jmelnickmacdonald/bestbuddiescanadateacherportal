@@ -3,7 +3,7 @@
    portal-home.css
    ========================================================= */
 
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
 :root{
   --purple:#5A3F98;
@@ -276,15 +276,21 @@ input:focus-visible{
 .portal-display,
 .internal-hero h1,
 .resource-section h2,
+.resource-finder-top h2,
 .support-box h2,
 .quick-guide-title,
 .quick-guide-card h2,
 .quick-guide-card h3,
 .program-heading h2,
 .program-overlay h3,
-.shortcut-heading h2,
-.home-hero h1{
+.shortcut-heading h2{
   font-family:var(--display);
+  text-transform:uppercase;
+}
+
+.home-hero h1{
+  font-family:var(--body);
+  text-transform:none;
 }
 
 .section-label{
@@ -369,17 +375,21 @@ input:focus-visible{
 }
 
 .home-hero h1{
-  max-width:680px;
+  max-width:700px;
   margin:0 0 26px;
   color:var(--ink);
-  font-size:clamp(3.65rem,4.8vw,5.75rem);
+  font-family:var(--body);
+  font-size:clamp(3.55rem,4.65vw,5.55rem);
   font-weight:900;
-  line-height:.86;
+  line-height:.92;
   letter-spacing:-.055em;
 }
 
-.home-hero h1 .purple{
+.home-hero h1 .hero-main-line{
   display:block;
+}
+
+.home-hero h1 .purple{
   color:var(--purple);
 }
 
@@ -470,10 +480,39 @@ input:focus-visible{
 .program-heading h2 .purple{color:var(--purple)}
 
 .program-heading .down{
-  color:var(--purple);
-  font-size:.45em;
+  position:relative;
+  flex:0 0 42px;
+  width:42px;
+  height:50px;
+  display:inline-block;
+  font-size:0;
   line-height:1;
-  transform:translateY(3px);
+  transform:none;
+}
+
+.program-heading .down::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:3px;
+  width:8px;
+  height:31px;
+  border-radius:999px;
+  background:var(--purple);
+  transform:translateX(-50%);
+}
+
+.program-heading .down::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:4px;
+  width:19px;
+  height:19px;
+  border-right:8px solid var(--purple);
+  border-bottom:8px solid var(--purple);
+  transform:translateX(-50%) rotate(45deg);
+  transform-origin:center;
 }
 
 .program-heading p{
@@ -556,6 +595,7 @@ input:focus-visible{
 
 .program-overlay h3{
   max-width:560px;
+  min-height:1.8em;
   margin:0;
   color:var(--ink);
   font-size:clamp(2rem,2.8vw,3.1rem);
