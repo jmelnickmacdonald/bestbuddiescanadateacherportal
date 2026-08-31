@@ -1,0 +1,196 @@
+/* =========================================================
+   BEST BUDDIES CANADA TEACHER HUB
+   Prototype access gate
+   File: access.css
+
+   This styles the prototype password gate as a fixed modal.
+   It does not provide production-grade authentication.
+========================================================= */
+
+body.access-locked{
+  overflow:hidden !important;
+}
+
+.access-gate{
+  position:fixed;
+  inset:0;
+  z-index:999999;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  overflow:auto;
+  background:rgba(36,24,53,.72);
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(5px);
+}
+
+.access-gate-card{
+  position:relative;
+  width:min(460px,100%);
+  max-height:calc(100vh - 48px);
+  overflow:auto;
+  padding:30px 32px 28px;
+  border-radius:28px 28px 72px 28px;
+  background:#fff;
+  color:#403946;
+  box-shadow:0 30px 80px rgba(25,17,38,.32);
+  text-align:left;
+}
+
+.access-gate-card::before{
+  content:"";
+  position:absolute;
+  width:94px;
+  height:94px;
+  right:-31px;
+  top:-33px;
+  border-radius:50%;
+  background:#FFD420;
+  pointer-events:none;
+}
+
+.access-logo{
+  position:relative;
+  z-index:1;
+  width:auto !important;
+  height:64px !important;
+  max-width:150px !important;
+  object-fit:contain;
+  margin:0 0 20px;
+}
+
+.access-kicker{
+  margin-bottom:7px;
+  color:#5A3F98;
+  font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.access-program{
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+  margin-bottom:12px;
+  padding:5px 11px;
+  border-radius:999px;
+  background:#ECE9F7;
+  color:#5A3F98;
+  font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  font-size:.7rem;
+  font-weight:800;
+}
+
+.access-gate-card h1{
+  margin:0 0 12px;
+  color:#211B28;
+  font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  font-size:clamp(2rem,6vw,2.8rem);
+  font-weight:800;
+  line-height:1;
+  letter-spacing:-.035em;
+}
+
+.access-intro{
+  margin:0 0 22px;
+  color:#625A68;
+  font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  font-size:.92rem;
+  line-height:1.55;
+}
+
+#access-form label{
+  display:block;
+  margin-bottom:7px;
+  color:#211B28;
+  font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  font-size:.78rem;
+  font-weight:800;
+}
+
+#teacher-password{
+  width:100%;
+  min-height:52px;
+  padding:11px 14px;
+  border:2px solid #DDD8E6;
+  border-radius:14px;
+  background:#fff;
+  color:#211B28;
+  font:inherit;
+}
+
+#teacher-password:focus{
+  border-color:#5A3F98;
+  outline:4px solid rgba(90,63,152,.13);
+}
+
+.access-error{
+  min-height:22px;
+  margin:7px 0 5px;
+  color:#9b2c2c;
+  font-size:.78rem;
+  font-weight:700;
+}
+
+.access-button{
+  width:100%;
+  min-height:50px;
+  border:0;
+  border-radius:999px;
+  background:#5A3F98;
+  color:#fff;
+  font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.access-button:hover{
+  background:#49317f;
+}
+
+.access-help{
+  margin:18px 0 0;
+  color:#625A68;
+  font-size:.78rem;
+  line-height:1.45;
+}
+
+.access-back{
+  display:inline-flex;
+  margin-top:14px;
+  color:#5A3F98;
+  font-size:.78rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.access-gate-exit{
+  opacity:0;
+  transition:opacity .18s ease;
+}
+
+@media(max-width:560px){
+  .access-gate{
+    align-items:end;
+    padding:0;
+  }
+
+  .access-gate-card{
+    width:100%;
+    max-height:88vh;
+    padding:25px 20px 26px;
+    border-radius:28px 28px 0 0;
+  }
+
+  .access-logo{
+    height:56px !important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .access-gate-exit{
+    transition:none;
+  }
+}
