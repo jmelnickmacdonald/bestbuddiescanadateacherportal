@@ -1,45 +1,65 @@
 /* =========================================================
    BEST BUDDIES TEACHER HUB
    Prototype access gate
-
-   IMPORTANT:
-   This is suitable for a prototype only.
-   It is not secure authentication for a production website.
 ========================================================= */
 
 const PROTOTYPE_PASSWORD = "BestBuddies2026";
 const ACCESS_KEY = "bestBuddiesTeacherHubAccess";
 
-
 function hasTeacherAccess() {
   return sessionStorage.getItem(ACCESS_KEY) === "granted";
 }
-
 
 function grantTeacherAccess() {
   sessionStorage.setItem(ACCESS_KEY, "granted");
 }
 
-
 function removeTeacherAccess() {
   sessionStorage.removeItem(ACCESS_KEY);
 }
 
+function getProgramLabel() {
+  const program = document.body.dataset.program;
+
+  if (program === "elementary-middle") {
+    return "Elementary & Middle School";
+  }
+
+  if (program === "high-school") {
+    return "High School";
+  }
+
+  return "Teacher Hub";
+}
+
+function goToTop() {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "auto"
+  });
+}
 
 function openAccessGate() {
+  goToTop();
 
   if (hasTeacherAccess()) {
-    document.body.classList.remove("access-locked");
+    document.body.classList.remove("access-locked", "access-pending");
+    requestAnimationFrame(goToTop);
     return;
   }
 
-
   document.body.classList.add("access-locked");
+  document.body.classList.remove("access-pending");
 
+  document.querySelector(".access-gate")?.remove();
 
   const gate = document.createElement("div");
 
   gate.className = "access-gate";
+  gate.setAttribute("role", "dialog");
+  gate.setAttribute("aria-modal", "true");
+  gate.setAttribute("aria-labelledby", "access-title");
 
   gate.innerHTML = `
     <div class="access-gate-card">
@@ -54,13 +74,16 @@ function openAccessGate() {
         Teacher Hub
       </div>
 
-      <h1>
+      <div class="access-program">
+        ${getProgramLabel()}
+      </div>
+
+      <h1 id="access-title">
         Welcome back.
       </h1>
 
       <p class="access-intro">
-        This area includes additional resources and guidance
-        for teachers and Staff Advisors supporting Best Buddies chapters.
+        Enter the Teacher Hub password to open this program area.
       </p>
 
       <form id="access-form">
@@ -87,14 +110,13 @@ function openAccessGate() {
           type="submit"
           class="access-button"
         >
-          Enter Teacher Hub
+          Continue
         </button>
 
       </form>
 
       <p class="access-help">
-        Need access?
-        Contact your Best Buddies Program Advisor.
+        Need access? Contact your Best Buddies Program Advisor.
       </p>
 
       <a
@@ -107,61 +129,63 @@ function openAccessGate() {
     </div>
   `;
 
-
   document.body.appendChild(gate);
-
 
   const form = document.getElementById("access-form");
   const passwordInput = document.getElementById("teacher-password");
   const error = document.getElementById("access-error");
 
+  requestAnimationFrame(() => {
+    goToTop();
 
-  setTimeout(() => {
-    passwordInput.focus();
-  }, 100);
-
+    try {
+      passwordInput.focus({ preventScroll: true });
+    } catch {
+      passwordInput.focus();
+      goToTop();
+    }
+  });
 
   form.addEventListener("submit", function(event) {
-
     event.preventDefault();
 
     const enteredPassword = passwordInput.value.trim();
 
-
     if (enteredPassword === PROTOTYPE_PASSWORD) {
-
       grantTeacherAccess();
 
       document.body.classList.remove("access-locked");
 
       gate.classList.add("access-gate-exit");
 
-
       setTimeout(() => {
         gate.remove();
-      }, 250);
+        goToTop();
+      }, 180);
 
     } else {
-
-      error.textContent = "That password doesn’t look right. Please try again.";
+      error.textContent =
+        "That password doesn’t look right. Please try again.";
 
       passwordInput.select();
-
     }
-
   });
-
 }
 
-
 document.addEventListener("DOMContentLoaded", function() {
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
 
   const protectedPage =
     document.body.dataset.protected === "true";
 
-
   if (protectedPage) {
-    openAccessGate();
-  }
+    goToTop();
 
+    requestAnimationFrame(() => {
+      goToTop();
+      openAccessGate();
+    });
+  }
 });
