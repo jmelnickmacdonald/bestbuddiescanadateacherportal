@@ -1,0 +1,1181 @@
+/* =========================================================
+   Best Buddies Canada Teacher Hub
+   September special layout
+   File: september-refresh.css
+
+   Load AFTER month-pages.css.
+
+   This file only handles September-specific structure and
+   visual treatment. Shared type, buttons, planner, dialogs,
+   header, support, and footer come from month-pages.css.
+   ========================================================= */
+
+.september-v2 {
+  --sept-purple: var(--bb-purple);
+  --sept-violet: var(--bb-violet);
+  --sept-yellow: var(--bb-yellow);
+  --sept-teal: var(--bb-teal);
+  --sept-orange: var(--bb-orange);
+  --sept-ink: var(--bb-ink);
+  --sept-body: var(--bb-body);
+  --sept-wash: var(--bb-soft);
+  --sept-lavender: var(--bb-lavender);
+  --sept-line: var(--bb-line);
+  background: var(--bb-white);
+}
+
+/* Keep September slightly narrower and more editorial */
+.september-v2 .month-wrap,
+.september-v2 .month-header-inner,
+.september-v2 .month-hero-inner {
+  width: min(calc(100% - 60px), 1380px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.sept-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 62px 0 74px;
+  background: var(--bb-white);
+}
+
+/* Remove shared decorative hero blobs so the photography
+   can be the visual anchor on September. */
+.sept-hero::before,
+.sept-hero::after {
+  display: none;
+}
+
+.sept-hero .month-hero-inner {
+  min-height: 0;
+  padding: 0;
+  grid-template-columns: minmax(0, 0.98fr) minmax(390px, 0.78fr);
+  gap: 72px;
+  align-items: center;
+}
+
+.sept-hero .month-back-link {
+  margin-bottom: 34px;
+}
+
+.sept-hero .month-eyebrow {
+  margin-bottom: 16px;
+}
+
+.sept-hero .month-display {
+  max-width: 700px;
+  font-size: clamp(4rem, 5.9vw, 6rem);
+  line-height: 0.91;
+}
+
+.sept-hero .month-hero-lede {
+  max-width: 650px;
+  margin-top: 25px;
+  font-size: 1.08rem;
+  line-height: 1.62;
+}
+
+/* Photo treatment */
+.sept-hero-photo {
+  position: relative;
+  min-height: 440px;
+  overflow: hidden;
+  border-radius: 36px 36px 96px 36px;
+  background: var(--sept-lavender);
+  box-shadow: var(--bb-shadow);
+}
+
+.sept-hero-photo::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 170px;
+  height: 170px;
+  right: -42px;
+  top: -44px;
+  background: var(--sept-yellow);
+  border-radius: 55% 45% 54% 46% / 46% 58% 42% 54%;
+  transform: rotate(12deg);
+}
+
+.sept-hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
+  height: 10px;
+  background: var(--sept-teal);
+}
+
+.sept-hero-photo img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sept-photo-accent {
+  position: absolute;
+  z-index: 3;
+  left: 24px;
+  bottom: 24px;
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--sept-purple);
+  color: var(--bb-white);
+  font-family: var(--bb-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   GUIDANCE TOGGLE
+========================================================= */
+
+.sept-mode-inline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin-top: 32px;
+  padding-top: 25px;
+  border-top: 1px solid var(--sept-line);
+}
+
+.sept-mode-inline > span {
+  color: var(--sept-ink);
+  font-size: 0.84rem;
+  font-weight: 900;
+}
+
+.sept-mode-inline .month-mode-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sept-mode-inline .month-mode-button {
+  min-height: 44px;
+  padding: 8px 17px;
+  border: 2px solid var(--sept-purple);
+  background: var(--bb-white);
+  color: var(--sept-purple);
+  font-size: 0.84rem;
+}
+
+.sept-mode-inline .month-mode-button.is-active,
+.sept-mode-inline .month-mode-button[aria-pressed="true"] {
+  border-color: var(--sept-yellow);
+  background: var(--sept-yellow);
+  color: var(--sept-ink);
+}
+
+
+/* =========================================================
+   SEPTEMBER PRIORITIES
+========================================================= */
+
+.sept-steps-section {
+  position: relative;
+  overflow: hidden;
+  padding: 86px 0 92px;
+  background: var(--sept-lavender);
+}
+
+.sept-steps-section::after {
+  content: "";
+  position: absolute;
+  width: 185px;
+  height: 185px;
+  right: -72px;
+  bottom: 42px;
+  border-radius: 50% 50% 62% 38% / 56% 42% 58% 44%;
+  background: rgba(255, 212, 32, 0.72);
+  transform: rotate(18deg);
+  pointer-events: none;
+}
+
+.sept-steps-section .month-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.sept-section-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.62fr);
+  gap: 58px;
+  align-items: end;
+  margin-bottom: 42px;
+}
+
+.sept-source-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  margin-bottom: 17px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--bb-white);
+  color: var(--sept-purple);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.sept-section-intro .month-eyebrow {
+  display: none;
+}
+
+.sept-section-intro h2,
+.sept-guided-heading h2,
+.sept-builder-heading h2,
+.sept-resources-heading h2 {
+  margin: 0;
+  color: var(--sept-ink);
+  font-family: var(--bb-display);
+  font-size: clamp(2.9rem, 4.5vw, 4.8rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.sept-section-intro h2 span,
+.sept-guided-heading h2 span,
+.sept-builder-heading h2 span,
+.sept-resources-heading h2 span {
+  color: var(--sept-purple);
+}
+
+.sept-section-intro > p,
+.sept-guided-heading > p,
+.sept-resources-heading > p {
+  margin: 0 0 6px;
+  color: var(--sept-body);
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+/* Four priorities now read as four friendly blocks */
+.sept-step-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.sept-step {
+  min-height: 155px;
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 17px;
+  padding: 25px;
+  border: 0;
+  border-radius: 24px 24px 62px 24px;
+  background: var(--bb-white);
+  box-shadow: var(--bb-shadow-soft);
+}
+
+.sept-step:nth-child(even) {
+  border-radius: 24px 62px 24px 24px;
+}
+
+.sept-step-number {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  border-radius: 50%;
+  background: var(--sept-purple);
+  color: var(--bb-white);
+  font-family: var(--bb-display);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.step-yellow .sept-step-number {
+  background: var(--sept-yellow);
+  color: var(--sept-ink);
+}
+
+.step-teal .sept-step-number {
+  background: var(--sept-teal);
+  color: var(--sept-ink);
+}
+
+.step-orange .sept-step-number {
+  background: var(--sept-orange);
+  color: var(--sept-ink);
+}
+
+.sept-step strong {
+  display: block;
+  margin: 2px 0 7px;
+  color: var(--sept-ink);
+  font-family: var(--bb-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.sept-step p {
+  max-width: 500px;
+  margin: 0;
+  color: var(--sept-body);
+  font-size: 0.92rem;
+  line-height: 1.52;
+}
+
+.sept-enough-note {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 20px;
+  align-items: center;
+  margin-top: 28px;
+  padding: 24px 27px;
+  border-radius: 26px 26px 66px 26px;
+  background: var(--sept-yellow);
+}
+
+.sept-enough-mark {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--sept-purple);
+  color: var(--bb-white);
+  font-weight: 900;
+}
+
+.sept-enough-note strong {
+  color: var(--sept-ink);
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.sept-enough-note p {
+  margin: 3px 0 0;
+  color: #514a52;
+  font-size: 0.86rem;
+}
+
+.sept-inline-ideas,
+.sept-inspiration-band button {
+  min-height: 44px;
+  padding: 8px 17px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--sept-purple);
+  color: var(--bb-white);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   ESSENTIALS INSPIRATION
+========================================================= */
+
+.sept-essentials-inspiration {
+  padding: 0 0 82px;
+  background: var(--sept-lavender);
+}
+
+.sept-inspiration-band {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 28px 31px;
+  border-radius: 28px 28px 76px 28px;
+  background: var(--sept-teal);
+}
+
+.sept-inspiration-band::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  right: -40px;
+  top: -54px;
+  border-radius: 50%;
+  background: var(--sept-yellow);
+}
+
+.sept-inspiration-band > * {
+  position: relative;
+  z-index: 1;
+}
+
+.sept-inspiration-band span {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--sept-purple);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.sept-inspiration-band strong {
+  color: var(--sept-ink);
+  font-family: var(--bb-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+
+/* =========================================================
+   GUIDED PLANNING
+========================================================= */
+
+.sept-guided {
+  padding: 92px 0 100px;
+  background: var(--sept-wash);
+}
+
+.sept-guided-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.55fr);
+  gap: 54px;
+  align-items: end;
+  margin-bottom: 44px;
+}
+
+.sept-guided-kicker {
+  grid-column: 1 / -1;
+  margin-bottom: -40px;
+  color: var(--sept-purple);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sept-fast-plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.sept-fast-plan {
+  position: relative;
+  overflow: hidden;
+  min-height: 270px;
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border: 0;
+  border-radius: 28px 28px 72px 28px;
+  box-shadow: none;
+}
+
+.sept-fast-plan:nth-child(2) {
+  border-radius: 28px 72px 28px 28px;
+}
+
+.sept-fast-plan:nth-child(3) {
+  border-radius: 72px 28px 28px 28px;
+}
+
+.plan-yellow {
+  background: var(--bb-yellow-soft);
+}
+
+.plan-teal {
+  background: var(--bb-teal-soft);
+}
+
+.plan-lavender {
+  background: var(--sept-lavender);
+}
+
+.sept-plan-topline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.sept-plan-topline span {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--sept-purple);
+  font-size: 0.66rem;
+  font-weight: 900;
+}
+
+.sept-fast-plan h3 {
+  margin: 18px 0 16px;
+  color: var(--sept-ink);
+  font-family: var(--bb-display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.sept-mini-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  color: #544d59;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.sept-mini-flow b {
+  color: var(--sept-purple);
+}
+
+.sept-fast-plan > button {
+  min-height: 44px;
+  margin-top: auto;
+  padding: 9px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--sept-purple);
+  color: var(--bb-white);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.sept-builder-heading {
+  margin: 80px 0 32px;
+}
+
+.sept-builder-heading > span {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--sept-purple);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sept-builder {
+  display: grid;
+  gap: 16px;
+}
+
+.sept-pick-step {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 20px;
+  padding: 28px;
+  border-radius: 28px 28px 72px 28px;
+  background: var(--bb-white);
+  box-shadow: var(--bb-shadow-soft);
+}
+
+.sept-pick-step:nth-of-type(2) {
+  border-radius: 28px 72px 28px 28px;
+}
+
+.sept-pick-number {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--sept-purple);
+  color: var(--bb-white);
+  font-family: var(--bb-display);
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.sept-pick-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--sept-line);
+}
+
+.sept-pick-heading span {
+  color: var(--sept-purple);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.sept-pick-heading h3 {
+  margin: 4px 0 0;
+  color: var(--sept-ink);
+  font-family: var(--bb-display);
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.sept-pick-heading > p {
+  max-width: 300px;
+  margin: 0;
+  color: var(--sept-body);
+  font-size: 0.84rem;
+}
+
+.sept-choice-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 8px;
+}
+
+.sept-choice {
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 23px 20px;
+  border-right: 1px solid var(--sept-line);
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+.sept-choice:last-child {
+  border-right: 0;
+}
+
+.sept-choice-time {
+  color: var(--sept-purple);
+  font-size: 0.67rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.sept-choice h4 {
+  margin: 9px 0 9px;
+  color: var(--sept-ink);
+  font-family: var(--bb-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.sept-choice p {
+  margin: 0;
+  color: var(--sept-body);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.sept-choice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.sept-choice-actions button,
+.sept-more-grid button {
+  min-height: 40px;
+  padding: 7px 12px;
+  border: 2px solid var(--sept-purple);
+  border-radius: 999px;
+  background: var(--bb-white);
+  color: var(--sept-purple);
+  font-size: 0.78rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.sept-choice-actions .sept-add,
+.sept-more-grid button:last-child {
+  background: var(--sept-purple);
+  color: var(--bb-white);
+}
+
+.sept-builder-arrow {
+  display: none;
+}
+
+.sept-close-choice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0 2px;
+}
+
+.sept-close-choice span {
+  color: var(--sept-purple);
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.sept-close-choice h4 {
+  margin: 5px 0 7px;
+  color: var(--sept-ink);
+  font-family: var(--bb-display);
+  font-size: 1.55rem;
+  font-weight: 700;
+}
+
+.sept-close-choice p {
+  margin: 0;
+  color: var(--sept-body);
+  font-size: 0.88rem;
+}
+
+
+/* =========================================================
+   MORE IDEAS
+========================================================= */
+
+.sept-more-ideas {
+  margin-top: 28px;
+  border-radius: 24px 24px 64px 24px;
+  background: var(--bb-white);
+  overflow: hidden;
+  box-shadow: var(--bb-shadow-soft);
+}
+
+.sept-more-ideas summary {
+  padding: 24px 28px;
+  cursor: pointer;
+}
+
+.sept-more-ideas summary span {
+  display: block;
+  color: var(--sept-purple);
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.sept-more-ideas summary strong {
+  display: block;
+  margin-top: 3px;
+  color: var(--sept-ink);
+  font-family: var(--bb-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.sept-more-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  padding: 0 28px 28px;
+}
+
+.sept-more-grid article {
+  padding: 20px 22px;
+  border-right: 1px solid var(--sept-line);
+}
+
+.sept-more-grid article:last-child {
+  border-right: 0;
+}
+
+.sept-more-grid article > span {
+  color: var(--sept-purple);
+  font-size: 0.66rem;
+  font-weight: 900;
+}
+
+.sept-more-grid h3 {
+  margin: 8px 0;
+  color: var(--sept-ink);
+  font-family: var(--bb-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.sept-more-grid p {
+  margin: 0;
+  color: var(--sept-body);
+  font-size: 0.84rem;
+}
+
+.sept-more-grid article > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 18px;
+}
+
+
+/* =========================================================
+   PARTICIPATION NOTE
+========================================================= */
+
+.sept-participation-note {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 34px;
+  align-items: center;
+  margin-top: 52px;
+  padding: 34px 38px;
+  overflow: hidden;
+  border-radius: 30px 30px 82px 30px;
+  background: var(--sept-yellow);
+}
+
+.sept-participation-note::after {
+  content: "";
+  position: absolute;
+  width: 135px;
+  height: 135px;
+  right: -46px;
+  top: -56px;
+  border-radius: 50%;
+  background: var(--sept-teal);
+}
+
+.sept-participation-note > * {
+  position: relative;
+  z-index: 1;
+}
+
+.sept-participation-shape {
+  display: none;
+}
+
+.sept-participation-note > div:nth-child(2) {
+  min-width: 0;
+}
+
+.sept-participation-note span {
+  color: var(--sept-purple);
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.sept-participation-note h2 {
+  margin: 8px 0 8px;
+  color: var(--sept-ink);
+  font-family: var(--bb-display);
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.sept-participation-note p {
+  max-width: 780px;
+  margin: 0;
+  color: #433c46;
+  font-size: 0.92rem;
+}
+
+.sept-participation-note a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 15px;
+  border-radius: 999px;
+  background: var(--sept-purple);
+  color: var(--bb-white);
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   RESOURCES
+========================================================= */
+
+.sept-resources {
+  padding: 90px 0 96px;
+  background: var(--bb-white);
+}
+
+.sept-resources-heading {
+  display: grid;
+  grid-template-columns: 1fr 0.62fr;
+  gap: 58px;
+  align-items: end;
+  margin-bottom: 38px;
+}
+
+.sept-resource-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.sept-resource-links a {
+  min-height: 138px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-content: center;
+  gap: 5px 20px;
+  padding: 24px;
+  border: 0;
+  border-radius: 22px 22px 58px 22px;
+  background: var(--sept-lavender);
+  color: var(--sept-ink);
+  text-decoration: none;
+}
+
+.sept-resource-links a:nth-child(2) {
+  border-radius: 22px 58px 22px 22px;
+  background: var(--bb-yellow-soft);
+}
+
+.sept-resource-links a:nth-child(3) {
+  border-radius: 58px 22px 22px 22px;
+  background: var(--bb-teal-soft);
+}
+
+.sept-resource-links a:nth-child(4) {
+  border-radius: 22px 22px 22px 58px;
+  background: var(--bb-orange-soft);
+}
+
+.sept-resource-links a:nth-child(5) {
+  background: var(--bb-violet-soft);
+}
+
+.sept-resource-links span {
+  grid-column: 1;
+  color: var(--sept-purple);
+  font-size: 0.67rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.sept-resource-links strong {
+  grid-column: 1;
+  color: var(--sept-ink);
+  font-family: var(--bb-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.sept-resource-links b {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: center;
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--sept-purple);
+  color: var(--bb-white);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+  .sept-hero .month-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .sept-hero-photo {
+    min-height: 350px;
+  }
+
+  .sept-hero-photo img {
+    height: 350px;
+  }
+
+  .sept-section-intro,
+  .sept-guided-heading,
+  .sept-resources-heading {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .sept-guided-kicker {
+    grid-column: auto;
+    margin-bottom: -4px;
+  }
+
+  .sept-fast-plans {
+    grid-template-columns: 1fr;
+  }
+
+  .sept-fast-plan {
+    min-height: 220px;
+    border-radius: 26px 26px 64px 26px !important;
+  }
+
+  .sept-choice-row {
+    grid-template-columns: 1fr;
+  }
+
+  .sept-choice {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--sept-line);
+  }
+
+  .sept-choice:last-child {
+    border-bottom: 0;
+  }
+
+  .sept-more-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sept-more-grid article {
+    border-right: 0;
+    border-bottom: 1px solid var(--sept-line);
+  }
+
+  .sept-more-grid article:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .september-v2 .month-wrap,
+  .september-v2 .month-header-inner,
+  .september-v2 .month-hero-inner {
+    width: min(calc(100% - 30px), 1380px);
+  }
+
+  .sept-hero {
+    padding: 36px 0 48px;
+  }
+
+  .sept-hero .month-back-link {
+    margin-bottom: 25px;
+  }
+
+  .sept-hero .month-display {
+    font-size: clamp(3.2rem, 14vw, 4.45rem);
+    line-height: 0.92;
+  }
+
+  .sept-hero .month-hero-lede {
+    font-size: 0.98rem;
+  }
+
+  .sept-hero-photo {
+    min-height: 275px;
+    border-radius: 26px 26px 68px 26px;
+  }
+
+  .sept-hero-photo img {
+    height: 275px;
+  }
+
+  .sept-photo-accent {
+    width: 62px;
+    height: 62px;
+    font-size: 1.3rem;
+  }
+
+  .sept-mode-inline {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .sept-mode-inline .month-mode-controls {
+    width: 100%;
+  }
+
+  .sept-mode-inline .month-mode-button {
+    flex: 1 1 0;
+  }
+
+  .sept-steps-section {
+    padding: 62px 0 66px;
+  }
+
+  .sept-section-intro h2,
+  .sept-guided-heading h2,
+  .sept-builder-heading h2,
+  .sept-resources-heading h2 {
+    font-size: clamp(2.65rem, 12vw, 3.8rem);
+  }
+
+  .sept-step-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sept-step {
+    min-height: 0;
+    padding: 22px;
+    border-radius: 22px 22px 52px 22px !important;
+  }
+
+  .sept-enough-note {
+    grid-template-columns: auto 1fr;
+    padding: 20px;
+  }
+
+  .sept-enough-note .sept-inline-ideas {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .sept-inspiration-band {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sept-inspiration-band button {
+    width: 100%;
+  }
+
+  .sept-guided {
+    padding: 66px 0 72px;
+  }
+
+  .sept-pick-step {
+    grid-template-columns: 1fr;
+    padding: 23px;
+  }
+
+  .sept-pick-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .sept-close-choice {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .sept-participation-note {
+    grid-template-columns: 1fr;
+    padding: 27px;
+  }
+
+  .sept-participation-note a {
+    justify-content: center;
+  }
+
+  .sept-resources {
+    padding: 66px 0 74px;
+  }
+
+  .sept-resource-links {
+    grid-template-columns: 1fr;
+  }
+
+  .sept-resource-links a {
+    min-height: 120px;
+    border-radius: 22px 22px 52px 22px !important;
+  }
+}
