@@ -1,0 +1,791 @@
+
+/* =========================================================
+   BEST BUDDIES CANADA TEACHER HUB
+   GLOBAL BRAND LAYER
+   Load this LAST on every Teacher Hub page.
+   ========================================================= */
+
+:root{
+  --bb-purple:#5A3F98;
+  --bb-violet:#9396CA;
+  --bb-yellow:#FFD420;
+  --bb-teal:#8FD1C4;
+  --bb-orange:#F37735;
+  --bb-black:#17131d;
+  --bb-white:#ffffff;
+  --bb-lavender:#ece9f7;
+  --bb-wash:#f7f6f9;
+  --bb-line:#ddd9e3;
+  --bb-muted:#5e5864;
+
+  --bb-display:"Helvetica Neue", Arial, sans-serif;
+  --bb-body:"Helvetica Neue", Arial, sans-serif;
+
+  --bb-radius-lg:34px;
+  --bb-radius-organic:34px 34px 88px 34px;
+  --bb-radius-organic-reverse:34px 88px 34px 34px;
+}
+
+/* ---------- GLOBAL TYPE ---------- */
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:var(--bb-body) !important;
+  color:var(--bb-black);
+  font-size:18px;
+  line-height:1.58;
+  background:var(--bb-white);
+}
+
+button,
+input,
+select,
+textarea,
+summary{
+  font-family:inherit;
+}
+
+h1,h2,h3,h4,
+.portal-display,
+.internal-hero h1,
+.program-heading h2,
+.resource-hero-copy h1,
+.resource-launch-heading h2,
+.month-display,
+.month-section-heading h2,
+.page-hero h1,
+.section-heading h2{
+  font-family:var(--bb-display) !important;
+  font-weight:900 !important;
+  color:var(--bb-black);
+  letter-spacing:-0.045em !important;
+  text-wrap:balance;
+}
+
+h1,
+.portal-display,
+.internal-hero h1,
+.resource-hero-copy h1,
+.month-display,
+.page-hero h1{
+  line-height:.88 !important;
+}
+
+h2,
+.resource-launch-heading h2,
+.month-section-heading h2,
+.section-heading h2{
+  line-height:.94 !important;
+}
+
+p,
+li,
+.resource-door p,
+.hero-copy,
+.internal-hero p,
+.month-section-lede,
+.program-summary{
+  color:var(--bb-muted);
+}
+
+/* Make little labels feel like BBC, not SaaS metadata */
+.section-label,
+.kicker,
+.month-eyebrow,
+.month-section-topline,
+.resource-door-kicker,
+.official-calendar-label,
+.activity-source,
+.flow-card-label{
+  font-weight:900 !important;
+  letter-spacing:.07em !important;
+  text-transform:uppercase;
+  color:var(--bb-purple);
+}
+
+/* Yellow brand slash */
+.section-label::after,
+.kicker::after,
+.month-eyebrow::after{
+  content:"";
+  display:block;
+  width:54px;
+  height:7px;
+  margin-top:10px;
+  border-radius:999px;
+  background:var(--bb-yellow);
+}
+
+/* ---------- HEADER ---------- */
+
+.portal-header,
+.site-header,
+.month-site-header{
+  background:var(--bb-purple) !important;
+  border-top:7px solid var(--bb-yellow) !important;
+}
+
+.portal-brand-copy strong,
+.brand-name,
+.month-brand-copy strong{
+  font-size:1.18rem !important;
+  font-weight:900 !important;
+}
+
+.portal-nav,
+.portal-lang,
+.month-nav-pill,
+.month-language-pill{
+  border-radius:999px !important;
+}
+
+.portal-nav a,
+.month-nav-pill a,
+.site-menu summary,
+.month-mobile-nav summary{
+  font-weight:900 !important;
+}
+
+.portal-nav a:hover,
+.portal-nav a[aria-current="page"],
+.month-nav-pill a:hover{
+  background:var(--bb-yellow) !important;
+  color:var(--bb-black) !important;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.portal-button,
+.btn,
+.activity-action,
+.flow-add-button,
+.inspiration-button{
+  border-radius:999px !important;
+  font-weight:900 !important;
+  transition:transform .16s ease, box-shadow .16s ease;
+}
+
+.portal-button:hover,
+.btn:hover,
+.activity-action:hover,
+.flow-add-button:hover,
+.inspiration-button:hover{
+  transform:translateY(-2px);
+}
+
+.portal-button,
+.btn-primary,
+.activity-add,
+.flow-add-button{
+  background:var(--bb-purple) !important;
+  color:var(--bb-white) !important;
+}
+
+/* ---------- HOME HERO ---------- */
+
+.home-hero{
+  background:var(--bb-white);
+}
+
+.home-hero h1{
+  font-weight:900 !important;
+  letter-spacing:-.045em !important;
+  line-height:.91 !important;
+}
+
+.hero-line,
+.eyeline{
+  background:var(--bb-yellow) !important;
+  height:8px !important;
+  border-radius:999px;
+}
+
+.hero-thanks,
+.hero-lastline{
+  color:var(--bb-purple) !important;
+  font-weight:900 !important;
+}
+
+/* ---------- CHOOSE YOUR PROGRAM ---------- */
+
+.program-launch{
+  position:relative;
+  overflow:hidden;
+}
+
+.program-heading h2{
+  font-size:clamp(3.3rem,5.7vw,6.2rem) !important;
+  letter-spacing:-.05em !important;
+}
+
+.program-heading .down{
+  color:var(--bb-purple) !important;
+  font-weight:900;
+}
+
+.program-tile,
+.program-choice{
+  border:0 !important;
+  overflow:hidden;
+  box-shadow:none !important;
+  transition:transform .18s ease;
+}
+
+.program-tile:hover,
+.program-choice:hover{
+  transform:translateY(-5px);
+}
+
+.program-tile.elementary,
+.program-choice:nth-child(1){
+  border-bottom:9px solid var(--bb-teal) !important;
+}
+
+.program-tile.highschool,
+.program-choice:nth-child(2){
+  border-bottom:9px solid var(--bb-orange) !important;
+}
+
+.program-overlay{
+  background:rgba(255,255,255,.95) !important;
+  backdrop-filter:blur(3px);
+  border-radius:28px 28px 64px 28px !important;
+}
+
+.program-overlay h3,
+.program-choice h3{
+  font-weight:900 !important;
+  letter-spacing:-.045em !important;
+  line-height:.95 !important;
+}
+
+.program-go{
+  background:var(--bb-purple) !important;
+  color:var(--bb-white) !important;
+}
+
+/* ---------- PORTAL SHORTCUTS ---------- */
+
+.portal-shortcuts{
+  background:var(--bb-lavender) !important;
+  padding:42px 0 !important;
+}
+
+.shortcut-grid{
+  border:0 !important;
+  gap:14px;
+}
+
+.shortcut{
+  min-height:118px !important;
+  background:var(--bb-white);
+  border:0 !important;
+  border-radius:24px 24px 58px 24px;
+  padding:23px 26px !important;
+}
+
+.shortcut:nth-child(2){
+  border-radius:24px 58px 24px 24px;
+}
+
+.shortcut:nth-child(3){
+  border-radius:58px 24px 24px 24px;
+}
+
+.shortcut small{
+  color:var(--bb-purple) !important;
+}
+
+.shortcut strong{
+  font-size:1.55rem !important;
+  font-weight:900 !important;
+}
+
+/* ---------- INTERNAL PAGE HEROES ---------- */
+
+.internal-hero{
+  position:relative;
+  overflow:hidden;
+  padding:72px 0 62px !important;
+}
+
+.internal-hero::after{
+  content:"";
+  position:absolute;
+  width:120px;
+  height:120px;
+  right:6%;
+  top:24px;
+  background:var(--bb-yellow);
+  border-radius:48% 52% 41% 59%/55% 36% 64% 45%;
+  opacity:.9;
+  z-index:0;
+}
+
+.internal-hero-grid{
+  position:relative;
+  z-index:1;
+}
+
+.internal-hero h1{
+  font-size:clamp(3.5rem,6.2vw,6.5rem) !important;
+}
+
+.internal-hero h1 .purple{
+  color:var(--bb-purple) !important;
+}
+
+/* ---------- CALENDAR ---------- */
+
+.calendar-page{
+  background:var(--bb-lavender) !important;
+  padding:42px 0 86px !important;
+}
+
+.calendar-wrap{
+  border:0 !important;
+  border-radius:30px 30px 88px 30px !important;
+  box-shadow:0 12px 32px rgba(45,31,72,.08);
+}
+
+.calendar-bar{
+  background:var(--bb-purple) !important;
+}
+
+.calendar-program-link{
+  border:0 !important;
+  background:var(--bb-white) !important;
+  border-radius:24px 24px 60px 24px !important;
+  min-height:92px;
+  font-size:1.05rem;
+}
+
+/* ---------- RESOURCE HUB ---------- */
+
+.resource-portal-hero{
+  background:var(--bb-purple) !important;
+}
+
+.resource-hero-copy h1{
+  font-size:clamp(4rem,7vw,7.5rem) !important;
+  letter-spacing:-.05em !important;
+}
+
+.resource-hero-copy h1 .yellow{
+  color:var(--bb-yellow) !important;
+}
+
+.resource-launch{
+  padding:50px 0 38px !important;
+}
+
+.resource-launch-heading h2{
+  font-size:clamp(3rem,5.2vw,5.6rem) !important;
+}
+
+.resource-launch-grid{
+  gap:22px !important;
+}
+
+.resource-door{
+  min-height:285px !important;
+  padding:34px !important;
+  border:0 !important;
+  box-shadow:none !important;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+
+.resource-door:hover{
+  transform:translateY(-5px);
+  box-shadow:0 16px 34px rgba(49,33,83,.10) !important;
+}
+
+.resource-door.plan{
+  background:var(--bb-yellow) !important;
+  border-radius:34px 34px 104px 34px !important;
+}
+
+.resource-door.training{
+  background:#ded8f4 !important;
+  border-radius:34px 104px 34px 34px !important;
+}
+
+.resource-door.admin{
+  background:var(--bb-teal) !important;
+  border-radius:104px 34px 34px 34px !important;
+}
+
+.resource-door.start{
+  background:#ffd9c4 !important;
+  border-radius:34px 34px 34px 104px !important;
+}
+
+.resource-door h3{
+  font-size:clamp(2.15rem,3.4vw,3.5rem) !important;
+  font-weight:900 !important;
+  letter-spacing:-.045em !important;
+  line-height:.9 !important;
+}
+
+.resource-door p{
+  font-size:1rem !important;
+  line-height:1.5 !important;
+}
+
+.resource-door-go{
+  width:58px !important;
+  height:58px !important;
+  background:var(--bb-purple) !important;
+}
+
+.resource-search-box{
+  border:3px solid var(--bb-black) !important;
+}
+
+.resource-search-mark{
+  background:var(--bb-yellow) !important;
+}
+
+.resource-bottom-strip{
+  gap:18px !important;
+}
+
+.resource-official{
+  background:var(--bb-purple) !important;
+  border-radius:26px 26px 68px 26px !important;
+}
+
+.resource-help{
+  background:var(--bb-lavender) !important;
+  border:0 !important;
+  border-radius:26px 68px 26px 26px !important;
+}
+
+/* ---------- SUPPORT ---------- */
+
+.support-page{
+  padding:32px 0 88px !important;
+}
+
+.support-box{
+  background:var(--bb-teal) !important;
+  border-radius:34px 34px 94px 34px !important;
+  padding:40px !important;
+}
+
+.support-box h2{
+  font-size:clamp(2.6rem,4.5vw,4.5rem) !important;
+  letter-spacing:-.045em !important;
+}
+
+.support-details{
+  border-top:0 !important;
+  display:grid;
+  gap:12px;
+}
+
+.support-detail{
+  border:0 !important;
+  padding:20px 22px !important;
+  background:var(--bb-lavender);
+  border-radius:20px 20px 52px 20px;
+}
+
+.support-detail:nth-child(even){
+  background:var(--bb-wash);
+  border-radius:20px 52px 20px 20px;
+}
+
+/* ---------- GRADE HUB PAGES ---------- */
+
+.page-hero{
+  background:var(--bb-white) !important;
+}
+
+.page-hero h1{
+  font-size:clamp(3.4rem,5.9vw,6rem) !important;
+  letter-spacing:-.05em !important;
+}
+
+.program-summary{
+  font-size:1.08rem !important;
+  line-height:1.62 !important;
+}
+
+.section{
+  padding:78px 0 !important;
+}
+
+.section-wash{
+  background:var(--bb-lavender) !important;
+}
+
+.section-teal{
+  background:var(--bb-teal) !important;
+}
+
+.section-purple{
+  background:var(--bb-purple) !important;
+}
+
+.program-choice{
+  background:var(--bb-white) !important;
+  border-radius:32px 32px 88px 32px !important;
+}
+
+.program-choice:nth-child(2){
+  border-radius:32px 88px 32px 32px !important;
+}
+
+/* ---------- MONTH PAGES ---------- */
+
+.month-site-header{
+  box-shadow:none !important;
+}
+
+.month-hero{
+  position:relative;
+  overflow:hidden;
+  background:var(--bb-white) !important;
+}
+
+.month-hero::after{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  right:5%;
+  bottom:-70px;
+  background:var(--bb-teal);
+  border-radius:58% 42% 52% 48%/47% 58% 42% 53%;
+  opacity:.55;
+  pointer-events:none;
+}
+
+.month-display{
+  font-size:clamp(3.8rem,6.6vw,6.8rem) !important;
+  letter-spacing:-.055em !important;
+  line-height:.86 !important;
+}
+
+.month-hero-lede{
+  font-size:1.08rem !important;
+  line-height:1.58 !important;
+}
+
+.month-mode-controls{
+  border-radius:999px !important;
+}
+
+.month-mode-button{
+  font-weight:900 !important;
+}
+
+.month-section{
+  padding:70px 0 !important;
+}
+
+.month-section.soft{
+  background:var(--bb-wash) !important;
+}
+
+.month-section.lavender,
+.official-month{
+  background:var(--bb-lavender) !important;
+}
+
+.official-priority-list{
+  gap:13px !important;
+}
+
+.official-priority-list li{
+  background:var(--bb-white) !important;
+  border:0 !important;
+  border-radius:20px 20px 54px 20px !important;
+  padding:18px 20px !important;
+}
+
+.official-priority-number{
+  background:var(--bb-yellow) !important;
+  color:var(--bb-black) !important;
+  border-radius:50% !important;
+}
+
+.guidance-lane,
+.flow-card,
+.activity-card{
+  border:0 !important;
+  box-shadow:none !important;
+  border-radius:26px 26px 68px 26px !important;
+}
+
+.guidance-lane:nth-child(2),
+.flow-card:nth-child(even),
+.activity-card:nth-child(even){
+  border-radius:26px 68px 26px 26px !important;
+}
+
+.guidance-lane{
+  background:var(--bb-white) !important;
+}
+
+.flow-card{
+  background:var(--bb-yellow) !important;
+}
+
+.activity-card{
+  background:var(--bb-white) !important;
+}
+
+.activity-card.communication-card{
+  background:var(--bb-teal) !important;
+}
+
+.activity-card h3,
+.flow-card h3,
+.guidance-lane h3{
+  font-weight:900 !important;
+  letter-spacing:-.035em !important;
+  line-height:.98 !important;
+}
+
+.activity-meta span{
+  border-radius:999px !important;
+  background:var(--bb-lavender) !important;
+  color:var(--bb-purple) !important;
+  font-weight:900 !important;
+}
+
+.resource-row{
+  border:0 !important;
+  border-radius:20px 20px 54px 20px !important;
+  background:var(--bb-white) !important;
+  margin-bottom:10px;
+  padding:18px 20px !important;
+}
+
+.month-support{
+  background:var(--bb-teal) !important;
+}
+
+/* ---------- FOOTER ---------- */
+
+.portal-footer,
+.month-footer{
+  background:var(--bb-purple) !important;
+  border-top:7px solid var(--bb-yellow);
+}
+
+/* ---------- SMALL BRAND DETAILS ---------- */
+
+.resource-door,
+.program-tile,
+.program-choice,
+.shortcut,
+.calendar-program-link,
+.support-detail,
+.activity-card,
+.flow-card,
+.guidance-lane,
+.resource-row{
+  position:relative;
+}
+
+.resource-door::before,
+.shortcut::before,
+.support-detail::before{
+  content:"";
+  position:absolute;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--bb-orange);
+  top:16px;
+  left:16px;
+}
+
+.shortcut:nth-child(2)::before,
+.support-detail:nth-child(2)::before{
+  background:var(--bb-teal);
+}
+
+.shortcut:nth-child(3)::before,
+.support-detail:nth-child(3)::before{
+  background:var(--bb-yellow);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width:1100px){
+  .internal-hero::after{
+    width:90px;
+    height:90px;
+    opacity:.55;
+  }
+
+  .resource-door{
+    min-height:245px !important;
+  }
+}
+
+@media (max-width:760px){
+  body{
+    font-size:17px;
+  }
+
+  .home-hero h1{
+    font-size:clamp(2.75rem,11vw,4rem) !important;
+    line-height:.93 !important;
+  }
+
+  .program-heading h2{
+    font-size:clamp(2.7rem,11vw,4rem) !important;
+  }
+
+  .program-heading .down{
+    display:none !important;
+  }
+
+  .resource-hero-copy h1{
+    font-size:clamp(3.1rem,14vw,4.8rem) !important;
+  }
+
+  .resource-door{
+    min-height:210px !important;
+    padding:25px !important;
+  }
+
+  .resource-door h3{
+    font-size:clamp(1.9rem,9vw,2.75rem) !important;
+  }
+
+  .internal-hero{
+    padding:48px 0 40px !important;
+  }
+
+  .internal-hero h1{
+    font-size:clamp(3rem,13vw,4.6rem) !important;
+  }
+
+  .month-display{
+    font-size:clamp(3.2rem,14vw,4.8rem) !important;
+  }
+
+  .month-section{
+    padding:58px 0 !important;
+  }
+
+  .shortcut-grid{
+    gap:10px !important;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{
+    scroll-behavior:auto !important;
+    transition:none !important;
+  }
+}
