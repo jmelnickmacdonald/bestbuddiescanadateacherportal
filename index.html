@@ -1,825 +1,99 @@
 <!DOCTYPE html>
 <html lang="en-CA">
-
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Teacher Hub | Best Buddies Canada</title>
-
-  <link
-    rel="stylesheet"
-    href="portal-refresh.css"
-  >
+  <link rel="stylesheet" href="portal-home.css">
 </head>
-
-
 <body>
-
-<a
-  class="skip-link"
-  href="#main-content"
->
-  Skip to main content
-</a>
-
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header class="portal-header">
-
   <div class="portal-container portal-header-inner">
-
-    <a
-      class="portal-brand"
-      href="index.html"
-      aria-label="Best Buddies Canada Teacher Hub home"
-    >
-
-      <img
-        src="assets/bb-reversed-logo.png"
-        alt="Best Buddies Canada"
-      >
-
-      <span class="portal-brand-copy">
-
-        <strong>
-          Teacher Hub
-        </strong>
-
-        <span>
-          Best Buddies Canada
-        </span>
-
-      </span>
-
+    <a class="portal-brand" href="index.html" aria-label="Best Buddies Canada Teacher Hub home">
+      <img src="assets/bb-reversed-logo.png" alt="Best Buddies Canada">
+      <span class="portal-brand-copy"><strong>Teacher Hub</strong><span>Best Buddies Canada</span></span>
     </a>
-
-
     <div class="header-actions">
-
-      <nav
-        class="portal-nav"
-        aria-label="Main navigation"
-      >
-
-        <a href="#calendar">
-          Calendar
-        </a>
-
-        <a href="#resources">
-          Resources
-        </a>
-
-        <a href="#support">
-          Support
-        </a>
-
+      <nav class="portal-nav" aria-label="Main navigation">
+        <a href="calendar.html">Calendar</a>
+        <a href="resources.html">Resources</a>
+        <a href="support.html">Support</a>
       </nav>
-
-
-      <div
-        class="portal-lang"
-        aria-label="Language"
-      >
-
-        <a
-          href="#"
-          class="current"
-          aria-current="page"
-        >
-          EN
-        </a>
-
-        <a
-          href="fr.html"
-          lang="fr-CA"
-          hreflang="fr-CA"
-        >
-          FR
-        </a>
-
+      <div class="portal-lang" aria-label="Language">
+        <a href="#" class="current" aria-current="page">EN</a>
+        <a href="fr.html" lang="fr-CA" hreflang="fr-CA">FR</a>
       </div>
-
-
-      <details class="portal-menu">
-
-        <summary>
-          Menu
-        </summary>
-
-        <div class="portal-menu-panel">
-
-          <a href="#programs">
-            Programs
-          </a>
-
-          <a href="#calendar">
-            Program Calendar
-          </a>
-
-          <a href="#resources">
-            Resources
-          </a>
-
-          <a href="#support">
-            Support
-          </a>
-
-
-          <div class="portal-menu-languages">
-
-            <a
-              href="#"
-              class="current"
-              aria-current="page"
-            >
-              EN
-            </a>
-
-            <a
-              href="fr.html"
-              lang="fr-CA"
-            >
-              FR
-            </a>
-
-          </div>
-
+      <details class="site-menu">
+        <summary>Menu</summary>
+        <div class="site-menu-panel">
+          <a href="#programs">Choose your program</a>
+          <a href="calendar.html">Program Calendar</a>
+          <a href="resources.html">Resources</a>
+          <a href="support.html">Support</a>
+          <div class="site-menu-languages"><a class="current" href="#">EN</a><a href="fr.html" lang="fr-CA">FR</a></div>
         </div>
-
       </details>
-
     </div>
-
   </div>
-
-
-  <svg
-    class="portal-wave"
-    viewBox="0 0 1440 28"
-    preserveAspectRatio="none"
-    aria-hidden="true"
-    focusable="false"
-  >
-
-    <path
-      d="M0 0H1440V11
-      C1340 5 1290 19 1190 11
-      C1090 5 1035 18 935 11
-      C835 5 775 19 675 11
-      C575 5 515 18 415 11
-      C315 5 255 19 155 11
-      C95 7 45 15 0 10Z"
-    />
-
-  </svg>
-
 </header>
 
-
-
 <main id="main-content">
-
-
-  <!-- =====================================================
-       HERO
-  ===================================================== -->
-
-  <section class="home-banner">
-
+  <section class="home-hero">
     <picture>
-
-      <source
-        media="(max-width: 760px)"
-        srcset="assets/mobilebanner.png"
-      >
-
-      <source
-        media="(max-width: 1249px)"
-        srcset="assets/tabletbanner.png"
-      >
-
-      <img
-        src="assets/desktopbanner.png"
-        alt=""
-        aria-hidden="true"
-      >
-
+      <source media="(max-width:760px)" srcset="assets/mobilebanner.png">
+      <source media="(max-width:1100px)" srcset="assets/tabletbanner.png">
+      <img src="assets/desktopbanner.png" alt="" aria-hidden="true">
     </picture>
-
-
-    <div class="home-banner-content">
-
+    <div class="home-hero-content">
       <div class="portal-container">
-
-        <div class="home-banner-copy">
-
-          <div class="portal-kicker">
-            For teachers supporting Best Buddies
-          </div>
-
-
-          <div
-            class="hero-line"
-            aria-hidden="true"
-          ></div>
-
-
-          <h1>
-
-            <span class="hero-purple">
-              Friendship
-            </span>
-
-            and
-
-            <span class="hero-purple">
-              inclusion
-            </span>
-
-            are at the heart of Best Buddies.
-
-          </h1>
-
-
-          <p class="hero-copy">
-            You know your students and your school.
-            We bring the calendar, resources, ideas, and support
-            together so you can focus on friendship and connection.
-          </p>
-
-
-          <p class="hero-thank-you">
-            Thank you for making space for friendship in your school.
-          </p>
-
+        <div class="home-hero-copy">
+          <div class="hero-line" aria-hidden="true"></div>
+          <h1><span class="purple">Friendship</span> and <span class="purple">inclusion</span> are at the heart of Best Buddies.</h1>
+          <p class="hero-copy">You know your students and your school. We bring the calendar, resources, ideas, and support together so you can focus on friendship and connection.</p>
+          <p class="mobile-hero-copy">Your calendar, resources, ideas, and support in one place.</p>
+          <p class="hero-thanks">Thank you for making space for friendship in your school.</p>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
-
-  <!-- =====================================================
-       PROGRAM CHOICE
-  ===================================================== -->
-
-  <section
-    class="program-launch"
-    id="programs"
-  >
-
+  <section class="program-launch" id="programs">
     <div class="portal-container">
-
-      <div class="program-launch-heading">
-
-        <div class="program-heading-row">
-
-          <h2 class="portal-display">
-
-            CHOOSE YOUR
-
-            <span class="purple">
-              PROGRAM
-            </span>
-
-          </h2>
-
-
-          <svg
-            class="program-arrow"
-            viewBox="0 0 140 80"
-            aria-hidden="true"
-            focusable="false"
-          >
-
-            <path
-              d="M8 17 C58 4 98 23 111 56"
-            />
-
-            <polyline
-              points="94,47 112,58 119,37"
-            />
-
-          </svg>
-
-        </div>
-
+      <div class="program-heading">
+        <h2><span class="down" aria-hidden="true">↓</span><span>Choose your <span class="purple">program</span></span><span class="down" aria-hidden="true">↓</span></h2>
       </div>
-
-
       <div class="program-grid">
-
-
-        <!-- ELEMENTARY & MIDDLE -->
-
-        <a
-          class="program-tile elementary"
-          href="elementary-middle.html"
-          aria-label="Open Elementary and Middle School program"
-        >
-
-          <div class="program-photo">
-
-            <img
-              src="assets/elementary-hero.png"
-              alt="Best Buddies elementary and middle school participants together"
-            >
-
-          </div>
-
-
-          <div class="program-info">
-
-            <h2>
-              Elementary &amp;
-              Middle School
-            </h2>
-
-
-            <span
-              class="program-title-arrow"
-              aria-hidden="true"
-            >
-              →
-            </span>
-
-          </div>
-
+        <a class="program-tile elementary" href="elementary-middle.html" aria-label="Open Elementary and Middle School Teacher Hub">
+          <div class="program-photo"><img src="assets/elementary-hero.png" alt="Best Buddies elementary and middle school participants together"></div>
+          <div class="program-overlay"><h3>Elementary &amp; Middle School</h3><span class="program-go" aria-hidden="true">→</span></div>
         </a>
-
-
-
-        <!-- HIGH SCHOOL -->
-
-        <a
-          class="program-tile highschool"
-          href="high-school.html"
-          aria-label="Open High School program"
-        >
-
-          <div class="program-photo">
-
-            <img
-              src="assets/high-school-hero.png"
-              alt="Students participating in a Best Buddies high school chapter"
-            >
-
-          </div>
-
-
-          <div class="program-info">
-
-            <h2>
-              High School
-            </h2>
-
-
-            <span
-              class="program-title-arrow"
-              aria-hidden="true"
-            >
-              →
-            </span>
-
-          </div>
-
+        <a class="program-tile highschool" href="high-school.html" aria-label="Open High School Teacher Hub">
+          <div class="program-photo"><img src="assets/high-school-hero.png" alt="Best Buddies high school participants together"></div>
+          <div class="program-overlay"><h3>High School</h3><span class="program-go" aria-hidden="true">→</span></div>
         </a>
-
       </div>
-
     </div>
-
   </section>
 
-
-
-  <!-- =====================================================
-       PROGRAM CALENDAR
-  ===================================================== -->
-
-  <section
-    class="calendar-home"
-    id="calendar"
-  >
-
+  <section class="portal-shortcuts" aria-label="Teacher Hub quick links">
     <div class="portal-container">
-
-
-      <div class="calendar-intro">
-
-        <div>
-
-          <div class="portal-kicker">
-            Program Calendar
-          </div>
-
-
-          <h2 class="portal-display">
-
-            YOUR BEST BUDDIES
-
-            <span class="purple">
-              YEAR
-            </span>
-
-          </h2>
-
-        </div>
-
-
-        <p>
-          Use the Program Calendar to see what’s coming up,
-          stay organized, and plan ahead throughout
-          the program year.
-        </p>
-
+      <div class="shortcut-grid">
+        <a class="shortcut" href="calendar.html"><span><small>Plan ahead</small><strong>Program Calendar</strong></span><span class="shortcut-arrow" aria-hidden="true">→</span></a>
+        <a class="shortcut" href="resources.html"><span><small>Find something</small><strong>Resources</strong></span><span class="shortcut-arrow" aria-hidden="true">→</span></a>
+        <a class="shortcut" href="support.html"><span><small>Talk it through</small><strong>Support</strong></span><span class="shortcut-arrow" aria-hidden="true">→</span></a>
       </div>
-
-
-      <div
-        class="calendar-tags"
-        aria-label="The Program Calendar includes"
-      >
-
-        <span>
-          Monthly checklists
-        </span>
-
-        <span>
-          Activity ideas
-        </span>
-
-        <span>
-          Important dates
-        </span>
-
-        <span>
-          Community events
-        </span>
-
-        <span>
-          Start-up tasks
-        </span>
-
-        <span>
-          Tips &amp; tricks
-        </span>
-
-      </div>
-
-
-      <div class="calendar-box">
-
-        <div class="calendar-bar">
-
-          <strong>
-
-            <span
-              class="calendar-dot"
-              aria-hidden="true"
-            ></span>
-
-            Live Program Calendar
-
-          </strong>
-
-
-          <a
-            href="https://calendar.google.com/calendar/u/0/embed?ctz=America/Toronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com"
-            target="_blank"
-            rel="noopener"
-          >
-            Open full calendar ↗
-          </a>
-
-        </div>
-
-
-        <div class="calendar-frame">
-
-          <iframe
-            src="https://calendar.google.com/calendar/embed?ctz=America%2FToronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec%40group.calendar.google.com&amp;mode=AGENDA&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0"
-            title="Best Buddies Canada Program Calendar"
-            loading="lazy"
-          ></iframe>
-
-        </div>
-
-      </div>
-
     </div>
-
   </section>
-
-
-
-  <!-- =====================================================
-       RESOURCES & TOOLS
-  ===================================================== -->
-
-  <section
-    class="home-tools"
-    id="resources"
-  >
-
-    <div class="portal-container">
-
-
-      <h2 class="portal-display">
-
-        RESOURCES &amp;
-
-        <span class="purple">
-          TOOLS
-        </span>
-
-      </h2>
-
-
-      <div class="tool-grid">
-
-
-        <!-- QUICK GUIDES -->
-
-        <a
-          class="tool-link tool-yellow"
-          href="teacher-companion.html"
-        >
-
-          <span class="tool-eyebrow">
-            Practical guidance
-          </span>
-
-
-          <h3>
-            Quick Guides
-          </h3>
-
-
-          <p>
-            Staff Advisor support, buddy pairs,
-            student leadership, and chapter meetings.
-          </p>
-
-
-          <div class="tool-action">
-
-            <strong>
-              Open guides
-            </strong>
-
-            <span
-              class="tool-arrow"
-              aria-hidden="true"
-            >
-              →
-            </span>
-
-          </div>
-
-        </a>
-
-
-
-        <!-- HELPFUL RESOURCES -->
-
-        <a
-          class="tool-link tool-violet"
-          href="https://bestbuddies.ca/helpful-resources/"
-          target="_blank"
-          rel="noopener"
-        >
-
-          <span class="tool-eyebrow">
-            Resource library
-          </span>
-
-
-          <h3>
-            Helpful Resources
-          </h3>
-
-
-          <p>
-            Manuals, forms, activities,
-            and current chapter resources.
-          </p>
-
-
-          <div class="tool-action">
-
-            <strong>
-              Browse resources
-            </strong>
-
-            <span
-              class="tool-arrow"
-              aria-hidden="true"
-            >
-              ↗
-            </span>
-
-          </div>
-
-        </a>
-
-
-
-        <!-- TRAINING -->
-
-        <a
-          class="tool-link tool-teal"
-          href="https://learn.bestbuddies.ca/"
-          target="_blank"
-          rel="noopener"
-        >
-
-          <span class="tool-eyebrow">
-            Training
-          </span>
-
-
-          <h3>
-            Learn @ Best Buddies
-          </h3>
-
-
-          <p>
-            Access current Best Buddies training.
-          </p>
-
-
-          <div class="tool-action">
-
-            <strong>
-              Open training
-            </strong>
-
-            <span
-              class="tool-arrow"
-              aria-hidden="true"
-            >
-              ↗
-            </span>
-
-          </div>
-
-        </a>
-
-
-
-        <!-- PROGRAM APPLICATION -->
-
-        <a
-          class="tool-link tool-orange"
-          href="assets/best-buddies-program-application.pdf"
-          target="_blank"
-        >
-
-          <span class="tool-eyebrow">
-            New chapter
-          </span>
-
-
-          <h3>
-            Program Application
-          </h3>
-
-
-          <p>
-            Starting Best Buddies at a new school?
-          </p>
-
-
-          <div class="tool-action">
-
-            <strong>
-              Open application
-            </strong>
-
-            <span
-              class="tool-arrow"
-              aria-hidden="true"
-            >
-              ↗
-            </span>
-
-          </div>
-
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =====================================================
-       SUPPORT
-  ===================================================== -->
-
-  <section
-    class="portal-support"
-    id="support"
-  >
-
-    <div class="portal-container support-grid">
-
-      <div>
-
-        <div class="portal-kicker">
-          Support
-        </div>
-
-
-        <h2 class="portal-display">
-
-          SUPPORT STAYS
-
-          <span class="purple">
-            HUMAN
-          </span>
-
-        </h2>
-
-
-        <p class="portal-lede">
-          Your Program Advisor is here when a question
-          depends on your students, your school, or your chapter.
-        </p>
-
-
-        <a
-          class="portal-button"
-          href="https://bestbuddies.ca/get-started/"
-          target="_blank"
-          rel="noopener"
-        >
-          Connect with Best Buddies →
-        </a>
-
-      </div>
-
-
-      <div class="support-photo">
-
-        <img
-          src="assets/support-photo.jpg"
-          alt="Best Buddies participants spending time together"
-        >
-
-      </div>
-
-    </div>
-
-  </section>
-
-
 </main>
 
-
-
 <footer class="portal-footer">
-
   <div class="portal-container portal-footer-inner">
-
-    <img
-      src="assets/bb-reversed-logo.png"
-      alt="Best Buddies Canada"
-    >
-
-
-    <p>
-      Teacher Hub · Prototype for internal review
-    </p>
-
-
-    <a
-      href="https://bestbuddies.ca/"
-      target="_blank"
-      rel="noopener"
-    >
-      bestbuddies.ca ↗
-    </a>
-
+    <img src="assets/bb-reversed-logo.png" alt="Best Buddies Canada">
+    <p>Teacher Hub · Prototype for internal review</p>
+    <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca ↗</a>
   </div>
-
 </footer>
-
-
 </body>
-
 </html>
