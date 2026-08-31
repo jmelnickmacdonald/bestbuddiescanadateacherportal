@@ -1,43 +1,374 @@
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Best Buddies Canada Teacher Hub resources for chapter planning, training, forms, administration, and starting a chapter.">
   <title>Resources | Best Buddies Canada Teacher Hub</title>
   <link rel="stylesheet" href="portal-home.css">
+
+  <style>
+    /* Resource launcher interactions live here so portal-home.css does not need another edit. */
+    .resource-search-results{display:none;margin:0 0 28px;padding:22px;border-radius:24px 24px 60px 24px;background:var(--lavender)}
+    .resource-search-results.is-visible{display:block}
+    .resource-search-results h2{margin:0 0 14px;color:var(--ink);font-family:var(--display-font);font-size:1.7rem;line-height:1}
+    .resource-search-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .resource-search-list a{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:78px;padding:16px 18px;border-radius:18px 18px 42px 18px;background:#fff;color:var(--ink);font-weight:900;text-decoration:none}
+    .resource-search-list small{display:block;margin-top:3px;color:var(--muted);font-size:.78rem;font-weight:700}
+    .resource-search-empty{margin:0;color:var(--muted)}
+    .resource-dialog{width:min(760px,calc(100% - 32px));max-height:min(760px,calc(100vh - 40px));padding:0;border:0;border-radius:30px 30px 82px 30px;background:#fff;color:var(--text);box-shadow:0 30px 80px rgba(37,24,61,.3)}
+    .resource-dialog::backdrop{background:rgba(26,18,37,.58);backdrop-filter:blur(3px)}
+    .resource-dialog-inner{padding:30px}
+    .resource-dialog-top{display:flex;align-items:flex-start;justify-content:space-between;gap:22px;margin-bottom:22px}
+    .resource-dialog-kicker{display:block;margin-bottom:7px;color:var(--purple);font-size:.7rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+    .resource-dialog h2{margin:0;color:var(--ink);font-family:var(--display-font);font-size:clamp(2.3rem,5vw,3.8rem);font-weight:700;line-height:.96;letter-spacing:-.035em}
+    .resource-dialog-intro{max-width:640px;margin:10px 0 0;color:var(--muted)}
+    .resource-dialog-close{flex:0 0 auto;width:46px;height:46px;border:0;border-radius:50%;background:var(--purple);color:#fff;font-size:1.35rem;font-weight:900;cursor:pointer}
+    .resource-dialog-list{display:grid;gap:9px}
+    .resource-item{display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;min-height:82px;padding:16px 18px;border-radius:18px 18px 42px 18px;background:var(--lavender);color:var(--ink);text-decoration:none}
+    .resource-item:nth-child(4n+2){background:var(--yellow-soft)}
+    .resource-item:nth-child(4n+3){background:var(--teal-soft)}
+    .resource-item:nth-child(4n+4){background:var(--orange-soft)}
+    .resource-item strong{display:block;font-family:var(--display-font);font-size:1.12rem;line-height:1.05;font-weight:700}
+    .resource-item small{display:block;margin-top:4px;color:var(--muted);font-size:.78rem;line-height:1.35}
+    .resource-item b{color:var(--purple);font-size:1.2rem}
+    .resource-dialog-note{margin:18px 0 0;color:var(--muted);font-size:.84rem}
+    @media(max-width:760px){
+      .resource-search-list{grid-template-columns:1fr}
+      .resource-dialog{width:100%;max-width:none;max-height:88vh;margin:auto 0 0;border-radius:28px 28px 0 0}
+      .resource-dialog-inner{padding:24px 18px 28px}
+      .resource-dialog h2{font-size:2.6rem}
+    }
+  </style>
 </head>
+
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
-<header class="portal-header"><div class="portal-container portal-header-inner">
-  <a class="portal-brand" href="index.html"><img src="assets/bb-reversed-logo.png" alt="Best Buddies Canada"><span class="portal-brand-copy"><strong>Teacher Hub</strong><span>Best Buddies Canada</span></span></a>
-  <div class="header-actions"><nav class="portal-nav" aria-label="Main navigation"><a href="calendar.html">Calendar</a><a href="resources.html" aria-current="page">Resources</a><a href="support.html">Support</a></nav><div class="portal-lang"><a class="current" href="#">EN</a><a href="fr.html" lang="fr-CA">FR</a></div><details class="site-menu"><summary>Menu</summary><div class="site-menu-panel"><a href="index.html">Teacher Hub home</a><a href="calendar.html">Program Calendar</a><a href="resources.html">Resources</a><a href="support.html">Support</a></div></details></div>
-</div></header>
+
+<header class="portal-header">
+  <div class="portal-container portal-header-inner">
+    <a class="portal-brand" href="index.html" aria-label="Best Buddies Canada Teacher Hub home">
+      <img src="assets/bb-reversed-logo.png" alt="Best Buddies Canada">
+      <span class="portal-brand-copy"><strong>Teacher Hub</strong><span>Best Buddies Canada</span></span>
+    </a>
+
+    <div class="header-actions">
+      <nav class="portal-nav" aria-label="Main navigation">
+        <a href="calendar.html">Calendar</a>
+        <a href="resources.html" aria-current="page">Resources</a>
+        <a href="support.html">Support</a>
+      </nav>
+
+      <div class="portal-lang">
+        <a class="current" href="#" aria-current="page">EN</a>
+        <a href="fr.html" lang="fr-CA">FR</a>
+      </div>
+
+      <details class="site-menu">
+        <summary>Menu</summary>
+        <div class="site-menu-panel">
+          <a href="index.html">Teacher Hub home</a>
+          <a href="calendar.html">Program Calendar</a>
+          <a href="resources.html">Resources</a>
+          <a href="support.html">Support</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
 <main id="main-content">
-  <section class="internal-hero"><div class="portal-container internal-hero-grid"><div><div class="section-label">Resources</div><h1>Find what you <span class="purple">need</span></h1></div><p>Start with what you’re trying to do. The Hub can point you to the current Best Buddies Canada resource without making you dig through everything first.</p></div></section>
-  <section class="resource-page"><div class="portal-container">
-    <nav class="resource-jump" aria-label="Resource categories"><a href="#activities">Plan a meeting <span>↓</span></a><a href="#training">Training <span>↓</span></a><a href="#admin">Forms &amp; admin <span>↓</span></a><a href="#starting">Starting a chapter <span>↓</span></a></nav>
 
-    <section class="resource-section" id="activities"><div class="resource-section-head"><h2>Activities &amp; planning</h2><p>Use the monthly pages for curated ideas that fit the time of year, or go straight to the full Best Buddies resource bank when you know what you’re looking for.</p></div><div class="resource-links">
-      <a class="resource-link" href="elementary-middle.html"><span><strong>Elementary &amp; Middle month-by-month</strong><small>Calendar pacing, activities, meeting inspiration, and planning.</small></span><b>→</b></a>
-      <a class="resource-link" href="high-school.html"><span><strong>High School month-by-month</strong><small>Programming plus student leadership support.</small></span><b>→</b></a>
-      <a class="resource-link" href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener"><span><strong>Best Buddies Canada Helpful Resources</strong><small>Program guides, activity guides, workbook, posters, and more.</small></span><b>↗</b></a>
-      <a class="resource-link" href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener"><span><strong>Non-verbal Activity Guide</strong><small>Find communication-focused and adapted activity options in the official resource library.</small></span><b>↗</b></a>
-    </div></section>
+  <section class="internal-hero">
+    <div class="portal-container internal-hero-grid">
+      <div>
+        <div class="section-label">Resources</div>
+        <h1>Find what you <span class="purple">need</span></h1>
+      </div>
+      <p>You don’t need to sort through the whole resource library every time. Start with what you’re trying to do and we’ll point you in the right direction.</p>
+    </div>
+  </section>
 
-    <section class="resource-section" id="training"><div class="resource-section-head"><h2>Training</h2><p>Keep formal training in Learn @ Best Buddies. The Teacher Hub can remind you when it matters, but it doesn’t reproduce the training itself.</p></div><div class="resource-links">
-      <a class="resource-link" href="https://learn.bestbuddies.ca/" target="_blank" rel="noopener"><span><strong>Learn @ Best Buddies</strong><small>Access current training in one place.</small></span><b>↗</b></a>
-      <a class="resource-link" href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener"><span><strong>Sensitivity &amp; leadership training links</strong><small>Current training links are also listed on Helpful Resources.</small></span><b>↗</b></a>
-    </div></section>
+  <section class="resource-finder">
+    <div class="portal-container">
 
-    <section class="resource-section" id="admin"><div class="resource-section-head"><h2>Forms &amp; chapter admin</h2><p>Quick access to the things Staff Advisors need to keep a chapter current.</p></div><div class="resource-links">
-      <a class="resource-link" href="https://bestbuddiescanada.my.salesforce-sites.com/publicportal/rosterUpdate/" target="_blank" rel="noopener"><span><strong>Roster update</strong><small>Submit or update your current chapter roster.</small></span><b>↗</b></a>
-      <a class="resource-link" href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener"><span><strong>Registration, pledge &amp; chapter forms</strong><small>Find current K–12 registration and program forms.</small></span><b>↗</b></a>
-    </div></section>
+      <div class="resource-finder-top">
+        <h2>What do you need today?</h2>
+        <p>Choose a starting point below, or search for something specific like roster, sensitivity training, activity guide, registration, or fundraising.</p>
+      </div>
 
-    <section class="resource-section" id="starting"><div class="resource-section-head"><h2>Starting a chapter</h2><p>You don’t need a finished program plan before you reach out. Start with the application and Best Buddies can help with what comes next.</p></div><div class="resource-links">
-      <a class="resource-link" href="assets/best-buddies-program-application.pdf" target="_blank"><span><strong>Program Application</strong><small>Open the current application saved with the Teacher Hub prototype.</small></span><b>↗</b></a>
-      <a class="resource-link" href="https://bestbuddies.ca/get-started/" target="_blank" rel="noopener"><span><strong>Get Started with Best Buddies</strong><small>Connect with Best Buddies Canada about starting or joining a program.</small></span><b>↗</b></a>
-    </div><div class="resource-note"><strong>Can’t find it?</strong> Best Buddies Canada’s current Helpful Resources page remains the full official resource library.</div></section>
-  </div></section>
+      <div class="resource-search">
+        <label for="resource-search-input">Search resources</label>
+        <input id="resource-search-input" type="search" placeholder="Try “roster”, “activity guide”, “training”…" autocomplete="off">
+      </div>
+
+      <section class="resource-search-results" id="resource-search-results" aria-live="polite" aria-label="Resource search results">
+        <h2>Search results</h2>
+        <div class="resource-search-list" id="resource-search-list"></div>
+      </section>
+
+      <div class="resource-door-grid" aria-label="Resource categories">
+        <button class="resource-door" type="button" data-open-resource="plan-play">
+          <span>01 · Activities &amp; planning</span>
+          <strong>Plan &amp; Play</strong>
+          <small>Meeting ideas, program guides, activity guides, printables, and month-by-month support.</small>
+        </button>
+
+        <button class="resource-door" type="button" data-open-resource="training">
+          <span>02 · Learn @ Best Buddies</span>
+          <strong>Training</strong>
+          <small>Go straight to the current Best Buddies Canada sensitivity and leadership training.</small>
+        </button>
+
+        <button class="resource-door" type="button" data-open-resource="admin">
+          <span>03 · Keep your chapter current</span>
+          <strong>Forms &amp; Admin</strong>
+          <small>Roster, registration, pledge forms, chapter guidance, fundraising, and useful admin resources.</small>
+        </button>
+
+        <button class="resource-door" type="button" data-open-resource="start">
+          <span>04 · New chapter</span>
+          <strong>Start a Chapter</strong>
+          <small>Application, program information, and the next place to go when you’re getting started.</small>
+        </button>
+      </div>
+
+      <div class="resource-exits">
+        <a class="resource-exit" href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener">
+          <span>Open the full Best Buddies Canada resource library</span><strong>↗</strong>
+        </a>
+        <a class="resource-exit" href="support.html">
+          <span>Still not sure what you need? Ask your Program Advisor.</span><strong>→</strong>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
 </main>
-<footer class="portal-footer"><div class="portal-container portal-footer-inner"><img src="assets/bb-reversed-logo.png" alt="Best Buddies Canada"><p>Teacher Hub · Prototype for internal review</p><a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca ↗</a></div></footer>
-</body></html>
+
+<footer class="portal-footer">
+  <div class="portal-container portal-footer-inner">
+    <img src="assets/bb-reversed-logo.png" alt="Best Buddies Canada">
+    <p>Best Buddies Canada Teacher Hub</p>
+    <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca ↗</a>
+  </div>
+</footer>
+
+
+<!-- =====================================================
+     PLAN & PLAY
+====================================================== -->
+<dialog class="resource-dialog" id="resource-plan-play">
+  <div class="resource-dialog-inner">
+    <div class="resource-dialog-top">
+      <div>
+        <span class="resource-dialog-kicker">Activities &amp; planning</span>
+        <h2>Plan &amp; Play</h2>
+        <p class="resource-dialog-intro">Start with the Teacher Hub when you want ideas that fit the month, or open the full Best Buddies Canada guides when you need the source material.</p>
+      </div>
+      <button class="resource-dialog-close" type="button" data-close-resource aria-label="Close">×</button>
+    </div>
+
+    <div class="resource-dialog-list">
+      <a class="resource-item" href="elementary-middle.html" data-search="elementary middle month monthly calendar planning activities meetings">
+        <span><strong>Elementary &amp; Middle month-by-month</strong><small>Calendar pacing, activities, meeting inspiration, and planning.</small></span><b>→</b>
+      </a>
+      <a class="resource-item" href="high-school.html" data-search="high school month monthly calendar leadership planning activities meetings">
+        <span><strong>High School month-by-month</strong><small>Programming, activities, and student leadership support.</small></span><b>→</b>
+      </a>
+      <a class="resource-item" href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener" data-search="elementary middle program guide manual">
+        <span><strong>Elementary &amp; Middle Program Guide</strong><small>Program pacing, meeting guidance, activities, and source-supported adaptations.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="https://drive.google.com/file/d/1owF-DwEMSzVrZfnhwWE3pCyLUyCffi4C/view?usp=drive_link" target="_blank" rel="noopener" data-search="elementary activity guide activities human bingo time capsule">
+        <span><strong>Elementary Activity Guide</strong><small>Additional friendship and chapter activity ideas.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="https://drive.google.com/file/d/1IfXfxQdiJmHe3Uk5k4GA96OHUnd_K0yd/view?usp=drive_link" target="_blank" rel="noopener" data-search="activity workbook elementary middle printable all about me">
+        <span><strong>Elementary &amp; Middle Activity Workbook</strong><small>Printable activities to use alongside chapter programming.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="https://drive.google.com/file/d/1Fnh1560fLhjbFqBnH4MzfvVluslO0Hht/view?usp=drive_link" target="_blank" rel="noopener" data-search="high school manual program guide">
+        <span><strong>High School Program Manual</strong><small>Current Best Buddies Canada high school program guidance.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="https://drive.google.com/file/d/1dht5evV19RhJQ51Y2CumvTtCpUm1tGpy/view?usp=drive_link" target="_blank" rel="noopener" data-search="high school activity guide university college activities">
+        <span><strong>High School Activity Guide</strong><small>Activity ideas for High School and University/College chapters.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="https://drive.google.com/file/d/1oQwyeOMXP2vCxRpPvBJyBXKP8wTOOdVO/view?usp=sharing" target="_blank" rel="noopener" data-search="non verbal nonverbal activity guide communication AAC sign language adapted">
+        <span><strong>Non-Verbal Activity Guide</strong><small>Activities and printables incorporating AAC, Sign Language, gesture, and other communication approaches.</small></span><b>↗</b>
+      </a>
+    </div>
+  </div>
+</dialog>
+
+
+<!-- =====================================================
+     TRAINING
+====================================================== -->
+<dialog class="resource-dialog" id="resource-training">
+  <div class="resource-dialog-inner">
+    <div class="resource-dialog-top">
+      <div>
+        <span class="resource-dialog-kicker">Learn @ Best Buddies</span>
+        <h2>Training</h2>
+        <p class="resource-dialog-intro">Formal Best Buddies training stays in Learn @ Best Buddies so teachers and chapter members are always sent to the current course.</p>
+      </div>
+      <button class="resource-dialog-close" type="button" data-close-resource aria-label="Close">×</button>
+    </div>
+
+    <div class="resource-dialog-list">
+      <a class="resource-item" href="https://learn.bestbuddies.ca/" target="_blank" rel="noopener" data-search="learn training sensitivity leadership courses">
+        <span><strong>Learn @ Best Buddies</strong><small>See the current courses available in the Best Buddies Canada learning portal.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="https://learn.bestbuddies.ca/course/view.php?id=3" target="_blank" rel="noopener" data-search="sensitivity training elementary middle disability inclusion">
+        <span><strong>Sensitivity Training</strong><small>Open the current Sensitivity Training course. Sign-in may be required.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener" data-search="high school leadership training chapter leadership learn">
+        <span><strong>Leadership &amp; High School training links</strong><small>Open the official Helpful Resources page for the current leadership training links.</small></span><b>↗</b>
+      </a>
+    </div>
+
+    <p class="resource-dialog-note">New to Learn @ Best Buddies? The learning site provides account creation and sign-in from its homepage.</p>
+  </div>
+</dialog>
+
+
+<!-- =====================================================
+     FORMS & ADMIN
+====================================================== -->
+<dialog class="resource-dialog" id="resource-admin">
+  <div class="resource-dialog-inner">
+    <div class="resource-dialog-top">
+      <div>
+        <span class="resource-dialog-kicker">Chapter administration</span>
+        <h2>Forms &amp; Admin</h2>
+        <p class="resource-dialog-intro">The forms and practical chapter resources Staff Advisors are most likely to need during the year.</p>
+      </div>
+      <button class="resource-dialog-close" type="button" data-close-resource aria-label="Close">×</button>
+    </div>
+
+    <div class="resource-dialog-list">
+      <a class="resource-item" href="https://bestbuddiescanada.my.salesforce-sites.com/publicportal/rosterUpdate/" target="_blank" rel="noopener" data-search="roster roster update chapter contact admin">
+        <span><strong>Roster Update</strong><small>Submit or update your Best Buddies Canada chapter roster.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="https://bestbuddiescanada.my.salesforce-sites.com/publicportal/k12registration/" target="_blank" rel="noopener" data-search="registration k12 k-12 student form families">
+        <span><strong>K–12 Student Registration</strong><small>Current English K–12 registration form.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Pledge-Form-Elementary-Middle-High-fillable.pdf" target="_blank" rel="noopener" data-search="pledge form elementary middle high school parent guardian">
+        <span><strong>K–12 Pledge Form</strong><small>Current fillable pledge form linked from Best Buddies Canada Helpful Resources.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Peer-Buddy-Guide.pdf" target="_blank" rel="noopener" data-search="peer buddy guide peer buddy">
+        <span><strong>Peer Buddy Guide</strong><small>A quick official guide for Peer Buddies.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Buddy-Guide.pdf" target="_blank" rel="noopener" data-search="buddy guide buddy">
+        <span><strong>Buddy Guide</strong><small>A quick official guide for Buddies.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Fundraising-Manual-8.5-x-11.pdf" target="_blank" rel="noopener" data-search="fundraising manual donations fundraiser money chapter funding">
+        <span><strong>Fundraising Manual</strong><small>Ideas, planning guidance, donation information, and sample letters.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Interview-Questions.pdf" target="_blank" rel="noopener" data-search="interview questions matching buddy peer buddy">
+        <span><strong>Interview Questions</strong><small>Official Best Buddies Canada interview-question resource.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Best-Buddies-Social-Media-Policy-2014.pdf" target="_blank" rel="noopener" data-search="social media policy instagram facebook posting photos">
+        <span><strong>Social Media Policy</strong><small>Best Buddies Canada’s social media policy linked from Helpful Resources.</small></span><b>↗</b>
+      </a>
+    </div>
+  </div>
+</dialog>
+
+
+<!-- =====================================================
+     START A CHAPTER
+====================================================== -->
+<dialog class="resource-dialog" id="resource-start">
+  <div class="resource-dialog-inner">
+    <div class="resource-dialog-top">
+      <div>
+        <span class="resource-dialog-kicker">Getting started</span>
+        <h2>Start a Chapter</h2>
+        <p class="resource-dialog-intro">You don’t need to have every detail figured out before reaching out. Start here and Best Buddies Canada can help with what comes next.</p>
+      </div>
+      <button class="resource-dialog-close" type="button" data-close-resource aria-label="Close">×</button>
+    </div>
+
+    <div class="resource-dialog-list">
+      <a class="resource-item" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Best-Buddies-Canada-Program-Application-2020-fillable.pdf" target="_blank" rel="noopener" data-search="program application start chapter new chapter apply school">
+        <span><strong>Program Application</strong><small>Open the program application currently linked from Best Buddies Canada Helpful Resources.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="https://bestbuddies.ca/get-started/" target="_blank" rel="noopener" data-search="get started start chapter new program contact">
+        <span><strong>Get Started with Best Buddies</strong><small>Connect with Best Buddies Canada about starting or joining a program.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Info-Sessions-Powerpoint.pdf" target="_blank" rel="noopener" data-search="info information session presentation program overview how it works">
+        <span><strong>Best Buddies Information Session</strong><small>An official overview of the program, roles, expectations, and getting involved.</small></span><b>↗</b>
+      </a>
+      <a class="resource-item" href="support.html" data-search="support program advisor help contact question start chapter">
+        <span><strong>Talk to Best Buddies Canada</strong><small>Not sure what applies to your school? Your Program Advisor can help.</small></span><b>→</b>
+      </a>
+    </div>
+  </div>
+</dialog>
+
+
+<script>
+(() => {
+  const openButtons = document.querySelectorAll('[data-open-resource]');
+  const dialogs = document.querySelectorAll('.resource-dialog');
+  const searchInput = document.getElementById('resource-search-input');
+  const resultsPanel = document.getElementById('resource-search-results');
+  const resultsList = document.getElementById('resource-search-list');
+  const allItems = [...document.querySelectorAll('.resource-item')];
+
+  openButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const dialog = document.getElementById(`resource-${button.dataset.openResource}`);
+      if (dialog) dialog.showModal();
+    });
+  });
+
+  dialogs.forEach(dialog => {
+    dialog.querySelector('[data-close-resource]')?.addEventListener('click', () => dialog.close());
+
+    dialog.addEventListener('click', event => {
+      if (event.target === dialog) dialog.close();
+    });
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      dialogs.forEach(dialog => {
+        if (dialog.open) dialog.close();
+      });
+    }
+  });
+
+  searchInput?.addEventListener('input', () => {
+    const query = searchInput.value.trim().toLowerCase();
+    resultsList.innerHTML = '';
+
+    if (query.length < 2) {
+      resultsPanel.classList.remove('is-visible');
+      return;
+    }
+
+    const matches = allItems.filter(item => {
+      const haystack = `${item.textContent} ${item.dataset.search || ''}`.toLowerCase();
+      return haystack.includes(query);
+    });
+
+    resultsPanel.classList.add('is-visible');
+
+    if (!matches.length) {
+      resultsList.innerHTML = '<p class="resource-search-empty">No direct match yet. Try a broader word, or use one of the four resource doors below.</p>';
+      return;
+    }
+
+    matches.slice(0, 10).forEach(item => {
+      const result = item.cloneNode(true);
+      result.removeAttribute('class');
+      result.classList.add('resource-search-result');
+      resultsList.appendChild(result);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
