@@ -102,19 +102,11 @@ input:focus-visible{
 }
 
 .portal-header::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:-9px;
-  height:18px;
-  background:var(--purple);
-  clip-path:polygon(0 23%,7% 41%,13% 27%,20% 44%,28% 30%,36% 46%,44% 31%,52% 44%,61% 29%,69% 45%,78% 31%,86% 47%,94% 30%,100% 42%,100% 0,0 0);
-  pointer-events:none;
+  display:none;
 }
 
 .portal-header-inner{
-  min-height:100px;
+  min-height:94px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -363,32 +355,32 @@ input:focus-visible{
 }
 
 .home-hero-copy{
-  width:44%;
-  max-width:650px;
-  padding:24px 0 56px;
+  width:45%;
+  max-width:680px;
+  padding:18px 0 52px;
 }
 
 .hero-line{
-  width:72px;
-  height:9px;
-  margin:0 0 28px;
-  border-radius:999px;
-  background:var(--yellow);
+  display:none;
 }
 
 .home-hero h1{
-  max-width:625px;
+  max-width:675px;
   margin:0 0 24px;
   color:var(--ink);
   font-family:var(--body);
-  font-size:clamp(2.7rem,3.35vw,4rem);
+  font-size:clamp(2.65rem,3.25vw,3.9rem);
   font-weight:800;
   line-height:1.02;
-  letter-spacing:-.03em;
+  letter-spacing:-.032em;
 }
 
 .home-hero h1 .hero-main-line{
   display:block;
+}
+
+.home-hero h1 .hero-friendship{
+  color:var(--purple);
 }
 
 .home-hero h1 .purple{
@@ -396,17 +388,17 @@ input:focus-visible{
 }
 
 .hero-copy{
-  max-width:560px;
+  max-width:585px;
   margin:0;
   color:var(--muted);
-  font-size:.98rem;
+  font-size:1rem;
   line-height:1.58;
 }
 
 .hero-thanks{
   margin:12px 0 0;
   color:var(--purple);
-  font-size:.88rem;
+  font-size:.9rem;
   font-weight:700;
 }
 
@@ -457,9 +449,9 @@ input:focus-visible{
 
 .program-heading-kicker{
   display:block;
-  margin-bottom:10px;
+  margin-bottom:11px;
   color:var(--purple);
-  font-size:.72rem;
+  font-size:.82rem;
   font-weight:800;
   letter-spacing:.08em;
   text-transform:uppercase;
@@ -470,14 +462,14 @@ input:focus-visible{
   align-items:center;
   justify-content:center;
   flex-wrap:nowrap;
-  gap:15px;
+  gap:13px;
   margin:0;
   color:var(--ink);
   font-family:var(--display);
-  font-size:clamp(2.25rem,3.15vw,3.45rem);
+  font-size:clamp(2.2rem,2.95vw,3.25rem);
   font-weight:900;
-  line-height:.94;
-  letter-spacing:-.025em;
+  line-height:.96;
+  letter-spacing:-.022em;
   text-transform:uppercase;
   white-space:nowrap;
 }
@@ -485,20 +477,27 @@ input:focus-visible{
 .program-heading h2 .purple{color:var(--purple)}
 
 .program-heading .down{
-  display:inline-block;
-  color:var(--purple);
-  font-family:var(--display);
-  font-size:.82em;
+  flex:0 0 auto;
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--purple);
+  color:#fff;
+  font-family:var(--body);
+  font-size:1.45rem;
   font-weight:900;
   line-height:1;
-  transform:translateY(-1px) scaleX(1.12);
+  transform:none;
 }
 
 .program-heading p{
-  max-width:690px;
-  margin:14px auto 0;
+  max-width:920px;
+  margin:16px auto 0;
   color:var(--muted);
-  font-size:.92rem;
+  font-size:1rem;
+  line-height:1.5;
 }
 
 .program-grid{
@@ -540,8 +539,15 @@ input:focus-visible{
   transform:scale(1.02);
 }
 
-.program-tile.elementary{border-bottom:10px solid var(--teal)}
-.program-tile.highschool{border-bottom:10px solid var(--orange)}
+.program-tile.elementary{
+  border-bottom:0;
+  box-shadow:-9px 10px 0 var(--teal),0 22px 44px rgba(48,31,77,.10);
+}
+
+.program-tile.highschool{
+  border-bottom:0;
+  box-shadow:9px 10px 0 var(--orange),0 22px 44px rgba(48,31,77,.10);
+}
 
 .program-overlay{
   position:absolute;
@@ -567,7 +573,7 @@ input:focus-visible{
   display:block;
   margin-bottom:6px;
   color:var(--purple);
-  font-size:.67rem;
+  font-size:.75rem;
   font-weight:800;
   letter-spacing:.065em;
   text-transform:uppercase;
@@ -588,16 +594,17 @@ input:focus-visible{
 
 .program-go{
   flex:0 0 auto;
-  width:52px;
-  height:52px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
   border-radius:50%;
   background:var(--purple);
   color:#fff;
-  font-size:1.45rem;
-  font-weight:800;
+  font-family:var(--body);
+  font-size:1.25rem;
+  font-weight:900;
+  line-height:1;
 }
 
 
@@ -664,7 +671,9 @@ input:focus-visible{
 }
 
 .shortcut-heading .section-label{
+  margin-bottom:8px;
   color:var(--yellow);
+  font-size:.82rem;
 }
 
 .shortcut-heading .section-label::after{
@@ -684,10 +693,11 @@ input:focus-visible{
 }
 
 .shortcut-heading p{
-  max-width:600px;
+  max-width:650px;
   margin:0 0 3px;
-  color:rgba(255,255,255,.84);
-  font-size:.9rem;
+  color:rgba(255,255,255,.92);
+  font-size:1rem;
+  font-weight:500;
   line-height:1.55;
 }
 
@@ -728,7 +738,7 @@ input:focus-visible{
   display:block;
   margin-bottom:5px;
   color:var(--purple);
-  font-size:.62rem;
+  font-size:.72rem;
   font-weight:800;
   letter-spacing:.065em;
   text-transform:uppercase;
@@ -1293,8 +1303,8 @@ input:focus-visible{
 
 .portal-footer{
   position:relative;
-  margin-top:34px;
-  padding:28px 0 34px;
+  margin-top:42px;
+  padding:30px 0 36px;
   border-top:0;
   background:#fff;
   color:var(--ink);
@@ -1305,12 +1315,12 @@ input:focus-visible{
   position:absolute;
   left:0;
   right:0;
-  top:-34px;
-  height:36px;
+  top:-42px;
+  height:44px;
   background-repeat:no-repeat;
   background-position:center bottom;
   background-size:100% 100%;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 70' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 38 C120 20 205 50 320 34 C435 18 520 51 640 34 C760 18 840 49 960 33 C1080 17 1160 49 1280 33 C1400 18 1490 45 1600 31 L1600 70 L0 70 Z'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 80' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 45 C118 24 200 59 320 40 C440 22 522 57 642 39 C760 22 843 58 963 39 C1083 22 1164 57 1285 39 C1403 23 1490 54 1600 36 L1600 80 L0 80 Z'/%3E%3C/svg%3E");
 }
 
 .portal-footer-inner{
@@ -1610,5 +1620,27 @@ input:focus-visible{
   .program-photo img,
   .shortcut{
     transition:none;
+  }
+}
+
+@media(min-width:1180px){
+  .home-hero h1 .hero-friendship{
+    white-space:nowrap;
+  }
+}
+
+.shortcut-heading .section-label::after{
+  display:none;
+}
+
+@media(max-width:760px){
+  .program-heading .down{
+    width:34px;
+    height:34px;
+    font-size:1.15rem;
+  }
+
+  .home-hero h1 .hero-friendship{
+    white-space:normal;
   }
 }
