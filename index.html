@@ -1,3 +1,206 @@
+
+Generated image: Best Buddies Friendship Cutout
+
+Edit
+
+
+Generated image: Best Buddies Friendship Cutout
+Generated image: Best Buddies Friendship Cutout
+
+Generated image: Smiling Kids with Colorful Abstract Blobs
+Generated image: Smiling Kids with Colorful Abstract Blobs
+
+Generated image: Best Buddies Hero Composition
+Generated image: Best Buddies Hero Composition
+
+Generated image: Smiling Teens with Vibrant Abstract Shapes
+Generated image: Smiling Teens with Vibrant Abstract Shapes
+Yep, I’m separating them properly this time: first asset is only the two kids on transparency, no board, no blobs, no background.
+
+Got it. I’m splitting the last generated asset into two actual files now: one with only the kids on transparency, and one with only the yellow/teal desktop shapes on transparency.
+
+Kids only, transparent PNG
+
+Desktop colour blocks only, 1800×700 transparent PNG 
+
+
+headerpicteacherhub.png
+ok here it is,.  headerpicteacherhub.png 
+
+Today 10:17 AM
+9db3320d-cc14-4851-93e2-8958321f3671.png
+height and pics needs to change a little on desktop and likely the others. the wave should be over top of the pic transitioning to white. 
+
+Today 12:17 PM
+f53808e3-4089-4572-ae7d-28f867435857.png
+ok not happy with this. help. I need the picture to sit up higher and take up  more space on desktop and then have the wavy part sit over top of the bottom of the image transitioning into white section,. most recent code is in other message thread.
+
+5af9d8e5-1849-48e8-b0d8-06c49b6763e7.png
+ok this still isn't right. image needs to come up a bit and sit differently. like the example pic you mocked up. I'll attach. current pic is first. top light grey section shouldn't be as tall. 
+
+I found the core issue: the CSS expected a .hub-copy-column, but the homepage HTML didn’t actually have one. That was forcing the hero into extra grid rows, which is why the grey section stayed too tall and the image kept sitting too low.
+
+I fixed the structure and the positioning together.
+
+Download corrected index.html
+
+Download corrected portal-polish.css
+
+This version makes the desktop hero a true two-column layout: all copy is stacked in one left column, the artwork is much larger and starts higher on the right, the overall grey hero is capped at about 535px, and the white wave sits in front of the bottom of the image so the teal/image disappears behind it instead of ending flat.
+
+For this pass, replace both:
+
+index.html
+portal-polish.css
+That should get much closer to the mockup relationship you liked. 
+
+
+
+index-homepage-v14-hero-structure.html
+HTML
+
+
+portal-polish-r6-hero-layout.css
+Code
+
+
+3be918e8-8ede-44a6-9c25-57c3cd959e5e.png
+so much closer on desktop.  its just cutting off the bottom line a bit. maybe we can go Friendship and (line 1) inclusion are at the (line 2) heart of Best Buddies. then run the your calendar, resourcesm, etc. on a single line.  that will pull it yup?
+
+Yes. This should fix the last bit of awkward vertical pressure without changing the layout again.
+
+Download updated index.html
+
+Download updated portal-polish.css
+
+Desktop now forces the headline to:
+
+Friendship and
+inclusion are at the
+heart of Best Buddies.
+
+with only Friendship and inclusion in purple.
+
+I also made the calendar/resources/support sentence stay on one line on desktop, tightened the gap slightly, and pulled the copy column up enough that the thank-you line should clear the wave instead of getting clipped.
+
+Tablet and mobile are left free to wrap naturally. 
+
+
+
+index-homepage-v15-copy-wrap.html
+HTML
+
+
+portal-polish-r7-copy-wrap.css
+Code
+
+
+8d087cb1-e86d-41ba-a600-c32b2af775b4.png
+this is so close now - can it come up a smidge higher so we se a bit more of the teal? also I realized the you calendar, resources activities etc is overkill because it says it above the friendship and inclusion and below. maybe we dump it under the teacher hub part?
+
+Done. I think this is the right final cleanup for the hero.
+
+Download updated index.html
+
+Download updated portal-polish.css
+
+Changes:
+
+removed the repeated Your calendar, resources, activity ideas... line from under the friendship statement
+
+slightly strengthened the line under TEACHER HUB so it carries that purpose instead
+
+lifted the artwork about 18px on desktop so more of the teal shape shows above the wave
+
+tightened the spacing between the Teacher Hub intro and friendship statement
+
+kept tablet/mobile adjustments more subtle so they don’t get cramped
+
+This should make the top feel cleaner and less repetitive without changing the structure you finally have working. 
+
+
+
+index-homepage-v16-clean-copy.html
+HTML
+
+
+portal-polish-r8-final-tighten.css
+Code
+
+
+Library
+/
+Best buddies
+/
+index-homepage-v16-clean-copy.html
+
+
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
@@ -61,153 +264,4 @@
         <div class="hub-intro">
           <h1 id="teacher-hub-title">Teacher Hub</h1>
           <span class="hub-title-accent" aria-hidden="true"></span>
-          <p>Planning, resources, and Best Buddies Canada support for your chapter, all in one place.</p>
-        </div>
-
-        <div class="hub-message">
-          <h2 class="hero-statement">
-            <span class="hero-line">
-              <span class="hero-friendship">Friendship and</span>
-            </span>
-            <span class="hero-line">
-              <span class="hero-friendship">inclusion</span>
-              <span class="hero-black"> are at the</span>
-            </span>
-            <span class="hero-line hero-black">heart of Best Buddies.</span>
-          </h2>
-
-          <p class="hero-copy">
-            Your calendar, resources, activity ideas, and Best Buddies Canada support in one place.
-          </p>
-
-          <p class="hero-thanks">
-            Thanks for creating space for friendship in your school.
-          </p>
-        </div>
-
-      </div>
-
-      <div class="hub-hero-art" aria-hidden="true">
-        <img src="assets/headerpicteacherhub.png" alt="">
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- =====================================================
-       CHOOSE PROGRAM
-  ====================================================== -->
-
-  <section class="program-launch" aria-labelledby="choose-program-title">
-
-    <div class="portal-container">
-
-      <div class="program-heading">
-        <span class="program-heading-kicker">Start here</span>
-        <h2 id="choose-program-title">
-          <span class="down" aria-hidden="true">↓</span>
-          <span>Choose your <span class="purple">program</span></span>
-          <span class="down" aria-hidden="true">↓</span>
-        </h2>
-        <p>Pick your program to see the current calendar, monthly priorities, activities, and planning help.</p>
-      </div>
-
-      <div class="program-grid">
-
-        <a class="program-tile elementary" href="elementary-middle.html">
-          <div class="program-photo">
-            <img src="assets/elementary-hero.png" alt="Best Buddies elementary and middle school participants">
-          </div>
-
-          <div class="program-overlay">
-            <div>
-              <span>Elementary &amp; Middle School</span>
-              <h3>Friendship grows together.</h3>
-            </div>
-            <span class="program-go" aria-hidden="true">←</span>
-          </div>
-        </a>
-
-        <a class="program-tile highschool" href="high-school.html">
-          <div class="program-photo">
-            <img src="assets/high-school-hero.png" alt="Best Buddies high school participants">
-          </div>
-
-          <div class="program-overlay">
-            <div>
-              <span>High School</span>
-              <h3>Leadership grows together.</h3>
-            </div>
-            <span class="program-go" aria-hidden="true">←</span>
-          </div>
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       QUICK DESTINATIONS
-  ====================================================== -->
-
-  <section class="portal-shortcuts" aria-labelledby="quick-title">
-
-    <div class="portal-container">
-
-      <div class="shortcut-heading">
-        <div>
-          <span class="section-label">Jump right in</span>
-          <h2 id="quick-title">Already know what you need?</h2>
-        </div>
-        <p>You can skip straight to the program calendar, resource finder, or your Best Buddies Canada support team.</p>
-      </div>
-
-      <div class="shortcut-grid">
-
-        <a class="shortcut shortcut-calendar" href="calendar.html">
-          <span>
-            <small>What’s happening now?</small>
-            <strong>Program Calendar</strong>
-          </span>
-          <span class="shortcut-arrow" aria-hidden="true">→</span>
-        </a>
-
-        <a class="shortcut shortcut-resources" href="resources.html">
-          <span>
-            <small>Find the thing</small>
-            <strong>Resources</strong>
-          </span>
-          <span class="shortcut-arrow" aria-hidden="true">→</span>
-        </a>
-
-        <a class="shortcut shortcut-support" href="support.html">
-          <span>
-            <small>Need a person?</small>
-            <strong>Program Support</strong>
-          </span>
-          <span class="shortcut-arrow" aria-hidden="true">→</span>
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-</main>
-
-
-<footer class="portal-footer">
-  <div class="portal-container portal-footer-inner">
-    <img src="assets/bb-logo.png" alt="Best Buddies Canada">
-    <p>Best Buddies Canada Teacher Hub</p>
-    <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca ↗</a>
-  </div>
-</footer>
-
-</body>
-</html>
+          <p>Planning, resources, activities, and Best Buddies Canada support for your chapter, all in one place.</p>
