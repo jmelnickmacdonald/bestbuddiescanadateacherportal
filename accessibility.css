@@ -1,0 +1,195 @@
+/* =========================================================
+   BEST BUDDIES CANADA TEACHER HUB
+   Accessibility preferences
+   File: accessibility.css
+========================================================= */
+
+.accessibility-launcher{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:99990;
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  border:3px solid #fff;
+  border-radius:50%;
+  background:#FFD420;
+  color:#211B28;
+  box-shadow:0 8px 24px rgba(32,20,56,.22);
+  cursor:pointer;
+}
+
+.accessibility-launcher svg{
+  width:27px;
+  height:27px;
+}
+
+.accessibility-panel{
+  position:fixed;
+  right:18px;
+  bottom:82px;
+  z-index:99991;
+  width:min(390px,calc(100vw - 30px));
+  max-height:min(650px,calc(100vh - 110px));
+  overflow:auto;
+  padding:22px;
+  border:0;
+  border-radius:26px 26px 66px 26px;
+  background:#fff;
+  color:#403946;
+  box-shadow:0 24px 70px rgba(32,20,56,.3);
+}
+
+.accessibility-panel[hidden]{
+  display:none;
+}
+
+.accessibility-panel-header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:18px;
+}
+
+.accessibility-panel-kicker{
+  display:block;
+  margin-bottom:5px;
+  color:#5A3F98;
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.accessibility-panel h2{
+  margin:0;
+  color:#211B28;
+  font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  font-size:1.55rem;
+  font-weight:800;
+  line-height:1.05;
+}
+
+.accessibility-close{
+  flex:0 0 auto;
+  width:40px;
+  height:40px;
+  border:0;
+  border-radius:50%;
+  background:#5A3F98;
+  color:#fff;
+  font-size:1.2rem;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.accessibility-group{
+  padding:14px 0;
+  border-top:1px solid #DDD8E6;
+}
+
+.accessibility-group:first-of-type{
+  border-top:0;
+}
+
+.accessibility-group-label{
+  display:block;
+  margin-bottom:9px;
+  color:#211B28;
+  font-size:.83rem;
+  font-weight:800;
+}
+
+.accessibility-choice-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.accessibility-choice,
+.accessibility-toggle,
+.accessibility-reset{
+  min-height:42px;
+  padding:8px 13px;
+  border:2px solid #5A3F98;
+  border-radius:999px;
+  background:#fff;
+  color:#5A3F98;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.accessibility-choice[aria-pressed="true"],
+.accessibility-toggle[aria-pressed="true"]{
+  background:#5A3F98;
+  color:#fff;
+}
+
+.accessibility-reset{
+  width:100%;
+  margin-top:10px;
+  border-color:#211B28;
+  color:#211B28;
+}
+
+html[data-a11y-text="large"]{
+  font-size:112.5%;
+}
+
+html[data-a11y-text="larger"]{
+  font-size:125%;
+}
+
+html[data-a11y-contrast="high"] body{
+  background:#fff !important;
+  color:#000 !important;
+}
+
+html[data-a11y-contrast="high"] a{
+  text-decoration-thickness:3px;
+}
+
+html[data-a11y-links="underline"] a{
+  text-decoration:underline !important;
+}
+
+html[data-a11y-spacing="comfortable"] body{
+  line-height:1.78;
+}
+
+html[data-a11y-spacing="comfortable"] p,
+html[data-a11y-spacing="comfortable"] li{
+  letter-spacing:.015em;
+  word-spacing:.05em;
+}
+
+html[data-a11y-focus="strong"] :focus-visible{
+  outline:5px solid #FFD420 !important;
+  outline-offset:5px !important;
+}
+
+html[data-a11y-motion="reduce"] *,
+html[data-a11y-motion="reduce"] *::before,
+html[data-a11y-motion="reduce"] *::after{
+  scroll-behavior:auto !important;
+  animation-duration:.001ms !important;
+  animation-iteration-count:1 !important;
+  transition-duration:.001ms !important;
+}
+
+@media(max-width:600px){
+  .accessibility-launcher{
+    right:12px;
+    bottom:12px;
+  }
+
+  .accessibility-panel{
+    right:10px;
+    bottom:74px;
+    width:calc(100vw - 20px);
+    border-radius:24px 24px 56px 24px;
+  }
+}
