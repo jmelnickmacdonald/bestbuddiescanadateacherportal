@@ -3,25 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Best Buddies Canada Teacher Hub: Elementary and Middle School September planning, activities, resources, and printable meeting plan.">
+  <meta name="description" content="Best Buddies Canada Teacher Hub: Elementary &amp; Middle School September planning and accessible meeting builder.">
   <title>September | Elementary & Middle School | Best Buddies Canada Teacher Hub</title>
 
   <link rel="stylesheet" href="portal-refresh.css">
   <link rel="stylesheet" href="access.css">
   <link rel="stylesheet" href="month-pages.css">
-  <link rel="stylesheet" href="september-refresh.css">
+  <link rel="stylesheet" href="meeting-builder.css">
 
   <script src="access.js" defer></script>
-  <script src="month-planner.js" defer></script>
+  <script src="meeting-builder-data.js" defer></script>
+  <script src="meeting-builder.js" defer></script>
 </head>
 
 <body
   data-protected="true"
-  data-program="elementary-middle"
+  data-program="elementary"
   data-month="september"
   data-month-label="September · Getting Set Up"
   data-month-view="essentials"
-  class="access-pending month-page september-v2"
+  class="access-pending month-page elementary-middle-month"
 >
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
@@ -37,10 +38,10 @@
 
       <div class="month-desktop-nav">
         <nav class="month-nav-pill" aria-label="Teacher Hub navigation">
-          <a href="elementary-middle.html">Elementary &amp; Middle</a>
+          <a href="elementary-middle.html">Elementary &amp; Middle School</a>
           <a href="calendar.html">Calendar</a>
-          <a href="resources.html">Resources</a>
-          <a href="support.html">Support</a>
+          <a href="#resources">Resources</a>
+          <a href="#support">Support</a>
         </nav>
 
         <nav class="month-language-pill" aria-label="Language">
@@ -52,11 +53,11 @@
       <details class="month-mobile-nav">
         <summary>Menu</summary>
         <nav class="month-mobile-menu" aria-label="Mobile navigation">
-          <a href="elementary-middle.html">Elementary &amp; Middle</a>
-          <a href="elementary-middle.html#calendar">Program Calendar</a>
+          <a href="elementary-middle.html">Elementary &amp; Middle School</a>
           <a href="#this-month">This month</a>
-          <a href="resources.html">Resources</a>
-          <a href="support.html">Support</a>
+          <a href="#build">Build a meeting</a>
+          <a href="#resources">Resources</a>
+          <a href="#support">Support</a>
           <a href="fr.html">Français</a>
         </nav>
       </details>
@@ -64,400 +65,114 @@
   </header>
 
   <main id="main-content">
-
-    <section class="month-hero sept-hero" aria-labelledby="month-title">
+    <section class="month-hero" aria-labelledby="month-title">
       <div class="month-hero-inner">
         <div class="month-hero-copy">
-          <a class="month-back-link" href="elementary-middle.html">← Elementary &amp; Middle School</a>
-          <p class="month-eyebrow">September</p>
-          <h1 class="month-display" id="month-title">Getting <span>Set Up</span></h1>
-          <p class="month-hero-lede">A simple start to your Best Buddies year. Get organized, welcome people in, and take the first few things one at a time.</p>
-
-          <div class="sept-mode-inline" aria-label="Choose how much guidance to see">
-            <span>What do you need today?</span>
-            <div class="month-mode-controls">
-              <button class="month-mode-button" type="button" data-month-mode="essentials" aria-pressed="true">The essentials</button>
-              <button class="month-mode-button" type="button" data-month-mode="ideas" aria-pressed="false">Give me ideas</button>
-            </div>
-          </div>
+          <a class="month-back-link" href="elementary-middle.html">← Back to Elementary & Middle School</a>
+          <p class="month-eyebrow">Elementary & Middle School · September</p>
+          <h1 class="month-display" id="month-title">September <span>Getting Set Up</span></h1>
+          <p class="month-hero-lede">Start small. September is mostly about getting organized, welcoming people in, and getting ready for the first chapter gathering. You do not need to have everything figured out at once.</p>
         </div>
 
-        <div class="sept-hero-photo" aria-hidden="true">
-          <img src="assets/elementary-hero.png" alt="">
-          <div class="sept-photo-accent">09</div>
-        </div>
+        <aside class="month-hero-side">
+          <strong>Four things are enough.</strong>
+          <p>If your chapter is still recruiting or getting organized, you are on track. Build a gathering only when your group is ready.</p>
+          <a href="#build" style="display: inline-block; margin-top: 10px; font-weight: 900; color: inherit;">Build a meeting ↓</a>
+        </aside>
       </div>
     </section>
 
     <div class="month-jump-wrap">
       <nav class="month-jump" aria-label="Jump to a section">
         <a href="#this-month">This month</a>
-        <a class="idea-only" href="#guided-planning">Plan a gathering</a>
-        <a href="resources.html">Resources</a>
-        <button class="month-jump-plan" type="button" data-open-plan>My plan</button>
+        <a href="#build">Build a meeting</a>
+        <a href="#resources">Resources</a>
+        <a href="#support">Support</a>
       </nav>
     </div>
 
-    <section class="sept-steps-section" id="this-month">
-      <div class="month-wrap">
-        <div class="sept-section-intro">
-          <div>
-            <span class="sept-source-pill">From the Program Calendar</span>
-            <p class="month-eyebrow">September</p>
-            <h2>Start with <span>these four things.</span></h2>
+    <section class="month-fit-section" id="this-month">
+      <div class="builder-wrap">
+        <div class="month-fit-grid">
+          <div class="month-fit-card">
+            <span class="fit-kicker">From the Program Calendar</span>
+            <h2>Get the chapter ready</h2>
+            <p>Keep the official September priorities simple. The Hub can help with a first gathering when you need it, but setup comes first.</p>
+
+            <div class="month-source-callout">
+              <p>Use the Hub for a quick plan. The complete directions and official wording stay in the source resource.</p>
+              <a href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener">Open Helpful Resources ↗</a>
+            </div>
           </div>
-          <p>September is mostly about getting organized. If your group is not ready for a gathering yet, that is okay. Start here and build from there.</p>
-        </div>
 
-        <div class="sept-step-grid">
-          <article class="sept-step step-purple">
-            <span class="sept-step-number">1</span>
-            <div>
-              <strong>Check in</strong>
-              <p>Connect with your Best Buddies Program Advisor if you need support getting started.</p>
-            </div>
-          </article>
-
-          <article class="sept-step step-yellow">
-            <span class="sept-step-number">2</span>
-            <div>
-              <strong>Recruit</strong>
-              <p>Invite students in the way that fits your school: announcements, classroom outreach, a table, or social posts.</p>
-            </div>
-          </article>
-
-          <article class="sept-step step-teal">
-            <span class="sept-step-number">3</span>
-            <div>
-              <strong>Share with families</strong>
-              <p>Make sure parents and guardians have the program and registration information they need.</p>
-            </div>
-          </article>
-
-          <article class="sept-step step-orange">
-            <span class="sept-step-number">4</span>
-            <div>
-              <strong>Pick a Meet &amp; Greet date</strong>
-              <p>Start planning the first chapter gathering. It does not need to happen before your group is ready.</p>
-            </div>
-          </article>
-        </div>
-
-        <div class="sept-enough-note">
-          <div class="sept-enough-mark" aria-hidden="true">✓</div>
           <div>
-            <strong>If that is all you get done this month, you are on track.</strong>
-            <p>Already have a group ready to meet? Open the optional planning ideas below.</p>
+            <div class="month-fit-list">
+          <div class="month-fit-item">
+            <b>✓</b>
+            <p>Check in with your Best Buddies Program Advisor.</p>
           </div>
-          <button class="sept-inline-ideas" type="button" data-show-ideas>Give me ideas</button>
+          <div class="month-fit-item">
+            <b>✓</b>
+            <p>Recruit members and make it easy for students to learn about the chapter.</p>
+          </div>
+          <div class="month-fit-item">
+            <b>✓</b>
+            <p>Share the program and registration information families need.</p>
+          </div>
+          <div class="month-fit-item">
+            <b>✓</b>
+            <p>Choose a date and begin planning the first Meet & Greet when the group is ready.</p>
+          </div>
+            </div>
+
+            <div class="community-card">
+              <strong>Let the chapter shape it</strong>
+              <p>Ask students what would help a first gathering feel welcoming. Offer a few visible choices and let people answer by speaking, pointing, signing, using AAC, writing, drawing, gesture, or another way that works for them.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="essentials-inspiration sept-essentials-inspiration">
-      <div class="month-wrap">
-        <div class="sept-inspiration-band">
-          <div>
-            <span>Need a fresh idea later?</span>
-            <strong>The meeting planner is always here when you want it.</strong>
-          </div>
-          <button type="button" data-show-ideas>Open planning ideas →</button>
+    <section class="builder-shell" id="build" data-meeting-builder></section>
+
+    <section class="quick-resources" id="resources">
+      <div class="builder-wrap">
+        <span class="fit-kicker">Keep the full resources close</span>
+        <h2>Open the source when you need it.</h2>
+
+        <div class="quick-resource-grid">
+        <a class="quick-resource" href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener">
+          <strong>Elementary & Middle Program Guide ↗</strong>
+          <span>Phase One, Week 1, program sequence, timing, and guide-provided modifications.</span>
+        </a>
+        <a class="quick-resource" href="https://drive.google.com/file/d/1owF-DwEMSzVrZfnhwWE3pCyLUyCffi4C/view?usp=drive_link" target="_blank" rel="noopener">
+          <strong>Elementary Activity Guide ↗</strong>
+          <span>Human Bingo, Time Capsule, and other chapter activities from the official guide.</span>
+        </a>
+        <a class="quick-resource" href="https://drive.google.com/file/d/1oQwyeOMXP2vCxRpPvBJyBXKP8wTOOdVO/view?usp=sharing" target="_blank" rel="noopener">
+          <strong>Non-Verbal Activity Guide ↗</strong>
+          <span>AAC, Sign Language, gesture, and other non-speaking communication activities.</span>
+        </a>
+        </div>
+
+        <div class="month-source-callout">
+          <p>For current month-specific reminders, dates, and links, check the live Best Buddies Canada Program Calendar.</p>
+          <a href="calendar.html">Open Program Calendar →</a>
         </div>
       </div>
     </section>
 
-    <section class="sept-guided idea-only" id="guided-planning">
-      <div class="month-wrap">
-
-        <div class="sept-guided-heading">
-          <span class="sept-guided-kicker">Ready to bring people together?</span>
-          <h2>Don’t overthink <span>the first gathering.</span></h2>
-          <p>Start with one of these Best Buddies-based plans, or build your own in three easy picks.</p>
-        </div>
-
-        <div class="sept-fast-plans" aria-label="Ready-made first gathering plans">
-          <article class="sept-fast-plan plan-yellow">
-            <div class="sept-plan-topline">
-              <span>25–30 min</span>
-              <span>Easy start</span>
-            </div>
-            <h3>Keep it simple.</h3>
-            <div class="sept-mini-flow" aria-label="Ultimate Rock Paper Scissors, Defining Friendship, Best Buddies Pledge">
-              <span>Rock, Paper, Scissors</span><b>→</b><span>Defining Friendship</span><b>→</b><span>Pledge</span>
-            </div>
-            <button type="button" data-add-flow="sept-short-friendship">Use this plan</button>
-          </article>
-
-          <article class="sept-fast-plan plan-teal">
-            <div class="sept-plan-topline">
-              <span>40–50 min</span>
-              <span>More connection</span>
-            </div>
-            <h3>Give it a little more room.</h3>
-            <div class="sept-mini-flow" aria-label="Ultimate Rock Paper Scissors, Defining Friendship, Pass the Yarn, Best Buddies Pledge">
-              <span>Quick opener</span><b>→</b><span>Friendship</span><b>→</b><span>Pass the Yarn</span><b>→</b><span>Pledge</span>
-            </div>
-            <button type="button" data-add-flow="sept-full-week1">Use this plan</button>
-          </article>
-
-          <article class="sept-fast-plan plan-lavender">
-            <div class="sept-plan-topline">
-              <span>Flexible</span>
-              <span>Creative</span>
-            </div>
-            <h3>Make something together.</h3>
-            <div class="sept-mini-flow" aria-label="Imagine Boards and Best Buddies Pledge">
-              <span>Imagine Boards</span><b>→</b><span>Pledge</span>
-            </div>
-            <button type="button" data-add-flow="sept-creative">Use this plan</button>
-          </article>
-        </div>
-
-        <div class="sept-builder-heading">
-          <span>Or build your own</span>
-          <h2>Three picks. <span>Done.</span></h2>
-        </div>
-
-        <div class="sept-builder">
-          <section class="sept-pick-step pick-one" aria-labelledby="pick-one-title">
-            <div class="sept-pick-number">1</div>
-            <div class="sept-pick-content">
-              <div class="sept-pick-heading">
-                <div>
-                  <span>Start together</span>
-                  <h3 id="pick-one-title">Pick an opener</h3>
-                </div>
-                <p>Choose one. You do not need all three.</p>
-              </div>
-
-              <div class="sept-choice-row">
-                <article class="sept-choice choice-yellow">
-                  <div>
-                    <span class="sept-choice-time">5 min · active</span>
-                    <h4>Ultimate Rock, Paper, Scissors</h4>
-                    <p>A quick, playful way to learn names and get some energy out.</p>
-                  </div>
-                  <div class="sept-choice-actions">
-                    <button type="button" class="sept-quick" data-quick-view="ultimate-rps">How it works</button>
-                    <button type="button" class="sept-add" data-add-activity="ultimate-rps">+ Add</button>
-                  </div>
-                </article>
-
-                <article class="sept-choice choice-teal">
-                  <div>
-                    <span class="sept-choice-time">15–20 min · names</span>
-                    <h4>Pass the Yarn</h4>
-                    <p>Learn names and something about each person while building a visible web of connection.</p>
-                  </div>
-                  <div class="sept-choice-actions">
-                    <button type="button" class="sept-quick" data-quick-view="pass-the-yarn">How it works</button>
-                    <button type="button" class="sept-add" data-add-activity="pass-the-yarn">+ Add</button>
-                  </div>
-                </article>
-
-                <article class="sept-choice choice-lavender">
-                  <div>
-                    <span class="sept-choice-time">Flexible · 10+ people</span>
-                    <h4>Human Bingo</h4>
-                    <p>A good fit for a larger group that is ready to mingle and find things in common.</p>
-                  </div>
-                  <div class="sept-choice-actions">
-                    <button type="button" class="sept-quick" data-quick-view="human-bingo">How it works</button>
-                    <button type="button" class="sept-add" data-add-activity="human-bingo">+ Add</button>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </section>
-
-          <div class="sept-builder-arrow" aria-hidden="true">↓</div>
-
-          <section class="sept-pick-step pick-two" aria-labelledby="pick-two-title">
-            <div class="sept-pick-number">2</div>
-            <div class="sept-pick-content">
-              <div class="sept-pick-heading">
-                <div>
-                  <span>Do something together</span>
-                  <h3 id="pick-two-title">Pick one connection activity</h3>
-                </div>
-                <p>Choose the one that feels most like your group.</p>
-              </div>
-
-              <div class="sept-choice-row">
-                <article class="sept-choice choice-orange">
-                  <div>
-                    <span class="sept-choice-time">15–20 min · pairs</span>
-                    <h4>Defining Friendship</h4>
-                    <p>Use words and drawings to explore what a good friend looks like.</p>
-                  </div>
-                  <div class="sept-choice-actions">
-                    <button type="button" class="sept-quick" data-quick-view="defining-friendship">How it works</button>
-                    <button type="button" class="sept-add" data-add-activity="defining-friendship">+ Add</button>
-                  </div>
-                </article>
-
-                <article class="sept-choice choice-yellow">
-                  <div>
-                    <span class="sept-choice-time">Flexible · visual</span>
-                    <h4>Imagine Boards</h4>
-                    <p>Use words, pictures, or symbols to show hopes for the Best Buddies year.</p>
-                  </div>
-                  <div class="sept-choice-actions">
-                    <button type="button" class="sept-quick" data-quick-view="imagine-boards">How it works</button>
-                    <button type="button" class="sept-add" data-add-activity="imagine-boards">+ Add</button>
-                  </div>
-                </article>
-
-                <article class="sept-choice choice-teal">
-                  <div>
-                    <span class="sept-choice-time">Flexible · year-long</span>
-                    <h4>Time Capsule</h4>
-                    <p>Share a little about yourselves now and create something to revisit at year-end.</p>
-                  </div>
-                  <div class="sept-choice-actions">
-                    <button type="button" class="sept-quick" data-quick-view="time-capsule">How it works</button>
-                    <button type="button" class="sept-add" data-add-activity="time-capsule">+ Add</button>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </section>
-
-          <div class="sept-builder-arrow" aria-hidden="true">↓</div>
-
-          <section class="sept-pick-step pick-three" aria-labelledby="pick-three-title">
-            <div class="sept-pick-number">3</div>
-            <div class="sept-pick-content">
-              <div class="sept-pick-heading">
-                <div>
-                  <span>Finish together</span>
-                  <h3 id="pick-three-title">Close simply</h3>
-                </div>
-                <p>The Program Guide already gives you a ready-made close.</p>
-              </div>
-
-              <article class="sept-close-choice">
-                <div>
-                  <span>5 min</span>
-                  <h4>Best Buddies Pledge</h4>
-                  <p>Use the shared pledge as the Take-Away, then you are done.</p>
-                </div>
-                <div class="sept-choice-actions">
-                  <button type="button" class="sept-quick" data-quick-view="best-buddies-pledge">How it works</button>
-                  <button type="button" class="sept-add" data-add-activity="best-buddies-pledge">+ Add</button>
-                </div>
-              </article>
-            </div>
-          </section>
-        </div>
-
-        <details class="sept-more-ideas">
-          <summary>
-            <span>Want more options?</span>
-            <strong>Open a few more September-friendly ideas</strong>
-          </summary>
-
-          <div class="sept-more-grid">
-            <article>
-              <span>Pairs · flexible</span>
-              <h3>Back-to-School Mad Lib</h3>
-              <p>Low-pressure pair work with reading/writing support and an assistive-speaking-device option already in the guide.</p>
-              <div>
-                <button type="button" data-quick-view="back-to-school-mad-lib">How it works</button>
-                <button type="button" data-add-activity="back-to-school-mad-lib">+ Add</button>
-              </div>
-            </article>
-
-            <article>
-              <span>Sign Language · printable</span>
-              <h3>Sign Language Bingo</h3>
-              <p>A bingo activity built around signs. The Non-Verbal Activity Guide notes it can be played by everyone.</p>
-              <div>
-                <button type="button" data-quick-view="sign-language-bingo">How it works</button>
-                <button type="button" data-add-activity="sign-language-bingo">+ Add</button>
-              </div>
-            </article>
-
-            <article>
-              <span>AAC · printable</span>
-              <h3>AAC Device Bingo</h3>
-              <p>A group activity using AAC-inspired symbols, with personal AAC devices built directly into the guide directions.</p>
-              <div>
-                <button type="button" data-quick-view="aac-bingo">How it works</button>
-                <button type="button" data-add-activity="aac-bingo">+ Add</button>
-              </div>
-            </article>
-          </div>
-        </details>
-
-        <div class="sept-participation-note">
-          <div class="sept-participation-shape" aria-hidden="true"></div>
-          <div>
-            <span>Best Buddies lens</span>
-            <h2>Participation does not have one look.</h2>
-            <p>The guides already include partner, scribe, AAC, Sign Language, visual, and movement alternatives in many activities. Open an activity’s quick view to see the source-supported options before you choose it.</p>
-          </div>
-          <a href="https://drive.google.com/file/d/1oQwyeOMXP2vCxRpPvBJyBXKP8wTOOdVO/view?usp=sharing" target="_blank" rel="noopener">Open Non-Verbal Activity Guide ↗</a>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="sept-resources" id="resources">
-      <div class="month-wrap">
-        <div class="sept-resources-heading">
-          <div>
-            <p class="month-eyebrow">September resources</p>
-            <h2>Need the full thing? <span>It’s right here.</span></h2>
-          </div>
-          <p>No hunting through folders. Open the source when you need full instructions, printables, or program guidance.</p>
-        </div>
-
-        <div class="sept-resource-links">
-          <a href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener">
-            <span>Program Guide</span>
-            <strong>Phase One + Week 1</strong>
-            <b>↗</b>
-          </a>
-
-          <a href="https://drive.google.com/file/d/1owF-DwEMSzVrZfnhwWE3pCyLUyCffi4C/view?usp=drive_link" target="_blank" rel="noopener">
-            <span>Activity Guide</span>
-            <strong>Human Bingo + Time Capsule</strong>
-            <b>↗</b>
-          </a>
-
-          <a href="https://bestbuddies.ca/wp-content/uploads/2023/09/Elementary-Middle-School-Activity-Guide-.pdf" target="_blank" rel="noopener">
-            <span>Activity Guide · Volume 2</span>
-            <strong>Fall ideas + adaptations</strong>
-            <b>↗</b>
-          </a>
-
-          <a href="https://drive.google.com/file/d/1oQwyeOMXP2vCxRpPvBJyBXKP8wTOOdVO/view?usp=sharing" target="_blank" rel="noopener">
-            <span>Participation</span>
-            <strong>Non-Verbal Activity Guide</strong>
-            <b>↗</b>
-          </a>
-
-          <a href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener">
-            <span>Everything else</span>
-            <strong>Helpful Resources</strong>
-            <b>↗</b>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="month-support sept-support" id="support">
+    <section class="month-support" id="support">
       <div class="month-wrap month-support-inner">
         <div>
-          <p class="month-eyebrow">Need another set of eyes?</p>
-          <h2>Your Program Advisor can help you make September fit your chapter.</h2>
-          <p>If recruitment, timing, an activity, or participation is not quite fitting your group, reach out.</p>
+          <p class="month-eyebrow">Need help making it fit?</p>
+          <h2>Your Program Advisor can help.</h2>
+          <p>If an activity, communication need, room setup, group dynamic, or leadership question is making the plan harder, reach out. You do not need to solve it alone.</p>
         </div>
         <a href="support.html">Get support →</a>
       </div>
     </section>
-
   </main>
 
   <footer class="month-footer">
