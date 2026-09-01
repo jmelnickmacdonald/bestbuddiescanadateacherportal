@@ -2138,3 +2138,292 @@ input:focus-visible{
     font-size:.8rem;
   }
 }
+
+
+/* Calendar hero: remove left-side decorative circle. */
+.calendar-hero::before{
+  display:none !important;
+  content:none !important;
+}
+
+
+/* =========================================================
+   MOBILE COMPOSITION RESET
+   Homepage-first mobile rules
+========================================================= */
+
+html,
+body{
+  max-width:100%;
+  overflow-x:clip;
+}
+
+@media(max-width:760px){
+
+  .portal-container{
+    width:calc(100% - 36px);
+    max-width:none;
+  }
+
+  .portal-header-inner{
+    min-height:72px;
+    gap:14px;
+  }
+
+  .portal-brand{
+    flex:1 1 auto;
+    min-width:0;
+  }
+
+  .portal-brand img{
+    height:46px;
+    max-width:100%;
+  }
+
+  .portal-brand-copy{
+    display:none;
+  }
+
+  .header-actions{
+    flex:0 0 auto;
+  }
+
+  .site-menu summary{
+    min-height:42px;
+    padding:8px 14px;
+    font-size:.78rem;
+  }
+
+  .home-hero{
+    min-height:0;
+  }
+
+  .home-hero::after{
+    display:none;
+  }
+
+  .home-hero-content{
+    padding:34px 0 26px;
+  }
+
+  .home-hero-copy{
+    width:100%;
+    max-width:none;
+    padding:0;
+  }
+
+  .home-hero h1{
+    width:100%;
+    max-width:none;
+    margin:0 0 17px;
+    font-size:clamp(2.05rem,9.4vw,2.75rem);
+    line-height:1.01;
+    letter-spacing:-.032em;
+    overflow-wrap:normal;
+  }
+
+  .home-hero h1 .hero-main-line,
+  .home-hero h1 .hero-friendship{
+    display:block;
+    max-width:100%;
+    white-space:normal;
+  }
+
+  .mobile-hero-copy{
+    max-width:31rem;
+    font-size:.9rem;
+    line-height:1.55;
+  }
+
+  .home-hero picture{
+    position:relative;
+    width:100%;
+    height:auto;
+    min-height:0;
+    overflow:hidden;
+  }
+
+  .home-hero picture img{
+    display:block;
+    width:100%;
+    height:auto;
+    max-height:none;
+    object-fit:contain;
+    object-position:center top;
+  }
+
+  .program-launch{
+    padding:46px 0 72px;
+  }
+
+  .program-launch::before,
+  .program-launch::after{
+    display:none;
+  }
+
+  .program-heading{
+    width:100%;
+    max-width:none;
+    margin:0 auto 28px;
+    padding:0;
+  }
+
+  .program-heading-kicker{
+    margin-bottom:9px;
+    font-size:.72rem;
+  }
+
+  .program-heading h2{
+    display:block;
+    width:100%;
+    max-width:none;
+    margin:0;
+    font-size:clamp(1.7rem,7.5vw,2.15rem);
+    line-height:1;
+    letter-spacing:-.02em;
+    white-space:normal;
+    text-align:center;
+  }
+
+  .program-heading h2 > span:not(.down){
+    display:block;
+    width:100%;
+  }
+
+  .program-heading .down{
+    display:none;
+  }
+
+  .program-heading p{
+    max-width:31rem;
+    margin:13px auto 0;
+    padding:0 2px;
+    font-size:.88rem;
+    line-height:1.5;
+  }
+
+  .program-grid{
+    grid-template-columns:minmax(0,1fr);
+    gap:24px;
+    width:100%;
+  }
+
+  .program-tile,
+  .program-tile.highschool{
+    width:100%;
+    border-radius:26px 26px 64px 26px;
+  }
+
+  .program-tile.elementary{
+    box-shadow:-5px 7px 0 var(--teal),0 16px 32px rgba(48,31,77,.10);
+  }
+
+  .program-tile.highschool{
+    box-shadow:5px 7px 0 var(--orange),0 16px 32px rgba(48,31,77,.10);
+  }
+
+  .program-photo{
+    height:auto;
+    aspect-ratio:16 / 11;
+  }
+
+  .program-overlay{
+    left:12px;
+    right:12px;
+    bottom:12px;
+    min-height:96px;
+    gap:12px;
+    padding:15px 16px;
+    border-radius:20px 20px 46px 20px;
+  }
+
+  .program-tile.highschool .program-overlay{
+    border-radius:20px 46px 20px 20px;
+  }
+
+  .program-overlay span:not(.program-go){
+    font-size:.64rem;
+  }
+
+  .program-overlay h3{
+    max-width:none;
+    min-height:0;
+    font-size:clamp(1.18rem,5vw,1.5rem);
+    line-height:1.08;
+  }
+
+  .program-go{
+    width:38px;
+    height:38px;
+    font-size:1rem;
+  }
+
+  .portal-shortcuts{
+    padding:60px 0 70px;
+  }
+
+  .shortcut-heading{
+    display:block;
+    margin-bottom:22px;
+  }
+
+  .shortcut-heading h2{
+    max-width:20rem;
+    font-size:clamp(1.75rem,7.8vw,2.25rem);
+    line-height:1.04;
+  }
+
+  .shortcut-heading p{
+    max-width:31rem;
+    margin-top:14px;
+    font-size:.9rem;
+  }
+
+  .shortcut-grid{
+    grid-template-columns:minmax(0,1fr);
+    gap:10px;
+  }
+
+  .shortcut{
+    width:100%;
+  }
+
+  .portal-footer{
+    padding-top:28px;
+  }
+
+  .portal-footer-inner{
+    gap:14px;
+  }
+}
+
+@media(max-width:430px){
+
+  .portal-container{
+    width:calc(100% - 28px);
+  }
+
+  .portal-header-inner{
+    min-height:66px;
+  }
+
+  .portal-brand img{
+    height:42px;
+  }
+
+  .home-hero-content{
+    padding:30px 0 22px;
+  }
+
+  .home-hero h1{
+    font-size:clamp(1.95rem,9.5vw,2.38rem);
+  }
+
+  .program-heading h2{
+    font-size:clamp(1.58rem,7.7vw,1.95rem);
+  }
+
+  .program-photo{
+    aspect-ratio:4 / 3;
+  }
+}
