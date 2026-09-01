@@ -49,18 +49,9 @@
 
     launcher.className = "accessibility-launcher";
     launcher.type = "button";
-    launcher.setAttribute(
-      "aria-label",
-      "Accessibility adjustments"
-    );
-    launcher.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-    launcher.setAttribute(
-      "aria-controls",
-      "accessibility-panel"
-    );
+    launcher.setAttribute("aria-label", "Accessibility adjustments");
+    launcher.setAttribute("aria-expanded", "false");
+    launcher.setAttribute("aria-controls", "accessibility-panel");
 
     launcher.innerHTML = `
       <svg
@@ -68,17 +59,26 @@
         aria-hidden="true"
         fill="none"
         stroke="currentColor"
-        stroke-width="2.2"
+        stroke-width="2.15"
         stroke-linecap="round"
         stroke-linejoin="round"
       >
-        <circle cx="12" cy="4.5" r="2"></circle>
-        <path d="M5 8.5h14"></path>
-        <path d="M12 7v6"></path>
-        <path d="M8.5 21 12 13l3.5 8"></path>
-        <path d="M8 11 5.5 15"></path>
-        <path d="M16 11 18.5 15"></path>
+        <path d="M4 7h10"></path>
+        <path d="M18 7h2"></path>
+        <circle cx="16" cy="7" r="2"></circle>
+
+        <path d="M4 12h3"></path>
+        <path d="M11 12h9"></path>
+        <circle cx="9" cy="12" r="2"></circle>
+
+        <path d="M4 17h8"></path>
+        <path d="M16 17h4"></path>
+        <circle cx="14" cy="17" r="2"></circle>
       </svg>
+
+      <span class="accessibility-launcher-label">
+        Accessibility
+      </span>
     `;
 
     const panel = document.createElement("section");
@@ -86,9 +86,10 @@
     panel.className = "accessibility-panel";
     panel.id = "accessibility-panel";
     panel.hidden = true;
+
     panel.setAttribute(
-      "aria-label",
-      "Accessibility adjustments"
+      "aria-labelledby",
+      "accessibility-panel-title"
     );
 
     panel.innerHTML = `
@@ -99,7 +100,7 @@
             Teacher Hub
           </span>
 
-          <h2>
+          <h2 id="accessibility-panel-title">
             Accessibility adjustments
           </h2>
         </div>
@@ -156,7 +157,7 @@
       <div class="accessibility-group">
 
         <span class="accessibility-group-label">
-          Reading & navigation
+          Reading &amp; navigation
         </span>
 
         <div class="accessibility-choice-row">
