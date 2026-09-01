@@ -1,887 +1,652 @@
 /* =========================================================
    Best Buddies Canada Teacher Hub
-   Homepage + shared visual polish
-   Load AFTER portal-home.css and accessibility.css.
+   Elementary & Middle program home — cohesive visual pass
+   Load AFTER program-home.css.
+
+   Design rule:
+   Purple anchors the page. Yellow is action. Teal supports.
+   Orange is used sparingly. No floating decorative circles.
    ========================================================= */
 
-/* =========================================================
-   HEADER
-   Purple header, larger Best Buddies logo, calm white nav.
-   ========================================================= */
-.portal-header{
-  background:var(--purple,#5A3F98) !important;
-  border-top:5px solid var(--yellow,#FFD420) !important;
+.program-home-simple {
+  --bb-purple: var(--purple, #5A3F98);
+  --bb-yellow: var(--yellow, #FFD420);
+  --bb-teal: var(--teal, #8FD1C4);
+  --bb-orange: var(--orange, #F47A38);
+  --bb-ink: var(--ink, #1D1823);
+  --bb-text: var(--text, #4B4652);
+  --bb-muted: var(--muted, #6A6470);
+  --bb-line: var(--line, #E3DFE8);
+  --bb-wash: #F8F6FA;
+  --bb-lavender: #F2EEF8;
+  --bb-yellow-soft: #FFF8D8;
+  --bb-teal-soft: #EAF7F4;
+  --bb-orange-soft: #FFF0E7;
+
+  background: #fff;
+  color: var(--bb-text);
+  font-family: var(--body, "Montserrat", Arial, sans-serif);
 }
 
-.portal-header-inner{
-  min-height:86px !important;
-}
-
-.portal-brand{
-  display:flex;
-  align-items:center;
-}
-
-.portal-brand img{
-  height:76px !important;
-  width:auto !important;
-  max-height:none !important;
-}
-
-.portal-nav,
-.portal-lang,
-.site-menu summary{
-  background:#fff !important;
-}
-
-.portal-nav a,
-.portal-lang a,
-.site-menu summary{
-  color:var(--ink,#1d1823) !important;
-}
-
-.portal-lang .current{
-  background:var(--purple,#5A3F98) !important;
-  color:#fff !important;
-}
-
-/* =========================================================
-   HOME HERO
-   One balanced desktop composition.
-   ========================================================= */
-.portal-home-page .teacher-hub-hero{
-  position:relative !important;
-  overflow:hidden !important;
-  background:#f7f7f6;
-}
-
-.portal-home-page .teacher-hub-hero-grid{
-  position:relative !important;
-  display:grid !important;
-  grid-template-columns:minmax(0,.9fr) minmax(520px,1.1fr) !important;
-  gap:clamp(42px,5vw,88px) !important;
-  align-items:stretch !important;
-  min-height:620px !important;
-}
-
-.portal-home-page .hub-copy-column{
-  position:relative;
-  z-index:4;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-  gap:clamp(42px,4.5vw,64px);
-  max-width:620px;
-  padding:34px 0 108px;
-}
-
-.portal-home-page .hub-intro,
-.portal-home-page .hub-message{
-  position:relative !important;
-  z-index:auto !important;
-  width:100% !important;
-  max-width:none !important;
-  margin:0 !important;
-}
-
-.portal-home-page .hub-intro h1{
-  margin:0 !important;
-  font-family:var(--display,"League Spartan",Arial,sans-serif) !important;
-  font-size:clamp(3.3rem,4.1vw,4.35rem) !important;
-  line-height:.92 !important;
-  letter-spacing:-.035em;
-}
-
-.portal-home-page .hub-title-accent{
-  margin:20px 0 14px !important;
-}
-
-.portal-home-page .hub-intro p{
-  max-width:570px !important;
-  margin:0 !important;
-  line-height:1.45 !important;
-}
-
-.portal-home-page .hub-message h2{
-  margin:0 0 24px !important;
-  max-width:610px !important;
-  font-family:var(--display,"League Spartan",Arial,sans-serif) !important;
-  font-size:clamp(3.05rem,3.7vw,4rem) !important;
-  line-height:.94 !important;
-  letter-spacing:-.028em;
-}
-
-.portal-home-page .hub-message h2 span{
-  display:block;
-}
-
-.portal-home-page .hub-message .hero-copy{
-  max-width:560px !important;
-  margin:0 0 10px !important;
-  line-height:1.55 !important;
-}
-
-.portal-home-page .hub-message .hero-thanks{
-  margin:0 !important;
-}
-
-.portal-home-page .hub-hero-art{
-  position:relative !important;
-  z-index:3 !important;
-  align-self:stretch !important;
-  display:flex !important;
-  align-items:flex-end !important;
-  justify-content:flex-end !important;
-  min-width:0;
-  margin:0 !important;
-  transform:none !important;
-}
-
-.portal-home-page .hub-hero-art img{
-  display:block !important;
-  width:min(100%,760px) !important;
-  max-width:760px !important;
-  height:auto !important;
-  margin:0 0 -34px auto !important;
-  transform:none !important;
-}
-
-/* Foreground wave: it deliberately covers the bottom edge of the art. */
-.portal-home-page .teacher-hub-hero::after{
-  content:"";
-  position:absolute;
-  left:-2px;
-  right:-2px;
-  bottom:-1px;
-  height:94px;
-  z-index:8;
-  pointer-events:none;
-  background-repeat:no-repeat;
-  background-position:center bottom;
-  background-size:100% 100%;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 100' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 57 C135 40 218 66 350 52 C485 38 565 66 700 52 C835 38 915 66 1050 52 C1185 38 1265 65 1400 52 C1500 42 1555 55 1600 51 L1600 100 L0 100 Z'/%3E%3C/svg%3E");
+/* Remove decorative leftovers from earlier passes. */
+.program-home-simple .simple-program-hero::before,
+.program-home-simple .simple-program-hero::after,
+.program-home-simple .simple-routes::before,
+.program-home-simple .simple-routes::after,
+.program-home-simple .quick-help::before,
+.program-home-simple .quick-help::after,
+.program-home-simple .simple-current-month-inner::before,
+.program-home-simple .simple-current-month-inner::after,
+.program-home-simple .program-support-inner::before,
+.program-home-simple .program-support-inner::after,
+.program-home-simple .simple-route-card::before,
+.program-home-simple .simple-route-card::after,
+.program-home-simple .quick-help-link::before,
+.program-home-simple .quick-help-link::after,
+.program-home-simple .program-title-swoosh {
+  content: none !important;
+  display: none !important;
 }
 
 /* =========================================================
-   CHOOSE YOUR PROGRAM
-   No decorative arrows. The whole card is the action.
+   HERO
    ========================================================= */
-.portal-home-page .program-heading h2{
-  display:block !important;
+.program-home-simple .simple-program-hero {
+  padding: 30px 0 48px;
+  background: linear-gradient(180deg, #FAF9FB 0%, #F8F6FA 100%);
+  overflow: hidden;
 }
 
-.portal-home-page .program-heading .down,
-.portal-home-page .program-go{
-  display:none !important;
+.program-home-simple .program-back {
+  color: var(--bb-purple);
+  font-family: var(--body, "Montserrat", Arial, sans-serif);
+  font-size: .82rem;
+  font-weight: 800;
+  text-decoration: none;
 }
 
-.portal-home-page .program-tile{
-  position:relative;
-  cursor:pointer;
-  transition:transform .18s ease, box-shadow .18s ease;
+.program-home-simple .program-back:hover,
+.program-home-simple .program-back:focus-visible {
+  text-decoration: underline;
 }
 
-.portal-home-page .program-tile:hover{
-  transform:translateY(-3px);
-  box-shadow:0 24px 46px rgba(48,31,77,.16);
+.program-home-simple .simple-program-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(390px, .88fr);
+  gap: clamp(44px, 6vw, 88px);
+  align-items: center;
+  margin-top: 26px;
 }
 
-.portal-home-page .program-tile:focus-visible{
-  outline:4px solid var(--yellow,#FFD420);
-  outline-offset:5px;
+.program-home-simple .simple-program-copy {
+  max-width: 650px;
 }
 
-.portal-home-page .program-photo img{
-  transition:transform .22s ease;
+.program-home-simple .program-home-kicker,
+.program-home-simple .section-kicker,
+.program-home-simple .quick-help-tag,
+.program-home-simple .simple-current-label {
+  display: block;
+  color: var(--bb-purple);
+  font-family: var(--body, "Montserrat", Arial, sans-serif);
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .075em;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
-.portal-home-page .program-tile:hover .program-photo img{
-  transform:scale(1.018);
+.program-home-simple .simple-program-copy h1 {
+  position: relative;
+  max-width: 620px;
+  margin: 10px 0 0;
+  padding-bottom: 18px;
+  color: var(--bb-ink);
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(2.55rem, 3.7vw, 3.85rem);
+  font-weight: 850;
+  line-height: .98;
+  letter-spacing: -.028em;
 }
 
-.portal-home-page .program-overlay{
-  padding-right:28px !important;
+/* One repeatable accent mark — a short Best Buddies teal dash. */
+.program-home-simple .simple-program-copy h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 52px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--bb-teal);
 }
 
-.portal-home-page .program-open{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:max-content;
-  margin-top:12px;
-  padding:7px 13px;
-  border:2px solid var(--purple,#5A3F98);
-  border-radius:999px;
-  color:var(--purple,#5A3F98);
-  background:#fff;
-  font-family:var(--body,"Montserrat",Arial,sans-serif);
-  font-size:.74rem;
-  font-weight:800;
-  line-height:1;
-  letter-spacing:.02em;
-  text-transform:uppercase;
-  transition:background .18s ease,color .18s ease;
+.program-home-simple .simple-program-lede {
+  max-width: 620px;
+  margin: 20px 0 0;
+  color: var(--bb-muted);
+  font-size: clamp(.98rem, 1.08vw, 1.08rem);
+  line-height: 1.65;
 }
 
-.portal-home-page .program-tile:hover .program-open,
-.portal-home-page .program-tile:focus-visible .program-open{
-  background:var(--purple,#5A3F98);
-  color:#fff;
+.program-home-simple .simple-program-note {
+  display: inline-block;
+  margin: 16px 0 0;
+  padding: 7px 12px;
+  border: 1px solid #E3DCF0;
+  border-radius: 999px;
+  background: #F4F0FA;
+  color: var(--bb-purple);
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+.program-home-simple .simple-program-photo {
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 12 / 8;
+  background: transparent;
+  border-radius: 28px 28px 72px 28px;
+}
+
+/* Cohesive offset panel — not another floating shape. */
+.program-home-simple .simple-program-photo img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 28px 28px 72px 28px;
+  box-shadow:
+    12px 12px 0 var(--bb-teal),
+    0 18px 38px rgba(48, 31, 77, .10);
 }
 
 /* =========================================================
-   QUICK DESTINATION ARROWS
+   FOUR ROUTES
    ========================================================= */
-.portal-home-page .shortcut-arrow{
-  display:grid !important;
-  place-items:center !important;
-  width:34px !important;
-  height:34px !important;
-  flex:0 0 34px !important;
-  border-radius:50% !important;
-  background:var(--purple,#5A3F98) !important;
-  color:#fff !important;
-  font-size:1.05rem !important;
-  font-weight:800 !important;
-  line-height:1 !important;
+.program-home-simple .simple-routes {
+  padding: 52px 0 58px;
+  background: #fff;
 }
 
-.portal-home-page .shortcut-arrow::before,
-.portal-home-page .shortcut-arrow::after{
-  content:none !important;
-  display:none !important;
+.program-home-simple .simple-routes h2 {
+  margin: 0 0 24px;
+  color: var(--bb-ink);
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(2rem, 2.8vw, 2.8rem);
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: -.022em;
+}
+
+.program-home-simple .simple-route-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.program-home-simple .simple-route-card {
+  --route-accent: var(--bb-purple);
+  --route-soft: var(--bb-lavender);
+
+  position: relative;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 24px 22px;
+  overflow: hidden;
+  border: 1px solid var(--bb-line);
+  border-top: 6px solid var(--route-accent);
+  border-radius: 22px 22px 48px 22px;
+  background:
+    linear-gradient(145deg, #fff 0 78%, var(--route-soft) 78% 100%);
+  color: var(--bb-ink);
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(48, 31, 77, .07);
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+
+.program-home-simple .route-calendar {
+  --route-accent: #D8B000;
+  --route-soft: var(--bb-yellow-soft);
+}
+
+.program-home-simple .route-resources {
+  --route-accent: #49AFA0;
+  --route-soft: var(--bb-teal-soft);
+}
+
+.program-home-simple .route-support {
+  --route-accent: #EF6C27;
+  --route-soft: var(--bb-orange-soft);
+}
+
+.program-home-simple .simple-route-card:hover,
+.program-home-simple .simple-route-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--route-accent);
+  box-shadow: 0 18px 38px rgba(48, 31, 77, .12);
+}
+
+.program-home-simple .simple-route-card h3 {
+  max-width: 230px;
+  margin: 0 0 9px;
+  color: var(--bb-ink);
+  font-family: var(--body, "Montserrat", Arial, sans-serif);
+  font-size: 1.08rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.program-home-simple .simple-route-card p {
+  max-width: 250px;
+  margin: 0;
+  color: var(--bb-muted);
+  font-size: .84rem;
+  line-height: 1.5;
+}
+
+.program-home-simple .route-arrow {
+  margin-top: auto;
+  align-self: flex-end;
+  color: var(--route-accent);
+  font-family: var(--body, "Montserrat", Arial, sans-serif);
+  font-size: 1.18rem;
+  font-weight: 900;
+  line-height: 1;
+  transition: transform .16s ease;
+}
+
+.program-home-simple .simple-route-card:hover .route-arrow,
+.program-home-simple .simple-route-card:focus-visible .route-arrow {
+  transform: translateX(4px);
 }
 
 /* =========================================================
-   ACCESSIBILITY LAUNCHER
+   CURRENT MONTH
    ========================================================= */
-.accessibility-launcher{
-  right:16px !important;
-  bottom:16px !important;
-  width:46px !important;
-  height:46px !important;
-  border:3px solid var(--yellow,#FFD420) !important;
-  border-radius:50% !important;
-  background:var(--purple,#5A3F98) !important;
-  color:#fff !important;
-  box-shadow:0 8px 22px rgba(32,20,56,.22) !important;
+.program-home-simple .simple-current-month {
+  padding: 8px 0 62px;
 }
 
-.accessibility-launcher svg{
-  width:23px !important;
-  height:23px !important;
+.program-home-simple .simple-current-month-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 42px;
+  overflow: hidden;
+  padding: clamp(28px, 3.5vw, 42px) clamp(30px, 4vw, 52px);
+  border-radius: 26px 26px 64px 26px;
+  border-left: 8px solid var(--bb-yellow);
+  background: var(--bb-purple);
+  color: #fff;
+  box-shadow: 0 15px 34px rgba(55, 35, 93, .12);
+}
+
+/* The same little dash used in the hero — repeated, not random. */
+.program-home-simple .simple-current-month-inner > .simple-current-copy::before {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 6px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: var(--bb-teal);
+}
+
+.program-home-simple .simple-current-copy {
+  max-width: 780px;
+}
+
+.program-home-simple .simple-current-label {
+  margin-bottom: 7px;
+  color: var(--bb-yellow);
+}
+
+.program-home-simple .simple-current-month h2 {
+  margin: 0;
+  color: #fff;
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(1.9rem, 2.8vw, 2.75rem);
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: -.018em;
+}
+
+.program-home-simple .simple-current-month p {
+  max-width: 760px;
+  margin: 12px 0 0;
+  color: rgba(255,255,255,.87);
+  font-size: .94rem;
+  line-height: 1.58;
+}
+
+.program-home-simple .simple-current-actions {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 11px;
+}
+
+.program-home-simple .simple-current-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 11px 20px;
+  border-radius: 999px;
+  background: var(--bb-yellow);
+  color: var(--bb-ink);
+  font-size: .82rem;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 6px 0 rgba(29, 24, 35, .12);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.program-home-simple .simple-current-button:hover,
+.program-home-simple .simple-current-button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 rgba(29, 24, 35, .12);
+}
+
+.program-home-simple .simple-all-months {
+  color: #fff;
+  font-size: .76rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* =========================================================
-   DESKTOP HERO CORRECTION
-   Bigger art, higher visual position, deeper foreground wave.
+   QUICK GUIDES
    ========================================================= */
-@media (min-width:1101px){
-  .portal-home-page .teacher-hub-hero-grid{
-    grid-template-columns:minmax(0,.78fr) minmax(600px,1.22fr) !important;
-    gap:clamp(24px,3vw,48px) !important;
-    min-height:575px !important;
-  }
+.program-home-simple .quick-help {
+  padding: 60px 0 64px;
+  background: #F5F2F8;
+}
 
-  .portal-home-page .hub-copy-column{
-    gap:clamp(34px,3.5vw,50px) !important;
-    padding:30px 0 94px !important;
-  }
+.program-home-simple .quick-help-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, .78fr) minmax(0, 1.55fr);
+  gap: clamp(44px, 6vw, 90px);
+  align-items: start;
+}
 
-  .portal-home-page .hub-hero-art{
-    overflow:visible !important;
-  }
+.program-home-simple .quick-help-head {
+  position: relative;
+  padding-left: 18px;
+  border-left: 6px solid var(--bb-teal);
+}
 
-  .portal-home-page .hub-hero-art img{
-    width:clamp(800px,50vw,980px) !important;
-    max-width:none !important;
-    height:auto !important;
-    margin:0 -96px -46px auto !important;
-  }
+.program-home-simple .quick-help-head .section-kicker {
+  margin-bottom: 8px;
+}
 
-  .portal-home-page .teacher-hub-hero::after{
-    height:122px !important;
-    z-index:10 !important;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 130' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 73 C132 50 225 87 360 67 C495 48 585 86 720 67 C855 48 945 86 1080 67 C1215 48 1305 84 1440 66 C1515 56 1565 64 1600 62 L1600 130 L0 130 Z'/%3E%3C/svg%3E") !important;
-  }
+.program-home-simple .quick-help-head h2 {
+  max-width: 470px;
+  margin: 0;
+  color: var(--bb-ink);
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 850;
+  line-height: .98;
+  letter-spacing: -.024em;
+}
+
+.program-home-simple .quick-help-head p {
+  max-width: 470px;
+  margin: 18px 0 0;
+  color: var(--bb-muted);
+  font-size: .94rem;
+  line-height: 1.62;
+}
+
+.program-home-simple .quick-help-all {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--bb-purple);
+  font-size: .8rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.program-home-simple .quick-help-all:hover,
+.program-home-simple .quick-help-all:focus-visible {
+  text-decoration: underline;
+}
+
+.program-home-simple .quick-help-links {
+  display: grid;
+  gap: 12px;
+}
+
+.program-home-simple .quick-help-link {
+  --guide-accent: var(--bb-purple);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 102px;
+  padding: 20px 24px;
+  border: 1px solid var(--bb-line);
+  border-left: 6px solid var(--guide-accent);
+  border-radius: 18px 18px 38px 18px;
+  background: #fff;
+  color: var(--bb-ink);
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(48,31,77,.05);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.program-home-simple .quick-help-link:nth-child(2) {
+  --guide-accent: #D8B000;
+}
+
+.program-home-simple .quick-help-link:nth-child(3) {
+  --guide-accent: #49AFA0;
+}
+
+.program-home-simple .quick-help-link:hover,
+.program-home-simple .quick-help-link:focus-visible {
+  transform: translateX(3px);
+  box-shadow: 0 13px 28px rgba(48,31,77,.09);
+}
+
+.program-home-simple .quick-help-tag {
+  margin-bottom: 3px;
+  color: var(--bb-purple);
+}
+
+.program-home-simple .quick-help-link strong {
+  display: block;
+  color: var(--bb-ink);
+  font-size: .97rem;
+  font-weight: 850;
+  line-height: 1.22;
+}
+
+.program-home-simple .quick-help-link span:not(.quick-help-tag):not(.link-arrow) {
+  display: block;
+  margin-top: 4px;
+  color: var(--bb-muted);
+  font-size: .82rem;
+  line-height: 1.45;
+}
+
+.program-home-simple .link-arrow {
+  flex: 0 0 auto;
+  color: var(--guide-accent);
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
+/* =========================================================
+   SUPPORT
+   ========================================================= */
+.program-home-simple .program-support-band {
+  padding: 56px 0;
+  background: #fff;
+}
+
+.program-home-simple .program-support-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 34px;
+  overflow: hidden;
+  padding: clamp(28px, 3.5vw, 42px) clamp(30px, 4vw, 50px);
+  border-radius: 24px 24px 58px 24px;
+  border-right: 10px solid var(--bb-yellow);
+  background: var(--bb-purple);
+  color: #fff;
+}
+
+.program-home-simple .program-support-inner h2 {
+  margin: 0;
+  color: #fff;
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(1.9rem, 2.8vw, 2.8rem);
+  font-weight: 850;
+  line-height: 1;
+}
+
+.program-home-simple .program-support-inner p {
+  max-width: 760px;
+  margin: 11px 0 0;
+  color: rgba(255,255,255,.86);
+  font-size: .92rem;
+  line-height: 1.55;
+}
+
+.program-home-simple .program-support-button {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 11px 19px;
+  border-radius: 999px;
+  background: var(--bb-yellow);
+  color: var(--bb-ink);
+  font-size: .8rem;
+  font-weight: 900;
+  text-decoration: none;
 }
 
 /* =========================================================
    RESPONSIVE
    ========================================================= */
-@media (max-width:1100px){
-  .portal-home-page .teacher-hub-hero-grid{
-    grid-template-columns:minmax(0,.95fr) minmax(430px,1.05fr) !important;
-    gap:32px !important;
+@media (max-width: 1180px) {
+  .program-home-simple .simple-program-hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, .92fr);
+    gap: 38px;
   }
 
-  .portal-home-page .hub-hero-art img{
-    width:min(100%,650px) !important;
-  }
-}
-
-@media (max-width:900px){
-  .portal-home-page .teacher-hub-hero-grid{
-    display:block !important;
-    min-height:0 !important;
+  .program-home-simple .simple-program-copy h1 {
+    font-size: clamp(2.35rem, 4.2vw, 3.25rem);
   }
 
-  .portal-home-page .hub-copy-column{
-    max-width:none;
-    padding:38px 0 24px;
-    gap:36px;
+  .program-home-simple .simple-route-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .portal-home-page .hub-hero-art{
-    display:block !important;
-  }
-
-  .portal-home-page .hub-hero-art img{
-    width:min(100%,700px) !important;
-    margin:0 auto -16px !important;
-  }
-
-  .portal-home-page .teacher-hub-hero::after{
-    height:58px;
+  .program-home-simple .simple-route-card {
+    min-height: 154px;
   }
 }
 
-@media (max-width:760px){
-  .portal-brand img{
-    height:62px !important;
+@media (max-width: 940px) {
+  .program-home-simple .simple-program-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
   }
 
-  .portal-header-inner{
-    min-height:76px !important;
+  .program-home-simple .simple-program-copy {
+    max-width: 720px;
   }
 
-  .portal-home-page .hub-intro h1{
-    font-size:clamp(2.7rem,13vw,3.7rem) !important;
+  .program-home-simple .simple-program-photo {
+    max-width: 690px;
   }
 
-  .portal-home-page .hub-message h2{
-    font-size:clamp(2.55rem,12vw,3.45rem) !important;
+  .program-home-simple .simple-current-month-inner,
+  .program-home-simple .program-support-inner {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
-  .portal-home-page .program-open{
-    margin-top:9px;
+  .program-home-simple .simple-current-actions {
+    align-items: flex-start;
   }
 
-  .accessibility-launcher{
-    right:12px !important;
-    bottom:12px !important;
-    width:44px !important;
-    height:44px !important;
-  }
-}
-
-@media (prefers-reduced-motion:reduce){
-  .portal-home-page .program-tile,
-  .portal-home-page .program-photo img,
-  .portal-home-page .program-open{
-    transition:none !important;
+  .program-home-simple .quick-help-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
-  .portal-home-page .program-tile:hover,
-  .portal-home-page .program-tile:hover .program-photo img{
-    transform:none !important;
+  .program-home-simple .quick-help-head {
+    max-width: 650px;
   }
 }
 
-
-/* =========================================================
-   HERO LAYOUT R6
-   Correct structure: one copy column + one art column.
-   ========================================================= */
-
-@media (min-width:1101px){
-
-  .portal-home-page .teacher-hub-hero{
-    min-height:0 !important;
+@media (max-width: 680px) {
+  .program-home-simple .simple-program-hero {
+    padding: 24px 0 38px;
   }
 
-  .portal-home-page .teacher-hub-hero-grid{
-    display:grid !important;
-    grid-template-columns:minmax(0,.82fr) minmax(650px,1.18fr) !important;
-    grid-template-rows:1fr !important;
-    gap:clamp(22px,2.8vw,48px) !important;
-    align-items:stretch !important;
-    min-height:535px !important;
-    height:535px !important;
-    padding-top:0 !important;
-    padding-bottom:0 !important;
+  .program-home-simple .simple-program-hero-grid {
+    margin-top: 20px;
   }
 
-  .portal-home-page .hub-copy-column{
-    grid-column:1 !important;
-    grid-row:1 !important;
-    position:relative !important;
-    z-index:5 !important;
-    display:flex !important;
-    flex-direction:column !important;
-    justify-content:center !important;
-    gap:38px !important;
-    max-width:610px !important;
-    padding:26px 0 94px !important;
+  .program-home-simple .simple-program-copy h1 {
+    font-size: clamp(2.25rem, 11vw, 3rem);
   }
 
-  .portal-home-page .hub-intro,
-  .portal-home-page .hub-message{
-    position:static !important;
-    width:100% !important;
-    margin:0 !important;
+  .program-home-simple .simple-program-lede {
+    font-size: .96rem;
   }
 
-  .portal-home-page .hub-intro h1{
-    font-size:clamp(3.05rem,3.7vw,4rem) !important;
+  .program-home-simple .simple-route-grid {
+    grid-template-columns: 1fr;
   }
 
-  .portal-home-page .hub-title-accent{
-    margin:15px 0 11px !important;
+  .program-home-simple .simple-route-card {
+    min-height: 145px;
   }
 
-  .portal-home-page .hub-intro p{
-    max-width:545px !important;
+  .program-home-simple .simple-current-month-inner,
+  .program-home-simple .program-support-inner {
+    padding: 26px 24px;
+    border-radius: 22px 22px 46px 22px;
   }
 
-  .portal-home-page .hub-message h2{
-    max-width:600px !important;
-    margin-bottom:19px !important;
-    font-size:clamp(2.75rem,3.25vw,3.55rem) !important;
-    line-height:.96 !important;
+  .program-home-simple .simple-current-button,
+  .program-home-simple .program-support-button {
+    width: 100%;
   }
 
-  .portal-home-page .hub-message .hero-copy{
-    max-width:555px !important;
-    margin-bottom:9px !important;
+  .program-home-simple .quick-help {
+    padding: 48px 0 52px;
   }
 
-  .portal-home-page .hub-hero-art{
-    grid-column:2 !important;
-    grid-row:1 !important;
-    position:relative !important;
-    z-index:3 !important;
-    display:block !important;
-    align-self:stretch !important;
-    justify-self:stretch !important;
-    width:auto !important;
-    min-width:0 !important;
-    height:535px !important;
-    min-height:0 !important;
-    overflow:visible !important;
-    margin:0 !important;
-  }
-
-  /* Large and intentionally high. The lower teal/image area disappears
-     behind the white wave instead of ending on a straight edge. */
-  .portal-home-page .hub-hero-art img{
-    position:absolute !important;
-    right:-105px !important;
-    top:-16px !important;
-    bottom:auto !important;
-    width:clamp(830px,51vw,970px) !important;
-    max-width:none !important;
-    height:auto !important;
-    margin:0 !important;
-    transform:none !important;
-  }
-
-  .portal-home-page .teacher-hub-hero::after{
-    left:-2px !important;
-    right:-2px !important;
-    bottom:-1px !important;
-    height:100px !important;
-    z-index:12 !important;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 110' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 58 C130 78 225 37 360 58 C495 78 585 38 720 57 C855 76 945 39 1080 57 C1215 75 1305 40 1440 56 C1515 64 1565 61 1600 56 L1600 110 L0 110 Z'/%3E%3C/svg%3E") !important;
+  .program-home-simple .quick-help-link {
+    padding: 18px 18px;
   }
 }
 
-
-/* Tablet also uses the corrected wrapper but stacks cleanly. */
-@media (min-width:761px) and (max-width:1100px){
-
-  .portal-home-page .teacher-hub-hero-grid{
-    display:flex !important;
-    flex-direction:column !important;
-    min-height:0 !important;
-  }
-
-  .portal-home-page .hub-copy-column{
-    order:1;
-    max-width:none !important;
-    padding:34px 0 14px !important;
-    gap:30px !important;
-  }
-
-  .portal-home-page .hub-hero-art{
-    order:2;
-    width:100% !important;
-    height:auto !important;
-    min-height:0 !important;
-  }
-
-  .portal-home-page .hub-hero-art img{
-    position:relative !important;
-    inset:auto !important;
-    display:block !important;
-    width:min(108%,820px) !important;
-    max-width:none !important;
-    margin:-16px auto -30px !important;
-  }
-
-  .portal-home-page .teacher-hub-hero::after{
-    z-index:12 !important;
-    height:68px !important;
-  }
-}
-
-
-/* Mobile keeps the compact title/copy/image flow. */
-@media (max-width:760px){
-
-  .portal-home-page .teacher-hub-hero-grid{
-    display:flex !important;
-    flex-direction:column !important;
-  }
-
-  .portal-home-page .hub-copy-column{
-    order:1;
-    max-width:none !important;
-    padding:28px 0 8px !important;
-    gap:28px !important;
-  }
-
-  .portal-home-page .hub-hero-art{
-    order:2;
-    width:100% !important;
-    height:auto !important;
-  }
-
-  .portal-home-page .hub-hero-art img{
-    position:relative !important;
-    inset:auto !important;
-    width:122% !important;
-    max-width:none !important;
-    margin:-8px 0 -24px -7% !important;
-  }
-
-  .portal-home-page .teacher-hub-hero::after{
-    z-index:12 !important;
-    height:46px !important;
-  }
-}
-
-
-/* =========================================================
-   HERO COPY WRAP R7
-   Intentional desktop line breaks to reduce hero height.
-   ========================================================= */
-
-.portal-home-page .hero-statement .hero-line{
-  display:block !important;
-  white-space:nowrap;
-}
-
-.portal-home-page .hero-statement .hero-friendship{
-  display:inline !important;
-  color:var(--purple,#5A3F98) !important;
-}
-
-.portal-home-page .hero-statement .hero-black{
-  display:inline !important;
-  color:var(--ink,#1d1823) !important;
-}
-
-@media (min-width:1101px){
-
-  .portal-home-page .hub-copy-column{
-    gap:31px !important;
-    padding-bottom:82px !important;
-  }
-
-  .portal-home-page .hub-message h2{
-    max-width:690px !important;
-    margin-bottom:17px !important;
-    font-size:clamp(2.7rem,3.15vw,3.48rem) !important;
-    line-height:.96 !important;
-  }
-
-  .portal-home-page .hub-message .hero-copy{
-    max-width:none !important;
-    width:max-content !important;
-    white-space:nowrap !important;
-    margin-bottom:8px !important;
-    font-size:.93rem !important;
-  }
-
-  .portal-home-page .hub-message .hero-thanks{
-    white-space:nowrap !important;
-  }
-}
-
-/* Let tablet/mobile wrap naturally instead of forcing desktop lines. */
-@media (max-width:1100px){
-
-  .portal-home-page .hero-statement .hero-line{
-    white-space:normal;
-  }
-
-  .portal-home-page .hub-message .hero-copy,
-  .portal-home-page .hub-message .hero-thanks{
-    width:auto !important;
-    white-space:normal !important;
-  }
-}
-
-
-/* =========================================================
-   HERO FINAL TIGHTENING R8
-   Remove duplicate support copy and lift artwork slightly.
-   ========================================================= */
-
-@media (min-width:1101px){
-
-  .portal-home-page .hub-copy-column{
-    gap:28px !important;
-    padding-bottom:78px !important;
-  }
-
-  .portal-home-page .hub-message h2{
-    margin-bottom:15px !important;
-  }
-
-  .portal-home-page .hub-message .hero-thanks{
-    margin-top:0 !important;
-  }
-
-  /* Lift the hero art just enough to reveal more teal above the wave. */
-  .portal-home-page .hub-hero-art img{
-    top:-34px !important;
-  }
-}
-
-/* Tablet: same idea, but subtler. */
-@media (min-width:761px) and (max-width:1100px){
-  .portal-home-page .hub-hero-art img{
-    margin:-26px auto -24px !important;
-  }
-}
-
-/* Mobile: keep the copy lean; don't duplicate the support line. */
-@media (max-width:760px){
-  .portal-home-page .hub-copy-column{
-    gap:24px !important;
-  }
-
-  .portal-home-page .hub-message h2{
-    margin-bottom:12px !important;
-  }
-}
-
-
-/* =========================================================
-   R9 MOBILE HERO + PURPLE HEADER LOGO
-   ========================================================= */
-
-@media (max-width:760px){
-
-  .portal-home-page .hub-hero-art{
-    margin-top:8px !important;
-  }
-
-  .portal-home-page .hub-hero-art img{
-    width:114% !important;
-    margin:6px 0 -20px -4% !important;
-  }
-}
-
-@media (max-width:430px){
-
-  .portal-home-page .hub-hero-art{
-    margin-top:6px !important;
-  }
-
-  .portal-home-page .hub-hero-art img{
-    width:116% !important;
-    margin:5px 0 -18px -5% !important;
-  }
-}
-
-
-/* =========================================================
-   R10 FINAL HOME POLISH
-   Hero spacing + stronger program-card affordance
-   ========================================================= */
-
-/* Give the intro copy more breathing room below the teal accent. */
-.portal-home-page .hub-title-accent{
-  margin-bottom:20px !important;
-}
-
-
-/* ---------------------------------------------------------
-   HERO ART
-   Slightly smaller and lower so heads never crowd the nav.
---------------------------------------------------------- */
-
-@media (min-width:1101px){
-
-  .portal-home-page .hub-hero-art img{
-    top:8px !important;
-    right:-80px !important;
-    width:clamp(790px,48vw,920px) !important;
-  }
-}
-
-@media (min-width:761px) and (max-width:1100px){
-
-  .portal-home-page .hub-title-accent{
-    margin-bottom:18px !important;
-  }
-
-  .portal-home-page .hub-hero-art img{
-    width:min(102%,780px) !important;
-    margin:6px auto -24px !important;
-  }
-}
-
-@media (max-width:760px){
-
-  .portal-home-page .hub-title-accent{
-    margin-bottom:15px !important;
-  }
-
-  .portal-home-page .hub-hero-art{
-    margin-top:10px !important;
-  }
-
-  .portal-home-page .hub-hero-art img{
-    width:110% !important;
-    margin:10px 0 -18px -2% !important;
-  }
-}
-
-@media (max-width:430px){
-
-  .portal-home-page .hub-hero-art{
-    margin-top:8px !important;
-  }
-
-  .portal-home-page .hub-hero-art img{
-    width:112% !important;
-    margin:9px 0 -16px -3% !important;
-  }
-}
-
-
-/* ---------------------------------------------------------
-   PROGRAM CARDS
-   The entire card remains clickable. The CTA inside makes
-   that action unmistakable and fills the white panel better.
---------------------------------------------------------- */
-
-.portal-home-page .program-overlay{
-  left:18px !important;
-  right:18px !important;
-  bottom:16px !important;
-  min-height:0 !important;
-  padding:17px 18px !important;
-  gap:22px !important;
-  align-items:center !important;
-}
-
-.portal-home-page .program-overlay > div{
-  flex:1 1 auto;
-  min-width:0;
-}
-
-.portal-home-page .program-overlay h3{
-  min-height:0 !important;
-  max-width:none !important;
-  margin:0 !important;
-  font-size:clamp(1.35rem,1.65vw,1.8rem) !important;
-  line-height:1.08 !important;
-}
-
-.portal-home-page .program-overlay > div > span:first-child{
-  margin-bottom:5px !important;
-}
-
-/* Override the generic program-overlay span rule. */
-.portal-home-page .program-overlay .program-open{
-  flex:0 0 auto;
-  display:inline-flex !important;
-  align-items:center;
-  justify-content:center;
-  gap:7px;
-  min-height:42px;
-  margin:0 !important;
-  padding:9px 15px !important;
-  border:0 !important;
-  border-radius:999px !important;
-  background:var(--purple,#5A3F98) !important;
-  color:#fff !important;
-  font-family:var(--body,"Montserrat",Arial,sans-serif) !important;
-  font-size:.72rem !important;
-  font-weight:800 !important;
-  line-height:1 !important;
-  letter-spacing:.02em !important;
-  text-transform:uppercase !important;
-  white-space:nowrap;
-  box-shadow:0 6px 14px rgba(90,63,152,.18);
-  transition:transform .18s ease,background .18s ease;
-}
-
-.portal-home-page .program-overlay .program-open > span{
-  display:inline !important;
-  margin:0 !important;
-  color:#fff !important;
-  font-size:1rem !important;
-  line-height:1 !important;
-  letter-spacing:0 !important;
-  text-transform:none !important;
-}
-
-.portal-home-page .program-tile:hover .program-open,
-.portal-home-page .program-tile:focus-visible .program-open{
-  background:#49317f !important;
-  transform:translateX(2px);
-}
-
-/* Old decorative program arrows stay gone. */
-.portal-home-page .program-go{
-  display:none !important;
-}
-
-
-/* Tablet cards still use the button to balance the white panel. */
-@media (max-width:900px){
-
-  .portal-home-page .program-overlay{
-    gap:14px !important;
-  }
-
-  .portal-home-page .program-overlay .program-open{
-    min-height:38px;
-    padding:8px 12px !important;
-    font-size:.66rem !important;
-  }
-}
-
-
-/* On narrow mobile, stack the CTA under the title so the panel
-   stays roomy without becoming an oversized empty rectangle. */
-@media (max-width:560px){
-
-  .portal-home-page .program-overlay{
-    align-items:flex-start !important;
-    flex-direction:column !important;
-    gap:10px !important;
-    padding:15px 16px !important;
-  }
-
-  .portal-home-page .program-overlay .program-open{
-    min-height:36px;
-    padding:7px 11px !important;
+@media (prefers-reduced-motion: reduce) {
+  .program-home-simple .simple-route-card,
+  .program-home-simple .route-arrow,
+  .program-home-simple .simple-current-button,
+  .program-home-simple .quick-help-link {
+    transition: none;
   }
 }
