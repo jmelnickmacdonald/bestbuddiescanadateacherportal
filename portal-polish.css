@@ -570,3 +570,65 @@
     height:46px !important;
   }
 }
+
+
+/* =========================================================
+   HERO COPY WRAP R7
+   Intentional desktop line breaks to reduce hero height.
+   ========================================================= */
+
+.portal-home-page .hero-statement .hero-line{
+  display:block !important;
+  white-space:nowrap;
+}
+
+.portal-home-page .hero-statement .hero-friendship{
+  display:inline !important;
+  color:var(--purple,#5A3F98) !important;
+}
+
+.portal-home-page .hero-statement .hero-black{
+  display:inline !important;
+  color:var(--ink,#1d1823) !important;
+}
+
+@media (min-width:1101px){
+
+  .portal-home-page .hub-copy-column{
+    gap:31px !important;
+    padding-bottom:82px !important;
+  }
+
+  .portal-home-page .hub-message h2{
+    max-width:690px !important;
+    margin-bottom:17px !important;
+    font-size:clamp(2.7rem,3.15vw,3.48rem) !important;
+    line-height:.96 !important;
+  }
+
+  .portal-home-page .hub-message .hero-copy{
+    max-width:none !important;
+    width:max-content !important;
+    white-space:nowrap !important;
+    margin-bottom:8px !important;
+    font-size:.93rem !important;
+  }
+
+  .portal-home-page .hub-message .hero-thanks{
+    white-space:nowrap !important;
+  }
+}
+
+/* Let tablet/mobile wrap naturally instead of forcing desktop lines. */
+@media (max-width:1100px){
+
+  .portal-home-page .hero-statement .hero-line{
+    white-space:normal;
+  }
+
+  .portal-home-page .hub-message .hero-copy,
+  .portal-home-page .hub-message .hero-thanks{
+    width:auto !important;
+    white-space:normal !important;
+  }
+}
