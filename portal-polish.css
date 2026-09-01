@@ -677,3 +677,32 @@
     margin-bottom:12px !important;
   }
 }
+
+
+/* =========================================================
+   R9 MOBILE HERO + PURPLE HEADER LOGO
+   ========================================================= */
+
+@media (max-width:760px){
+
+  .portal-home-page .hub-hero-art{
+    margin-top:8px !important;
+  }
+
+  .portal-home-page .hub-hero-art img{
+    width:114% !important;
+    margin:6px 0 -20px -4% !important;
+  }
+}
+
+@media (max-width:430px){
+
+  .portal-home-page .hub-hero-art{
+    margin-top:6px !important;
+  }
+
+  .portal-home-page .hub-hero-art img{
+    width:116% !important;
+    margin:5px 0 -18px -5% !important;
+  }
+}
