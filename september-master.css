@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap");
-
 /* =========================================================
    Best Buddies Canada Teacher Hub
    September master month template
@@ -101,7 +99,7 @@ body.month-master-page .portal-brand img{height:76px!important;width:auto!import
   color:var(--ink,#1d1823);
   font-family:var(--body,"Montserrat",Arial,sans-serif);
   font-size:.72rem;
-  font-weight:800;
+  font-weight:850;
   letter-spacing:.045em;
   text-transform:uppercase;
 }
@@ -147,7 +145,7 @@ body.month-master-page .portal-brand img{height:76px!important;width:auto!import
   display:block;
   color:var(--purple,#5A3F98);
   font-size:.65rem;
-  font-weight:800;
+  font-weight:850;
   letter-spacing:.055em;
   text-transform:uppercase;
 }
@@ -213,7 +211,7 @@ body.month-master-page .portal-brand img{height:76px!important;width:auto!import
   margin:0;
   color:var(--ink,#1d1823);
   font-size:1.32rem;
-  font-weight:800;
+  font-weight:850;
   line-height:1.15;
 }
 .master-jump-grid{
@@ -441,7 +439,7 @@ body.month-master-page .choice-card{box-shadow:none}
 .master-resource-drawer>summary span{
   color:var(--ink,#1d1823);
   font-size:.88rem;
-  font-weight:800;
+  font-weight:850;
 }
 .master-resource-drawer>summary small{
   display:block;
@@ -458,7 +456,7 @@ body.month-master-page .choice-card{box-shadow:none}
   background:var(--lavender,#ece9f7);
   color:var(--purple,#5A3F98);
   font-size:.66rem;
-  font-weight:800;
+  font-weight:850;
 }
 .master-resource-drawer[open]>summary strong{background:var(--purple,#5A3F98);color:#fff}
 .master-resource-drawer .resource-drawer-body{
@@ -544,7 +542,7 @@ body.month-master-page .choice-card{box-shadow:none}
   color:var(--purple,#5A3F98)!important;
   text-decoration:none;
   font-size:.75rem;
-  font-weight:800;
+  font-weight:850;
 }
 
 body.month-master-page .month-footer{background:#fff}
@@ -610,4 +608,305 @@ body.month-master-page .month-footer{background:#fff}
   font-size:.66rem;
   font-weight:900;
   letter-spacing:.02em;
+}
+
+/* =========================================================
+   SEPTEMBER BRAND PASS
+   Same visual language as the Teacher Hub home:
+   League Spartan for big moments, Montserrat for real reading,
+   Best Buddies colour used with energy but not noise.
+   ========================================================= */
+
+/* Typography: chunky only where it earns the space. */
+.master-eyebrow,
+.section-kicker,
+.master-jump-heading > span,
+.mini-calendar-head span,
+.master-jump-card small,
+.master-resource-drawer > summary small{
+  font-family:var(--body,"Montserrat",Arial,sans-serif) !important;
+  font-weight:800 !important;
+  letter-spacing:.065em !important;
+}
+
+.master-jump-heading h2,
+.master-jump-card strong,
+.essential-card strong,
+.mini-calendar-head strong{
+  font-family:var(--body,"Montserrat",Arial,sans-serif) !important;
+}
+
+.master-jump-heading h2{
+  position:relative;
+  display:inline-block;
+  font-family:var(--display,"League Spartan",Arial,sans-serif) !important;
+  font-size:clamp(2rem,2.5vw,2.75rem) !important;
+  font-weight:800 !important;
+  line-height:.96 !important;
+  letter-spacing:-.025em;
+}
+.master-jump-heading h2::after{
+  content:"";
+  display:block;
+  width:54px;
+  height:6px;
+  margin-top:10px;
+  border-radius:999px;
+  background:var(--teal,#8FD1C4);
+}
+
+/* Hero: more Best Buddies, less generic landing page. */
+.master-month-hero{
+  padding-top:30px;
+  padding-bottom:44px;
+}
+.master-month-hero::before{
+  content:"";
+  position:absolute;
+  right:12%;
+  top:54px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:var(--orange,#F37735);
+  opacity:.95;
+  pointer-events:none;
+}
+.master-title-rule{width:64px;height:7px}
+.master-hero-copy h1{
+  color:var(--purple,#5A3F98);
+  font-size:clamp(3.4rem,5.25vw,5.7rem);
+}
+.master-lede{
+  max-width:650px;
+  color:var(--text,#3f3945);
+  font-size:1.03rem;
+  font-weight:500;
+}
+
+/* Calendar: feels like a friendly note pinned to the month. */
+.mini-calendar{
+  border:0;
+  border-radius:24px 24px 54px 24px;
+  box-shadow:8px 9px 0 var(--teal,#8FD1C4),0 18px 34px rgba(48,31,77,.10);
+}
+.mini-event time{
+  font-family:var(--body,"Montserrat",Arial,sans-serif);
+  font-weight:900;
+}
+
+/* Quick routes: deliberately not three identical SaaS cards. */
+.master-jump{padding:38px 0 42px}
+.master-jump-heading{margin-bottom:23px}
+.master-jump-grid{
+  grid-template-columns:.9fr 1.12fr .98fr;
+  gap:15px;
+  align-items:stretch;
+}
+.master-jump-card{
+  min-height:154px;
+  justify-content:flex-start;
+  padding:24px 24px 20px;
+  border:0;
+  border-radius:22px 22px 54px 22px;
+  box-shadow:0 12px 24px rgba(48,31,77,.08);
+}
+.master-jump-card::after{display:none !important;content:none !important}
+.master-jump-card.essentials{
+  background:#fff;
+  box-shadow:5px 6px 0 var(--lavender,#ece9f7),0 12px 24px rgba(48,31,77,.07);
+}
+.master-jump-card.meeting{
+  background:var(--yellow,#FFD420);
+  border:0;
+  box-shadow:6px 7px 0 rgba(243,119,53,.85),0 14px 28px rgba(48,31,77,.10);
+}
+.master-jump-card.ideas{
+  background:var(--teal,#8FD1C4);
+  border:0;
+  box-shadow:6px 7px 0 rgba(90,63,152,.24),0 14px 28px rgba(48,31,77,.09);
+}
+.master-jump-card small{font-size:.64rem}
+.master-jump-card strong{
+  max-width:92%;
+  margin-top:2px;
+  font-size:1.15rem;
+  font-weight:800;
+  line-height:1.12;
+}
+.master-jump-card span{
+  max-width:92%;
+  margin-top:8px;
+  font-size:.75rem;
+  line-height:1.45;
+}
+.master-jump-card.meeting small,
+.master-jump-card.meeting .master-card-action{color:var(--purple,#5A3F98)}
+.master-jump-card.ideas small,
+.master-jump-card.ideas .master-card-action{color:#2a544d}
+.master-card-action{
+  display:inline-block;
+  width:max-content;
+  margin-top:auto;
+  padding-top:18px;
+  color:var(--purple,#5A3F98);
+  font-family:var(--body,"Montserrat",Arial,sans-serif);
+  font-size:.74rem;
+  font-weight:900;
+  line-height:1;
+}
+
+/* Essentials: a little less dashboard, a little more Best Buddies. */
+.master-essentials{
+  position:relative;
+  padding:70px 0 78px;
+  background:#fff;
+}
+.master-essentials::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:18px;
+  opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 28' preserveAspectRatio='none'%3E%3Cpath fill='%23ece9f7' d='M0 10 C180 26 310 0 500 13 C690 26 820 2 1010 13 C1200 26 1370 4 1600 13 L1600 28 L0 28 Z'/%3E%3C/svg%3E");
+  background-size:100% 100%;
+}
+.essentials-heading{margin-bottom:30px}
+.essentials-heading h2{
+  color:var(--ink,#1d1823);
+  font-size:clamp(2.7rem,3.7vw,4rem);
+}
+.essentials-heading>p{
+  max-width:380px;
+  font-size:.9rem;
+  font-weight:600;
+}
+.essentials-grid{gap:16px}
+.essential-card{
+  position:relative;
+  min-height:174px;
+  padding:24px 21px 22px;
+  border:0;
+  border-radius:20px 20px 48px 20px;
+  box-shadow:0 12px 26px rgba(48,31,77,.08);
+  overflow:hidden;
+}
+.essential-card::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:7px;
+  background:var(--purple,#5A3F98);
+}
+.essential-card:nth-child(2)::after{background:var(--teal,#8FD1C4)}
+.essential-card:nth-child(3)::after{background:var(--yellow,#FFD420)}
+.essential-card:nth-child(4)::after{background:var(--orange,#F37735)}
+.essential-number{
+  width:auto;
+  height:auto;
+  display:block;
+  margin:0 0 20px;
+  border-radius:0;
+  background:transparent !important;
+  color:var(--purple,#5A3F98) !important;
+  font-family:var(--display,"League Spartan",Arial,sans-serif);
+  font-size:1.35rem;
+  font-weight:900;
+  line-height:1;
+}
+.essential-card:nth-child(2) .essential-number{color:#418e80 !important}
+.essential-card:nth-child(3) .essential-number{color:#d6aa00 !important}
+.essential-card:nth-child(4) .essential-number{color:var(--orange,#F37735) !important}
+.essential-card strong{font-size:1rem;font-weight:800}
+.essential-card p{font-size:.78rem;line-height:1.48}
+
+.member-voice-strip{
+  position:relative;
+  grid-template-columns:250px 1fr;
+  margin-top:24px;
+  padding:22px 28px;
+  border-radius:20px 20px 48px 20px;
+  background:var(--purple,#5A3F98);
+  color:#fff;
+  overflow:hidden;
+}
+.member-voice-strip::after{
+  content:"";
+  position:absolute;
+  width:58px;
+  height:58px;
+  right:-15px;
+  bottom:-18px;
+  border-radius:50%;
+  background:var(--yellow,#FFD420);
+}
+.member-voice-strip span{
+  color:var(--yellow,#FFD420);
+  font-family:var(--display,"League Spartan",Arial,sans-serif);
+  font-size:1rem;
+  font-weight:800;
+  letter-spacing:-.01em;
+  text-transform:none;
+}
+.member-voice-strip p{
+  position:relative;
+  z-index:1;
+  color:#fff;
+  font-size:.8rem;
+  line-height:1.55;
+}
+.member-voice-strip p strong{color:#fff}
+
+/* Builder: more conversational and more obviously Best Buddies. */
+body.month-master-page .master-builder{
+  position:relative;
+  padding-top:78px;
+  background:#f6f3fb;
+}
+body.month-master-page .builder-intro h2{
+  font-family:var(--display,"League Spartan",Arial,sans-serif) !important;
+  color:var(--purple,#5A3F98) !important;
+  font-size:clamp(2.5rem,3.4vw,3.7rem) !important;
+  line-height:.95 !important;
+}
+body.month-master-page .builder-button.primary{
+  background:var(--purple,#5A3F98) !important;
+  color:#fff !important;
+  border-radius:999px !important;
+  box-shadow:5px 6px 0 var(--yellow,#FFD420) !important;
+}
+body.month-master-page .builder-button.primary:hover{
+  transform:translateY(-2px);
+}
+body.month-master-page .builder-custom{
+  border-radius:20px 20px 48px 20px;
+}
+body.month-master-page .choice-card{
+  border-radius:18px 18px 40px 18px !important;
+}
+
+/* Resources + support get a warmer finish. */
+.master-resource-drawer{
+  border:0;
+  box-shadow:0 10px 24px rgba(48,31,77,.08);
+}
+.master-support h2{font-size:clamp(2.6rem,3.4vw,3.8rem)}
+.master-support p{font-size:.88rem}
+.master-support a{
+  box-shadow:4px 5px 0 var(--yellow,#FFD420);
+}
+
+@media(max-width:980px){
+  .master-jump-grid{grid-template-columns:1fr 1fr}
+  .master-jump-card:last-child{grid-column:1/-1}
+}
+@media(max-width:700px){
+  .master-month-hero::before{display:none}
+  .master-jump-grid{grid-template-columns:1fr}
+  .master-jump-card:last-child{grid-column:auto}
+  .member-voice-strip{grid-template-columns:1fr}
 }
