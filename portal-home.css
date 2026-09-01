@@ -842,6 +842,18 @@ input:focus-visible{
   box-shadow:var(--shadow-soft);
 }
 
+/* A short accent stroke creates a visual pause before the dense calendar tool. */
+.calendar-wrap::before{
+  content:"";
+  position:absolute;
+  left:28px;
+  top:-20px;
+  width:54px;
+  height:7px;
+  border-radius:999px;
+  background:var(--yellow);
+}
+
 .calendar-bar{
   min-height:64px;
   display:flex;
@@ -1630,7 +1642,12 @@ input:focus-visible{
 }
 
 .shortcut-heading .section-label::after{
-  display:none;
+  display:block;
+  width:46px;
+  height:6px;
+  margin-top:9px;
+  border-radius:999px;
+  background:var(--teal);
 }
 
 @media(max-width:760px){
@@ -1642,5 +1659,14 @@ input:focus-visible{
 
   .home-hero h1 .hero-friendship{
     white-space:normal;
+  }
+}
+
+@media(max-width:760px){
+  .calendar-wrap::before{
+    left:20px;
+    top:-17px;
+    width:46px;
+    height:6px;
   }
 }
