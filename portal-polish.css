@@ -706,3 +706,182 @@
     margin:5px 0 -18px -5% !important;
   }
 }
+
+
+/* =========================================================
+   R10 FINAL HOME POLISH
+   Hero spacing + stronger program-card affordance
+   ========================================================= */
+
+/* Give the intro copy more breathing room below the teal accent. */
+.portal-home-page .hub-title-accent{
+  margin-bottom:20px !important;
+}
+
+
+/* ---------------------------------------------------------
+   HERO ART
+   Slightly smaller and lower so heads never crowd the nav.
+--------------------------------------------------------- */
+
+@media (min-width:1101px){
+
+  .portal-home-page .hub-hero-art img{
+    top:8px !important;
+    right:-80px !important;
+    width:clamp(790px,48vw,920px) !important;
+  }
+}
+
+@media (min-width:761px) and (max-width:1100px){
+
+  .portal-home-page .hub-title-accent{
+    margin-bottom:18px !important;
+  }
+
+  .portal-home-page .hub-hero-art img{
+    width:min(102%,780px) !important;
+    margin:6px auto -24px !important;
+  }
+}
+
+@media (max-width:760px){
+
+  .portal-home-page .hub-title-accent{
+    margin-bottom:15px !important;
+  }
+
+  .portal-home-page .hub-hero-art{
+    margin-top:10px !important;
+  }
+
+  .portal-home-page .hub-hero-art img{
+    width:110% !important;
+    margin:10px 0 -18px -2% !important;
+  }
+}
+
+@media (max-width:430px){
+
+  .portal-home-page .hub-hero-art{
+    margin-top:8px !important;
+  }
+
+  .portal-home-page .hub-hero-art img{
+    width:112% !important;
+    margin:9px 0 -16px -3% !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   PROGRAM CARDS
+   The entire card remains clickable. The CTA inside makes
+   that action unmistakable and fills the white panel better.
+--------------------------------------------------------- */
+
+.portal-home-page .program-overlay{
+  left:18px !important;
+  right:18px !important;
+  bottom:16px !important;
+  min-height:0 !important;
+  padding:17px 18px !important;
+  gap:22px !important;
+  align-items:center !important;
+}
+
+.portal-home-page .program-overlay > div{
+  flex:1 1 auto;
+  min-width:0;
+}
+
+.portal-home-page .program-overlay h3{
+  min-height:0 !important;
+  max-width:none !important;
+  margin:0 !important;
+  font-size:clamp(1.35rem,1.65vw,1.8rem) !important;
+  line-height:1.08 !important;
+}
+
+.portal-home-page .program-overlay > div > span:first-child{
+  margin-bottom:5px !important;
+}
+
+/* Override the generic program-overlay span rule. */
+.portal-home-page .program-overlay .program-open{
+  flex:0 0 auto;
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  min-height:42px;
+  margin:0 !important;
+  padding:9px 15px !important;
+  border:0 !important;
+  border-radius:999px !important;
+  background:var(--purple,#5A3F98) !important;
+  color:#fff !important;
+  font-family:var(--body,"Montserrat",Arial,sans-serif) !important;
+  font-size:.72rem !important;
+  font-weight:800 !important;
+  line-height:1 !important;
+  letter-spacing:.02em !important;
+  text-transform:uppercase !important;
+  white-space:nowrap;
+  box-shadow:0 6px 14px rgba(90,63,152,.18);
+  transition:transform .18s ease,background .18s ease;
+}
+
+.portal-home-page .program-overlay .program-open > span{
+  display:inline !important;
+  margin:0 !important;
+  color:#fff !important;
+  font-size:1rem !important;
+  line-height:1 !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+}
+
+.portal-home-page .program-tile:hover .program-open,
+.portal-home-page .program-tile:focus-visible .program-open{
+  background:#49317f !important;
+  transform:translateX(2px);
+}
+
+/* Old decorative program arrows stay gone. */
+.portal-home-page .program-go{
+  display:none !important;
+}
+
+
+/* Tablet cards still use the button to balance the white panel. */
+@media (max-width:900px){
+
+  .portal-home-page .program-overlay{
+    gap:14px !important;
+  }
+
+  .portal-home-page .program-overlay .program-open{
+    min-height:38px;
+    padding:8px 12px !important;
+    font-size:.66rem !important;
+  }
+}
+
+
+/* On narrow mobile, stack the CTA under the title so the panel
+   stays roomy without becoming an oversized empty rectangle. */
+@media (max-width:560px){
+
+  .portal-home-page .program-overlay{
+    align-items:flex-start !important;
+    flex-direction:column !important;
+    gap:10px !important;
+    padding:15px 16px !important;
+  }
+
+  .portal-home-page .program-overlay .program-open{
+    min-height:36px;
+    padding:7px 11px !important;
+  }
+}
