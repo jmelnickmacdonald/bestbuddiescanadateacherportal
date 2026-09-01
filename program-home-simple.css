@@ -1,0 +1,411 @@
+/* =========================================================
+   Best Buddies Canada Teacher Hub
+   Elementary & Middle program home — simplified route page
+   Load AFTER program-home.css.
+   ========================================================= */
+
+.program-home-simple {
+  background: #fff;
+}
+
+/* ---------------------------------------------------------
+   HERO — calmer, smaller, same typography as Teacher Hub
+   --------------------------------------------------------- */
+.simple-program-hero {
+  padding: 30px 0 46px;
+  background: linear-gradient(180deg, var(--wash, #f7f6f9) 0%, #fff 92%);
+}
+
+.simple-program-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, .82fr);
+  gap: clamp(42px, 6vw, 86px);
+  align-items: center;
+  margin-top: 24px;
+}
+
+.simple-program-copy {
+  max-width: 690px;
+}
+
+.simple-program-copy h1 {
+  max-width: 640px;
+  margin: 10px 0 0;
+  color: var(--ink, #1d1823);
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(2.65rem, 4.2vw, 4.35rem);
+  font-weight: 850;
+  line-height: .98;
+  letter-spacing: -.03em;
+}
+
+.simple-program-lede {
+  max-width: 655px;
+  margin: 22px 0 0;
+  color: var(--muted, #625c68);
+  font-family: var(--body, "Montserrat", Arial, sans-serif);
+  font-size: clamp(.98rem, 1.1vw, 1.08rem);
+  line-height: 1.65;
+}
+
+.simple-program-note {
+  margin: 12px 0 0;
+  color: var(--purple, #5A3F98);
+  font-size: .84rem;
+  font-weight: 800;
+}
+
+.simple-program-photo {
+  overflow: hidden;
+  aspect-ratio: 12 / 8;
+  border-radius: 28px 28px 72px 28px;
+  background: var(--lavender, #ece9f7);
+  box-shadow: var(--shadow-soft, 0 14px 34px rgba(48,31,77,.10));
+}
+
+.simple-program-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Kill the old decorative swoosh if older markup/cache leaks through. */
+.program-home-simple .program-title-swoosh {
+  display: none !important;
+}
+
+/* ---------------------------------------------------------
+   ONE QUESTION + FOUR ROUTES
+   --------------------------------------------------------- */
+.simple-routes {
+  padding: 48px 0 54px;
+}
+
+.simple-routes h2 {
+  margin: 0 0 24px;
+  color: var(--ink, #1d1823);
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: -.025em;
+}
+
+.simple-route-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.simple-route-card {
+  position: relative;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px 22px;
+  overflow: hidden;
+  border: 1px solid var(--line, #ddd9e3);
+  border-radius: 22px 22px 50px 22px;
+  background: #fff;
+  color: var(--ink, #1d1823);
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(48,31,77,.045);
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+
+.simple-route-card:hover,
+.simple-route-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: #c8bed8;
+  box-shadow: 0 17px 36px rgba(48,31,77,.10);
+}
+
+.simple-route-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 58px;
+  height: 6px;
+  border-radius: 0 0 999px 0;
+  background: var(--purple, #5A3F98);
+}
+
+.route-calendar .simple-route-accent {
+  background: var(--yellow, #FFD420);
+}
+
+.route-resources .simple-route-accent {
+  background: var(--teal, #8FD1C4);
+}
+
+.route-support .simple-route-accent {
+  background: var(--orange, #ff7a32);
+}
+
+.simple-route-card h3 {
+  margin: 11px 0 8px;
+  color: var(--ink, #1d1823);
+  font-family: var(--body, "Montserrat", Arial, sans-serif);
+  font-size: 1.08rem;
+  font-weight: 850;
+  line-height: 1.18;
+}
+
+.simple-route-card p {
+  margin: 0;
+  color: var(--muted, #625c68);
+  font-size: .83rem;
+  line-height: 1.5;
+}
+
+.simple-route-link {
+  margin-top: auto;
+  padding-top: 20px;
+  color: var(--purple, #5A3F98);
+  font-size: .78rem;
+  font-weight: 850;
+}
+
+/* ---------------------------------------------------------
+   CURRENT MONTH — clearly different from Playbook/Resources
+   --------------------------------------------------------- */
+.simple-current-month {
+  padding: 16px 0 50px;
+}
+
+.simple-current-month-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 34px;
+  padding: clamp(25px, 3vw, 34px);
+  border-radius: 26px 26px 64px 26px;
+  background: var(--purple, #5A3F98);
+  color: #fff;
+}
+
+.simple-current-copy {
+  max-width: 780px;
+}
+
+.simple-current-label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--yellow, #FFD420);
+  font-size: .7rem;
+  font-weight: 850;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.simple-current-month h2 {
+  margin: 0;
+  color: #fff;
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+  font-weight: 850;
+  line-height: 1;
+}
+
+.simple-current-month p {
+  max-width: 700px;
+  margin: 10px 0 0;
+  color: rgba(255,255,255,.85);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+.simple-current-button {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 17px;
+  border-radius: 999px;
+  background: var(--yellow, #FFD420);
+  color: var(--ink, #1d1823);
+  font-size: .8rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------
+   MONTHS — compact navigation, not another wall of cards
+   --------------------------------------------------------- */
+.simple-roadmap {
+  padding: 12px 0 54px;
+}
+
+.simple-roadmap-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.simple-roadmap-heading h2 {
+  margin: 7px 0 0;
+  color: var(--ink, #1d1823);
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 850;
+  line-height: 1;
+}
+
+.simple-roadmap-heading p {
+  max-width: 430px;
+  margin: 0;
+  color: var(--muted, #625c68);
+  font-size: .84rem;
+  line-height: 1.5;
+}
+
+.simple-month-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-top: 1px solid var(--line, #ddd9e3);
+  border-bottom: 1px solid var(--line, #ddd9e3);
+}
+
+.simple-month-link {
+  position: relative;
+  min-height: 116px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 18px 17px;
+  border-right: 1px solid var(--line, #ddd9e3);
+  background: #fff;
+  color: var(--ink, #1d1823);
+  text-decoration: none;
+  transition: background .15s ease;
+}
+
+.simple-month-link:last-child {
+  border-right: 0;
+}
+
+.simple-month-link:hover,
+.simple-month-link:focus-visible {
+  background: var(--wash, #f7f6f9);
+}
+
+.simple-month-link.current {
+  background: var(--yellow-soft, #fff5bd);
+}
+
+.simple-month-link > span {
+  color: var(--purple, #5A3F98);
+  font-size: .67rem;
+  font-weight: 850;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.simple-month-link strong {
+  color: var(--ink, #1d1823);
+  font-size: .88rem;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.simple-month-link small {
+  margin-top: auto;
+  color: var(--purple, #5A3F98);
+  font-size: .66rem;
+  font-weight: 800;
+}
+
+.simple-later-months {
+  margin: 14px 0 0;
+  color: var(--muted, #625c68);
+  font-size: .78rem;
+}
+
+/* ---------------------------------------------------------
+   Tone down inherited section headings on this page
+   --------------------------------------------------------- */
+.program-home-simple .quick-help-head h2 {
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  line-height: 1;
+}
+
+.program-home-simple .program-support-inner h2 {
+  font-size: clamp(1.85rem, 2.7vw, 2.7rem);
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .simple-route-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .simple-month-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-bottom: 0;
+  }
+
+  .simple-month-link {
+    border-bottom: 1px solid var(--line, #ddd9e3);
+  }
+}
+
+@media (max-width: 900px) {
+  .simple-program-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .simple-program-photo {
+    max-width: 720px;
+  }
+
+  .simple-current-month-inner,
+  .simple-roadmap-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 680px) {
+  .simple-program-hero {
+    padding-top: 24px;
+  }
+
+  .simple-program-copy h1 {
+    font-size: clamp(2.35rem, 12vw, 3.3rem);
+  }
+
+  .simple-route-grid,
+  .simple-month-list {
+    grid-template-columns: 1fr;
+  }
+
+  .simple-month-list {
+    border-bottom: 1px solid var(--line, #ddd9e3);
+  }
+
+  .simple-month-link {
+    min-height: 94px;
+    border-right: 0;
+  }
+
+  .simple-route-card {
+    min-height: 160px;
+  }
+
+  .simple-current-button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .simple-route-card,
+  .simple-month-link {
+    transition: none;
+  }
+}
