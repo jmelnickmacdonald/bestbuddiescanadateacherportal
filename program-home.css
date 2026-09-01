@@ -1,0 +1,802 @@
+/* =========================================================
+   Best Buddies Canada Teacher Hub
+   Program home + Chapter Playbook overview
+   Load after portal-home.css, accessibility.css, portal-polish.css.
+   ========================================================= */
+
+.program-home-page,
+.playbook-page {
+  background: var(--white, #fff);
+  color: var(--text, #3f3945);
+  font-family: var(--body, "Montserrat", Arial, sans-serif);
+}
+
+/* --- shared small links --------------------------------- */
+.program-back,
+.playbook-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--purple, #5A3F98);
+  font-size: .82rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.program-back:hover,
+.program-back:focus-visible,
+.playbook-back:hover,
+.playbook-back:focus-visible {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   PROGRAM HERO
+   ========================================================= */
+.program-home-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 34px 0 52px;
+  background: linear-gradient(180deg, var(--wash, #f7f6f9) 0%, #fff 92%);
+}
+
+.program-home-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(330px, .82fr);
+  gap: clamp(38px, 5vw, 76px);
+  align-items: center;
+  margin-top: 22px;
+}
+
+.program-home-kicker,
+.section-kicker,
+.fork-eyebrow,
+.quick-help-tag,
+.playbook-kicker,
+.playbook-step-num {
+  display: block;
+  color: var(--purple, #5A3F98);
+  font-family: var(--body, "Montserrat", Arial, sans-serif);
+  font-size: .71rem;
+  font-weight: 850;
+  letter-spacing: .075em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.program-title-wrap {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.program-home-hero h1 {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 10px 0 0;
+  color: var(--ink, #1d1823);
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(3.1rem, 5vw, 5.35rem);
+  font-weight: 850;
+  line-height: .91;
+  letter-spacing: -.035em;
+}
+
+.program-home-hero h1 .purple {
+  color: var(--purple, #5A3F98);
+}
+
+/* One playful black mark. Enough personality, not decoration everywhere. */
+.program-title-swoosh {
+  position: absolute;
+  z-index: 1;
+  left: 13%;
+  bottom: -14px;
+  width: 54%;
+  height: 25px;
+  border-bottom: 6px solid #171319;
+  border-radius: 50%;
+  transform: rotate(-2deg) skewX(-13deg);
+  pointer-events: none;
+}
+
+.program-title-swoosh::after {
+  content: "";
+  position: absolute;
+  right: -24px;
+  bottom: 0;
+  width: 43px;
+  height: 13px;
+  border-bottom: 5px solid #171319;
+  border-radius: 50%;
+  transform: rotate(8deg);
+}
+
+.program-home-lede {
+  max-width: 675px;
+  margin: 30px 0 0;
+  color: var(--muted, #625c68);
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 1.65;
+}
+
+.program-home-note {
+  margin: 12px 0 0;
+  color: var(--purple, #5A3F98);
+  font-size: .86rem;
+  font-weight: 750;
+}
+
+.program-home-photo {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 12 / 8;
+  border-radius: 30px 30px 84px 30px;
+  background: var(--lavender, #ece9f7);
+  box-shadow: var(--shadow-soft, 0 14px 34px rgba(48,31,77,.10));
+}
+
+.program-home-photo::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  bottom: 24px;
+  width: 96px;
+  height: 24px;
+  border-top: 5px solid var(--yellow, #FFD420);
+  border-radius: 50%;
+  transform: rotate(-11deg);
+  opacity: .95;
+}
+
+.program-home-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================================================
+   PRIMARY FORK
+   Only two primary decisions.
+   ========================================================= */
+.program-start {
+  padding: 50px 0 24px;
+}
+
+.program-section-intro {
+  max-width: 780px;
+  margin-bottom: 24px;
+}
+
+.program-section-intro h2,
+.program-roadmap-head h2,
+.quick-help-head h2,
+.playbook-hero h1,
+.playbook-steps-head h2 {
+  margin: 8px 0 0;
+  color: var(--ink, #1d1823);
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-weight: 850;
+  line-height: .95;
+  letter-spacing: -.025em;
+}
+
+.program-section-intro h2,
+.program-roadmap-head h2,
+.quick-help-head h2,
+.playbook-steps-head h2 {
+  font-size: clamp(2.2rem, 3.6vw, 3.65rem);
+}
+
+.program-fork-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.program-fork-card {
+  position: relative;
+  min-height: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+  padding: clamp(24px, 3vw, 34px);
+  border: 2px solid transparent;
+  border-radius: 30px 30px 78px 30px;
+  text-decoration: none;
+  transition: transform .17s ease, box-shadow .17s ease;
+}
+
+.program-fork-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 10px -8px -8px 10px;
+  border-radius: inherit;
+}
+
+.program-fork-card:hover,
+.program-fork-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow, 0 24px 56px rgba(48,31,77,.15));
+}
+
+.program-fork-card.playbook {
+  z-index: 1;
+  background: var(--purple, #5A3F98);
+  color: #fff;
+}
+
+.program-fork-card.playbook::before {
+  background: var(--yellow, #FFD420);
+}
+
+.program-fork-card.month {
+  z-index: 1;
+  border-color: #d3cbe2;
+  background: #fff;
+  color: var(--ink, #1d1823);
+}
+
+.program-fork-card.month::before {
+  background: var(--teal, #8FD1C4);
+}
+
+.program-fork-card.playbook .fork-eyebrow {
+  color: var(--yellow, #FFD420);
+}
+
+.program-fork-card h3 {
+  margin: 11px 0 9px;
+  color: inherit;
+  font-family: var(--body, "Montserrat", Arial, sans-serif);
+  font-size: clamp(1.55rem, 2.2vw, 2rem);
+  font-weight: 850;
+  line-height: 1.08;
+}
+
+.program-fork-card p {
+  max-width: 48ch;
+  margin: 0;
+  color: inherit;
+  opacity: .86;
+  font-size: .96rem;
+  line-height: 1.58;
+}
+
+.fork-cta {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 40px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--yellow, #FFD420);
+  color: var(--ink, #1d1823);
+  font-size: .79rem;
+  font-weight: 850;
+}
+
+.program-fork-card.month .fork-cta {
+  background: var(--purple, #5A3F98);
+  color: #fff;
+}
+
+/* Utility lane: deliberately not more cards. */
+.program-utility-lane {
+  display: flex;
+  align-items: center;
+  gap: 16px 26px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  padding: 18px 0 3px;
+  border-top: 1px solid var(--line, #ddd9e3);
+}
+
+.program-utility-lane > span {
+  color: var(--muted, #625c68);
+  font-size: .84rem;
+  font-weight: 700;
+}
+
+.program-utility-lane a {
+  color: var(--purple, #5A3F98);
+  font-size: .86rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.program-utility-lane a:hover,
+.program-utility-lane a:focus-visible {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   MONTH ROADMAP
+   Secondary: useful, but not the first decision.
+   ========================================================= */
+.program-roadmap {
+  padding: 54px 0 50px;
+}
+
+.program-roadmap-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 34px;
+  margin-bottom: 24px;
+}
+
+.program-roadmap-head p {
+  max-width: 475px;
+  margin: 0;
+  color: var(--muted, #625c68);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+.month-roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.month-roadmap-card {
+  position: relative;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  padding: 19px;
+  border: 1px solid var(--line, #ddd9e3);
+  border-radius: 22px 22px 54px 22px;
+  background: #fff;
+  color: var(--ink, #1d1823);
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(48,31,77,.045);
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.month-roadmap-card:hover,
+.month-roadmap-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: #c4b7d9;
+  box-shadow: var(--shadow-soft, 0 14px 34px rgba(48,31,77,.10));
+}
+
+.month-roadmap-card.current {
+  border: 2px solid var(--purple, #5A3F98);
+  background: var(--yellow-soft, #fff5bd);
+  padding: 18px;
+}
+
+.month-roadmap-label {
+  color: var(--purple, #5A3F98);
+  font-size: .67rem;
+  font-weight: 850;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.month-roadmap-now {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--purple, #5A3F98);
+  color: #fff;
+  font-size: .57rem;
+  font-weight: 850;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.month-roadmap-card h3 {
+  margin: 15px 0 7px;
+  color: var(--ink, #1d1823);
+  font-family: var(--body, "Montserrat", Arial, sans-serif);
+  font-size: 1.08rem;
+  font-weight: 850;
+  line-height: 1.12;
+}
+
+.month-roadmap-card p {
+  margin: 0;
+  color: var(--muted, #625c68);
+  font-size: .78rem;
+  line-height: 1.47;
+}
+
+.month-roadmap-open {
+  margin-top: auto;
+  padding-top: 16px;
+  color: var(--purple, #5A3F98);
+  font-size: .76rem;
+  font-weight: 850;
+}
+
+.program-later-months {
+  margin: 17px 0 0;
+  color: var(--muted, #625c68);
+  font-size: .83rem;
+}
+
+/* =========================================================
+   QUICK HELP
+   Practical help, not beginner-only help.
+   ========================================================= */
+.quick-help {
+  position: relative;
+  padding: 54px 0 56px;
+  background: var(--wash, #f7f6f9);
+}
+
+.quick-help-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, .75fr) minmax(0, 1.25fr);
+  gap: clamp(34px, 5vw, 76px);
+  align-items: start;
+}
+
+.quick-help-head p {
+  max-width: 460px;
+  margin: 15px 0 0;
+  color: var(--muted, #625c68);
+  font-size: .92rem;
+  line-height: 1.58;
+}
+
+.quick-help-links {
+  display: grid;
+  gap: 10px;
+}
+
+.quick-help-link {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: center;
+  padding: 17px 19px;
+  border: 1px solid var(--line, #ddd9e3);
+  border-radius: 18px 18px 42px 18px;
+  background: #fff;
+  color: var(--ink, #1d1823);
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.quick-help-link:hover,
+.quick-help-link:focus-visible {
+  transform: translateX(3px);
+  box-shadow: var(--shadow-soft, 0 14px 34px rgba(48,31,77,.10));
+}
+
+.quick-help-link strong {
+  display: block;
+  color: var(--ink, #1d1823);
+  font-size: .92rem;
+  font-weight: 850;
+}
+
+.quick-help-link span:not(.quick-help-tag) {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted, #625c68);
+  font-size: .8rem;
+  line-height: 1.42;
+}
+
+.quick-help-link .link-arrow {
+  color: var(--purple, #5A3F98);
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
+.quick-help-all {
+  display: inline-flex;
+  margin-top: 14px;
+  color: var(--purple, #5A3F98);
+  font-size: .82rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.quick-help-all:hover,
+.quick-help-all:focus-visible {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   SUPPORT BAND
+   ========================================================= */
+.program-support-band {
+  padding: 48px 0 58px;
+}
+
+.program-support-inner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: clamp(28px, 4vw, 43px);
+  border-radius: 30px 30px 86px 30px;
+  background: var(--purple, #5A3F98);
+  color: #fff;
+}
+
+.program-support-inner::after {
+  content: "";
+  position: absolute;
+  right: -32px;
+  bottom: 11px;
+  width: 180px;
+  height: 52px;
+  border-top: 7px solid var(--yellow, #FFD420);
+  border-radius: 50%;
+  transform: rotate(-9deg);
+  opacity: .95;
+}
+
+.program-support-inner > * {
+  position: relative;
+  z-index: 2;
+}
+
+.program-support-inner h2 {
+  margin: 0 0 7px;
+  color: #fff;
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  line-height: .96;
+}
+
+.program-support-inner p {
+  max-width: 650px;
+  margin: 0;
+  color: rgba(255,255,255,.83);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+.program-support-button {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: var(--yellow, #FFD420);
+  color: var(--ink, #1d1823);
+  font-size: .82rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+/* =========================================================
+   PLAYBOOK OVERVIEW
+   ========================================================= */
+.playbook-hero {
+  padding: 35px 0 43px;
+  background: linear-gradient(180deg, var(--wash, #f7f6f9), #fff);
+}
+
+.playbook-hero-inner {
+  max-width: 920px;
+  margin-top: 23px;
+}
+
+.playbook-hero h1 {
+  font-size: clamp(3rem, 5vw, 5.25rem);
+}
+
+.playbook-hero p {
+  max-width: 750px;
+  margin: 18px 0 0;
+  color: var(--muted, #625c68);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.playbook-shortcuts {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.playbook-shortcuts a {
+  display: inline-flex;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: var(--purple, #5A3F98);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.playbook-shortcuts a.secondary {
+  border: 1px solid var(--line, #ddd9e3);
+  background: #fff;
+  color: var(--purple, #5A3F98);
+}
+
+.playbook-steps {
+  padding: 49px 0 58px;
+}
+
+.playbook-steps-head {
+  max-width: 760px;
+  margin-bottom: 25px;
+}
+
+.playbook-steps-head p {
+  margin: 14px 0 0;
+  color: var(--muted, #625c68);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+.playbook-step-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  counter-reset: playbook;
+}
+
+.playbook-step {
+  position: relative;
+  min-height: 150px;
+  padding: 22px 22px 22px 74px;
+  border: 1px solid var(--line, #ddd9e3);
+  border-radius: 22px 22px 54px 22px;
+  background: #fff;
+}
+
+.playbook-step::before {
+  counter-increment: playbook;
+  content: counter(playbook);
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--yellow, #FFD420);
+  color: var(--ink, #1d1823);
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
+.playbook-step h3 {
+  margin: 0 0 7px;
+  color: var(--ink, #1d1823);
+  font-family: var(--body, "Montserrat", Arial, sans-serif);
+  font-size: 1rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.playbook-step p {
+  margin: 0;
+  color: var(--muted, #625c68);
+  font-size: .82rem;
+  line-height: 1.5;
+}
+
+.playbook-bottom {
+  padding: 0 0 60px;
+}
+
+.playbook-bottom-inner {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.playbook-bottom-inner a {
+  padding: 17px 18px;
+  border-radius: 18px 18px 42px 18px;
+  background: var(--wash, #f7f6f9);
+  color: var(--ink, #1d1823);
+  font-size: .83rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.playbook-bottom-inner a strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--purple, #5A3F98);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1120px) {
+  .month-roadmap-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .program-home-hero-grid,
+  .quick-help-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-home-photo {
+    max-width: 720px;
+  }
+
+  .program-roadmap-head {
+    display: block;
+  }
+
+  .program-roadmap-head p {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 760px) {
+  .program-home-hero {
+    padding-top: 25px;
+  }
+
+  .program-home-hero-grid {
+    margin-top: 17px;
+    gap: 28px;
+  }
+
+  .program-home-hero h1 {
+    font-size: clamp(2.65rem, 14vw, 4rem);
+  }
+
+  .program-title-swoosh {
+    left: 8%;
+    width: 62%;
+  }
+
+  .program-fork-grid,
+  .month-roadmap-grid,
+  .playbook-step-list,
+  .playbook-bottom-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .program-fork-card {
+    min-height: 235px;
+  }
+
+  .program-roadmap {
+    padding-top: 44px;
+  }
+
+  .program-support-inner {
+    display: block;
+  }
+
+  .program-support-button {
+    margin-top: 20px;
+  }
+
+  .program-utility-lane {
+    gap: 11px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .program-fork-card,
+  .month-roadmap-card,
+  .quick-help-link {
+    transition: none;
+  }
+}
