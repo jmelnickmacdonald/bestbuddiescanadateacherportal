@@ -1,0 +1,418 @@
+/* =========================================================
+   Best Buddies Canada Teacher Hub
+   Program landing pages
+   Matches portal-home.css typography and visual language.
+   ========================================================= */
+
+.program-hub-page {
+  background: var(--white);
+  color: var(--text);
+  font-family: var(--body);
+}
+
+/* HERO --------------------------------------------------- */
+.program-hub-hero {
+  padding: 34px 0 30px;
+  background: linear-gradient(180deg, var(--wash) 0%, #fff 100%);
+  border-bottom: 1px solid var(--line);
+}
+
+.program-hub-back {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 20px;
+  color: var(--purple);
+  font-size: .84rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.program-hub-back:hover,
+.program-hub-back:focus-visible {
+  text-decoration: underline;
+}
+
+.program-hub-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(300px, .78fr);
+  gap: clamp(28px, 4vw, 58px);
+  align-items: center;
+}
+
+.program-hub-copy {
+  min-width: 0;
+}
+
+.program-hub-kicker,
+.program-section-kicker {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--purple);
+  font-family: var(--body);
+  font-size: .73rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.program-hub-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(2.65rem, 4.6vw, 4.9rem);
+  font-weight: 800;
+  line-height: .92;
+  letter-spacing: -.025em;
+}
+
+.program-hub-hero h1 span {
+  color: var(--purple);
+}
+
+.program-hub-lede {
+  max-width: 690px;
+  margin: 17px 0 0;
+  color: var(--muted);
+  font-family: var(--body);
+  font-size: clamp(.98rem, 1.2vw, 1.08rem);
+  line-height: 1.62;
+}
+
+.program-hub-skip-note {
+  display: inline-block;
+  margin-top: 13px;
+  color: var(--purple);
+  font-size: .82rem;
+  font-weight: 750;
+}
+
+.program-hub-photo {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  aspect-ratio: 12 / 8;
+  border-radius: 28px 28px 68px 28px;
+  background: var(--lavender);
+  box-shadow: var(--shadow-soft);
+}
+
+.program-hub-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* QUICK PATHS ------------------------------------------- */
+.program-fast-path {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.program-fast-link {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 17px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.program-fast-link:hover,
+.program-fast-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: #c8bddb;
+  box-shadow: var(--shadow-soft);
+}
+
+.program-fast-link.primary {
+  border-color: var(--purple);
+  background: var(--purple);
+  color: #fff;
+}
+
+.program-fast-link small {
+  display: block;
+  margin-bottom: 2px;
+  color: inherit;
+  opacity: .72;
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .045em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.program-fast-link strong {
+  display: block;
+  color: inherit;
+  font-family: var(--body);
+  font-size: .95rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.program-fast-arrow {
+  flex: 0 0 auto;
+  color: inherit;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+/* MONTHS ------------------------------------------------ */
+.program-months {
+  padding: 48px 0 42px;
+}
+
+.program-section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(290px, .72fr);
+  gap: 38px;
+  align-items: end;
+  margin-bottom: 22px;
+}
+
+.program-section-head h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(2.1rem, 3.4vw, 3.45rem);
+  font-weight: 800;
+  line-height: .96;
+  letter-spacing: -.02em;
+}
+
+.program-section-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.55;
+}
+
+.program-month-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.program-month-card {
+  position: relative;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  padding: 19px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: 0 7px 18px rgba(48,31,77,.045);
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.program-month-card:hover,
+.program-month-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: #c8bddb;
+  box-shadow: var(--shadow-soft);
+}
+
+.program-month-card.current {
+  border: 2px solid var(--purple);
+  background: var(--yellow-soft);
+  padding: 18px;
+}
+
+.program-month-label {
+  color: var(--purple);
+  font-family: var(--body);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.program-month-now {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--purple);
+  color: #fff;
+  font-size: .6rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.program-month-card h3 {
+  margin: 13px 0 7px;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -.01em;
+}
+
+.program-month-card p {
+  max-width: 34ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.48;
+}
+
+.program-month-card .card-arrow {
+  margin-top: auto;
+  padding-top: 14px;
+  color: var(--purple);
+  font-weight: 800;
+}
+
+.program-future-note {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 17px;
+  border-radius: 16px;
+  background: var(--wash);
+  color: var(--muted);
+  font-size: .84rem;
+}
+
+.program-future-note strong {
+  color: var(--ink);
+}
+
+.program-future-note a {
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* SUPPORT ----------------------------------------------- */
+.program-help-band {
+  padding: 0 0 60px;
+}
+
+.program-help-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 28px;
+  align-items: center;
+  padding: 23px 27px;
+  border-radius: 24px 24px 58px 24px;
+  background: var(--teal-soft);
+}
+
+.program-help-inner h2 {
+  margin: 0 0 5px;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.program-help-inner p {
+  max-width: 850px;
+  margin: 0;
+  color: var(--muted);
+  font-size: .89rem;
+  line-height: 1.5;
+}
+
+.program-help-inner a {
+  white-space: nowrap;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* TABLET ------------------------------------------------ */
+@media (max-width: 1050px) {
+  .program-hub-hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, .74fr);
+    gap: 30px;
+  }
+
+  .program-fast-path {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .program-month-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* MOBILE ------------------------------------------------ */
+@media (max-width: 680px) {
+  .program-hub-hero {
+    padding: 26px 0 24px;
+  }
+
+  .program-hub-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .program-hub-photo {
+    aspect-ratio: 16 / 9;
+  }
+
+  .program-fast-path,
+  .program-month-grid,
+  .program-section-head,
+  .program-help-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .program-section-head {
+    gap: 9px;
+  }
+
+  .program-month-card {
+    min-height: 0;
+  }
+
+  .program-future-note {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* PRINT / PDF -------------------------------------------
+   Keep the hero image beside the intro in browser-generated
+   PDFs instead of triggering the mobile stack at page width.
+--------------------------------------------------------- */
+@media print {
+  .program-hub-hero-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(230px, .72fr) !important;
+    gap: 24px !important;
+    align-items: center !important;
+  }
+
+  .program-hub-photo {
+    aspect-ratio: 12 / 8 !important;
+  }
+
+  .program-fast-path {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .program-month-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
