@@ -2558,3 +2558,165 @@ body{
     padding-top:32px;
   }
 }
+
+
+/* =========================================================
+   PROGRAM CHOICE + STABLE CALENDAR REFINEMENT
+========================================================= */
+
+/* Fill the open desktop space a little more now that the decorative
+   teal circle is gone. */
+.program-heading h2{
+  font-size:clamp(2.4rem,3.15vw,3.5rem);
+}
+
+.program-heading p{
+  max-width:980px;
+  font-size:1.06rem;
+}
+
+.program-overlay span:not(.program-go){
+  font-size:.78rem;
+}
+
+.program-overlay h3{
+  font-size:clamp(1.55rem,1.95vw,2.12rem);
+}
+
+/* One exact chunky arrow shape reused everywhere.
+   The glyph itself is hidden so browser/font rendering cannot change it. */
+.program-heading .down,
+.program-go{
+  position:relative;
+  flex:0 0 auto;
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--purple);
+  color:#fff;
+  font-size:0 !important;
+  line-height:1;
+}
+
+.program-heading .down::after,
+.program-go::after{
+  content:"";
+  width:22px;
+  height:18px;
+  background:#fff;
+  clip-path:polygon(
+    0 50%,
+    42% 0,
+    42% 31%,
+    100% 31%,
+    100% 69%,
+    42% 69%,
+    42% 100%
+  );
+}
+
+/* Choose Your Program arrows are the same arrow rotated downward. */
+.program-heading .down::after{
+  transform:rotate(-90deg);
+}
+
+/* Program-card arrows use that exact arrow pointing left. */
+.program-go::after{
+  transform:none;
+}
+
+/* Stable school-year strip above the live calendar. */
+.calendar-school-year-shell{
+  position:relative;
+  z-index:1;
+  margin-bottom:18px;
+}
+
+.calendar-school-year-label{
+  display:block;
+  margin-bottom:9px;
+  color:var(--purple);
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.065em;
+  text-transform:uppercase;
+}
+
+.calendar-school-year-strip{
+  display:grid;
+  grid-template-columns:repeat(10,minmax(0,1fr));
+  gap:7px;
+}
+
+.calendar-school-year-strip span{
+  min-height:42px;
+  display:grid;
+  place-items:center;
+  padding:7px 8px;
+  border-radius:999px;
+  background:#fff;
+  color:var(--purple);
+  font-size:.76rem;
+  font-weight:800;
+  text-align:center;
+  box-shadow:0 4px 12px rgba(48,31,77,.06);
+}
+
+.calendar-navigation-note{
+  margin:13px 5px 0;
+  color:var(--muted);
+  font-size:.84rem;
+  font-weight:700;
+}
+
+/* Slightly less open space above Jump Right In. */
+.portal-shortcuts{
+  padding-top:54px;
+}
+
+@media(max-width:1000px){
+  .calendar-school-year-strip{
+    grid-template-columns:repeat(5,minmax(0,1fr));
+  }
+}
+
+@media(max-width:760px){
+  .program-heading h2{
+    font-size:clamp(1.78rem,7.8vw,2.22rem);
+  }
+
+  .program-heading p{
+    font-size:.92rem;
+  }
+
+  .program-heading .down,
+  .program-go{
+    width:38px;
+    height:38px;
+  }
+
+  .program-heading .down::after,
+  .program-go::after{
+    width:19px;
+    height:16px;
+  }
+
+  .calendar-school-year-strip{
+    display:flex;
+    gap:7px;
+    overflow-x:auto;
+    padding-bottom:7px;
+    scroll-snap-type:x proximity;
+  }
+
+  .calendar-school-year-strip span{
+    flex:0 0 88px;
+    scroll-snap-align:start;
+  }
+
+  .portal-shortcuts{
+    padding-top:30px;
+  }
+}
