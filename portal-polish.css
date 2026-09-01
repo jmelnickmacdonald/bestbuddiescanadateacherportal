@@ -387,3 +387,186 @@
     transform:none !important;
   }
 }
+
+
+/* =========================================================
+   HERO LAYOUT R6
+   Correct structure: one copy column + one art column.
+   ========================================================= */
+
+@media (min-width:1101px){
+
+  .portal-home-page .teacher-hub-hero{
+    min-height:0 !important;
+  }
+
+  .portal-home-page .teacher-hub-hero-grid{
+    display:grid !important;
+    grid-template-columns:minmax(0,.82fr) minmax(650px,1.18fr) !important;
+    grid-template-rows:1fr !important;
+    gap:clamp(22px,2.8vw,48px) !important;
+    align-items:stretch !important;
+    min-height:535px !important;
+    height:535px !important;
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+  }
+
+  .portal-home-page .hub-copy-column{
+    grid-column:1 !important;
+    grid-row:1 !important;
+    position:relative !important;
+    z-index:5 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:center !important;
+    gap:38px !important;
+    max-width:610px !important;
+    padding:26px 0 94px !important;
+  }
+
+  .portal-home-page .hub-intro,
+  .portal-home-page .hub-message{
+    position:static !important;
+    width:100% !important;
+    margin:0 !important;
+  }
+
+  .portal-home-page .hub-intro h1{
+    font-size:clamp(3.05rem,3.7vw,4rem) !important;
+  }
+
+  .portal-home-page .hub-title-accent{
+    margin:15px 0 11px !important;
+  }
+
+  .portal-home-page .hub-intro p{
+    max-width:545px !important;
+  }
+
+  .portal-home-page .hub-message h2{
+    max-width:600px !important;
+    margin-bottom:19px !important;
+    font-size:clamp(2.75rem,3.25vw,3.55rem) !important;
+    line-height:.96 !important;
+  }
+
+  .portal-home-page .hub-message .hero-copy{
+    max-width:555px !important;
+    margin-bottom:9px !important;
+  }
+
+  .portal-home-page .hub-hero-art{
+    grid-column:2 !important;
+    grid-row:1 !important;
+    position:relative !important;
+    z-index:3 !important;
+    display:block !important;
+    align-self:stretch !important;
+    justify-self:stretch !important;
+    width:auto !important;
+    min-width:0 !important;
+    height:535px !important;
+    min-height:0 !important;
+    overflow:visible !important;
+    margin:0 !important;
+  }
+
+  /* Large and intentionally high. The lower teal/image area disappears
+     behind the white wave instead of ending on a straight edge. */
+  .portal-home-page .hub-hero-art img{
+    position:absolute !important;
+    right:-105px !important;
+    top:-16px !important;
+    bottom:auto !important;
+    width:clamp(830px,51vw,970px) !important;
+    max-width:none !important;
+    height:auto !important;
+    margin:0 !important;
+    transform:none !important;
+  }
+
+  .portal-home-page .teacher-hub-hero::after{
+    left:-2px !important;
+    right:-2px !important;
+    bottom:-1px !important;
+    height:100px !important;
+    z-index:12 !important;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 110' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 58 C130 78 225 37 360 58 C495 78 585 38 720 57 C855 76 945 39 1080 57 C1215 75 1305 40 1440 56 C1515 64 1565 61 1600 56 L1600 110 L0 110 Z'/%3E%3C/svg%3E") !important;
+  }
+}
+
+
+/* Tablet also uses the corrected wrapper but stacks cleanly. */
+@media (min-width:761px) and (max-width:1100px){
+
+  .portal-home-page .teacher-hub-hero-grid{
+    display:flex !important;
+    flex-direction:column !important;
+    min-height:0 !important;
+  }
+
+  .portal-home-page .hub-copy-column{
+    order:1;
+    max-width:none !important;
+    padding:34px 0 14px !important;
+    gap:30px !important;
+  }
+
+  .portal-home-page .hub-hero-art{
+    order:2;
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .portal-home-page .hub-hero-art img{
+    position:relative !important;
+    inset:auto !important;
+    display:block !important;
+    width:min(108%,820px) !important;
+    max-width:none !important;
+    margin:-16px auto -30px !important;
+  }
+
+  .portal-home-page .teacher-hub-hero::after{
+    z-index:12 !important;
+    height:68px !important;
+  }
+}
+
+
+/* Mobile keeps the compact title/copy/image flow. */
+@media (max-width:760px){
+
+  .portal-home-page .teacher-hub-hero-grid{
+    display:flex !important;
+    flex-direction:column !important;
+  }
+
+  .portal-home-page .hub-copy-column{
+    order:1;
+    max-width:none !important;
+    padding:28px 0 8px !important;
+    gap:28px !important;
+  }
+
+  .portal-home-page .hub-hero-art{
+    order:2;
+    width:100% !important;
+    height:auto !important;
+  }
+
+  .portal-home-page .hub-hero-art img{
+    position:relative !important;
+    inset:auto !important;
+    width:122% !important;
+    max-width:none !important;
+    margin:-8px 0 -24px -7% !important;
+  }
+
+  .portal-home-page .teacher-hub-hero::after{
+    z-index:12 !important;
+    height:46px !important;
+  }
+}
