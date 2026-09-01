@@ -1,23 +1,333 @@
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Best Buddies Canada Teacher Hub program calendar and month-by-month planning links for Elementary & Middle School and High School chapters.">
   <title>Program Calendar | Best Buddies Canada Teacher Hub</title>
+
   <link rel="stylesheet" href="portal-home.css">
-  <link rel="stylesheet" href="bb-theme.css">
+  <link rel="stylesheet" href="accessibility.css">
+  <script src="accessibility.js" defer></script>
 </head>
-<body>
+
+<body class="calendar-page-body">
 <a class="skip-link" href="#main-content">Skip to main content</a>
-<header class="portal-header"><div class="portal-container portal-header-inner">
-  <a class="portal-brand" href="index.html"><img src="assets/bb-reversed-logo.png" alt="Best Buddies Canada"><span class="portal-brand-copy"><strong>Teacher Hub</strong><span>Best Buddies Canada</span></span></a>
-  <div class="header-actions"><nav class="portal-nav" aria-label="Main navigation"><a href="calendar.html" aria-current="page">Calendar</a><a href="resources.html">Resources</a><a href="support.html">Support</a></nav><div class="portal-lang"><a class="current" href="#">EN</a><a href="fr.html" lang="fr-CA">FR</a></div><details class="site-menu"><summary>Menu</summary><div class="site-menu-panel"><a href="index.html">Teacher Hub home</a><a href="calendar.html">Program Calendar</a><a href="resources.html">Resources</a><a href="support.html">Support</a></div></details></div>
-</div></header>
+
+<header class="portal-header">
+  <div class="portal-container portal-header-inner">
+
+    <a class="portal-brand" href="index.html" aria-label="Best Buddies Canada Teacher Hub home">
+      <img src="assets/bb-logo.png" alt="Best Buddies Canada">
+      <span class="portal-brand-copy">
+        <strong>Teacher Hub</strong>
+        <span>Best Buddies Canada</span>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <nav class="portal-nav" aria-label="Main navigation">
+        <a href="calendar.html" aria-current="page">Calendar</a>
+        <a href="resources.html">Resources</a>
+        <a href="support.html">Support</a>
+      </nav>
+
+      <div class="portal-lang" aria-label="Language">
+        <a class="current" href="#" aria-current="page">EN</a>
+        <a href="fr.html" lang="fr-CA">FR</a>
+      </div>
+
+      <details class="site-menu">
+        <summary>Menu</summary>
+        <div class="site-menu-panel">
+          <a href="index.html">Teacher Hub home</a>
+          <a href="calendar.html" aria-current="page">Program Calendar</a>
+          <a href="resources.html">Resources</a>
+          <a href="support.html">Support</a>
+          <a href="fr.html" lang="fr-CA">Français</a>
+        </div>
+      </details>
+    </div>
+
+  </div>
+</header>
+
 <main id="main-content">
-  <section class="internal-hero"><div class="portal-container internal-hero-grid"><div><div class="section-label">Program Calendar</div><h1>Your Best Buddies <span class="purple">year</span></h1></div><p>See what’s coming up, stay organized, and plan ahead. Your program page will connect the calendar priorities to the month-by-month ideas and resources that fit your chapter.</p></div></section>
-  <section class="calendar-page"><div class="portal-container">
-    <div class="calendar-wrap"><div class="calendar-bar"><strong><span class="calendar-dot" aria-hidden="true"></span>Live Program Calendar</strong><a href="https://calendar.google.com/calendar/u/0/embed?ctz=America/Toronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com" target="_blank" rel="noopener">Open full calendar ↗</a></div><div class="calendar-frame"><iframe src="https://calendar.google.com/calendar/embed?ctz=America%2FToronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec%40group.calendar.google.com&amp;mode=AGENDA&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0" title="Best Buddies Canada Program Calendar" loading="lazy"></iframe></div></div>
-    <div class="calendar-program-links"><a class="calendar-program-link" href="elementary-middle.html"><strong>Elementary &amp; Middle School month-by-month</strong><span>→</span></a><a class="calendar-program-link" href="high-school.html"><strong>High School month-by-month</strong><span>→</span></a></div>
-  </div></section>
+
+  <!-- =====================================================
+       PAGE INTRO
+  ====================================================== -->
+
+  <section class="internal-hero calendar-hero" aria-labelledby="calendar-page-title">
+    <div class="portal-container internal-hero-grid">
+
+      <div>
+        <div class="section-label">Program Calendar</div>
+        <h1 id="calendar-page-title">
+          See what’s <span class="purple">coming up.</span>
+        </h1>
+      </div>
+
+      <p>
+        Use the live calendar for dates, reminders, and what’s ahead. When you’re ready to plan, choose your program for the monthly priorities, activities, and resources that go with it.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       PROGRAM ROUTES
+  ====================================================== -->
+
+  <section class="calendar-program-route" aria-labelledby="program-route-title">
+    <div class="portal-container">
+
+      <div class="calendar-route-intro">
+        <div>
+          <span class="section-label">Plan for your program</span>
+          <h2 id="program-route-title">Turn the calendar into a plan.</h2>
+        </div>
+
+        <p>
+          The calendar shows what’s coming. Your program page turns it into clear monthly priorities, activity ideas, and planning help for your chapter.
+        </p>
+      </div>
+
+      <div class="calendar-route-grid">
+
+        <a class="calendar-route-card" href="elementary-middle.html">
+          <span>
+            <small>Elementary &amp; Middle School</small>
+            <strong>See monthly priorities &amp; ideas</strong>
+            <em>Activities, planning help, and what to focus on next.</em>
+          </span>
+          <span class="calendar-route-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="calendar-route-card high-school" href="high-school.html">
+          <span>
+            <small>High School</small>
+            <strong>See monthly priorities &amp; ideas</strong>
+            <em>Activities, planning help, and student leadership guidance.</em>
+          </span>
+          <span class="calendar-route-arrow" aria-hidden="true">→</span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       LIVE CALENDAR
+  ====================================================== -->
+
+  <section class="calendar-page" aria-labelledby="school-year-title">
+    <div class="portal-container">
+
+      <div class="calendar-section-heading">
+        <div>
+          <span class="section-label">Live calendar</span>
+          <h2 id="school-year-title">September to June, all in one place.</h2>
+        </div>
+
+        <p>
+          Jump to any month in the school year below. The calendar is maintained by Best Buddies Canada, so this is the place to check for current dates and reminders.
+        </p>
+      </div>
+
+      <div class="calendar-months-shell">
+        <span class="calendar-months-label">Jump to a month</span>
+
+        <div class="calendar-months" role="group" aria-label="School year months">
+          <button class="calendar-month" type="button" data-school-month="8">September</button>
+          <button class="calendar-month" type="button" data-school-month="9">October</button>
+          <button class="calendar-month" type="button" data-school-month="10">November</button>
+          <button class="calendar-month" type="button" data-school-month="11">December</button>
+          <button class="calendar-month" type="button" data-school-month="0" data-next-year="true">January</button>
+          <button class="calendar-month" type="button" data-school-month="1" data-next-year="true">February</button>
+          <button class="calendar-month" type="button" data-school-month="2" data-next-year="true">March</button>
+          <button class="calendar-month" type="button" data-school-month="3" data-next-year="true">April</button>
+          <button class="calendar-month" type="button" data-school-month="4" data-next-year="true">May</button>
+          <button class="calendar-month" type="button" data-school-month="5" data-next-year="true">June</button>
+        </div>
+      </div>
+
+      <div class="calendar-wrap">
+
+        <div class="calendar-bar">
+          <div class="calendar-bar-title">
+            <span class="calendar-dot" aria-hidden="true"></span>
+            <span>
+              <small>Best Buddies Canada</small>
+              <strong>Program Calendar</strong>
+            </span>
+          </div>
+
+          <a
+            href="https://calendar.google.com/calendar/u/0/embed?ctz=America/Toronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com"
+            target="_blank"
+            rel="noopener"
+          >
+            Open full calendar ↗
+          </a>
+        </div>
+
+        <div class="calendar-frame">
+          <iframe
+            id="program-calendar"
+            src="https://calendar.google.com/calendar/embed?ctz=America%2FToronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec%40group.calendar.google.com&amp;mode=MONTH&amp;dates=20260901%2F20260930&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0"
+            title="Best Buddies Canada Program Calendar"
+            loading="lazy"
+          ></iframe>
+        </div>
+
+      </div>
+
+      <p class="calendar-current-month" id="calendar-current-month" aria-live="polite">
+        Showing September.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       SUPPORT
+  ====================================================== -->
+
+  <section class="calendar-support" aria-labelledby="calendar-support-title">
+    <div class="portal-container">
+
+      <div class="calendar-support-card">
+        <div>
+          <span class="section-label">Need help?</span>
+          <h2 id="calendar-support-title">Not sure what a calendar item means for your chapter?</h2>
+          <p>
+            Your Program Advisor can help you think through timing, priorities, or what makes sense for your group.
+          </p>
+        </div>
+
+        <a class="calendar-support-link" href="support.html">
+          Program Support
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
 </main>
-<footer class="portal-footer"><div class="portal-container portal-footer-inner"><img src="assets/bb-reversed-logo.png" alt="Best Buddies Canada"><p>Teacher Hub · Prototype for internal review</p><a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca ↗</a></div></footer>
-</body></html>
+
+
+<footer class="portal-footer">
+  <div class="portal-container portal-footer-inner">
+    <img src="assets/bb-logo.png" alt="Best Buddies Canada">
+    <p>Best Buddies Canada Teacher Hub</p>
+    <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca ↗</a>
+  </div>
+</footer>
+
+
+<script>
+(() => {
+  const iframe = document.getElementById("program-calendar");
+  const status = document.getElementById("calendar-current-month");
+  const buttons = Array.from(document.querySelectorAll(".calendar-month"));
+
+  if (!iframe || !buttons.length) return;
+
+  const calendarId =
+    "81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com";
+
+  const monthNames = [
+    "January","February","March","April","May","June",
+    "July","August","September","October","November","December"
+  ];
+
+  function schoolYearStart() {
+    const now = new Date();
+    return now.getMonth() >= 6
+      ? now.getFullYear()
+      : now.getFullYear() - 1;
+  }
+
+  function pad(value) {
+    return String(value).padStart(2, "0");
+  }
+
+  function monthRange(year, monthIndex) {
+    const lastDay = new Date(year, monthIndex + 1, 0).getDate();
+
+    return {
+      start: `${year}${pad(monthIndex + 1)}01`,
+      end: `${year}${pad(monthIndex + 1)}${pad(lastDay)}`
+    };
+  }
+
+  function calendarUrl(year, monthIndex) {
+    const range = monthRange(year, monthIndex);
+
+    const params = new URLSearchParams({
+      ctz: "America/Toronto",
+      src: calendarId,
+      mode: "MONTH",
+      dates: `${range.start}/${range.end}`,
+      showTitle: "0",
+      showPrint: "0",
+      showTabs: "0",
+      showCalendars: "0"
+    });
+
+    return `https://calendar.google.com/calendar/embed?${params.toString()}`;
+  }
+
+  function activate(button) {
+    const startYear = schoolYearStart();
+    const monthIndex = Number(button.dataset.schoolMonth);
+    const year = button.dataset.nextYear === "true"
+      ? startYear + 1
+      : startYear;
+
+    buttons.forEach(item => {
+      item.setAttribute("aria-pressed", item === button ? "true" : "false");
+    });
+
+    iframe.src = calendarUrl(year, monthIndex);
+
+    if (status) {
+      status.textContent = `Showing ${monthNames[monthIndex]}.`;
+    }
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => activate(button));
+  });
+
+  const now = new Date();
+  const startYear = schoolYearStart();
+
+  let initial = buttons[0];
+
+  buttons.forEach(button => {
+    const monthIndex = Number(button.dataset.schoolMonth);
+    const year = button.dataset.nextYear === "true"
+      ? startYear + 1
+      : startYear;
+
+    if (
+      year === now.getFullYear() &&
+      monthIndex === now.getMonth()
+    ) {
+      initial = button;
+    }
+  });
+
+  activate(initial);
+})();
+</script>
+
+</body>
+</html>
