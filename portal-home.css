@@ -2720,3 +2720,382 @@ body{
     padding-top:30px;
   }
 }
+
+
+/* =========================================================
+   TEACHER HUB PAGE-TITLE + HERO TRANSITION
+   Responsive final override
+========================================================= */
+
+/* HEADER
+   Logo only. Teal stays as the clean site-navigation band. */
+.portal-header-inner{
+  min-height:82px;
+}
+
+.portal-brand{
+  gap:0;
+}
+
+.portal-brand img{
+  height:60px;
+}
+
+.portal-brand-copy{
+  display:none !important;
+}
+
+
+/* ---------------------------------------------------------
+   TEACHER HUB TITLE BAND
+--------------------------------------------------------- */
+
+.hub-title-band{
+  position:relative;
+  z-index:5;
+  padding:30px 0 27px;
+  background:#fff;
+}
+
+.hub-title-inner{
+  position:relative;
+}
+
+.hub-title-band h1{
+  width:fit-content;
+  margin:0;
+  color:var(--purple);
+  font-family:var(--display);
+  font-size:clamp(3rem,4.3vw,4.7rem);
+  font-weight:900;
+  line-height:.9;
+  letter-spacing:-.035em;
+  text-transform:uppercase;
+}
+
+.hub-title-accent{
+  display:block;
+  width:58px;
+  height:7px;
+  margin:13px 0 13px;
+  border-radius:999px;
+  background:var(--teal);
+}
+
+.hub-title-band p{
+  max-width:670px;
+  margin:0;
+  color:var(--muted);
+  font-size:1rem;
+  font-weight:600;
+  line-height:1.52;
+}
+
+
+/* ---------------------------------------------------------
+   HERO
+--------------------------------------------------------- */
+
+.home-hero{
+  position:relative;
+  min-height:510px;
+  overflow:hidden;
+  background:#fff;
+}
+
+/* Remove leftover decorative circles. */
+.home-hero::after{
+  display:none !important;
+  content:none !important;
+}
+
+/* Shallow BBC-style white wave into Choose Your Program. */
+.home-hero::before{
+  content:"";
+  position:absolute;
+  z-index:4;
+  left:0;
+  right:0;
+  bottom:-1px;
+  height:48px;
+  background-repeat:no-repeat;
+  background-position:center bottom;
+  background-size:100% 100%;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 80' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 43 C120 62 220 26 350 44 C480 62 574 25 700 43 C830 61 924 26 1050 43 C1175 60 1280 27 1400 43 C1490 54 1550 50 1600 41 L1600 80 L0 80 Z'/%3E%3C/svg%3E");
+}
+
+.home-hero picture{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+
+.home-hero picture img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+
+.home-hero-content{
+  position:relative;
+  z-index:2;
+  min-height:510px;
+  display:flex;
+  align-items:center;
+}
+
+.home-hero-copy{
+  width:45%;
+  max-width:670px;
+  padding:6px 0 54px;
+}
+
+.home-hero h2{
+  max-width:675px;
+  margin:0 0 22px;
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:clamp(2.55rem,3.05vw,3.7rem);
+  font-weight:800;
+  line-height:1.02;
+  letter-spacing:-.032em;
+  text-transform:none;
+}
+
+.home-hero h2 .hero-main-line{
+  display:block;
+}
+
+.home-hero h2 .hero-friendship{
+  color:var(--purple);
+}
+
+.home-hero .hero-copy{
+  font-size:.98rem;
+}
+
+.home-hero .hero-thanks{
+  font-size:.9rem;
+}
+
+
+/* Choose Your Program moves a little closer to the wave. */
+.program-launch{
+  padding-top:42px;
+}
+
+.program-heading{
+  margin-bottom:34px;
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+--------------------------------------------------------- */
+
+@media(min-width:761px) and (max-width:1100px){
+
+  .portal-header-inner{
+    min-height:78px;
+  }
+
+  .portal-brand img{
+    height:54px;
+  }
+
+  .hub-title-band{
+    padding:27px 0 24px;
+  }
+
+  .hub-title-band h1{
+    font-size:clamp(2.7rem,6.2vw,4rem);
+  }
+
+  .hub-title-band p{
+    max-width:640px;
+    font-size:.96rem;
+  }
+
+  .home-hero{
+    min-height:0;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .home-hero-content{
+    order:1;
+    min-height:0;
+    display:block;
+    padding:40px 0 34px;
+  }
+
+  .home-hero-copy{
+    width:100%;
+    max-width:760px;
+    padding:0;
+  }
+
+  .home-hero h2{
+    max-width:760px;
+    font-size:clamp(2.5rem,5.8vw,3.85rem);
+  }
+
+  /* Tablet artwork shows naturally rather than cutting heads. */
+  .home-hero picture{
+    position:relative;
+    order:2;
+    width:100%;
+    height:auto;
+    overflow:hidden;
+  }
+
+  .home-hero picture img{
+    display:block;
+    width:100%;
+    height:auto;
+    object-fit:contain;
+    object-position:center top;
+  }
+
+  .home-hero::before{
+    height:40px;
+  }
+
+  .program-launch{
+    padding-top:34px;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media(max-width:760px){
+
+  .portal-header-inner{
+    min-height:66px;
+  }
+
+  .portal-brand img{
+    height:42px;
+  }
+
+  .hub-title-band{
+    padding:22px 0 20px;
+  }
+
+  .hub-title-band h1{
+    font-size:clamp(2rem,10vw,2.65rem);
+    line-height:.92;
+  }
+
+  .hub-title-accent{
+    width:46px;
+    height:6px;
+    margin:10px 0 10px;
+  }
+
+  .hub-title-band p{
+    max-width:31rem;
+    font-size:.86rem;
+    line-height:1.48;
+  }
+
+  .home-hero{
+    min-height:0;
+  }
+
+  .home-hero-content{
+    padding:29px 0 23px;
+  }
+
+  .home-hero-copy{
+    width:100%;
+    max-width:none;
+    padding:0;
+  }
+
+  .home-hero h2{
+    width:100%;
+    max-width:none;
+    margin:0 0 15px;
+    font-size:clamp(1.95rem,9.1vw,2.5rem);
+    line-height:1.01;
+    letter-spacing:-.03em;
+  }
+
+  .home-hero h2 .hero-main-line,
+  .home-hero h2 .hero-friendship{
+    display:block;
+    max-width:100%;
+    white-space:normal;
+  }
+
+  /* Keep the successful mobile crop, with enough room for both faces. */
+  .home-hero picture{
+    position:relative;
+    width:100%;
+    height:230px;
+    overflow:hidden;
+  }
+
+  .home-hero picture img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 72%;
+  }
+
+  .home-hero::before{
+    height:28px;
+  }
+
+  .program-launch{
+    padding-top:27px;
+  }
+
+  .program-heading{
+    margin-bottom:26px;
+  }
+}
+
+
+@media(max-width:430px){
+
+  .hub-title-band{
+    padding:19px 0 18px;
+  }
+
+  .hub-title-band h1{
+    font-size:clamp(1.9rem,9.8vw,2.35rem);
+  }
+
+  .hub-title-band p{
+    font-size:.82rem;
+  }
+
+  .home-hero-content{
+    padding:26px 0 20px;
+  }
+
+  .home-hero h2{
+    font-size:clamp(1.84rem,9.2vw,2.25rem);
+  }
+
+  .home-hero picture{
+    height:218px;
+  }
+
+  .home-hero picture img{
+    object-position:center 73%;
+  }
+
+  .program-launch{
+    padding-top:24px;
+  }
+}
