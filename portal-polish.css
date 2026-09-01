@@ -632,3 +632,48 @@
     white-space:normal !important;
   }
 }
+
+
+/* =========================================================
+   HERO FINAL TIGHTENING R8
+   Remove duplicate support copy and lift artwork slightly.
+   ========================================================= */
+
+@media (min-width:1101px){
+
+  .portal-home-page .hub-copy-column{
+    gap:28px !important;
+    padding-bottom:78px !important;
+  }
+
+  .portal-home-page .hub-message h2{
+    margin-bottom:15px !important;
+  }
+
+  .portal-home-page .hub-message .hero-thanks{
+    margin-top:0 !important;
+  }
+
+  /* Lift the hero art just enough to reveal more teal above the wave. */
+  .portal-home-page .hub-hero-art img{
+    top:-34px !important;
+  }
+}
+
+/* Tablet: same idea, but subtler. */
+@media (min-width:761px) and (max-width:1100px){
+  .portal-home-page .hub-hero-art img{
+    margin:-26px auto -24px !important;
+  }
+}
+
+/* Mobile: keep the copy lean; don't duplicate the support line. */
+@media (max-width:760px){
+  .portal-home-page .hub-copy-column{
+    gap:24px !important;
+  }
+
+  .portal-home-page .hub-message h2{
+    margin-bottom:12px !important;
+  }
+}
