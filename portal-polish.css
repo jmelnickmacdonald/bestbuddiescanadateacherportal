@@ -1,652 +1,539 @@
 /* =========================================================
-   Best Buddies Canada Teacher Hub
-   Elementary & Middle program home — cohesive visual pass
-   Load AFTER program-home.css.
+   BEST BUDDIES CANADA TEACHER HUB
+   Clean homepage polish
+   Load AFTER portal-home.css and accessibility.css.
+========================================================= */
 
-   Design rule:
-   Purple anchors the page. Yellow is action. Teal supports.
-   Orange is used sparingly. No floating decorative circles.
-   ========================================================= */
-
-.program-home-simple {
-  --bb-purple: var(--purple, #5A3F98);
-  --bb-yellow: var(--yellow, #FFD420);
-  --bb-teal: var(--teal, #8FD1C4);
-  --bb-orange: var(--orange, #F47A38);
-  --bb-ink: var(--ink, #1D1823);
-  --bb-text: var(--text, #4B4652);
-  --bb-muted: var(--muted, #6A6470);
-  --bb-line: var(--line, #E3DFE8);
-  --bb-wash: #F8F6FA;
-  --bb-lavender: #F2EEF8;
-  --bb-yellow-soft: #FFF8D8;
-  --bb-teal-soft: #EAF7F4;
-  --bb-orange-soft: #FFF0E7;
-
-  background: #fff;
-  color: var(--bb-text);
-  font-family: var(--body, "Montserrat", Arial, sans-serif);
-}
-
-/* Remove decorative leftovers from earlier passes. */
-.program-home-simple .simple-program-hero::before,
-.program-home-simple .simple-program-hero::after,
-.program-home-simple .simple-routes::before,
-.program-home-simple .simple-routes::after,
-.program-home-simple .quick-help::before,
-.program-home-simple .quick-help::after,
-.program-home-simple .simple-current-month-inner::before,
-.program-home-simple .simple-current-month-inner::after,
-.program-home-simple .program-support-inner::before,
-.program-home-simple .program-support-inner::after,
-.program-home-simple .simple-route-card::before,
-.program-home-simple .simple-route-card::after,
-.program-home-simple .quick-help-link::before,
-.program-home-simple .quick-help-link::after,
-.program-home-simple .program-title-swoosh {
-  content: none !important;
-  display: none !important;
-}
 
 /* =========================================================
-   HERO
-   ========================================================= */
-.program-home-simple .simple-program-hero {
-  padding: 30px 0 48px;
-  background: linear-gradient(180deg, #FAF9FB 0%, #F8F6FA 100%);
-  overflow: hidden;
+   HEADER
+========================================================= */
+
+.portal-header{
+  position:relative !important;
+  z-index:1000 !important;
+  background:#5A3F98 !important;
+  border-top:5px solid #FFD420 !important;
 }
 
-.program-home-simple .program-back {
-  color: var(--bb-purple);
-  font-family: var(--body, "Montserrat", Arial, sans-serif);
-  font-size: .82rem;
-  font-weight: 800;
-  text-decoration: none;
+.portal-header-inner{
+  min-height:86px !important;
 }
 
-.program-home-simple .program-back:hover,
-.program-home-simple .program-back:focus-visible {
-  text-decoration: underline;
+.portal-brand{
+  display:flex !important;
+  align-items:center !important;
 }
 
-.program-home-simple .simple-program-hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, .95fr) minmax(390px, .88fr);
-  gap: clamp(44px, 6vw, 88px);
-  align-items: center;
-  margin-top: 26px;
+.portal-brand img{
+  display:block !important;
+  width:auto !important;
+  height:76px !important;
+  max-height:none !important;
 }
 
-.program-home-simple .simple-program-copy {
-  max-width: 650px;
+.portal-nav,
+.portal-lang,
+.site-menu summary{
+  background:#fff !important;
 }
 
-.program-home-simple .program-home-kicker,
-.program-home-simple .section-kicker,
-.program-home-simple .quick-help-tag,
-.program-home-simple .simple-current-label {
-  display: block;
-  color: var(--bb-purple);
-  font-family: var(--body, "Montserrat", Arial, sans-serif);
-  font-size: .72rem;
-  font-weight: 850;
-  letter-spacing: .075em;
-  line-height: 1.2;
-  text-transform: uppercase;
+.portal-nav a,
+.portal-lang a,
+.site-menu summary{
+  color:#211B28 !important;
 }
 
-.program-home-simple .simple-program-copy h1 {
-  position: relative;
-  max-width: 620px;
-  margin: 10px 0 0;
-  padding-bottom: 18px;
-  color: var(--bb-ink);
-  font-family: var(--display, "League Spartan", Arial, sans-serif);
-  font-size: clamp(2.55rem, 3.7vw, 3.85rem);
-  font-weight: 850;
-  line-height: .98;
-  letter-spacing: -.028em;
+.portal-lang .current{
+  background:#5A3F98 !important;
+  color:#fff !important;
 }
 
-/* One repeatable accent mark — a short Best Buddies teal dash. */
-.program-home-simple .simple-program-copy h1::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 52px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--bb-teal);
-}
-
-.program-home-simple .simple-program-lede {
-  max-width: 620px;
-  margin: 20px 0 0;
-  color: var(--bb-muted);
-  font-size: clamp(.98rem, 1.08vw, 1.08rem);
-  line-height: 1.65;
-}
-
-.program-home-simple .simple-program-note {
-  display: inline-block;
-  margin: 16px 0 0;
-  padding: 7px 12px;
-  border: 1px solid #E3DCF0;
-  border-radius: 999px;
-  background: #F4F0FA;
-  color: var(--bb-purple);
-  font-size: .78rem;
-  font-weight: 800;
-}
-
-.program-home-simple .simple-program-photo {
-  position: relative;
-  overflow: visible;
-  aspect-ratio: 12 / 8;
-  background: transparent;
-  border-radius: 28px 28px 72px 28px;
-}
-
-/* Cohesive offset panel — not another floating shape. */
-.program-home-simple .simple-program-photo img {
-  position: relative;
-  z-index: 2;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 28px 28px 72px 28px;
-  box-shadow:
-    12px 12px 0 var(--bb-teal),
-    0 18px 38px rgba(48, 31, 77, .10);
-}
 
 /* =========================================================
-   FOUR ROUTES
-   ========================================================= */
-.program-home-simple .simple-routes {
-  padding: 52px 0 58px;
-  background: #fff;
+   HOME HERO
+========================================================= */
+
+.portal-home-page .teacher-hub-hero{
+  position:relative !important;
+  overflow:hidden !important;
+  background:#F7F7F5 !important;
 }
 
-.program-home-simple .simple-routes h2 {
-  margin: 0 0 24px;
-  color: var(--bb-ink);
-  font-family: var(--display, "League Spartan", Arial, sans-serif);
-  font-size: clamp(2rem, 2.8vw, 2.8rem);
-  font-weight: 850;
-  line-height: 1;
-  letter-spacing: -.022em;
+.portal-home-page .teacher-hub-hero-grid{
+  position:relative !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,.82fr) minmax(640px,1.18fr) !important;
+  gap:clamp(26px,3vw,52px) !important;
+  align-items:stretch !important;
+  height:525px !important;
+  min-height:525px !important;
 }
 
-.program-home-simple .simple-route-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+.portal-home-page .hub-copy-column{
+  position:relative !important;
+  z-index:5 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  gap:34px !important;
+  max-width:690px !important;
+  padding:24px 0 78px !important;
 }
 
-.program-home-simple .simple-route-card {
-  --route-accent: var(--bb-purple);
-  --route-soft: var(--bb-lavender);
-
-  position: relative;
-  min-height: 180px;
-  display: flex;
-  flex-direction: column;
-  padding: 25px 24px 22px;
-  overflow: hidden;
-  border: 1px solid var(--bb-line);
-  border-top: 6px solid var(--route-accent);
-  border-radius: 22px 22px 48px 22px;
-  background:
-    linear-gradient(145deg, #fff 0 78%, var(--route-soft) 78% 100%);
-  color: var(--bb-ink);
-  text-decoration: none;
-  box-shadow: 0 10px 28px rgba(48, 31, 77, .07);
-  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+.portal-home-page .hub-intro,
+.portal-home-page .hub-message{
+  position:static !important;
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
 }
 
-.program-home-simple .route-calendar {
-  --route-accent: #D8B000;
-  --route-soft: var(--bb-yellow-soft);
+.portal-home-page .hub-intro h1{
+  margin:0 !important;
+  color:#5A3F98 !important;
+  font-family:var(--display,"League Spartan",Arial,sans-serif) !important;
+  font-size:clamp(3.15rem,3.8vw,4.1rem) !important;
+  font-weight:900 !important;
+  line-height:.92 !important;
+  letter-spacing:-.035em !important;
+  text-transform:uppercase !important;
 }
 
-.program-home-simple .route-resources {
-  --route-accent: #49AFA0;
-  --route-soft: var(--bb-teal-soft);
+.portal-home-page .hub-title-accent{
+  display:block !important;
+  width:58px !important;
+  height:7px !important;
+  margin:16px 0 19px !important;
+  border-radius:999px !important;
+  background:#8FD1C4 !important;
 }
 
-.program-home-simple .route-support {
-  --route-accent: #EF6C27;
-  --route-soft: var(--bb-orange-soft);
+.portal-home-page .hub-intro p{
+  max-width:620px !important;
+  margin:0 !important;
+  color:var(--muted,#625A68) !important;
+  font-size:1rem !important;
+  font-weight:600 !important;
+  line-height:1.5 !important;
 }
 
-.program-home-simple .simple-route-card:hover,
-.program-home-simple .simple-route-card:focus-visible {
-  transform: translateY(-4px);
-  border-color: var(--route-accent);
-  box-shadow: 0 18px 38px rgba(48, 31, 77, .12);
+.portal-home-page .hub-message h2{
+  max-width:700px !important;
+  margin:0 0 18px !important;
+  color:#211B28 !important;
+  font-family:var(--display,"League Spartan",Arial,sans-serif) !important;
+  font-size:clamp(2.78rem,3.2vw,3.55rem) !important;
+  font-weight:800 !important;
+  line-height:.96 !important;
+  letter-spacing:-.026em !important;
 }
 
-.program-home-simple .simple-route-card h3 {
-  max-width: 230px;
-  margin: 0 0 9px;
-  color: var(--bb-ink);
-  font-family: var(--body, "Montserrat", Arial, sans-serif);
-  font-size: 1.08rem;
-  font-weight: 850;
-  line-height: 1.2;
+.portal-home-page .hub-message h2 > span{
+  display:block !important;
+  white-space:nowrap !important;
 }
 
-.program-home-simple .simple-route-card p {
-  max-width: 250px;
-  margin: 0;
-  color: var(--bb-muted);
-  font-size: .84rem;
-  line-height: 1.5;
+.portal-home-page .hub-message .hero-friendship{
+  color:#5A3F98 !important;
 }
 
-.program-home-simple .route-arrow {
-  margin-top: auto;
-  align-self: flex-end;
-  color: var(--route-accent);
-  font-family: var(--body, "Montserrat", Arial, sans-serif);
-  font-size: 1.18rem;
-  font-weight: 900;
-  line-height: 1;
-  transition: transform .16s ease;
+.portal-home-page .hub-message .hero-thanks{
+  margin:0 !important;
+  color:#5A3F98 !important;
+  font-size:.9rem !important;
+  font-weight:800 !important;
 }
 
-.program-home-simple .simple-route-card:hover .route-arrow,
-.program-home-simple .simple-route-card:focus-visible .route-arrow {
-  transform: translateX(4px);
+
+/* Artwork is locked independently of the copy column. */
+.portal-home-page .hub-hero-art{
+  position:relative !important;
+  z-index:3 !important;
+  grid-column:2 !important;
+  height:525px !important;
+  min-height:525px !important;
+  overflow:visible !important;
+  margin:0 !important;
 }
+
+.portal-home-page .hub-hero-art img{
+  position:absolute !important;
+  top:24px !important;
+  right:-44px !important;
+  bottom:auto !important;
+  display:block !important;
+  width:clamp(820px,48vw,930px) !important;
+  max-width:none !important;
+  height:auto !important;
+  margin:0 !important;
+  transform:none !important;
+}
+
+
+/* White foreground wave intentionally overlaps the artwork. */
+.portal-home-page .teacher-hub-hero::after{
+  content:"" !important;
+  position:absolute !important;
+  z-index:12 !important;
+  left:-2px !important;
+  right:-2px !important;
+  bottom:-1px !important;
+  height:92px !important;
+  pointer-events:none !important;
+  background-repeat:no-repeat !important;
+  background-position:center bottom !important;
+  background-size:100% 100% !important;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 110' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 59 C126 75 224 38 356 57 C488 76 582 39 716 57 C850 75 945 39 1080 57 C1215 74 1310 40 1442 56 C1515 64 1566 61 1600 56 L1600 110 L0 110 Z'/%3E%3C/svg%3E") !important;
+}
+
 
 /* =========================================================
-   CURRENT MONTH
-   ========================================================= */
-.program-home-simple .simple-current-month {
-  padding: 8px 0 62px;
+   CHOOSE PROGRAM
+========================================================= */
+
+.portal-home-page .program-launch{
+  padding-top:32px !important;
 }
 
-.program-home-simple .simple-current-month-inner {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 42px;
-  overflow: hidden;
-  padding: clamp(28px, 3.5vw, 42px) clamp(30px, 4vw, 52px);
-  border-radius: 26px 26px 64px 26px;
-  border-left: 8px solid var(--bb-yellow);
-  background: var(--bb-purple);
-  color: #fff;
-  box-shadow: 0 15px 34px rgba(55, 35, 93, .12);
+.portal-home-page .program-heading .down,
+.portal-home-page .program-go{
+  display:none !important;
 }
 
-/* The same little dash used in the hero — repeated, not random. */
-.program-home-simple .simple-current-month-inner > .simple-current-copy::before {
-  content: "";
-  display: block;
-  width: 42px;
-  height: 6px;
-  margin-bottom: 18px;
-  border-radius: 999px;
-  background: var(--bb-teal);
+.portal-home-page .program-heading h2{
+  display:block !important;
 }
 
-.program-home-simple .simple-current-copy {
-  max-width: 780px;
+.portal-home-page .program-tile{
+  position:relative !important;
+  cursor:pointer !important;
+  transition:transform .18s ease,box-shadow .18s ease !important;
 }
 
-.program-home-simple .simple-current-label {
-  margin-bottom: 7px;
-  color: var(--bb-yellow);
+.portal-home-page .program-tile:hover{
+  transform:translateY(-3px) !important;
+  box-shadow:0 24px 46px rgba(48,31,77,.16) !important;
 }
 
-.program-home-simple .simple-current-month h2 {
-  margin: 0;
-  color: #fff;
-  font-family: var(--display, "League Spartan", Arial, sans-serif);
-  font-size: clamp(1.9rem, 2.8vw, 2.75rem);
-  font-weight: 850;
-  line-height: 1;
-  letter-spacing: -.018em;
+.portal-home-page .program-tile:focus-visible{
+  outline:4px solid #FFD420 !important;
+  outline-offset:5px !important;
 }
 
-.program-home-simple .simple-current-month p {
-  max-width: 760px;
-  margin: 12px 0 0;
-  color: rgba(255,255,255,.87);
-  font-size: .94rem;
-  line-height: 1.58;
+.portal-home-page .program-photo img{
+  transition:transform .22s ease !important;
 }
 
-.program-home-simple .simple-current-actions {
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 11px;
+.portal-home-page .program-tile:hover .program-photo img{
+  transform:scale(1.018) !important;
 }
 
-.program-home-simple .simple-current-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  padding: 11px 20px;
-  border-radius: 999px;
-  background: var(--bb-yellow);
-  color: var(--bb-ink);
-  font-size: .82rem;
-  font-weight: 900;
-  text-decoration: none;
-  box-shadow: 0 6px 0 rgba(29, 24, 35, .12);
-  transition: transform .15s ease, box-shadow .15s ease;
+.portal-home-page .program-overlay{
+  left:18px !important;
+  right:18px !important;
+  bottom:16px !important;
+  min-height:0 !important;
+  padding:17px 19px !important;
 }
 
-.program-home-simple .simple-current-button:hover,
-.program-home-simple .simple-current-button:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 0 rgba(29, 24, 35, .12);
+.portal-home-page .program-overlay h3{
+  min-height:0 !important;
+  max-width:none !important;
+  margin:0 !important;
+  font-size:clamp(1.35rem,1.65vw,1.8rem) !important;
+  line-height:1.08 !important;
 }
 
-.program-home-simple .simple-all-months {
-  color: #fff;
-  font-size: .76rem;
-  font-weight: 800;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.portal-home-page .program-open{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:6px !important;
+  width:max-content !important;
+  margin-top:11px !important;
+  padding:8px 13px !important;
+  border:0 !important;
+  border-radius:999px !important;
+  background:#5A3F98 !important;
+  color:#fff !important;
+  font-size:.7rem !important;
+  font-weight:800 !important;
+  letter-spacing:.02em !important;
+  line-height:1 !important;
+  text-transform:uppercase !important;
 }
+
+.portal-home-page .program-open span{
+  display:inline !important;
+  margin:0 !important;
+  color:#fff !important;
+}
+
 
 /* =========================================================
-   QUICK GUIDES
-   ========================================================= */
-.program-home-simple .quick-help {
-  padding: 60px 0 64px;
-  background: #F5F2F8;
+   QUICK LINKS
+========================================================= */
+
+.portal-home-page .shortcut-arrow{
+  display:grid !important;
+  place-items:center !important;
+  width:34px !important;
+  height:34px !important;
+  flex:0 0 34px !important;
+  border-radius:50% !important;
+  background:#5A3F98 !important;
+  color:#fff !important;
+  font-size:1.05rem !important;
+  font-weight:800 !important;
+  line-height:1 !important;
 }
 
-.program-home-simple .quick-help-grid {
-  display: grid;
-  grid-template-columns: minmax(260px, .78fr) minmax(0, 1.55fr);
-  gap: clamp(44px, 6vw, 90px);
-  align-items: start;
+.portal-home-page .shortcut-arrow::before,
+.portal-home-page .shortcut-arrow::after{
+  content:none !important;
+  display:none !important;
 }
 
-.program-home-simple .quick-help-head {
-  position: relative;
-  padding-left: 18px;
-  border-left: 6px solid var(--bb-teal);
-}
-
-.program-home-simple .quick-help-head .section-kicker {
-  margin-bottom: 8px;
-}
-
-.program-home-simple .quick-help-head h2 {
-  max-width: 470px;
-  margin: 0;
-  color: var(--bb-ink);
-  font-family: var(--display, "League Spartan", Arial, sans-serif);
-  font-size: clamp(2rem, 3vw, 3rem);
-  font-weight: 850;
-  line-height: .98;
-  letter-spacing: -.024em;
-}
-
-.program-home-simple .quick-help-head p {
-  max-width: 470px;
-  margin: 18px 0 0;
-  color: var(--bb-muted);
-  font-size: .94rem;
-  line-height: 1.62;
-}
-
-.program-home-simple .quick-help-all {
-  display: inline-block;
-  margin-top: 18px;
-  color: var(--bb-purple);
-  font-size: .8rem;
-  font-weight: 850;
-  text-decoration: none;
-}
-
-.program-home-simple .quick-help-all:hover,
-.program-home-simple .quick-help-all:focus-visible {
-  text-decoration: underline;
-}
-
-.program-home-simple .quick-help-links {
-  display: grid;
-  gap: 12px;
-}
-
-.program-home-simple .quick-help-link {
-  --guide-accent: var(--bb-purple);
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  min-height: 102px;
-  padding: 20px 24px;
-  border: 1px solid var(--bb-line);
-  border-left: 6px solid var(--guide-accent);
-  border-radius: 18px 18px 38px 18px;
-  background: #fff;
-  color: var(--bb-ink);
-  text-decoration: none;
-  box-shadow: 0 8px 22px rgba(48,31,77,.05);
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-
-.program-home-simple .quick-help-link:nth-child(2) {
-  --guide-accent: #D8B000;
-}
-
-.program-home-simple .quick-help-link:nth-child(3) {
-  --guide-accent: #49AFA0;
-}
-
-.program-home-simple .quick-help-link:hover,
-.program-home-simple .quick-help-link:focus-visible {
-  transform: translateX(3px);
-  box-shadow: 0 13px 28px rgba(48,31,77,.09);
-}
-
-.program-home-simple .quick-help-tag {
-  margin-bottom: 3px;
-  color: var(--bb-purple);
-}
-
-.program-home-simple .quick-help-link strong {
-  display: block;
-  color: var(--bb-ink);
-  font-size: .97rem;
-  font-weight: 850;
-  line-height: 1.22;
-}
-
-.program-home-simple .quick-help-link span:not(.quick-help-tag):not(.link-arrow) {
-  display: block;
-  margin-top: 4px;
-  color: var(--bb-muted);
-  font-size: .82rem;
-  line-height: 1.45;
-}
-
-.program-home-simple .link-arrow {
-  flex: 0 0 auto;
-  color: var(--guide-accent);
-  font-size: 1.05rem;
-  font-weight: 900;
-}
 
 /* =========================================================
-   SUPPORT
-   ========================================================= */
-.program-home-simple .program-support-band {
-  padding: 56px 0;
-  background: #fff;
+   ACCESSIBILITY LAUNCHER
+   Icon-only. accessibility.js supplies the accessible label.
+========================================================= */
+
+.accessibility-launcher{
+  right:16px !important;
+  bottom:16px !important;
+  width:50px !important;
+  min-width:50px !important;
+  height:50px !important;
+  min-height:50px !important;
+  display:grid !important;
+  place-items:center !important;
+  padding:0 !important;
+  border:3px solid #5A3F98 !important;
+  border-radius:50% !important;
+  background:#FFD420 !important;
+  color:#5A3F98 !important;
+  box-shadow:0 8px 22px rgba(32,20,56,.22) !important;
 }
 
-.program-home-simple .program-support-inner {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 34px;
-  overflow: hidden;
-  padding: clamp(28px, 3.5vw, 42px) clamp(30px, 4vw, 50px);
-  border-radius: 24px 24px 58px 24px;
-  border-right: 10px solid var(--bb-yellow);
-  background: var(--bb-purple);
-  color: #fff;
+.accessibility-launcher svg{
+  width:24px !important;
+  height:24px !important;
 }
 
-.program-home-simple .program-support-inner h2 {
-  margin: 0;
-  color: #fff;
-  font-family: var(--display, "League Spartan", Arial, sans-serif);
-  font-size: clamp(1.9rem, 2.8vw, 2.8rem);
-  font-weight: 850;
-  line-height: 1;
+.accessibility-launcher-label{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip:rect(0,0,0,0) !important;
+  white-space:nowrap !important;
+  border:0 !important;
 }
 
-.program-home-simple .program-support-inner p {
-  max-width: 760px;
-  margin: 11px 0 0;
-  color: rgba(255,255,255,.86);
-  font-size: .92rem;
-  line-height: 1.55;
-}
-
-.program-home-simple .program-support-button {
-  flex: 0 0 auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  padding: 11px 19px;
-  border-radius: 999px;
-  background: var(--bb-yellow);
-  color: var(--bb-ink);
-  font-size: .8rem;
-  font-weight: 900;
-  text-decoration: none;
-}
 
 /* =========================================================
-   RESPONSIVE
-   ========================================================= */
-@media (max-width: 1180px) {
-  .program-home-simple .simple-program-hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(340px, .92fr);
-    gap: 38px;
+   TABLET
+========================================================= */
+
+@media (min-width:761px) and (max-width:1100px){
+
+  .portal-home-page .teacher-hub-hero-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    grid-template-rows:auto auto auto !important;
+    gap:0 !important;
+    height:auto !important;
+    min-height:0 !important;
+    padding-top:30px !important;
+    padding-bottom:62px !important;
   }
 
-  .program-home-simple .simple-program-copy h1 {
-    font-size: clamp(2.35rem, 4.2vw, 3.25rem);
+  /* Let the art sit between intro and friendship message. */
+  .portal-home-page .hub-copy-column{
+    display:contents !important;
   }
 
-  .program-home-simple .simple-route-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .portal-home-page .hub-intro{
+    grid-row:1 !important;
   }
 
-  .program-home-simple .simple-route-card {
-    min-height: 154px;
-  }
-}
-
-@media (max-width: 940px) {
-  .program-home-simple .simple-program-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 34px;
-  }
-
-  .program-home-simple .simple-program-copy {
-    max-width: 720px;
+  .portal-home-page .hub-hero-art{
+    grid-column:1 !important;
+    grid-row:2 !important;
+    position:relative !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    margin:12px 0 10px !important;
   }
 
-  .program-home-simple .simple-program-photo {
-    max-width: 690px;
+  .portal-home-page .hub-hero-art img{
+    position:relative !important;
+    inset:auto !important;
+    display:block !important;
+    width:min(92vw,760px) !important;
+    max-width:none !important;
+    margin:0 auto !important;
   }
 
-  .program-home-simple .simple-current-month-inner,
-  .program-home-simple .program-support-inner {
-    align-items: flex-start;
-    flex-direction: column;
+  .portal-home-page .hub-message{
+    grid-row:3 !important;
+    padding:0 0 16px !important;
   }
 
-  .program-home-simple .simple-current-actions {
-    align-items: flex-start;
+  .portal-home-page .hub-message h2 > span{
+    white-space:normal !important;
   }
 
-  .program-home-simple .quick-help-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .portal-home-page .teacher-hub-hero::after{
+    height:58px !important;
   }
 
-  .program-home-simple .quick-help-head {
-    max-width: 650px;
-  }
-}
-
-@media (max-width: 680px) {
-  .program-home-simple .simple-program-hero {
-    padding: 24px 0 38px;
-  }
-
-  .program-home-simple .simple-program-hero-grid {
-    margin-top: 20px;
-  }
-
-  .program-home-simple .simple-program-copy h1 {
-    font-size: clamp(2.25rem, 11vw, 3rem);
-  }
-
-  .program-home-simple .simple-program-lede {
-    font-size: .96rem;
-  }
-
-  .program-home-simple .simple-route-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .program-home-simple .simple-route-card {
-    min-height: 145px;
-  }
-
-  .program-home-simple .simple-current-month-inner,
-  .program-home-simple .program-support-inner {
-    padding: 26px 24px;
-    border-radius: 22px 22px 46px 22px;
-  }
-
-  .program-home-simple .simple-current-button,
-  .program-home-simple .program-support-button {
-    width: 100%;
-  }
-
-  .program-home-simple .quick-help {
-    padding: 48px 0 52px;
-  }
-
-  .program-home-simple .quick-help-link {
-    padding: 18px 18px;
+  .portal-home-page .program-launch{
+    padding-top:25px !important;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .program-home-simple .simple-route-card,
-  .program-home-simple .route-arrow,
-  .program-home-simple .simple-current-button,
-  .program-home-simple .quick-help-link {
-    transition: none;
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:760px){
+
+  .portal-header-inner{
+    min-height:72px !important;
+  }
+
+  .portal-brand img{
+    height:58px !important;
+  }
+
+  .portal-home-page .teacher-hub-hero-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    grid-template-rows:auto auto auto !important;
+    gap:0 !important;
+    height:auto !important;
+    min-height:0 !important;
+    padding-top:24px !important;
+    padding-bottom:48px !important;
+  }
+
+  .portal-home-page .hub-copy-column{
+    display:contents !important;
+  }
+
+  .portal-home-page .hub-intro{
+    grid-row:1 !important;
+  }
+
+  .portal-home-page .hub-intro h1{
+    font-size:clamp(2.35rem,11vw,3rem) !important;
+  }
+
+  .portal-home-page .hub-title-accent{
+    margin:12px 0 15px !important;
+  }
+
+  .portal-home-page .hub-intro p{
+    font-size:.86rem !important;
+  }
+
+  .portal-home-page .hub-hero-art{
+    grid-column:1 !important;
+    grid-row:2 !important;
+    position:relative !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    margin:18px 0 12px !important;
+  }
+
+  .portal-home-page .hub-hero-art img{
+    position:relative !important;
+    inset:auto !important;
+    display:block !important;
+    width:104% !important;
+    max-width:none !important;
+    margin:0 0 0 -2% !important;
+  }
+
+  .portal-home-page .hub-message{
+    grid-row:3 !important;
+    padding:0 0 14px !important;
+  }
+
+  .portal-home-page .hub-message h2{
+    margin-bottom:12px !important;
+    font-size:clamp(2rem,9.8vw,2.65rem) !important;
+  }
+
+  .portal-home-page .hub-message h2 > span{
+    white-space:normal !important;
+  }
+
+  .portal-home-page .hub-message .hero-thanks{
+    font-size:.82rem !important;
+  }
+
+  .portal-home-page .teacher-hub-hero::after{
+    height:42px !important;
+  }
+
+  .portal-home-page .program-launch{
+    padding-top:20px !important;
+  }
+
+  .portal-home-page .program-overlay{
+    padding:15px 16px !important;
+  }
+
+  .accessibility-launcher{
+    right:12px !important;
+    bottom:12px !important;
+    width:46px !important;
+    min-width:46px !important;
+    height:46px !important;
+    min-height:46px !important;
+  }
+
+  .accessibility-launcher svg{
+    width:22px !important;
+    height:22px !important;
+  }
+}
+
+
+@media (max-width:520px){
+
+  .portal-home-page .hub-hero-art{
+    margin-top:16px !important;
+  }
+
+  .portal-home-page .hub-hero-art img{
+    width:102% !important;
+    margin-left:-1% !important;
+  }
+
+  .portal-home-page .program-overlay{
+    align-items:flex-start !important;
+  }
+}
+
+
+@media (prefers-reduced-motion:reduce){
+  .portal-home-page .program-tile,
+  .portal-home-page .program-photo img{
+    transition:none !important;
+  }
+
+  .portal-home-page .program-tile:hover,
+  .portal-home-page .program-tile:hover .program-photo img{
+    transform:none !important;
   }
 }
