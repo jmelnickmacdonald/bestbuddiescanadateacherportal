@@ -7,6 +7,8 @@
   <title>Teacher Hub | Best Buddies Canada</title>
   <link rel="stylesheet" href="portal-home.css">
   <link rel="stylesheet" href="accessibility.css">
+  <!-- IMPORTANT: this must load after the two base stylesheets -->
+  <link rel="stylesheet" href="portal-polish.css">
   <script src="accessibility.js" defer></script>
 </head>
 
@@ -48,10 +50,6 @@
 
 <main id="main-content">
 
-  <!-- =====================================================
-       TEACHER HUB HERO
-  ====================================================== -->
-
   <section class="teacher-hub-hero" aria-labelledby="teacher-hub-title">
     <div class="portal-container teacher-hub-hero-grid">
 
@@ -84,13 +82,7 @@
     </div>
   </section>
 
-
-  <!-- =====================================================
-       CHOOSE PROGRAM
-  ====================================================== -->
-
   <section class="program-launch" aria-labelledby="choose-program-title">
-
     <div class="portal-container">
 
       <div class="program-heading">
@@ -104,18 +96,16 @@
       </div>
 
       <div class="program-grid">
-
         <a class="program-tile elementary" href="elementary-middle.html">
           <div class="program-photo">
             <img src="assets/elementary-hero.png" alt="Best Buddies elementary and middle school participants">
           </div>
-
           <div class="program-overlay">
             <div>
               <span>Elementary &amp; Middle School</span>
               <h3>Friendship grows together.</h3>
             </div>
-            <span class="program-go" aria-hidden="true">←</span>
+            <span class="program-go" aria-hidden="true">→</span>
           </div>
         </a>
 
@@ -123,29 +113,20 @@
           <div class="program-photo">
             <img src="assets/high-school-hero.png" alt="Best Buddies high school participants">
           </div>
-
           <div class="program-overlay">
             <div>
               <span>High School</span>
               <h3>Leadership grows together.</h3>
             </div>
-            <span class="program-go" aria-hidden="true">←</span>
+            <span class="program-go" aria-hidden="true">→</span>
           </div>
         </a>
-
       </div>
 
     </div>
-
   </section>
 
-
-  <!-- =====================================================
-       QUICK DESTINATIONS
-  ====================================================== -->
-
   <section class="portal-shortcuts" aria-labelledby="quick-title">
-
     <div class="portal-container">
 
       <div class="shortcut-heading">
@@ -157,39 +138,26 @@
       </div>
 
       <div class="shortcut-grid">
-
         <a class="shortcut shortcut-calendar" href="calendar.html">
-          <span>
-            <small>What’s happening now?</small>
-            <strong>Program Calendar</strong>
-          </span>
+          <span><small>What’s happening now?</small><strong>Program Calendar</strong></span>
           <span class="shortcut-arrow" aria-hidden="true">→</span>
         </a>
 
         <a class="shortcut shortcut-resources" href="resources.html">
-          <span>
-            <small>Find the thing</small>
-            <strong>Resources</strong>
-          </span>
+          <span><small>Find the thing</small><strong>Resources</strong></span>
           <span class="shortcut-arrow" aria-hidden="true">→</span>
         </a>
 
         <a class="shortcut shortcut-support" href="support.html">
-          <span>
-            <small>Need a person?</small>
-            <strong>Program Support</strong>
-          </span>
+          <span><small>Need a person?</small><strong>Program Support</strong></span>
           <span class="shortcut-arrow" aria-hidden="true">→</span>
         </a>
-
       </div>
 
     </div>
-
   </section>
 
 </main>
-
 
 <footer class="portal-footer">
   <div class="portal-container portal-footer-inner">
