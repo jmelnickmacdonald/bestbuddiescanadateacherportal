@@ -97,7 +97,7 @@ input:focus-visible{
 .portal-header{
   position:relative;
   z-index:1000;
-  background:var(--purple);
+  background:var(--teal);
   border-top:7px solid var(--yellow);
 }
 
@@ -616,7 +616,7 @@ input:focus-visible{
   position:relative;
   overflow:visible;
   margin-top:0;
-  padding:72px 0 68px;
+  padding:72px 0 88px;
   background:var(--purple);
   color:#fff;
 }
@@ -671,7 +671,8 @@ input:focus-visible{
 }
 
 .shortcut-heading .section-label{
-  margin-bottom:8px;
+  display:block;
+  margin-bottom:20px;
   color:var(--yellow);
   font-size:.82rem;
 }
@@ -1315,8 +1316,8 @@ input:focus-visible{
 
 .portal-footer{
   position:relative;
-  margin-top:42px;
-  padding:30px 0 36px;
+  margin-top:0;
+  padding:34px 0 36px;
   border-top:0;
   background:#fff;
   color:var(--ink);
@@ -1325,14 +1326,15 @@ input:focus-visible{
 .portal-footer::before{
   content:"";
   position:absolute;
+  z-index:2;
   left:0;
   right:0;
-  top:-42px;
-  height:44px;
+  top:-48px;
+  height:50px;
   background-repeat:no-repeat;
   background-position:center bottom;
   background-size:100% 100%;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 80' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 45 C118 24 200 59 320 40 C440 22 522 57 642 39 C760 22 843 58 963 39 C1083 22 1164 57 1285 39 C1403 23 1490 54 1600 36 L1600 80 L0 80 Z'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 90' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 52 C105 33 180 65 294 48 C405 31 492 64 606 46 C720 28 806 64 920 45 C1035 27 1124 62 1238 44 C1351 27 1440 57 1600 38 L1600 90 L0 90 Z'/%3E%3C/svg%3E");
 }
 
 .portal-footer-inner{
@@ -1643,9 +1645,9 @@ input:focus-visible{
 
 .shortcut-heading .section-label::after{
   display:block;
-  width:46px;
-  height:6px;
-  margin-top:9px;
+  width:48px;
+  height:7px;
+  margin-top:10px;
   border-radius:999px;
   background:var(--teal);
 }
@@ -1669,4 +1671,60 @@ input:focus-visible{
     width:46px;
     height:6px;
   }
+}
+
+/* Teal header creates a clear BBC-brand break from the purple hero artwork. */
+.portal-header .portal-brand,
+.portal-header .portal-nav a{
+  color:var(--ink);
+}
+
+.portal-header .portal-nav a:hover,
+.portal-header .portal-nav a:focus-visible{
+  color:var(--purple);
+}
+
+.portal-header .portal-brand-copy strong{
+  color:var(--ink);
+}
+
+.portal-header .portal-brand-copy span{
+  color:var(--purple);
+}
+
+@media(max-width:760px){
+  .shortcut-heading .section-label{
+    margin-bottom:17px;
+  }
+
+  .portal-shortcuts{
+    padding-bottom:76px;
+  }
+
+  .portal-footer::before{
+    top:-38px;
+    height:40px;
+  }
+}
+
+/* Teal header refinements */
+.portal-header{
+  box-shadow:0 1px 0 rgba(33,27,40,.08);
+}
+
+.portal-header .portal-nav{
+  background:rgba(255,255,255,.92);
+}
+
+.portal-header .lang-switch{
+  background:rgba(255,255,255,.92);
+}
+
+.portal-header .lang-switch a{
+  color:var(--purple);
+}
+
+.portal-header .lang-switch a.active{
+  background:var(--purple);
+  color:#fff;
 }
