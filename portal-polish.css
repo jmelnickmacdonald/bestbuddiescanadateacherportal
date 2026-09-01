@@ -1,0 +1,151 @@
+/* =========================================================
+   Best Buddies Canada Teacher Hub
+   Small shared UI polish — load AFTER page/accessibility CSS.
+   Does not replace portal-home.css.
+   ========================================================= */
+
+/* ---------- one arrow language across the Hub ---------- */
+.program-heading .down,
+.program-go,
+.shortcut-arrow,
+.calendar-route-arrow,
+.program-fast-arrow{
+  position:relative;
+  flex:0 0 auto;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  font-size:0!important;
+  line-height:1;
+}
+
+.program-heading .down,
+.program-go,
+.calendar-route-arrow{
+  width:42px;
+  height:42px;
+  background:var(--purple,#5A3F98);
+  color:#fff;
+}
+
+.shortcut-arrow,
+.program-fast-arrow{
+  width:36px;
+  height:36px;
+  background:var(--purple,#5A3F98);
+  color:#fff!important;
+}
+
+.program-heading .down::after,
+.program-go::after,
+.shortcut-arrow::after,
+.calendar-route-arrow::after,
+.program-fast-arrow::after{
+  content:"";
+  width:18px;
+  height:16px;
+  background:currentColor;
+  clip-path:polygon(0 34%,57% 34%,57% 0,100% 50%,57% 100%,57% 66%,0 66%);
+}
+
+/* Heading arrows point down. Click-through arrows point right. */
+.program-heading .down::after{transform:rotate(90deg)}
+.program-go::after,
+.shortcut-arrow::after,
+.calendar-route-arrow::after,
+.program-fast-arrow::after{transform:none}
+
+/* Program month-card arrows are simple and quiet. */
+.program-month-card .card-arrow{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  font-size:0!important;
+}
+.program-month-card .card-arrow::after{
+  content:"";
+  width:18px;
+  height:14px;
+  background:var(--purple,#5A3F98);
+  clip-path:polygon(0 34%,57% 34%,57% 0,100% 50%,57% 100%,57% 66%,0 66%);
+}
+
+/* ---------- accessibility launcher ---------- */
+.accessibility-launcher{
+  right:16px!important;
+  bottom:16px!important;
+  width:48px!important;
+  height:48px!important;
+  border:3px solid var(--yellow,#FFD420)!important;
+  background:var(--purple,#5A3F98)!important;
+  color:#fff!important;
+  box-shadow:0 8px 22px rgba(32,20,56,.22)!important;
+}
+.accessibility-launcher svg{width:25px!important;height:25px!important}
+.accessibility-launcher:hover{transform:translateY(-1px)}
+
+/* ---------- program landing pages: same visual rhythm ---------- */
+.program-hub-hero{
+  position:relative;
+  overflow:hidden;
+  background:#fff!important;
+  border-bottom:0!important;
+  padding-bottom:44px!important;
+}
+.program-hub-hero::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:38px;
+  background-repeat:no-repeat;
+  background-position:center bottom;
+  background-size:100% 100%;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 70' preserveAspectRatio='none'%3E%3Cpath fill='%23f7f6f9' d='M0 40 C120 22 198 53 318 38 C438 22 516 54 636 38 C756 22 835 54 955 38 C1075 22 1154 53 1274 38 C1394 23 1480 49 1600 34 L1600 70 L0 70 Z'/%3E%3C/svg%3E");
+  pointer-events:none;
+}
+.program-hub-hero>.portal-container{position:relative;z-index:1}
+body[data-program="elementary-middle"] .program-hub-photo{box-shadow:-8px 9px 0 var(--teal,#8FD1C4),0 20px 44px rgba(48,31,77,.10)!important}
+body[data-program="high-school"] .program-hub-photo{box-shadow:8px 9px 0 var(--orange,#F37735),0 20px 44px rgba(48,31,77,.10)!important}
+.program-months{background:var(--wash,#f7f6f9)}
+
+@media(max-width:760px){
+  .program-heading .down{display:none!important}
+  .program-go,.calendar-route-arrow{width:38px;height:38px}
+  .program-go::after,.calendar-route-arrow::after{width:16px;height:14px}
+  .accessibility-launcher{right:12px!important;bottom:12px!important;width:46px!important;height:46px!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .accessibility-launcher:hover{transform:none}
+}
+
+/* =========================================================
+   HOME HERO — let the artwork settle into the lower wave
+   The artwork should feel connected to the section transition,
+   not float above it with a large white gap.
+   ========================================================= */
+@media (min-width: 901px){
+  .portal-home-page .teacher-hub-hero{
+    position:relative;
+  }
+
+  .portal-home-page .hub-hero-art{
+    position:relative;
+    z-index:2;
+    align-self:end;
+    transform:translateY(clamp(44px, 4vw, 72px));
+  }
+
+  .portal-home-page .hub-hero-art img{
+    display:block;
+  }
+}
+
+/* Keep the artwork in the normal document flow on tablets/phones. */
+@media (max-width: 900px){
+  .portal-home-page .hub-hero-art{
+    transform:none!important;
+  }
+}
