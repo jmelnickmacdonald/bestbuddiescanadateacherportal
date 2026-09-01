@@ -7,7 +7,7 @@
 (() => {
   "use strict";
 
-  const KEY = "bbTeacherHubAccessibility";
+  const STORAGE_KEY = "bbTeacherHubAccessibility";
 
   const defaults = {
     text: "default",
@@ -18,20 +18,39 @@
     motion: "default"
   };
 
+
+  /* =======================================================
+     SETTINGS
+  ======================================================= */
+
   function loadSettings() {
     try {
+      const saved = JSON.parse(
+        localStorage.getItem(STORAGE_KEY) || "{}"
+      );
+
       return {
         ...defaults,
-        ...JSON.parse(localStorage.getItem(KEY) || "{}")
+        ...saved
       };
     } catch {
       return { ...defaults };
     }
   }
 
+
   function saveSettings(settings) {
-    localStorage.setItem(KEY, JSON.stringify(settings));
+    try {
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(settings)
+      );
+    } catch {
+      /* Preferences still work for the current page
+         if localStorage is unavailable. */
+    }
   }
+
 
   function applySettings(settings) {
     const root = document.documentElement;
@@ -44,42 +63,63 @@
     root.dataset.a11yMotion = settings.motion;
   }
 
-  function buildUI() {
+
+  /* =======================================================
+     BUILD ACCESSIBILITY UI
+  ======================================================= */
+
+  function buildAccessibilityUI() {
+
     const launcher = document.createElement("button");
 
     launcher.className = "accessibility-launcher";
     launcher.type = "button";
-    launcher.setAttribute("aria-label", "Accessibility adjustments");
-    launcher.setAttribute("aria-expanded", "false");
-    launcher.setAttribute("aria-controls", "accessibility-panel");
 
+    launcher.setAttribute(
+      "aria-label",
+      "Accessibility options"
+    );
+
+    launcher.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    launcher.setAttribute(
+      "aria-controls",
+      "accessibility-panel"
+    );
+
+
+    /* Universal Access icon */
     launcher.innerHTML = `
       <svg
         viewBox="0 0 24 24"
         aria-hidden="true"
         fill="none"
         stroke="currentColor"
-        stroke-width="2.15"
+        stroke-width="2.1"
         stroke-linecap="round"
         stroke-linejoin="round"
       >
-        <path d="M4 7h10"></path>
-        <path d="M18 7h2"></path>
-        <circle cx="16" cy="7" r="2"></circle>
+        <circle cx="12" cy="4.25" r="2.25"></circle>
 
-        <path d="M4 12h3"></path>
-        <path d="M11 12h9"></path>
-        <circle cx="9" cy="12" r="2"></circle>
+        <path d="M5 8.5h14"></path>
 
-        <path d="M4 17h8"></path>
-        <path d="M16 17h4"></path>
-        <circle cx="14" cy="17" r="2"></circle>
+        <path d="M12 8.5v5"></path>
+
+        <path d="M8.5 21 12 13.5 15.5 21"></path>
+
+        <path d="M8.25 11 5.5 15"></path>
+
+        <path d="M15.75 11 18.5 15"></path>
       </svg>
 
       <span class="accessibility-launcher-label">
-        Accessibility
+        Accessibility options
       </span>
     `;
+
 
     const panel = document.createElement("section");
 
@@ -88,9 +128,15 @@
     panel.hidden = true;
 
     panel.setAttribute(
+      "role",
+      "dialog"
+    );
+
+    panel.setAttribute(
       "aria-labelledby",
       "accessibility-panel-title"
     );
+
 
     panel.innerHTML = `
       <div class="accessibility-panel-header">
@@ -101,19 +147,26 @@
           </span>
 
           <h2 id="accessibility-panel-title">
-            Accessibility adjustments
+            Accessibility options
           </h2>
         </div>
+
 
         <button
           class="accessibility-close"
           type="button"
-          aria-label="Close accessibility adjustments"
+          aria-label="Close accessibility options"
         >
           ×
         </button>
 
       </div>
+
+
+      <p class="accessibility-panel-intro">
+        Adjust how the Teacher Hub looks and feels on this device.
+      </p>
+
 
       <div class="accessibility-group">
 
@@ -121,7 +174,11 @@
           Text size
         </span>
 
-        <div class="accessibility-choice-row">
+        <div
+          class="accessibility-choice-row"
+          role="group"
+          aria-label="Text size"
+        >
 
           <button
             class="accessibility-choice"
@@ -153,6 +210,7 @@
         </div>
 
       </div>
+
 
       <div class="accessibility-group">
 
@@ -211,6 +269,7 @@
 
       </div>
 
+
       <button
         class="accessibility-reset"
         type="button"
@@ -219,16 +278,23 @@
       </button>
     `;
 
+
     document.body.append(
       launcher,
       panel
     );
+
 
     return {
       launcher,
       panel
     };
   }
+
+
+  /* =======================================================
+     INITIALIZE
+  ======================================================= */
 
   document.addEventListener(
     "DOMContentLoaded",
@@ -238,20 +304,28 @@
 
       applySettings(settings);
 
+
       const {
         launcher,
         panel
-      } = buildUI();
+      } = buildAccessibilityUI();
 
-      const close =
+
+      const closeButton =
         panel.querySelector(
           ".accessibility-close"
         );
 
-      const reset =
+
+      const resetButton =
         panel.querySelector(
           ".accessibility-reset"
         );
+
+
+      /* ===================================================
+         UPDATE BUTTON STATES
+      =================================================== */
 
       function syncButtons() {
 
@@ -261,17 +335,22 @@
           )
           .forEach(button => {
 
-            button.setAttribute(
-              "aria-pressed",
+            const active =
               settings[
                 button.dataset.setting
               ] ===
-              button.dataset.value
+              button.dataset.value;
+
+
+            button.setAttribute(
+              "aria-pressed",
+              active
                 ? "true"
                 : "false"
             );
 
           });
+
 
         panel
           .querySelectorAll(
@@ -279,12 +358,16 @@
           )
           .forEach(button => {
 
-            button.setAttribute(
-              "aria-pressed",
+            const active =
               settings[
                 button.dataset.setting
               ] ===
-              button.dataset.on
+              button.dataset.on;
+
+
+            button.setAttribute(
+              "aria-pressed",
+              active
                 ? "true"
                 : "false"
             );
@@ -292,6 +375,11 @@
           });
 
       }
+
+
+      /* ===================================================
+         OPEN / CLOSE
+      =================================================== */
 
       function openPanel() {
 
@@ -302,15 +390,17 @@
           "true"
         );
 
+
         try {
-          close.focus({
+          closeButton.focus({
             preventScroll: true
           });
         } catch {
-          close.focus();
+          closeButton.focus();
         }
 
       }
+
 
       function closePanel() {
 
@@ -321,6 +411,7 @@
           "false"
         );
 
+
         try {
           launcher.focus({
             preventScroll: true
@@ -330,6 +421,7 @@
         }
 
       }
+
 
       launcher.addEventListener(
         "click",
@@ -344,10 +436,16 @@
         }
       );
 
-      close.addEventListener(
+
+      closeButton.addEventListener(
         "click",
         closePanel
       );
+
+
+      /* ===================================================
+         SETTING BUTTONS
+      =================================================== */
 
       panel.addEventListener(
         "click",
@@ -358,29 +456,38 @@
               "[data-setting]"
             );
 
+
           if (!button) {
             return;
           }
 
+
           const setting =
             button.dataset.setting;
 
+
+          /* Radio-style options */
           if (button.dataset.value) {
 
             settings[setting] =
               button.dataset.value;
 
-          } else if (
-            button.dataset.on
-          ) {
+          }
+
+
+          /* Toggle options */
+          else if (button.dataset.on) {
 
             settings[setting] =
               settings[setting] ===
               button.dataset.on
+
                 ? "default"
+
                 : button.dataset.on;
 
           }
+
 
           saveSettings(settings);
 
@@ -391,7 +498,12 @@
         }
       );
 
-      reset.addEventListener(
+
+      /* ===================================================
+         RESET
+      =================================================== */
+
+      resetButton.addEventListener(
         "click",
         () => {
 
@@ -399,6 +511,7 @@
             ...defaults
           };
 
+
           saveSettings(settings);
 
           applySettings(settings);
@@ -407,6 +520,11 @@
 
         }
       );
+
+
+      /* ===================================================
+         ESCAPE KEY
+      =================================================== */
 
       document.addEventListener(
         "keydown",
@@ -416,11 +534,42 @@
             event.key === "Escape" &&
             !panel.hidden
           ) {
+
             closePanel();
+
           }
 
         }
       );
+
+
+      /* ===================================================
+         CLOSE WHEN CLICKING OUTSIDE
+      =================================================== */
+
+      document.addEventListener(
+        "pointerdown",
+        event => {
+
+          if (
+            panel.hidden ||
+            panel.contains(event.target) ||
+            launcher.contains(event.target)
+          ) {
+            return;
+          }
+
+
+          panel.hidden = true;
+
+          launcher.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+      );
+
 
       syncButtons();
 
