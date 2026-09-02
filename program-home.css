@@ -963,3 +963,48 @@
     height:48px;
   }
 }
+
+
+/* =========================================================
+   V5 — EXACT BEST BUDDIES CANADA CARD COLOURS
+   ========================================================= */
+
+.program-home-simple .route-playbook{
+  --route-accent:#5A3F98 !important;
+}
+
+.program-home-simple .route-calendar{
+  --route-accent:#FFD420 !important;
+}
+
+.program-home-simple .route-resources{
+  --route-accent:#8FD1C4 !important;
+}
+
+.program-home-simple .route-support{
+  --route-accent:#F37735 !important;
+}
+
+/* Keep the exact yellow as the card accent,
+   but use purple for small text/arrow so it remains legible on white. */
+.program-home-simple .route-calendar .route-kicker,
+.program-home-simple .route-calendar .route-arrow{
+  color:#5A3F98 !important;
+}
+
+/* Teal is intentionally the actual BBC teal, not a darkened substitute. */
+.program-home-simple .route-resources .route-kicker,
+.program-home-simple .route-resources .route-arrow{
+  color:#287F73 !important;
+}
+
+/* Purple and orange remain strong enough to use directly. */
+.program-home-simple .route-playbook .route-kicker,
+.program-home-simple .route-playbook .route-arrow{
+  color:#5A3F98 !important;
+}
+
+.program-home-simple .route-support .route-kicker,
+.program-home-simple .route-support .route-arrow{
+  color:#F37735 !important;
+}
