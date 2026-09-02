@@ -90,19 +90,9 @@
 
 .gb-hero h1 span{color:var(--gb-purple)}
 
-.gb-hero h1::after{
-  content:"";
-  display:block;
-  width:64px;
-  height:7px;
-  margin-top:28px;
-  border-radius:999px;
-  background:var(--gb-teal);
-}
-
 .gb-hero-lede{
   max-width:760px;
-  margin:24px 0 0;
+  margin:28px 0 0;
   color:var(--gb-text);
   font-size:1.08rem;
   line-height:1.62;
@@ -154,6 +144,7 @@
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:9px;
+  margin-bottom:2px;
 }
 
 .gb-rhythm span{
@@ -185,13 +176,6 @@
 .gb-rhythm .core b{background:var(--gb-orange);color:#fff}
 .gb-rhythm .takeaway b{background:var(--gb-lilac);color:#fff}
 
-.gb-rhythm-card > p{
-  margin:17px 0 0;
-  max-width:470px;
-  font-size:.9rem;
-  line-height:1.52;
-}
-
 /* BUILDER ENVIRONMENT */
 .gb-builder-section{
   position:relative;
@@ -209,28 +193,72 @@
   background:url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 90' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill='%235A3F98' d='M0 48C170 25 285 68 467 47C646 26 775 72 948 48C1110 26 1275 66 1440 43V90H0Z'/%3E%3C/svg%3E") center bottom/100% 100% no-repeat;
 }
 
-.gb-month-row{
+
+.gb-month-picker{
+  max-width:1180px;
+  margin:0 auto 20px;
   display:flex;
   align-items:center;
-  justify-content:flex-end;
-  gap:12px;
-  max-width:1180px;
-  margin:0 auto 22px;
-  color:#fff;
-  font-size:.9rem;
-  font-weight:850;
+  justify-content:space-between;
+  gap:32px;
+  padding:22px 24px 22px 28px;
+  border-radius:22px 22px 46px 22px;
+  background:#fff;
+  box-shadow:0 12px 28px rgba(31,19,52,.10);
 }
 
-.gb-month-row select{
-  min-height:48px;
-  padding:9px 42px 9px 16px;
-  border:0;
+.gb-month-picker-copy{
+  max-width:720px;
+}
+
+.gb-month-picker-copy .gb-kicker{
+  margin-bottom:5px;
+}
+
+.gb-month-picker-copy label{
+  display:block;
+  color:var(--gb-ink);
+  font-family:var(--display,"League Spartan",Arial,sans-serif);
+  font-size:1.55rem;
+  font-weight:850;
+  line-height:1;
+}
+
+.gb-month-picker-copy p{
+  margin:7px 0 0;
+  font-size:.88rem;
+  line-height:1.45;
+}
+
+.gb-month-select-wrap{
+  flex:0 0 auto;
+  position:relative;
+}
+
+.gb-month-select-wrap::before{
+  content:"Planning for";
+  display:block;
+  margin:0 0 6px 4px;
+  color:var(--gb-purple);
+  font-size:.68rem;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.gb-month-select-wrap select{
+  min-width:190px;
+  min-height:54px;
+  padding:10px 46px 10px 18px;
+  border:2px solid var(--gb-purple);
   border-radius:999px;
   background:#fff;
   color:var(--gb-ink);
-  font-size:.92rem;
-  font-weight:800;
+  font-size:1rem;
+  font-weight:850;
+  cursor:pointer;
 }
+
 
 .gb-app{
   max-width:1180px;
@@ -1316,8 +1344,19 @@ button.gb-choice{
     padding:56px 0 70px;
   }
 
-  .gb-month-row{
-    justify-content:flex-start;
+  .gb-month-picker{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:18px;
+    padding:22px 20px;
+  }
+
+  .gb-month-select-wrap{
+    width:100%;
+  }
+
+  .gb-month-select-wrap select{
+    width:100%;
   }
 
   .gb-panel{
@@ -1434,7 +1473,7 @@ button.gb-choice{
   .portal-header,
   .portal-footer,
   .gb-hero,
-  .gb-month-row,
+  .gb-month-picker,
   .gb-resource-exit,
   .gb-panel-head,
   .gb-rhythm-line,
