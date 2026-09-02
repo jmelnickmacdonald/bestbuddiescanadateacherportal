@@ -1046,3 +1046,56 @@
   }
 }
 }
+
+/* =========================================================
+   FINAL HOMEPAGE FIX — KEEP THIS LAST
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   HERO ARTWORK — MOVE DOWN
+   Keep image size + wave exactly as they are.
+--------------------------------------------------------- */
+
+@media (min-width:1201px){
+
+  .portal-home-page .hub-hero-art img{
+    top:-32px !important;
+    transform:none !important;
+  }
+
+}
+
+
+/* Narrow desktop */
+@media (min-width:901px) and (max-width:1200px){
+
+  .portal-home-page .hub-hero-art img{
+    top:auto !important;
+    transform:translateY(-8px) !important;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   REMOVE RANDOM DECORATIVE CIRCLES / DOTS
+--------------------------------------------------------- */
+
+.portal-home-page .program-launch::before,
+.portal-home-page .program-launch::after,
+
+.portal-home-page .program-heading::before,
+.portal-home-page .program-heading::after,
+
+.portal-home-page .portal-shortcuts::before,
+.portal-home-page .portal-shortcuts::after,
+
+.portal-home-page .shortcut-heading::before,
+.portal-home-page .shortcut-heading::after,
+
+.portal-home-page .shortcut-grid::before,
+.portal-home-page .shortcut-grid::after {
+  content:none !important;
+  display:none !important;
+}
