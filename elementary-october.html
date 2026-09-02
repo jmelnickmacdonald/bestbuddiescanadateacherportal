@@ -14,7 +14,950 @@
   <link rel="stylesheet" href="access.css">
   <link rel="stylesheet" href="accessibility.css">
   <link rel="stylesheet" href="portal-polish.css">
-  <link rel="stylesheet" href="elementary-month-pages-v2.css">
+
+  <!-- Monthly page design is embedded here so it cannot fail to load separately. -->
+  <style>
+/* =========================================================
+   BEST BUDDIES CANADA TEACHER HUB
+   Elementary & Middle monthly pages · September–December
+   Shared V1
+   Load AFTER portal-home.css, accessibility.css and portal-polish.css.
+   Body: Poppins. Display headings: League Spartan.
+   ========================================================= */
+
+body.em-month-page{
+  --em-purple:#5A3F98;
+  --em-lilac:#9396CA;
+  --em-yellow:#FFD420;
+  --em-teal:#8FD1C4;
+  --em-orange:#F37735;
+  --em-ink:#211B28;
+  --em-text:#4F4854;
+  --em-muted:#6E6673;
+  --em-soft:#F5F4F1;
+  --em-line:#E4DFE8;
+  --em-max:1220px;
+  margin:0;
+  background:#fff;
+  color:var(--em-text);
+  font-family:"Poppins",Arial,sans-serif;
+  font-size:18px;
+  line-height:1.62;
+}
+
+body.em-month-page *,
+body.em-month-page *::before,
+body.em-month-page *::after{box-sizing:border-box}
+
+body.em-month-page a,
+body.em-month-page button,
+body.em-month-page select,
+body.em-month-page input{
+  font-family:"Poppins",Arial,sans-serif;
+}
+
+.em-wrap{
+  width:min(calc(100% - 56px),var(--em-max));
+  margin-inline:auto;
+}
+
+.em-display,
+.em-section-title,
+.em-meeting-title,
+.em-support h2,
+.em-month-card h2{
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+}
+
+/* Keep shared header typography consistent and readable. */
+.em-month-page .portal-nav a,
+.em-month-page .portal-lang a,
+.em-month-page .site-menu summary,
+.em-month-page .site-menu-panel a{
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:.94rem !important;
+  font-weight:700 !important;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.em-hero{
+  position:relative;
+  overflow:hidden;
+  padding:30px 0 74px;
+  background:#F4F4F1;
+}
+
+.em-hero::after{
+  content:"";
+  position:absolute;
+  left:-4%;
+  right:-4%;
+  bottom:-42px;
+  height:82px;
+  border-radius:50% 50% 0 0 / 72% 72% 0 0;
+  background:var(--em-hero-wave,var(--em-teal));
+  opacity:.92;
+  transform:rotate(-1deg);
+}
+
+.em-back{
+  position:relative;
+  z-index:2;
+  display:inline-flex;
+  align-items:center;
+  min-height:42px;
+  margin-bottom:34px;
+  color:var(--em-purple);
+  font-size:.94rem;
+  font-weight:700;
+  text-decoration:none;
+}
+
+.em-back:hover,
+.em-back:focus-visible{text-decoration:underline;text-underline-offset:4px}
+
+.em-hero-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(340px,.72fr);
+  gap:clamp(44px,6vw,90px);
+  align-items:end;
+}
+
+.em-kicker,
+.em-section-kicker,
+.em-source,
+.em-phase-label,
+.em-timely-label,
+.em-resource-kicker{
+  display:block;
+  color:var(--em-purple);
+  font-size:.79rem;
+  font-weight:800;
+  line-height:1.25;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.em-month-pill{
+  display:inline-flex;
+  align-items:center;
+  min-height:39px;
+  padding:8px 14px;
+  margin:0 0 15px;
+  border-radius:999px;
+  background:var(--em-month-accent,var(--em-yellow));
+  color:var(--em-ink);
+  font-size:.82rem;
+  font-weight:800;
+  letter-spacing:.045em;
+  text-transform:uppercase;
+}
+
+.em-display{
+  max-width:760px;
+  margin:0;
+  color:var(--em-ink);
+  font-size:clamp(3.6rem,6.4vw,6.4rem);
+  font-weight:900;
+  line-height:.86;
+  letter-spacing:-.045em;
+}
+
+.em-display span{
+  display:block;
+  margin-top:8px;
+  color:var(--em-purple);
+}
+
+.em-hero-lede{
+  max-width:760px;
+  margin:26px 0 0;
+  color:var(--em-text);
+  font-size:1.13rem;
+  font-weight:500;
+  line-height:1.68;
+}
+
+.em-phase-card{
+  position:relative;
+  padding:28px 29px 30px;
+  border-radius:26px 26px 58px 26px;
+  background:#fff;
+  box-shadow:10px 10px 0 var(--em-month-accent,var(--em-yellow));
+}
+
+.em-phase-card h2{
+  margin:8px 0 0;
+  color:var(--em-ink);
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:2rem;
+  font-weight:850;
+  line-height:1;
+}
+
+.em-phase-card p{
+  margin:13px 0 0;
+  font-size:.98rem;
+  line-height:1.62;
+}
+
+.em-phase-card strong{color:var(--em-purple)}
+
+/* =========================================================
+   MONTH STRIP
+   ========================================================= */
+.em-month-nav{
+  padding:28px 0 30px;
+  background:var(--em-purple);
+}
+
+.em-month-nav-inner{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:30px;
+  align-items:center;
+}
+
+.em-month-nav-label{
+  color:#fff;
+  font-size:.82rem;
+  font-weight:800;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.em-month-links{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+
+.em-month-links a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:10px 14px;
+  border:1px solid rgba(255,255,255,.34);
+  border-radius:999px;
+  color:#fff;
+  font-size:.9rem;
+  font-weight:700;
+  text-decoration:none;
+  transition:transform .15s ease,background .15s ease,color .15s ease;
+}
+
+.em-month-links a:hover,
+.em-month-links a:focus-visible{
+  transform:translateY(-1px);
+  background:#fff;
+  color:var(--em-purple);
+}
+
+.em-month-links a[aria-current="page"]{
+  border-color:var(--em-yellow);
+  background:var(--em-yellow);
+  color:var(--em-ink);
+}
+
+/* =========================================================
+   PRIORITIES
+   ========================================================= */
+.em-priorities{
+  padding:86px 0 92px;
+  background:#fff;
+}
+
+.em-section-head{
+  display:grid;
+  grid-template-columns:minmax(0,.85fr) minmax(320px,.55fr);
+  gap:48px;
+  align-items:end;
+  margin-bottom:34px;
+}
+
+.em-section-title{
+  max-width:720px;
+  margin:8px 0 0;
+  color:var(--em-ink);
+  font-size:clamp(2.6rem,4vw,4.25rem);
+  font-weight:900;
+  line-height:.94;
+  letter-spacing:-.032em;
+}
+
+.em-section-intro{
+  margin:0;
+  font-size:1rem;
+  line-height:1.65;
+}
+
+.em-priority-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:15px;
+}
+
+.em-priority-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+.em-priority{
+  position:relative;
+  min-height:250px;
+  padding:25px 24px 27px;
+  overflow:hidden;
+  border:1px solid var(--em-line);
+  border-radius:22px 22px 52px 22px;
+  background:var(--em-soft);
+}
+
+.em-priority:nth-child(2){background:#F0F8F6}
+.em-priority:nth-child(3){background:#F4F1F8}
+.em-priority:nth-child(4){background:#FFF8D8}
+
+.em-number{
+  display:block;
+  margin-bottom:34px;
+  color:var(--em-purple);
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:2.1rem;
+  font-weight:900;
+  line-height:1;
+}
+
+.em-priority h3{
+  margin:0;
+  color:var(--em-ink);
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:1.72rem;
+  font-weight:850;
+  line-height:1.02;
+}
+
+.em-priority p{
+  margin:12px 0 0;
+  font-size:.95rem;
+  line-height:1.62;
+}
+
+.em-now-note{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:18px;
+  align-items:start;
+  margin-top:24px;
+  padding:21px 23px;
+  border-radius:18px 18px 38px 18px;
+  background:#F4F1F8;
+}
+
+.em-now-note b{
+  display:flex;
+  width:36px;
+  height:36px;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:var(--em-yellow);
+  color:var(--em-ink);
+  font-size:1rem;
+}
+
+.em-now-note p{
+  margin:0;
+  font-size:.95rem;
+  line-height:1.6;
+}
+
+/* =========================================================
+   MEETING BRIDGE
+   ========================================================= */
+.em-meeting{
+  position:relative;
+  overflow:hidden;
+  padding:84px 0 92px;
+  background:var(--em-purple);
+  color:#fff;
+}
+
+.em-meeting::before{
+  content:"";
+  position:absolute;
+  top:-70px;
+  right:-80px;
+  width:250px;
+  height:180px;
+  border-radius:48% 52% 45% 55% / 55% 45% 55% 45%;
+  background:var(--em-month-accent,var(--em-yellow));
+  transform:rotate(10deg);
+  opacity:.95;
+}
+
+.em-meeting-head{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(330px,.56fr);
+  gap:48px;
+  align-items:end;
+}
+
+.em-meeting .em-section-kicker{color:var(--em-yellow)}
+
+.em-meeting-title{
+  max-width:760px;
+  margin:8px 0 0;
+  color:#fff;
+  font-size:clamp(2.7rem,4.5vw,4.7rem);
+  font-weight:900;
+  line-height:.92;
+  letter-spacing:-.034em;
+}
+
+.em-meeting-copy{
+  margin:0;
+  color:rgba(255,255,255,.88);
+  font-size:1rem;
+  line-height:1.68;
+}
+
+.em-phase-thread{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin:28px 0 30px;
+}
+
+.em-phase-thread span{
+  display:inline-flex;
+  align-items:center;
+  min-height:38px;
+  padding:7px 12px;
+  border:1px solid rgba(255,255,255,.34);
+  border-radius:999px;
+  color:#fff;
+  font-size:.82rem;
+  font-weight:700;
+}
+
+.em-phase-thread .current{
+  border-color:var(--em-yellow);
+  background:var(--em-yellow);
+  color:var(--em-ink);
+}
+
+.em-activity-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+
+.em-activity{
+  display:flex;
+  flex-direction:column;
+  min-height:330px;
+  padding:24px 23px 23px;
+  border-radius:22px 22px 50px 22px;
+  background:#fff;
+  color:var(--em-text);
+}
+
+.em-source{
+  margin-bottom:18px;
+  color:var(--em-purple);
+}
+
+.em-activity h3{
+  margin:0;
+  color:var(--em-ink);
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:1.9rem;
+  font-weight:850;
+  line-height:1;
+}
+
+.em-activity p{
+  margin:12px 0 16px;
+  font-size:.94rem;
+  line-height:1.6;
+}
+
+.em-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:auto;
+}
+
+.em-meta span{
+  display:inline-flex;
+  align-items:center;
+  min-height:31px;
+  padding:5px 9px;
+  border-radius:999px;
+  background:#F1EEF6;
+  color:var(--em-purple);
+  font-size:.76rem;
+  font-weight:700;
+}
+
+.em-activity a{
+  display:inline-flex;
+  width:max-content;
+  margin-top:17px;
+  color:var(--em-purple);
+  font-size:.86rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.em-activity a:hover,
+.em-activity a:focus-visible{text-decoration:underline;text-underline-offset:3px}
+
+.em-timely{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(240px,.4fr);
+  gap:34px;
+  align-items:center;
+  margin-top:18px;
+  padding:22px 24px;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:20px 20px 42px 20px;
+  background:rgba(255,255,255,.09);
+}
+
+.em-timely-label{color:var(--em-yellow)}
+.em-timely h3{
+  margin:5px 0 0;
+  color:#fff;
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:1.65rem;
+  line-height:1;
+}
+.em-timely p{
+  margin:9px 0 0;
+  color:rgba(255,255,255,.88);
+  font-size:.9rem;
+  line-height:1.58;
+}
+.em-timely a{
+  justify-self:end;
+  color:#fff;
+  font-size:.86rem;
+  font-weight:800;
+  text-decoration:none;
+}
+.em-timely a:hover,
+.em-timely a:focus-visible{text-decoration:underline;text-underline-offset:3px}
+
+.em-plan-cta{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:26px;
+  align-items:center;
+  margin-top:30px;
+  padding:27px 29px;
+  border-radius:24px 24px 58px 24px;
+  background:var(--em-yellow);
+  color:var(--em-ink);
+}
+
+.em-plan-cta strong{
+  display:block;
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:2rem;
+  font-weight:900;
+  line-height:1;
+}
+
+.em-plan-cta p{
+  max-width:720px;
+  margin:8px 0 0;
+  font-size:.92rem;
+  line-height:1.58;
+}
+
+.em-plan-button{
+  display:inline-flex;
+  min-height:52px;
+  align-items:center;
+  justify-content:center;
+  padding:11px 19px;
+  border-radius:999px;
+  background:var(--em-purple);
+  color:#fff;
+  font-size:.9rem;
+  font-weight:800;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+/* =========================================================
+   CALENDAR + RESOURCES
+   ========================================================= */
+.em-calendar-bridge{
+  padding:32px 0;
+  background:var(--em-teal);
+}
+
+.em-calendar-inner{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:30px;
+  align-items:center;
+}
+
+.em-calendar-inner strong{
+  display:block;
+  color:var(--em-ink);
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:1.65rem;
+  font-weight:850;
+  line-height:1;
+}
+
+.em-calendar-inner p{
+  margin:6px 0 0;
+  color:#334B47;
+  font-size:.91rem;
+  line-height:1.55;
+}
+
+.em-calendar-inner a{
+  display:inline-flex;
+  min-height:46px;
+  align-items:center;
+  padding:9px 17px;
+  border-radius:999px;
+  background:#fff;
+  color:var(--em-purple);
+  font-size:.86rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.em-resources{
+  padding:78px 0 82px;
+  background:#F7F6F3;
+}
+
+.em-resource-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  margin-top:28px;
+}
+
+.em-resource{
+  display:flex;
+  min-height:185px;
+  flex-direction:column;
+  padding:23px 22px;
+  border:1px solid var(--em-line);
+  border-radius:20px 20px 42px 20px;
+  background:#fff;
+  color:var(--em-text);
+  text-decoration:none;
+}
+
+.em-resource:nth-child(2){border-top:7px solid var(--em-teal)}
+.em-resource:nth-child(3){border-top:7px solid var(--em-yellow)}
+.em-resource:first-child{border-top:7px solid var(--em-purple)}
+
+.em-resource strong{
+  display:block;
+  color:var(--em-ink);
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:1.48rem;
+  font-weight:850;
+  line-height:1.02;
+}
+
+.em-resource span{
+  display:block;
+  margin:10px 0 0;
+  font-size:.9rem;
+  line-height:1.58;
+}
+
+.em-resource b{
+  margin-top:auto;
+  padding-top:16px;
+  color:var(--em-purple);
+  font-size:.84rem;
+}
+
+/* =========================================================
+   SUPPORT + PREV/NEXT
+   ========================================================= */
+.em-support{
+  padding:62px 0;
+  background:#fff;
+}
+
+.em-support-inner{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:38px;
+  align-items:center;
+  padding:32px 34px;
+  border-radius:26px 26px 62px 26px;
+  background:#F1EEF7;
+}
+
+.em-support h2{
+  margin:6px 0 0;
+  color:var(--em-ink);
+  font-size:2.6rem;
+  font-weight:900;
+  line-height:.95;
+}
+
+.em-support p{
+  max-width:760px;
+  margin:12px 0 0;
+  font-size:.94rem;
+  line-height:1.62;
+}
+
+.em-support a{
+  display:inline-flex;
+  min-height:50px;
+  align-items:center;
+  padding:10px 18px;
+  border-radius:999px;
+  background:var(--em-purple);
+  color:#fff;
+  font-size:.88rem;
+  font-weight:800;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.em-prev-next{
+  padding:0 0 70px;
+  background:#fff;
+}
+
+.em-prev-next-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.em-prev-next a,
+.em-prev-next .empty{
+  min-height:90px;
+  padding:18px 20px;
+  border:1px solid var(--em-line);
+  border-radius:18px 18px 38px 18px;
+  background:#fff;
+  color:var(--em-purple);
+  text-decoration:none;
+}
+
+.em-prev-next a:last-child{text-align:right}
+.em-prev-next small{
+  display:block;
+  margin-bottom:5px;
+  color:var(--em-muted);
+  font-size:.75rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+.em-prev-next strong{
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:1.4rem;
+  line-height:1;
+}
+.em-prev-next .empty{visibility:hidden}
+
+/* =========================================================
+   MONTH PICKER PAGE
+   ========================================================= */
+.em-month-picker-hero{
+  padding:52px 0 66px;
+  background:#F4F4F1;
+}
+.em-month-picker-hero h1{
+  max-width:820px;
+  margin:8px 0 0;
+  color:var(--em-ink);
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:clamp(3rem,5vw,5.2rem);
+  font-weight:900;
+  line-height:.9;
+  letter-spacing:-.04em;
+}
+.em-month-picker-hero p{
+  max-width:760px;
+  margin:20px 0 0;
+  font-size:1.05rem;
+  line-height:1.65;
+}
+.em-month-picker-list{
+  padding:66px 0 84px;
+}
+.em-month-picker-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+.em-month-card{
+  position:relative;
+  min-height:285px;
+  padding:28px;
+  border:1px solid var(--em-line);
+  border-radius:24px 24px 58px 24px;
+  background:#fff;
+  color:var(--em-text);
+  text-decoration:none;
+  overflow:hidden;
+}
+.em-month-card::after{
+  content:"";
+  position:absolute;
+  right:-28px;
+  bottom:-34px;
+  width:130px;
+  height:94px;
+  border-radius:50%;
+  background:var(--card-accent,var(--em-yellow));
+  opacity:.9;
+}
+.em-month-card small{
+  display:block;
+  color:var(--em-purple);
+  font-size:.8rem;
+  font-weight:800;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+.em-month-card h2{
+  position:relative;
+  z-index:1;
+  margin:17px 0 0;
+  color:var(--em-ink);
+  font-size:2.4rem;
+  font-weight:900;
+  line-height:.95;
+}
+.em-month-card p{
+  position:relative;
+  z-index:1;
+  max-width:470px;
+  margin:15px 0 0;
+  font-size:.96rem;
+  line-height:1.62;
+}
+.em-month-card b{
+  position:absolute;
+  left:28px;
+  bottom:25px;
+  z-index:1;
+  color:var(--em-purple);
+  font-size:.86rem;
+}
+.em-month-picker-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:20px;
+}
+.em-month-picker-actions a{
+  display:flex;
+  min-height:86px;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:18px 22px;
+  border-radius:18px 18px 38px 18px;
+  background:#F1EEF7;
+  color:var(--em-purple);
+  font-size:.9rem;
+  font-weight:800;
+  text-decoration:none;
+}
+.em-month-picker-actions a:last-child{background:#EAF6F3}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width:1000px){
+  .em-hero-grid,
+  .em-section-head,
+  .em-meeting-head{
+    grid-template-columns:1fr;
+  }
+  .em-phase-card{max-width:720px}
+  .em-priority-grid,
+  .em-priority-grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .em-activity-grid{grid-template-columns:1fr 1fr}
+  .em-activity:last-child:nth-child(odd){grid-column:1/-1}
+}
+
+@media (max-width:780px){
+  body.em-month-page{font-size:17px}
+  .em-wrap{width:min(calc(100% - 32px),var(--em-max))}
+  .em-hero{padding:24px 0 58px}
+  .em-back{margin-bottom:25px}
+  .em-display{font-size:clamp(3.15rem,15vw,4.8rem)}
+  .em-hero-lede{font-size:1.03rem}
+  .em-month-nav-inner{grid-template-columns:1fr;gap:13px}
+  .em-month-links{grid-template-columns:1fr 1fr}
+  .em-month-links a{min-height:46px}
+  .em-priorities,.em-meeting,.em-resources{padding:62px 0}
+  .em-priority-grid,
+  .em-priority-grid.three,
+  .em-activity-grid,
+  .em-resource-grid,
+  .em-month-picker-grid,
+  .em-month-picker-actions{
+    grid-template-columns:1fr;
+  }
+  .em-activity:last-child:nth-child(odd){grid-column:auto}
+  .em-priority{min-height:0}
+  .em-number{margin-bottom:20px}
+  .em-timely,
+  .em-plan-cta,
+  .em-calendar-inner,
+  .em-support-inner{
+    grid-template-columns:1fr;
+  }
+  .em-timely a{justify-self:start}
+  .em-calendar-inner a,
+  .em-support a,
+  .em-plan-button{width:max-content}
+  .em-prev-next-inner{grid-template-columns:1fr}
+  .em-prev-next a:last-child{text-align:left}
+  .em-prev-next .empty{display:none}
+}
+
+@media (max-width:480px){
+  .em-month-links{grid-template-columns:1fr}
+  .em-display{font-size:3.05rem}
+  .em-section-title{font-size:2.45rem}
+  .em-meeting-title{font-size:2.55rem}
+  .em-phase-card,.em-plan-cta,.em-support-inner{padding:23px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .em-month-links a{transition:none}
+  .em-month-links a:hover{transform:none}
+}
+  </style>
 
   <script src="access.js" defer></script>
   <script src="accessibility.js" defer></script>
