@@ -1,802 +1,758 @@
 /* =========================================================
    Best Buddies Canada Teacher Hub
-   Program home + Chapter Playbook overview
-   Load after portal-home.css, accessibility.css, portal-polish.css.
+   Elementary & Middle School program home — BBC visual reset
+   Same HTML/content, less "portal card" UI and more Best Buddies Canada.
+   Load AFTER program-home.css.
    ========================================================= */
 
-.program-home-page,
-.playbook-page {
-  background: var(--white, #fff);
-  color: var(--text, #3f3945);
+.program-home-simple {
+  --bb-purple: var(--purple, #5A3F98);
+  --bb-yellow: var(--yellow, #FFD420);
+  --bb-teal: var(--teal, #8FD1C4);
+  --bb-orange: var(--orange, #F47A38);
+  --bb-ink: var(--ink, #1D1823);
+  --bb-text: var(--text, #4B4652);
+  --bb-muted: var(--muted, #665F6D);
+  --bb-lavender: #EEEAF6;
+  --bb-yellow-soft: #FFF4BD;
+  --bb-teal-soft: #DDF1EC;
+  --bb-orange-soft: #FDE7DB;
+
+  background: #fff;
+  color: var(--bb-text);
   font-family: var(--body, "Montserrat", Arial, sans-serif);
-}
-
-/* --- shared small links --------------------------------- */
-.program-back,
-.playbook-back {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  color: var(--purple, #5A3F98);
-  font-size: .82rem;
-  font-weight: 800;
-  text-decoration: none;
-}
-
-.program-back:hover,
-.program-back:focus-visible,
-.playbook-back:hover,
-.playbook-back:focus-visible {
-  text-decoration: underline;
 }
 
 /* =========================================================
-   PROGRAM HERO
+   HERO
+   Big graphic split, not a floating card.
    ========================================================= */
-.program-home-hero {
+
+.program-home-simple .simple-program-hero {
   position: relative;
   overflow: hidden;
-  padding: 34px 0 52px;
-  background: linear-gradient(180deg, var(--wash, #f7f6f9) 0%, #fff 92%);
+  padding: 0;
+  background: #fff;
 }
 
-.program-home-hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(330px, .82fr);
-  gap: clamp(38px, 5vw, 76px);
+.program-home-simple .simple-program-hero > .portal-container {
+  position: relative;
+  z-index: 2;
+  padding-top: 24px;
+}
+
+.program-home-simple .program-back {
+  display: inline-flex;
   align-items: center;
-  margin-top: 22px;
+  min-height: 34px;
+  margin-bottom: 16px;
+  color: var(--bb-purple);
+  font-size: .8rem;
+  font-weight: 850;
+  text-decoration: none;
 }
 
-.program-home-kicker,
-.section-kicker,
-.fork-eyebrow,
-.quick-help-tag,
-.playbook-kicker,
-.playbook-step-num {
+.program-home-simple .program-back:hover,
+.program-home-simple .program-back:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.program-home-simple .simple-program-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .93fr) minmax(420px, 1.07fr);
+  min-height: 430px;
+  margin-inline: calc(50% - 50vw);
+  padding-left: max(calc((100vw - var(--container, 1320px))/2), 24px);
+  padding-right: max(calc((100vw - var(--container, 1320px))/2), 24px);
+  background:
+    linear-gradient(90deg,
+      var(--bb-purple) 0%,
+      var(--bb-purple) 48%,
+      #fff 48%,
+      #fff 100%);
+}
+
+.program-home-simple .simple-program-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 670px;
+  padding: 56px 70px 70px 0;
+}
+
+.program-home-simple .program-home-kicker,
+.program-home-simple .section-kicker,
+.program-home-simple .route-kicker,
+.program-home-simple .simple-current-label,
+.program-home-simple .quick-help-tag {
   display: block;
-  color: var(--purple, #5A3F98);
-  font-family: var(--body, "Montserrat", Arial, sans-serif);
-  font-size: .71rem;
-  font-weight: 850;
-  letter-spacing: .075em;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .078em;
   line-height: 1.2;
   text-transform: uppercase;
 }
 
-.program-title-wrap {
-  position: relative;
-  width: fit-content;
-  max-width: 100%;
+.program-home-simple .program-home-kicker {
+  color: var(--bb-yellow);
 }
 
-.program-home-hero h1 {
-  position: relative;
-  z-index: 2;
-  max-width: 720px;
-  margin: 10px 0 0;
-  color: var(--ink, #1d1823);
+.program-home-simple .simple-program-copy h1 {
+  max-width: 650px;
+  margin: 12px 0 0;
+  color: #fff;
   font-family: var(--display, "League Spartan", Arial, sans-serif);
-  font-size: clamp(3.1rem, 5vw, 5.35rem);
+  font-size: clamp(3rem, 4vw, 4.35rem);
   font-weight: 850;
-  line-height: .91;
+  line-height: .96;
   letter-spacing: -.035em;
 }
 
-.program-home-hero h1 .purple {
-  color: var(--purple, #5A3F98);
+.program-home-simple .simple-program-copy h1 span {
+  color: var(--bb-yellow);
 }
 
-/* One playful black mark. Enough personality, not decoration everywhere. */
-.program-title-swoosh {
+.program-home-simple .simple-program-copy h1::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 6px;
+  margin-top: 24px;
+  border-radius: 999px;
+  background: var(--bb-teal);
+}
+
+.program-home-simple .simple-program-lede {
+  max-width: 610px;
+  margin: 20px 0 0;
+  color: rgba(255,255,255,.88);
+  font-size: clamp(.98rem, 1.06vw, 1.08rem);
+  line-height: 1.62;
+}
+
+/* Photo fills its side. Colour is structural, not sprinkled decoration. */
+.program-home-simple .simple-program-photo {
+  position: relative;
+  min-height: 430px;
+  margin: 0;
+  background: var(--bb-teal);
+}
+
+.program-home-simple .simple-program-photo::before {
+  content: "";
   position: absolute;
-  z-index: 1;
-  left: 13%;
-  bottom: -14px;
-  width: 54%;
-  height: 25px;
-  border-bottom: 6px solid #171319;
-  border-radius: 50%;
-  transform: rotate(-2deg) skewX(-13deg);
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 12px;
+  background: var(--bb-yellow);
+}
+
+.program-home-simple .simple-program-photo::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 0;
+  width: 22px;
+  height: 36%;
+  background: var(--bb-teal);
+}
+
+.program-home-simple .simple-program-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.program-home-simple .simple-program-wave {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 54px;
+  margin-top: -44px;
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 90' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,52 C175,77 295,31 470,52 C642,72 770,35 940,51 C1110,68 1260,34 1440,55 L1440,90 L0,90 Z'/%3E%3C/svg%3E")
+    center bottom / 100% 100% no-repeat;
   pointer-events: none;
 }
 
-.program-title-swoosh::after {
-  content: "";
-  position: absolute;
-  right: -24px;
-  bottom: 0;
-  width: 43px;
-  height: 13px;
-  border-bottom: 5px solid #171319;
-  border-radius: 50%;
-  transform: rotate(8deg);
+/* =========================================================
+   ROUTES
+   One graphic navigation block, not four app cards.
+   ========================================================= */
+
+.program-home-simple .simple-routes {
+  padding: 48px 0 82px;
+  background: #fff;
 }
 
-.program-home-lede {
-  max-width: 675px;
-  margin: 30px 0 0;
-  color: var(--muted, #625c68);
-  font-size: clamp(1rem, 1.2vw, 1.1rem);
-  line-height: 1.65;
+.program-home-simple .simple-routes-heading {
+  max-width: 800px;
+  margin-bottom: 34px;
 }
 
-.program-home-note {
-  margin: 12px 0 0;
-  color: var(--purple, #5A3F98);
-  font-size: .86rem;
-  font-weight: 750;
+.program-home-simple .simple-routes-heading .section-kicker {
+  margin-bottom: 8px;
+  color: var(--bb-purple);
 }
 
-.program-home-photo {
+.program-home-simple .simple-routes h2 {
+  margin: 0;
+  color: var(--bb-ink);
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(2.45rem, 3.5vw, 3.6rem);
+  font-weight: 850;
+  line-height: .97;
+  letter-spacing: -.03em;
+}
+
+.program-home-simple .simple-route-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 1120px;
+}
+
+/* Flat blocks. No shadows, no diagonal wedges, no fake buttons. */
+.program-home-simple .simple-route-card {
+  --route-bg: var(--bb-lavender);
+  --route-accent: var(--bb-purple);
   position: relative;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 31px 74px 31px 34px;
   overflow: hidden;
-  aspect-ratio: 12 / 8;
-  border-radius: 30px 30px 84px 30px;
-  background: var(--lavender, #ece9f7);
-  box-shadow: var(--shadow-soft, 0 14px 34px rgba(48,31,77,.10));
+  border: 0;
+  border-radius: 0;
+  background: var(--route-bg);
+  color: var(--bb-ink);
+  text-decoration: none;
+  box-shadow: none;
+  transition: transform .16s ease, filter .16s ease;
 }
 
-.program-home-photo::after {
+.program-home-simple .route-playbook {
+  --route-bg: var(--bb-purple);
+  --route-accent: var(--bb-yellow);
+  color: #fff;
+  border-radius: 30px 0 0 0;
+}
+
+.program-home-simple .route-calendar {
+  --route-bg: var(--bb-yellow);
+  --route-accent: var(--bb-purple);
+  border-radius: 0 30px 0 0;
+}
+
+.program-home-simple .route-resources {
+  --route-bg: var(--bb-teal);
+  --route-accent: var(--bb-purple);
+  border-radius: 0 0 0 30px;
+}
+
+.program-home-simple .route-support {
+  --route-bg: var(--bb-orange);
+  --route-accent: var(--bb-ink);
+  border-radius: 0 0 54px 0;
+}
+
+/* One large geometric corner shape inside each block.
+   It is part of the composition rather than a loose decorative circle. */
+.program-home-simple .simple-route-card::after {
   content: "";
   position: absolute;
-  right: -15px;
-  bottom: 24px;
-  width: 96px;
-  height: 24px;
-  border-top: 5px solid var(--yellow, #FFD420);
-  border-radius: 50%;
-  transform: rotate(-11deg);
-  opacity: .95;
+  right: -48px;
+  bottom: -58px;
+  width: 180px;
+  height: 150px;
+  border-radius: 90px 0 0 0;
+  background: rgba(255,255,255,.20);
+  pointer-events: none;
 }
 
-.program-home-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+.program-home-simple .route-playbook::after {
+  background: rgba(255,212,32,.18);
+}
+
+.program-home-simple .route-kicker {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 8px;
+  color: var(--route-accent);
+}
+
+.program-home-simple .simple-route-card h3 {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: inherit;
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(1.7rem, 2.15vw, 2.2rem);
+  font-weight: 850;
+  line-height: .98;
+  letter-spacing: -.02em;
+}
+
+.program-home-simple .simple-route-card p {
+  position: relative;
+  z-index: 2;
+  max-width: 430px;
+  margin: 12px 0 0;
+  color: inherit;
+  opacity: .82;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.program-home-simple .route-playbook p {
+  color: rgba(255,255,255,.88);
+  opacity: 1;
+}
+
+.program-home-simple .route-arrow {
+  position: absolute;
+  z-index: 3;
+  right: 30px;
+  bottom: 26px;
+  color: var(--route-accent);
+  font-size: 1.7rem;
+  font-weight: 900;
+  line-height: 1;
+  transition: transform .16s ease;
+}
+
+.program-home-simple .simple-route-card:hover,
+.program-home-simple .simple-route-card:focus-visible {
+  transform: translateY(-4px);
+  filter: brightness(.985);
+  box-shadow: none;
+}
+
+.program-home-simple .simple-route-card:hover .route-arrow,
+.program-home-simple .simple-route-card:focus-visible .route-arrow {
+  transform: translateX(5px);
 }
 
 /* =========================================================
-   PRIMARY FORK
-   Only two primary decisions.
+   CURRENT MONTH
+   Full brand band rather than another floating rounded card.
    ========================================================= */
-.program-start {
-  padding: 50px 0 24px;
-}
 
-.program-section-intro {
-  max-width: 780px;
-  margin-bottom: 24px;
-}
-
-.program-section-intro h2,
-.program-roadmap-head h2,
-.quick-help-head h2,
-.playbook-hero h1,
-.playbook-steps-head h2 {
-  margin: 8px 0 0;
-  color: var(--ink, #1d1823);
-  font-family: var(--display, "League Spartan", Arial, sans-serif);
-  font-weight: 850;
-  line-height: .95;
-  letter-spacing: -.025em;
-}
-
-.program-section-intro h2,
-.program-roadmap-head h2,
-.quick-help-head h2,
-.playbook-steps-head h2 {
-  font-size: clamp(2.2rem, 3.6vw, 3.65rem);
-}
-
-.program-fork-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.program-fork-card {
-  position: relative;
-  min-height: 275px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 28px;
-  padding: clamp(24px, 3vw, 34px);
-  border: 2px solid transparent;
-  border-radius: 30px 30px 78px 30px;
-  text-decoration: none;
-  transition: transform .17s ease, box-shadow .17s ease;
-}
-
-.program-fork-card::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 10px -8px -8px 10px;
-  border-radius: inherit;
-}
-
-.program-fork-card:hover,
-.program-fork-card:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow, 0 24px 56px rgba(48,31,77,.15));
-}
-
-.program-fork-card.playbook {
-  z-index: 1;
-  background: var(--purple, #5A3F98);
+.program-home-simple .simple-current-month {
+  padding: 0;
+  background: var(--bb-purple);
   color: #fff;
+  border-top: 10px solid var(--bb-yellow);
 }
 
-.program-fork-card.playbook::before {
-  background: var(--yellow, #FFD420);
+.program-home-simple .simple-current-month-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  min-height: 230px;
+  padding: 48px 0 52px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
-.program-fork-card.month {
-  z-index: 1;
-  border-color: #d3cbe2;
-  background: #fff;
-  color: var(--ink, #1d1823);
+.program-home-simple .simple-current-month-inner::after {
+  content: none;
 }
 
-.program-fork-card.month::before {
-  background: var(--teal, #8FD1C4);
+.program-home-simple .simple-current-copy {
+  max-width: 770px;
 }
 
-.program-fork-card.playbook .fork-eyebrow {
-  color: var(--yellow, #FFD420);
+.program-home-simple .simple-current-label {
+  margin-bottom: 8px;
+  color: var(--bb-yellow);
 }
 
-.program-fork-card h3 {
-  margin: 11px 0 9px;
-  color: inherit;
-  font-family: var(--body, "Montserrat", Arial, sans-serif);
-  font-size: clamp(1.55rem, 2.2vw, 2rem);
-  font-weight: 850;
-  line-height: 1.08;
-}
-
-.program-fork-card p {
-  max-width: 48ch;
+.program-home-simple .simple-current-month h2 {
   margin: 0;
-  color: inherit;
-  opacity: .86;
+  color: #fff;
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(2.4rem, 3.2vw, 3.35rem);
+  font-weight: 850;
+  line-height: .98;
+}
+
+.program-home-simple .simple-current-month p {
+  max-width: 780px;
+  margin: 14px 0 0;
+  color: rgba(255,255,255,.86);
   font-size: .96rem;
   line-height: 1.58;
 }
 
-.fork-cta {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  min-height: 40px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: var(--yellow, #FFD420);
-  color: var(--ink, #1d1823);
-  font-size: .79rem;
-  font-weight: 850;
-}
-
-.program-fork-card.month .fork-cta {
-  background: var(--purple, #5A3F98);
-  color: #fff;
-}
-
-/* Utility lane: deliberately not more cards. */
-.program-utility-lane {
-  display: flex;
-  align-items: center;
-  gap: 16px 26px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-  padding: 18px 0 3px;
-  border-top: 1px solid var(--line, #ddd9e3);
-}
-
-.program-utility-lane > span {
-  color: var(--muted, #625c68);
-  font-size: .84rem;
-  font-weight: 700;
-}
-
-.program-utility-lane a {
-  color: var(--purple, #5A3F98);
-  font-size: .86rem;
-  font-weight: 850;
-  text-decoration: none;
-}
-
-.program-utility-lane a:hover,
-.program-utility-lane a:focus-visible {
-  text-decoration: underline;
-}
-
-/* =========================================================
-   MONTH ROADMAP
-   Secondary: useful, but not the first decision.
-   ========================================================= */
-.program-roadmap {
-  padding: 54px 0 50px;
-}
-
-.program-roadmap-head {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 34px;
-  margin-bottom: 24px;
-}
-
-.program-roadmap-head p {
-  max-width: 475px;
-  margin: 0;
-  color: var(--muted, #625c68);
-  font-size: .9rem;
-  line-height: 1.55;
-}
-
-.month-roadmap-grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.month-roadmap-card {
-  position: relative;
-  min-height: 180px;
+.program-home-simple .simple-current-actions {
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
-  padding: 19px;
-  border: 1px solid var(--line, #ddd9e3);
-  border-radius: 22px 22px 54px 22px;
-  background: #fff;
-  color: var(--ink, #1d1823);
-  text-decoration: none;
-  box-shadow: 0 8px 20px rgba(48,31,77,.045);
-  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+  align-items: flex-end;
+  gap: 12px;
 }
 
-.month-roadmap-card:hover,
-.month-roadmap-card:focus-visible {
-  transform: translateY(-3px);
-  border-color: #c4b7d9;
-  box-shadow: var(--shadow-soft, 0 14px 34px rgba(48,31,77,.10));
-}
-
-.month-roadmap-card.current {
-  border: 2px solid var(--purple, #5A3F98);
-  background: var(--yellow-soft, #fff5bd);
-  padding: 18px;
-}
-
-.month-roadmap-label {
-  color: var(--purple, #5A3F98);
-  font-size: .67rem;
-  font-weight: 850;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-}
-
-.month-roadmap-now {
-  position: absolute;
-  top: 13px;
-  right: 13px;
-  padding: 4px 8px;
-  border-radius: 999px;
-  background: var(--purple, #5A3F98);
-  color: #fff;
-  font-size: .57rem;
-  font-weight: 850;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-}
-
-.month-roadmap-card h3 {
-  margin: 15px 0 7px;
-  color: var(--ink, #1d1823);
-  font-family: var(--body, "Montserrat", Arial, sans-serif);
-  font-size: 1.08rem;
-  font-weight: 850;
-  line-height: 1.12;
-}
-
-.month-roadmap-card p {
-  margin: 0;
-  color: var(--muted, #625c68);
-  font-size: .78rem;
-  line-height: 1.47;
-}
-
-.month-roadmap-open {
-  margin-top: auto;
-  padding-top: 16px;
-  color: var(--purple, #5A3F98);
-  font-size: .76rem;
-  font-weight: 850;
-}
-
-.program-later-months {
-  margin: 17px 0 0;
-  color: var(--muted, #625c68);
-  font-size: .83rem;
-}
-
-/* =========================================================
-   QUICK HELP
-   Practical help, not beginner-only help.
-   ========================================================= */
-.quick-help {
-  position: relative;
-  padding: 54px 0 56px;
-  background: var(--wash, #f7f6f9);
-}
-
-.quick-help-grid {
-  display: grid;
-  grid-template-columns: minmax(260px, .75fr) minmax(0, 1.25fr);
-  gap: clamp(34px, 5vw, 76px);
-  align-items: start;
-}
-
-.quick-help-head p {
-  max-width: 460px;
-  margin: 15px 0 0;
-  color: var(--muted, #625c68);
-  font-size: .92rem;
-  line-height: 1.58;
-}
-
-.quick-help-links {
-  display: grid;
-  gap: 10px;
-}
-
-.quick-help-link {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 18px;
-  align-items: center;
-  padding: 17px 19px;
-  border: 1px solid var(--line, #ddd9e3);
-  border-radius: 18px 18px 42px 18px;
-  background: #fff;
-  color: var(--ink, #1d1823);
-  text-decoration: none;
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-
-.quick-help-link:hover,
-.quick-help-link:focus-visible {
-  transform: translateX(3px);
-  box-shadow: var(--shadow-soft, 0 14px 34px rgba(48,31,77,.10));
-}
-
-.quick-help-link strong {
-  display: block;
-  color: var(--ink, #1d1823);
-  font-size: .92rem;
-  font-weight: 850;
-}
-
-.quick-help-link span:not(.quick-help-tag) {
-  display: block;
-  margin-top: 3px;
-  color: var(--muted, #625c68);
-  font-size: .8rem;
-  line-height: 1.42;
-}
-
-.quick-help-link .link-arrow {
-  color: var(--purple, #5A3F98);
-  font-size: 1.05rem;
-  font-weight: 900;
-}
-
-.quick-help-all {
+.program-home-simple .simple-current-button {
   display: inline-flex;
-  margin-top: 14px;
-  color: var(--purple, #5A3F98);
+  align-items: center;
+  justify-content: center;
+  min-height: 47px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--bb-yellow);
+  color: var(--bb-ink);
   font-size: .82rem;
-  font-weight: 850;
+  font-weight: 900;
   text-decoration: none;
+  box-shadow: none;
 }
 
-.quick-help-all:hover,
-.quick-help-all:focus-visible {
+.program-home-simple .simple-all-months {
+  color: #fff;
+  font-size: .76rem;
+  font-weight: 800;
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* =========================================================
-   SUPPORT BAND
+   QUICK GUIDES
+   Editorial list + large colour field.
    ========================================================= */
-.program-support-band {
-  padding: 48px 0 58px;
+
+.program-home-simple .quick-help {
+  padding: 0;
+  background: #fff;
 }
 
-.program-support-inner {
-  position: relative;
-  overflow: hidden;
+.program-home-simple .quick-help-grid {
+  display: grid;
+  grid-template-columns: minmax(310px, .86fr) minmax(0, 1.5fr);
+  gap: 0;
+  align-items: stretch;
+  max-width: none;
+  padding: 0;
+}
+
+.program-home-simple .quick-help-head {
+  padding: 66px max(42px, calc((100vw - var(--container, 1320px))/2)) 68px;
+  padding-left: max(42px, calc((100vw - var(--container, 1320px))/2));
+  background: var(--bb-teal);
+  border: 0;
+}
+
+.program-home-simple .quick-help-head .section-kicker {
+  margin-bottom: 8px;
+  color: var(--bb-purple);
+}
+
+.program-home-simple .quick-help-head h2 {
+  max-width: 460px;
+  margin: 0;
+  color: var(--bb-ink);
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(2.25rem, 3.1vw, 3.2rem);
+  font-weight: 850;
+  line-height: .98;
+  letter-spacing: -.025em;
+}
+
+.program-home-simple .quick-help-head p {
+  max-width: 460px;
+  margin: 18px 0 0;
+  color: rgba(29,24,35,.76);
+  font-size: .93rem;
+  line-height: 1.6;
+}
+
+.program-home-simple .quick-help-all {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--bb-purple);
+  font-size: .8rem;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.program-home-simple .quick-help-links {
+  display: grid;
+  align-content: center;
+  gap: 0;
+  padding: 42px max(42px, calc((100vw - var(--container, 1320px))/2)) 42px 52px;
+  background: #fff;
+}
+
+.program-home-simple .quick-help-link {
+  --guide-accent: var(--bb-purple);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
-  padding: clamp(28px, 4vw, 43px);
-  border-radius: 30px 30px 86px 30px;
-  background: var(--purple, #5A3F98);
-  color: #fff;
-}
-
-.program-support-inner::after {
-  content: "";
-  position: absolute;
-  right: -32px;
-  bottom: 11px;
-  width: 180px;
-  height: 52px;
-  border-top: 7px solid var(--yellow, #FFD420);
-  border-radius: 50%;
-  transform: rotate(-9deg);
-  opacity: .95;
-}
-
-.program-support-inner > * {
-  position: relative;
-  z-index: 2;
-}
-
-.program-support-inner h2 {
-  margin: 0 0 7px;
-  color: #fff;
-  font-family: var(--display, "League Spartan", Arial, sans-serif);
-  font-size: clamp(2rem, 3vw, 3.2rem);
-  line-height: .96;
-}
-
-.program-support-inner p {
-  max-width: 650px;
-  margin: 0;
-  color: rgba(255,255,255,.83);
-  font-size: .9rem;
-  line-height: 1.55;
-}
-
-.program-support-button {
-  flex: 0 0 auto;
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 9px 16px;
-  border-radius: 999px;
-  background: var(--yellow, #FFD420);
-  color: var(--ink, #1d1823);
-  font-size: .82rem;
-  font-weight: 850;
+  gap: 24px;
+  min-height: 112px;
+  padding: 20px 4px;
+  border: 0;
+  border-bottom: 2px solid #E9E3ED;
+  border-radius: 0;
+  background: transparent;
+  color: var(--bb-ink);
   text-decoration: none;
+  box-shadow: none;
+  transition: padding-left .15s ease;
 }
 
-/* =========================================================
-   PLAYBOOK OVERVIEW
-   ========================================================= */
-.playbook-hero {
-  padding: 35px 0 43px;
-  background: linear-gradient(180deg, var(--wash, #f7f6f9), #fff);
+.program-home-simple .quick-help-link:last-child {
+  border-bottom: 0;
 }
 
-.playbook-hero-inner {
-  max-width: 920px;
-  margin-top: 23px;
+.program-home-simple .quick-help-link:nth-child(2) {
+  --guide-accent: #9B7600;
 }
 
-.playbook-hero h1 {
-  font-size: clamp(3rem, 5vw, 5.25rem);
+.program-home-simple .quick-help-link:nth-child(3) {
+  --guide-accent: #287F73;
 }
 
-.playbook-hero p {
-  max-width: 750px;
-  margin: 18px 0 0;
-  color: var(--muted, #625c68);
-  font-size: 1rem;
-  line-height: 1.65;
+.program-home-simple .quick-help-link:hover,
+.program-home-simple .quick-help-link:focus-visible {
+  padding-left: 8px;
+  transform: none;
+  box-shadow: none;
 }
 
-.playbook-shortcuts {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 24px;
+.program-home-simple .quick-help-tag {
+  margin-bottom: 4px;
+  color: var(--guide-accent);
 }
 
-.playbook-shortcuts a {
-  display: inline-flex;
-  padding: 9px 14px;
-  border-radius: 999px;
-  background: var(--purple, #5A3F98);
-  color: #fff;
-  font-size: .8rem;
-  font-weight: 850;
-  text-decoration: none;
-}
-
-.playbook-shortcuts a.secondary {
-  border: 1px solid var(--line, #ddd9e3);
-  background: #fff;
-  color: var(--purple, #5A3F98);
-}
-
-.playbook-steps {
-  padding: 49px 0 58px;
-}
-
-.playbook-steps-head {
-  max-width: 760px;
-  margin-bottom: 25px;
-}
-
-.playbook-steps-head p {
-  margin: 14px 0 0;
-  color: var(--muted, #625c68);
-  font-size: .9rem;
-  line-height: 1.55;
-}
-
-.playbook-step-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  counter-reset: playbook;
-}
-
-.playbook-step {
-  position: relative;
-  min-height: 150px;
-  padding: 22px 22px 22px 74px;
-  border: 1px solid var(--line, #ddd9e3);
-  border-radius: 22px 22px 54px 22px;
-  background: #fff;
-}
-
-.playbook-step::before {
-  counter-increment: playbook;
-  content: counter(playbook);
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--yellow, #FFD420);
-  color: var(--ink, #1d1823);
-  font-family: var(--display, "League Spartan", Arial, sans-serif);
-  font-size: 1.05rem;
-  font-weight: 900;
-}
-
-.playbook-step h3 {
-  margin: 0 0 7px;
-  color: var(--ink, #1d1823);
-  font-family: var(--body, "Montserrat", Arial, sans-serif);
+.program-home-simple .quick-help-link strong {
+  display: block;
+  color: var(--bb-ink);
   font-size: 1rem;
   font-weight: 850;
   line-height: 1.2;
 }
 
-.playbook-step p {
-  margin: 0;
-  color: var(--muted, #625c68);
-  font-size: .82rem;
-  line-height: 1.5;
-}
-
-.playbook-bottom {
-  padding: 0 0 60px;
-}
-
-.playbook-bottom-inner {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 11px;
-}
-
-.playbook-bottom-inner a {
-  padding: 17px 18px;
-  border-radius: 18px 18px 42px 18px;
-  background: var(--wash, #f7f6f9);
-  color: var(--ink, #1d1823);
-  font-size: .83rem;
-  font-weight: 800;
-  text-decoration: none;
-}
-
-.playbook-bottom-inner a strong {
+.program-home-simple .quick-help-link span:not(.quick-help-tag):not(.link-arrow) {
   display: block;
-  margin-bottom: 2px;
-  color: var(--purple, #5A3F98);
+  margin-top: 5px;
+  color: var(--bb-muted);
+  font-size: .82rem;
+  line-height: 1.45;
+}
+
+.program-home-simple .link-arrow {
+  flex: 0 0 auto;
+  color: var(--guide-accent);
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+/* =========================================================
+   SUPPORT
+   Teal band with simple pill CTA.
+   ========================================================= */
+
+.program-home-simple .program-support-band {
+  padding: 0;
+  background: var(--bb-yellow);
+}
+
+.program-home-simple .program-support-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 42px;
+  min-height: 190px;
+  padding: 42px 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--bb-yellow);
+  color: var(--bb-ink);
+}
+
+.program-home-simple .program-support-inner h2 {
+  margin: 0;
+  color: var(--bb-purple);
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(2rem, 2.8vw, 2.85rem);
+  font-weight: 850;
+  line-height: 1;
+}
+
+.program-home-simple .program-support-inner p {
+  max-width: 750px;
+  margin: 11px 0 0;
+  color: rgba(29,24,35,.78);
+  font-size: .92rem;
+  line-height: 1.55;
+}
+
+.program-home-simple .program-support-button {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 47px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: var(--bb-purple);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 900;
+  text-decoration: none;
 }
 
 /* =========================================================
    RESPONSIVE
    ========================================================= */
-@media (max-width: 1120px) {
-  .month-roadmap-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+@media (max-width: 1200px) {
+  .program-home-simple .simple-program-hero-grid {
+    grid-template-columns: minmax(0, .95fr) minmax(370px, 1.05fr);
+  }
+
+  .program-home-simple .simple-program-copy {
+    padding-right: 44px;
   }
 }
 
-@media (max-width: 900px) {
-  .program-home-hero-grid,
-  .quick-help-grid {
+@media (max-width: 940px) {
+  .program-home-simple .simple-program-hero-grid {
+    grid-template-columns: 1fr;
+    margin-inline: calc(50% - 50vw);
+    padding: 0;
+    background: var(--bb-purple);
+  }
+
+  .program-home-simple .simple-program-copy {
+    max-width: none;
+    padding: 48px max(24px, calc((100vw - 720px)/2)) 42px;
+  }
+
+  .program-home-simple .simple-program-photo,
+  .program-home-simple .simple-program-photo img {
+    min-height: 0;
+  }
+
+  .program-home-simple .simple-program-photo {
+    aspect-ratio: 16 / 9;
+  }
+
+  .program-home-simple .simple-program-photo img {
+    height: 100%;
+    object-position: center 38%;
+  }
+
+  .program-home-simple .simple-route-grid {
+    max-width: none;
+  }
+
+  .program-home-simple .simple-current-month-inner,
+  .program-home-simple .program-support-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .program-home-simple .simple-current-actions {
+    align-items: flex-start;
+  }
+
+  .program-home-simple .quick-help-grid {
     grid-template-columns: 1fr;
   }
 
-  .program-home-photo {
-    max-width: 720px;
-  }
-
-  .program-roadmap-head {
-    display: block;
-  }
-
-  .program-roadmap-head p {
-    margin-top: 12px;
+  .program-home-simple .quick-help-head,
+  .program-home-simple .quick-help-links {
+    padding-left: max(24px, calc((100vw - 720px)/2));
+    padding-right: max(24px, calc((100vw - 720px)/2));
   }
 }
 
-@media (max-width: 760px) {
-  .program-home-hero {
-    padding-top: 25px;
+@media (max-width: 720px) {
+  .program-home-simple .simple-program-copy h1 {
+    font-size: clamp(2.45rem, 10.4vw, 3.25rem);
   }
 
-  .program-home-hero-grid {
-    margin-top: 17px;
-    gap: 28px;
+  .program-home-simple .simple-program-photo {
+    aspect-ratio: 4 / 3;
   }
 
-  .program-home-hero h1 {
-    font-size: clamp(2.65rem, 14vw, 4rem);
+  .program-home-simple .simple-program-wave {
+    height: 44px;
+    margin-top: -36px;
   }
 
-  .program-title-swoosh {
-    left: 8%;
-    width: 62%;
+  .program-home-simple .simple-routes {
+    padding: 38px 0 62px;
   }
 
-  .program-fork-grid,
-  .month-roadmap-grid,
-  .playbook-step-list,
-  .playbook-bottom-inner {
+  .program-home-simple .simple-route-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 
-  .program-fork-card {
-    min-height: 235px;
+  .program-home-simple .simple-route-card,
+  .program-home-simple .route-playbook,
+  .program-home-simple .route-calendar,
+  .program-home-simple .route-resources,
+  .program-home-simple .route-support {
+    min-height: 162px;
+    padding: 26px 60px 26px 24px;
+    border-radius: 0;
   }
 
-  .program-roadmap {
-    padding-top: 44px;
+  .program-home-simple .simple-route-card:first-child {
+    border-radius: 24px 24px 0 0;
   }
 
-  .program-support-inner {
-    display: block;
+  .program-home-simple .simple-route-card:last-child {
+    border-radius: 0 0 42px 42px;
   }
 
-  .program-support-button {
-    margin-top: 20px;
+  .program-home-simple .simple-current-month-inner,
+  .program-home-simple .program-support-inner {
+    padding: 38px 0 42px;
   }
 
-  .program-utility-lane {
-    gap: 11px 18px;
+  .program-home-simple .simple-current-button,
+  .program-home-simple .program-support-button {
+    width: 100%;
+  }
+
+  .program-home-simple .quick-help-head {
+    padding-top: 50px;
+    padding-bottom: 48px;
+  }
+
+  .program-home-simple .quick-help-links {
+    padding-top: 28px;
+    padding-bottom: 30px;
+  }
+
+  .program-home-simple .quick-help-link {
+    min-height: 105px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .program-fork-card,
-  .month-roadmap-card,
-  .quick-help-link {
+  .program-home-simple .simple-route-card,
+  .program-home-simple .route-arrow,
+  .program-home-simple .quick-help-link {
     transition: none;
   }
 }
