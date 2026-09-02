@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Build a ready-to-run Best Buddies Canada Elementary & Middle School gathering.">
-  <title>Build a Gathering | Best Buddies Canada Teacher Hub</title>
+  <meta name="description" content="Plan an Elementary & Middle School Best Buddies Canada meeting using activities and the four-part Program Guide session rhythm.">
+  <title>Plan a Meeting | Best Buddies Canada Teacher Hub</title>
 
   <link rel="stylesheet" href="portal-home.css">
   <link rel="stylesheet" href="access.css">
@@ -15,6 +15,7 @@
   <script src="access.js" defer></script>
   <script src="accessibility.js" defer></script>
   <script src="meeting-builder-data.js" defer></script>
+  <script src="gathering-builder-enhancements.js" defer></script>
   <script src="gathering-builder.js" defer></script>
 </head>
 
@@ -24,7 +25,7 @@
 <header class="portal-header">
   <div class="portal-container portal-header-inner">
     <a class="portal-brand" href="index.html" aria-label="Best Buddies Canada Teacher Hub home">
-      <img src="assets/bb-logo-coloured.png" alt="Best Buddies Canada">
+      <img src="assets/bb-logo.png" alt="Best Buddies Canada">
     </a>
 
     <div class="header-actions">
@@ -57,35 +58,42 @@
 <main id="main-content">
 
   <section class="gb-hero">
-    <div class="portal-container gb-hero-inner">
+    <div class="portal-container">
       <a class="gb-back" href="elementary-playbook.html">← Chapter Playbook</a>
 
       <div class="gb-hero-grid">
-        <div>
+        <div class="gb-hero-copy">
           <span class="gb-kicker">Elementary &amp; Middle School</span>
-          <h1>Build a <span>Gathering</span></h1>
-          <p>
-            Put together a gathering using the same basic structure and activities found in the
-            Elementary &amp; Middle Program Guide. Choose what fits your group and the time you have.
+          <h1>Plan a <span>Meeting</span></h1>
+          <p class="gb-hero-lede">
+            Put together a Best Buddies meeting that fits the time, group, and energy you have today.
+            Get a suggested plan, choose the pieces yourself, or start with a quick ready-to-run option.
           </p>
         </div>
 
-        <div class="gb-hero-note">
-          <strong>The Program Guide stays underneath this.</strong>
+        <aside class="gb-rhythm-card" aria-label="Program Guide meeting rhythm">
+          <span class="gb-kicker">The Program Guide rhythm</span>
+          <h2>Four simple parts.</h2>
+          <div class="gb-rhythm">
+            <span class="share"><b>1</b> Share</span>
+            <span class="energize"><b>2</b> Energize</span>
+            <span class="core"><b>3</b> Core Activity</span>
+            <span class="takeaway"><b>4</b> Take-Away</span>
+          </div>
           <p>
-            Best Buddies uses four parts for a session: Share, Energize, Core Activity, and Take-Away.
-            The builder keeps those pieces visible and links back to the original activity source.
+            The Hub keeps that structure visible while helping you find activities that fit your group.
           </p>
-        </div>
+        </aside>
       </div>
     </div>
   </section>
 
-  <section class="gb-builder-section">
+  <section class="gb-builder-section" aria-label="Meeting planner">
     <div class="portal-container">
 
       <div class="gb-month-row">
-        <label for="gb-month">Planning for</label>
+        <span>Planning for</span>
+        <label class="sr-only" for="gb-month">Planning month</label>
         <select id="gb-month" data-gb-month>
           <option value="september">September</option>
           <option value="october">October</option>
@@ -97,17 +105,19 @@
       </div>
 
       <div class="gb-app" data-gathering-builder aria-live="polite"></div>
-
     </div>
   </section>
 
   <section class="gb-resource-exit">
     <div class="portal-container gb-resource-exit-inner">
       <div>
-        <span class="gb-kicker">Need the full guides?</span>
-        <strong>All of the source PDFs and current chapter resources live in Resources.</strong>
+        <span class="gb-kicker">Want the complete wording or printables?</span>
+        <strong>The Teacher Hub helps you plan. The original Best Buddies resources stay one click away.</strong>
       </div>
-      <a href="resources.html">Browse Resources →</a>
+      <div class="gb-resource-actions">
+        <a href="resources.html">Browse Resources →</a>
+        <a class="secondary" href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener">Program Guide ↗</a>
+      </div>
     </div>
   </section>
 
@@ -115,7 +125,7 @@
 
 <footer class="portal-footer">
   <div class="portal-container portal-footer-inner">
-    <img src="assets/bb-logo-coloured.png" alt="Best Buddies Canada">
+    <img src="assets/bb-logo.png" alt="Best Buddies Canada">
     <p>Best Buddies Canada Teacher Hub</p>
     <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca ↗</a>
   </div>
