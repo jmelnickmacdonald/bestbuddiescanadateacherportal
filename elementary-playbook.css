@@ -1332,3 +1332,179 @@
     grid-template-columns:1fr;
   }
 }
+
+
+
+/* =========================================================
+   V7 — READABILITY + HERO POLISH
+   ========================================================= */
+
+/* The breadcrumb already establishes the program, so the hero title can stand on its own. */
+.epb-page .epb-hero-grid{
+  padding-top:24px !important;
+}
+
+.epb-page .epb-hero h1{
+  margin-top:0 !important;
+}
+
+/* Human flexibility note: useful guidance, not another card. */
+.epb-page .epb-flex-note{
+  max-width:760px;
+  margin-top:18px;
+  padding-left:14px;
+  border-left:5px solid var(--epb-teal);
+}
+
+.epb-page .epb-flex-note strong{
+  display:block;
+  color:var(--epb-ink);
+  font-size:.92rem;
+  font-weight:900;
+}
+
+.epb-page .epb-flex-note span{
+  display:block;
+  margin-top:4px;
+  color:#5E5663;
+  font-size:.92rem;
+  line-height:1.52;
+}
+
+/* Hero CTAs need to read as real primary actions. */
+.epb-page .epb-primary-action,
+.epb-page .epb-secondary-action{
+  min-height:54px !important;
+  padding:14px 24px !important;
+  font-size:.9rem !important;
+  line-height:1 !important;
+}
+
+.epb-page .epb-hero-actions{
+  gap:12px !important;
+  margin-top:28px !important;
+}
+
+/* Purple-section intro was visually too quiet. */
+.epb-page .epb-source-note{
+  max-width:880px !important;
+  margin-top:15px !important;
+  font-size:.9rem !important;
+  line-height:1.52 !important;
+  color:rgba(255,255,255,.88) !important;
+}
+
+.epb-page .epb-check-note{
+  margin-top:12px !important;
+  font-size:.86rem !important;
+  line-height:1.5 !important;
+  color:rgba(255,255,255,.86) !important;
+}
+
+.epb-page .epb-check-note button{
+  min-height:38px !important;
+  padding:7px 12px !important;
+  font-size:.73rem !important;
+}
+
+/* Stage headers: keep the hierarchy, but make the supporting line genuinely readable. */
+.epb-page .epb-stage-copy > strong{
+  font-size:clamp(1.45rem,1.85vw,1.8rem) !important;
+}
+
+.epb-page .epb-stage-copy > small{
+  margin-top:7px !important;
+  max-width:900px !important;
+  font-size:.9rem !important;
+  line-height:1.46 !important;
+}
+
+/* Open-stage body copy. */
+.epb-page .epb-stage-main h3{
+  font-size:1.38rem !important;
+  margin-bottom:14px !important;
+}
+
+.epb-page .epb-check{
+  grid-template-columns:22px minmax(0,1fr) !important;
+  gap:11px !important;
+  padding:10px 0 !important;
+  font-size:.95rem !important;
+  line-height:1.5 !important;
+}
+
+.epb-page .epb-note p{
+  font-size:.88rem !important;
+  line-height:1.5 !important;
+}
+
+.epb-page .epb-note > span{
+  font-size:.68rem !important;
+}
+
+.epb-page .epb-builder-callout p{
+  font-size:.86rem !important;
+  line-height:1.48 !important;
+}
+
+.epb-page .epb-builder-callout a{
+  min-height:46px !important;
+  padding:10px 16px !important;
+  font-size:.78rem !important;
+}
+
+/* Useful-now rail. */
+.epb-page .epb-tools > span{
+  font-size:.68rem !important;
+}
+
+.epb-page .epb-tools strong{
+  font-size:.84rem !important;
+}
+
+.epb-page .epb-tools small{
+  font-size:.76rem !important;
+  line-height:1.42 !important;
+}
+
+/* Four actual Program Guide phases. */
+.epb-page .epb-phase-list b{
+  font-size:.68rem !important;
+}
+
+.epb-page .epb-phase-list strong{
+  font-size:.92rem !important;
+}
+
+.epb-page .epb-phase-list p{
+  font-size:.84rem !important;
+  line-height:1.48 !important;
+}
+
+@media(max-width:720px){
+  .epb-page .epb-flex-note{
+    margin-top:16px;
+  }
+
+  .epb-page .epb-flex-note strong,
+  .epb-page .epb-flex-note span{
+    font-size:.88rem;
+  }
+
+  .epb-page .epb-primary-action,
+  .epb-page .epb-secondary-action{
+    min-height:50px !important;
+    padding:13px 18px !important;
+    font-size:.84rem !important;
+  }
+
+  /* Keep the closed-stage summary compact on small screens,
+     but do not shrink the open content. */
+  .epb-page .epb-stage-copy > strong{
+    font-size:1.28rem !important;
+  }
+
+  .epb-page .epb-check{
+    font-size:.92rem !important;
+  }
+}
