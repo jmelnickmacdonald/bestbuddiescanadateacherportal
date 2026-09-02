@@ -3,6 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <meta
     name="description"
     content="Best Buddies Canada Teacher Hub Program Calendar: live dates, reminders, celebrations, and program milestones across the school year."
@@ -11,22 +16,738 @@
 
   <link rel="stylesheet" href="portal-home.css">
   <link rel="stylesheet" href="accessibility.css">
-  <link rel="stylesheet" href="portal-polish.css">
-  <link rel="stylesheet" href="calendar-v5.css">
 
   <script src="accessibility.js" defer></script>
+
+  <style>
+    /* =========================================================
+       PROGRAM CALENDAR · FINAL CLEAN PASS
+       Self-contained page design to prevent calendar CSS drift.
+       Poppins = UI/body. League Spartan = display headings.
+       ========================================================= */
+
+    :root{
+      --purple:#5A3F98;
+      --yellow:#FFD420;
+      --teal:#8FD1C4;
+      --orange:#F37735;
+      --lilac:#9396CA;
+      --ink:#211B28;
+      --text:#4F4854;
+      --muted:#6C6571;
+      --line:#E4DFE8;
+      --lavender:#EEEAF8;
+      --wash:#F7F6F3;
+      --yellow-soft:#FFF6C7;
+      --teal-soft:#EAF7F4;
+    }
+
+    *{box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body.calendar-final{
+      margin:0;
+      background:#fff;
+      color:var(--text);
+      font-family:"Poppins",Arial,sans-serif;
+      font-size:18px;
+      line-height:1.62;
+    }
+
+    body.calendar-final a,
+    body.calendar-final button,
+    body.calendar-final p,
+    body.calendar-final span,
+    body.calendar-final small,
+    body.calendar-final strong{
+      font-family:"Poppins",Arial,sans-serif;
+    }
+
+    body.calendar-final h1,
+    body.calendar-final h2,
+    body.calendar-final h3{
+      font-family:"League Spartan","Poppins",Arial,sans-serif;
+    }
+
+    .portal-container{
+      width:min(calc(100% - 56px),1220px);
+      margin-inline:auto;
+    }
+
+    /* =========================================================
+       HEADER · match the rest of the Teacher Hub
+       ========================================================= */
+
+    .calendar-final .portal-header{
+      position:relative;
+      z-index:20;
+      background:var(--teal);
+      border-top:5px solid var(--yellow);
+    }
+
+    .calendar-final .portal-header-inner{
+      min-height:96px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:28px;
+    }
+
+    .calendar-final .portal-brand{
+      display:inline-flex;
+      align-items:center;
+      text-decoration:none;
+    }
+
+    .calendar-final .portal-brand img{
+      display:block;
+      width:84px;
+      height:74px;
+      object-fit:contain;
+    }
+
+    .calendar-final .header-actions{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .calendar-final .portal-nav{
+      display:flex;
+      align-items:center;
+      gap:4px;
+      padding:8px;
+      border-radius:999px;
+      background:#fff;
+    }
+
+    .calendar-final .portal-nav a{
+      min-height:42px;
+      display:flex;
+      align-items:center;
+      padding:8px 16px;
+      border-radius:999px;
+      color:var(--ink);
+      font-size:.88rem;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .calendar-final .portal-nav a[aria-current="page"]{
+      background:var(--purple);
+      color:#fff;
+    }
+
+    .calendar-final .portal-lang{
+      display:flex;
+      align-items:center;
+      padding:6px;
+      border-radius:999px;
+      background:#fff;
+    }
+
+    .calendar-final .portal-lang a{
+      min-width:40px;
+      min-height:38px;
+      display:grid;
+      place-items:center;
+      border-radius:999px;
+      color:var(--purple);
+      font-size:.8rem;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .calendar-final .portal-lang a.current{
+      background:var(--yellow);
+      color:var(--ink);
+    }
+
+    .calendar-final .site-menu{display:none}
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .calendar-hero{
+      position:relative;
+      overflow:hidden;
+      padding:46px 0 76px;
+      background:#fff;
+    }
+
+    .calendar-hero::after{
+      content:"";
+      position:absolute;
+      left:-4%;
+      right:-4%;
+      bottom:-38px;
+      height:78px;
+      border-radius:50% 50% 0 0 / 64% 64% 0 0;
+      background:var(--purple);
+      transform:rotate(-.8deg);
+    }
+
+    .calendar-hero-grid{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(330px,.62fr);
+      gap:68px;
+      align-items:end;
+    }
+
+    .calendar-kicker{
+      display:block;
+      margin-bottom:10px;
+      color:var(--purple);
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.075em;
+      text-transform:uppercase;
+    }
+
+    .calendar-hero h1{
+      max-width:760px;
+      margin:0;
+      color:var(--ink);
+      font-size:clamp(3.7rem,5.7vw,5.9rem);
+      font-weight:900;
+      line-height:.87;
+      letter-spacing:-.045em;
+    }
+
+    .calendar-hero h1 span{
+      display:block;
+      color:var(--purple);
+    }
+
+    .calendar-hero-lede{
+      max-width:560px;
+      margin:0 0 5px;
+      color:var(--text);
+      font-size:1.08rem;
+      line-height:1.66;
+    }
+
+    /* =========================================================
+       LIVE CALENDAR
+       ========================================================= */
+
+    .calendar-live{
+      padding:64px 0 72px;
+      background:var(--purple);
+    }
+
+    .calendar-live-heading{
+      display:grid;
+      grid-template-columns:minmax(0,.82fr) minmax(320px,.58fr);
+      gap:48px;
+      align-items:end;
+      margin-bottom:25px;
+    }
+
+    .calendar-live .calendar-kicker{
+      color:var(--yellow);
+    }
+
+    .calendar-live h2{
+      margin:0;
+      color:#fff;
+      font-size:clamp(2.6rem,3.8vw,4rem);
+      font-weight:900;
+      line-height:.93;
+      letter-spacing:-.032em;
+    }
+
+    .calendar-live-heading p{
+      max-width:580px;
+      margin:0 0 4px;
+      color:rgba(255,255,255,.88);
+      font-size:1rem;
+      line-height:1.62;
+    }
+
+    .calendar-shell{
+      overflow:hidden;
+      border-radius:24px 24px 62px 24px;
+      background:#fff;
+      box-shadow:0 20px 44px rgba(29,16,50,.23);
+    }
+
+    .calendar-toolbar{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:22px;
+      padding:14px 18px 14px 22px;
+      border-bottom:1px solid var(--line);
+      background:#fff;
+    }
+
+    .calendar-toolbar-title{
+      display:flex;
+      align-items:center;
+      gap:13px;
+    }
+
+    .calendar-status-dot{
+      width:13px;
+      height:13px;
+      flex:0 0 auto;
+      border-radius:50%;
+      background:var(--yellow);
+      box-shadow:0 0 0 5px var(--yellow-soft);
+    }
+
+    .calendar-toolbar-title span:last-child{
+      display:flex;
+      flex-direction:column;
+    }
+
+    .calendar-toolbar-title small{
+      color:var(--purple);
+      font-size:.7rem;
+      font-weight:800;
+      line-height:1.2;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+    }
+
+    .calendar-toolbar-title strong{
+      margin-top:2px;
+      color:var(--ink);
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.25;
+    }
+
+    .calendar-full-link{
+      min-height:44px;
+      display:inline-flex;
+      align-items:center;
+      padding:8px 15px;
+      border-radius:999px;
+      background:var(--yellow);
+      color:var(--ink);
+      font-size:.85rem;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .calendar-months-wrap{
+      display:grid;
+      grid-template-columns:auto minmax(0,1fr) auto;
+      gap:16px;
+      align-items:center;
+      padding:13px 18px;
+      background:var(--lavender);
+      border-bottom:1px solid var(--line);
+    }
+
+    .calendar-months-label{
+      color:var(--purple);
+      font-size:.72rem;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .calendar-months{
+      min-width:0;
+      display:grid;
+      grid-template-columns:repeat(10,minmax(52px,1fr));
+      gap:6px;
+    }
+
+    .calendar-month{
+      min-height:42px;
+      padding:7px 8px;
+      border:0;
+      border-radius:999px;
+      background:#fff;
+      color:var(--text);
+      font-size:.82rem;
+      font-weight:800;
+      cursor:pointer;
+      transition:transform .15s ease,background .15s ease;
+    }
+
+    .calendar-month:hover,
+    .calendar-month:focus-visible{
+      transform:translateY(-1px);
+      background:#F7F4FF;
+      color:var(--purple);
+    }
+
+    .calendar-month[aria-pressed="true"]{
+      background:var(--yellow);
+      color:var(--ink);
+    }
+
+    .calendar-showing{
+      color:var(--purple);
+      font-size:.82rem;
+      font-weight:800;
+      white-space:nowrap;
+    }
+
+    .calendar-frame{
+      height:590px;
+      background:#fff;
+    }
+
+    .calendar-frame iframe{
+      display:block;
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
+    .calendar-status{
+      margin:13px 3px 0;
+      color:rgba(255,255,255,.8);
+      font-size:.86rem;
+    }
+
+    /* =========================================================
+       MONTHLY PLANNING BRIDGE
+       ========================================================= */
+
+    .calendar-planning{
+      position:relative;
+      padding:76px 0 72px;
+      background:#fff;
+    }
+
+    .calendar-planning-inner{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:48px;
+      align-items:center;
+      padding:34px 36px;
+      border-radius:26px 26px 64px 26px;
+      background:var(--teal);
+    }
+
+    .calendar-planning .calendar-kicker{
+      color:var(--purple);
+      margin-bottom:7px;
+    }
+
+    .calendar-planning h2{
+      max-width:720px;
+      margin:0;
+      color:var(--ink);
+      font-size:clamp(2.35rem,3.4vw,3.7rem);
+      font-weight:900;
+      line-height:.94;
+    }
+
+    .calendar-planning p{
+      max-width:720px;
+      margin:13px 0 0;
+      color:#334B47;
+      font-size:.98rem;
+      line-height:1.62;
+    }
+
+    .calendar-planning-actions{
+      min-width:310px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .calendar-planning-actions a{
+      min-height:49px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 17px;
+      border-radius:999px;
+      font-size:.86rem;
+      font-weight:800;
+      text-align:center;
+      text-decoration:none;
+    }
+
+    .calendar-planning-primary{
+      background:var(--purple);
+      color:#fff;
+    }
+
+    .calendar-planning-secondary{
+      background:#fff;
+      color:var(--purple);
+    }
+
+    /* =========================================================
+       QUIET WHOLE-YEAR BRIDGE
+       ========================================================= */
+
+    .calendar-more{
+      padding:0 0 68px;
+      background:#fff;
+    }
+
+    .calendar-more-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+      padding:22px 0;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .calendar-more p{
+      margin:0;
+      color:var(--muted);
+      font-size:.92rem;
+      line-height:1.56;
+    }
+
+    .calendar-more p strong{
+      color:var(--ink);
+    }
+
+    .calendar-more-links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      gap:16px;
+    }
+
+    .calendar-more-links a{
+      color:var(--purple);
+      font-size:.84rem;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .calendar-final .portal-footer{
+      padding:28px 0 32px;
+      background:#fff;
+    }
+
+    .calendar-final .portal-footer-inner{
+      display:flex;
+      align-items:center;
+      gap:20px;
+    }
+
+    .calendar-final .portal-footer img{
+      width:62px;
+      height:58px;
+      object-fit:contain;
+    }
+
+    .calendar-final .portal-footer p{
+      margin:0;
+      color:var(--ink);
+      font-size:.9rem;
+    }
+
+    .calendar-final .portal-footer a{
+      margin-left:auto;
+      color:var(--purple);
+      font-size:.88rem;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media(max-width:960px){
+      .calendar-hero-grid,
+      .calendar-live-heading,
+      .calendar-planning-inner{
+        grid-template-columns:1fr;
+      }
+
+      .calendar-planning-actions{
+        min-width:0;
+        width:min(100%,360px);
+      }
+
+      .calendar-months-wrap{
+        grid-template-columns:1fr;
+        gap:9px;
+      }
+
+      .calendar-showing{display:none}
+
+      .calendar-months{
+        display:flex;
+        overflow-x:auto;
+        gap:7px;
+        padding-bottom:3px;
+        scrollbar-width:thin;
+      }
+
+      .calendar-month{
+        flex:0 0 62px;
+      }
+    }
+
+    @media(max-width:760px){
+      body.calendar-final{font-size:17px}
+
+      .portal-container{
+        width:min(calc(100% - 32px),1220px);
+      }
+
+      .calendar-final .portal-header-inner{
+        min-height:82px;
+      }
+
+      .calendar-final .portal-brand img{
+        width:70px;
+        height:62px;
+      }
+
+      .calendar-final .portal-nav{
+        display:none;
+      }
+
+      .calendar-final .site-menu{
+        display:block;
+      }
+
+      .calendar-final .site-menu summary{
+        list-style:none;
+        min-height:42px;
+        display:flex;
+        align-items:center;
+        padding:8px 14px;
+        border-radius:999px;
+        background:#fff;
+        color:var(--purple);
+        font-size:.82rem;
+        font-weight:800;
+        cursor:pointer;
+      }
+
+      .calendar-final .site-menu summary::-webkit-details-marker{display:none}
+
+      .calendar-final .site-menu{
+        position:relative;
+      }
+
+      .calendar-final .site-menu-panel{
+        position:absolute;
+        right:0;
+        top:50px;
+        width:230px;
+        padding:10px;
+        border-radius:18px;
+        background:#fff;
+        box-shadow:0 16px 36px rgba(40,24,67,.16);
+      }
+
+      .calendar-final .site-menu-panel a{
+        display:block;
+        padding:10px 11px;
+        border-radius:10px;
+        color:var(--purple);
+        font-size:.84rem;
+        font-weight:700;
+        text-decoration:none;
+      }
+
+      .calendar-hero{
+        padding:38px 0 64px;
+      }
+
+      .calendar-hero-grid{
+        gap:22px;
+      }
+
+      .calendar-hero h1{
+        font-size:clamp(3.1rem,14vw,4.65rem);
+      }
+
+      .calendar-hero-lede{
+        font-size:1rem;
+      }
+
+      .calendar-live{
+        padding:50px 0 58px;
+      }
+
+      .calendar-live-heading{
+        gap:16px;
+      }
+
+      .calendar-frame{
+        height:470px;
+      }
+
+      .calendar-toolbar{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .calendar-planning{
+        padding:54px 0 56px;
+      }
+
+      .calendar-planning-inner{
+        padding:27px 24px;
+      }
+
+      .calendar-planning-actions{
+        width:100%;
+      }
+
+      .calendar-more-inner{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .calendar-more-links{
+        justify-content:flex-start;
+      }
+
+      .calendar-final .portal-footer-inner{
+        flex-wrap:wrap;
+      }
+
+      .calendar-final .portal-footer a{
+        margin-left:0;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .calendar-month{transition:none}
+      .calendar-month:hover{transform:none}
+    }
+  </style>
 </head>
 
-<body class="calendar-page-v5">
+<body class="calendar-final">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header class="portal-header">
   <div class="portal-container portal-header-inner">
+
     <a class="portal-brand" href="index.html" aria-label="Best Buddies Canada Teacher Hub home">
-      <img src="assets/bb-logo.png" alt="Best Buddies Canada">
+      <img src="assets/bb-logo-coloured.png" alt="Best Buddies Canada">
     </a>
 
     <div class="header-actions">
+
       <nav class="portal-nav" aria-label="Main navigation">
         <a href="calendar.html" aria-current="page">Calendar</a>
         <a href="resources.html">Resources</a>
@@ -48,104 +769,85 @@
           <a href="fr.html" lang="fr-CA">Français</a>
         </div>
       </details>
+
     </div>
   </div>
 </header>
 
 <main id="main-content">
 
-  <!-- =====================================================
-       HERO
-  ====================================================== -->
-  <section class="calendar5-hero" aria-labelledby="calendar-title">
-    <div class="portal-container calendar5-hero-inner">
+  <section class="calendar-hero" aria-labelledby="calendar-title">
+    <div class="portal-container calendar-hero-grid">
 
-      <div class="calendar5-hero-copy">
-        <span class="calendar5-kicker">Program Calendar</span>
+      <div>
+        <span class="calendar-kicker">Program Calendar</span>
         <h1 id="calendar-title">See what’s <span>coming up.</span></h1>
-        <p>
-          One live place for important dates, reminders, celebrations, and program milestones
-          across the Best Buddies school year.
-        </p>
       </div>
 
-      <div class="calendar5-year-marker" aria-label="2026 to 2027 school year">
-        <span>2026–27</span>
-        <strong>School year</strong>
-        <div class="calendar5-marker-lines" aria-hidden="true">
-          <i class="teal"></i>
-          <i class="yellow"></i>
-          <i class="orange"></i>
-          <i class="purple"></i>
-        </div>
-      </div>
+      <p class="calendar-hero-lede">
+        Important dates, reminders, celebrations, and program milestones across the Best Buddies school year.
+      </p>
 
     </div>
-
-    <div class="calendar5-wave" aria-hidden="true"></div>
   </section>
 
+  <section class="calendar-live" aria-labelledby="live-calendar-title">
+    <div class="portal-container">
 
-  <!-- =====================================================
-       LIVE CALENDAR — PRIMARY PAGE CONTENT
-  ====================================================== -->
-  <section class="calendar5-live" aria-labelledby="live-calendar-title">
-    <div class="portal-container calendar5-live-inner">
-
-      <div class="calendar5-live-heading">
+      <div class="calendar-live-heading">
         <div>
-          <span class="calendar5-kicker light">Live Best Buddies calendar</span>
-          <h2 id="live-calendar-title">The school year, <span>in one place.</span></h2>
+          <span class="calendar-kicker">Live calendar</span>
+          <h2 id="live-calendar-title">The school year, in one place.</h2>
         </div>
 
         <p>
-          Choose a month below to jump through the school year. Dates shown here come directly
-          from the live Best Buddies Canada Program Calendar.
+          Choose a month to move through the school year. Dates and reminders shown here come directly from the live Best Buddies Canada Program Calendar.
         </p>
       </div>
 
-      <div class="calendar5-shell">
+      <div class="calendar-shell">
 
-        <div class="calendar5-toolbar">
-          <div class="calendar5-toolbar-title">
-            <span class="calendar5-live-dot" aria-hidden="true"></span>
+        <div class="calendar-toolbar">
+
+          <div class="calendar-toolbar-title">
+            <span class="calendar-status-dot" aria-hidden="true"></span>
             <span>
               <small>Best Buddies Canada</small>
-              <strong>Program Calendar</strong>
+              <strong>2026–27 Program Calendar</strong>
             </span>
           </div>
 
           <a
-            class="calendar5-full-link"
+            class="calendar-full-link"
             href="https://calendar.google.com/calendar/u/0/embed?ctz=America/Toronto&amp;src=81bc404318068c24847c7dd96662c0560e08fbd5e7dd72106ae4d92a03c29fec@group.calendar.google.com"
             target="_blank"
             rel="noopener"
           >
-            Open full calendar <span aria-hidden="true">↗</span>
+            Open full calendar →
           </a>
+
         </div>
 
-        <div class="calendar5-month-bar">
-          <div class="calendar5-month-intro">
-            <span>School year</span>
-            <strong id="calendar-current-month" aria-live="polite">Showing September</strong>
+        <div class="calendar-months-wrap">
+          <span class="calendar-months-label">School year</span>
+
+          <div class="calendar-months" role="group" aria-label="Choose a school year month">
+            <button type="button" class="calendar-month" data-school-month="8">Sep</button>
+            <button type="button" class="calendar-month" data-school-month="9">Oct</button>
+            <button type="button" class="calendar-month" data-school-month="10">Nov</button>
+            <button type="button" class="calendar-month" data-school-month="11">Dec</button>
+            <button type="button" class="calendar-month" data-school-month="0" data-next-year="true">Jan</button>
+            <button type="button" class="calendar-month" data-school-month="1" data-next-year="true">Feb</button>
+            <button type="button" class="calendar-month" data-school-month="2" data-next-year="true">Mar</button>
+            <button type="button" class="calendar-month" data-school-month="3" data-next-year="true">Apr</button>
+            <button type="button" class="calendar-month" data-school-month="4" data-next-year="true">May</button>
+            <button type="button" class="calendar-month" data-school-month="5" data-next-year="true">Jun</button>
           </div>
 
-          <div class="calendar5-months" role="group" aria-label="Choose a school year month">
-            <button type="button" class="calendar5-month" data-school-month="8">Sep</button>
-            <button type="button" class="calendar5-month" data-school-month="9">Oct</button>
-            <button type="button" class="calendar5-month" data-school-month="10">Nov</button>
-            <button type="button" class="calendar5-month" data-school-month="11">Dec</button>
-            <button type="button" class="calendar5-month" data-school-month="0" data-next-year="true">Jan</button>
-            <button type="button" class="calendar5-month" data-school-month="1" data-next-year="true">Feb</button>
-            <button type="button" class="calendar5-month" data-school-month="2" data-next-year="true">Mar</button>
-            <button type="button" class="calendar5-month" data-school-month="3" data-next-year="true">Apr</button>
-            <button type="button" class="calendar5-month" data-school-month="4" data-next-year="true">May</button>
-            <button type="button" class="calendar5-month" data-school-month="5" data-next-year="true">Jun</button>
-          </div>
+          <span class="calendar-showing" id="calendar-showing">September</span>
         </div>
 
-        <div class="calendar5-frame">
+        <div class="calendar-frame">
           <iframe
             id="program-calendar"
             title="Best Buddies Canada Program Calendar"
@@ -156,54 +858,57 @@
 
       </div>
 
-      <div class="calendar5-help-strip" aria-label="How to use the Program Calendar">
-        <div>
-          <span class="calendar5-help-number teal">1</span>
-          <p><strong>Pick a month.</strong> Jump straight to the part of the school year you need.</p>
-        </div>
-        <div>
-          <span class="calendar5-help-number yellow">2</span>
-          <p><strong>Open a calendar item.</strong> Check the date or reminder for the details attached to it.</p>
-        </div>
-        <div>
-          <span class="calendar5-help-number orange">3</span>
-          <p><strong>Need the “what next”?</strong> Head back to your program page for monthly planning and chapter help.</p>
-        </div>
+      <p class="calendar-status" id="calendar-current-month" aria-live="polite">
+        Showing September.
+      </p>
+
+    </div>
+  </section>
+
+  <section class="calendar-planning" aria-labelledby="calendar-planning-title">
+    <div class="portal-container calendar-planning-inner">
+
+      <div>
+        <span class="calendar-kicker">Planning this month?</span>
+        <h2 id="calendar-planning-title">Go from the date to what matters now.</h2>
+        <p>
+          Monthly Planning keeps the priorities and timely meeting ideas together.
+          The Program Calendar stays focused on dates and reminders.
+        </p>
+      </div>
+
+      <div class="calendar-planning-actions">
+        <a
+          class="calendar-planning-primary"
+          id="calendar-month-planning-link"
+          href="elementary-september.html"
+        >
+          Elementary &amp; Middle · September →
+        </a>
+
+        <a
+          class="calendar-planning-secondary"
+          href="elementary-gathering.html?month=september"
+          id="calendar-meeting-link"
+        >
+          Plan a September Meeting →
+        </a>
       </div>
 
     </div>
   </section>
 
+  <section class="calendar-more" aria-label="More program help">
+    <div class="portal-container calendar-more-inner">
 
-  <!-- =====================================================
-       QUIET HANDOFF — THE CALENDAR'S JOB ENDS HERE
-  ====================================================== -->
-  <section class="calendar5-next" aria-labelledby="calendar-next-title">
-    <div class="portal-container calendar5-next-inner">
+      <p>
+        <strong>Looking for the whole picture?</strong>
+        The Chapter Playbook walks through how the Best Buddies year fits together.
+      </p>
 
-      <div class="calendar5-next-copy">
-        <span class="calendar5-kicker">From dates to action</span>
-        <h2 id="calendar-next-title">The calendar tells you <span>when.</span></h2>
-        <p>
-          Your program page helps with what matters now, while the Chapter Playbook shows how the year fits together.
-        </p>
-      </div>
-
-      <div class="calendar5-program-links">
-        <a class="calendar5-program-card elementary" href="elementary-middle.html">
-          <small>Elementary &amp; Middle School</small>
-          <strong>Go to my program →</strong>
-        </a>
-
-        <a class="calendar5-program-card highschool" href="high-school.html">
-          <small>High School</small>
-          <strong>Go to my program →</strong>
-        </a>
-      </div>
-
-      <div class="calendar5-small-links">
+      <div class="calendar-more-links">
         <a href="elementary-playbook.html">Elementary &amp; Middle Playbook →</a>
-        <a href="high-school-playbook.html">High School Playbook →</a>
+        <a href="high-school.html">High School →</a>
         <a href="support.html">Program Support →</a>
       </div>
 
@@ -214,9 +919,9 @@
 
 <footer class="portal-footer">
   <div class="portal-container portal-footer-inner">
-    <img src="assets/bb-logo.png" alt="Best Buddies Canada">
+    <img src="assets/bb-logo-coloured.png" alt="Best Buddies Canada">
     <p>Best Buddies Canada Teacher Hub</p>
-    <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca ↗</a>
+    <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca</a>
   </div>
 </footer>
 
@@ -224,7 +929,10 @@
 (() => {
   const iframe = document.getElementById("program-calendar");
   const status = document.getElementById("calendar-current-month");
-  const buttons = Array.from(document.querySelectorAll(".calendar5-month"));
+  const showing = document.getElementById("calendar-showing");
+  const planningLink = document.getElementById("calendar-month-planning-link");
+  const meetingLink = document.getElementById("calendar-meeting-link");
+  const buttons = Array.from(document.querySelectorAll(".calendar-month"));
 
   if (!iframe || !buttons.length) return;
 
@@ -235,6 +943,26 @@
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
   ];
+
+  const elementaryPlanningPages = {
+    8:  "elementary-september.html",
+    9:  "elementary-october.html",
+    10: "elementary-november.html",
+    11: "elementary-december.html"
+  };
+
+  const monthSlugs = {
+    8:"september",
+    9:"october",
+    10:"november",
+    11:"december",
+    0:"january",
+    1:"february",
+    2:"march",
+    3:"april",
+    4:"may",
+    5:"june"
+  };
 
   let activeButton = null;
   let lastMode = null;
@@ -283,8 +1011,32 @@
     return `https://calendar.google.com/calendar/embed?${params.toString()}`;
   }
 
-  function activate(button, options = {}) {
-    const { focus = false } = options;
+  function updatePlanningLinks(monthIndex) {
+    const label = monthNames[monthIndex];
+    const slug = monthSlugs[monthIndex];
+
+    if (planningLink) {
+      if (elementaryPlanningPages[monthIndex]) {
+        planningLink.href = elementaryPlanningPages[monthIndex];
+        planningLink.textContent = `Elementary & Middle · ${label} →`;
+      } else {
+        planningLink.href = "elementary-months.html";
+        planningLink.textContent = "Elementary & Middle · Plan by Month →";
+      }
+    }
+
+    if (meetingLink) {
+      meetingLink.href = slug
+        ? `elementary-gathering.html?month=${slug}`
+        : "elementary-gathering.html";
+
+      meetingLink.textContent = slug
+        ? `Plan a ${label} Meeting →`
+        : "Plan a Meeting →";
+    }
+  }
+
+  function activate(button) {
     const startYear = schoolYearStart();
     const monthIndex = Number(button.dataset.schoolMonth);
     const year = button.dataset.nextYear === "true"
@@ -299,13 +1051,10 @@
     lastMode = calendarMode();
     iframe.src = calendarUrl(year, monthIndex);
 
-    if (status) {
-      status.textContent = `Showing ${monthNames[monthIndex]}`;
-    }
+    if (status) status.textContent = `Showing ${monthNames[monthIndex]}.`;
+    if (showing) showing.textContent = monthNames[monthIndex];
 
-    if (focus) {
-      iframe.focus();
-    }
+    updatePlanningLinks(monthIndex);
   }
 
   buttons.forEach(button => {
@@ -322,10 +1071,7 @@
       ? startYear + 1
       : startYear;
 
-    if (
-      year === now.getFullYear() &&
-      monthIndex === now.getMonth()
-    ) {
+    if (year === now.getFullYear() && monthIndex === now.getMonth()) {
       initial = button;
     }
   });
@@ -334,61 +1080,8 @@
 
   window.addEventListener("resize", () => {
     const mode = calendarMode();
-
-    if (activeButton && mode !== lastMode) {
-      activate(activeButton);
-    }
+    if (activeButton && mode !== lastMode) activate(activeButton);
   });
-})();
-</script>
-
-  <!-- =====================================================
-     MONTHLY PLANNING LINK
-     Paste AFTER the existing calendar script, before </body>.
-     It follows the month button selected in the calendar.
-====================================================== -->
-<script>
-(() => {
-  const planningLink = document.getElementById("calendar-month-planning-link");
-  const monthButtons = Array.from(document.querySelectorAll(".calendar4-month"));
-
-  if (!planningLink || !monthButtons.length) return;
-
-  const planningPages = {
-    8:  { label: "September", href: "elementary-september.html" },
-    9:  { label: "October",   href: "elementary-october.html" },
-    10: { label: "November",  href: "elementary-november.html" },
-    11: { label: "December",  href: "elementary-december.html" }
-  };
-
-  function updatePlanningLink(button) {
-    const monthIndex = Number(button.dataset.schoolMonth);
-    const month = planningPages[monthIndex];
-
-    if (month) {
-      planningLink.href = month.href;
-      planningLink.textContent =
-        `Elementary & Middle · ${month.label} →`;
-      planningLink.removeAttribute("aria-disabled");
-      planningLink.classList.remove("is-coming-soon");
-    } else {
-      planningLink.href = "elementary-months.html";
-      planningLink.textContent = "Elementary & Middle · Monthly Planning →";
-      planningLink.removeAttribute("aria-disabled");
-      planningLink.classList.add("is-coming-soon");
-    }
-  }
-
-  monthButtons.forEach((button) => {
-    button.addEventListener("click", () => updatePlanningLink(button));
-  });
-
-  const activeButton =
-    document.querySelector(".calendar4-month.is-active") ||
-    document.querySelector(".calendar4-month[aria-pressed='true']") ||
-    monthButtons[0];
-
-  updatePlanningLink(activeButton);
 })();
 </script>
 
