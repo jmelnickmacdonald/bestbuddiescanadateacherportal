@@ -704,9 +704,9 @@
 
       <div class="gb-paths">
         <button class="gb-path guided" type="button" data-path="guided">
-          <small>Five quick questions</small>
+          <small>Activity Builder · 5 quick questions</small>
           <strong>Build one for me</strong>
-          <span>Tell the Hub about your time, group, goals, prep, and what would make participation easier.</span>
+          <span>Answer five quick questions and the Activity Builder will suggest a four-part meeting using activities that fit your time, group, goals, and participation needs.</span>
           <b>→</b>
         </button>
 
@@ -752,9 +752,9 @@
 
     root.innerHTML = `<section class="gb-panel">
       <div class="gb-panel-head">
-        <span class="gb-kicker">Build one for me</span>
-        <h2>A few quick choices.</h2>
-        <p>We’re matching activities to the meeting, not asking you to sort students into categories.</p>
+        <span class="gb-kicker">Guided Activity Builder</span>
+        <h2>Let’s build your meeting.</h2>
+        <p>Answer a few quick questions and we’ll suggest activities for Share, Energize, Core Activity, and Take-Away. You can swap any activity afterward.</p>
       </div>
 
       <div class="gb-progress" style="--gb-steps:${questions.length}">
