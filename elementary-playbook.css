@@ -3359,3 +3359,146 @@
 .epb-page .epb-tools a{
   font-size:.94rem !important;
 }
+
+/* =========================================================
+   CHAPTER PLAYBOOK · MONTH BRIDGE + TYPE PRECISION
+   Append to the BOTTOM of elementary-playbook.css
+   ========================================================= */
+
+.epb-page{
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:18px;
+  line-height:1.6;
+}
+
+.epb-page a,
+.epb-page p,
+.epb-page span,
+.epb-page small,
+.epb-page strong,
+.epb-page button,
+.epb-page label{
+  font-family:"Poppins",Arial,sans-serif;
+}
+
+.epb-page h1,
+.epb-page h2,
+.epb-page h3,
+.epb-page h4,
+.epb-page .epb-stage-copy > strong{
+  font-family:"League Spartan",Arial,sans-serif !important;
+}
+
+.epb-page .epb-back{
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:.92rem !important;
+}
+
+.epb-page .epb-lede{
+  font-size:1.08rem !important;
+  line-height:1.62 !important;
+}
+
+.epb-page .epb-flex-note span,
+.epb-page .epb-source-note,
+.epb-page .epb-stage-intro,
+.epb-page .epb-check,
+.epb-page .epb-note p,
+.epb-page .epb-family-note p,
+.epb-page .epb-builder-callout p,
+.epb-page .epb-phase-list p{
+  font-size:1rem !important;
+  line-height:1.6 !important;
+}
+
+.epb-page .epb-check-note{
+  font-size:.94rem !important;
+  line-height:1.55 !important;
+}
+
+.epb-page .epb-tools small{
+  font-size:.88rem !important;
+  line-height:1.5 !important;
+}
+
+/* Quiet connection between the year overview and monthly planning */
+.epb-page .epb-month-bridge{
+  padding:22px 0;
+  background:#F1EEF7;
+  border-bottom:1px solid #DED7EA;
+}
+
+.epb-page .epb-month-bridge-inner{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:32px;
+  align-items:center;
+}
+
+.epb-page .epb-month-bridge .epb-section-kicker{
+  display:block;
+  margin-bottom:4px;
+  color:#5A3F98;
+  font-size:.76rem !important;
+  font-weight:800;
+  letter-spacing:.075em;
+  text-transform:uppercase;
+}
+
+.epb-page .epb-month-bridge strong{
+  display:block;
+  color:#1D1823;
+  font-family:"League Spartan",Arial,sans-serif !important;
+  font-size:1.45rem;
+  font-weight:850;
+  line-height:1;
+}
+
+.epb-page .epb-month-bridge p{
+  max-width:720px;
+  margin:7px 0 0;
+  color:#5B5560;
+  font-size:.92rem !important;
+  line-height:1.55 !important;
+}
+
+.epb-page .epb-month-bridge-actions{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  gap:8px;
+}
+
+.epb-page .epb-month-bridge-actions a{
+  display:inline-flex;
+  min-height:42px;
+  align-items:center;
+  padding:8px 13px;
+  border-radius:999px;
+  background:#fff;
+  color:#5A3F98;
+  font-size:.84rem !important;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.epb-page .epb-month-bridge-actions a:first-child{
+  background:#FFD420;
+  color:#1D1823;
+}
+
+@media(max-width:760px){
+  .epb-page{
+    font-size:17px;
+  }
+
+  .epb-page .epb-month-bridge-inner{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .epb-page .epb-month-bridge-actions{
+    justify-content:flex-start;
+  }
+}
