@@ -18,6 +18,273 @@
 
   <script src="access.js" defer></script>
   <script src="accessibility.js" defer></script>
+<style>
+/* =========================================================
+   PLAN BY MONTH · SPUNK PASS
+   Keeps the existing architecture, adds Best Buddies energy.
+   ========================================================= */
+
+.em-month-picker-hero{
+  position:relative;
+  overflow:hidden;
+  padding:58px 0 88px !important;
+  background:#EEEAF8 !important;
+}
+
+/* Strong colour base instead of endless beige */
+.em-month-picker-hero::after{
+  content:"";
+  position:absolute;
+  left:-4%;
+  right:-4%;
+  bottom:-44px;
+  height:88px;
+  background:#5A3F98;
+  border-radius:50% 50% 0 0 / 70% 70% 0 0;
+  transform:rotate(-1deg);
+}
+
+/* small intentional Best Buddies accent */
+.em-month-picker-hero::before{
+  content:"";
+  position:absolute;
+  right:-42px;
+  top:44px;
+  width:155px;
+  height:155px;
+  border-radius:50%;
+  background:#FFD420;
+}
+
+.em-month-picker-hero .em-wrap{
+  position:relative;
+  z-index:2;
+}
+
+.em-month-picker-hero .em-back{
+  margin-bottom:40px !important;
+}
+
+.em-month-picker-hero .em-kicker{
+  color:#5A3F98 !important;
+}
+
+.em-month-picker-hero h1{
+  max-width:780px !important;
+  color:#211B28 !important;
+  font-size:clamp(3.8rem,6vw,6.3rem) !important;
+  line-height:.86 !important;
+}
+
+.em-month-picker-hero p{
+  max-width:710px !important;
+  margin-top:25px !important;
+  color:#4F4854 !important;
+  font-size:1.06rem !important;
+  line-height:1.65 !important;
+}
+
+
+/* ---------- MONTH AREA ---------- */
+
+.em-month-picker-list{
+  padding:82px 0 90px !important;
+  background:#5A3F98 !important;
+}
+
+.em-month-picker-grid{
+  gap:16px !important;
+}
+
+
+/* ---------- MONTH CARDS ---------- */
+
+.em-month-card{
+  position:relative;
+  min-height:300px !important;
+  padding:30px 30px 28px !important;
+  border:0 !important;
+  border-radius:24px 24px 62px 24px !important;
+  background:#fff !important;
+  overflow:hidden;
+  transition:transform .16s ease, box-shadow .16s ease;
+}
+
+.em-month-card:hover,
+.em-month-card:focus-visible{
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(28,18,48,.18);
+}
+
+
+/* Big quiet month number */
+.em-month-card::before{
+  position:absolute;
+  right:25px;
+  top:21px;
+  color:rgba(90,63,152,.11);
+  font-family:"League Spartan",Arial,sans-serif;
+  font-size:4.5rem;
+  font-weight:900;
+  line-height:1;
+}
+
+.em-month-card:nth-child(1)::before{
+  content:"09";
+}
+
+.em-month-card:nth-child(2)::before{
+  content:"10";
+}
+
+.em-month-card:nth-child(3)::before{
+  content:"11";
+}
+
+.em-month-card:nth-child(4)::before{
+  content:"12";
+}
+
+
+/* Replace little oval with a stronger colour corner */
+.em-month-card::after{
+  width:150px !important;
+  height:86px !important;
+  right:-38px !important;
+  bottom:-28px !important;
+  border-radius:70px 0 0 0 !important;
+  opacity:1 !important;
+}
+
+.em-month-card:nth-child(1){
+  --card-accent:#FFD420;
+}
+
+.em-month-card:nth-child(2){
+  --card-accent:#F37735;
+}
+
+.em-month-card:nth-child(3){
+  --card-accent:#8FD1C4;
+}
+
+.em-month-card:nth-child(4){
+  --card-accent:#9396CA;
+}
+
+
+/* month label */
+.em-month-card small{
+  position:relative;
+  z-index:2;
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:.78rem !important;
+  font-weight:800 !important;
+  letter-spacing:.075em;
+}
+
+
+/* headings */
+.em-month-card h2{
+  max-width:420px;
+  margin-top:18px !important;
+  font-size:2.5rem !important;
+  line-height:.94 !important;
+}
+
+
+/* body */
+.em-month-card p{
+  max-width:460px !important;
+  margin-top:17px !important;
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:.98rem !important;
+  line-height:1.6 !important;
+}
+
+
+/* actual action */
+.em-month-card b{
+  position:absolute;
+  left:30px !important;
+  bottom:27px !important;
+  color:#5A3F98 !important;
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:.88rem !important;
+  font-weight:800 !important;
+}
+
+
+/* ---------- BOTTOM ACTIONS ---------- */
+
+.em-month-picker-actions{
+  margin-top:24px !important;
+  gap:14px !important;
+}
+
+.em-month-picker-actions a{
+  min-height:94px !important;
+  padding:20px 24px !important;
+  border-radius:20px 20px 44px 20px !important;
+  background:#FFD420 !important;
+  color:#211B28 !important;
+}
+
+.em-month-picker-actions a:last-child{
+  background:#8FD1C4 !important;
+}
+
+.em-month-picker-actions span{
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:.88rem !important;
+  font-weight:600;
+}
+
+.em-month-picker-actions strong{
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:.9rem !important;
+  font-weight:800;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:780px){
+
+  .em-month-picker-hero{
+    padding:46px 0 72px !important;
+  }
+
+  .em-month-picker-hero::before{
+    width:95px;
+    height:95px;
+    right:-35px;
+    top:76px;
+  }
+
+  .em-month-picker-hero h1{
+    font-size:clamp(3.1rem,14vw,4.6rem) !important;
+  }
+
+  .em-month-picker-list{
+    padding:62px 0 70px !important;
+  }
+
+  .em-month-card{
+    min-height:280px !important;
+    padding:26px 25px !important;
+  }
+
+  .em-month-card h2{
+    font-size:2.15rem !important;
+  }
+
+  .em-month-card b{
+    left:25px !important;
+  }
+}
+</style>
+  
 </head>
 
 <body data-protected="true" data-program="elementary-middle" class="access-pending em-month-page">
@@ -58,9 +325,9 @@
   <section class="em-month-picker-hero">
     <div class="em-wrap">
       <a class="em-back" href="elementary-middle.html">← Elementary &amp; Middle School</a>
-      <span class="em-kicker">September–December</span>
+      <span class="em-kicker">Plan by Month</span>
       <h1>Plan the month you're in.</h1>
-      <p>Each month page keeps the priorities, Program Guide thread, a few timely activity ideas, and the hand-off to Plan a Meeting together. The live Program Calendar still owns dates and reminders.</p>
+      <p>Jump into the month you’re in for a short list of priorities, helpful activity ideas, and an easy way to plan your next meeting.</p>
     </div>
   </section>
 
