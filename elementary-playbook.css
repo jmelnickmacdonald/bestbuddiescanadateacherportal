@@ -887,3 +887,292 @@
     transition:none;
   }
 }
+
+
+/* =========================================================
+   V5 — SIMPLIFIED PLAYBOOK HIERARCHY
+   ========================================================= */
+
+/* HERO: one confident column, fewer competing elements */
+.epb-page .epb-hero{
+  padding-bottom:50px;
+}
+
+.epb-page .epb-hero-grid{
+  display:block;
+  max-width:900px;
+  padding-top:30px;
+}
+
+.epb-page .epb-hero-copy{
+  max-width:860px;
+}
+
+.epb-page .epb-lede{
+  max-width:760px;
+}
+
+.epb-page .epb-hero-actions{
+  margin-top:24px;
+}
+
+/* Remove any lingering layout rules for the deleted hero rail */
+.epb-page .epb-at-glance{
+  display:none!important;
+}
+
+
+/* COMPACT JUMP STRIP */
+.epb-page .epb-jump-strip{
+  border-top:1px solid #E4DDEA;
+  border-bottom:1px solid #E4DDEA;
+  background:#EEEAF6;
+}
+
+.epb-page .epb-jump-strip-inner{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px 18px;
+  min-height:58px;
+  padding-top:8px;
+  padding-bottom:8px;
+}
+
+.epb-page .epb-jump-strip-inner > span{
+  margin-right:3px;
+  color:#5A3F98;
+  font-size:.67rem;
+  font-weight:900;
+  letter-spacing:.075em;
+  text-transform:uppercase;
+}
+
+.epb-page .epb-jump-strip a{
+  display:inline-flex;
+  align-items:center;
+  min-height:40px;
+  gap:6px;
+  padding:7px 0;
+  color:#1D1823;
+  font-size:.76rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.epb-page .epb-jump-strip a + a::before{
+  content:"";
+  width:1px;
+  height:18px;
+  margin-right:12px;
+  background:#CDC4D8;
+}
+
+.epb-page .epb-jump-strip b{
+  color:#5A3F98;
+  font-size:.64rem;
+  font-weight:900;
+}
+
+.epb-page .epb-jump-strip a:hover,
+.epb-page .epb-jump-strip a:focus-visible{
+  color:#5A3F98;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+
+/* PLAYBOOK INTRO: no progress dashboard */
+.epb-page .epb-playbook{
+  padding-top:56px;
+}
+
+.epb-page .epb-playbook-head{
+  display:block;
+  margin-bottom:24px;
+}
+
+.epb-page .epb-playbook-head h2{
+  max-width:780px;
+}
+
+.epb-page .epb-playbook-head > div:first-child > p{
+  display:none;
+}
+
+.epb-page .epb-check-note{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px 14px;
+  max-width:760px;
+  margin:13px 0 0;
+  color:rgba(255,255,255,.78);
+  font-size:.76rem;
+  line-height:1.45;
+}
+
+.epb-page .epb-check-note button{
+  min-height:34px;
+  padding:6px 10px;
+  border:1px solid rgba(255,255,255,.4);
+  border-radius:999px;
+  background:transparent;
+  color:#fff;
+  font:inherit;
+  font-size:.66rem;
+  font-weight:850;
+  cursor:pointer;
+}
+
+.epb-page .epb-progress,
+.epb-page .epb-stage-count{
+  display:none!important;
+}
+
+
+/* ACCORDION HEADERS: number + title + one description + plus */
+.epb-page .epb-stage summary{
+  grid-template-columns:56px minmax(0,1fr) 36px;
+  min-height:88px;
+}
+
+.epb-page .epb-stage-kicker{
+  display:none!important;
+}
+
+.epb-page .epb-stage-copy > strong{
+  font-size:clamp(1.35rem,1.75vw,1.7rem);
+}
+
+.epb-page .epb-stage-copy > small{
+  margin-top:6px;
+  max-width:820px;
+}
+
+.epb-page .epb-stage-body{
+  padding-left:91px;
+}
+
+
+/* Checked = clear completion without visually deleting the guidance */
+.epb-page .epb-check:has(input:checked) span{
+  color:#6E6673;
+  text-decoration:none!important;
+}
+
+.epb-page .epb-check input:checked + span{
+  font-weight:600;
+}
+
+
+/* Keep rich open-stage content, but reduce its visual density slightly */
+.epb-page .epb-tools{
+  background:#F6F3F8;
+}
+
+.epb-page .epb-note{
+  margin-top:14px;
+}
+
+.epb-page .epb-builder-callout{
+  margin-top:16px;
+}
+
+
+/* QUIET ENDING */
+.epb-page .epb-quiet-next{
+  border-top:1px solid #E8E3EE;
+  background:#fff;
+}
+
+.epb-page .epb-quiet-next-inner{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px 24px;
+  min-height:92px;
+}
+
+.epb-page .epb-quiet-next strong{
+  color:#1D1823;
+  font-size:.85rem;
+  font-weight:900;
+}
+
+.epb-page .epb-quiet-next a{
+  color:#5A3F98;
+  font-size:.78rem;
+  font-weight:850;
+  text-decoration:none;
+}
+
+.epb-page .epb-quiet-next a:hover,
+.epb-page .epb-quiet-next a:focus-visible{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.epb-page .epb-next{
+  display:none!important;
+}
+
+
+/* MOBILE */
+@media (max-width:720px){
+  .epb-page .epb-hero{
+    padding-bottom:40px;
+  }
+
+  .epb-page .epb-jump-strip-inner{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px 14px;
+    padding-top:12px;
+    padding-bottom:12px;
+  }
+
+  .epb-page .epb-jump-strip-inner > span{
+    grid-column:1/-1;
+    margin-bottom:2px;
+  }
+
+  .epb-page .epb-jump-strip a{
+    min-height:36px;
+  }
+
+  .epb-page .epb-jump-strip a + a::before{
+    display:none;
+  }
+
+  .epb-page .epb-playbook{
+    padding-top:46px;
+  }
+
+  .epb-page .epb-stage summary{
+    grid-template-columns:46px minmax(0,1fr) 30px;
+  }
+
+  .epb-page .epb-stage-body{
+    padding-left:16px;
+  }
+
+  .epb-page .epb-check-note{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .epb-page .epb-quiet-next-inner{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:8px;
+    padding-top:22px;
+    padding-bottom:22px;
+  }
+}
+
+@media (max-width:430px){
+  .epb-page .epb-jump-strip-inner{
+    grid-template-columns:1fr;
+  }
+}
