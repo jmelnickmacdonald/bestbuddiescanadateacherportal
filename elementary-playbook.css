@@ -1508,3 +1508,266 @@
     font-size:.92rem !important;
   }
 }
+
+
+
+/* =========================================================
+   V8 — POPPINS + ACCESSIBLE TYPE SCALE
+   ========================================================= */
+
+/* Use one clear type family throughout the Playbook. */
+.epb-page,
+.epb-page button,
+.epb-page input,
+.epb-page a,
+.epb-page summary{
+  font-family:"Poppins", Arial, sans-serif !important;
+}
+
+.epb-page{
+  --display-font:"Poppins", Arial, sans-serif !important;
+}
+
+/* Headings keep character through weight and scale, not a second font. */
+.epb-page h1,
+.epb-page h2,
+.epb-page h3,
+.epb-page h4,
+.epb-page .epb-stage-copy > strong,
+.epb-page .epb-jump-strip a span{
+  font-family:"Poppins", Arial, sans-serif !important;
+}
+
+/* HERO */
+.epb-page .epb-hero h1{
+  font-weight:900 !important;
+  letter-spacing:-.055em !important;
+}
+
+.epb-page .epb-lede{
+  max-width:760px !important;
+  font-size:1.12rem !important;
+  line-height:1.62 !important;
+  font-weight:400 !important;
+}
+
+/* Replace tiny callout styling with readable, plain language. */
+.epb-page .epb-flex-note{
+  max-width:800px !important;
+  margin-top:22px !important;
+  padding:4px 0 4px 18px !important;
+  border-left:6px solid var(--epb-teal) !important;
+}
+
+.epb-page .epb-flex-note strong{
+  font-size:1.05rem !important;
+  line-height:1.4 !important;
+  font-weight:800 !important;
+}
+
+.epb-page .epb-flex-note span{
+  margin-top:6px !important;
+  font-size:1rem !important;
+  line-height:1.62 !important;
+  font-weight:400 !important;
+}
+
+/* Main actions */
+.epb-page .epb-primary-action,
+.epb-page .epb-secondary-action{
+  min-height:58px !important;
+  padding:15px 26px !important;
+  font-size:1rem !important;
+  font-weight:800 !important;
+}
+
+/* Jump strip: no tiny labels. */
+.epb-page .epb-jump-strip-inner{
+  min-height:84px !important;
+}
+
+.epb-page .epb-jump-strip-inner > span{
+  font-size:.82rem !important;
+}
+
+.epb-page .epb-jump-strip a{
+  min-height:52px !important;
+  padding:8px 16px 8px 9px !important;
+}
+
+.epb-page .epb-jump-strip b{
+  width:34px !important;
+  height:34px !important;
+  font-size:.72rem !important;
+}
+
+.epb-page .epb-jump-strip a span{
+  font-size:.88rem !important;
+  font-weight:700 !important;
+}
+
+/* Purple section intro */
+.epb-page #epb-playbook-title{
+  font-weight:900 !important;
+  letter-spacing:-.035em !important;
+}
+
+.epb-page .epb-source-note{
+  max-width:920px !important;
+  font-size:1rem !important;
+  line-height:1.58 !important;
+}
+
+.epb-page .epb-check-note{
+  font-size:.95rem !important;
+  line-height:1.55 !important;
+}
+
+.epb-page .epb-check-note button{
+  min-height:42px !important;
+  padding:8px 14px !important;
+  font-size:.82rem !important;
+  font-weight:700 !important;
+}
+
+/* CLOSED STAGE HEADERS */
+.epb-page .epb-stage summary{
+  min-height:104px !important;
+  padding-top:18px !important;
+  padding-bottom:18px !important;
+}
+
+.epb-page .epb-stage-number{
+  font-size:.82rem !important;
+  font-weight:800 !important;
+}
+
+.epb-page .epb-stage-copy > strong{
+  font-size:clamp(1.55rem,1.9vw,1.95rem) !important;
+  line-height:1.12 !important;
+  font-weight:900 !important;
+}
+
+.epb-page .epb-stage-copy > small{
+  margin-top:8px !important;
+  font-size:1rem !important;
+  line-height:1.55 !important;
+  font-weight:400 !important;
+  color:#5C5561 !important;
+}
+
+/* OPEN STAGE CONTENT */
+.epb-page .epb-stage-main h3{
+  font-size:1.5rem !important;
+  line-height:1.25 !important;
+  font-weight:800 !important;
+}
+
+.epb-page .epb-check{
+  font-size:1rem !important;
+  line-height:1.58 !important;
+  font-weight:400 !important;
+}
+
+.epb-page .epb-check input{
+  width:22px !important;
+  height:22px !important;
+}
+
+/* Notes should never drop below comfortable reading size. */
+.epb-page .epb-note > span,
+.epb-page .epb-tools > span,
+.epb-page .epb-phase-list b{
+  font-size:.78rem !important;
+  line-height:1.35 !important;
+  font-weight:800 !important;
+}
+
+.epb-page .epb-note p{
+  font-size:.96rem !important;
+  line-height:1.58 !important;
+}
+
+.epb-page .epb-builder-callout h4{
+  font-size:1.25rem !important;
+  font-weight:800 !important;
+}
+
+.epb-page .epb-builder-callout p{
+  font-size:.94rem !important;
+  line-height:1.55 !important;
+}
+
+.epb-page .epb-builder-callout a{
+  min-height:50px !important;
+  padding:11px 18px !important;
+  font-size:.9rem !important;
+  font-weight:800 !important;
+}
+
+/* Right-side useful links */
+.epb-page .epb-tools strong{
+  font-size:.96rem !important;
+  line-height:1.35 !important;
+  font-weight:800 !important;
+}
+
+.epb-page .epb-tools small{
+  margin-top:4px !important;
+  font-size:.86rem !important;
+  line-height:1.48 !important;
+}
+
+/* Program phases */
+.epb-page .epb-phase-list strong{
+  font-size:1rem !important;
+  line-height:1.4 !important;
+  font-weight:800 !important;
+}
+
+.epb-page .epb-phase-list p{
+  font-size:.94rem !important;
+  line-height:1.55 !important;
+}
+
+/* Breadcrumb and small navigation still need to be readable. */
+.epb-page .epb-back{
+  font-size:.9rem !important;
+  font-weight:700 !important;
+}
+
+/* Mobile remains generous rather than collapsing the type scale. */
+@media(max-width:720px){
+  .epb-page .epb-lede{
+    font-size:1rem !important;
+  }
+
+  .epb-page .epb-flex-note strong{
+    font-size:1rem !important;
+  }
+
+  .epb-page .epb-flex-note span{
+    font-size:.96rem !important;
+  }
+
+  .epb-page .epb-primary-action,
+  .epb-page .epb-secondary-action{
+    width:100%;
+    min-height:54px !important;
+    font-size:.95rem !important;
+  }
+
+  .epb-page .epb-stage-copy > strong{
+    font-size:1.38rem !important;
+  }
+
+  .epb-page .epb-stage-copy > small,
+  .epb-page .epb-check{
+    font-size:.96rem !important;
+  }
+
+  .epb-page .epb-source-note,
+  .epb-page .epb-check-note{
+    font-size:.92rem !important;
+  }
+}
