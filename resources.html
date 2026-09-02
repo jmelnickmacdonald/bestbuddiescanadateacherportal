@@ -3,65 +3,790 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Best Buddies Canada Teacher Hub resources for chapter planning, training, forms, administration, and starting a chapter.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <meta name="description" content="Best Buddies Canada Teacher Hub resources for planning, training, forms, administration, inclusion, and chapter support.">
   <title>Resources | Best Buddies Canada Teacher Hub</title>
+
   <link rel="stylesheet" href="portal-home.css">
+  <link rel="stylesheet" href="accessibility.css">
+  <script src="accessibility.js" defer></script>
 
   <style>
-:root{
-  --rh-purple:#5A3F98;--rh-lilac:#9396CA;--rh-yellow:#FFD420;
-  --rh-teal:#8FD1C4;--rh-orange:#F37735;--rh-ink:#1D1823;
-  --rh-text:#514A58;--rh-muted:#746C79;--rh-soft:#F4F1F8;--rh-line:#E5DFE9;
-}
-.resource-hub-page{background:#fff;color:var(--rh-text)}
-.rh-container{width:min(92%,1480px);margin-inline:auto}
-.rh-kicker{display:block;color:var(--rh-purple);font-size:.7rem;font-weight:900;letter-spacing:.075em;text-transform:uppercase}
-.rh-hero{padding:50px 0 44px;background:#fff}
-.rh-hero-grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(390px,1.14fr);gap:clamp(52px,7vw,110px);align-items:end}
-.rh-hero h1{margin:8px 0 0;color:var(--rh-ink);font-family:var(--display-font);font-size:clamp(3.4rem,5.6vw,5.9rem);font-weight:850;line-height:.9;letter-spacing:-.045em}
-.rh-hero h1 span{color:var(--rh-purple)}
-.rh-hero h1:after{content:"";display:block;width:58px;height:7px;margin-top:23px;border-radius:999px;background:var(--rh-teal)}
-.rh-hero p{max-width:720px;margin:0;font-size:1.02rem;line-height:1.6}
-.rh-search-section{padding:30px 0 32px;background:#EEEAF6;border-block:1px solid #E4DDEA}
-.rh-search-grid{display:grid;grid-template-columns:minmax(250px,.58fr) minmax(0,1.42fr);gap:38px;align-items:center}
-.rh-search-copy h2,.rh-most-used h2,.rh-browse h2{margin:6px 0 0;color:var(--rh-ink);font-family:var(--display-font);font-weight:850;letter-spacing:-.025em}
-.rh-search-copy h2{font-size:clamp(2rem,3vw,3rem)}
-.rh-search{position:relative}.rh-search label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
-.rh-search input{width:100%;min-height:62px;padding:15px 52px 15px 20px;border:2px solid transparent;border-radius:18px 18px 38px 18px;background:#fff;color:var(--rh-ink);font:inherit;font-size:.93rem;box-shadow:0 8px 24px rgba(50,33,77,.06)}
-.rh-search input:focus{outline:0;border-color:var(--rh-purple);box-shadow:0 0 0 4px rgba(90,63,152,.12)}
-.rh-search:after{content:"⌕";position:absolute;right:20px;top:50%;transform:translateY(-50%);color:var(--rh-purple);font-size:1.4rem;font-weight:900;pointer-events:none}
-.rh-search-results{display:none;margin-top:15px;padding:16px;border-radius:18px 18px 36px 18px;background:#fff}.rh-search-results.is-visible{display:block}
-.rh-search-results h3{margin:0 0 10px;color:var(--rh-ink);font-size:.8rem}.rh-search-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.rh-search-result{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;min-height:66px;padding:11px 13px;border:1px solid var(--rh-line);border-radius:13px 13px 26px 13px;color:var(--rh-ink);text-decoration:none}
-.rh-search-result strong{display:block;font-size:.77rem}.rh-search-result small{display:block;margin-top:3px;color:var(--rh-muted);font-size:.66rem;line-height:1.35}.rh-search-result b{color:var(--rh-purple)}
-.rh-search-empty{margin:0;color:var(--rh-muted);font-size:.79rem}
-.rh-most-used{padding:46px 0 52px;background:#fff}.rh-most-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:19px}
-.rh-most-head h2{font-size:clamp(2.1rem,3vw,3rem)}.rh-most-head p{max-width:520px;margin:0;color:var(--rh-muted);font-size:.81rem;line-height:1.5}
-.rh-most-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.rh-most-card{position:relative;display:block;min-height:132px;padding:18px 46px 18px 18px;border:1px solid var(--rh-line);border-top:6px solid var(--accent,var(--rh-lilac));border-radius:16px 16px 34px 16px;background:#fff;color:var(--rh-ink);text-decoration:none}
-.rh-most-card[data-accent=yellow]{--accent:var(--rh-yellow)}.rh-most-card[data-accent=teal]{--accent:var(--rh-teal)}.rh-most-card[data-accent=orange]{--accent:var(--rh-orange)}
-.rh-source{display:inline-flex;margin-bottom:7px;color:var(--rh-purple);font-size:.59rem;font-weight:900;letter-spacing:.055em;text-transform:uppercase}
-.rh-most-card strong{display:block;font-family:var(--display-font);font-size:1.18rem;font-weight:850;line-height:1.05}.rh-most-card small{display:block;margin-top:7px;color:var(--rh-muted);font-size:.71rem;line-height:1.4}.rh-most-card b{position:absolute;right:17px;bottom:17px;color:var(--rh-purple)}
-.rh-browse{padding:52px 0 60px;background:var(--rh-purple)}.rh-browse .rh-kicker{color:var(--rh-yellow)}
-.rh-browse h2{max-width:760px;color:#fff;font-size:clamp(2.5rem,4vw,4rem);line-height:.96}.rh-browse-intro{max-width:690px;margin:12px 0 25px;color:rgba(255,255,255,.8);font-size:.82rem;line-height:1.5}
-.rh-door-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.rh-door{position:relative;min-height:186px;padding:25px 60px 25px 25px;border:0;border-top:7px solid var(--door-accent);border-radius:20px 20px 46px 20px;background:#fff;color:var(--rh-ink);text-align:left;font:inherit;cursor:pointer}
-.rh-door:nth-child(1){--door-accent:var(--rh-lilac)}.rh-door:nth-child(2){--door-accent:var(--rh-yellow)}.rh-door:nth-child(3){--door-accent:var(--rh-teal)}.rh-door:nth-child(4){--door-accent:var(--rh-orange)}
-.rh-door span{display:block;margin-bottom:7px;color:var(--rh-purple);font-size:.63rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}.rh-door strong{display:block;font-family:var(--display-font);font-size:1.62rem;font-weight:850;line-height:1}.rh-door small{display:block;max-width:540px;margin-top:9px;color:var(--rh-muted);font-size:.76rem;line-height:1.44}.rh-door b{position:absolute;right:23px;bottom:22px;color:var(--rh-purple);font-size:1.2rem}
-.rh-secondary{padding:34px 0 40px;background:#fff}.rh-secondary-inner{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--rh-line)}
-.rh-secondary a{position:relative;min-height:92px;padding:19px 46px 19px 0;border-right:1px solid var(--rh-line);color:var(--rh-ink);text-decoration:none}.rh-secondary a+a{padding-left:23px}.rh-secondary a:last-child{border-right:0}
-.rh-secondary span{display:block;color:var(--rh-purple);font-size:.61rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase}.rh-secondary strong{display:block;margin-top:6px;font-size:.82rem}.rh-secondary b{position:absolute;right:17px;bottom:21px;color:var(--rh-purple)}
-.rh-dialog{width:min(850px,calc(100% - 32px));max-height:min(790px,calc(100vh - 36px));padding:0;border:0;border-radius:28px 28px 72px 28px;background:#fff;color:var(--rh-text);box-shadow:0 30px 80px rgba(37,24,61,.32)}
-.rh-dialog::backdrop{background:rgba(26,18,37,.58);backdrop-filter:blur(3px)}.rh-dialog-inner{padding:27px}.rh-dialog-top{display:flex;align-items:flex-start;justify-content:space-between;gap:22px;margin-bottom:19px}
-.rh-dialog h2{margin:6px 0 0;color:var(--rh-ink);font-family:var(--display-font);font-size:clamp(2.2rem,4vw,3.5rem);font-weight:850;line-height:.96;letter-spacing:-.035em}.rh-dialog-intro{max-width:650px;margin:10px 0 0;color:var(--rh-muted);font-size:.79rem;line-height:1.45}
-.rh-dialog-close{flex:0 0 auto;width:44px;height:44px;border:0;border-radius:50%;background:var(--rh-purple);color:#fff;font-size:1.3rem;font-weight:900;cursor:pointer}
-.rh-dialog-group+.rh-dialog-group{margin-top:21px}.rh-dialog-group-title{margin:0 0 8px;color:var(--rh-purple);font-size:.64rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}.rh-dialog-list{display:grid;gap:8px}
-.rh-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;min-height:74px;padding:13px 15px;border:1px solid var(--rh-line);border-left:5px solid var(--item-accent,var(--rh-lilac));border-radius:14px 14px 30px 14px;background:#fff;color:var(--rh-ink);text-decoration:none}
-.rh-item[data-accent=yellow]{--item-accent:var(--rh-yellow)}.rh-item[data-accent=teal]{--item-accent:var(--rh-teal)}.rh-item[data-accent=orange]{--item-accent:var(--rh-orange)}
-.rh-item strong{display:block;font-size:.81rem}.rh-item small{display:block;margin-top:3px;color:var(--rh-muted);font-size:.68rem;line-height:1.37}.rh-item-meta{display:inline-flex;margin-top:5px;color:var(--rh-purple);font-size:.57rem;font-style:normal;font-weight:900;letter-spacing:.05em;text-transform:uppercase}.rh-item b{color:var(--rh-purple)}
-.rh-dialog-note{margin:15px 0 0;padding:11px 13px;border-left:5px solid var(--rh-teal);border-radius:0 12px 24px 0;background:#EEF8F5;color:#4D5D59;font-size:.72rem;line-height:1.45}
-@media(max-width:900px){.rh-hero-grid,.rh-search-grid{grid-template-columns:1fr;gap:24px}.rh-most-grid{grid-template-columns:1fr 1fr}.rh-secondary-inner{grid-template-columns:1fr}.rh-secondary a,.rh-secondary a+a{min-height:72px;padding:17px 44px 17px 0;border-right:0;border-bottom:1px solid var(--rh-line)}.rh-secondary a:last-child{border-bottom:0}}
-@media(max-width:720px){.rh-container{width:calc(100% - 32px)}.rh-hero{padding:38px 0 36px}.rh-most-head{align-items:flex-start;flex-direction:column;gap:8px}.rh-most-grid,.rh-door-grid,.rh-search-list{grid-template-columns:1fr}.rh-door{min-height:162px}.rh-dialog{width:100%;max-width:none;max-height:88vh;margin:auto 0 0;border-radius:28px 28px 0 0}.rh-dialog-inner{padding:22px 17px 26px}.rh-dialog h2{font-size:2.4rem}}
-</style>
+    :root{
+      --rh-purple:#5A3F98;
+      --rh-yellow:#FFD420;
+      --rh-teal:#8FD1C4;
+      --rh-orange:#F37735;
+      --rh-lilac:#9396CA;
+      --rh-ink:#211B28;
+      --rh-text:#4F4854;
+      --rh-muted:#6D6671;
+      --rh-line:#E3DFE8;
+      --rh-lavender:#EEEAF8;
+      --rh-wash:#F7F6F3;
+      --rh-yellow-soft:#FFF6C7;
+      --rh-teal-soft:#EAF7F4;
+      --rh-orange-soft:#FFF0E7;
+    }
+
+    *{box-sizing:border-box}
+
+    body.resource-hub-page{
+      margin:0;
+      background:#fff;
+      color:var(--rh-text);
+      font-family:"Poppins",Arial,sans-serif;
+      font-size:18px;
+      line-height:1.62;
+    }
+
+    .resource-hub-page a,
+    .resource-hub-page button,
+    .resource-hub-page input,
+    .resource-hub-page p,
+    .resource-hub-page span,
+    .resource-hub-page small,
+    .resource-hub-page strong,
+    .resource-hub-page em{
+      font-family:"Poppins",Arial,sans-serif;
+    }
+
+    .resource-hub-page h1,
+    .resource-hub-page h2,
+    .resource-hub-page h3{
+      font-family:"League Spartan","Poppins",Arial,sans-serif;
+    }
+
+    .rh-container{
+      width:min(calc(100% - 56px),1220px);
+      margin-inline:auto;
+    }
+
+    .rh-kicker{
+      display:block;
+      color:var(--rh-purple);
+      font-size:.76rem;
+      font-weight:800;
+      line-height:1.25;
+      letter-spacing:.075em;
+      text-transform:uppercase;
+    }
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    .resource-hub-page .portal-header{
+      border-top:5px solid var(--rh-yellow);
+      background:var(--rh-teal);
+    }
+
+    .resource-hub-page .portal-header-inner{
+      min-height:96px;
+    }
+
+    .resource-hub-page .portal-brand img{
+      width:84px;
+      height:74px;
+      object-fit:contain;
+    }
+
+    .resource-hub-page .portal-nav a,
+    .resource-hub-page .portal-lang a,
+    .resource-hub-page .site-menu summary,
+    .resource-hub-page .site-menu-panel a{
+      font-family:"Poppins",Arial,sans-serif !important;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .rh-hero{
+      position:relative;
+      overflow:hidden;
+      padding:46px 0 74px;
+      background:#fff;
+    }
+
+    .rh-hero::after{
+      content:"";
+      position:absolute;
+      left:-4%;
+      right:-4%;
+      bottom:-40px;
+      height:80px;
+      border-radius:50% 50% 0 0 / 64% 64% 0 0;
+      background:var(--rh-purple);
+      transform:rotate(-.8deg);
+    }
+
+    .rh-hero-grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(350px,.62fr);
+      gap:64px;
+      align-items:end;
+    }
+
+    .rh-hero h1{
+      max-width:700px;
+      margin:8px 0 0;
+      color:var(--rh-ink);
+      font-size:clamp(3.7rem,5.6vw,5.8rem);
+      font-weight:900;
+      line-height:.87;
+      letter-spacing:-.045em;
+    }
+
+    .rh-hero h1 span{
+      display:block;
+      color:var(--rh-purple);
+    }
+
+    .rh-hero p{
+      max-width:560px;
+      margin:0 0 5px;
+      color:var(--rh-text);
+      font-size:1.06rem;
+      line-height:1.66;
+    }
+
+    /* =========================================================
+       SEARCH
+       ========================================================= */
+
+    .rh-search-section{
+      padding:56px 0 60px;
+      background:var(--rh-purple);
+    }
+
+    .rh-search-grid{
+      display:grid;
+      grid-template-columns:minmax(280px,.6fr) minmax(0,1.4fr);
+      gap:44px;
+      align-items:center;
+    }
+
+    .rh-search-section .rh-kicker{color:var(--rh-yellow)}
+
+    .rh-search-copy h2{
+      margin:6px 0 0;
+      color:#fff;
+      font-size:clamp(2.3rem,3.2vw,3.4rem);
+      font-weight:900;
+      line-height:.95;
+    }
+
+    .rh-search{
+      position:relative;
+    }
+
+    .rh-search label{
+      position:absolute;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+    }
+
+    .rh-search input{
+      width:100%;
+      min-height:62px;
+      padding:15px 54px 15px 20px;
+      border:2px solid transparent;
+      border-radius:18px 18px 40px 18px;
+      background:#fff;
+      color:var(--rh-ink);
+      font-size:.95rem;
+      box-shadow:0 10px 28px rgba(33,20,57,.12);
+    }
+
+    .rh-search input:focus{
+      outline:0;
+      border-color:var(--rh-yellow);
+      box-shadow:0 0 0 4px rgba(255,212,32,.2);
+    }
+
+    .rh-search::after{
+      content:"⌕";
+      position:absolute;
+      right:20px;
+      top:50%;
+      transform:translateY(-50%);
+      color:var(--rh-purple);
+      font-size:1.45rem;
+      font-weight:900;
+      pointer-events:none;
+    }
+
+    .rh-search-results{
+      display:none;
+      margin-top:14px;
+      padding:15px;
+      border-radius:18px 18px 38px 18px;
+      background:#fff;
+    }
+
+    .rh-search-results.is-visible{display:block}
+
+    .rh-search-results h3{
+      margin:0 0 10px;
+      color:var(--rh-ink);
+      font-size:.84rem;
+      font-weight:800;
+    }
+
+    .rh-search-list{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+    }
+
+    .rh-search-result{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:12px;
+      align-items:center;
+      min-height:72px;
+      padding:12px 14px;
+      border:1px solid var(--rh-line);
+      border-radius:14px 14px 28px 14px;
+      color:var(--rh-ink);
+      text-decoration:none;
+    }
+
+    .rh-search-result strong{
+      display:block;
+      font-size:.84rem;
+    }
+
+    .rh-search-result small{
+      display:block;
+      margin-top:3px;
+      color:var(--rh-muted);
+      font-size:.75rem;
+      line-height:1.35;
+    }
+
+    .rh-search-result b{color:var(--rh-purple)}
+
+    .rh-search-empty{
+      margin:0;
+      color:var(--rh-muted);
+      font-size:.84rem;
+    }
+
+    /* =========================================================
+       MOST USED
+       ========================================================= */
+
+    .rh-most-used{
+      padding:68px 0 74px;
+      background:#fff;
+    }
+
+    .rh-most-head{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(300px,.45fr);
+      gap:44px;
+      align-items:end;
+      margin-bottom:25px;
+    }
+
+    .rh-most-head h2,
+    .rh-browse h2{
+      margin:6px 0 0;
+      color:var(--rh-ink);
+      font-weight:900;
+      letter-spacing:-.03em;
+    }
+
+    .rh-most-head h2{
+      max-width:720px;
+      font-size:clamp(2.5rem,3.6vw,3.8rem);
+      line-height:.94;
+    }
+
+    .rh-most-head p{
+      margin:0 0 4px;
+      color:var(--rh-muted);
+      font-size:.94rem;
+      line-height:1.58;
+    }
+
+    .rh-most-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:13px;
+    }
+
+    .rh-most-card{
+      --accent:var(--rh-lilac);
+      position:relative;
+      display:flex;
+      min-height:185px;
+      flex-direction:column;
+      padding:22px 50px 21px 21px;
+      border:1px solid var(--rh-line);
+      border-top:7px solid var(--accent);
+      border-radius:20px 20px 48px 20px;
+      background:#fff;
+      color:var(--rh-ink);
+      text-decoration:none;
+      box-shadow:0 7px 24px rgba(48,31,77,.05);
+      transition:transform .15s ease,box-shadow .15s ease;
+    }
+
+    .rh-most-card[data-accent="yellow"]{--accent:var(--rh-yellow)}
+    .rh-most-card[data-accent="teal"]{--accent:var(--rh-teal)}
+    .rh-most-card[data-accent="orange"]{--accent:var(--rh-orange)}
+
+    .rh-most-card:hover,
+    .rh-most-card:focus-visible{
+      transform:translateY(-3px);
+      box-shadow:0 14px 32px rgba(48,31,77,.1);
+    }
+
+    .rh-source{
+      display:block;
+      margin-bottom:7px;
+      color:var(--rh-purple);
+      font-size:.7rem;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .rh-most-card strong{
+      display:block;
+      color:var(--rh-ink);
+      font-family:"League Spartan","Poppins",Arial,sans-serif;
+      font-size:1.42rem;
+      font-weight:850;
+      line-height:1.02;
+    }
+
+    .rh-most-card small{
+      display:block;
+      margin-top:9px;
+      color:var(--rh-muted);
+      font-size:.87rem;
+      line-height:1.48;
+    }
+
+    .rh-most-card b{
+      position:absolute;
+      right:20px;
+      bottom:19px;
+      color:var(--rh-purple);
+      font-size:1rem;
+    }
+
+    /* =========================================================
+       BROWSE BY NEED
+       ========================================================= */
+
+    .rh-browse{
+      padding:68px 0 76px;
+      background:var(--rh-purple);
+    }
+
+    .rh-browse .rh-kicker{color:var(--rh-yellow)}
+
+    .rh-browse h2{
+      max-width:760px;
+      color:#fff;
+      font-size:clamp(2.7rem,4vw,4.2rem);
+      line-height:.94;
+    }
+
+    .rh-browse-intro{
+      max-width:690px;
+      margin:13px 0 27px;
+      color:rgba(255,255,255,.84);
+      font-size:.96rem;
+      line-height:1.58;
+    }
+
+    .rh-door-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .rh-door{
+      --door-accent:var(--rh-lilac);
+      position:relative;
+      min-height:210px;
+      padding:27px 64px 25px 26px;
+      border:0;
+      border-top:8px solid var(--door-accent);
+      border-radius:22px 22px 52px 22px;
+      background:#fff;
+      color:var(--rh-ink);
+      text-align:left;
+      cursor:pointer;
+      box-shadow:0 10px 28px rgba(29,16,50,.14);
+    }
+
+    .rh-door:nth-child(2){--door-accent:var(--rh-yellow)}
+    .rh-door:nth-child(3){--door-accent:var(--rh-teal)}
+    .rh-door:nth-child(4){--door-accent:var(--rh-orange)}
+
+    .rh-door span{
+      display:block;
+      margin-bottom:8px;
+      color:var(--rh-purple);
+      font-size:.72rem;
+      font-weight:800;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+    }
+
+    .rh-door strong{
+      display:block;
+      color:var(--rh-ink);
+      font-family:"League Spartan","Poppins",Arial,sans-serif;
+      font-size:1.75rem;
+      font-weight:850;
+      line-height:1;
+    }
+
+    .rh-door small{
+      display:block;
+      max-width:560px;
+      margin-top:11px;
+      color:var(--rh-muted);
+      font-size:.89rem;
+      line-height:1.5;
+    }
+
+    .rh-door b{
+      position:absolute;
+      right:24px;
+      bottom:22px;
+      color:var(--rh-purple);
+      font-size:1.05rem;
+    }
+
+    /* =========================================================
+       BOTTOM UTILITY STRIP
+       ========================================================= */
+
+    .rh-secondary{
+      position:relative;
+      padding:64px 0 52px;
+      background:var(--rh-teal);
+      overflow:hidden;
+    }
+
+    .rh-secondary::before{
+      content:"";
+      position:absolute;
+      top:-1px;
+      left:0;
+      right:0;
+      height:42px;
+      background:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 82' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill='%235A3F98' d='M0 0H1440V31C1250 52 1090 22 900 39C710 56 535 25 340 42C190 55 93 42 0 47Z'/%3E%3C/svg%3E")
+        center top / 100% 100% no-repeat;
+    }
+
+    .rh-secondary-inner{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
+    .rh-secondary a{
+      position:relative;
+      min-height:112px;
+      padding:20px 48px 20px 20px;
+      border-radius:18px 18px 40px 18px;
+      background:#fff;
+      color:var(--rh-ink);
+      text-decoration:none;
+    }
+
+    .rh-secondary span{
+      display:block;
+      color:var(--rh-purple);
+      font-size:.7rem;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .rh-secondary strong{
+      display:block;
+      margin-top:6px;
+      font-size:.91rem;
+      line-height:1.4;
+    }
+
+    .rh-secondary b{
+      position:absolute;
+      right:18px;
+      bottom:20px;
+      color:var(--rh-purple);
+    }
+
+    /* =========================================================
+       DIALOGS
+       ========================================================= */
+
+    .rh-dialog{
+      width:min(880px,calc(100% - 32px));
+      max-height:min(790px,calc(100vh - 36px));
+      padding:0;
+      border:0;
+      border-radius:28px 28px 72px 28px;
+      background:#fff;
+      color:var(--rh-text);
+      box-shadow:0 30px 80px rgba(37,24,61,.32);
+    }
+
+    .rh-dialog::backdrop{
+      background:rgba(26,18,37,.58);
+      backdrop-filter:blur(3px);
+    }
+
+    .rh-dialog-inner{
+      padding:30px;
+    }
+
+    .rh-dialog-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:22px;
+      margin-bottom:21px;
+    }
+
+    .rh-dialog h2{
+      margin:6px 0 0;
+      color:var(--rh-ink);
+      font-size:clamp(2.4rem,4vw,3.7rem);
+      font-weight:900;
+      line-height:.94;
+      letter-spacing:-.035em;
+    }
+
+    .rh-dialog-intro{
+      max-width:680px;
+      margin:10px 0 0;
+      color:var(--rh-muted);
+      font-size:.9rem;
+      line-height:1.52;
+    }
+
+    .rh-dialog-close{
+      flex:0 0 auto;
+      width:44px;
+      height:44px;
+      border:0;
+      border-radius:50%;
+      background:var(--rh-purple);
+      color:#fff;
+      font-size:1.3rem;
+      font-weight:900;
+      cursor:pointer;
+    }
+
+    .rh-dialog-group + .rh-dialog-group{
+      margin-top:22px;
+    }
+
+    .rh-dialog-group-title{
+      margin:0 0 9px;
+      color:var(--rh-purple);
+      font-family:"Poppins",Arial,sans-serif !important;
+      font-size:.72rem;
+      font-weight:800;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+    }
+
+    .rh-dialog-list{
+      display:grid;
+      gap:8px;
+    }
+
+    .rh-item{
+      --item-accent:var(--rh-lilac);
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:18px;
+      align-items:center;
+      min-height:80px;
+      padding:14px 16px;
+      border:1px solid var(--rh-line);
+      border-left:6px solid var(--item-accent);
+      border-radius:15px 15px 32px 15px;
+      background:#fff;
+      color:var(--rh-ink);
+      text-decoration:none;
+    }
+
+    .rh-item[data-accent="yellow"]{--item-accent:var(--rh-yellow)}
+    .rh-item[data-accent="teal"]{--item-accent:var(--rh-teal)}
+    .rh-item[data-accent="orange"]{--item-accent:var(--rh-orange)}
+
+    .rh-item strong{
+      display:block;
+      color:var(--rh-ink);
+      font-size:.9rem;
+      line-height:1.3;
+    }
+
+    .rh-item small{
+      display:block;
+      margin-top:4px;
+      color:var(--rh-muted);
+      font-size:.8rem;
+      line-height:1.42;
+    }
+
+    .rh-item-meta{
+      display:inline-flex;
+      width:max-content;
+      margin-top:7px;
+      padding:4px 8px;
+      border-radius:999px;
+      background:var(--rh-lavender);
+      color:var(--rh-purple);
+      font-size:.65rem;
+      font-style:normal;
+      font-weight:800;
+      line-height:1.2;
+    }
+
+    .rh-item b{
+      color:var(--rh-purple);
+      font-size:1rem;
+    }
+
+    .rh-dialog-note{
+      margin:16px 0 0;
+      padding:12px 14px;
+      border-left:5px solid var(--rh-teal);
+      border-radius:0 12px 26px 0;
+      background:var(--rh-teal-soft);
+      color:#445B56;
+      font-size:.82rem;
+      line-height:1.48;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .resource-hub-page .portal-footer img{
+      width:62px;
+      height:58px;
+      object-fit:contain;
+    }
+
+    .resource-hub-page .portal-footer a{
+      text-decoration:none;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media(max-width:950px){
+      .rh-hero-grid,
+      .rh-search-grid,
+      .rh-most-head{
+        grid-template-columns:1fr;
+        gap:24px;
+      }
+
+      .rh-most-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .rh-secondary-inner{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:760px){
+      body.resource-hub-page{font-size:17px}
+
+      .rh-container{
+        width:min(calc(100% - 32px),1220px);
+      }
+
+      .rh-hero{
+        padding:38px 0 62px;
+      }
+
+      .rh-hero-grid{gap:22px}
+
+      .rh-hero h1{
+        font-size:clamp(3.1rem,14vw,4.6rem);
+      }
+
+      .rh-hero p{font-size:1rem}
+
+      .rh-search-section{
+        padding:46px 0 50px;
+      }
+
+      .rh-most-used{
+        padding:54px 0 60px;
+      }
+
+      .rh-most-grid,
+      .rh-door-grid,
+      .rh-search-list{
+        grid-template-columns:1fr;
+      }
+
+      .rh-most-card{min-height:0}
+
+      .rh-browse{
+        padding:56px 0 62px;
+      }
+
+      .rh-door{min-height:180px}
+
+      .rh-secondary{
+        padding:58px 0 46px;
+      }
+
+      .rh-dialog{
+        width:100%;
+        max-width:none;
+        max-height:88vh;
+        margin:auto 0 0;
+        border-radius:28px 28px 0 0;
+      }
+
+      .rh-dialog-inner{
+        padding:24px 18px 28px;
+      }
+
+      .rh-dialog h2{
+        font-size:2.55rem;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      .rh-most-card{transition:none}
+      .rh-most-card:hover{transform:none}
+    }
+  </style>
 </head>
 
 <body class="resource-hub-page">
@@ -70,8 +795,7 @@
 <header class="portal-header">
   <div class="portal-container portal-header-inner">
     <a class="portal-brand" href="index.html" aria-label="Best Buddies Canada Teacher Hub home">
-      <img src="assets/bb-logo.png" alt="Best Buddies Canada">
-</span>
+      <img src="assets/bb-logo-coloured.png" alt="Best Buddies Canada">
     </a>
 
     <div class="header-actions">
@@ -81,7 +805,7 @@
         <a href="support.html">Support</a>
       </nav>
 
-      <div class="portal-lang">
+      <div class="portal-lang" aria-label="Language">
         <a class="current" href="#" aria-current="page">EN</a>
         <a href="fr.html" lang="fr-CA">FR</a>
       </div>
@@ -91,8 +815,9 @@
         <div class="site-menu-panel">
           <a href="index.html">Teacher Hub home</a>
           <a href="calendar.html">Program Calendar</a>
-          <a href="resources.html">Resources</a>
+          <a href="resources.html" aria-current="page">Resources</a>
           <a href="support.html">Support</a>
+          <a href="fr.html" lang="fr-CA">Français</a>
         </div>
       </details>
     </div>
@@ -100,188 +825,895 @@
 </header>
 
 <main id="main-content">
-<section class="rh-hero">
-  <div class="rh-container rh-hero-grid">
-    <div><span class="rh-kicker">Resources</span><h1>Find what you <span>need.</span></h1></div>
-    <p>Looking for a form, activity, guide, training link, or quick answer? Start with the most-used resources or search for the thing you have in mind.</p>
-  </div>
-</section>
 
-<section class="rh-search-section" aria-labelledby="rh-search-title">
-  <div class="rh-container rh-search-grid">
-    <div class="rh-search-copy"><span class="rh-kicker">Find it fast</span><h2 id="rh-search-title">What are you looking for?</h2></div>
-    <div>
-      <div class="rh-search"><label for="resource-search-input">Search resources</label><input id="resource-search-input" type="search" placeholder="Try roster, AAC, first meeting, fundraising, registration…" autocomplete="off"></div>
-      <section class="rh-search-results" id="resource-search-results" aria-live="polite"><h3>Search results</h3><div class="rh-search-list" id="resource-search-list"></div></section>
-    </div>
-  </div>
-</section>
+  <section class="rh-hero">
+    <div class="rh-container rh-hero-grid">
+      <div>
+        <span class="rh-kicker">Resources</span>
+        <h1>Find what you <span>need.</span></h1>
+      </div>
 
-<section class="rh-most-used" aria-labelledby="rh-most-title">
-  <div class="rh-container">
-    <div class="rh-most-head">
-      <div><span class="rh-kicker">Most used</span><h2 id="rh-most-title">The things teachers reach for most.</h2></div>
-      <p>These go straight to the source. No extra category click first.</p>
+      <p>
+        Looking for a form, activity, guide, training link, or quick answer?
+        Start with the things teachers use most, or search for exactly what you need.
+      </p>
     </div>
-    <div class="rh-most-grid">
-      <a class="rh-most-card rh-searchable" href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener" data-search="elementary middle program guide manual phases meeting structure program structure"><span class="rh-source">Official Best Buddies Canada</span><strong>Elementary &amp; Middle Program Guide</strong><small>Program structure, pacing, activities, and guide-provided participation options.</small><b>↗</b></a>
-      <a class="rh-most-card rh-searchable" data-accent="yellow" href="https://drive.google.com/file/d/1owF-DwEMSzVrZfnhwWE3pCyLUyCffi4C/view?usp=drive_link" target="_blank" rel="noopener" data-search="elementary activity guide human bingo time capsule activities printable"><span class="rh-source">Official Best Buddies Canada</span><strong>Elementary Activity Guide</strong><small>Friendship and chapter activity ideas, including printable activities.</small><b>↗</b></a>
-      <a class="rh-most-card rh-searchable" data-accent="teal" href="https://bestbuddiescanada.my.salesforce-sites.com/publicportal/rosterUpdate/" target="_blank" rel="noopener" data-search="roster roster update chapter list students members names admin"><span class="rh-source">Official Best Buddies Canada</span><strong>Chapter Roster</strong><small>Submit or update your chapter roster.</small><b>↗</b></a>
-      <a class="rh-most-card rh-searchable" data-accent="orange" href="https://bestbuddiescanada.my.salesforce-sites.com/publicportal/k12registration/" target="_blank" rel="noopener" data-search="k12 k-12 registration register student family parent form application"><span class="rh-source">Official Best Buddies Canada</span><strong>K–12 Student Registration</strong><small>Current English registration form.</small><b>↗</b></a>
-      <a class="rh-most-card rh-searchable" href="https://learn.bestbuddies.ca/" target="_blank" rel="noopener" data-search="learn training sensitivity leadership course disability inclusion"><span class="rh-source">Official Best Buddies Canada</span><strong>Learn @ Best Buddies</strong><small>Go to the current Best Buddies Canada training portal.</small><b>↗</b></a>
-      <a class="rh-most-card rh-searchable" data-accent="teal" href="https://drive.google.com/file/d/1oQwyeOMXP2vCxRpPvBJyBXKP8wTOOdVO/view?usp=sharing" target="_blank" rel="noopener" data-search="non verbal nonverbal nonspeaking non-speaking communication AAC sign language gesture activity guide accessible"><span class="rh-source">Official Best Buddies Canada</span><strong>Non-Verbal Activity Guide</strong><small>AAC, Sign Language, gesture, body language, and other communication approaches.</small><b>↗</b></a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="rh-browse" aria-labelledby="rh-browse-title">
-  <div class="rh-container">
-    <span class="rh-kicker">Browse by need</span>
-    <h2 id="rh-browse-title">Go straight to the kind of help you need.</h2>
-    <p class="rh-browse-intro">The full Best Buddies library is extensive. These four doors group the resources Staff Advisors are most likely to use.</p>
-    <div class="rh-door-grid">
-      <button class="rh-door" type="button" data-open-resource="activities"><span>Activities &amp; planning</span><strong>Plan something</strong><small>Program guides, activity guides, workbook, one-to-one ideas, chapter activities, month planning, and the Gathering Builder.</small><b>→</b></button>
-      <button class="rh-door" type="button" data-open-resource="admin"><span>Forms &amp; chapter admin</span><strong>Keep things current</strong><small>Registration, pledge forms, roster, fundraising, policies, and the practical documents that keep a chapter moving.</small><b>→</b></button>
-      <button class="rh-door" type="button" data-open-resource="inclusion"><span>Training &amp; inclusion</span><strong>Learn &amp; include</strong><small>Training, communication support, non-speaking communication, and different ways to participate.</small><b>→</b></button>
-      <button class="rh-door" type="button" data-open-resource="guides"><span>Guides &amp; how-tos</span><strong>Show me how</strong><small>Teacher Hub Quick Guides plus official Volunteer, Peer Buddy, Buddy, and practical activity resources.</small><b>→</b></button>
-    </div>
-  </div>
-</section>
+  <section class="rh-search-section" aria-labelledby="rh-search-title">
+    <div class="rh-container rh-search-grid">
 
-<section class="rh-secondary">
-  <div class="rh-container rh-secondary-inner">
-    <a href="https://bestbuddies.ca/get-started/" target="_blank" rel="noopener"><span>New chapter</span><strong>Starting Best Buddies at your school?</strong><b>↗</b></a>
-    <a href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener"><span>Full library</span><strong>Open all Best Buddies Canada Helpful Resources</strong><b>↗</b></a>
-    <a href="support.html"><span>Not sure?</span><strong>Ask your Program Advisor</strong><b>→</b></a>
-  </div>
-</section>
+      <div class="rh-search-copy">
+        <span class="rh-kicker">Find it fast</span>
+        <h2 id="rh-search-title">What are you looking for?</h2>
+      </div>
+
+      <div>
+        <div class="rh-search">
+          <label for="resource-search-input">Search resources</label>
+          <input
+            id="resource-search-input"
+            type="search"
+            placeholder="Try roster, AAC, first meeting, fundraising, registration…"
+            autocomplete="off"
+          >
+        </div>
+
+        <section
+          class="rh-search-results"
+          id="resource-search-results"
+          aria-live="polite"
+          aria-label="Resource search results"
+        >
+          <h3>Search results</h3>
+          <div class="rh-search-list" id="resource-search-list"></div>
+        </section>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="rh-most-used" aria-labelledby="rh-most-title">
+    <div class="rh-container">
+
+      <div class="rh-most-head">
+        <div>
+          <span class="rh-kicker">Most used</span>
+          <h2 id="rh-most-title">The things teachers reach for most.</h2>
+        </div>
+
+        <p>
+          Open these directly, or browse by need below when you’re not quite sure what you’re looking for.
+        </p>
+      </div>
+
+      <div class="rh-most-grid">
+
+        <a
+          class="rh-most-card rh-searchable"
+          href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link"
+          target="_blank"
+          rel="noopener"
+          data-search="elementary middle program guide manual phases meeting structure activities"
+        >
+          <span class="rh-source">Best Buddies Canada</span>
+          <strong>Elementary &amp; Middle Program Guide</strong>
+          <small>Program structure, pacing, activities, and participation options.</small>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-most-card rh-searchable"
+          data-accent="yellow"
+          href="https://drive.google.com/file/d/1owF-DwEMSzVrZfnhwWE3pCyLUyCffi4C/view?usp=drive_link"
+          target="_blank"
+          rel="noopener"
+          data-search="elementary activity guide human bingo time capsule activities printable"
+        >
+          <span class="rh-source">Best Buddies Canada</span>
+          <strong>Elementary Activity Guide</strong>
+          <small>Friendship and chapter activity ideas, including printable activities.</small>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-most-card rh-searchable"
+          data-accent="teal"
+          href="https://bestbuddiescanada.my.salesforce-sites.com/publicportal/rosterUpdate/"
+          target="_blank"
+          rel="noopener"
+          data-search="roster roster update chapter list students members names admin"
+        >
+          <span class="rh-source">Live form</span>
+          <strong>Chapter Roster</strong>
+          <small>Submit or update your chapter roster.</small>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-most-card rh-searchable"
+          data-accent="orange"
+          href="https://bestbuddiescanada.my.salesforce-sites.com/publicportal/k12registration/"
+          target="_blank"
+          rel="noopener"
+          data-search="k12 k-12 registration register student family parent form application"
+        >
+          <span class="rh-source">Live form</span>
+          <strong>K–12 Student Registration</strong>
+          <small>Current English K–12 student registration form.</small>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-most-card rh-searchable"
+          href="https://learn.bestbuddies.ca/"
+          target="_blank"
+          rel="noopener"
+          data-search="learn training sensitivity leadership course disability inclusion"
+        >
+          <span class="rh-source">Live training</span>
+          <strong>Learn @ Best Buddies</strong>
+          <small>Go to the current Best Buddies Canada learning portal.</small>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-most-card rh-searchable"
+          data-accent="teal"
+          href="https://drive.google.com/file/d/1oQwyeOMXP2vCxRpPvBJyBXKP8wTOOdVO/view?usp=sharing"
+          target="_blank"
+          rel="noopener"
+          data-search="non verbal nonverbal nonspeaking non-speaking communication AAC sign language gesture activity guide accessible"
+        >
+          <span class="rh-source">Best Buddies Canada</span>
+          <strong>Non-Verbal Activity Guide</strong>
+          <small>AAC, Sign Language, gesture, body language, and other communication approaches.</small>
+          <b>→</b>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="rh-browse" aria-labelledby="rh-browse-title">
+    <div class="rh-container">
+
+      <span class="rh-kicker">Browse by need</span>
+      <h2 id="rh-browse-title">Go straight to the kind of help you need.</h2>
+
+      <p class="rh-browse-intro">
+        The full Best Buddies library is extensive. These four starting points keep the resources Staff Advisors use most within easy reach.
+      </p>
+
+      <div class="rh-door-grid">
+
+        <button class="rh-door" type="button" data-open-resource="activities">
+          <span>Activities &amp; planning</span>
+          <strong>Plan something</strong>
+          <small>Plan a Meeting, monthly planning, Program Guides, activity guides, printables, and more activity ideas.</small>
+          <b>→</b>
+        </button>
+
+        <button class="rh-door" type="button" data-open-resource="admin">
+          <span>Forms &amp; chapter admin</span>
+          <strong>Keep things current</strong>
+          <small>Registration, pledge forms, roster updates, fundraising, policies, and practical chapter documents.</small>
+          <b>→</b>
+        </button>
+
+        <button class="rh-door" type="button" data-open-resource="inclusion">
+          <span>Training &amp; participation</span>
+          <strong>Learn &amp; include</strong>
+          <small>Live training, communication resources, and practical help for supporting different ways to participate.</small>
+          <b>→</b>
+        </button>
+
+        <button class="rh-door" type="button" data-open-resource="guides">
+          <span>Quick help + role guides</span>
+          <strong>Show me how</strong>
+          <small>Teacher Hub Quick Guides, the Chapter Playbook, and Best Buddies guides for volunteers, Peer Buddies, and Buddies.</small>
+          <b>→</b>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="rh-secondary" aria-label="More resources and support">
+    <div class="rh-container rh-secondary-inner">
+
+      <a href="https://bestbuddies.ca/get-started/" target="_blank" rel="noopener">
+        <span>New chapter</span>
+        <strong>Starting Best Buddies at your school?</strong>
+        <b>→</b>
+      </a>
+
+      <a href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener">
+        <span>Full library</span>
+        <strong>Open all Best Buddies Canada Helpful Resources</strong>
+        <b>→</b>
+      </a>
+
+      <a href="support.html">
+        <span>Not sure?</span>
+        <strong>Ask your Program Advisor</strong>
+        <b>→</b>
+      </a>
+
+    </div>
+  </section>
+
 </main>
 
 <footer class="portal-footer">
   <div class="portal-container portal-footer-inner">
-    <img src="assets/bb-logo.png" alt="Best Buddies Canada">
+    <img src="assets/bb-logo-coloured.png" alt="Best Buddies Canada">
     <p>Best Buddies Canada Teacher Hub</p>
-    <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca ↗</a>
+    <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca</a>
   </div>
 </footer>
 
-<dialog class="rh-dialog" id="resource-activities"><div class="rh-dialog-inner">
-  <div class="rh-dialog-top"><div><span class="rh-kicker">Activities &amp; planning</span><h2>Plan something</h2><p class="rh-dialog-intro">Use the Teacher Hub when you want help putting something together. Open the original guides when you want the full source, printables, or official activity wording.</p></div><button class="rh-dialog-close" type="button" data-close-resource aria-label="Close">×</button></div>
-  <section class="rh-dialog-group"><h3 class="rh-dialog-group-title">Elementary &amp; Middle</h3><div class="rh-dialog-list">
-    <a class="rh-item rh-searchable" href="elementary-gathering.html" data-search="build gathering meeting builder plan meeting activity planner 20 30 45 60 minutes accessibility"><span><strong>Build a Gathering</strong><small>Answer a few questions or choose the pieces yourself, then print or email the plan.</small><em class="rh-item-meta">Teacher Hub tool</em></span><b>→</b></a>
-    <a class="rh-item rh-searchable" data-accent="yellow" href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener" data-search="elementary middle program guide manual phases share energize core activity takeaway"><span><strong>Program Guide</strong><small>The official program sequence, activities, and participation guidance.</small><em class="rh-item-meta">Official Best Buddies Canada · Source guide</em></span><b>↗</b></a>
-    <a class="rh-item rh-searchable" data-accent="teal" href="https://drive.google.com/file/d/1owF-DwEMSzVrZfnhwWE3pCyLUyCffi4C/view?usp=drive_link" target="_blank" rel="noopener" data-search="elementary activity guide human bingo time capsule friendship"><span><strong>Elementary Activity Guide</strong><small>Additional friendship and chapter activity ideas.</small><em class="rh-item-meta">Official Best Buddies Canada · Source guide</em></span><b>↗</b></a>
-    <a class="rh-item rh-searchable" data-accent="orange" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Elementary-Middle-School-Activity-Guide-.pdf" target="_blank" rel="noopener" data-search="activity guide volume 2 imagine boards mad lib activities elementary middle"><span><strong>Activity Guide · Volume 2</strong><small>More activity ideas and participation options from Best Buddies Canada.</small><em class="rh-item-meta">Official Best Buddies Canada · PDF</em></span><b>↗</b></a>
-    <a class="rh-item rh-searchable" href="https://drive.google.com/file/d/1IfXfxQdiJmHe3Uk5k4GA96OHUnd_K0yd/view?usp=drive_link" target="_blank" rel="noopener" data-search="activity workbook printable all about me worksheet elementary middle"><span><strong>Activity Workbook</strong><small>Printable materials to use alongside chapter programming.</small><em class="rh-item-meta">Official Best Buddies Canada · Source workbook</em></span><b>↗</b></a>
-  </div></section>
-  <section class="rh-dialog-group"><h3 class="rh-dialog-group-title">More activity ideas</h3><div class="rh-dialog-list">
-    <a class="rh-item rh-searchable" data-accent="teal" href="https://bestbuddies.ca/wp-content/uploads/2021/12/1-1-Activities.pdf" target="_blank" rel="noopener" data-search="one to one 1-1 activities buddy pair friendship ideas outing activities"><span><strong>1-to-1 Activity Ideas</strong><small>Ideas for buddy pairs looking for ways to connect during the year.</small><em class="rh-item-meta">Official Best Buddies Canada · PDF</em></span><b>↗</b></a>
-    <a class="rh-item rh-searchable" data-accent="yellow" href="https://bestbuddies.ca/wp-content/uploads/2021/12/Chapter-Activity-Ideas.pdf" target="_blank" rel="noopener" data-search="chapter activities group activity ideas whole chapter social"><span><strong>Chapter Activity Ideas</strong><small>Additional ideas for whole-chapter gatherings.</small><em class="rh-item-meta">Official Best Buddies Canada · PDF</em></span><b>↗</b></a>
-  </div></section>
-  <section class="rh-dialog-group"><h3 class="rh-dialog-group-title">High School</h3><div class="rh-dialog-list">
-    <a class="rh-item rh-searchable" href="https://drive.google.com/file/d/1Fnh1560fLhjbFqBnH4MzfvVluslO0Hht/view?usp=drive_link" target="_blank" rel="noopener" data-search="high school program manual guide"><span><strong>High School Program Manual</strong><small>Official Best Buddies Canada high school program guidance.</small><em class="rh-item-meta">Official Best Buddies Canada · Source manual</em></span><b>↗</b></a>
-    <a class="rh-item rh-searchable" data-accent="orange" href="https://drive.google.com/file/d/1dht5evV19RhJQ51Y2CumvTtCpUm1tGpy/view?usp=drive_link" target="_blank" rel="noopener" data-search="high school activity guide university college chapter activities"><span><strong>High School Activity Guide</strong><small>Activity ideas for High School and University/College chapters.</small><em class="rh-item-meta">Official Best Buddies Canada · Source guide</em></span><b>↗</b></a>
-  </div></section>
-</div></dialog>
 
-<dialog class="rh-dialog" id="resource-admin"><div class="rh-dialog-inner">
-  <div class="rh-dialog-top"><div><span class="rh-kicker">Forms &amp; chapter admin</span><h2>Keep things current</h2><p class="rh-dialog-intro">Current registration and roster links first, then the practical documents that come up during the year.</p></div><button class="rh-dialog-close" type="button" data-close-resource aria-label="Close">×</button></div>
-  <section class="rh-dialog-group"><h3 class="rh-dialog-group-title">Registration &amp; roster</h3><div class="rh-dialog-list">
-    <a class="rh-item rh-searchable" href="https://bestbuddiescanada.my.salesforce-sites.com/publicportal/k12registration/" target="_blank" rel="noopener" data-search="english k12 k-12 registration student parent guardian form register"><span><strong>K–12 Student Registration · English</strong><small>Current English registration form.</small><em class="rh-item-meta">Official Best Buddies Canada · Live form</em></span><b>↗</b></a>
-    <a class="rh-item rh-searchable" data-accent="teal" href="https://bestbuddiescanada.my.salesforce-sites.com/publicportal/k12registration/?la=fr" target="_blank" rel="noopener" data-search="french francais français registration inscription k12 formulaire"><span><strong>Inscription K–12 · Français</strong><small>Official French registration link. If the online form is unavailable, contact Program Support.</small><em class="rh-item-meta">Official Best Buddies Canada · Live form</em></span><b>↗</b></a>
-    <a class="rh-item rh-searchable" data-accent="yellow" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Pledge-Form-Elementary-Middle-High-fillable.pdf" target="_blank" rel="noopener" data-search="pledge form english participant parent guardian elementary middle high school"><span><strong>K–12 Participant Pledge · English</strong><small>Fillable participant pledge form.</small><em class="rh-item-meta">Official Best Buddies Canada · PDF</em></span><b>↗</b></a>
-    <a class="rh-item rh-searchable" data-accent="teal" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Formulaire-dengagement-des-participants-de-Vrais-Copains-Elementary-Middle-High-fillable.pdf" target="_blank" rel="noopener" data-search="pledge form french francais français formulaire engagement participant"><span><strong>Formulaire d’engagement · Français</strong><small>French fillable participant pledge form.</small><em class="rh-item-meta">Official Best Buddies Canada · PDF</em></span><b>↗</b></a>
-    <a class="rh-item rh-searchable" data-accent="orange" href="https://bestbuddiescanada.my.salesforce-sites.com/publicportal/rosterUpdate/" target="_blank" rel="noopener" data-search="roster chapter roster update students members list"><span><strong>Chapter Roster</strong><small>Submit or update your chapter roster.</small><em class="rh-item-meta">Official Best Buddies Canada · Live form</em></span><b>↗</b></a>
-  </div></section>
-  <section class="rh-dialog-group"><h3 class="rh-dialog-group-title">During the year</h3><div class="rh-dialog-list">
-    <a class="rh-item rh-searchable" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Fundraising-Manual-8.5-x-11.pdf" target="_blank" rel="noopener" data-search="fundraising manual fundraiser money funding donations donation sample letters"><span><strong>Fundraising Manual</strong><small>Ideas, planning guidance, donation information, and sample letters.</small><em class="rh-item-meta">Official Best Buddies Canada · PDF</em></span><b>↗</b></a>
-    <a class="rh-item rh-searchable" data-accent="orange" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Interview-Questions.pdf" target="_blank" rel="noopener" data-search="interview questions match matching buddy peer buddy questions"><span><strong>Interview Questions</strong><small>Official interview-question resource.</small><em class="rh-item-meta">Official Best Buddies Canada · PDF</em></span><b>↗</b></a>
-    <a class="rh-item rh-searchable" data-accent="teal" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Best-Buddies-Social-Media-Policy-2014.pdf" target="_blank" rel="noopener" data-search="social media policy instagram facebook photos posting privacy"><span><strong>Social Media Policy</strong><small>Best Buddies Canada’s social media policy linked from Helpful Resources.</small><em class="rh-item-meta">Official Best Buddies Canada · PDF</em></span><b>↗</b></a>
-  </div></section>
-</div></dialog>
+<!-- =====================================================
+     ACTIVITIES & PLANNING
+====================================================== -->
+<dialog class="rh-dialog" id="resource-activities">
+  <div class="rh-dialog-inner">
 
-<dialog class="rh-dialog" id="resource-inclusion"><div class="rh-dialog-inner">
-  <div class="rh-dialog-top"><div><span class="rh-kicker">Training &amp; inclusion</span><h2>Learn &amp; include</h2><p class="rh-dialog-intro">Training and practical resources for respectful language, communication, and making participation work in more than one way.</p></div><button class="rh-dialog-close" type="button" data-close-resource aria-label="Close">×</button></div>
-  <section class="rh-dialog-group"><h3 class="rh-dialog-group-title">Training</h3><div class="rh-dialog-list">
-    <a class="rh-item rh-searchable" href="https://learn.bestbuddies.ca/" target="_blank" rel="noopener" data-search="learn training courses leadership sensitivity"><span><strong>Learn @ Best Buddies</strong><small>See the current courses in the Best Buddies Canada learning portal.</small><em class="rh-item-meta">Official Best Buddies Canada · Live training</em></span><b>↗</b></a>
-    <a class="rh-item rh-searchable" data-accent="yellow" href="https://learn.bestbuddies.ca/course/view.php?id=3" target="_blank" rel="noopener" data-search="sensitivity training disability inclusion elementary middle course"><span><strong>Sensitivity Training</strong><small>Open the current course. Sign-in may be required.</small><em class="rh-item-meta">Official Best Buddies Canada · Live training</em></span><b>↗</b></a>
-  </div></section>
-  <section class="rh-dialog-group"><h3 class="rh-dialog-group-title">Communication &amp; participation</h3><div class="rh-dialog-list">
-    <a class="rh-item rh-searchable" data-accent="teal" href="https://drive.google.com/file/d/1oQwyeOMXP2vCxRpPvBJyBXKP8wTOOdVO/view?usp=sharing" target="_blank" rel="noopener" data-search="non verbal nonverbal nonspeaking non-speaking AAC sign language gesture body language communication activity guide"><span><strong>Non-Verbal Activity Guide</strong><small>AAC, Sign Language, gesture, body language, and other communication approaches.</small><em class="rh-item-meta">Official Best Buddies Canada · Source guide</em></span><b>↗</b></a>
-    <a class="rh-item rh-searchable" data-accent="orange" href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener" data-search="tips communicating nonverbal communicators non-speaking nonspeaking communication buddy communication tips"><span><strong>Tips for Communicating with Nonverbal Communicators</strong><small>Official Best Buddies Canada communication guidance listed in Helpful Resources.</small><em class="rh-item-meta">Official Best Buddies Canada · Related document</em></span><b>↗</b></a>
-    <a class="rh-item rh-searchable" href="teacher-companion.html" data-search="making activities work for more people participation communication movement choice space accessibility quick guide"><span><strong>Making Activities Work for More People</strong><small>Teacher Hub planning help for communication, movement, choice, space, and different ways to participate.</small><em class="rh-item-meta">Teacher Hub Quick Guide</em></span><b>→</b></a>
-  </div></section>
-</div></dialog>
+    <div class="rh-dialog-top">
+      <div>
+        <span class="rh-kicker">Activities &amp; planning</span>
+        <h2>Plan something</h2>
+        <p class="rh-dialog-intro">
+          Start with the Hub when you want help planning. Open the full Best Buddies resource when you want complete activity wording or printables.
+        </p>
+      </div>
 
-<dialog class="rh-dialog" id="resource-guides"><div class="rh-dialog-inner">
-  <div class="rh-dialog-top"><div><span class="rh-kicker">Guides &amp; how-tos</span><h2>Show me how</h2><p class="rh-dialog-intro">Shorter guidance for the moments when you want an answer or example without opening the full program manual.</p></div><button class="rh-dialog-close" type="button" data-close-resource aria-label="Close">×</button></div>
-  <section class="rh-dialog-group"><h3 class="rh-dialog-group-title">Teacher Hub</h3><div class="rh-dialog-list">
-    <a class="rh-item rh-searchable" href="teacher-companion.html" data-search="quick guides first 30 days getting started planning meeting activities participation friendships teacher companion"><span><strong>Teacher Hub Quick Guides</strong><small>Your First 30 Days, planning, participation, friendship support, and other short practical help.</small><em class="rh-item-meta">Teacher Hub</em></span><b>→</b></a>
-    <a class="rh-item rh-searchable" data-accent="yellow" href="elementary-playbook.html" data-search="chapter playbook steps setup recruit registration forms first meeting phases year end"><span><strong>Elementary &amp; Middle Chapter Playbook</strong><small>A practical route through the year with direct links to source resources.</small><em class="rh-item-meta">Teacher Hub tool</em></span><b>→</b></a>
-  </div></section>
-  <section class="rh-dialog-group"><h3 class="rh-dialog-group-title">Official quick-reference guides</h3><div class="rh-dialog-list">
-    <a class="rh-item rh-searchable" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Volunteer-Guide-Best-Buddies.pdf" target="_blank" rel="noopener" data-search="volunteer guide member best buddy associate member staff advisor chapter president"><span><strong>Volunteer Guide</strong><small>Quick overview of roles, expectations, and friendship ideas.</small><em class="rh-item-meta">Official Best Buddies Canada · PDF</em></span><b>↗</b></a>
-    <a class="rh-item rh-searchable" data-accent="teal" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Peer-Buddy-Guide.pdf" target="_blank" rel="noopener" data-search="peer buddy guide role expectations peer buddy"><span><strong>Peer Buddy Guide</strong><small>Official quick guide for Peer Buddies.</small><em class="rh-item-meta">Official Best Buddies Canada · PDF</em></span><b>↗</b></a>
-    <a class="rh-item rh-searchable" data-accent="orange" href="https://bestbuddies.ca/wp-content/uploads/2023/09/Buddy-Guide.pdf" target="_blank" rel="noopener" data-search="buddy guide role expectations buddy"><span><strong>Buddy Guide</strong><small>Official quick guide for Buddies.</small><em class="rh-item-meta">Official Best Buddies Canada · PDF</em></span><b>↗</b></a>
-  </div></section>
-</div></dialog>
+      <button class="rh-dialog-close" type="button" data-close-resource aria-label="Close">×</button>
+    </div>
+
+    <section class="rh-dialog-group">
+      <h3 class="rh-dialog-group-title">Elementary &amp; Middle</h3>
+
+      <div class="rh-dialog-list">
+
+        <a
+          class="rh-item rh-searchable"
+          href="elementary-gathering.html"
+          data-search="plan a meeting activity builder gathering builder meeting planner 20 30 45 60 minutes participation"
+        >
+          <span>
+            <strong>Plan a Meeting</strong>
+            <small>Build a four-part meeting, choose the pieces yourself, or start with a quick plan.</small>
+            <em class="rh-item-meta">Teacher Hub</em>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="yellow"
+          href="elementary-months.html"
+          data-search="elementary middle month monthly september october november december planning"
+        >
+          <span>
+            <strong>Plan by Month</strong>
+            <small>See monthly priorities, timely activity ideas, and the hand-off into Plan a Meeting.</small>
+            <em class="rh-item-meta">Teacher Hub</em>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="teal"
+          href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link"
+          target="_blank"
+          rel="noopener"
+          data-search="elementary middle program guide manual phases share energize core activity takeaway"
+        >
+          <span>
+            <strong>Elementary &amp; Middle Program Guide</strong>
+            <small>Program sequence, activities, timing, and participation guidance.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="orange"
+          href="https://drive.google.com/file/d/1owF-DwEMSzVrZfnhwWE3pCyLUyCffi4C/view?usp=drive_link"
+          target="_blank"
+          rel="noopener"
+          data-search="elementary activity guide human bingo time capsule friendship activities"
+        >
+          <span>
+            <strong>Elementary Activity Guide</strong>
+            <small>Additional friendship and chapter activity ideas.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          href="https://bestbuddies.ca/wp-content/uploads/2023/09/Elementary-Middle-School-Activity-Guide-.pdf"
+          target="_blank"
+          rel="noopener"
+          data-search="activity guide volume 2 imagine boards mad lib elementary middle activities"
+        >
+          <span>
+            <strong>Activity Guide · Volume 2</strong>
+            <small>More ready-to-run activity ideas and participation options.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="yellow"
+          href="https://drive.google.com/file/d/1IfXfxQdiJmHe3Uk5k4GA96OHUnd_K0yd/view?usp=drive_link"
+          target="_blank"
+          rel="noopener"
+          data-search="activity workbook printable all about me elementary middle"
+        >
+          <span>
+            <strong>Activity Workbook</strong>
+            <small>Printable materials to use alongside chapter programming.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="rh-dialog-group">
+      <h3 class="rh-dialog-group-title">More activity ideas</h3>
+
+      <div class="rh-dialog-list">
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="teal"
+          href="https://bestbuddies.ca/wp-content/uploads/2021/12/1-1-Activities.pdf"
+          target="_blank"
+          rel="noopener"
+          data-search="one to one 1-1 activities buddy pair friendship ideas outing"
+        >
+          <span>
+            <strong>1-to-1 Activity Ideas</strong>
+            <small>Ideas for buddy pairs looking for simple ways to connect during the year.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="yellow"
+          href="https://bestbuddies.ca/wp-content/uploads/2021/12/Chapter-Activity-Ideas.pdf"
+          target="_blank"
+          rel="noopener"
+          data-search="chapter activity ideas whole group gathering social"
+        >
+          <span>
+            <strong>Chapter Activity Ideas</strong>
+            <small>Additional ideas for whole-chapter gatherings and social activities.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="rh-dialog-group">
+      <h3 class="rh-dialog-group-title">High School</h3>
+
+      <div class="rh-dialog-list">
+
+        <a
+          class="rh-item rh-searchable"
+          href="high-school.html"
+          data-search="high school monthly planning leadership teacher hub"
+        >
+          <span>
+            <strong>High School planning</strong>
+            <small>High School chapter planning and student leadership support in the Teacher Hub.</small>
+            <em class="rh-item-meta">Teacher Hub</em>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="yellow"
+          href="https://drive.google.com/file/d/1Fnh1560fLhjbFqBnH4MzfvVluslO0Hht/view?usp=drive_link"
+          target="_blank"
+          rel="noopener"
+          data-search="high school program manual guide"
+        >
+          <span>
+            <strong>High School Program Manual</strong>
+            <small>Best Buddies Canada High School program guidance.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="orange"
+          href="https://drive.google.com/file/d/1dht5evV19RhJQ51Y2CumvTtCpUm1tGpy/view?usp=drive_link"
+          target="_blank"
+          rel="noopener"
+          data-search="high school activity guide university college chapter activities"
+        >
+          <span>
+            <strong>High School Activity Guide</strong>
+            <small>Activity ideas for High School and University/College chapters.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+      </div>
+    </section>
+
+  </div>
+</dialog>
+
+
+<!-- =====================================================
+     FORMS & ADMIN
+====================================================== -->
+<dialog class="rh-dialog" id="resource-admin">
+  <div class="rh-dialog-inner">
+
+    <div class="rh-dialog-top">
+      <div>
+        <span class="rh-kicker">Forms &amp; chapter admin</span>
+        <h2>Keep things current</h2>
+        <p class="rh-dialog-intro">
+          Registration and roster links first, then the practical documents that come up during the school year.
+        </p>
+      </div>
+
+      <button class="rh-dialog-close" type="button" data-close-resource aria-label="Close">×</button>
+    </div>
+
+    <section class="rh-dialog-group">
+      <h3 class="rh-dialog-group-title">Registration &amp; roster</h3>
+
+      <div class="rh-dialog-list">
+
+        <a
+          class="rh-item rh-searchable"
+          href="https://bestbuddiescanada.my.salesforce-sites.com/publicportal/k12registration/"
+          target="_blank"
+          rel="noopener"
+          data-search="english k12 k-12 registration student parent guardian register form"
+        >
+          <span>
+            <strong>K–12 Student Registration · English</strong>
+            <small>Current English student registration form.</small>
+            <em class="rh-item-meta">Live form</em>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="teal"
+          href="https://bestbuddiescanada.my.salesforce-sites.com/publicportal/k12registration/?la=fr"
+          target="_blank"
+          rel="noopener"
+          data-search="french français francais registration inscription k12 formulaire"
+        >
+          <span>
+            <strong>Inscription K–12 · Français</strong>
+            <small>French K–12 registration link.</small>
+            <em class="rh-item-meta">Live form</em>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="orange"
+          href="https://bestbuddiescanada.my.salesforce-sites.com/publicportal/rosterUpdate/"
+          target="_blank"
+          rel="noopener"
+          data-search="roster chapter roster update students members list"
+        >
+          <span>
+            <strong>Chapter Roster</strong>
+            <small>Submit or update your chapter roster.</small>
+            <em class="rh-item-meta">Live form</em>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="yellow"
+          href="https://bestbuddies.ca/wp-content/uploads/2023/09/Pledge-Form-Elementary-Middle-High-fillable.pdf"
+          target="_blank"
+          rel="noopener"
+          data-search="pledge form english participant parent guardian elementary middle high school"
+        >
+          <span>
+            <strong>K–12 Participant Pledge · English</strong>
+            <small>Fillable participant pledge form.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="teal"
+          href="https://bestbuddies.ca/wp-content/uploads/2023/09/Formulaire-dengagement-des-participants-de-Vrais-Copains-Elementary-Middle-High-fillable.pdf"
+          target="_blank"
+          rel="noopener"
+          data-search="pledge form french français francais formulaire engagement participant"
+        >
+          <span>
+            <strong>Formulaire d’engagement · Français</strong>
+            <small>French fillable participant pledge form.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="rh-dialog-group">
+      <h3 class="rh-dialog-group-title">During the year</h3>
+
+      <div class="rh-dialog-list">
+
+        <a
+          class="rh-item rh-searchable"
+          href="https://bestbuddies.ca/wp-content/uploads/2023/09/Fundraising-Manual-8.5-x-11.pdf"
+          target="_blank"
+          rel="noopener"
+          data-search="fundraising manual fundraiser money funding donations sample letters"
+        >
+          <span>
+            <strong>Fundraising Manual</strong>
+            <small>Ideas, planning guidance, donation information, and sample letters.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="orange"
+          href="https://bestbuddies.ca/wp-content/uploads/2023/09/Interview-Questions.pdf"
+          target="_blank"
+          rel="noopener"
+          data-search="interview questions match matching buddy peer buddy"
+        >
+          <span>
+            <strong>Interview Questions</strong>
+            <small>Best Buddies interview-question resource.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="teal"
+          href="https://bestbuddies.ca/wp-content/uploads/2023/09/Best-Buddies-Social-Media-Policy-2014.pdf"
+          target="_blank"
+          rel="noopener"
+          data-search="social media policy instagram facebook photos posting privacy"
+        >
+          <span>
+            <strong>Social Media Policy</strong>
+            <small>Best Buddies Canada social media guidance.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+      </div>
+    </section>
+
+  </div>
+</dialog>
+
+
+<!-- =====================================================
+     TRAINING & PARTICIPATION
+====================================================== -->
+<dialog class="rh-dialog" id="resource-inclusion">
+  <div class="rh-dialog-inner">
+
+    <div class="rh-dialog-top">
+      <div>
+        <span class="rh-kicker">Training &amp; participation</span>
+        <h2>Learn &amp; include</h2>
+        <p class="rh-dialog-intro">
+          Current training plus practical resources for communication and making participation work in more than one way.
+        </p>
+      </div>
+
+      <button class="rh-dialog-close" type="button" data-close-resource aria-label="Close">×</button>
+    </div>
+
+    <section class="rh-dialog-group">
+      <h3 class="rh-dialog-group-title">Training</h3>
+
+      <div class="rh-dialog-list">
+
+        <a
+          class="rh-item rh-searchable"
+          href="https://learn.bestbuddies.ca/"
+          target="_blank"
+          rel="noopener"
+          data-search="learn training courses leadership sensitivity"
+        >
+          <span>
+            <strong>Learn @ Best Buddies</strong>
+            <small>See the current courses in the Best Buddies Canada learning portal.</small>
+            <em class="rh-item-meta">Live training</em>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="yellow"
+          href="https://learn.bestbuddies.ca/course/view.php?id=3"
+          target="_blank"
+          rel="noopener"
+          data-search="sensitivity training disability inclusion elementary middle course"
+        >
+          <span>
+            <strong>Sensitivity Training</strong>
+            <small>Open the current Sensitivity Training course. Sign-in may be required.</small>
+            <em class="rh-item-meta">Live training</em>
+          </span>
+          <b>→</b>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="rh-dialog-group">
+      <h3 class="rh-dialog-group-title">Communication &amp; participation</h3>
+
+      <div class="rh-dialog-list">
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="teal"
+          href="https://drive.google.com/file/d/1oQwyeOMXP2vCxRpPvBJyBXKP8wTOOdVO/view?usp=sharing"
+          target="_blank"
+          rel="noopener"
+          data-search="non verbal nonverbal nonspeaking non-speaking AAC sign language gesture body language communication activity guide"
+        >
+          <span>
+            <strong>Non-Verbal Activity Guide</strong>
+            <small>AAC, Sign Language, gesture, body language, and other communication approaches.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          href="teacher-companion.html"
+          data-search="making activities work for more people participation communication movement choice space accessibility quick guide"
+        >
+          <span>
+            <strong>Making Activities Work for More People</strong>
+            <small>Teacher Hub planning help for communication, movement, choice, space, and different ways to participate.</small>
+            <em class="rh-item-meta">Teacher Hub</em>
+          </span>
+          <b>→</b>
+        </a>
+
+      </div>
+    </section>
+
+  </div>
+</dialog>
+
+
+<!-- =====================================================
+     GUIDES & HOW-TOS
+====================================================== -->
+<dialog class="rh-dialog" id="resource-guides">
+  <div class="rh-dialog-inner">
+
+    <div class="rh-dialog-top">
+      <div>
+        <span class="rh-kicker">Quick help + role guides</span>
+        <h2>Show me how</h2>
+        <p class="rh-dialog-intro">
+          Shorter help for common chapter moments, plus Best Buddies role guides you can open when you need them.
+        </p>
+      </div>
+
+      <button class="rh-dialog-close" type="button" data-close-resource aria-label="Close">×</button>
+    </div>
+
+    <section class="rh-dialog-group">
+      <h3 class="rh-dialog-group-title">Teacher Hub</h3>
+
+      <div class="rh-dialog-list">
+
+        <a
+          class="rh-item rh-searchable"
+          href="teacher-companion.html"
+          data-search="quick guides first 30 days getting started planning meeting participation friendships teacher companion"
+        >
+          <span>
+            <strong>Teacher Hub Quick Guides</strong>
+            <small>Your First 30 Days, planning, participation, friendship support, and other practical help.</small>
+            <em class="rh-item-meta">Teacher Hub</em>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="yellow"
+          href="elementary-playbook.html"
+          data-search="elementary middle chapter playbook steps setup recruit registration first meeting year end"
+        >
+          <span>
+            <strong>Elementary &amp; Middle Chapter Playbook</strong>
+            <small>A practical route through the Best Buddies year.</small>
+            <em class="rh-item-meta">Teacher Hub</em>
+          </span>
+          <b>→</b>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="rh-dialog-group">
+      <h3 class="rh-dialog-group-title">Best Buddies role guides</h3>
+
+      <div class="rh-dialog-list">
+
+        <a
+          class="rh-item rh-searchable"
+          href="https://bestbuddies.ca/wp-content/uploads/2023/09/Volunteer-Guide-Best-Buddies.pdf"
+          target="_blank"
+          rel="noopener"
+          data-search="volunteer guide member best buddy associate member staff advisor chapter president roles"
+        >
+          <span>
+            <strong>Volunteer Guide</strong>
+            <small>Quick overview of roles, expectations, and friendship ideas.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="teal"
+          href="https://bestbuddies.ca/wp-content/uploads/2023/09/Peer-Buddy-Guide.pdf"
+          target="_blank"
+          rel="noopener"
+          data-search="peer buddy guide role expectations peer buddy"
+        >
+          <span>
+            <strong>Peer Buddy Guide</strong>
+            <small>Quick guidance for Peer Buddies.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="rh-item rh-searchable"
+          data-accent="orange"
+          href="https://bestbuddies.ca/wp-content/uploads/2023/09/Buddy-Guide.pdf"
+          target="_blank"
+          rel="noopener"
+          data-search="buddy guide role expectations buddy friendship"
+        >
+          <span>
+            <strong>Buddy Guide</strong>
+            <small>Quick guidance for Buddies.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+      </div>
+    </section>
+
+  </div>
+</dialog>
+
 
 <script>
 (() => {
-  "use strict";
-  const dialogs=[...document.querySelectorAll(".rh-dialog")];
-  const openButtons=[...document.querySelectorAll("[data-open-resource]")];
-  const searchInput=document.getElementById("resource-search-input");
-  const resultsPanel=document.getElementById("resource-search-results");
-  const resultsList=document.getElementById("resource-search-list");
-  const allResources=[...document.querySelectorAll(".rh-searchable")];
+  const dialogs = Array.from(document.querySelectorAll(".rh-dialog"));
+  const searchInput = document.getElementById("resource-search-input");
+  const resultsShell = document.getElementById("resource-search-results");
+  const resultsList = document.getElementById("resource-search-list");
 
-  openButtons.forEach(button=>button.addEventListener("click",()=>{
-    document.getElementById(`resource-${button.dataset.openResource}`)?.showModal();
-  }));
-
-  dialogs.forEach(dialog=>{
-    dialog.querySelector("[data-close-resource]")?.addEventListener("click",()=>dialog.close());
-    dialog.addEventListener("click",event=>{if(event.target===dialog)dialog.close()});
-  });
-
-  document.addEventListener("keydown",event=>{
-    if(event.key==="Escape")dialogs.forEach(dialog=>{if(dialog.open)dialog.close()});
-  });
-
-  const keyFor=item=>`${item.getAttribute("href")||""}|${item.querySelector("strong")?.textContent||item.textContent}`;
-
-  searchInput?.addEventListener("input",()=>{
-    const query=searchInput.value.trim().toLowerCase();
-    resultsList.innerHTML="";
-    if(query.length<2){resultsPanel.classList.remove("is-visible");return}
-
-    const seen=new Set();
-    const matches=allResources.filter(item=>{
-      const haystack=`${item.textContent} ${item.dataset.search||""}`.toLowerCase();
-      if(!haystack.includes(query))return false;
-      const key=keyFor(item);
-      if(seen.has(key))return false;
-      seen.add(key);return true;
+  document.querySelectorAll("[data-open-resource]").forEach(button => {
+    button.addEventListener("click", () => {
+      const dialog = document.getElementById(`resource-${button.dataset.openResource}`);
+      if (dialog && typeof dialog.showModal === "function") dialog.showModal();
     });
+  });
 
-    resultsPanel.classList.add("is-visible");
-    if(!matches.length){
-      resultsList.innerHTML='<p class="rh-search-empty">No direct match yet. Try a broader word, browse by need below, or ask your Program Advisor.</p>';
+  document.querySelectorAll("[data-close-resource]").forEach(button => {
+    button.addEventListener("click", () => {
+      const dialog = button.closest("dialog");
+      if (dialog) dialog.close();
+    });
+  });
+
+  dialogs.forEach(dialog => {
+    dialog.addEventListener("click", event => {
+      if (event.target === dialog) dialog.close();
+    });
+  });
+
+  const searchable = Array.from(document.querySelectorAll(".rh-searchable"));
+
+  function clean(text){
+    return (text || "").toLowerCase().replace(/\s+/g," ").trim();
+  }
+
+  function renderResults(query){
+    if (!resultsShell || !resultsList) return;
+
+    const q = clean(query);
+
+    if (q.length < 2){
+      resultsShell.classList.remove("is-visible");
+      resultsList.innerHTML = "";
       return;
     }
 
-    matches.slice(0,10).forEach(item=>{
-      const result=document.createElement("a");
-      result.className="rh-search-result";
-      result.href=item.getAttribute("href");
-      if(item.target==="_blank"){result.target="_blank";result.rel="noopener"}
-      const title=item.querySelector("strong")?.textContent?.trim()||"Resource";
-      const description=item.querySelector("small")?.textContent?.trim()||"";
-      result.innerHTML=`<span><strong>${title}</strong>${description?`<small>${description}</small>`:""}</span><b>${item.target==="_blank"?"↗":"→"}</b>`;
-      resultsList.appendChild(result);
+    const matches = searchable
+      .map(item => {
+        const name = item.querySelector("strong")?.textContent || "";
+        const description = item.querySelector("small")?.textContent || "";
+        const keywords = item.dataset.search || "";
+        const haystack = clean(`${name} ${description} ${keywords}`);
+        return haystack.includes(q) ? {item,name,description} : null;
+      })
+      .filter(Boolean)
+      .slice(0,8);
+
+    resultsList.innerHTML = "";
+
+    if (!matches.length){
+      resultsList.innerHTML = '<p class="rh-search-empty">No close match yet. Try a shorter word, or browse by need below.</p>';
+      resultsShell.classList.add("is-visible");
+      return;
+    }
+
+    matches.forEach(({item,name,description}) => {
+      const link = document.createElement("a");
+      link.className = "rh-search-result";
+      link.href = item.getAttribute("href") || "#";
+
+      if (item.hasAttribute("target")){
+        link.target = item.getAttribute("target");
+        link.rel = item.getAttribute("rel") || "noopener";
+      }
+
+      link.innerHTML = `
+        <span>
+          <strong>${name}</strong>
+          <small>${description}</small>
+        </span>
+        <b>→</b>
+      `;
+
+      resultsList.appendChild(link);
     });
-  });
+
+    resultsShell.classList.add("is-visible");
+  }
+
+  if (searchInput){
+    searchInput.addEventListener("input", event => renderResults(event.target.value));
+  }
 })();
 </script>
 
