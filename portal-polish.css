@@ -823,3 +823,110 @@
     transform:none !important;
   }
 }
+
+
+/* =========================================================
+   V7 TABLET + MOBILE HERO TRANSITION
+   Grey intro/image -> white wave -> friendship statement
+========================================================= */
+
+@media (max-width:900px){
+
+  /* The section remains grey behind the intro and artwork. */
+  .portal-home-page .teacher-hub-hero{
+    background:#F2F2F0 !important;
+  }
+
+  /* The old section-bottom wave is no longer the transition. */
+  .portal-home-page .teacher-hub-hero::after{
+    display:none !important;
+    content:none !important;
+  }
+
+  /* The wave now belongs directly to the artwork. */
+  .portal-home-page .hub-hero-art{
+    position:relative !important;
+    z-index:2 !important;
+    margin-bottom:0 !important;
+  }
+
+  .portal-home-page .hub-hero-art::after{
+    content:"" !important;
+    position:absolute !important;
+    z-index:5 !important;
+    left:50% !important;
+    bottom:-1px !important;
+    width:100vw !important;
+    height:58px !important;
+    transform:translateX(-50%) !important;
+    pointer-events:none !important;
+    background-repeat:no-repeat !important;
+    background-position:center bottom !important;
+    background-size:100% 100% !important;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 110' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 64 C120 84 215 30 350 59 C485 86 580 31 715 58 C850 84 950 30 1080 59 C1215 83 1320 32 1445 58 C1520 72 1570 66 1600 61 L1600 110 L0 110 Z'/%3E%3C/svg%3E") !important;
+  }
+
+  /* Friendship message becomes a clean white section below the wave. */
+  .portal-home-page .hub-message{
+    position:relative !important;
+    z-index:6 !important;
+    width:auto !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding-top:38px !important;
+    padding-bottom:26px !important;
+    background:#fff !important;
+
+    /* Full-bleed white without changing the page container width. */
+    box-shadow:0 0 0 100vmax #fff !important;
+    clip-path:inset(0 -100vmax) !important;
+  }
+
+  .portal-home-page .hub-message h2{
+    max-width:680px !important;
+  }
+
+  .portal-home-page .program-launch{
+    background:#fff !important;
+  }
+}
+
+
+/* Tablet gets a slightly deeper wave. */
+@media (min-width:761px) and (max-width:900px){
+
+  .portal-home-page .hub-hero-art::after{
+    height:64px !important;
+  }
+
+  .portal-home-page .hub-message{
+    padding-top:44px !important;
+    padding-bottom:30px !important;
+  }
+}
+
+
+/* Mobile keeps the same idea, just tighter. */
+@media (max-width:760px){
+
+  .portal-home-page .hub-hero-art::after{
+    height:46px !important;
+  }
+
+  .portal-home-page .hub-message{
+    padding-top:32px !important;
+    padding-bottom:22px !important;
+  }
+}
+
+
+@media (max-width:430px){
+
+  .portal-home-page .hub-hero-art::after{
+    height:42px !important;
+  }
+
+  .portal-home-page .hub-message{
+    padding-top:29px !important;
+  }
+}
