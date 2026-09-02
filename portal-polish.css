@@ -1026,3 +1026,16 @@
     bottom:-1px !important;
   }
 }
+
+/* FINAL HERO POSITION — desktop only */
+@media (min-width:1201px){
+  .portal-home-page .hub-hero-art img{
+    top:-60px !important;
+  }
+}
+
+@media (min-width:901px) and (max-width:1200px){
+  .portal-home-page .hub-hero-art img{
+    transform:translateY(-28px) !important;
+  }
+}
