@@ -17,7 +17,7 @@
   --gb-white:#fff;
   background:#fff;
   color:var(--gb-text);
-  font-size:18px;
+  font-size:19px;
 }
 
 .gb-page button,
@@ -94,7 +94,7 @@
   max-width:760px;
   margin:28px 0 0;
   color:var(--gb-text);
-  font-size:1.08rem;
+  font-size:1.12rem;
   line-height:1.62;
 }
 
@@ -252,11 +252,26 @@
   padding:10px 46px 10px 18px;
   border:2px solid var(--gb-purple);
   border-radius:999px;
+  appearance:none;
+  -webkit-appearance:none;
   background:#fff;
   color:var(--gb-ink);
   font-size:1rem;
   font-weight:850;
   cursor:pointer;
+}
+
+.gb-month-select-wrap::after{
+  content:"";
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  width:9px;
+  height:9px;
+  border-right:2px solid var(--gb-purple);
+  border-bottom:2px solid var(--gb-purple);
+  transform:rotate(45deg);
+  pointer-events:none;
 }
 
 
@@ -289,8 +304,76 @@
 .gb-panel-head p{
   max-width:760px;
   margin:15px 0 0;
-  font-size:1rem;
-  line-height:1.58;
+  font-size:1.05rem;
+  line-height:1.6;
+}
+
+/* PLANNER MODE SWITCHER */
+.gb-mode-switcher{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:16px 20px;
+  border-bottom:1px solid var(--gb-line);
+  background:#FBFAFD;
+}
+
+.gb-mode-switcher-label{
+  flex:0 0 auto;
+  color:var(--gb-purple);
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.gb-mode-switcher-buttons{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+  width:100%;
+}
+
+.gb-mode-switcher button{
+  min-height:58px;
+  padding:9px 13px;
+  border:1px solid #DAD3E4;
+  border-radius:16px;
+  background:#fff;
+  color:var(--gb-ink);
+  text-align:left;
+  cursor:pointer;
+}
+
+.gb-mode-switcher button:hover,
+.gb-mode-switcher button:focus-visible{
+  border-color:var(--gb-purple);
+}
+
+.gb-mode-switcher button.active{
+  border-color:var(--gb-purple);
+  background:var(--gb-lavender);
+}
+
+.gb-mode-switcher button.home{
+  background:#fff;
+}
+
+.gb-mode-switcher button strong,
+.gb-mode-switcher button small{
+  display:block;
+}
+
+.gb-mode-switcher button strong{
+  font-size:.82rem;
+  font-weight:900;
+}
+
+.gb-mode-switcher button small{
+  margin-top:2px;
+  color:#6A6170;
+  font-size:.68rem;
+  line-height:1.25;
 }
 
 /* MONTH CONTEXT */
@@ -324,8 +407,8 @@
 
 .gb-month-context p{
   margin:0;
-  font-size:.94rem;
-  line-height:1.56;
+  font-size:1rem;
+  line-height:1.58;
 }
 
 /* ENTRY PATHS */
@@ -393,8 +476,8 @@
   display:block;
   max-width:370px;
   margin-top:13px;
-  font-size:.92rem;
-  line-height:1.5;
+  font-size:1rem;
+  line-height:1.52;
 }
 
 .gb-path b{
@@ -463,8 +546,8 @@
 .gb-question-hint{
   max-width:800px;
   margin:13px 0 24px;
-  font-size:.98rem;
-  line-height:1.55;
+  font-size:1.03rem;
+  line-height:1.57;
 }
 
 .gb-choice-grid{
@@ -639,8 +722,8 @@ button.gb-choice{
 
 .gb-plan-option-head p{
   margin:10px 0 0;
-  font-size:.9rem;
-  line-height:1.5;
+  font-size:.98rem;
+  line-height:1.52;
 }
 
 .gb-plan-pieces{
@@ -677,8 +760,8 @@ button.gb-choice{
 
 .gb-piece-copy p{
   margin:5px 0 0;
-  font-size:.82rem;
-  line-height:1.45;
+  font-size:.91rem;
+  line-height:1.5;
 }
 
 .gb-piece-time{
@@ -818,8 +901,8 @@ button.gb-choice{
 .gb-final-main > p{
   max-width:760px;
   margin:9px 0 0;
-  font-size:.94rem;
-  line-height:1.52;
+  font-size:1rem;
+  line-height:1.55;
 }
 
 .gb-time{
@@ -848,7 +931,7 @@ button.gb-choice{
   border-radius:999px;
   background:#FAF9FC;
   color:#504657;
-  font-size:.72rem;
+  font-size:.78rem;
   font-weight:800;
 }
 
@@ -888,8 +971,8 @@ button.gb-choice{
 
 .gb-detail-grid p,
 .gb-detail-grid li{
-  font-size:.82rem;
-  line-height:1.5;
+  font-size:.91rem;
+  line-height:1.55;
 }
 
 .gb-detail-grid p{margin:0}
@@ -908,12 +991,12 @@ button.gb-choice{
   padding:12px 14px;
   border-radius:14px;
   background:#FFF5C8;
-  font-size:.8rem;
-  line-height:1.45;
+  font-size:.89rem;
+  line-height:1.5;
 }
 
 .gb-example strong{color:var(--gb-ink)}
-.gb-example span{display:block;margin-top:4px}
+.gb-example span{display:block;margin-top:5px}
 
 .gb-final-footer{
   display:flex;
@@ -1032,8 +1115,8 @@ button.gb-choice{
 
 .gb-alt-card > p{
   margin:6px 0 0;
-  font-size:.8rem;
-  line-height:1.45;
+  font-size:.89rem;
+  line-height:1.5;
 }
 
 .gb-alt-bottom{
@@ -1058,12 +1141,104 @@ button.gb-choice{
   cursor:pointer;
 }
 
+/* MANUAL PLANNER GUIDANCE */
+.gb-manual-help{
+  display:grid;
+  grid-template-columns:minmax(210px,.42fr) minmax(0,1fr);
+  gap:28px;
+  align-items:center;
+  margin:0 42px 22px;
+  padding:20px 22px;
+  border-radius:20px 20px 40px 20px;
+  background:#FFF7D1;
+}
+
+.gb-manual-help h3{
+  margin:5px 0 0;
+  color:var(--gb-ink);
+  font-family:var(--display,"League Spartan",Arial,sans-serif);
+  font-size:1.55rem;
+  line-height:1;
+}
+
+.gb-manual-help ol{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.gb-manual-help li{
+  display:flex;
+  align-items:flex-start;
+  gap:9px;
+  font-size:.84rem;
+  line-height:1.4;
+}
+
+.gb-manual-help li b{
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
+  flex:0 0 auto;
+  border-radius:50%;
+  background:var(--gb-purple);
+  color:#fff;
+  font-size:.72rem;
+}
+
+.gb-manual-next{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-top:22px;
+  padding:14px 16px;
+  border-radius:16px;
+  background:var(--gb-lavender);
+}
+
+.gb-manual-next > span{
+  font-size:.86rem;
+}
+
+.gb-manual-next > div{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.gb-manual-next button{
+  min-height:42px;
+  padding:8px 13px;
+  border:1px solid var(--gb-purple);
+  border-radius:999px;
+  background:#fff;
+  color:var(--gb-purple);
+  font-size:.76rem;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.gb-manual-next button.next{
+  background:var(--gb-purple);
+  color:#fff;
+}
+
 /* ACTIVITY BROWSER */
 .gb-stage-tabs{
+  position:sticky;
+  top:8px;
+  z-index:6;
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:8px;
-  padding:0 42px 26px;
+  padding:12px 42px 14px;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(8px);
 }
 
 .gb-stage-tabs button{
@@ -1127,8 +1302,8 @@ button.gb-choice{
 
 .gb-manual-stage-head p{
   margin:0;
-  font-size:.92rem;
-  line-height:1.55;
+  font-size:1rem;
+  line-height:1.58;
 }
 
 .gb-activity-grid{
@@ -1162,8 +1337,8 @@ button.gb-choice{
 
 .gb-activity > p{
   margin:8px 0 0;
-  font-size:.82rem;
-  line-height:1.48;
+  font-size:.92rem;
+  line-height:1.52;
 }
 
 .gb-activity-meta{
@@ -1173,7 +1348,7 @@ button.gb-choice{
   margin-top:auto;
   padding-top:15px;
   color:#62596A;
-  font-size:.7rem;
+  font-size:.77rem;
   font-weight:800;
 }
 
@@ -1216,21 +1391,28 @@ button.gb-choice{
   gap:6px;
 }
 
-.gb-mini-plan span{
+.gb-mini-plan button{
   display:inline-flex;
-  min-height:30px;
+  min-height:34px;
   align-items:center;
   padding:5px 8px;
+  border:1px solid transparent;
   border-radius:999px;
   background:#F2EEF6;
   color:#766C7E;
-  font-size:.66rem;
+  font-size:.7rem;
   font-weight:800;
+  cursor:pointer;
 }
 
-.gb-mini-plan span.filled{
+.gb-mini-plan button.filled{
   background:#E2F3EE;
   color:#276C61;
+}
+
+.gb-mini-plan button.current{
+  border-color:var(--gb-purple);
+  box-shadow:0 0 0 2px rgba(90,63,152,.08);
 }
 
 .gb-manual-plan > button{
@@ -1322,7 +1504,7 @@ button.gb-choice{
 }
 
 @media (max-width:760px){
-  .gb-page{font-size:17px}
+  .gb-page{font-size:18px}
 
   .gb-hero{
     padding:20px 0 72px;
@@ -1342,6 +1524,31 @@ button.gb-choice{
 
   .gb-builder-section{
     padding:56px 0 70px;
+  }
+
+  .gb-mode-switcher{
+    align-items:flex-start;
+    flex-direction:column;
+    padding:14px;
+  }
+
+  .gb-mode-switcher-buttons{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .gb-manual-help{
+    grid-template-columns:1fr;
+    margin-left:20px;
+    margin-right:20px;
+  }
+
+  .gb-manual-help ol{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .gb-manual-next{
+    align-items:flex-start;
+    flex-direction:column;
   }
 
   .gb-month-picker{
@@ -1461,6 +1668,8 @@ button.gb-choice{
 }
 
 @media (max-width:460px){
+  .gb-mode-switcher-buttons,
+  .gb-manual-help ol{grid-template-columns:1fr}
   .gb-rhythm-line b{display:none}
   .gb-rhythm-line{gap:6px}
   .gb-rhythm-line span{font-size:.68rem}
@@ -1474,6 +1683,8 @@ button.gb-choice{
   .portal-footer,
   .gb-hero,
   .gb-month-picker,
+  .gb-mode-switcher,
+  .gb-manual-help,
   .gb-resource-exit,
   .gb-panel-head,
   .gb-rhythm-line,
