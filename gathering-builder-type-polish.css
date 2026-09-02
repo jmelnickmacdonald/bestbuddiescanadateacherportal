@@ -1,0 +1,85 @@
+/* =========================================================
+   PLAN A MEETING · TYPE POLISH
+   Load AFTER gathering-builder.css.
+   Keeps the builder interaction intact; only improves readability.
+   ========================================================= */
+
+.gb-page{
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:18px;
+  line-height:1.6;
+}
+
+.gb-page a,
+.gb-page button,
+.gb-page select,
+.gb-page input,
+.gb-page label{
+  font-family:"Poppins",Arial,sans-serif !important;
+}
+
+.gb-back{font-size:.94rem !important;font-weight:700 !important}
+.gb-kicker{font-size:.78rem !important}
+.gb-hero p,
+.gb-hero-lede{font-size:1.1rem !important;line-height:1.68 !important}
+.gb-rhythm-card p{font-size:.93rem !important}
+.gb-rhythm span{font-size:.86rem !important}
+
+.gb-month-picker-copy label,
+.gb-month-row label{font-size:1.12rem !important}
+.gb-month-picker-copy p{font-size:.92rem !important;line-height:1.55 !important}
+.gb-month-select-wrap select,
+.gb-month-row select{font-size:.95rem !important}
+
+.gb-panel-head p,
+.gb-home-head p,
+.gb-question-hint,
+.gb-results-intro p,
+.gb-plan-option-head p,
+.gb-final-plan-note,
+.gb-manual-intro p,
+.gb-piece-copy p,
+.gb-activity p,
+.gb-source-band p,
+.gb-resource-exit strong{
+  font-size:.94rem !important;
+  line-height:1.6 !important;
+}
+
+.gb-path small,
+.gb-plan-option-head small,
+.gb-question-count,
+.gb-selection-count,
+.gb-source-label,
+.gb-recommended,
+.gb-source-pill,
+.gb-answer-summary span,
+.gb-card-watch,
+.gb-watch,
+.gb-piece-why,
+.gb-fit-reason{
+  font-size:.78rem !important;
+  line-height:1.4 !important;
+}
+
+.gb-path span{font-size:.94rem !important;line-height:1.58 !important}
+.gb-path strong{font-size:1.45rem !important}
+.gb-choice{font-size:.94rem !important;line-height:1.45 !important}
+.gb-btn,
+.gb-text-button,
+.gb-add-activity,
+.gb-activity button{font-size:.88rem !important}
+.gb-badge{font-size:.76rem !important;min-height:29px !important;padding:5px 9px !important}
+.gb-activity-meta{font-size:.78rem !important}
+.gb-activity strong,
+.gb-activity h4{font-size:1.08rem !important;line-height:1.2 !important}
+.gb-manual-plan strong{font-size:.94rem !important}
+.gb-manual-plan span{font-size:.84rem !important}
+.gb-manual-stage h4{font-size:1.08rem !important}
+.gb-piece-time{font-size:.8rem !important}
+
+@media (max-width:720px){
+  .gb-page{font-size:17px}
+  .gb-hero p,
+  .gb-hero-lede{font-size:1.02rem !important}
+}
