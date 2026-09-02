@@ -159,7 +159,7 @@
 
 .portal-home-page .hub-hero-art img{
   position:absolute !important;
-  top:-30px !important;
+  top:-58px !important;
   right:-30px !important;
   bottom:auto !important;
   display:block !important;
@@ -184,7 +184,7 @@
   background-repeat:no-repeat !important;
   background-position:center bottom !important;
   background-size:100% 100% !important;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 110' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 62 C120 84 220 28 350 58 C480 86 585 30 715 57 C845 83 950 29 1080 58 C1210 84 1320 31 1445 57 C1520 72 1570 66 1600 60 L1600 110 L0 110 Z'/%3E%3C/svg%3E") !important;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 110' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 59 C126 75 224 38 356 57 C488 76 582 39 716 57 C850 75 945 39 1080 57 C1215 74 1310 40 1442 56 C1515 64 1566 61 1600 56 L1600 110 L0 110 Z'/%3E%3C/svg%3E") !important;
 }
 
 
@@ -358,40 +358,50 @@
   border:0 !important;
 }
 
-
 /* =========================================================
-   RESPONSIVE SYSTEM
-   One source of truth. Do not add older breakpoint overrides
-   below this block.
+   RESPONSIVE SYSTEM V6
+   Full desktop / narrow desktop / tablet / mobile
 ========================================================= */
 
 
-/* ---------------------------------------------------------
+/* Slightly more intentional hero wave at every size. */
+.portal-home-page .teacher-hub-hero::after{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 110' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 62 C120 84 220 28 350 58 C480 86 585 30 715 57 C845 83 950 29 1080 58 C1210 84 1320 31 1445 57 C1520 72 1570 66 1600 60 L1600 110 L0 110 Z'/%3E%3C/svg%3E") !important;
+}
+
+
+/* Decorative side circles only work on a wide canvas. */
+@media(max-width:1200px){
+  .portal-home-page .program-launch::before,
+  .portal-home-page .program-launch::after,
+  .portal-home-page .portal-shortcuts::before,
+  .portal-home-page .portal-shortcuts::after{
+    display:none !important;
+    content:none !important;
+  }
+}
+
+
+/* =========================================================
    FULL DESKTOP: 1201px+
---------------------------------------------------------- */
-@media (min-width:1201px){
+========================================================= */
+
+@media(min-width:1201px){
 
   .portal-header-inner{
     min-height:96px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
   }
 
   .portal-brand img{
     height:80px !important;
   }
 
-  .portal-header-inner,
   .header-actions{
     display:flex !important;
-    flex-direction:row !important;
-    flex-wrap:nowrap !important;
     align-items:center !important;
-  }
-
-  .portal-header-inner{
-    justify-content:space-between !important;
-  }
-
-  .header-actions{
     gap:10px !important;
     margin-left:auto !important;
   }
@@ -406,21 +416,26 @@
   }
 
   .portal-home-page .hub-hero-art img{
-    top:-58px !important;
+    top:-68px !important;
     right:-30px !important;
     width:clamp(820px,48vw,930px) !important;
+  }
+
+  .portal-home-page .teacher-hub-hero::after{
+    height:70px !important;
   }
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    NARROW DESKTOP: 901px–1200px
-   Still two columns. The image never disappears.
---------------------------------------------------------- */
-@media (min-width:901px) and (max-width:1200px){
+   Still a desktop composition.
+========================================================= */
+
+@media(min-width:901px) and (max-width:1200px){
 
   .portal-header-inner{
-    min-height:92px !important;
+    min-height:90px !important;
     display:flex !important;
     flex-direction:row !important;
     flex-wrap:nowrap !important;
@@ -430,7 +445,7 @@
   }
 
   .portal-brand img{
-    height:74px !important;
+    height:72px !important;
   }
 
   .header-actions{
@@ -451,113 +466,34 @@
     display:none !important;
   }
 
-  .portal-nav a{
-    min-height:40px !important;
-    padding:7px 11px !important;
-    font-size:.76rem !important;
-  }
-
-  .portal-lang a{
-    min-width:39px !important;
-    min-height:39px !important;
-  }
-
   .portal-home-page .teacher-hub-hero-grid{
-    grid-template-columns:minmax(0,.94fr) minmax(410px,1.06fr) !important;
+    display:grid !important;
+    grid-template-columns:minmax(0,1.05fr) minmax(350px,.95fr) !important;
     gap:18px !important;
     height:500px !important;
     min-height:500px !important;
+    align-items:stretch !important;
   }
 
   .portal-home-page .hub-copy-column{
-    gap:26px !important;
+    min-width:0 !important;
+    gap:24px !important;
     padding:18px 0 70px !important;
   }
 
   .portal-home-page .hub-intro h1{
-    font-size:clamp(2.75rem,4.6vw,3.3rem) !important;
+    font-size:clamp(2.65rem,4.5vw,3.1rem) !important;
   }
 
   .portal-home-page .hub-intro p{
-    max-width:500px !important;
-    font-size:.9rem !important;
+    max-width:470px !important;
+    font-size:.88rem !important;
   }
 
   .portal-home-page .hub-message h2{
-    max-width:530px !important;
-    font-size:clamp(2.3rem,4vw,2.7rem) !important;
-  }
-
-  .portal-home-page .hub-message h2 > span{
-    white-space:normal !important;
-  }
-
-  .portal-home-page .hub-hero-art{
-    height:500px !important;
-    min-height:500px !important;
-    overflow:visible !important;
-  }
-
-  .portal-home-page .hub-hero-art img{
-    position:absolute !important;
-    top:-44px !important;
-    right:-28px !important;
-    bottom:auto !important;
-    display:block !important;
-    width:clamp(590px,55vw,720px) !important;
-    max-width:none !important;
-    height:auto !important;
-    margin:0 !important;
-  }
-
-  .portal-home-page .teacher-hub-hero::after{
-    height:84px !important;
-  }
-}
-
-
-/* ---------------------------------------------------------
-   TABLET: 761px–900px
-   Stack copy then art. No display:contents and no disappearing.
---------------------------------------------------------- */
-@media (min-width:761px) and (max-width:900px){
-
-  .portal-header-inner{
-    min-height:88px !important;
-    display:flex !important;
-    align-items:center !important;
-    justify-content:space-between !important;
-  }
-
-  .portal-brand img{
-    height:70px !important;
-  }
-
-  .portal-nav,
-  .portal-lang{
-    display:none !important;
-  }
-
-  .site-menu{
-    display:block !important;
-  }
-
-  .portal-home-page .teacher-hub-hero-grid{
-    display:flex !important;
-    flex-direction:column !important;
-    height:auto !important;
-    min-height:0 !important;
-    gap:0 !important;
-    padding-top:30px !important;
-    padding-bottom:58px !important;
-  }
-
-  .portal-home-page .hub-copy-column{
-    display:flex !important;
-    flex-direction:column !important;
-    max-width:none !important;
-    gap:30px !important;
-    padding:0 0 12px !important;
+    max-width:500px !important;
+    font-size:clamp(2.2rem,3.8vw,2.55rem) !important;
+    line-height:.97 !important;
   }
 
   .portal-home-page .hub-message h2 > span{
@@ -566,47 +502,50 @@
 
   .portal-home-page .hub-hero-art{
     position:relative !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
     width:100% !important;
-    height:auto !important;
-    min-height:0 !important;
+    height:500px !important;
+    min-height:500px !important;
     overflow:visible !important;
-    margin:8px 0 0 !important;
+    margin:0 !important;
   }
 
   .portal-home-page .hub-hero-art img{
     position:relative !important;
     inset:auto !important;
     display:block !important;
-    width:min(88vw,720px) !important;
+    width:min(55vw,570px) !important;
     max-width:none !important;
     height:auto !important;
-    margin:-18px auto -24px !important;
+    margin:0 -28px 0 0 !important;
+    transform:translateY(-32px) !important;
   }
 
   .portal-home-page .teacher-hub-hero::after{
-    height:58px !important;
-  }
-
-  .portal-home-page .program-launch{
-    padding-top:25px !important;
+    height:72px !important;
   }
 }
 
 
-/* ---------------------------------------------------------
-   MOBILE: 760px and below
---------------------------------------------------------- */
-@media (max-width:760px){
+/* =========================================================
+   TABLET: 761px–900px
+   Intro → artwork → friendship statement
+========================================================= */
+
+@media(min-width:761px) and (max-width:900px){
 
   .portal-header-inner{
-    min-height:78px !important;
+    min-height:84px !important;
     display:flex !important;
     align-items:center !important;
     justify-content:space-between !important;
+    gap:16px !important;
   }
 
   .portal-brand img{
-    height:60px !important;
+    height:66px !important;
   }
 
   .portal-nav,
@@ -616,41 +555,190 @@
 
   .site-menu{
     display:block !important;
+    margin-left:auto !important;
+  }
+
+  .site-menu summary{
+    min-height:42px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:8px 15px !important;
+    margin:0 !important;
   }
 
   .portal-home-page .teacher-hub-hero-grid{
-    display:flex !important;
-    flex-direction:column !important;
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    grid-template-rows:auto auto auto !important;
     height:auto !important;
     min-height:0 !important;
     gap:0 !important;
-    padding-top:24px !important;
-    padding-bottom:46px !important;
+    padding-top:30px !important;
+    padding-bottom:56px !important;
   }
 
+  /* Lets the two pieces of copy occupy separate grid rows. */
   .portal-home-page .hub-copy-column{
-    display:flex !important;
-    flex-direction:column !important;
+    display:contents !important;
+  }
+
+  .portal-home-page .hub-intro{
+    grid-row:1 !important;
+    max-width:660px !important;
+  }
+
+  .portal-home-page .hub-hero-art{
+    grid-column:1 !important;
+    grid-row:2 !important;
+    position:relative !important;
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    overflow:visible !important;
+    margin:10px 0 4px !important;
+  }
+
+  .portal-home-page .hub-hero-art img{
+    position:relative !important;
+    inset:auto !important;
+    display:block !important;
+    width:min(106%,780px) !important;
     max-width:none !important;
-    gap:24px !important;
-    padding:0 0 8px !important;
+    height:auto !important;
+    margin:-18px auto -22px !important;
+    transform:none !important;
   }
 
-  .portal-home-page .hub-intro h1{
-    font-size:clamp(2.3rem,11vw,3rem) !important;
-  }
-
-  .portal-home-page .hub-title-accent{
-    margin:12px 0 15px !important;
-  }
-
-  .portal-home-page .hub-intro p{
-    font-size:.85rem !important;
+  .portal-home-page .hub-message{
+    grid-row:3 !important;
+    max-width:660px !important;
+    padding:0 0 16px !important;
   }
 
   .portal-home-page .hub-message h2{
-    margin-bottom:11px !important;
-    font-size:clamp(2rem,9.5vw,2.55rem) !important;
+    font-size:clamp(2.35rem,6vw,3.25rem) !important;
+  }
+
+  .portal-home-page .hub-message h2 > span{
+    white-space:normal !important;
+  }
+
+  .portal-home-page .teacher-hub-hero::after{
+    height:54px !important;
+  }
+
+  .portal-home-page .program-launch{
+    padding-top:24px !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE: 760px and under
+   Intro → large artwork → friendship statement
+========================================================= */
+
+@media(max-width:760px){
+
+  .portal-header-inner{
+    min-height:72px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:12px !important;
+  }
+
+  .portal-brand img{
+    height:52px !important;
+  }
+
+  .portal-nav,
+  .portal-lang{
+    display:none !important;
+  }
+
+  .site-menu{
+    display:block !important;
+    margin-left:auto !important;
+  }
+
+  .site-menu summary{
+    min-height:40px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:7px 13px !important;
+    margin:0 !important;
+    font-size:.75rem !important;
+  }
+
+  .portal-home-page .teacher-hub-hero-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    grid-template-rows:auto auto auto !important;
+    height:auto !important;
+    min-height:0 !important;
+    gap:0 !important;
+    padding-top:23px !important;
+    padding-bottom:43px !important;
+  }
+
+  .portal-home-page .hub-copy-column{
+    display:contents !important;
+  }
+
+  .portal-home-page .hub-intro{
+    grid-row:1 !important;
+  }
+
+  .portal-home-page .hub-intro h1{
+    font-size:clamp(2.25rem,10.5vw,2.85rem) !important;
+  }
+
+  .portal-home-page .hub-title-accent{
+    margin:11px 0 14px !important;
+  }
+
+  .portal-home-page .hub-intro p{
+    max-width:31rem !important;
+    font-size:.83rem !important;
+  }
+
+  .portal-home-page .hub-hero-art{
+    grid-column:1 !important;
+    grid-row:2 !important;
+    position:relative !important;
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    overflow:visible !important;
+    margin:8px 0 5px !important;
+  }
+
+  /* Bigger than before. The transparent PNG needs some oversizing
+     on a narrow viewport to keep the people visually important. */
+  .portal-home-page .hub-hero-art img{
+    position:relative !important;
+    inset:auto !important;
+    display:block !important;
+    width:122% !important;
+    max-width:none !important;
+    height:auto !important;
+    margin:-10px 0 -22px -11% !important;
+    transform:none !important;
+  }
+
+  .portal-home-page .hub-message{
+    grid-row:3 !important;
+    padding:0 0 14px !important;
+  }
+
+  .portal-home-page .hub-message h2{
+    margin:0 0 11px !important;
+    font-size:clamp(1.95rem,9vw,2.4rem) !important;
   }
 
   .portal-home-page .hub-message h2 > span{
@@ -658,34 +746,23 @@
   }
 
   .portal-home-page .hub-message .hero-thanks{
-    font-size:.82rem !important;
-  }
-
-  .portal-home-page .hub-hero-art{
-    position:relative !important;
-    width:100% !important;
-    height:auto !important;
-    min-height:0 !important;
-    overflow:visible !important;
-    margin:14px 0 0 !important;
-  }
-
-  .portal-home-page .hub-hero-art img{
-    position:relative !important;
-    inset:auto !important;
-    display:block !important;
-    width:102% !important;
-    max-width:none !important;
-    height:auto !important;
-    margin:-8px 0 -14px -1% !important;
+    font-size:.8rem !important;
   }
 
   .portal-home-page .teacher-hub-hero::after{
-    height:42px !important;
+    height:40px !important;
   }
 
   .portal-home-page .program-launch{
-    padding-top:20px !important;
+    padding-top:19px !important;
+  }
+
+  .portal-home-page .program-heading h2{
+    font-size:clamp(1.65rem,7.4vw,2rem) !important;
+  }
+
+  .portal-home-page .program-heading p{
+    font-size:.84rem !important;
   }
 
   .portal-home-page .program-overlay{
@@ -726,16 +803,16 @@
 }
 
 
-@media (max-width:520px){
+@media(max-width:430px){
 
   .portal-home-page .hub-hero-art img{
-    width:100% !important;
-    margin:-4px 0 -10px 0 !important;
+    width:128% !important;
+    margin:-8px 0 -20px -14% !important;
   }
 }
 
 
-@media (prefers-reduced-motion:reduce){
+@media(prefers-reduced-motion:reduce){
   .portal-home-page .program-tile,
   .portal-home-page .program-photo img{
     transition:none !important;
@@ -744,17 +821,5 @@
   .portal-home-page .program-tile:hover,
   .portal-home-page .program-tile:hover .program-photo img{
     transform:none !important;
-  }
-}
-
-/* FINAL DESKTOP HERO TUNING */
-@media (min-width:1201px){
-
-  .portal-home-page .hub-hero-art img{
-    top:-68px !important;
-  }
-
-  .portal-home-page .teacher-hub-hero::after{
-    height:30px !important;
   }
 }
