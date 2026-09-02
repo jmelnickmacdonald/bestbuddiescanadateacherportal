@@ -953,3 +953,26 @@
     margin-top:0 !important;
   }
 }
+
+/* Give the friendship message a clear pause before Choose Your Program */
+@media (max-width:900px){
+
+  .portal-home-page .hub-message{
+    padding-bottom:42px !important;
+  }
+
+  .portal-home-page .program-launch{
+    padding-top:28px !important;
+  }
+}
+
+@media (max-width:430px){
+
+  .portal-home-page .hub-message{
+    padding-bottom:36px !important;
+  }
+
+  .portal-home-page .program-launch{
+    padding-top:24px !important;
+  }
+}
