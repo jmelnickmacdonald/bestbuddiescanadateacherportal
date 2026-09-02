@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Best Buddies Canada Teacher Hub: Elementary & Middle School chapter help, monthly planning, resources, and support.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <meta name="description" content="Best Buddies Canada Teacher Hub: Elementary & Middle School chapter planning, monthly support, resources, and program help.">
   <title>Elementary & Middle School | Best Buddies Canada Teacher Hub</title>
 
   <link rel="stylesheet" href="portal-home.css">
@@ -15,7 +20,6 @@
 
   <script src="access.js" defer></script>
   <script src="accessibility.js" defer></script>
-  <script src="program-current-month.js" defer></script>
 </head>
 
 <body data-protected="true" data-program="elementary-middle" class="access-pending program-home-page program-home-simple">
@@ -24,7 +28,7 @@
 <header class="portal-header">
   <div class="portal-container portal-header-inner">
     <a class="portal-brand" href="index.html" aria-label="Best Buddies Canada Teacher Hub home">
-      <img src="assets/bb-logo.png" alt="Best Buddies Canada">
+      <img src="assets/bb-logo-coloured.png" alt="Best Buddies Canada">
     </a>
 
     <div class="header-actions">
@@ -42,6 +46,9 @@
       <details class="site-menu">
         <summary>Menu</summary>
         <div class="site-menu-panel">
+          <a href="elementary-playbook.html">Chapter Playbook</a>
+          <a href="elementary-months.html">Plan by Month</a>
+          <a href="elementary-gathering.html">Plan a Meeting</a>
           <a href="calendar.html">Program Calendar</a>
           <a href="resources.html">Resources</a>
           <a href="support.html">Support</a>
@@ -54,7 +61,9 @@
 
 <main id="main-content">
 
-  <!-- PROGRAM INTRO -->
+  <!-- =====================================================
+       PROGRAM INTRO
+  ====================================================== -->
   <section class="simple-program-hero" aria-labelledby="program-title">
     <div class="portal-container">
       <a class="program-back" href="index.html#programs">← Switch program</a>
@@ -62,11 +71,14 @@
       <div class="simple-program-hero-grid">
         <div class="simple-program-copy">
           <span class="program-home-kicker">Elementary &amp; Middle School</span>
-          <h1 id="program-title">For wherever you are in your <span>Best Buddies year.</span></h1>
+
+          <h1 id="program-title">
+            For wherever you are in your <span>Best Buddies year.</span>
+          </h1>
 
           <p class="simple-program-lede">
-            Use what you need, skip what you don’t, and come back anytime. Planning, activities,
-            resources, and support are here when they’re useful.
+            Start with the whole picture, focus on the month you’re in, or jump straight
+            into planning a meeting. Resources and your Program Advisor are here when you need them.
           </p>
         </div>
 
@@ -79,73 +91,205 @@
     <div class="simple-program-wave" aria-hidden="true"></div>
   </section>
 
-  <!-- FOUR CLEAR ROUTES -->
+
+  <!-- =====================================================
+       MAIN ROUTES
+  ====================================================== -->
   <section class="simple-routes" aria-labelledby="routes-title">
     <div class="portal-container">
+
       <div class="simple-routes-heading">
-        <span class="section-kicker">Your chapter, your way</span>
+        <span class="section-kicker">Start where you need to</span>
         <h2 id="routes-title">Where do you want to start?</h2>
       </div>
 
       <div class="simple-route-grid">
+
         <a class="simple-route-card route-playbook" href="elementary-playbook.html">
-          <span class="route-kicker">The big picture</span>
+          <span class="route-number" aria-hidden="true">01</span>
+          <span class="route-kicker">The whole year</span>
           <h3>Chapter Playbook</h3>
-          <p>Follow the chapter year from getting started through year-end.</p>
-          <span class="route-arrow" aria-hidden="true">→</span>
+          <p>
+            See how the chapter year fits together, from getting set up to keeping
+            friendships growing and wrapping up the year.
+          </p>
+          <span class="route-help">
+            A good starting point if you’re new or wondering what comes next.
+          </span>
+          <span class="route-action">Open the Playbook <b aria-hidden="true">→</b></span>
         </a>
 
         <a class="simple-route-card route-calendar" href="calendar.html">
-          <span class="route-kicker">Month by month</span>
+          <span class="route-number" aria-hidden="true">02</span>
+          <span class="route-kicker">Dates + reminders</span>
           <h3>Program Calendar</h3>
-          <p>See monthly priorities, important dates, and reminders.</p>
-          <span class="route-arrow" aria-hidden="true">→</span>
+          <p>
+            Check program dates, reminders, celebrations, and milestones across
+            the Best Buddies school year.
+          </p>
+          <span class="route-help">
+            Use this when you need to know what’s coming up and when.
+          </span>
+          <span class="route-action">View the Calendar <b aria-hidden="true">→</b></span>
         </a>
 
         <a class="simple-route-card route-resources" href="resources.html">
-          <span class="route-kicker">Find what you need</span>
+          <span class="route-number" aria-hidden="true">03</span>
+          <span class="route-kicker">Guides + materials</span>
           <h3>Resources</h3>
-          <p>Activities, forms, training, guides, and quick help.</p>
-          <span class="route-arrow" aria-hidden="true">→</span>
+          <p>
+            Find Program Guides, activities, training, forms, registration information,
+            and other chapter materials.
+          </p>
+          <span class="route-help">
+            Go straight to the original materials when you know what you need.
+          </span>
+          <span class="route-action">Browse Resources <b aria-hidden="true">→</b></span>
         </a>
 
         <a class="simple-route-card route-support" href="support.html">
-          <span class="route-kicker">Connect with us</span>
+          <span class="route-number" aria-hidden="true">04</span>
+          <span class="route-kicker">Chapter-specific help</span>
           <h3>Program Support</h3>
-          <p>Reach out to your Program Advisor for chapter-specific support.</p>
-          <span class="route-arrow" aria-hidden="true">→</span>
+          <p>
+            Connect with your Program Advisor when the answer depends on your school,
+            chapter, participants, or situation.
+          </p>
+          <span class="route-help">
+            Use this when a general resource isn’t quite enough.
+          </span>
+          <span class="route-action">Get Support <b aria-hidden="true">→</b></span>
         </a>
+
       </div>
     </div>
   </section>
 
-  <!-- CURRENT MONTH -->
+
+  <!-- =====================================================
+       RIGHT NOW
+  ====================================================== -->
   <section class="simple-current-month" aria-labelledby="current-month-title">
     <div class="portal-container">
       <div class="simple-current-month-inner">
+
         <div class="simple-current-copy">
+          <span class="simple-current-eyebrow">Right now</span>
           <span class="simple-current-label">September</span>
+
           <h2 id="current-month-title">Getting Set Up</h2>
+
           <p>
-            Start the year by getting the word out, connecting with your Program Advisor,
-            and choosing a first gathering date when your group is ready.
+            Get the chapter organized, start welcoming students and families,
+            and bring the group together when you’re ready.
           </p>
         </div>
 
         <div class="simple-current-actions">
-          <a class="simple-current-button" href="elementary-september.html">Plan September →</a>
-          <a class="simple-all-months" href="elementary-months.html">Looking for another month? →</a>
+          <a class="simple-current-button" href="elementary-september.html">
+            See September →
+          </a>
+
+          <a class="simple-current-button simple-current-button-secondary"
+             href="elementary-gathering.html?month=september">
+            Plan a Meeting →
+          </a>
+
+          <a class="simple-all-months" href="elementary-months.html">
+            Browse all months →
+          </a>
         </div>
+
       </div>
     </div>
   </section>
+
+
+  <!-- =====================================================
+       QUICK GUIDES
+  ====================================================== -->
+  <section class="quick-help" aria-labelledby="quick-help-title">
+    <div class="portal-container quick-help-grid">
+
+      <div class="quick-help-head">
+        <span class="section-kicker">Quick Guides</span>
+        <h2 id="quick-help-title">A little extra help when you need it.</h2>
+
+        <p>
+          Short, practical guidance for common chapter moments, without making
+          you dig through everything else first.
+        </p>
+
+        <a class="quick-help-all" href="resources.html#quick-help">
+          Browse all Quick Guides →
+        </a>
+      </div>
+
+      <div class="quick-help-links">
+
+        <a class="quick-help-link" href="resources.html#quick-help">
+          <div>
+            <span class="quick-help-tag">Getting going</span>
+            <strong>Your First 30 Days</strong>
+            <span>Get a chapter started without trying to do everything at once.</span>
+          </div>
+          <span class="link-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="quick-help-link" href="elementary-gathering.html">
+          <div>
+            <span class="quick-help-tag">Planning</span>
+            <strong>Planning a Meeting</strong>
+            <span>Turn an activity idea into a simple meeting that fits your group.</span>
+          </div>
+          <span class="link-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="quick-help-link" href="resources.html#quick-help">
+          <div>
+            <span class="quick-help-tag">Participation</span>
+            <strong>Making Activities Work for More People</strong>
+            <span>Support communication, movement, choice, space, and different ways to take part.</span>
+          </div>
+          <span class="link-arrow" aria-hidden="true">→</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       PROGRAM SUPPORT
+  ====================================================== -->
+  <section class="program-support-band" aria-labelledby="support-title">
+    <div class="portal-container">
+      <div class="program-support-inner">
+
+        <div>
+          <span class="support-kicker">Need to talk it through?</span>
+          <h2 id="support-title">Your Program Advisor can help.</h2>
+          <p>
+            Reach out when a question is specific to your students, your school,
+            or your chapter.
+          </p>
+        </div>
+
+        <a class="program-support-button" href="support.html">
+          Program Support →
+        </a>
+
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="portal-footer">
   <div class="portal-container portal-footer-inner">
-    <img src="assets/bb-logo.png" alt="Best Buddies Canada">
+    <img src="assets/bb-logo-coloured.png" alt="Best Buddies Canada">
     <p>Best Buddies Canada Teacher Hub</p>
-    <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca ↗</a>
+    <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca</a>
   </div>
 </footer>
 
