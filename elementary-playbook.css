@@ -3181,3 +3181,118 @@
     transform:translateY(2px) !important;
   }
 }
+
+/* =========================================================
+   PLAYBOOK · FINAL READABILITY + NEXT STEPS
+   ========================================================= */
+
+/* Slightly more generous supporting text */
+.epb-page .epb-source-note{
+  font-size:1.05rem !important;
+  line-height:1.62 !important;
+}
+
+.epb-page .epb-check-note{
+  font-size:1rem !important;
+  line-height:1.58 !important;
+}
+
+.epb-page .epb-check{
+  font-size:1.04rem !important;
+  line-height:1.62 !important;
+}
+
+.epb-page .epb-note p,
+.epb-page .epb-builder-callout p,
+.epb-page .epb-phase-list p{
+  font-size:1rem !important;
+  line-height:1.6 !important;
+}
+
+.epb-page .epb-tools small{
+  font-size:.9rem !important;
+  line-height:1.5 !important;
+}
+
+
+/* Bigger, more intentional ending */
+.epb-page .epb-quiet-next{
+  position:relative;
+  margin-top:0;
+  padding:72px 0 64px;
+  border-top:0 !important;
+  background:#8FD1C4 !important;
+  overflow:hidden;
+}
+
+.epb-page .epb-quiet-next::before{
+  content:"";
+  position:absolute;
+  top:-1px;
+  left:0;
+  right:0;
+  height:46px;
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 90' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 0H1440V34C1270 61 1120 25 948 47C770 70 650 28 470 48C290 68 165 29 0 51Z'/%3E%3C/svg%3E")
+    center top / 100% 100% no-repeat;
+}
+
+.epb-page .epb-quiet-next-inner{
+  position:relative;
+  z-index:1;
+  min-height:0 !important;
+  display:grid !important;
+  grid-template-columns:auto repeat(3,auto);
+  justify-content:start;
+  align-items:center;
+  gap:16px;
+}
+
+.epb-page .epb-quiet-next strong{
+  margin-right:18px;
+  color:#1D1823 !important;
+  font-family:"League Spartan",Arial,sans-serif;
+  font-size:clamp(2rem,3vw,3rem) !important;
+  line-height:.95;
+  font-weight:900 !important;
+}
+
+.epb-page .epb-quiet-next a{
+  min-height:50px;
+  display:inline-flex;
+  align-items:center;
+  padding:10px 18px;
+  border-radius:999px;
+  background:#fff;
+  color:#5A3F98 !important;
+  font-family:"Poppins",Arial,sans-serif;
+  font-size:.9rem !important;
+  font-weight:800 !important;
+  text-decoration:none !important;
+}
+
+.epb-page .epb-quiet-next a:hover,
+.epb-page .epb-quiet-next a:focus-visible{
+  transform:translateY(-2px);
+}
+
+@media(max-width:850px){
+  .epb-page .epb-quiet-next{
+    padding:66px 0 48px;
+  }
+
+  .epb-page .epb-quiet-next-inner{
+    grid-template-columns:1fr !important;
+    align-items:flex-start !important;
+    gap:10px !important;
+  }
+
+  .epb-page .epb-quiet-next strong{
+    margin:0 0 8px;
+  }
+
+  .epb-page .epb-quiet-next a{
+    width:100%;
+    justify-content:space-between;
+  }
+}
