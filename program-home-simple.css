@@ -1,11 +1,7 @@
 /* =========================================================
    Best Buddies Canada Teacher Hub
-   Elementary & Middle program home — cohesive visual pass
+   Elementary & Middle School program home
    Load AFTER program-home.css.
-
-   Design rule:
-   Purple anchors the page. Yellow is action. Teal supports.
-   Orange is used sparingly. No floating decorative circles.
    ========================================================= */
 
 .program-home-simple {
@@ -15,12 +11,12 @@
   --bb-orange: var(--orange, #F47A38);
   --bb-ink: var(--ink, #1D1823);
   --bb-text: var(--text, #4B4652);
-  --bb-muted: var(--muted, #6A6470);
-  --bb-line: var(--line, #E3DFE8);
-  --bb-wash: #F8F6FA;
-  --bb-lavender: #F2EEF8;
-  --bb-yellow-soft: #FFF8D8;
-  --bb-teal-soft: #EAF7F4;
+  --bb-muted: var(--muted, #665F6D);
+  --bb-line: #E5DFEC;
+  --bb-lavender: #F1EDF8;
+  --bb-lavender-deep: #E5DCF3;
+  --bb-yellow-soft: #FFF6CC;
+  --bb-teal-soft: #E5F5F1;
   --bb-orange-soft: #FFF0E7;
 
   background: #fff;
@@ -28,248 +24,288 @@
   font-family: var(--body, "Montserrat", Arial, sans-serif);
 }
 
-/* Remove decorative leftovers from earlier passes. */
-.program-home-simple .simple-program-hero::before,
-.program-home-simple .simple-program-hero::after,
-.program-home-simple .simple-routes::before,
-.program-home-simple .simple-routes::after,
-.program-home-simple .quick-help::before,
-.program-home-simple .quick-help::after,
-.program-home-simple .simple-current-month-inner::before,
-.program-home-simple .simple-current-month-inner::after,
-.program-home-simple .program-support-inner::before,
-.program-home-simple .program-support-inner::after,
-.program-home-simple .simple-route-card::before,
-.program-home-simple .simple-route-card::after,
-.program-home-simple .quick-help-link::before,
-.program-home-simple .quick-help-link::after,
-.program-home-simple .program-title-swoosh {
-  content: none !important;
-  display: none !important;
-}
-
 /* =========================================================
    HERO
    ========================================================= */
+
 .program-home-simple .simple-program-hero {
-  padding: 30px 0 48px;
-  background: linear-gradient(180deg, #FAF9FB 0%, #F8F6FA 100%);
+  position: relative;
   overflow: hidden;
+  padding: 30px 0 0;
+  background:
+    linear-gradient(110deg, #F4F0F9 0%, #F4F0F9 62%, #EEE8F7 100%);
 }
 
 .program-home-simple .program-back {
+  position: relative;
+  z-index: 5;
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
   color: var(--bb-purple);
-  font-family: var(--body, "Montserrat", Arial, sans-serif);
   font-size: .82rem;
-  font-weight: 800;
+  font-weight: 850;
   text-decoration: none;
 }
 
 .program-home-simple .program-back:hover,
 .program-home-simple .program-back:focus-visible {
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .program-home-simple .simple-program-hero-grid {
+  position: relative;
+  z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, .95fr) minmax(390px, .88fr);
-  gap: clamp(44px, 6vw, 88px);
+  grid-template-columns: minmax(0, .92fr) minmax(400px, .88fr);
+  gap: clamp(46px, 6vw, 92px);
   align-items: center;
-  margin-top: 26px;
+  min-height: 420px;
+  padding: 26px 0 74px;
 }
 
 .program-home-simple .simple-program-copy {
-  max-width: 650px;
+  max-width: 690px;
 }
 
 .program-home-simple .program-home-kicker,
 .program-home-simple .section-kicker,
 .program-home-simple .quick-help-tag,
-.program-home-simple .simple-current-label {
+.program-home-simple .simple-current-label,
+.program-home-simple .route-kicker {
   display: block;
   color: var(--bb-purple);
-  font-family: var(--body, "Montserrat", Arial, sans-serif);
   font-size: .72rem;
-  font-weight: 850;
-  letter-spacing: .075em;
+  font-weight: 900;
+  letter-spacing: .078em;
   line-height: 1.2;
   text-transform: uppercase;
 }
 
 .program-home-simple .simple-program-copy h1 {
   position: relative;
-  max-width: 620px;
-  margin: 10px 0 0;
-  padding-bottom: 18px;
+  max-width: 650px;
+  margin: 11px 0 0;
+  padding-bottom: 20px;
   color: var(--bb-ink);
   font-family: var(--display, "League Spartan", Arial, sans-serif);
-  font-size: clamp(2.55rem, 3.7vw, 3.85rem);
+  font-size: clamp(2.75rem, 4.1vw, 4.35rem);
   font-weight: 850;
-  line-height: .98;
-  letter-spacing: -.028em;
+  line-height: .96;
+  letter-spacing: -.035em;
 }
 
-/* One repeatable accent mark — a short Best Buddies teal dash. */
+.program-home-simple .simple-program-copy h1 span {
+  color: var(--bb-purple);
+}
+
 .program-home-simple .simple-program-copy h1::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 52px;
+  width: 54px;
   height: 6px;
   border-radius: 999px;
   background: var(--bb-teal);
 }
 
 .program-home-simple .simple-program-lede {
-  max-width: 620px;
-  margin: 20px 0 0;
+  max-width: 625px;
+  margin: 21px 0 0;
   color: var(--bb-muted);
-  font-size: clamp(.98rem, 1.08vw, 1.08rem);
-  line-height: 1.65;
+  font-size: clamp(1rem, 1.08vw, 1.1rem);
+  line-height: 1.62;
 }
 
-.program-home-simple .simple-program-note {
-  display: inline-block;
-  margin: 16px 0 0;
-  padding: 7px 12px;
-  border: 1px solid #E3DCF0;
-  border-radius: 999px;
-  background: #F4F0FA;
-  color: var(--bb-purple);
-  font-size: .78rem;
-  font-weight: 800;
-}
-
+/* Photo treatment: layered colour panels rather than floating circles. */
 .program-home-simple .simple-program-photo {
   position: relative;
-  overflow: visible;
+  isolation: isolate;
   aspect-ratio: 12 / 8;
-  background: transparent;
-  border-radius: 28px 28px 72px 28px;
+  margin-right: 14px;
 }
 
-/* Cohesive offset panel — not another floating shape. */
+.program-home-simple .simple-program-photo::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: 20px -22px -20px 28px;
+  border-radius: 36px 36px 84px 36px;
+  background: var(--bb-teal);
+  transform: rotate(1.2deg);
+}
+
+.program-home-simple .simple-program-photo::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 36%;
+  height: 34%;
+  right: -34px;
+  top: -18px;
+  border-radius: 24px 24px 48px 24px;
+  background: var(--bb-yellow);
+  transform: rotate(4deg);
+}
+
 .program-home-simple .simple-program-photo img {
-  position: relative;
-  z-index: 2;
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 28px 28px 72px 28px;
-  box-shadow:
-    12px 12px 0 var(--bb-teal),
-    0 18px 38px rgba(48, 31, 77, .10);
+  border-radius: 30px 30px 76px 30px;
+  box-shadow: 0 20px 42px rgba(48, 31, 77, .12);
+}
+
+.program-home-simple .simple-program-wave {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 58px;
+  margin-top: -52px;
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 90' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,54 C170,80 280,29 463,51 C632,72 760,35 934,52 C1100,69 1253,35 1440,57 L1440,90 L0,90 Z'/%3E%3C/svg%3E")
+    center bottom / 100% 100% no-repeat;
+  pointer-events: none;
 }
 
 /* =========================================================
-   FOUR ROUTES
+   ROUTES
    ========================================================= */
+
 .program-home-simple .simple-routes {
-  padding: 52px 0 58px;
+  position: relative;
+  padding: 44px 0 78px;
   background: #fff;
 }
 
+.program-home-simple .simple-routes-heading {
+  max-width: 760px;
+  margin-bottom: 30px;
+}
+
+.program-home-simple .simple-routes-heading .section-kicker {
+  margin-bottom: 8px;
+}
+
 .program-home-simple .simple-routes h2 {
-  margin: 0 0 24px;
+  margin: 0;
   color: var(--bb-ink);
   font-family: var(--display, "League Spartan", Arial, sans-serif);
-  font-size: clamp(2rem, 2.8vw, 2.8rem);
+  font-size: clamp(2.2rem, 3.4vw, 3.45rem);
   font-weight: 850;
-  line-height: 1;
-  letter-spacing: -.022em;
+  line-height: .98;
+  letter-spacing: -.028em;
 }
 
 .program-home-simple .simple-route-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px 28px;
+  max-width: 1120px;
 }
 
+/* Each card is a destination. The colour peeks out like a layered card,
+   rather than becoming four unrelated colour blocks. */
 .program-home-simple .simple-route-card {
   --route-accent: var(--bb-purple);
-  --route-soft: var(--bb-lavender);
+  --route-bg: var(--bb-lavender);
+  --route-shadow: #D9CDEA;
 
   position: relative;
-  min-height: 180px;
+  isolation: isolate;
+  min-height: 205px;
   display: flex;
   flex-direction: column;
-  padding: 25px 24px 22px;
-  overflow: hidden;
-  border: 1px solid var(--bb-line);
-  border-top: 6px solid var(--route-accent);
-  border-radius: 22px 22px 48px 22px;
+  padding: 28px 66px 27px 30px;
+  border: 1px solid rgba(90,63,152,.14);
+  border-radius: 26px 26px 56px 26px;
   background:
-    linear-gradient(145deg, #fff 0 78%, var(--route-soft) 78% 100%);
+    linear-gradient(135deg, #fff 0 67%, var(--route-bg) 67% 100%);
   color: var(--bb-ink);
   text-decoration: none;
-  box-shadow: 0 10px 28px rgba(48, 31, 77, .07);
-  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+  box-shadow:
+    9px 9px 0 var(--route-shadow),
+    0 15px 32px rgba(48,31,77,.07);
+  transition: transform .16s ease, box-shadow .16s ease;
 }
 
 .program-home-simple .route-calendar {
-  --route-accent: #D8B000;
-  --route-soft: var(--bb-yellow-soft);
+  --route-accent: #A17D00;
+  --route-bg: var(--bb-yellow-soft);
+  --route-shadow: #FFD420;
 }
 
 .program-home-simple .route-resources {
-  --route-accent: #49AFA0;
-  --route-soft: var(--bb-teal-soft);
+  --route-accent: #287F73;
+  --route-bg: var(--bb-teal-soft);
+  --route-shadow: #8FD1C4;
 }
 
 .program-home-simple .route-support {
-  --route-accent: #EF6C27;
-  --route-soft: var(--bb-orange-soft);
+  --route-accent: #B84E19;
+  --route-bg: var(--bb-orange-soft);
+  --route-shadow: #F47A38;
 }
 
-.program-home-simple .simple-route-card:hover,
-.program-home-simple .simple-route-card:focus-visible {
-  transform: translateY(-4px);
-  border-color: var(--route-accent);
-  box-shadow: 0 18px 38px rgba(48, 31, 77, .12);
+.program-home-simple .route-kicker {
+  margin-bottom: 10px;
+  color: var(--route-accent);
 }
 
 .program-home-simple .simple-route-card h3 {
-  max-width: 230px;
-  margin: 0 0 9px;
+  max-width: 390px;
+  margin: 0;
   color: var(--bb-ink);
-  font-family: var(--body, "Montserrat", Arial, sans-serif);
-  font-size: 1.08rem;
+  font-family: var(--display, "League Spartan", Arial, sans-serif);
+  font-size: clamp(1.55rem, 2vw, 2rem);
   font-weight: 850;
-  line-height: 1.2;
+  line-height: 1;
+  letter-spacing: -.018em;
 }
 
 .program-home-simple .simple-route-card p {
-  max-width: 250px;
-  margin: 0;
+  max-width: 420px;
+  margin: 12px 0 0;
   color: var(--bb-muted);
-  font-size: .84rem;
-  line-height: 1.5;
+  font-size: .92rem;
+  line-height: 1.52;
 }
 
 .program-home-simple .route-arrow {
-  margin-top: auto;
-  align-self: flex-end;
+  position: absolute;
+  right: 26px;
+  bottom: 24px;
   color: var(--route-accent);
-  font-family: var(--body, "Montserrat", Arial, sans-serif);
-  font-size: 1.18rem;
+  font-size: 1.65rem;
   font-weight: 900;
   line-height: 1;
   transition: transform .16s ease;
 }
 
+.program-home-simple .simple-route-card:hover,
+.program-home-simple .simple-route-card:focus-visible {
+  transform: translate(-3px, -3px);
+  box-shadow:
+    12px 12px 0 var(--route-shadow),
+    0 19px 38px rgba(48,31,77,.11);
+}
+
 .program-home-simple .simple-route-card:hover .route-arrow,
 .program-home-simple .simple-route-card:focus-visible .route-arrow {
-  transform: translateX(4px);
+  transform: translateX(5px);
 }
 
 /* =========================================================
    CURRENT MONTH
    ========================================================= */
+
 .program-home-simple .simple-current-month {
-  padding: 8px 0 62px;
+  padding: 0 0 68px;
+  background: #fff;
 }
 
 .program-home-simple .simple-current-month-inner {
@@ -279,31 +315,34 @@
   justify-content: space-between;
   gap: 42px;
   overflow: hidden;
-  padding: clamp(28px, 3.5vw, 42px) clamp(30px, 4vw, 52px);
-  border-radius: 26px 26px 64px 26px;
-  border-left: 8px solid var(--bb-yellow);
+  padding: clamp(30px, 3.8vw, 46px) clamp(32px, 4vw, 54px);
+  border-radius: 28px 28px 68px 28px;
+  border-left: 9px solid var(--bb-yellow);
   background: var(--bb-purple);
   color: #fff;
-  box-shadow: 0 15px 34px rgba(55, 35, 93, .12);
+  box-shadow: 0 16px 36px rgba(55,35,93,.13);
 }
 
-/* The same little dash used in the hero — repeated, not random. */
-.program-home-simple .simple-current-month-inner > .simple-current-copy::before {
+.program-home-simple .simple-current-month-inner::after {
   content: "";
-  display: block;
-  width: 42px;
-  height: 6px;
-  margin-bottom: 18px;
-  border-radius: 999px;
-  background: var(--bb-teal);
+  position: absolute;
+  right: -42px;
+  top: -34px;
+  width: 180px;
+  height: 92px;
+  border-radius: 26px;
+  background: rgba(143,209,196,.28);
+  transform: rotate(-8deg);
 }
 
 .program-home-simple .simple-current-copy {
-  max-width: 780px;
+  position: relative;
+  z-index: 2;
+  max-width: 770px;
 }
 
 .program-home-simple .simple-current-label {
-  margin-bottom: 7px;
+  margin-bottom: 8px;
   color: var(--bb-yellow);
 }
 
@@ -311,21 +350,22 @@
   margin: 0;
   color: #fff;
   font-family: var(--display, "League Spartan", Arial, sans-serif);
-  font-size: clamp(1.9rem, 2.8vw, 2.75rem);
+  font-size: clamp(2rem, 2.9vw, 2.85rem);
   font-weight: 850;
   line-height: 1;
-  letter-spacing: -.018em;
 }
 
 .program-home-simple .simple-current-month p {
-  max-width: 760px;
+  max-width: 750px;
   margin: 12px 0 0;
-  color: rgba(255,255,255,.87);
-  font-size: .94rem;
+  color: rgba(255,255,255,.88);
+  font-size: .95rem;
   line-height: 1.58;
 }
 
 .program-home-simple .simple-current-actions {
+  position: relative;
+  z-index: 2;
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
@@ -345,14 +385,14 @@
   font-size: .82rem;
   font-weight: 900;
   text-decoration: none;
-  box-shadow: 0 6px 0 rgba(29, 24, 35, .12);
+  box-shadow: 0 6px 0 rgba(29,24,35,.12);
   transition: transform .15s ease, box-shadow .15s ease;
 }
 
 .program-home-simple .simple-current-button:hover,
 .program-home-simple .simple-current-button:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 8px 0 rgba(29, 24, 35, .12);
+  box-shadow: 0 8px 0 rgba(29,24,35,.12);
 }
 
 .program-home-simple .simple-all-months {
@@ -366,21 +406,21 @@
 /* =========================================================
    QUICK GUIDES
    ========================================================= */
+
 .program-home-simple .quick-help {
-  padding: 60px 0 64px;
+  padding: 64px 0 68px;
   background: #F5F2F8;
 }
 
 .program-home-simple .quick-help-grid {
   display: grid;
-  grid-template-columns: minmax(260px, .78fr) minmax(0, 1.55fr);
-  gap: clamp(44px, 6vw, 90px);
+  grid-template-columns: minmax(270px, .8fr) minmax(0, 1.55fr);
+  gap: clamp(46px, 6vw, 92px);
   align-items: start;
 }
 
 .program-home-simple .quick-help-head {
-  position: relative;
-  padding-left: 18px;
+  padding-left: 19px;
   border-left: 6px solid var(--bb-teal);
 }
 
@@ -446,11 +486,11 @@
 }
 
 .program-home-simple .quick-help-link:nth-child(2) {
-  --guide-accent: #D8B000;
+  --guide-accent: #A17D00;
 }
 
 .program-home-simple .quick-help-link:nth-child(3) {
-  --guide-accent: #49AFA0;
+  --guide-accent: #287F73;
 }
 
 .program-home-simple .quick-help-link:hover,
@@ -490,8 +530,9 @@
 /* =========================================================
    SUPPORT
    ========================================================= */
+
 .program-home-simple .program-support-band {
-  padding: 56px 0;
+  padding: 58px 0;
   background: #fff;
 }
 
@@ -544,29 +585,32 @@
 /* =========================================================
    RESPONSIVE
    ========================================================= */
+
 @media (max-width: 1180px) {
   .program-home-simple .simple-program-hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(340px, .92fr);
-    gap: 38px;
+    grid-template-columns: minmax(0, 1fr) minmax(350px, .9fr);
+    gap: 40px;
   }
 
   .program-home-simple .simple-program-copy h1 {
-    font-size: clamp(2.35rem, 4.2vw, 3.25rem);
+    font-size: clamp(2.6rem, 4.6vw, 3.55rem);
   }
 
   .program-home-simple .simple-route-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .program-home-simple .simple-route-card {
-    min-height: 154px;
+    max-width: none;
   }
 }
 
 @media (max-width: 940px) {
+  .program-home-simple .simple-program-hero {
+    padding-top: 24px;
+  }
+
   .program-home-simple .simple-program-hero-grid {
     grid-template-columns: 1fr;
-    gap: 34px;
+    gap: 36px;
+    min-height: 0;
+    padding: 24px 0 78px;
   }
 
   .program-home-simple .simple-program-copy {
@@ -574,7 +618,12 @@
   }
 
   .program-home-simple .simple-program-photo {
-    max-width: 690px;
+    width: min(92%, 690px);
+    margin: 0 auto;
+  }
+
+  .program-home-simple .simple-routes {
+    padding-top: 38px;
   }
 
   .program-home-simple .simple-current-month-inner,
@@ -589,7 +638,7 @@
 
   .program-home-simple .quick-help-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 32px;
   }
 
   .program-home-simple .quick-help-head {
@@ -597,34 +646,68 @@
   }
 }
 
-@media (max-width: 680px) {
-  .program-home-simple .simple-program-hero {
-    padding: 24px 0 38px;
-  }
-
+@media (max-width: 720px) {
   .program-home-simple .simple-program-hero-grid {
-    margin-top: 20px;
+    gap: 30px;
+    padding-bottom: 66px;
   }
 
   .program-home-simple .simple-program-copy h1 {
-    font-size: clamp(2.25rem, 11vw, 3rem);
+    font-size: clamp(2.35rem, 10.2vw, 3.15rem);
   }
 
   .program-home-simple .simple-program-lede {
-    font-size: .96rem;
+    font-size: .97rem;
+  }
+
+  .program-home-simple .simple-program-photo {
+    width: calc(100% - 18px);
+  }
+
+  .program-home-simple .simple-program-photo::before {
+    inset: 14px -10px -15px 18px;
+  }
+
+  .program-home-simple .simple-program-photo::after {
+    right: -11px;
+    top: -12px;
+    width: 32%;
+    height: 30%;
+  }
+
+  .program-home-simple .simple-program-wave {
+    height: 44px;
+    margin-top: -40px;
+  }
+
+  .program-home-simple .simple-routes {
+    padding: 34px 0 62px;
   }
 
   .program-home-simple .simple-route-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .program-home-simple .simple-route-card {
-    min-height: 145px;
+    min-height: 174px;
+    padding: 24px 58px 24px 24px;
+    box-shadow:
+      7px 7px 0 var(--route-shadow),
+      0 12px 26px rgba(48,31,77,.07);
+  }
+
+  .program-home-simple .simple-route-card:hover,
+  .program-home-simple .simple-route-card:focus-visible {
+    transform: translate(-2px, -2px);
+    box-shadow:
+      9px 9px 0 var(--route-shadow),
+      0 15px 30px rgba(48,31,77,.1);
   }
 
   .program-home-simple .simple-current-month-inner,
   .program-home-simple .program-support-inner {
-    padding: 26px 24px;
+    padding: 27px 24px;
     border-radius: 22px 22px 46px 22px;
   }
 
@@ -634,11 +717,25 @@
   }
 
   .program-home-simple .quick-help {
-    padding: 48px 0 52px;
+    padding: 50px 0 54px;
   }
 
   .program-home-simple .quick-help-link {
-    padding: 18px 18px;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 430px) {
+  .program-home-simple .simple-program-copy h1 {
+    font-size: clamp(2.2rem, 11vw, 2.8rem);
+  }
+
+  .program-home-simple .simple-routes h2 {
+    font-size: 2.25rem;
+  }
+
+  .program-home-simple .simple-route-card h3 {
+    font-size: 1.65rem;
   }
 }
 
