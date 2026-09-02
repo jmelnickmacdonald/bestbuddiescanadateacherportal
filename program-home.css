@@ -1355,3 +1355,21 @@
     border-left:6px solid #9396CA !important;
   }
 }
+
+
+/* =========================================================
+   V8 — CHAPTER PLAYBOOK ACCENT ALIGNMENT
+   Match the other route cards: lilac accent on top, not left.
+   ========================================================= */
+
+.program-home-simple .route-playbook{
+  border-left:0 !important;
+  border-top:7px solid #9396CA !important;
+}
+
+@media (max-width:720px){
+  .program-home-simple .route-playbook{
+    border-left:0 !important;
+    border-top:6px solid #9396CA !important;
+  }
+}
