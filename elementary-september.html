@@ -3,29 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Best Buddies Canada Teacher Hub: Elementary & Middle School September priorities, meeting planning, and accessible activities.">
-  <title>September | Elementary & Middle School | Best Buddies Canada Teacher Hub</title>
+  <meta name="description" content="Best Buddies Canada Teacher Hub: Elementary &amp; Middle School September priorities, activity ideas, resources, and meeting planning.">
+  <title>September | Elementary &amp; Middle School | Best Buddies Canada Teacher Hub</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="portal-home.css">
-  <link rel="stylesheet" href="month-pages.css">
-  <link rel="stylesheet" href="meeting-builder.css">
   <link rel="stylesheet" href="access.css">
   <link rel="stylesheet" href="accessibility.css">
   <link rel="stylesheet" href="portal-polish.css">
-  <link rel="stylesheet" href="september-master.css">
+  <link rel="stylesheet" href="elementary-month-pages-v2.css">
 
   <script src="access.js" defer></script>
   <script src="accessibility.js" defer></script>
-  <script src="meeting-builder-data.js" defer></script>
-  <script src="meeting-builder.js" defer></script>
-  <script src="month-master.js" defer></script>
 </head>
 
-<body class="access-pending month-page month-master-page elementary-middle-month"
+<body data-protected="true"
       data-program="elementary-middle"
       data-month="september"
-      data-month-label="September · Getting Set Up"
-      data-protected="true">
+      class="access-pending em-month-page"
+      style="--em-month-accent:#FFD420;--em-hero-wave:#8FD1C4;">
 
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
@@ -34,7 +33,6 @@
     <a class="portal-brand" href="index.html" aria-label="Best Buddies Canada Teacher Hub home">
       <img src="assets/bb-logo.png" alt="Best Buddies Canada">
     </a>
-
     <div class="header-actions">
       <nav class="portal-nav" aria-label="Main navigation">
         <a href="calendar.html">Calendar</a>
@@ -48,6 +46,10 @@
       <details class="site-menu">
         <summary>Menu</summary>
         <div class="site-menu-panel">
+          <a href="elementary-middle.html">Elementary &amp; Middle</a>
+          <a href="elementary-playbook.html">Chapter Playbook</a>
+          <a href="elementary-months.html">Plan by Month</a>
+          <a href="elementary-gathering.html">Plan a Meeting</a>
           <a href="calendar.html">Program Calendar</a>
           <a href="resources.html">Resources</a>
           <a href="support.html">Support</a>
@@ -60,172 +62,193 @@
 
 <main id="main-content">
 
-  <section class="master-month-hero" aria-labelledby="month-title">
-    <div class="master-wrap">
-      <a class="master-back" href="elementary-middle.html">← Elementary &amp; Middle School</a>
+  <section class="em-hero" aria-labelledby="em-title">
+    <div class="em-wrap">
+      <a class="em-back" href="elementary-middle.html">← Elementary &amp; Middle School</a>
 
-      <div class="master-hero-grid">
-        <div class="master-hero-copy">
-          <p class="master-eyebrow">Elementary &amp; Middle School</p>
-          <div class="master-title-row">
-            <span class="master-month-pill">September</span>
-            <span class="master-title-rule" aria-hidden="true"></span>
-          </div>
-          <h1 id="month-title">Getting Set Up</h1>
-          <p class="master-lede">September can be simple. Get the word out, get the chapter set up, and choose a first gathering date when your group is ready.</p>
+      <div class="em-hero-grid">
+        <div>
+          <span class="em-kicker">Elementary &amp; Middle School</span>
+          <span class="em-month-pill">September</span>
+          <h1 class="em-display" id="em-title">Getting Set Up</h1>
+          <p class="em-hero-lede">September can be simple. Get the word out, get the chapter organized, and choose a first meeting date when your group is ready.</p>
         </div>
 
-        <aside class="mini-calendar" aria-label="September Program Calendar highlights">
-          <div class="mini-calendar-head">
-            <div>
-              <span>On the Program Calendar</span>
-              <strong>September</strong>
-            </div>
-            <a href="calendar.html">Full calendar →</a>
-          </div>
-
-          <div class="mini-event">
-            <time datetime="2026-09-14">SEP 14</time>
-            <div><strong>September Checklist</strong><span>Elementary &amp; High School</span></div>
-          </div>
-
-          <div class="mini-event">
-            <time datetime="2026-09-23">SEP 23</time>
-            <div><strong>Chapter Startup &amp; Recruitment</strong><span>A reminder to keep September setup moving.</span></div>
-          </div>
+        <aside class="em-phase-card" aria-label="Program Guide context for September">
+          <span class="em-phase-label">Program Guide thread</span>
+          <h2>Phase One · Getting to Know Your Buddy</h2>
+          <p>The Program Guide begins with <strong>Week 1: Defining Friendship</strong>. If September is still mostly recruitment and setup for your school, you don't need to rush into the first session.</p>
         </aside>
       </div>
     </div>
   </section>
 
-  <section class="master-jump" aria-labelledby="jump-title">
-    <div class="master-wrap">
-      <div class="master-jump-heading">
-        <span>Start where you are</span>
-        <h2 id="jump-title">What would help right now?</h2>
-      </div>
-
-      <div class="master-jump-grid">
-        <a class="master-jump-card essentials" href="#essentials">
-          <small>Need the basics?</small>
-          <strong>Show me September</strong>
-          <span>A quick look at the four things to focus on.</span>
-          <b class="master-card-action">Show me →</b>
-        </a>
-
-        <a class="master-jump-card meeting" href="#build">
-          <small>Meeting coming up?</small>
-          <strong>Give me a 30-minute plan</strong>
-          <span>One low-prep gathering you can use as-is.</span>
-          <b class="master-card-action">Give me one →</b>
-        </a>
-
-        <a class="master-jump-card ideas" href="#build" data-open-custom>
-          <small>Want a few choices?</small>
-          <strong>Show me activities</strong>
-          <span>Browse a small set pulled from the Best Buddies guides.</span>
-          <b class="master-card-action">Browse →</b>
-        </a>
+  <nav class="em-month-nav" aria-label="Plan by month">
+    <div class="em-wrap em-month-nav-inner">
+      <span class="em-month-nav-label">Plan by month</span>
+      <div class="em-month-links">
+        <a href="elementary-september.html" aria-current="page">September</a>
+<a href="elementary-october.html">October</a>
+<a href="elementary-november.html">November</a>
+<a href="elementary-december.html">December</a>
       </div>
     </div>
-  </section>
+  </nav>
 
-  <section class="master-essentials" id="essentials" aria-labelledby="essentials-title">
-    <div class="master-wrap">
-      <div class="essentials-heading">
+  <section class="em-priorities" aria-labelledby="priorities-title">
+    <div class="em-wrap">
+      <div class="em-section-head">
         <div>
-          <span class="section-kicker">September at a glance</span>
-          <h2 id="essentials-title">Four things. That’s enough.</h2>
+          <span class="em-section-kicker">September at a glance</span>
+          <h2 class="em-section-title" id="priorities-title">What matters this month.</h2>
         </div>
-        <p>Still recruiting? No problem. September is for getting going.</p>
+        <p class="em-section-intro">Use this as the short list. The Chapter Playbook holds the whole year, while this page keeps the next few things close.</p>
       </div>
 
-      <div class="essentials-grid">
-        <article class="essential-card">
-          <span class="essential-number">01</span>
-          <strong>Check in</strong>
-          <p>Touch base with your Program Advisor and make sure you have what you need.</p>
+      <div class="em-priority-grid ">
+        <article class="em-priority">
+          <span class="em-number">01</span>
+          <h3>Check in</h3>
+          <p>Touch base with your Program Advisor and make sure your chapter has what it needs to get started.</p>
         </article>
-
-        <article class="essential-card">
-          <span class="essential-number">02</span>
-          <strong>Recruit</strong>
-          <p>Get the word out and give students an easy way to join.</p>
+<article class="em-priority">
+          <span class="em-number">02</span>
+          <h3>Recruit</h3>
+          <p>Let students know about Best Buddies and make it easy for interested students to learn more.</p>
         </article>
-
-        <article class="essential-card">
-          <span class="essential-number">03</span>
-          <strong>Share with families</strong>
-          <p>Send home the program and registration information families need.</p>
+<article class="em-priority">
+          <span class="em-number">03</span>
+          <h3>Share with families</h3>
+          <p>Send the current program and K–12 registration information families need.</p>
         </article>
-
-        <article class="essential-card">
-          <span class="essential-number">04</span>
-          <strong>Choose a first date</strong>
-          <p>Pick a Meet &amp; Greet date when your group is ready.</p>
+<article class="em-priority">
+          <span class="em-number">04</span>
+          <h3>Choose a first date</h3>
+          <p>Pick a simple first Meet & Greet or chapter meeting date when your group is ready.</p>
         </article>
       </div>
 
-      <div class="member-voice-strip">
-        <span>Make it theirs from the start</span>
-        <p>Ask: <strong>What would make our first gathering feel welcoming?</strong> Members can answer however works best for them: speaking, pointing, signing, AAC, drawing, writing, gesture, or another way.</p>
+      <div class="em-now-note">
+        <b>✓</b>
+        <p>Still recruiting or organizing? You're on track. September setup comes before having the perfect meeting plan.</p>
       </div>
     </div>
   </section>
 
-  <section class="builder-shell master-builder" id="build" data-meeting-builder></section>
-
-  <section class="master-resources" id="resources">
-    <div class="master-wrap">
-      <details class="resource-drawer master-resource-drawer">
-        <summary>
-          <span><small>If you want the full details</small>Guides, training &amp; resources</span>
-          <strong>Open</strong>
-        </summary>
-        <div class="resource-drawer-body">
-          <div class="quick-resource-grid">
-            <a class="quick-resource" href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener">
-              <strong>Elementary &amp; Middle Program Guide ↗</strong>
-              <span>Program sequence, Week 1 activities, timing, and guide-provided modifications.</span>
-            </a>
-            <a class="quick-resource" href="https://drive.google.com/file/d/1owF-DwEMSzVrZfnhwWE3pCyLUyCffi4C/view?usp=drive_link" target="_blank" rel="noopener">
-              <strong>Elementary Activity Guide ↗</strong>
-              <span>Additional ready-to-use activity ideas from Best Buddies Canada.</span>
-            </a>
-            <a class="quick-resource" href="https://drive.google.com/file/d/1oQwyeOMXP2vCxRpPvBJyBXKP8wTOOdVO/view?usp=sharing" target="_blank" rel="noopener">
-              <strong>Non-Verbal Activity Guide ↗</strong>
-              <span>Activities incorporating AAC, Sign Language, gesture, and other non-speaking communication.</span>
-            </a>
-          </div>
-          <div class="resource-footer-links">
-            <a href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener">All Helpful Resources ↗</a>
-            <a href="https://learn.bestbuddies.ca/" target="_blank" rel="noopener">Learn @ Best Buddies ↗</a>
-            <a href="calendar.html">Program Calendar →</a>
-          </div>
+  <section class="em-meeting" aria-labelledby="meeting-title">
+    <div class="em-wrap">
+      <div class="em-meeting-head">
+        <div>
+          <span class="em-section-kicker">If your group is ready to meet</span>
+          <h2 class="em-meeting-title" id="meeting-title">Start with easy connection.</h2>
         </div>
-      </details>
+        <p class="em-meeting-copy">The first meeting doesn't need a packed agenda. The Program Guide starts with friendship, names, and connection. These are three strong source-based places to begin.</p>
+      </div>
+
+      <div class="em-phase-thread" aria-label="September Program Guide focus">
+        <span class="current">Phase One</span>
+<span class="">Week 1 · Defining Friendship</span>
+<span class="">Names + connection</span>
+      </div>
+
+      <div class="em-activity-grid">
+        <article class="em-activity">
+          <span class="em-source">Program Guide · Week 1</span>
+          <h3>Defining Friendship</h3>
+          <p>Work in pairs to show what a good friend looks and feels like, then bring the ideas together as a group.</p>
+          <div class="em-meta"><span>15–20 min</span><span>Pairs</span><span>Words or pictures</span></div>
+          <a href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener">Open source ↗</a>
+        </article>
+<article class="em-activity">
+          <span class="em-source">Program Guide · Week 1</span>
+          <h3>Pass the Yarn</h3>
+          <p>Create a visible web of connection while members share names and something about themselves. The guide includes an assistive-speaking-device modification.</p>
+          <div class="em-meta"><span>15–20 min</span><span>Whole group</span><span>Seated circle works</span></div>
+          <a href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener">Open source ↗</a>
+        </article>
+<article class="em-activity">
+          <span class="em-source">Activity Guide · Volume 2</span>
+          <h3>Imagine Boards</h3>
+          <p>Use words, symbols, pictures, or drawings to show hopes for the Best Buddies year. The guide already includes partner support.</p>
+          <div class="em-meta"><span>Flexible</span><span>Creative</span><span>Visual</span></div>
+          <a href="https://bestbuddies.ca/wp-content/uploads/2023/09/Elementary-Middle-School-Activity-Guide-.pdf" target="_blank" rel="noopener">Open source ↗</a>
+        </article>
+      </div>
+
+      
+
+      <div class="em-plan-cta">
+        <div>
+          <strong>Ready to put the meeting together?</strong>
+          <p>Open Plan a Meeting with September already selected. The Activity Builder, Choose the Pieces, and Quick Plan all stay exactly where they are.</p>
+        </div>
+        <a class="em-plan-button" href="elementary-gathering.html?month=september">Plan a September Meeting →</a>
+      </div>
     </div>
   </section>
 
-  <section class="master-support" id="support">
-    <div class="master-wrap master-support-inner">
+  <section class="em-calendar-bridge" aria-label="Program Calendar">
+    <div class="em-wrap em-calendar-inner">
       <div>
-        <span class="section-kicker">Need a hand?</span>
-        <h2>We’re here.</h2>
-        <p>If something doesn’t quite fit your group, your room, or your school, reach out to your Program Advisor. We can help you sort it out.</p>
+        <strong>Need dates, checklists, or reminders?</strong>
+        <p>Keep those in the live Program Calendar so the monthly page stays focused on what to do.</p>
       </div>
-      <a href="support.html">Talk to your Program Advisor →</a>
+      <a href="calendar.html">Open Program Calendar →</a>
     </div>
   </section>
+
+  <section class="em-resources" aria-labelledby="resources-title">
+    <div class="em-wrap">
+      <span class="em-resource-kicker">Useful this month</span>
+      <h2 class="em-section-title" id="resources-title">Keep the source close.</h2>
+      <div class="em-resource-grid">
+        <a class="em-resource" href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener">
+          <strong>Program Guide</strong>
+          <span>Phase One, Week 1, full activity wording, timing, and guide-provided modifications.</span>
+          <b>Open ↗</b>
+        </a>
+<a class="em-resource" href="https://bestbuddiescanada.my.salesforce-sites.com/publicportal/k12registration/" target="_blank" rel="noopener">
+          <strong>K–12 Registration</strong>
+          <span>Open the current English K–12 registration form.</span>
+          <b>Open ↗</b>
+        </a>
+<a class="em-resource" href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener">
+          <strong>Helpful Resources</strong>
+          <span>Current Best Buddies Canada forms, guides, training, and chapter resources.</span>
+          <b>Open ↗</b>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="em-support">
+    <div class="em-wrap">
+      <div class="em-support-inner">
+        <div>
+          <span class="em-section-kicker">Need help making it fit?</span>
+          <h2>Your Program Advisor can help.</h2>
+          <p>If timing, an activity, communication, room setup, or the chapter itself is making the plan harder, reach out. The Hub is planning support, not a replacement for chapter-specific support.</p>
+        </div>
+        <a href="support.html">Go to Program Support →</a>
+      </div>
+    </div>
+  </section>
+
+  <nav class="em-prev-next" aria-label="Previous and next month">
+    <div class="em-wrap em-prev-next-inner">
+      <div class="empty" aria-hidden="true"></div>
+      <a href="elementary-october.html"><small>Next month</small><strong>October →</strong></a>
+    </div>
+  </nav>
 
 </main>
 
-<footer class="month-footer">
-  <div class="month-wrap month-footer-inner">
-    <span>Best Buddies Canada Teacher Hub</span>
-    <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca ↗</a>
+<footer class="portal-footer">
+  <div class="portal-container portal-footer-inner">
+    <img src="assets/bb-logo.png" alt="Best Buddies Canada">
+    <p>Best Buddies Canada Teacher Hub</p>
+    <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca</a>
   </div>
 </footer>
-
 </body>
 </html>
