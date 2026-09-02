@@ -750,94 +750,216 @@
 
 
 /* =========================================================
-   BEST BUDDIES ROUTE SECTION POLISH
-   Soft lavender field + small edge dots
+   V4 — WHITE HERO → PURPLE OPTIONS
+   A controlled Best Buddies-style visual pass.
+   No dots. No pale route background. No diagonal card wedges.
    ========================================================= */
+
+/* -------------------------
+   HERO: keep it clean + white
+   ------------------------- */
+
+.program-home-simple .simple-program-hero{
+  background:#fff !important;
+}
+
+.program-home-simple .simple-program-hero-grid{
+  background:#fff !important;
+}
+
+/* Keep the teal/yellow photo backing because it belongs to the image,
+   rather than floating separately around the page. */
+.program-home-simple .simple-program-photo::before{
+  background:var(--bb-teal) !important;
+}
+
+.program-home-simple .simple-program-photo::after{
+  background:var(--bb-yellow) !important;
+}
+
+/* White hero flows directly into a purple wave. */
+.program-home-simple .simple-program-wave{
+  height:66px !important;
+  margin-top:-58px !important;
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 90' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill='%235A3F98' d='M0,54 C170,80 280,29 463,51 C632,72 760,35 934,52 C1100,69 1253,35 1440,57 L1440,90 L0,90 Z'/%3E%3C/svg%3E")
+    center bottom / 100% 100% no-repeat !important;
+}
+
+/* -------------------------
+   OPTIONS: one confident purple field
+   ------------------------- */
 
 .program-home-simple .simple-routes{
   position:relative;
   overflow:hidden;
-  padding:52px 0 82px !important;
-  background:#F6F3FA !important;
+  padding:46px 0 112px !important;
+  background:var(--bb-purple) !important;
 }
 
-/* Tiny Best Buddies-style colour dots.
-   Kept to the outer edges so they feel like brand punctuation,
-   not random decoration. */
+/* Explicitly remove any decorative-dot treatment if an older rule remains. */
 .program-home-simple .simple-routes::before{
+  content:none !important;
+  display:none !important;
+}
+
+/* Purple-to-white wave at the bottom of the options section. */
+.program-home-simple .simple-routes::after{
   content:"";
   position:absolute;
-  inset:0;
+  left:0;
+  right:0;
+  bottom:-1px;
+  height:62px;
   pointer-events:none;
   background:
-    radial-gradient(circle at 3.5% 22%, #5A3F98 0 4px, transparent 4.5px),
-    radial-gradient(circle at 6.3% 58%, #FFD420 0 6px, transparent 6.5px),
-    radial-gradient(circle at 2.3% 82%, #8FD1C4 0 8px, transparent 8.5px),
-    radial-gradient(circle at 95.5% 18%, #F37735 0 3px, transparent 3.5px),
-    radial-gradient(circle at 97.2% 48%, #5A3F98 0 4px, transparent 4.5px),
-    radial-gradient(circle at 94.4% 76%, #FFD420 0 6px, transparent 6.5px),
-    radial-gradient(circle at 98.2% 88%, #8FD1C4 0 8px, transparent 8.5px);
-  opacity:.92;
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 90' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,46 C180,70 310,32 492,50 C662,67 795,32 965,49 C1130,66 1280,31 1440,52 L1440,90 L0,90 Z'/%3E%3C/svg%3E")
+    center bottom / 100% 100% no-repeat;
 }
 
 .program-home-simple .simple-routes .portal-container{
   position:relative;
-  z-index:1;
+  z-index:2;
 }
 
-/* Let the card group sit together on one soft field. */
+.program-home-simple .simple-routes-heading{
+  max-width:800px;
+  margin-bottom:30px !important;
+}
+
+.program-home-simple .simple-routes-heading .section-kicker{
+  color:var(--bb-yellow) !important;
+}
+
+.program-home-simple .simple-routes h2{
+  color:#fff !important;
+}
+
+/* No extra panel behind the 2x2 group. */
 .program-home-simple .simple-route-grid{
-  position:relative;
-  padding:22px;
-  border-radius:34px 34px 70px 34px;
-  background:rgba(255,255,255,.72);
+  padding:0 !important;
+  background:transparent !important;
+  border-radius:0 !important;
+  gap:18px 20px !important;
 }
 
-/* Pull back the "designed portal" feeling a bit.
-   Keep the colour identity, but make the cards quieter. */
+/* -------------------------
+   CARDS: simpler, flatter, clearer
+   ------------------------- */
+
 .program-home-simple .simple-route-card{
-  box-shadow:
-    5px 5px 0 var(--route-shadow),
-    0 8px 20px rgba(48,31,77,.045) !important;
+  --route-accent:var(--bb-purple);
+
+  min-height:190px !important;
+  padding:28px 62px 27px 30px !important;
+  overflow:hidden;
+  border:0 !important;
+  border-top:7px solid var(--route-accent) !important;
+  border-radius:22px 22px 44px 22px !important;
+  background:#fff !important;
+  color:var(--bb-ink) !important;
+  box-shadow:none !important;
+  transition:transform .15s ease !important;
+}
+
+.program-home-simple .route-playbook{
+  --route-accent:#5A3F98;
+}
+
+.program-home-simple .route-calendar{
+  --route-accent:#D1A800;
+}
+
+.program-home-simple .route-resources{
+  --route-accent:#4DAE9F;
+}
+
+.program-home-simple .route-support{
+  --route-accent:#E7652A;
+}
+
+/* Remove the old diagonal/colour-corner construction. */
+.program-home-simple .simple-route-card::before,
+.program-home-simple .simple-route-card::after{
+  content:none !important;
+  display:none !important;
+}
+
+.program-home-simple .route-kicker{
+  color:var(--route-accent) !important;
+}
+
+.program-home-simple .simple-route-card h3{
+  color:var(--bb-ink) !important;
+}
+
+.program-home-simple .simple-route-card p{
+  color:var(--bb-muted) !important;
+}
+
+/* Arrow becomes the only action cue. */
+.program-home-simple .route-arrow{
+  right:27px !important;
+  bottom:24px !important;
+  color:var(--route-accent) !important;
+  font-size:1.55rem !important;
 }
 
 .program-home-simple .simple-route-card:hover,
 .program-home-simple .simple-route-card:focus-visible{
-  transform:translate(-2px,-2px) !important;
-  box-shadow:
-    7px 7px 0 var(--route-shadow),
-    0 11px 24px rgba(48,31,77,.07) !important;
+  transform:translateY(-4px) !important;
+  box-shadow:none !important;
 }
 
-/* Keep the coloured corner treatment, but make it subtler. */
-.program-home-simple .simple-route-card{
-  background:
-    linear-gradient(135deg, #fff 0 73%, var(--route-bg) 73% 100%) !important;
+/* -------------------------
+   SEPTEMBER: back to white
+   ------------------------- */
+
+.program-home-simple .simple-current-month{
+  padding-top:18px !important;
+  background:#fff !important;
 }
 
-/* Slightly more breathing room between heading and navigation field. */
-.program-home-simple .simple-routes-heading{
-  margin-bottom:26px !important;
-}
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
-/* Mobile: keep the colour field, dramatically reduce decorative dots. */
-@media (max-width:720px){
+@media (max-width:940px){
 
-  .program-home-simple .simple-routes{
-    padding:38px 0 58px !important;
+  .program-home-simple .simple-program-wave{
+    height:56px !important;
+    margin-top:-49px !important;
   }
 
-  .program-home-simple .simple-routes::before{
-    background:
-      radial-gradient(circle at 4% 18%, #5A3F98 0 3px, transparent 3.5px),
-      radial-gradient(circle at 96% 31%, #FFD420 0 5px, transparent 5.5px),
-      radial-gradient(circle at 3% 82%, #8FD1C4 0 6px, transparent 6.5px),
-      radial-gradient(circle at 97% 88%, #F37735 0 3px, transparent 3.5px);
-    opacity:.8;
+  .program-home-simple .simple-routes{
+    padding-top:38px !important;
+    padding-bottom:98px !important;
+  }
+}
+
+@media (max-width:720px){
+
+  .program-home-simple .simple-program-wave{
+    height:44px !important;
+    margin-top:-38px !important;
+  }
+
+  .program-home-simple .simple-routes{
+    padding:34px 0 82px !important;
   }
 
   .program-home-simple .simple-route-grid{
-    padding:14px;
-    border-radius:24px 24px 46px 24px;
+    gap:12px !important;
+  }
+
+  .program-home-simple .simple-route-card{
+    min-height:158px !important;
+    padding:24px 54px 23px 23px !important;
+    border-top-width:6px !important;
+    border-radius:18px 18px 34px 18px !important;
+  }
+
+  .program-home-simple .simple-routes::after{
+    height:48px;
   }
 }
