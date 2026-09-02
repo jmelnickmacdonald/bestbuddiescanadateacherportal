@@ -1771,3 +1771,292 @@
     font-size:.92rem !important;
   }
 }
+
+
+
+/* =========================================================
+   V9 — BALANCED POPPINS SCALE
+   ========================================================= */
+
+/* The flexibility note does not need a decorative rule. */
+.epb-page .epb-flex-note{
+  padding-left:0 !important;
+  border-left:0 !important;
+}
+
+/* Keep the main Playbook title on one line on desktop. */
+@media(min-width:901px){
+  .epb-page .epb-hero h1{
+    width:max-content !important;
+    max-width:none !important;
+    white-space:nowrap !important;
+    font-size:clamp(4.25rem,5vw,5.65rem) !important;
+    line-height:.92 !important;
+    letter-spacing:-.06em !important;
+  }
+}
+
+/* Bring the supporting copy closer to the visual weight of the page. */
+.epb-page .epb-lede{
+  max-width:820px !important;
+  font-size:1.16rem !important;
+  line-height:1.62 !important;
+}
+
+.epb-page .epb-flex-note{
+  max-width:840px !important;
+  margin-top:19px !important;
+}
+
+.epb-page .epb-flex-note strong{
+  font-size:1.08rem !important;
+  line-height:1.42 !important;
+}
+
+.epb-page .epb-flex-note span{
+  max-width:820px !important;
+  font-size:1.02rem !important;
+  line-height:1.62 !important;
+}
+
+/* Keep the section headline strong, but not almost as large as the hero. */
+.epb-page #epb-playbook-title{
+  font-size:clamp(2.8rem,3.7vw,4rem) !important;
+  line-height:1 !important;
+}
+
+/* Comfortable supporting sizes across the Playbook. */
+.epb-page .epb-source-note{
+  font-size:1.02rem !important;
+  line-height:1.6 !important;
+}
+
+.epb-page .epb-check-note{
+  font-size:.98rem !important;
+}
+
+.epb-page .epb-stage-copy > small{
+  font-size:1.02rem !important;
+  line-height:1.55 !important;
+}
+
+.epb-page .epb-check{
+  font-size:1.02rem !important;
+  line-height:1.6 !important;
+}
+
+.epb-page .epb-note p{
+  font-size:.98rem !important;
+}
+
+.epb-page .epb-tools strong{
+  font-size:1rem !important;
+}
+
+.epb-page .epb-tools small{
+  font-size:.9rem !important;
+  line-height:1.5 !important;
+}
+
+.epb-page .epb-phase-list p{
+  font-size:.96rem !important;
+}
+
+/* Jump navigation should be easy to scan without becoming oversized. */
+.epb-page .epb-jump-strip a span{
+  font-size:.92rem !important;
+}
+
+.epb-page .epb-jump-strip-inner > span{
+  font-size:.86rem !important;
+}
+
+/* Mobile can wrap the title naturally. */
+@media(max-width:900px){
+  .epb-page .epb-hero h1{
+    width:auto !important;
+    max-width:100% !important;
+    white-space:normal !important;
+  }
+}
+
+@media(max-width:720px){
+  .epb-page .epb-hero h1{
+    font-size:clamp(3.25rem,15vw,4.7rem) !important;
+    line-height:.9 !important;
+  }
+
+  .epb-page .epb-lede{
+    font-size:1.04rem !important;
+  }
+
+  .epb-page .epb-flex-note strong{
+    font-size:1.02rem !important;
+  }
+
+  .epb-page .epb-flex-note span{
+    font-size:.98rem !important;
+  }
+}
+
+
+
+/* =========================================================
+   V10 — EDITORIAL HERO PHOTO + FULL-WIDTH STAGE PATH
+   ========================================================= */
+
+/* HERO: keep the title on one line while giving the page a human visual anchor. */
+@media(min-width:1101px){
+  .epb-page .epb-hero-grid{
+    grid-template-columns:minmax(0,1.16fr) minmax(360px,.62fr) !important;
+    gap:clamp(48px,5vw,78px) !important;
+    align-items:center !important;
+    padding-top:28px !important;
+  }
+
+  .epb-page .epb-hero h1{
+    font-size:clamp(4.1rem,4.65vw,5.35rem) !important;
+  }
+}
+
+.epb-page .epb-hero-photo{
+  position:relative;
+  min-height:360px;
+  align-self:stretch;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  isolation:isolate;
+}
+
+.epb-page .epb-hero-photo img{
+  position:relative;
+  z-index:3;
+  display:block;
+  width:100%;
+  height:345px;
+  object-fit:cover;
+  object-position:center 42%;
+  border-radius:32px 32px 78px 32px;
+  box-shadow:0 18px 42px rgba(46,31,66,.12);
+}
+
+.epb-page .epb-photo-yellow,
+.epb-page .epb-photo-teal{
+  position:absolute;
+  display:block;
+  pointer-events:none;
+}
+
+.epb-page .epb-photo-yellow{
+  z-index:1;
+  width:44%;
+  height:42%;
+  right:-16px;
+  top:6px;
+  border-radius:26px 52px 26px 64px;
+  background:var(--epb-yellow);
+}
+
+.epb-page .epb-photo-teal{
+  z-index:2;
+  width:92%;
+  height:91%;
+  right:-13px;
+  bottom:-12px;
+  border-radius:32px 32px 88px 32px;
+  background:var(--epb-teal);
+}
+
+/* DESKTOP STAGE PATH: use the available width instead of tiny floating pills. */
+@media(min-width:1001px){
+  .epb-page .epb-jump-strip-inner{
+    display:grid !important;
+    grid-template-columns:auto repeat(5,minmax(0,1fr)) !important;
+    gap:12px !important;
+    align-items:center !important;
+    min-height:94px !important;
+  }
+
+  .epb-page .epb-jump-strip-inner > span{
+    margin-right:6px !important;
+    white-space:nowrap !important;
+    font-size:.9rem !important;
+  }
+
+  .epb-page .epb-jump-strip a{
+    width:100% !important;
+    min-width:0 !important;
+    min-height:60px !important;
+    padding:8px 15px 8px 9px !important;
+    justify-content:flex-start !important;
+    gap:11px !important;
+    border-radius:999px !important;
+  }
+
+  .epb-page .epb-jump-strip b{
+    width:42px !important;
+    height:42px !important;
+    font-size:.78rem !important;
+  }
+
+  .epb-page .epb-jump-strip a span{
+    font-size:.94rem !important;
+    line-height:1.2 !important;
+  }
+}
+
+/* Medium screens keep the image but let the title wrap if it needs to. */
+@media(min-width:761px) and (max-width:1100px){
+  .epb-page .epb-hero-grid{
+    grid-template-columns:minmax(0,1fr) minmax(300px,.68fr) !important;
+    gap:36px !important;
+  }
+
+  .epb-page .epb-hero h1{
+    white-space:normal !important;
+  }
+
+  .epb-page .epb-hero-photo{
+    min-height:310px;
+  }
+
+  .epb-page .epb-hero-photo img{
+    height:300px;
+  }
+}
+
+/* Mobile: photo comes after the actions, then stage path remains horizontally scrollable. */
+@media(max-width:760px){
+  .epb-page .epb-hero-grid{
+    grid-template-columns:1fr !important;
+    gap:30px !important;
+  }
+
+  .epb-page .epb-hero-photo{
+    min-height:0;
+  }
+
+  .epb-page .epb-hero-photo img{
+    height:auto;
+    max-height:390px;
+    aspect-ratio:4/3;
+  }
+
+  .epb-page .epb-photo-yellow{
+    right:-8px;
+  }
+
+  .epb-page .epb-photo-teal{
+    right:-8px;
+    bottom:-8px;
+  }
+}
+
+
+/* =========================================================
+   V11 — PLAYBOOK HERO PHOTO
+   ========================================================= */
+.epb-page .epb-hero-photo img{
+  object-position:center 38% !important;
+}
