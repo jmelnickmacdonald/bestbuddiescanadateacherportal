@@ -1,0 +1,889 @@
+/* =========================================================
+   ELEMENTARY & MIDDLE CHAPTER PLAYBOOK — V4
+   ========================================================= */
+
+.epb-page{
+  --epb-purple:#5A3F98;
+  --epb-lilac:#9396CA;
+  --epb-yellow:#FFD420;
+  --epb-teal:#8FD1C4;
+  --epb-orange:#F37735;
+  --epb-ink:#1D1823;
+  --epb-text:#514A58;
+  --epb-soft:#F4F1F8;
+  --epb-line:#E6E0EA;
+  background:#fff;
+  color:var(--epb-text);
+}
+
+/* HERO */
+.epb-hero{
+  padding:20px 0 60px;
+  background:#fff;
+}
+
+.epb-back{
+  display:inline-flex;
+  align-items:center;
+  min-height:36px;
+  color:var(--epb-purple);
+  font-size:.8rem;
+  font-weight:850;
+  text-decoration:none;
+}
+
+.epb-back:hover,
+.epb-back:focus-visible{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.epb-hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(360px,.72fr);
+  gap:clamp(48px,6vw,92px);
+  align-items:center;
+  padding-top:34px;
+}
+
+.epb-kicker,
+.epb-section-kicker,
+.epb-at-glance-label,
+.epb-stage-kicker,
+.epb-tools > span,
+.epb-note > span,
+.epb-access-grid article > span{
+  display:block;
+  font-size:.7rem;
+  font-weight:900;
+  letter-spacing:.075em;
+  line-height:1.2;
+  text-transform:uppercase;
+}
+
+.epb-kicker,
+.epb-section-kicker,
+.epb-at-glance-label,
+.epb-stage-kicker{
+  color:var(--epb-purple);
+}
+
+.epb-hero h1{
+  max-width:720px;
+  margin:10px 0 0;
+  color:var(--epb-ink);
+  font-family:var(--display,"League Spartan",Arial,sans-serif);
+  font-size:clamp(3.35rem,5.7vw,5.9rem);
+  font-weight:850;
+  line-height:.9;
+  letter-spacing:-.045em;
+}
+
+.epb-hero h1 span{color:var(--epb-purple)}
+
+.epb-hero h1::after{
+  content:"";
+  display:block;
+  width:58px;
+  height:7px;
+  margin-top:23px;
+  border-radius:999px;
+  background:var(--epb-teal);
+}
+
+.epb-lede{
+  max-width:690px;
+  margin:19px 0 0;
+  font-size:clamp(1rem,1.08vw,1.1rem);
+  line-height:1.62;
+}
+
+.epb-hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px 15px;
+  margin-top:25px;
+}
+
+.epb-primary-action,
+.epb-secondary-action{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:11px 19px;
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:900;
+  text-decoration:none;
+}
+
+.epb-primary-action{
+  background:var(--epb-purple);
+  color:#fff;
+}
+
+.epb-secondary-action{
+  background:var(--epb-yellow);
+  color:var(--epb-ink);
+}
+
+.epb-text-action{
+  color:var(--epb-purple);
+  font-size:.79rem;
+  font-weight:850;
+  text-decoration:none;
+}
+
+.epb-text-action:hover,
+.epb-text-action:focus-visible{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+/* at a glance: editorial rail, not a card */
+.epb-at-glance{
+  position:relative;
+  padding:4px 0 4px 26px;
+  border-left:6px solid var(--epb-teal);
+}
+
+.epb-at-glance::after{
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  width:78px;
+  height:9px;
+  border-radius:999px;
+  background:var(--epb-yellow);
+}
+
+.epb-at-glance-label{
+  margin-bottom:8px;
+}
+
+.epb-glance-row{
+  display:grid;
+  grid-template-columns:105px minmax(0,1fr);
+  gap:16px;
+  padding:15px 0;
+  border-bottom:1px solid var(--epb-line);
+}
+
+.epb-glance-row strong{
+  color:var(--epb-ink);
+  font-size:.88rem;
+}
+
+.epb-glance-row span{
+  font-size:.81rem;
+  line-height:1.48;
+}
+
+.epb-at-glance > p{
+  margin:15px 0 0;
+  color:#6E6673;
+  font-size:.76rem;
+  line-height:1.5;
+}
+
+/* FAST PATH */
+.epb-fast-path{
+  background:#EEEAF6;
+  border-top:1px solid #E4DDEA;
+  border-bottom:1px solid #E4DDEA;
+}
+
+.epb-fast-inner{
+  display:grid;
+  grid-template-columns:minmax(240px,.72fr) minmax(0,1.55fr);
+  gap:40px;
+  align-items:center;
+  padding-top:28px;
+  padding-bottom:28px;
+}
+
+.epb-fast-path h2{
+  margin:7px 0 0;
+  color:var(--epb-ink);
+  font-family:var(--display,"League Spartan",Arial,sans-serif);
+  font-size:clamp(1.8rem,2.6vw,2.6rem);
+  font-weight:850;
+  line-height:.98;
+}
+
+.epb-fast-links{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:8px;
+}
+
+.epb-fast-links a{
+  min-height:82px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:12px 13px;
+  border-radius:13px 13px 26px 13px;
+  background:#fff;
+  color:var(--epb-ink);
+  text-decoration:none;
+  border-top:5px solid var(--epb-lilac);
+}
+
+.epb-fast-links a:nth-child(2){border-top-color:var(--epb-yellow)}
+.epb-fast-links a:nth-child(3){border-top-color:var(--epb-teal)}
+.epb-fast-links a:nth-child(4){border-top-color:var(--epb-orange)}
+.epb-fast-links a:nth-child(5){border-top-color:var(--epb-lilac)}
+
+.epb-fast-links span{
+  color:var(--epb-purple);
+  font-size:.64rem;
+  font-weight:900;
+  letter-spacing:.07em;
+}
+
+.epb-fast-links strong{
+  margin-top:5px;
+  font-size:.78rem;
+  line-height:1.25;
+}
+
+/* PLAYBOOK */
+.epb-playbook{
+  position:relative;
+  padding:66px 0 78px;
+  background:var(--epb-purple);
+}
+
+.epb-playbook-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:42px;
+  margin-bottom:28px;
+}
+
+.epb-playbook-head .epb-section-kicker{color:var(--epb-yellow)}
+
+.epb-playbook-head h2{
+  max-width:760px;
+  margin:7px 0 0;
+  color:#fff;
+  font-family:var(--display,"League Spartan",Arial,sans-serif);
+  font-size:clamp(2.55rem,3.8vw,3.9rem);
+  font-weight:850;
+  line-height:.96;
+  letter-spacing:-.03em;
+}
+
+.epb-playbook-head > div:first-child > p{
+  max-width:680px;
+  margin:12px 0 0;
+  color:rgba(255,255,255,.8);
+  font-size:.82rem;
+  line-height:1.5;
+}
+
+.epb-progress{
+  flex:0 0 250px;
+  color:#fff;
+}
+
+.epb-progress-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.epb-progress-top strong{
+  font-size:.74rem;
+}
+
+.epb-progress-top button{
+  min-height:36px;
+  padding:7px 10px;
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:999px;
+  background:transparent;
+  color:#fff;
+  font:inherit;
+  font-size:.68rem;
+  font-weight:850;
+  cursor:pointer;
+}
+
+.epb-progress-track{
+  height:7px;
+  margin-top:9px;
+  overflow:hidden;
+  border-radius:999px;
+  background:rgba(255,255,255,.22);
+}
+
+.epb-progress-track span{
+  display:block;
+  width:0;
+  height:100%;
+  border-radius:inherit;
+  background:var(--epb-yellow);
+  transition:width .2s ease;
+}
+
+.epb-progress small{
+  display:block;
+  margin-top:6px;
+  color:rgba(255,255,255,.7);
+  font-size:.65rem;
+}
+
+/* Stage rows */
+.epb-stage-list{
+  display:grid;
+  gap:10px;
+  max-width:1160px;
+  margin:0 auto;
+}
+
+.epb-stage{
+  overflow:hidden;
+  border-radius:16px 16px 34px 16px;
+  background:#fff;
+}
+
+.epb-stage summary{
+  list-style:none;
+  display:grid;
+  grid-template-columns:56px minmax(0,1fr) auto 36px;
+  gap:16px;
+  align-items:center;
+  min-height:96px;
+  padding:16px 19px;
+  cursor:pointer;
+}
+
+.epb-stage summary::-webkit-details-marker{display:none}
+
+.epb-stage summary:focus-visible{
+  outline:4px solid var(--epb-yellow);
+  outline-offset:-4px;
+}
+
+.epb-stage-number{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#EEEAF6;
+  color:var(--epb-purple);
+  font-family:var(--display,"League Spartan",Arial,sans-serif);
+  font-size:1.08rem;
+  font-weight:900;
+}
+
+.epb-stage:nth-child(2) .epb-stage-number{background:#FFF4C4}
+.epb-stage:nth-child(3) .epb-stage-number{background:#DFF2EE}
+.epb-stage:nth-child(4) .epb-stage-number{background:#FDE8DD}
+.epb-stage:nth-child(5) .epb-stage-number{background:#EEEAF6}
+
+.epb-stage-copy{min-width:0}
+
+.epb-stage-kicker{
+  margin-bottom:3px;
+  font-size:.63rem;
+}
+
+.epb-stage-copy > strong{
+  display:block;
+  color:var(--epb-ink);
+  font-family:var(--display,"League Spartan",Arial,sans-serif);
+  font-size:clamp(1.3rem,1.7vw,1.65rem);
+  font-weight:850;
+  line-height:1;
+}
+
+.epb-stage-copy > small{
+  display:block;
+  margin-top:5px;
+  color:var(--epb-text);
+  font-size:.77rem;
+  line-height:1.4;
+}
+
+.epb-stage-count{
+  padding:6px 9px;
+  border-radius:999px;
+  background:#F4F1F8;
+  color:var(--epb-purple);
+  font-size:.65rem;
+  font-weight:900;
+}
+
+.epb-stage-toggle{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:var(--epb-yellow);
+  color:var(--epb-ink);
+  font-size:1.25rem;
+  line-height:1;
+  transition:transform .15s ease;
+}
+
+.epb-stage[open] .epb-stage-toggle{transform:rotate(45deg)}
+
+.epb-stage-body{
+  display:grid;
+  grid-template-columns:minmax(0,1.55fr) minmax(270px,.72fr);
+  gap:34px;
+  padding:0 24px 28px 91px;
+  border-top:1px solid var(--epb-line);
+}
+
+.epb-stage-main{
+  padding-top:22px;
+}
+
+.epb-stage-main h3{
+  margin:0 0 12px;
+  color:var(--epb-ink);
+  font-family:var(--display,"League Spartan",Arial,sans-serif);
+  font-size:1.25rem;
+  font-weight:850;
+}
+
+.epb-check{
+  display:grid;
+  grid-template-columns:21px minmax(0,1fr);
+  gap:10px;
+  align-items:start;
+  padding:9px 0;
+  color:var(--epb-text);
+  font-size:.84rem;
+  line-height:1.48;
+  cursor:pointer;
+}
+
+.epb-check input{
+  appearance:none;
+  width:19px;
+  height:19px;
+  margin:1px 0 0;
+  border:2px solid var(--epb-purple);
+  border-radius:5px;
+  background:#fff;
+}
+
+.epb-check input:checked{
+  background:
+    var(--epb-purple)
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 12.5l4.2 4.2L19 7' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center/14px 14px no-repeat;
+}
+
+.epb-check input:focus-visible{
+  outline:3px solid var(--epb-yellow);
+  outline-offset:2px;
+}
+
+.epb-check:has(input:checked) span{
+  color:#7A727F;
+  text-decoration:line-through;
+}
+
+.epb-note{
+  margin-top:16px;
+  padding:14px 16px;
+  border-left:5px solid var(--epb-teal);
+  border-radius:0 12px 24px 0;
+  background:#EEF8F5;
+}
+
+.epb-note-yellow{
+  border-left-color:var(--epb-yellow);
+  background:#FFF9DE;
+}
+
+.epb-note > span{
+  color:var(--epb-purple);
+  font-size:.62rem;
+}
+
+.epb-note p{
+  margin:5px 0 0;
+  font-size:.76rem;
+  line-height:1.48;
+}
+
+/* Builder callout */
+.epb-builder-callout{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:26px;
+  margin-top:20px;
+  padding:20px 22px;
+  border-radius:18px 18px 38px 18px;
+  background:var(--epb-yellow);
+}
+
+.epb-builder-callout > div > span{
+  color:var(--epb-purple);
+  font-size:.63rem;
+  font-weight:900;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.epb-builder-callout h4{
+  margin:4px 0 0;
+  color:var(--epb-ink);
+  font-family:var(--display,"League Spartan",Arial,sans-serif);
+  font-size:1.55rem;
+  font-weight:850;
+}
+
+.epb-builder-callout p{
+  max-width:620px;
+  margin:6px 0 0;
+  color:#423A45;
+  font-size:.75rem;
+  line-height:1.45;
+}
+
+.epb-builder-callout a{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:9px 14px;
+  border-radius:999px;
+  background:var(--epb-purple);
+  color:#fff;
+  font-size:.71rem;
+  font-weight:900;
+  text-decoration:none;
+}
+
+/* Accessibility examples */
+.epb-access-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:18px;
+}
+
+.epb-access-grid article{
+  padding:16px;
+  border-radius:14px 14px 28px 14px;
+  background:#F4F1F8;
+}
+
+.epb-access-grid article:nth-child(2){
+  background:#EEF8F5;
+}
+
+.epb-access-grid article > span{
+  color:var(--epb-purple);
+  font-size:.61rem;
+}
+
+.epb-access-grid strong{
+  display:block;
+  margin-top:4px;
+  color:var(--epb-ink);
+  font-size:.8rem;
+  line-height:1.35;
+}
+
+.epb-access-grid p{
+  margin:6px 0 0;
+  font-size:.72rem;
+  line-height:1.45;
+}
+
+/* Useful links */
+.epb-tools{
+  align-self:start;
+  margin-top:22px;
+  padding:17px 18px 15px;
+  border-radius:16px 16px 32px 16px;
+  background:#F4F1F8;
+}
+
+.epb-tools > span{
+  margin-bottom:6px;
+  color:var(--epb-purple);
+  font-size:.61rem;
+}
+
+.epb-tools a{
+  position:relative;
+  display:block;
+  padding:10px 24px 10px 0;
+  border-bottom:1px solid #DCD5E4;
+  color:var(--epb-ink);
+  text-decoration:none;
+}
+
+.epb-tools a:last-child{border-bottom:0}
+
+.epb-tools strong{
+  display:block;
+  font-size:.78rem;
+  font-weight:900;
+}
+
+.epb-tools small{
+  display:block;
+  margin-top:3px;
+  color:var(--epb-text);
+  font-size:.68rem;
+  line-height:1.38;
+}
+
+.epb-tools b{
+  position:absolute;
+  top:12px;
+  right:0;
+  color:var(--epb-purple);
+}
+
+.epb-tools a:hover strong,
+.epb-tools a:focus-visible strong{
+  color:var(--epb-purple);
+}
+
+/* NEXT */
+.epb-next{
+  padding:54px 0 58px;
+  background:#fff;
+}
+
+.epb-next-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:58px;
+  align-items:center;
+}
+
+.epb-next h2{
+  margin:7px 0 0;
+  color:var(--epb-ink);
+  font-family:var(--display,"League Spartan",Arial,sans-serif);
+  font-size:clamp(2.1rem,3vw,3rem);
+  font-weight:850;
+  line-height:.98;
+  letter-spacing:-.025em;
+}
+
+.epb-next-copy p{
+  max-width:560px;
+  margin:13px 0 0;
+  font-size:.82rem;
+  line-height:1.52;
+}
+
+.epb-next-links{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  border-top:1px solid var(--epb-line);
+  border-bottom:1px solid var(--epb-line);
+}
+
+.epb-next-links a{
+  position:relative;
+  min-height:116px;
+  padding:20px 34px 20px 18px;
+  border-right:1px solid var(--epb-line);
+  color:var(--epb-ink);
+  text-decoration:none;
+}
+
+.epb-next-links a:last-child{border-right:0}
+
+.epb-next-links span{
+  display:block;
+  color:var(--epb-purple);
+  font-size:.61rem;
+  font-weight:900;
+  letter-spacing:.07em;
+}
+
+.epb-next-links strong{
+  display:block;
+  margin-top:5px;
+  font-size:.88rem;
+}
+
+.epb-next-links b{
+  position:absolute;
+  right:16px;
+  bottom:20px;
+  color:var(--epb-purple);
+}
+
+/* RESPONSIVE */
+@media (max-width:1040px){
+  .epb-hero-grid{
+    grid-template-columns:1fr;
+    gap:36px;
+  }
+
+  .epb-at-glance{max-width:760px}
+
+  .epb-fast-inner{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .epb-fast-links{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .epb-playbook-head{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .epb-progress{
+    width:100%;
+    max-width:420px;
+  }
+
+  .epb-stage-body{
+    grid-template-columns:1fr;
+    gap:3px;
+  }
+
+  .epb-tools{
+    margin-top:4px;
+  }
+
+  .epb-next-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+}
+
+@media (max-width:720px){
+  .epb-hero{
+    padding:16px 0 48px;
+  }
+
+  .epb-hero-grid{
+    padding-top:24px;
+  }
+
+  .epb-hero h1{
+    font-size:clamp(3rem,14vw,4.2rem);
+  }
+
+  .epb-hero-actions{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .epb-primary-action,
+  .epb-secondary-action{
+    width:100%;
+  }
+
+  .epb-at-glance{
+    padding-left:18px;
+  }
+
+  .epb-fast-inner{
+    padding-top:24px;
+    padding-bottom:24px;
+  }
+
+  .epb-fast-links{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .epb-playbook{
+    padding:52px 0 62px;
+  }
+
+  .epb-stage summary{
+    grid-template-columns:46px minmax(0,1fr) 30px;
+    gap:10px;
+    min-height:88px;
+    padding:14px 14px 14px 12px;
+  }
+
+  .epb-stage-number{
+    width:42px;
+    height:42px;
+    font-size:.94rem;
+  }
+
+  .epb-stage-count{display:none}
+
+  .epb-stage-copy > small{display:none}
+
+  .epb-stage-toggle{
+    width:30px;
+    height:30px;
+  }
+
+  .epb-stage-body{
+    padding:0 16px 22px;
+  }
+
+  .epb-stage-main{
+    padding-top:18px;
+  }
+
+  .epb-builder-callout{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .epb-builder-callout a{
+    width:100%;
+  }
+
+  .epb-access-grid{
+    grid-template-columns:1fr;
+  }
+
+  .epb-next{
+    padding:46px 0 50px;
+  }
+
+  .epb-next-links{
+    grid-template-columns:1fr;
+  }
+
+  .epb-next-links a{
+    min-height:74px;
+    border-right:0;
+    border-bottom:1px solid var(--epb-line);
+  }
+
+  .epb-next-links a:last-child{border-bottom:0}
+}
+
+@media (max-width:430px){
+  .epb-fast-links{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .epb-stage-toggle,
+  .epb-progress-track span{
+    transition:none;
+  }
+}
