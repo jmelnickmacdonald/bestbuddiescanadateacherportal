@@ -2198,3 +2198,138 @@
     padding-top:20px !important;
   }
 }
+
+/* =========================================================
+   ELEMENTARY + MIDDLE LANDING · ARCHITECTURE + TYPE SWEEP
+   Append to the BOTTOM of program-home-simple.css
+   ========================================================= */
+
+/* One consistent font system */
+.program-home-simple{
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:18px;
+  line-height:1.6;
+}
+
+.program-home-simple a,
+.program-home-simple p,
+.program-home-simple span,
+.program-home-simple small,
+.program-home-simple strong,
+.program-home-simple button{
+  font-family:"Poppins",Arial,sans-serif;
+}
+
+.program-home-simple h1,
+.program-home-simple h2,
+.program-home-simple h3{
+  font-family:"League Spartan",Arial,sans-serif !important;
+}
+
+/* Back link + useful UI copy should never fall tiny */
+.program-home-simple .program-back{
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:.92rem !important;
+  font-weight:800 !important;
+}
+
+.program-home-simple .program-home-kicker,
+.program-home-simple .section-kicker,
+.program-home-simple .route-kicker,
+.program-home-simple .simple-current-label,
+.program-home-simple .simple-current-eyebrow{
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:.78rem !important;
+  line-height:1.25 !important;
+}
+
+.program-home-simple .simple-program-lede{
+  font-size:1.08rem !important;
+  line-height:1.65 !important;
+}
+
+/* Route cards */
+.program-home-simple .simple-route-card h3{
+  font-family:"League Spartan",Arial,sans-serif !important;
+  font-size:1.55rem !important;
+  line-height:1 !important;
+}
+
+.program-home-simple .simple-route-card p{
+  font-size:.98rem !important;
+  line-height:1.58 !important;
+}
+
+.program-home-simple .route-help{
+  font-size:.9rem !important;
+  line-height:1.52 !important;
+}
+
+.program-home-simple .route-action{
+  font-size:.9rem !important;
+}
+
+/* Current month becomes the clear 'right now' layer */
+.program-home-simple .simple-current-eyebrow{
+  display:block;
+  margin-bottom:8px;
+  color:#8FD1C4;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.program-home-simple .simple-current-label{
+  margin-bottom:7px;
+  color:#FFD420 !important;
+}
+
+.program-home-simple .simple-current-month p{
+  font-size:1rem !important;
+  line-height:1.62 !important;
+}
+
+.program-home-simple .simple-current-actions{
+  min-width:215px;
+}
+
+.program-home-simple .simple-current-button{
+  width:100%;
+  min-height:48px !important;
+  font-size:.9rem !important;
+}
+
+.program-home-simple .simple-current-button-secondary{
+  background:#fff !important;
+  color:#5A3F98 !important;
+  box-shadow:none !important;
+}
+
+.program-home-simple .simple-all-months{
+  font-size:.86rem !important;
+}
+
+/* Quick Guides */
+.program-home-simple .quick-help-head p,
+.program-home-simple .quick-help-link > div > span:last-child,
+.program-home-simple .program-support-inner p{
+  font-size:.98rem !important;
+  line-height:1.6 !important;
+}
+
+.program-home-simple .quick-help-link strong{
+  font-family:"League Spartan",Arial,sans-serif !important;
+  font-size:1.3rem !important;
+  line-height:1.05 !important;
+}
+
+@media(max-width:680px){
+  .program-home-simple{
+    font-size:17px;
+  }
+
+  .program-home-simple .simple-current-actions{
+    width:100%;
+    min-width:0;
+  }
+}
