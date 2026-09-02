@@ -2060,3 +2060,191 @@
 .epb-page .epb-hero-photo img{
   object-position:center 38% !important;
 }
+
+
+
+/* =========================================================
+   V12 — FINAL TYPE SYSTEM + RIGHT-SIDE HERO PHOTO
+   Display: League Spartan
+   Body/UI: Poppins
+   ========================================================= */
+
+.epb-page,
+.epb-page p,
+.epb-page li,
+.epb-page small,
+.epb-page span,
+.epb-page label,
+.epb-page button,
+.epb-page input,
+.epb-page a,
+.epb-page summary{
+  font-family:"Poppins", Arial, sans-serif !important;
+}
+
+.epb-page h1,
+.epb-page h2,
+.epb-page h3,
+.epb-page h4,
+.epb-page .epb-stage-copy > strong,
+.epb-page .epb-builder-callout h4{
+  font-family:"League Spartan","Poppins",Arial,sans-serif !important;
+}
+
+/* ---------------------------------------------------------
+   HERO
+   --------------------------------------------------------- */
+@media(min-width:1001px){
+  .epb-page .epb-hero-grid{
+    display:grid !important;
+    grid-template-columns:minmax(0,1.08fr) minmax(410px,.72fr) !important;
+    grid-template-areas:"copy photo" !important;
+    gap:clamp(52px,6vw,96px) !important;
+    align-items:center !important;
+    padding-top:30px !important;
+    padding-bottom:58px !important;
+  }
+
+  .epb-page .epb-hero-grid > div:first-child{
+    grid-area:copy !important;
+    min-width:0 !important;
+  }
+
+  .epb-page .epb-hero-photo{
+    grid-area:photo !important;
+    width:100% !important;
+    min-height:380px !important;
+    align-self:center !important;
+  }
+
+  .epb-page .epb-hero-photo img{
+    width:100% !important;
+    height:370px !important;
+    object-fit:cover !important;
+    object-position:center 38% !important;
+  }
+
+  .epb-page .epb-hero h1{
+    width:max-content !important;
+    max-width:none !important;
+    white-space:nowrap !important;
+    font-family:"League Spartan","Poppins",Arial,sans-serif !important;
+    font-size:clamp(4.2rem,4.8vw,5.6rem) !important;
+    font-weight:800 !important;
+    line-height:.9 !important;
+    letter-spacing:-.045em !important;
+  }
+}
+
+/* Intro copy: same size throughout. */
+.epb-page .epb-lede,
+.epb-page .epb-flex-note strong,
+.epb-page .epb-flex-note span{
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:1.08rem !important;
+  line-height:1.62 !important;
+}
+
+.epb-page .epb-lede{
+  max-width:820px !important;
+  font-weight:400 !important;
+}
+
+.epb-page .epb-flex-note{
+  max-width:840px !important;
+  margin-top:18px !important;
+  padding:0 !important;
+  border:0 !important;
+}
+
+.epb-page .epb-flex-note strong{
+  display:block !important;
+  font-weight:700 !important;
+}
+
+.epb-page .epb-flex-note span{
+  display:block !important;
+  margin-top:2px !important;
+  font-weight:400 !important;
+}
+
+/* Buttons stay Poppins. */
+.epb-page .epb-primary-action,
+.epb-page .epb-secondary-action{
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:1rem !important;
+  font-weight:700 !important;
+}
+
+/* ---------------------------------------------------------
+   SECTION / STAGE TYPOGRAPHY
+   --------------------------------------------------------- */
+.epb-page #epb-playbook-title{
+  font-family:"League Spartan","Poppins",Arial,sans-serif !important;
+  font-weight:800 !important;
+  letter-spacing:-.025em !important;
+}
+
+.epb-page .epb-stage-copy > strong{
+  font-family:"League Spartan","Poppins",Arial,sans-serif !important;
+  font-weight:800 !important;
+  letter-spacing:-.015em !important;
+}
+
+.epb-page .epb-stage-copy > small,
+.epb-page .epb-source-note,
+.epb-page .epb-check-note,
+.epb-page .epb-check,
+.epb-page .epb-note p{
+  font-family:"Poppins",Arial,sans-serif !important;
+}
+
+/* The year-path labels are UI, so keep them Poppins. */
+.epb-page .epb-jump-strip a span,
+.epb-page .epb-jump-strip b,
+.epb-page .epb-jump-strip-inner > span{
+  font-family:"Poppins",Arial,sans-serif !important;
+}
+
+/* Tablet */
+@media(min-width:761px) and (max-width:1000px){
+  .epb-page .epb-hero-grid{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) minmax(300px,.72fr) !important;
+    grid-template-areas:"copy photo" !important;
+    gap:34px !important;
+  }
+
+  .epb-page .epb-hero-grid > div:first-child{grid-area:copy !important}
+  .epb-page .epb-hero-photo{grid-area:photo !important}
+
+  .epb-page .epb-hero h1{
+    font-family:"League Spartan","Poppins",Arial,sans-serif !important;
+    font-size:clamp(3.5rem,7vw,4.5rem) !important;
+    white-space:normal !important;
+  }
+}
+
+/* Mobile: stack photo after copy. */
+@media(max-width:760px){
+  .epb-page .epb-hero-grid{
+    grid-template-columns:1fr !important;
+    grid-template-areas:
+      "copy"
+      "photo" !important;
+  }
+
+  .epb-page .epb-hero-grid > div:first-child{grid-area:copy !important}
+  .epb-page .epb-hero-photo{grid-area:photo !important}
+
+  .epb-page .epb-hero h1{
+    font-family:"League Spartan","Poppins",Arial,sans-serif !important;
+  }
+
+  .epb-page .epb-lede,
+  .epb-page .epb-flex-note strong,
+  .epb-page .epb-flex-note span{
+    font-size:1rem !important;
+    line-height:1.6 !important;
+  }
+}
