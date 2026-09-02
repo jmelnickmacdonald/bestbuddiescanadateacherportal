@@ -1212,3 +1212,146 @@
     padding:34px 0 38px !important;
   }
 }
+
+
+/* =========================================================
+   V7 — CALMER BEST BUDDIES COLOUR BALANCE
+   Purple is the main colour moment.
+   Lilac carries the current-month section.
+   Yellow + teal return to accents instead of full backgrounds.
+   ========================================================= */
+
+/* Chapter Playbook: switch the extra edge from yellow to BBC lilac. */
+.program-home-simple .route-playbook{
+  border-left:8px solid #9396CA !important;
+}
+
+/* ---------------------------------------------------------
+   CURRENT MONTH: soft lilac instead of full yellow
+   --------------------------------------------------------- */
+
+.program-home-simple .simple-routes::after{
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 90' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill='%23EEEAF6' d='M0,46 C180,70 310,32 492,50 C662,67 795,32 965,49 C1130,66 1280,31 1440,52 L1440,90 L0,90 Z'/%3E%3C/svg%3E")
+    center bottom / 100% 100% no-repeat !important;
+}
+
+.program-home-simple .simple-current-month{
+  padding:0 0 56px !important;
+  background:#EEEAF6 !important;
+}
+
+.program-home-simple .simple-current-month-inner{
+  background:transparent !important;
+  color:#1D1823 !important;
+}
+
+.program-home-simple .simple-current-label{
+  color:#5A3F98 !important;
+}
+
+.program-home-simple .simple-current-month h2{
+  color:#1D1823 !important;
+}
+
+.program-home-simple .simple-current-month p{
+  color:rgba(29,24,35,.74) !important;
+}
+
+/* Yellow stays, but as a small Best Buddies accent. */
+.program-home-simple .simple-current-button{
+  background:#FFD420 !important;
+  color:#1D1823 !important;
+}
+
+.program-home-simple .simple-all-months{
+  color:#5A3F98 !important;
+}
+
+/* Soft lilac → white */
+.program-home-simple .simple-current-month::after{
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 90' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,47 C165,68 300,36 470,51 C635,66 775,34 945,50 C1110,66 1280,35 1440,54 L1440,90 L0,90 Z'/%3E%3C/svg%3E")
+    center bottom / 100% 100% no-repeat !important;
+}
+
+/* ---------------------------------------------------------
+   QUICK GUIDES: white again, teal becomes structural accent
+   --------------------------------------------------------- */
+
+.program-home-simple .quick-help{
+  padding:58px 0 64px !important;
+  background:#fff !important;
+}
+
+.program-home-simple .quick-help-head{
+  padding-left:20px !important;
+  border-left:6px solid #8FD1C4 !important;
+}
+
+.program-home-simple .quick-help-head .section-kicker{
+  color:#5A3F98 !important;
+}
+
+.program-home-simple .quick-help-head h2{
+  color:#1D1823 !important;
+}
+
+.program-home-simple .quick-help-head p{
+  color:#665F6D !important;
+}
+
+.program-home-simple .quick-help-all{
+  color:#5A3F98 !important;
+}
+
+/* Guide cards stay white with just restrained edge colour. */
+.program-home-simple .quick-help-link{
+  background:#fff !important;
+  box-shadow:0 8px 20px rgba(48,31,77,.05) !important;
+}
+
+.program-home-simple .quick-help-link:nth-child(1){
+  --guide-accent:#9396CA !important;
+}
+
+.program-home-simple .quick-help-link:nth-child(2){
+  --guide-accent:#FFD420 !important;
+}
+
+.program-home-simple .quick-help-link:nth-child(3){
+  --guide-accent:#8FD1C4 !important;
+}
+
+/* ---------------------------------------------------------
+   SUPPORT: clean white ending, no extra orange band
+   --------------------------------------------------------- */
+
+.program-home-simple .program-support-band{
+  background:#fff !important;
+  border-top:1px solid #E8E3EE !important;
+}
+
+.program-home-simple .program-support-inner{
+  background:transparent !important;
+}
+
+.program-home-simple .program-support-inner h2{
+  color:#5A3F98 !important;
+}
+
+.program-home-simple .program-support-inner p{
+  color:#665F6D !important;
+}
+
+.program-home-simple .program-support-button{
+  background:#5A3F98 !important;
+  color:#fff !important;
+}
+
+/* Mobile */
+@media (max-width:720px){
+  .program-home-simple .route-playbook{
+    border-left:6px solid #9396CA !important;
+  }
+}
