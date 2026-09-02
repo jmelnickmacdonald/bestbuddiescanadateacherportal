@@ -1264,6 +1264,193 @@ body.em-month-page{
   .em-priority h3{font-size:1.4rem !important}
 }
 
+
+
+/* =========================================================
+   OCTOBER · SIMPLIFIED MONTH PASS
+   Less phase language, shorter page, same Teacher Hub system.
+   ========================================================= */
+
+.em-hero{
+  padding-bottom:58px !important;
+}
+
+.em-hero-grid{
+  grid-template-columns:minmax(0,1.06fr) minmax(330px,.48fr) !important;
+  gap:52px !important;
+}
+
+.em-display{
+  max-width:650px !important;
+}
+
+.em-display span{
+  display:inline !important;
+}
+
+.em-guide-note{
+  position:relative;
+  padding:25px 26px 26px;
+  border-radius:24px 24px 52px 24px;
+  background:#EEEAF8;
+  overflow:hidden;
+}
+
+.em-guide-note::before{
+  content:"";
+  position:absolute;
+  width:70px;
+  height:70px;
+  top:-24px;
+  right:-18px;
+  border-radius:50%;
+  background:#FFD420;
+}
+
+.em-guide-note .em-phase-label,
+.em-guide-note p,
+.em-guide-note a{
+  position:relative;
+  z-index:1;
+}
+
+.em-guide-note p{
+  margin:10px 0 0;
+  font-size:.94rem;
+  line-height:1.58;
+}
+
+.em-guide-note a{
+  display:inline-flex;
+  margin-top:14px;
+  color:#5A3F98;
+  font-size:.84rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.em-guide-note a:hover,
+.em-guide-note a:focus-visible{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.em-priorities{
+  padding-top:66px !important;
+  padding-bottom:70px !important;
+}
+
+.em-section-head{
+  margin-bottom:26px !important;
+}
+
+.em-section-intro{
+  max-width:430px !important;
+}
+
+.em-priority-grid.three{
+  grid-template-columns:1fr !important;
+}
+
+.em-now-note{
+  margin-top:14px !important;
+}
+
+.em-meeting{
+  padding-top:66px !important;
+  padding-bottom:72px !important;
+}
+
+.em-meeting-head{
+  margin-bottom:24px;
+}
+
+.em-activity-grid{
+  margin-top:0 !important;
+}
+
+.em-timely{
+  margin-top:14px !important;
+}
+
+.em-plan-cta{
+  margin-top:20px !important;
+}
+
+/* Keep the activity cards useful but slightly tighter. */
+.em-activity{
+  min-height:285px !important;
+}
+
+.em-activity p{
+  font-size:.92rem !important;
+}
+
+.em-calendar-bridge{
+  padding:24px 0 !important;
+}
+
+/* Replace the oversized resource section with a compact bridge. */
+.em-useful-strip{
+  padding:30px 0;
+  background:#fff;
+  border-bottom:1px solid #E5E0E8;
+}
+
+.em-useful-strip-inner{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:26px;
+  align-items:center;
+}
+
+.em-useful-strip strong{
+  color:#211B28;
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:1.45rem;
+  font-weight:850;
+  line-height:1;
+}
+
+.em-useful-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  justify-content:flex-end;
+}
+
+.em-useful-links a{
+  display:inline-flex;
+  min-height:42px;
+  align-items:center;
+  padding:8px 14px;
+  border-radius:999px;
+  background:#F1EEF7;
+  color:#5A3F98;
+  font-size:.83rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.em-support{
+  padding-top:34px !important;
+}
+
+@media(max-width:780px){
+  .em-useful-strip-inner{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .em-useful-links{
+    justify-content:flex-start;
+  }
+
+  .em-guide-note{
+    padding:22px;
+  }
+}
+
 </style>
 
   <script src="access.js" defer></script>
@@ -1318,16 +1505,20 @@ body.em-month-page{
 
       <div class="em-hero-grid">
         <div>
-          <span class="em-kicker">Elementary &amp; Middle School</span>
           <span class="em-month-pill">October</span>
-          <h1 class="em-display" id="em-title">Getting to <span>Know You</span></h1>
+          <h1 class="em-display" id="em-title">Getting to<br><span>Know You</span></h1>
           <p class="em-hero-lede">October is a good time to bring people together, learn about one another, and let the first few meetings feel comfortable rather than overplanned.</p>
         </div>
 
-        <aside class="em-phase-card" aria-label="Program Guide context for October">
-          <span class="em-phase-label">Program Guide thread</span>
-          <h2>Phase One · Getting to Know Your Buddy</h2>
-          <p>The Program Guide continues through <strong>Weeks 2–4: Breaking the Ice, Understanding Each Other, and Discovering Common Interests</strong>. Use the sequence as a backbone, not a deadline.</p>
+        <aside class="em-guide-note" aria-label="Program Guide reference">
+          <span class="em-phase-label">Program Guide reference</span>
+          <p>
+            October continues the early getting-to-know-you activities around
+            <strong>breaking the ice, understanding each other, and common interests.</strong>
+          </p>
+          <a href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link"
+             target="_blank"
+             rel="noopener">Open Program Guide ↗</a>
         </aside>
       </div>
     </div>
@@ -1352,10 +1543,10 @@ body.em-month-page{
           <span class="em-section-kicker">October at a glance</span>
           <h2 class="em-section-title" id="priorities-title">What matters this month.</h2>
         </div>
-        <p class="em-section-intro">The Playbook holds the whole year. These are the few things worth keeping close in October.</p>
+        <p class="em-section-intro">A few things to keep moving this month.</p>
       </div>
 
-      <div class="em-priority-grid ">
+      <div class="em-priority-grid three">
         <article class="em-priority">
           <span class="em-number">01</span>
           <h3>Bring the chapter together</h3>
@@ -1380,7 +1571,7 @@ body.em-month-page{
 
       <div class="em-now-note">
         <b>✓</b>
-        <p>The goal is connection, not getting through every activity. Choose what fits the people in front of you.</p>
+        <p>Choose what fits your group. You do not need to do everything at once.</p>
       </div>
     </div>
   </section>
@@ -1392,13 +1583,7 @@ body.em-month-page{
           <span class="em-section-kicker">Good October choices</span>
           <h2 class="em-meeting-title" id="meeting-title">Names, interests, and common ground.</h2>
         </div>
-        <p class="em-meeting-copy">October carries the rest of Phase One naturally: break the ice, learn more about one another, then look for common interests.</p>
-      </div>
-
-      <div class="em-phase-thread" aria-label="October Program Guide focus">
-        <span class="current">Week 2 · Breaking the Ice</span>
-<span class="">Week 3 · Understanding Each Other</span>
-<span class="">Week 4 · Common Interests</span>
+        <p class="em-meeting-copy">October is a good time for easy activities that help members learn more about one another and find things they have in common.</p>
       </div>
 
       <div class="em-activity-grid">
@@ -1407,21 +1592,21 @@ body.em-month-page{
           <h3>My Best Buddies Flag</h3>
           <p>Create a personal flag, share it with a partner, and use listening to help introduce one another.</p>
           <div class="em-meta"><span>30 min</span><span>Pairs</span><span>Assistive-device option</span></div>
-          <a href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener">Open source ↗</a>
+          <a href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener">Open Program Guide ↗</a>
         </article>
 <article class="em-activity">
           <span class="em-source">Program Guide · Week 3</span>
           <h3>Best Buddies Bingo</h3>
           <p>Use the guide's bingo sheet to learn about one another and notice shared interests across the chapter.</p>
           <div class="em-meta"><span>25 min</span><span>Social</span><span>Partner support</span></div>
-          <a href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener">Open source ↗</a>
+          <a href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener">Open Program Guide ↗</a>
         </article>
 <article class="em-activity">
           <span class="em-source">Program Guide · Week 4</span>
           <h3>I'm Seeking Common Ground</h3>
           <p>Explore shared preferences and experiences. The Program Guide includes a lower-movement replacement when this format isn't suitable.</p>
           <div class="em-meta"><span>25 min</span><span>Common interests</span><span>Guide adaptation</span></div>
-          <a href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener">Open source ↗</a>
+          <a href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener">Open Program Guide ↗</a>
         </article>
       </div>
 
@@ -1431,13 +1616,13 @@ body.em-month-page{
           <h3>Pumpkin Decorating</h3>
           <p>The October Program Calendar includes pumpkin decorating with paint, stickers, markers, craft supplies, or pre-cut designs as alternatives to carving.</p>
         </div>
-        <a href="calendar.html">See the source →</a>
+        <a href="calendar.html">View October Calendar →</a>
       </div>
 
       <div class="em-plan-cta">
         <div>
-          <strong>Want October choices without building from scratch?</strong>
-          <p>Open Plan a Meeting with October selected. Browse recommended activities or let the Activity Builder make a four-part plan around your time and group.</p>
+          <strong>Ready to plan the meeting?</strong>
+          <p>Open Plan a Meeting with October already selected, then use the Activity Builder, choose the pieces yourself, or start with a quick plan.</p>
         </div>
         <a class="em-plan-button" href="elementary-gathering.html?month=october">Plan a October Meeting →</a>
       </div>
@@ -1454,26 +1639,15 @@ body.em-month-page{
     </div>
   </section>
 
-  <section class="em-resources" aria-labelledby="resources-title">
-    <div class="em-wrap">
-      <span class="em-resource-kicker">Useful this month</span>
-      <h2 class="em-section-title" id="resources-title">Keep the source close.</h2>
-      <div class="em-resource-grid">
-        <a class="em-resource" href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link" target="_blank" rel="noopener">
-          <strong>Program Guide</strong>
-          <span>Phase One Weeks 2–4, activity directions, timing, and guide-provided modifications.</span>
-          <b>Open ↗</b>
-        </a>
-<a class="em-resource" href="https://learn.bestbuddies.ca/course/view.php?id=3" target="_blank" rel="noopener">
-          <strong>Sensitivity Training</strong>
-          <span>Open the current course in Learn @ Best Buddies.</span>
-          <b>Open ↗</b>
-        </a>
-<a class="em-resource" href="https://drive.google.com/file/d/1IfXfxQdiJmHe3Uk5k4GA96OHUnd_K0yd/view?usp=drive_link" target="_blank" rel="noopener">
-          <strong>Activity Workbook</strong>
-          <span>Printable prompts and activities that can support early connection.</span>
-          <b>Open ↗</b>
-        </a>
+  <section class="em-useful-strip" aria-label="Useful October links">
+    <div class="em-wrap em-useful-strip-inner">
+      <strong>Useful in October</strong>
+      <div class="em-useful-links">
+        <a href="https://drive.google.com/file/d/1Wl6fB-vg2FlNzpQPuPY_LG9j1gj1mGJx/view?usp=drive_link"
+           target="_blank" rel="noopener">Program Guide ↗</a>
+        <a href="https://learn.bestbuddies.ca/course/view.php?id=3"
+           target="_blank" rel="noopener">Sensitivity Training ↗</a>
+        <a href="resources.html">Browse Resources →</a>
       </div>
     </div>
   </section>
