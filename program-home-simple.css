@@ -2024,3 +2024,133 @@
     padding:24px 0 26px !important;
   }
 }
+
+
+/* =========================================================
+   V11 — FINAL ELEMENTARY LANDING ARCHITECTURE
+   Hero → Four doors → This month → Footer
+   ========================================================= */
+
+/* HERO: give the photo breathing room without recreating the old dead band. */
+@media (min-width:941px){
+  .program-home-simple .simple-program-hero{
+    padding-top:22px !important;
+  }
+
+  .program-home-simple .program-back{
+    margin-bottom:0 !important;
+  }
+
+  .program-home-simple .simple-program-hero-grid{
+    margin-top:-8px !important;
+    padding-top:0 !important;
+    padding-bottom:48px !important;
+  }
+
+  .program-home-simple .simple-program-copy{
+    padding-top:34px !important;
+  }
+
+  .program-home-simple .simple-program-photo{
+    transform:translateY(14px) !important;
+  }
+
+  .program-home-simple .simple-program-wave{
+    margin-top:-38px !important;
+  }
+}
+
+/* ROUTES: this is the main navigation moment, so let it breathe a little. */
+.program-home-simple .simple-routes{
+  padding:40px 0 58px !important;
+}
+
+.program-home-simple .simple-routes-heading{
+  margin-bottom:28px !important;
+}
+
+.program-home-simple .simple-route-card{
+  min-height:184px !important;
+}
+
+/* CURRENT MONTH: make it feel like a concise current-status band. */
+.program-home-simple .simple-current-month{
+  border-top:0 !important;
+}
+
+.program-home-simple .simple-current-month-inner{
+  padding:30px 0 32px !important;
+}
+
+.program-home-simple .simple-current-label{
+  margin-bottom:5px !important;
+}
+
+.program-home-simple .simple-current-month h2{
+  font-size:clamp(2.1rem,2.7vw,2.8rem) !important;
+}
+
+.program-home-simple .simple-current-month p{
+  max-width:790px !important;
+  margin-top:9px !important;
+}
+
+/* The landing page intentionally stops after the current month. */
+.program-home-simple .quick-help,
+.program-home-simple .program-support-band{
+  display:none !important;
+}
+
+/* Footer follows immediately after the month band. */
+.program-home-simple .portal-footer{
+  margin-top:0 !important;
+  border-top:1px solid #E8E3EE !important;
+  padding-top:14px !important;
+  padding-bottom:14px !important;
+}
+
+@media (min-width:721px) and (max-width:940px){
+  .program-home-simple .simple-program-hero{
+    padding-top:20px !important;
+  }
+
+  .program-home-simple .simple-program-hero-grid{
+    margin-top:0 !important;
+    padding-bottom:54px !important;
+  }
+
+  .program-home-simple .simple-program-copy{
+    padding-top:24px !important;
+  }
+
+  .program-home-simple .simple-program-photo{
+    transform:none !important;
+  }
+}
+
+@media (max-width:720px){
+  .program-home-simple .simple-program-hero{
+    padding-top:16px !important;
+  }
+
+  .program-home-simple .simple-program-hero-grid{
+    margin-top:0 !important;
+    padding-bottom:48px !important;
+  }
+
+  .program-home-simple .simple-program-copy{
+    padding-top:20px !important;
+  }
+
+  .program-home-simple .simple-program-photo{
+    transform:none !important;
+  }
+
+  .program-home-simple .simple-routes{
+    padding:30px 0 44px !important;
+  }
+
+  .program-home-simple .simple-current-month-inner{
+    padding:26px 0 28px !important;
+  }
+}
