@@ -1,155 +1,955 @@
 <!DOCTYPE html>
 <html lang="en-CA">
-
 <head>
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <title>
-    Teacher Companion | Best Buddies Canada Teacher Hub
-  </title>
+  <meta name="description" content="Best Buddies Canada Teacher Hub Quick Guides: short, practical support for common chapter, friendship, participation, and leadership questions.">
+  <title>Quick Guides | Best Buddies Canada Teacher Hub</title>
 
-  <link
-    rel="stylesheet"
-    href="styles.css"
-  >
+  <link rel="stylesheet" href="portal-home.css">
+  <link rel="stylesheet" href="access.css">
+  <link rel="stylesheet" href="accessibility.css">
 
-  <link
-    rel="stylesheet"
-    href="access.css"
-  >
+  <script src="access.js" defer></script>
+  <script src="accessibility.js" defer></script>
 
-  <script
-    src="access.js"
-    defer
-  ></script>
+  <style>
 
+:root{
+  --tc-purple:#5A3F98;
+  --tc-yellow:#FFD420;
+  --tc-teal:#8FD1C4;
+  --tc-orange:#F37735;
+  --tc-lilac:#9396CA;
+  --tc-ink:#211B28;
+  --tc-text:#4F4854;
+  --tc-muted:#6D6671;
+  --tc-line:#E3DFE8;
+  --tc-lavender:#EEEAF8;
+  --tc-wash:#F7F6F3;
+  --tc-yellow-soft:#FFF6C7;
+  --tc-teal-soft:#EAF7F4;
+}
+
+*{box-sizing:border-box}
+
+body.teacher-companion-page{
+  margin:0;
+  background:#fff;
+  color:var(--tc-text);
+  font-family:"Poppins",Arial,sans-serif;
+  font-size:18px;
+  line-height:1.62;
+}
+
+.teacher-companion-page a,
+.teacher-companion-page button,
+.teacher-companion-page p,
+.teacher-companion-page span,
+.teacher-companion-page small,
+.teacher-companion-page strong{
+  font-family:"Poppins",Arial,sans-serif;
+}
+
+.teacher-companion-page h1,
+.teacher-companion-page h2,
+.teacher-companion-page h3{
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+}
+
+.teacher-companion-page .container,
+.teacher-companion-page .portal-container{
+  width:min(calc(100% - 56px),1220px);
+  margin-inline:auto;
+}
+
+/* HEADER */
+.teacher-companion-page .portal-header{
+  border-top:5px solid var(--tc-yellow);
+  background:var(--tc-teal);
+}
+
+.teacher-companion-page .portal-header-inner{
+  min-height:96px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+}
+
+.teacher-companion-page .portal-brand img{
+  width:84px;
+  height:74px;
+  object-fit:contain;
+}
+
+.teacher-companion-page .header-actions{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.teacher-companion-page .portal-nav{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  padding:8px;
+  border-radius:999px;
+  background:#fff;
+}
+
+.teacher-companion-page .portal-nav a{
+  min-height:42px;
+  display:flex;
+  align-items:center;
+  padding:8px 16px;
+  border-radius:999px;
+  color:var(--tc-ink);
+  font-size:.88rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.teacher-companion-page .portal-lang{
+  display:flex;
+  padding:6px;
+  border-radius:999px;
+  background:#fff;
+}
+
+.teacher-companion-page .portal-lang a{
+  min-width:40px;
+  min-height:38px;
+  display:grid;
+  place-items:center;
+  border-radius:999px;
+  color:var(--tc-purple);
+  font-size:.8rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.teacher-companion-page .portal-lang .current{
+  background:var(--tc-yellow);
+  color:var(--tc-ink);
+}
+
+.teacher-companion-page .site-menu{display:none}
+
+/* GENERIC */
+.teacher-companion-page .section{
+  padding:68px 0;
+}
+
+.teacher-companion-page .kicker{
+  color:var(--tc-purple);
+  font-size:.76rem;
+  font-weight:800;
+  line-height:1.25;
+  letter-spacing:.075em;
+  text-transform:uppercase;
+}
+
+.teacher-companion-page .kicker.light{color:var(--tc-yellow)}
+
+.teacher-companion-page .purple{color:var(--tc-purple)}
+.teacher-companion-page .yellow-highlight{color:var(--tc-yellow)}
+.teacher-companion-page .underlined{
+  position:relative;
+  color:var(--tc-purple);
+}
+
+/* HERO */
+.teacher-companion-page .companion-hero{
+  position:relative;
+  overflow:hidden;
+  padding:48px 0 78px;
+  background:#fff;
+}
+
+.teacher-companion-page .companion-hero::after{
+  content:"";
+  position:absolute;
+  left:-4%;
+  right:-4%;
+  bottom:-40px;
+  height:80px;
+  border-radius:50% 50% 0 0 / 64% 64% 0 0;
+  background:var(--tc-purple);
+  transform:rotate(-.8deg);
+}
+
+.teacher-companion-page .companion-hero-inner{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(340px,.55fr);
+  gap:64px;
+  align-items:center;
+}
+
+.teacher-companion-page .companion-hero h1{
+  max-width:740px;
+  margin:8px 0 0;
+  color:var(--tc-ink);
+  font-size:clamp(3.6rem,5.5vw,5.7rem);
+  font-weight:900;
+  line-height:.87;
+  letter-spacing:-.045em;
+}
+
+.teacher-companion-page .companion-hero h1 span{
+  display:block;
+}
+
+.teacher-companion-page .companion-intro{
+  max-width:710px;
+  margin:24px 0 0;
+  color:var(--tc-text);
+  font-size:1.06rem;
+  line-height:1.66;
+}
+
+.teacher-companion-page .companion-not-training{
+  position:relative;
+  overflow:hidden;
+  padding:27px 28px 28px;
+  border-radius:25px 25px 58px 25px;
+  background:var(--tc-lavender);
+}
+
+.teacher-companion-page .companion-not-training::before{
+  content:"";
+  position:absolute;
+  width:78px;
+  height:78px;
+  right:-20px;
+  top:-24px;
+  border-radius:50%;
+  background:var(--tc-yellow);
+}
+
+.teacher-companion-page .companion-not-training > *{
+  position:relative;
+  z-index:1;
+}
+
+.teacher-companion-page .companion-not-training > span{
+  display:block;
+  color:var(--tc-purple);
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.teacher-companion-page .companion-not-training strong{
+  display:block;
+  margin-top:7px;
+  color:var(--tc-ink);
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:1.55rem;
+  font-weight:850;
+  line-height:1.04;
+}
+
+.teacher-companion-page .companion-not-training p{
+  margin:10px 0 0;
+  font-size:.91rem;
+  line-height:1.55;
+}
+
+/* MAIN GUIDE LIBRARY */
+.teacher-companion-page .companion-library{
+  padding:64px 0 74px;
+  background:var(--tc-purple);
+}
+
+.teacher-companion-page .companion-library .kicker{
+  color:var(--tc-yellow);
+}
+
+.teacher-companion-page .section-heading{
+  max-width:780px;
+  margin-bottom:27px;
+}
+
+.teacher-companion-page .section-heading h2,
+.teacher-companion-page .quick-thought-heading h2,
+.teacher-companion-page .companion-more h2,
+.teacher-companion-page .support-section h2{
+  margin:7px 0 0;
+  color:var(--tc-ink);
+  font-size:clamp(2.55rem,3.8vw,4rem);
+  font-weight:900;
+  line-height:.94;
+  letter-spacing:-.032em;
+}
+
+.teacher-companion-page .companion-library .section-heading h2{
+  color:#fff;
+}
+
+.teacher-companion-page .section-heading .lede{
+  max-width:690px;
+  margin:13px 0 0;
+  color:rgba(255,255,255,.84);
+  font-size:.95rem;
+  line-height:1.58;
+}
+
+.teacher-companion-page .companion-card-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+
+.teacher-companion-page .companion-card{
+  --card-accent:var(--tc-lilac);
+  position:relative;
+  min-height:255px;
+  display:flex;
+  flex-direction:column;
+  padding:24px 25px 23px;
+  border:0;
+  border-top:8px solid var(--card-accent);
+  border-radius:22px 22px 54px 22px;
+  background:#fff;
+  color:var(--tc-text);
+  text-align:left;
+  cursor:pointer;
+  box-shadow:0 10px 28px rgba(29,16,50,.13);
+}
+
+.teacher-companion-page .companion-card-yellow{--card-accent:var(--tc-yellow)}
+.teacher-companion-page .companion-card-teal{--card-accent:var(--tc-teal)}
+.teacher-companion-page .companion-card-orange{--card-accent:var(--tc-orange)}
+.teacher-companion-page .companion-card-violet{--card-accent:var(--tc-lilac)}
+
+.teacher-companion-page .companion-card-top{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  align-items:center;
+}
+
+.teacher-companion-page .companion-type{
+  color:var(--tc-purple);
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.teacher-companion-page .companion-time{
+  min-height:31px;
+  display:inline-flex;
+  align-items:center;
+  padding:5px 9px;
+  border-radius:999px;
+  background:var(--tc-lavender);
+  color:var(--tc-purple);
+  font-size:.72rem;
+  font-weight:800;
+}
+
+.teacher-companion-page .companion-card h3{
+  max-width:500px;
+  margin:18px 0 0;
+  color:var(--tc-ink);
+  font-size:1.72rem;
+  font-weight:850;
+  line-height:1;
+}
+
+.teacher-companion-page .companion-card p{
+  max-width:550px;
+  margin:12px 0 0;
+  color:var(--tc-muted);
+  font-size:.91rem;
+  line-height:1.54;
+}
+
+.teacher-companion-page .companion-open{
+  margin-top:auto;
+  padding-top:18px;
+  color:var(--tc-purple);
+  font-size:.82rem;
+  font-weight:800;
+}
+
+/* QUICK THOUGHTS */
+.teacher-companion-page main > .section:not(.companion-library):not(.companion-more):not(.support-section){
+  padding:64px 0 70px;
+  background:#fff;
+}
+
+.teacher-companion-page .quick-thought-heading{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(300px,.45fr);
+  gap:44px;
+  align-items:end;
+  margin-bottom:25px;
+}
+
+.teacher-companion-page .quick-thought-heading h2{
+  max-width:760px;
+}
+
+.teacher-companion-page .quick-thought-heading > p{
+  margin:0 0 5px;
+  color:var(--tc-muted);
+  font-size:.92rem;
+  line-height:1.55;
+}
+
+.teacher-companion-page .quick-thought-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:13px;
+}
+
+.teacher-companion-page .quick-thought{
+  position:relative;
+  min-height:210px;
+  padding:22px 22px 22px;
+  border:1px solid var(--tc-line);
+  border-radius:20px 20px 46px 20px;
+  background:var(--tc-wash);
+  color:var(--tc-text);
+  text-align:left;
+  cursor:pointer;
+}
+
+.teacher-companion-page .quick-thought:nth-child(1){border-top:7px solid var(--tc-yellow)}
+.teacher-companion-page .quick-thought:nth-child(2){border-top:7px solid var(--tc-teal)}
+.teacher-companion-page .quick-thought:nth-child(3){border-top:7px solid var(--tc-orange)}
+
+.teacher-companion-page .quick-thought > span{
+  display:block;
+  color:var(--tc-purple);
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.teacher-companion-page .quick-thought strong{
+  display:block;
+  margin-top:10px;
+  color:var(--tc-ink);
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:1.35rem;
+  line-height:1.04;
+}
+
+.teacher-companion-page .quick-thought p{
+  margin:10px 0 0;
+  color:var(--tc-muted);
+  font-size:.87rem;
+  line-height:1.5;
+}
+
+/* MORE TOOLS */
+.teacher-companion-page .companion-more{
+  position:relative;
+  overflow:hidden;
+  padding:66px 0 60px;
+  background:var(--tc-purple);
+}
+
+.teacher-companion-page .companion-more-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);
+  gap:56px;
+  align-items:center;
+}
+
+.teacher-companion-page .companion-more h2{
+  color:#fff;
+}
+
+.teacher-companion-page .companion-more p{
+  max-width:520px;
+  margin:14px 0 0;
+  color:rgba(255,255,255,.84);
+  font-size:.92rem;
+  line-height:1.56;
+}
+
+.teacher-companion-page .more-tools-list{
+  display:grid;
+  gap:10px;
+}
+
+.teacher-companion-page .more-tools-list a{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:20px;
+  align-items:center;
+  min-height:76px;
+  padding:15px 17px;
+  border-radius:17px 17px 36px 17px;
+  background:#fff;
+  color:var(--tc-ink);
+  text-decoration:none;
+}
+
+.teacher-companion-page .more-tools-list a span{
+  color:var(--tc-muted);
+  font-size:.84rem;
+  line-height:1.45;
+}
+
+.teacher-companion-page .more-tools-list a strong{
+  color:var(--tc-purple);
+  font-size:.83rem;
+  white-space:nowrap;
+}
+
+/* SUPPORT */
+.teacher-companion-page .support-section{
+  position:relative;
+  overflow:hidden;
+  padding:72px 0 64px;
+  background:var(--tc-teal);
+}
+
+.teacher-companion-page .support-section::before{
+  content:"";
+  position:absolute;
+  top:-1px;
+  left:0;
+  right:0;
+  height:42px;
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 82' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill='%235A3F98' d='M0 0H1440V31C1250 52 1090 22 900 39C710 56 535 25 340 42C190 55 93 42 0 47Z'/%3E%3C/svg%3E")
+    center top / 100% 100% no-repeat;
+}
+
+.teacher-companion-page .support-grid{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(330px,.62fr);
+  gap:56px;
+  align-items:center;
+}
+
+.teacher-companion-page .support-section h2{
+  max-width:720px;
+}
+
+.teacher-companion-page .support-section .lede{
+  max-width:680px;
+  margin:14px 0 0;
+  color:#334B47;
+  font-size:.95rem;
+  line-height:1.6;
+}
+
+.teacher-companion-page .support-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  align-items:center;
+  margin-top:21px;
+}
+
+.teacher-companion-page .btn,
+.teacher-companion-page .text-link{
+  min-height:45px;
+  display:inline-flex;
+  align-items:center;
+  padding:8px 15px;
+  border-radius:999px;
+  font-size:.83rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.teacher-companion-page .btn-purple{
+  background:var(--tc-purple);
+  color:#fff;
+}
+
+.teacher-companion-page .text-link{
+  background:#fff;
+  color:var(--tc-purple);
+}
+
+.teacher-companion-page .support-photo{
+  aspect-ratio:4 / 3;
+  overflow:hidden;
+  border-radius:24px 24px 58px 24px;
+  box-shadow:11px 11px 0 var(--tc-yellow);
+}
+
+.teacher-companion-page .support-photo img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+
+/* DIALOG */
+.teacher-companion-page .article-dialog{
+  width:min(900px,calc(100% - 32px));
+  max-height:min(820px,calc(100vh - 32px));
+  padding:0;
+  border:0;
+  border-radius:28px 28px 68px 28px;
+  background:#fff;
+  color:var(--tc-text);
+  box-shadow:0 30px 80px rgba(37,24,61,.34);
+}
+
+.teacher-companion-page .article-dialog::backdrop{
+  background:rgba(28,18,40,.6);
+  backdrop-filter:blur(3px);
+}
+
+.teacher-companion-page .article-dialog-shell{
+  position:relative;
+  padding:34px 38px 38px;
+}
+
+.teacher-companion-page .dialog-close{
+  position:sticky;
+  top:0;
+  float:right;
+  z-index:3;
+  width:44px;
+  height:44px;
+  border:0;
+  border-radius:50%;
+  background:var(--tc-purple);
+  color:#fff;
+  font-size:1.25rem;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.teacher-companion-page .companion-article{
+  max-width:760px;
+}
+
+.teacher-companion-page .article-meta{
+  margin-bottom:8px;
+  color:var(--tc-purple);
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.teacher-companion-page .companion-article h2{
+  margin:0;
+  color:var(--tc-ink);
+  font-size:clamp(2.6rem,4vw,4rem);
+  font-weight:900;
+  line-height:.93;
+  letter-spacing:-.035em;
+}
+
+.teacher-companion-page .article-lede{
+  margin:16px 0 25px;
+  color:var(--tc-text);
+  font-size:1.02rem;
+  line-height:1.64;
+}
+
+.teacher-companion-page .companion-article h3{
+  margin:25px 0 7px;
+  color:var(--tc-ink);
+  font-size:1.4rem;
+  font-weight:850;
+  line-height:1.05;
+}
+
+.teacher-companion-page .companion-article p{
+  margin:0;
+  font-size:.94rem;
+  line-height:1.62;
+}
+
+.teacher-companion-page .meeting-options,
+.teacher-companion-page .advisor-columns{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin:24px 0;
+}
+
+.teacher-companion-page .meeting-options > div,
+.teacher-companion-page .advisor-columns > div{
+  padding:18px;
+  border-radius:17px 17px 36px 17px;
+  background:var(--tc-lavender);
+}
+
+.teacher-companion-page .meeting-options span,
+.teacher-companion-page .advisor-columns span,
+.teacher-companion-page .article-quick-thought span{
+  color:var(--tc-purple);
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.teacher-companion-page .meeting-options strong,
+.teacher-companion-page .advisor-columns strong{
+  display:block;
+  margin-top:5px;
+  color:var(--tc-ink);
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:1.15rem;
+}
+
+.teacher-companion-page .meeting-options p,
+.teacher-companion-page .advisor-columns p{
+  margin-top:7px;
+  font-size:.82rem;
+  line-height:1.48;
+}
+
+.teacher-companion-page .article-callout,
+.teacher-companion-page .article-quick-thought{
+  margin-top:24px;
+  padding:18px 19px;
+  border-radius:16px 16px 34px 16px;
+}
+
+.teacher-companion-page .article-callout{
+  border-left:6px solid var(--tc-teal);
+  background:var(--tc-teal-soft);
+}
+
+.teacher-companion-page .article-quick-thought{
+  border-left:6px solid var(--tc-yellow);
+  background:var(--tc-yellow-soft);
+}
+
+.teacher-companion-page .article-callout strong,
+.teacher-companion-page .article-quick-thought strong{
+  display:block;
+  color:var(--tc-ink);
+  font-size:.9rem;
+}
+
+.teacher-companion-page .article-callout p{
+  margin-top:6px;
+  font-size:.86rem;
+}
+
+.teacher-companion-page .article-resources{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:26px;
+  padding-top:20px;
+  border-top:1px solid var(--tc-line);
+}
+
+.teacher-companion-page .article-resources a{
+  min-height:41px;
+  display:inline-flex;
+  align-items:center;
+  padding:8px 13px;
+  border-radius:999px;
+  background:var(--tc-lavender);
+  color:var(--tc-purple);
+  font-size:.8rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+/* FOOTER */
+.teacher-companion-page .portal-footer{
+  padding:28px 0 32px;
+  background:#fff;
+}
+
+.teacher-companion-page .portal-footer-inner{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.teacher-companion-page .portal-footer img{
+  width:62px;
+  height:58px;
+  object-fit:contain;
+}
+
+.teacher-companion-page .portal-footer p{
+  margin:0;
+  color:var(--tc-ink);
+  font-size:.9rem;
+}
+
+.teacher-companion-page .portal-footer a{
+  margin-left:auto;
+  color:var(--tc-purple);
+  font-size:.88rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .teacher-companion-page .companion-hero-inner,
+  .teacher-companion-page .quick-thought-heading,
+  .teacher-companion-page .companion-more-grid,
+  .teacher-companion-page .support-grid{
+    grid-template-columns:1fr;
+  }
+
+  .teacher-companion-page .companion-card-grid{
+    grid-template-columns:1fr;
+  }
+
+  .teacher-companion-page .quick-thought-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:760px){
+  body.teacher-companion-page{font-size:17px}
+
+  .teacher-companion-page .container,
+  .teacher-companion-page .portal-container{
+    width:min(calc(100% - 32px),1220px);
+  }
+
+  .teacher-companion-page .portal-nav{display:none}
+  .teacher-companion-page .site-menu{display:block;position:relative}
+
+  .teacher-companion-page .site-menu summary{
+    list-style:none;
+    min-height:42px;
+    display:flex;
+    align-items:center;
+    padding:8px 14px;
+    border-radius:999px;
+    background:#fff;
+    color:var(--tc-purple);
+    font-size:.82rem;
+    font-weight:800;
+    cursor:pointer;
+  }
+
+  .teacher-companion-page .site-menu summary::-webkit-details-marker{display:none}
+
+  .teacher-companion-page .site-menu-panel{
+    position:absolute;
+    right:0;
+    top:50px;
+    width:235px;
+    padding:10px;
+    border-radius:18px;
+    background:#fff;
+    box-shadow:0 16px 36px rgba(40,24,67,.16);
+  }
+
+  .teacher-companion-page .site-menu-panel a{
+    display:block;
+    padding:10px 11px;
+    border-radius:10px;
+    color:var(--tc-purple);
+    font-size:.84rem;
+    font-weight:700;
+    text-decoration:none;
+  }
+
+  .teacher-companion-page .companion-hero{
+    padding:38px 0 64px;
+  }
+
+  .teacher-companion-page .companion-hero h1{
+    font-size:clamp(3.1rem,14vw,4.55rem);
+  }
+
+  .teacher-companion-page .section{
+    padding:54px 0;
+  }
+
+  .teacher-companion-page .meeting-options,
+  .teacher-companion-page .advisor-columns{
+    grid-template-columns:1fr;
+  }
+
+  .teacher-companion-page .article-dialog{
+    width:100%;
+    max-width:none;
+    max-height:88vh;
+    margin:auto 0 0;
+    border-radius:28px 28px 0 0;
+  }
+
+  .teacher-companion-page .article-dialog-shell{
+    padding:26px 20px 30px;
+  }
+
+  .teacher-companion-page .support-photo{
+    max-width:650px;
+  }
+
+  .teacher-companion-page .portal-footer-inner{
+    flex-wrap:wrap;
+  }
+
+  .teacher-companion-page .portal-footer a{
+    margin-left:0;
+  }
+}
+
+  </style>
 </head>
 
+<body data-protected="true" class="access-pending teacher-companion-page">
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
-<body
-  data-protected="true"
-  class="access-pending"
->
-
-<a
-  class="skip-link"
-  href="#main-content"
->
-  Skip to main content
-</a>
-
-
-<header class="site-header">
-
-  <div class="container header-inner">
-
-    <a
-      class="brand"
-      href="index.html"
-      aria-label="Best Buddies Canada Teacher Hub home"
-    >
-
-      <img
-        src="assets/bb-reversed-logo.png"
-        alt="Best Buddies Canada"
-        class="header-logo"
-      >
-
-      <span class="brand-name">
-        Teacher Hub
-      </span>
-
+<header class="portal-header">
+  <div class="portal-container portal-header-inner">
+    <a class="portal-brand" href="index.html" aria-label="Best Buddies Canada Teacher Hub home">
+      <img src="assets/bb-logo-coloured.png" alt="Best Buddies Canada">
     </a>
 
+    <div class="header-actions">
+      <nav class="portal-nav" aria-label="Main navigation">
+        <a href="calendar.html">Calendar</a>
+        <a href="resources.html">Resources</a>
+        <a href="support.html">Support</a>
+      </nav>
 
-    <nav
-      class="nav"
-      aria-label="Main navigation"
-    >
-
-      <a href="index.html">
-        Home
-      </a>
-
-      <a href="index.html#programs">
-        Programs
-      </a>
-
-      <a
-        href="teacher-companion.html"
-        aria-current="page"
-      >
-        Teacher Companion
-      </a>
-
-      <a href="index.html#calendar">
-        Calendar
-      </a>
-
-      <a href="#support">
-        Get Support
-      </a>
-
-
-      <div
-        class="lang"
-        aria-label="Language"
-      >
-
-        <a
-          href="#"
-          class="current"
-          aria-current="page"
-        >
-          EN
-        </a>
-
-        <a
-          href="fr.html"
-          lang="fr-CA"
-          hreflang="fr-CA"
-        >
-          FR
-        </a>
-
+      <div class="portal-lang" aria-label="Language">
+        <a class="current" href="#" aria-current="page">EN</a>
+        <a href="fr.html" lang="fr-CA">FR</a>
       </div>
 
-    </nav>
-
+      <details class="site-menu">
+        <summary>Menu</summary>
+        <div class="site-menu-panel">
+          <a href="index.html">Teacher Hub home</a>
+          <a href="elementary-middle.html">Elementary &amp; Middle</a>
+          <a href="high-school.html">High School</a>
+          <a href="teacher-companion.html" aria-current="page">Quick Guides</a>
+          <a href="calendar.html">Program Calendar</a>
+          <a href="resources.html">Resources</a>
+          <a href="support.html">Support</a>
+          <a href="fr.html" lang="fr-CA">Français</a>
+        </div>
+      </details>
+    </div>
   </div>
-
-
-  <svg
-    class="header-wave"
-    viewBox="0 0 1440 36"
-    preserveAspectRatio="none"
-    aria-hidden="true"
-    focusable="false"
-  >
-
-    <path
-      d="M0 0H1440V13
-      C1355 7 1314 21 1235 13
-      C1155 6 1105 20 1024 13
-      C944 5 890 21 807 13
-      C725 6 668 21 584 13
-      C503 6 445 20 362 13
-      C280 7 224 21 141 13
-      C85 8 45 16 0 12Z"
-    />
-
-  </svg>
-
 </header>
-
-
-
 <main id="main-content">
 
 
@@ -164,7 +964,7 @@
       <div>
 
         <div class="kicker">
-          Teacher Companion
+          Quick Guides
         </div>
 
         <h1>
@@ -295,12 +1095,12 @@
           </div>
 
           <h3>
-            Plan a Great Chapter Meeting
+            Planning a Chapter Meeting
           </h3>
 
           <p>
             A simple way to think about lunch meetings,
-            regular chapter gatherings, and larger socials.
+            regular chapter meetings, and larger socials.
           </p>
 
           <span class="companion-open">
@@ -518,9 +1318,7 @@
         </h2>
 
         <p>
-          The Companion does not need to duplicate every Best Buddies
-          resource. These links take you to the current places
-          where those materials live.
+          Use the full resource library or current training when you need to go beyond a quick guide.
         </p>
 
       </div>
@@ -539,7 +1337,7 @@
           </span>
 
           <strong>
-            Helpful Resources ↗
+            Helpful Resources →
           </strong>
 
         </a>
@@ -556,7 +1354,7 @@
           </span>
 
           <strong>
-            Learn @ Best Buddies ↗
+            Learn @ Best Buddies →
           </strong>
 
         </a>
@@ -572,25 +1370,11 @@
           </span>
 
           <strong>
-            Program Application ↗
+            Program Application →
           </strong>
 
         </a>
-
-
-        <div class="more-tool-placeholder">
-
-          <span>
-            Parent and school communication templates
-          </span>
-
-          <strong>
-            Best Buddies Canada version coming soon
-          </strong>
-
-        </div>
-
-      </div>
+</div>
 
     </div>
 
@@ -632,22 +1416,12 @@
 
         <div class="support-actions">
 
-          <a
-            class="btn btn-purple"
-            href="https://bestbuddies.ca/get-started/"
-            target="_blank"
-            rel="noopener"
-          >
-            Connect with Best Buddies
+          <a class="btn btn-purple" href="support.html">
+            Program Support →
           </a>
 
-          <a
-            class="text-link"
-            href="https://bestbuddies.ca/helpful-resources/"
-            target="_blank"
-            rel="noopener"
-          >
-            Helpful Resources ↗
+          <a class="text-link" href="resources.html">
+            Browse Resources →
           </a>
 
         </div>
@@ -669,13 +1443,6 @@
   </section>
 
 </main>
-
-
-
-<!-- =====================================================
-     DIALOG
-===================================================== -->
-
 <dialog
   class="article-dialog"
   id="article-dialog"
@@ -759,7 +1526,7 @@
 
 
     <h3>
-      4. Plan the first gathering.
+      4. Plan the first meeting.
     </h3>
 
     <p>
@@ -800,14 +1567,14 @@
         target="_blank"
         rel="noopener"
       >
-        Find a participating school ↗
+        Find a participating school →
       </a>
 
       <a
         href="assets/best-buddies-program-application.pdf"
         target="_blank"
       >
-        Program Application ↗
+        Program Application →
       </a>
 
       <a
@@ -815,7 +1582,7 @@
         target="_blank"
         rel="noopener"
       >
-        Get Started ↗
+        Get Started →
       </a>
 
     </div>
@@ -835,7 +1602,7 @@
     </div>
 
     <h2>
-      Plan a Great Chapter Meeting
+      Planning a Chapter Meeting
     </h2>
 
     <p class="article-lede">
@@ -973,12 +1740,16 @@
 
     <div class="article-resources">
 
+      <a href="elementary-gathering.html">
+        Plan a Meeting →
+      </a>
+
       <a
         href="https://bestbuddies.ca/helpful-resources/"
         target="_blank"
         rel="noopener"
       >
-        Find activity resources ↗
+        Find activity resources →
       </a>
 
     </div>
@@ -1350,34 +2121,14 @@
 
 
 
-<footer>
 
-  <div class="container footer-inner">
-
-    <img
-      src="assets/bb-reversed-logo.png"
-      alt="Best Buddies Canada"
-      class="footer-logo"
-    >
-
-    <p>
-      Teacher Hub · Prototype for internal review
-    </p>
-
-    <a
-      href="https://bestbuddies.ca/"
-      target="_blank"
-      rel="noopener"
-    >
-      bestbuddies.ca ↗
-    </a>
-
+<footer class="portal-footer">
+  <div class="portal-container portal-footer-inner">
+    <img src="assets/bb-logo-coloured.png" alt="Best Buddies Canada">
+    <p>Best Buddies Canada Teacher Hub</p>
+    <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca</a>
   </div>
-
 </footer>
-
-
-
 <script>
 
   const articleDialog =
@@ -1437,8 +2188,5 @@
   });
 
 </script>
-
-
 </body>
-
 </html>
