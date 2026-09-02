@@ -2361,3 +2361,189 @@
     margin-top:4px !important;
   }
 }
+
+
+/* =========================================================
+   V14 — PLAYBOOK FLOW + HERO BALANCE
+   Keeps V13 styling, but gives the photo its own right-side
+   zone and adds lightweight content patterns for the updated
+   2026–27 Elementary & Middle workflow.
+   ========================================================= */
+
+/* Hero: slightly smaller title, true paired CTA sizing. */
+.epb-page .epb-hero-actions{
+  flex-wrap:nowrap !important;
+}
+
+.epb-page .epb-primary-action,
+.epb-page .epb-secondary-action{
+  width:236px !important;
+  white-space:nowrap !important;
+}
+
+@media(min-width:1181px){
+  .epb-page .epb-hero-grid{
+    grid-template-columns:minmax(0,1.18fr) minmax(390px,.54fr) !important;
+    gap:clamp(66px,7vw,112px) !important;
+  }
+
+  .epb-page .epb-hero h1{
+    font-size:clamp(3.95rem,4.45vw,5.15rem) !important;
+  }
+
+  .epb-page .epb-hero-photo{
+    width:min(100%,470px) !important;
+    margin-right:-68px !important;
+  }
+}
+
+@media(min-width:1001px) and (max-width:1180px){
+  .epb-page .epb-hero h1{
+    font-size:clamp(3.8rem,4.65vw,4.75rem) !important;
+  }
+
+  .epb-page .epb-hero-photo{
+    margin-right:-18px !important;
+  }
+}
+
+/* A short explanatory paragraph inside a stage, without making another card. */
+.epb-page .epb-stage-intro{
+  max-width:760px;
+  margin:0 0 16px;
+  color:var(--epb-text);
+  font-size:.88rem;
+  line-height:1.58;
+}
+
+.epb-page .epb-stage-intro strong{
+  color:var(--epb-ink);
+  font-weight:700;
+}
+
+/* First four Program Guide sessions: reference list, not a new planning surface. */
+.epb-page .epb-session-start{
+  margin:0 0 17px;
+  padding:14px 0 12px;
+  border-top:1px solid var(--epb-line);
+  border-bottom:1px solid var(--epb-line);
+}
+
+.epb-page .epb-session-start > span{
+  display:block;
+  margin-bottom:9px;
+  color:var(--epb-purple);
+  font-size:.64rem;
+  font-weight:800;
+  letter-spacing:.055em;
+  text-transform:uppercase;
+}
+
+.epb-page .epb-session-start ol{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:7px 24px;
+  margin:0;
+  padding-left:22px;
+}
+
+.epb-page .epb-session-start li{
+  padding-left:2px;
+  color:var(--epb-text);
+  font-size:.8rem;
+  line-height:1.45;
+}
+
+.epb-page .epb-session-start li::marker{
+  color:var(--epb-purple);
+  font-weight:800;
+}
+
+.epb-page .epb-session-start strong{
+  color:var(--epb-ink);
+  font-weight:700;
+}
+
+/* Family hand-off: deliberately quieter than Build a Gathering. */
+.epb-page .epb-family-note{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  margin-top:18px;
+  padding:15px 0 15px 16px;
+  border-left:5px solid var(--epb-yellow);
+  border-top:1px solid var(--epb-line);
+  border-bottom:1px solid var(--epb-line);
+}
+
+.epb-page .epb-family-note > div > span{
+  display:block;
+  color:var(--epb-purple);
+  font-size:.62rem;
+  font-weight:800;
+  letter-spacing:.065em;
+  text-transform:uppercase;
+}
+
+.epb-page .epb-family-note strong{
+  display:block;
+  margin-top:3px;
+  color:var(--epb-ink);
+  font-size:.91rem;
+  font-weight:700;
+}
+
+.epb-page .epb-family-note p{
+  max-width:610px;
+  margin:5px 0 0;
+  color:var(--epb-text);
+  font-size:.76rem;
+  line-height:1.48;
+}
+
+.epb-page .epb-family-note > a{
+  flex:0 0 auto;
+  color:var(--epb-purple);
+  font-size:.74rem;
+  font-weight:800;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.epb-page .epb-family-note > a:hover,
+.epb-page .epb-family-note > a:focus-visible{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+@media(max-width:1000px){
+  .epb-page .epb-primary-action,
+  .epb-page .epb-secondary-action{
+    width:200px !important;
+  }
+}
+
+@media(max-width:760px){
+  .epb-page .epb-hero-actions{
+    flex-wrap:wrap !important;
+  }
+
+  .epb-page .epb-primary-action,
+  .epb-page .epb-secondary-action{
+    width:100% !important;
+  }
+
+  .epb-page .epb-session-start ol{
+    grid-template-columns:1fr;
+  }
+
+  .epb-page .epb-family-note{
+    display:block;
+  }
+
+  .epb-page .epb-family-note > a{
+    display:inline-block;
+    margin-top:10px;
+  }
+}
