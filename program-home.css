@@ -1008,3 +1008,207 @@
 .program-home-simple .route-support .route-arrow{
   color:#F37735 !important;
 }
+
+
+/* =========================================================
+   V6 — COHERENT LOWER-PAGE COLOUR RHYTHM
+   Purple routes → Yellow current month → Teal Quick Guides
+   → White support with orange accent
+   ========================================================= */
+
+/* Give Chapter Playbook a second BBC colour so the first card
+   doesn't feel lonely against the purple field. */
+.program-home-simple .route-playbook{
+  border-left:8px solid #FFD420 !important;
+}
+
+/* ---------------------------------------------------------
+   CURRENT MONTH: full yellow band, not another purple card
+   --------------------------------------------------------- */
+
+.program-home-simple .simple-routes::after{
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 90' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill='%23FFD420' d='M0,46 C180,70 310,32 492,50 C662,67 795,32 965,49 C1130,66 1280,31 1440,52 L1440,90 L0,90 Z'/%3E%3C/svg%3E")
+    center bottom / 100% 100% no-repeat !important;
+}
+
+.program-home-simple .simple-current-month{
+  position:relative;
+  overflow:hidden;
+  padding:0 0 58px !important;
+  background:#FFD420 !important;
+}
+
+.program-home-simple .simple-current-month-inner{
+  min-height:210px !important;
+  padding:42px 0 34px !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  color:#1D1823 !important;
+  box-shadow:none !important;
+}
+
+.program-home-simple .simple-current-month-inner::after{
+  content:none !important;
+  display:none !important;
+}
+
+.program-home-simple .simple-current-copy{
+  max-width:780px;
+}
+
+.program-home-simple .simple-current-label{
+  color:#5A3F98 !important;
+}
+
+.program-home-simple .simple-current-month h2{
+  color:#1D1823 !important;
+}
+
+.program-home-simple .simple-current-month p{
+  color:rgba(29,24,35,.78) !important;
+}
+
+.program-home-simple .simple-current-button{
+  background:#5A3F98 !important;
+  color:#fff !important;
+  box-shadow:none !important;
+}
+
+.program-home-simple .simple-all-months{
+  color:#5A3F98 !important;
+  font-weight:900 !important;
+}
+
+/* Yellow → white wave */
+.program-home-simple .simple-current-month::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-1px;
+  height:58px;
+  pointer-events:none;
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 90' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,47 C165,68 300,36 470,51 C635,66 775,34 945,50 C1110,66 1280,35 1440,54 L1440,90 L0,90 Z'/%3E%3C/svg%3E")
+    center bottom / 100% 100% no-repeat;
+}
+
+/* ---------------------------------------------------------
+   QUICK GUIDES: one teal brand section
+   --------------------------------------------------------- */
+
+.program-home-simple .quick-help{
+  padding:58px 0 64px !important;
+  background:#8FD1C4 !important;
+}
+
+.program-home-simple .quick-help-grid{
+  align-items:start !important;
+}
+
+.program-home-simple .quick-help-head{
+  padding-left:0 !important;
+  border-left:0 !important;
+}
+
+.program-home-simple .quick-help-head .section-kicker{
+  color:#5A3F98 !important;
+}
+
+.program-home-simple .quick-help-head h2{
+  color:#1D1823 !important;
+}
+
+.program-home-simple .quick-help-head p{
+  color:rgba(29,24,35,.76) !important;
+}
+
+.program-home-simple .quick-help-all{
+  color:#5A3F98 !important;
+  font-weight:900 !important;
+}
+
+/* The guide links read as one clean stack sitting on the teal field. */
+.program-home-simple .quick-help-links{
+  gap:10px !important;
+}
+
+.program-home-simple .quick-help-link{
+  min-height:96px !important;
+  border:0 !important;
+  border-left:6px solid var(--guide-accent) !important;
+  border-radius:16px 16px 34px 16px !important;
+  background:#fff !important;
+  box-shadow:none !important;
+}
+
+.program-home-simple .quick-help-link:hover,
+.program-home-simple .quick-help-link:focus-visible{
+  transform:translateX(3px) !important;
+  box-shadow:none !important;
+}
+
+/* ---------------------------------------------------------
+   SUPPORT: calm white ending with a purposeful orange accent
+   --------------------------------------------------------- */
+
+.program-home-simple .program-support-band{
+  padding:0 !important;
+  background:#fff !important;
+  border-top:12px solid #F37735 !important;
+}
+
+.program-home-simple .program-support-inner{
+  min-height:180px !important;
+  padding:42px 0 46px !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  color:#1D1823 !important;
+}
+
+.program-home-simple .program-support-inner h2{
+  color:#5A3F98 !important;
+}
+
+.program-home-simple .program-support-inner p{
+  color:rgba(29,24,35,.74) !important;
+}
+
+.program-home-simple .program-support-button{
+  background:#5A3F98 !important;
+  color:#fff !important;
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width:720px){
+
+  .program-home-simple .route-playbook{
+    border-left:6px solid #FFD420 !important;
+  }
+
+  .program-home-simple .simple-current-month{
+    padding-bottom:46px !important;
+  }
+
+  .program-home-simple .simple-current-month-inner{
+    padding:34px 0 26px !important;
+  }
+
+  .program-home-simple .simple-current-month::after{
+    height:46px;
+  }
+
+  .program-home-simple .quick-help{
+    padding:46px 0 50px !important;
+  }
+
+  .program-home-simple .program-support-inner{
+    padding:34px 0 38px !important;
+  }
+}
