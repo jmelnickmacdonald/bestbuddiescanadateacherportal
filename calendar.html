@@ -344,3 +344,53 @@
 
 </body>
 </html>
+
+<!-- =====================================================
+     MONTHLY PLANNING LINK
+     Paste AFTER the existing calendar script, before </body>.
+     It follows the month button selected in the calendar.
+====================================================== -->
+<script>
+(() => {
+  const planningLink = document.getElementById("calendar-month-planning-link");
+  const monthButtons = Array.from(document.querySelectorAll(".calendar4-month"));
+
+  if (!planningLink || !monthButtons.length) return;
+
+  const planningPages = {
+    8:  { label: "September", href: "elementary-september.html" },
+    9:  { label: "October",   href: "elementary-october.html" },
+    10: { label: "November",  href: "elementary-november.html" },
+    11: { label: "December",  href: "elementary-december.html" }
+  };
+
+  function updatePlanningLink(button) {
+    const monthIndex = Number(button.dataset.schoolMonth);
+    const month = planningPages[monthIndex];
+
+    if (month) {
+      planningLink.href = month.href;
+      planningLink.textContent =
+        `Elementary & Middle · ${month.label} →`;
+      planningLink.removeAttribute("aria-disabled");
+      planningLink.classList.remove("is-coming-soon");
+    } else {
+      planningLink.href = "elementary-months.html";
+      planningLink.textContent = "Elementary & Middle · Monthly Planning →";
+      planningLink.removeAttribute("aria-disabled");
+      planningLink.classList.add("is-coming-soon");
+    }
+  }
+
+  monthButtons.forEach((button) => {
+    button.addEventListener("click", () => updatePlanningLink(button));
+  });
+
+  const activeButton =
+    document.querySelector(".calendar4-month.is-active") ||
+    document.querySelector(".calendar4-month[aria-pressed='true']") ||
+    monthButtons[0];
+
+  updatePlanningLink(activeButton);
+})();
+</script>
