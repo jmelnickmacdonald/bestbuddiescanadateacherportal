@@ -611,3 +611,160 @@
     transition:none;
   }
 }
+
+/* =========================================================
+   PROGRAM CALENDAR · MONTHLY PLANNING BRIDGE + TYPE SWEEP
+   Append to the BOTTOM of calendar-v4.css
+   ========================================================= */
+
+.calendar-page-v4{
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:18px;
+  line-height:1.6;
+}
+
+.calendar-page-v4 a,
+.calendar-page-v4 p,
+.calendar-page-v4 span,
+.calendar-page-v4 small,
+.calendar-page-v4 strong,
+.calendar-page-v4 button{
+  font-family:"Poppins",Arial,sans-serif;
+}
+
+.calendar-page-v4 h1,
+.calendar-page-v4 h2,
+.calendar-page-v4 h3{
+  font-family:"League Spartan",Arial,sans-serif !important;
+}
+
+/* Make the calendar feel like the same Hub, not a smaller-type utility */
+.calendar4-hero h1{
+  font-family:"League Spartan",Arial,sans-serif !important;
+}
+
+.calendar4-hero-lede,
+.calendar4-live-heading p{
+  font-size:1rem !important;
+  line-height:1.62 !important;
+}
+
+.calendar4-live-heading h2{
+  font-family:"League Spartan",Arial,sans-serif !important;
+}
+
+.calendar4-toolbar-title strong{
+  font-family:"Poppins",Arial,sans-serif !important;
+}
+
+.calendar4-full-link,
+.calendar4-month{
+  font-size:.86rem !important;
+}
+
+.calendar4-status{
+  font-size:.88rem !important;
+}
+
+/* The old meeting-starter cards are no longer part of the Calendar's job. */
+.calendar4-meetings{
+  display:none !important;
+}
+
+/* Monthly Planning is a bridge, not another calendar section. */
+.calendar4-planning{
+  padding:58px 0 62px;
+  background:#fff;
+}
+
+.calendar4-planning-inner{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:44px;
+  align-items:center;
+  padding:30px 32px;
+  border-radius:24px 24px 58px 24px;
+  background:#F1EEF7;
+}
+
+.calendar4-planning-copy{
+  max-width:780px;
+}
+
+.calendar4-planning-copy h2{
+  margin:4px 0 0;
+  color:var(--ink);
+  font-family:"League Spartan",Arial,sans-serif !important;
+  font-size:clamp(2rem,3vw,3rem);
+  font-weight:900;
+  line-height:.96;
+}
+
+.calendar4-planning-copy p{
+  max-width:720px;
+  margin:12px 0 0;
+  color:var(--muted);
+  font-size:.98rem !important;
+  line-height:1.6 !important;
+}
+
+.calendar4-planning-actions{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:10px;
+  min-width:265px;
+}
+
+.calendar4-planning-actions a{
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 17px;
+  border-radius:999px;
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:.87rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.calendar4-planning-primary{
+  background:var(--yellow);
+  color:var(--ink);
+}
+
+.calendar4-planning-secondary{
+  background:#fff;
+  color:var(--purple);
+}
+
+.calendar4-bridge-copy p{
+  font-size:.9rem !important;
+  line-height:1.55 !important;
+}
+
+.calendar4-bridge-links a{
+  font-size:.84rem !important;
+}
+
+@media(max-width:760px){
+  .calendar-page-v4{
+    font-size:17px;
+  }
+
+  .calendar4-planning{
+    padding:44px 0 48px;
+  }
+
+  .calendar4-planning-inner{
+    grid-template-columns:1fr;
+    gap:24px;
+    padding:25px 23px;
+  }
+
+  .calendar4-planning-actions{
+    width:100%;
+    min-width:0;
+  }
+}
