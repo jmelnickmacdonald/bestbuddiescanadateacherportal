@@ -1830,6 +1830,6 @@
 /* FINAL DESKTOP HERO NUDGE — show a little more teal */
 @media (min-width:1201px){
   .portal-home-page .hub-hero-art img{
-    bottom:-18px !important;
+    bottom:-8px !important;
   }
 }
