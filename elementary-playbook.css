@@ -2547,3 +2547,161 @@
     margin-top:10px;
   }
 }
+
+/* =========================================================
+   V15 — HERO SPACING + CLEARER FAMILY HANDOFF
+   ========================================================= */
+
+/* Keep the large desktop hero from creating horizontal scroll when
+   the photo is intentionally pushed toward the outside edge. */
+.epb-page .epb-hero{
+  overflow-x:clip;
+}
+
+/* Let the two actions size naturally to their labels. */
+.epb-page .epb-hero-actions{
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:nowrap !important;
+  align-items:center !important;
+  gap:14px !important;
+}
+
+.epb-page .epb-primary-action,
+.epb-page .epb-secondary-action{
+  flex:0 0 auto !important;
+  width:max-content !important;
+  min-width:0 !important;
+  max-width:none !important;
+  padding-left:28px !important;
+  padding-right:28px !important;
+  white-space:nowrap !important;
+}
+
+/* Orange frame gives the hero a little more of the BBC colour mix. */
+.epb-page .epb-photo-teal{
+  background:var(--epb-orange) !important;
+}
+
+/* On a true desktop, reserve enough room for the title and move the
+   portrait into a distinct right-hand zone instead of letting the two overlap. */
+@media(min-width:1280px){
+  .epb-page .epb-hero-grid{
+    grid-template-columns:minmax(650px,1fr) 390px !important;
+    gap:clamp(92px,7.5vw,132px) !important;
+  }
+
+  .epb-page .epb-hero-photo{
+    width:390px !important;
+    max-width:390px !important;
+    margin-right:0 !important;
+    transform:translateX(clamp(66px,6vw,104px)) !important;
+  }
+
+  .epb-page .epb-hero-photo img{
+    height:350px !important;
+  }
+}
+
+/* Smaller desktop: still keep a real visual gap, just don't push beyond
+   the available viewport. */
+@media(min-width:1001px) and (max-width:1279px){
+  .epb-page .epb-hero-grid{
+    grid-template-columns:minmax(0,1fr) 350px !important;
+    gap:58px !important;
+  }
+
+  .epb-page .epb-hero-photo{
+    width:350px !important;
+    max-width:350px !important;
+    margin-right:0 !important;
+    transform:translateX(30px) !important;
+  }
+}
+
+/* Family handoff should read like one clear resource recommendation,
+   not two headings running together. */
+.epb-page .epb-family-note{
+  align-items:flex-start !important;
+  margin-top:22px !important;
+  padding:18px 20px !important;
+  border:0 !important;
+  border-left:5px solid var(--epb-yellow) !important;
+  border-radius:0 16px 28px 0 !important;
+  background:#FFF9DE !important;
+}
+
+.epb-page .epb-family-note > div > span{
+  margin-bottom:5px !important;
+  font-size:.68rem !important;
+}
+
+.epb-page .epb-family-note strong{
+  margin-top:0 !important;
+  font-family:"League Spartan","Poppins",Arial,sans-serif !important;
+  font-size:1.08rem !important;
+  font-weight:800 !important;
+  line-height:1.2 !important;
+}
+
+.epb-page .epb-family-note p{
+  max-width:650px !important;
+  margin-top:7px !important;
+  font-size:.92rem !important;
+  line-height:1.55 !important;
+}
+
+.epb-page .epb-family-note > a{
+  align-self:center !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  min-height:42px !important;
+  padding:9px 15px !important;
+  border:2px solid var(--epb-purple) !important;
+  border-radius:999px !important;
+  font-size:.78rem !important;
+  line-height:1.2 !important;
+  text-decoration:none !important;
+}
+
+.epb-page .epb-family-note > a:hover,
+.epb-page .epb-family-note > a:focus-visible{
+  background:var(--epb-purple) !important;
+  color:#fff !important;
+  text-decoration:none !important;
+}
+
+@media(max-width:1000px){
+  .epb-page .epb-primary-action,
+  .epb-page .epb-secondary-action{
+    width:max-content !important;
+  }
+}
+
+@media(max-width:760px){
+  .epb-page .epb-hero-actions{
+    flex-direction:column !important;
+    align-items:stretch !important;
+  }
+
+  .epb-page .epb-primary-action,
+  .epb-page .epb-secondary-action{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .epb-page .epb-hero-photo{
+    transform:none !important;
+  }
+
+  .epb-page .epb-family-note{
+    padding:17px 16px !important;
+  }
+
+  .epb-page .epb-family-note > a{
+    align-self:auto !important;
+    width:max-content !important;
+    max-width:100% !important;
+    margin-top:12px !important;
+  }
+}
