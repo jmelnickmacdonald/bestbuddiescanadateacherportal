@@ -159,7 +159,7 @@
 
 .portal-home-page .hub-hero-art img{
   position:absolute !important;
-  top:24px !important;
+  top:12px !important;
   right:-44px !important;
   bottom:auto !important;
   display:block !important;
@@ -333,13 +333,61 @@
   white-space:nowrap !important;
   border:0 !important;
 }
+/* =========================================================
+   NARROW DESKTOP
+   Keep the desktop side-by-side layout when the browser
+   window is reduced, rather than switching to tablet early.
+========================================================= */
 
+@media (min-width:901px) and (max-width:1200px){
+
+  .portal-home-page .teacher-hub-hero-grid{
+    grid-template-columns:minmax(0,.92fr) minmax(430px,1.08fr) !important;
+    gap:22px !important;
+    height:500px !important;
+    min-height:500px !important;
+  }
+
+  .portal-home-page .hub-copy-column{
+    gap:28px !important;
+    padding:20px 0 72px !important;
+  }
+
+  .portal-home-page .hub-intro h1{
+    font-size:3rem !important;
+  }
+
+  .portal-home-page .hub-intro p{
+    max-width:500px !important;
+    font-size:.92rem !important;
+  }
+
+  .portal-home-page .hub-message h2{
+    max-width:520px !important;
+    font-size:2.55rem !important;
+  }
+
+  .portal-home-page .hub-hero-art{
+    height:500px !important;
+    min-height:500px !important;
+  }
+
+  .portal-home-page .hub-hero-art img{
+    top:18px !important;
+    right:-42px !important;
+    width:640px !important;
+  }
+
+  .portal-home-page .teacher-hub-hero::after{
+    height:86px !important;
+  }
+}
 
 /* =========================================================
    TABLET
 ========================================================= */
 
-@media (min-width:761px) and (max-width:1100px){
+@media (min-width:761px) and (max-width:900px){
 
   .portal-home-page .teacher-hub-hero-grid{
     display:grid !important;
@@ -420,7 +468,7 @@
     gap:0 !important;
     height:auto !important;
     min-height:0 !important;
-    padding-top:24px !important;
+    padding-top:8px !important;
     padding-bottom:48px !important;
   }
 
