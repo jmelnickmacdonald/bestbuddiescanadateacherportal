@@ -2248,3 +2248,116 @@
     line-height:1.6 !important;
   }
 }
+
+
+
+/* =========================================================
+   V13 — CLEANER HERO PHOTO + MATCHED CTAS
+   ========================================================= */
+
+/* Give the flexibility note a clearer pause between the two thoughts. */
+.epb-page .epb-flex-note strong{
+  margin-bottom:10px !important;
+}
+
+.epb-page .epb-flex-note span{
+  margin-top:0 !important;
+}
+
+/* Match CTA widths and remove visual imbalance. */
+.epb-page .epb-hero-actions{
+  display:flex !important;
+  gap:12px !important;
+  align-items:stretch !important;
+}
+
+.epb-page .epb-primary-action,
+.epb-page .epb-secondary-action{
+  width:210px !important;
+  justify-content:center !important;
+  text-align:center !important;
+}
+
+/* One clean teal frame only. */
+.epb-page .epb-photo-yellow{
+  display:none !important;
+}
+
+.epb-page .epb-photo-teal{
+  z-index:1 !important;
+  width:100% !important;
+  height:100% !important;
+  right:-12px !important;
+  bottom:-12px !important;
+  border-radius:30px 30px 72px 30px !important;
+  background:var(--epb-teal) !important;
+}
+
+.epb-page .epb-hero-photo img{
+  z-index:2 !important;
+  border-radius:30px 30px 72px 30px !important;
+  box-shadow:none !important;
+}
+
+/* Desktop: photo sits high and to the right, aligned with the title area. */
+@media(min-width:1001px){
+  .epb-page .epb-hero-grid{
+    grid-template-columns:minmax(0,1.12fr) minmax(380px,.58fr) !important;
+    gap:clamp(54px,6vw,100px) !important;
+    align-items:start !important;
+    padding-top:30px !important;
+    padding-bottom:58px !important;
+  }
+
+  .epb-page .epb-hero-photo{
+    align-self:start !important;
+    justify-self:end !important;
+    width:min(100%,470px) !important;
+    min-height:0 !important;
+    margin-top:12px !important;
+  }
+
+  .epb-page .epb-hero-photo img{
+    width:100% !important;
+    height:350px !important;
+    object-fit:cover !important;
+    object-position:center 38% !important;
+  }
+}
+
+/* Mid-size desktop/tablet: still keep photo clearly on the right. */
+@media(min-width:761px) and (max-width:1000px){
+  .epb-page .epb-hero-grid{
+    align-items:start !important;
+  }
+
+  .epb-page .epb-hero-photo{
+    align-self:start !important;
+    margin-top:8px !important;
+  }
+
+  .epb-page .epb-hero-photo img{
+    height:310px !important;
+  }
+
+  .epb-page .epb-primary-action,
+  .epb-page .epb-secondary-action{
+    width:190px !important;
+  }
+}
+
+/* Mobile: buttons stay full-width and photo stacks normally. */
+@media(max-width:760px){
+  .epb-page .epb-hero-actions{
+    flex-direction:column !important;
+  }
+
+  .epb-page .epb-primary-action,
+  .epb-page .epb-secondary-action{
+    width:100% !important;
+  }
+
+  .epb-page .epb-hero-photo{
+    margin-top:4px !important;
+  }
+}
