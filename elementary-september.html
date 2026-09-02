@@ -1322,6 +1322,109 @@ body.em-month-page input{
   .em-priority h3{font-size:1.4rem !important}
 }
 
+    /* =========================================================
+   SEPTEMBER · BOTTOM CLEANUP
+   ========================================================= */
+
+/* ---------- utility buttons ---------- */
+
+.em-month-utilities-links{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:9px !important;
+  width:min(100%,470px);
+  justify-self:end;
+}
+
+.em-month-utilities-links a,
+.em-month-utilities-links .support{
+  width:100%;
+  min-height:43px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 14px;
+  border:0;
+  border-radius:999px;
+  background:#fff !important;
+  color:#5A3F98 !important;
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:.82rem !important;
+  font-weight:800 !important;
+  text-align:center;
+  text-decoration:none;
+}
+
+.em-month-utilities-links a:hover,
+.em-month-utilities-links a:focus-visible{
+  transform:translateY(-1px);
+}
+
+
+/* ---------- next month navigation ---------- */
+
+/* No more half-empty outlined card */
+.em-prev-next{
+  padding:28px 0 42px !important;
+  background:#fff !important;
+}
+
+.em-prev-next-inner{
+  display:flex !important;
+  justify-content:flex-end !important;
+  align-items:center !important;
+}
+
+.em-prev-next .empty{
+  display:none !important;
+}
+
+.em-prev-next a{
+  min-height:0 !important;
+  width:auto !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  text-align:right !important;
+  color:#5A3F98 !important;
+}
+
+.em-prev-next a small{
+  margin-bottom:2px !important;
+  color:#6D6671 !important;
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:.7rem !important;
+  font-weight:800 !important;
+}
+
+.em-prev-next a strong{
+  color:#5A3F98 !important;
+  font-family:"Poppins",Arial,sans-serif !important;
+  font-size:.95rem !important;
+  font-weight:800 !important;
+}
+
+
+/* ---------- mobile ---------- */
+
+@media(max-width:680px){
+
+  .em-month-utilities-links{
+    grid-template-columns:1fr !important;
+    width:100%;
+    justify-self:stretch;
+  }
+
+  .em-prev-next-inner{
+    justify-content:flex-start !important;
+  }
+
+  .em-prev-next a{
+    text-align:left !important;
+  }
+}
+    
 </style>
 
   <script src="access.js" defer></script>
