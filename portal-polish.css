@@ -746,3 +746,15 @@
     transform:none !important;
   }
 }
+
+/* FINAL DESKTOP HERO TUNING */
+@media (min-width:1201px){
+
+  .portal-home-page .hub-hero-art img{
+    top:-68px !important;
+  }
+
+  .portal-home-page .teacher-hub-hero::after{
+    height:70px !important;
+  }
+}
