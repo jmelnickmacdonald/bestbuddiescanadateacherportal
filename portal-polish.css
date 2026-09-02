@@ -1099,3 +1099,10 @@
   content:none !important;
   display:none !important;
 }
+
+/* Remove teal accent under Jump Right In */
+.portal-home-page .portal-shortcuts .section-label::before,
+.portal-home-page .portal-shortcuts .section-label::after {
+  content: none !important;
+  display: none !important;
+}
