@@ -954,25 +954,75 @@
   }
 }
 
-/* Give the friendship message a clear pause before Choose Your Program */
-@media (max-width:900px){
 
-  .portal-home-page .hub-message{
-    padding-bottom:42px !important;
-  }
+/* =========================================================
+   V9 HERO STABILITY + CLEANER DECORATION
+   - Keeps the hero artwork visible through the tablet/narrow window range
+   - Nudges artwork higher on desktop
+   - Removes floating edge circles everywhere
+========================================================= */
 
-  .portal-home-page .program-launch{
-    padding-top:28px !important;
+/* The hero artwork already carries the Best Buddies yellow + teal shapes.
+   Extra floating circles elsewhere were reading as random decoration. */
+.portal-home-page .program-launch::before,
+.portal-home-page .program-launch::after,
+.portal-home-page .portal-shortcuts::before,
+.portal-home-page .portal-shortcuts::after{
+  display:none !important;
+  content:none !important;
+}
+
+/* Full desktop: raise the artwork a little more. */
+@media (min-width:1201px){
+  .portal-home-page .hub-hero-art img{
+    top:-82px !important;
   }
 }
 
-@media (max-width:430px){
+/* Narrow desktop: same composition, slightly higher artwork. */
+@media (min-width:901px) and (max-width:1200px){
+  .portal-home-page .hub-hero-art img{
+    transform:translateY(-46px) !important;
+  }
+}
 
-  .portal-home-page .hub-message{
-    padding-bottom:36px !important;
+/* Tablet / very narrow desktop:
+   Reserve real space for the transparent PNG so the row cannot collapse
+   and make the artwork appear to disappear. */
+@media (min-width:761px) and (max-width:900px){
+
+  .portal-home-page .hub-hero-art{
+    display:block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    position:relative !important;
+    grid-column:1 !important;
+    grid-row:2 !important;
+    width:100% !important;
+    height:clamp(360px,52vw,440px) !important;
+    min-height:clamp(360px,52vw,440px) !important;
+    overflow:visible !important;
+    margin:0 !important;
   }
 
-  .portal-home-page .program-launch{
-    padding-top:24px !important;
+  .portal-home-page .hub-hero-art img{
+    display:block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    position:absolute !important;
+    left:50% !important;
+    right:auto !important;
+    top:auto !important;
+    bottom:-18px !important;
+    width:min(108%,780px) !important;
+    max-width:none !important;
+    height:auto !important;
+    margin:0 !important;
+    transform:translateX(-50%) !important;
+  }
+
+  /* Keep the wave attached to the bottom of the image stage. */
+  .portal-home-page .hub-hero-art::after{
+    bottom:-1px !important;
   }
 }
