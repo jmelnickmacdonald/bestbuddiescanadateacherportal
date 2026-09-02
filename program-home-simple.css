@@ -2154,3 +2154,47 @@
     padding:26px 0 28px !important;
   }
 }
+
+
+
+/* =========================================================
+   V12 — SOFTER ENDING AFTER CURRENT MONTH
+   ========================================================= */
+
+.program-home-simple .simple-current-month{
+  position:relative !important;
+  padding-bottom:32px !important;
+}
+
+.program-home-simple .simple-current-month::after{
+  content:"" !important;
+  display:block !important;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-1px;
+  height:34px;
+  pointer-events:none;
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 54' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,26 C190,42 340,18 520,28 C690,38 825,18 1000,28 C1170,39 1300,20 1440,30 L1440,54 L0,54 Z'/%3E%3C/svg%3E")
+    center bottom / 100% 100% no-repeat !important;
+}
+
+.program-home-simple .portal-footer{
+  padding-top:24px !important;
+  padding-bottom:18px !important;
+}
+
+@media (max-width:720px){
+  .program-home-simple .simple-current-month{
+    padding-bottom:26px !important;
+  }
+
+  .program-home-simple .simple-current-month::after{
+    height:28px;
+  }
+
+  .program-home-simple .portal-footer{
+    padding-top:20px !important;
+  }
+}
