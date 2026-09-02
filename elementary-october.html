@@ -957,7 +957,314 @@ body.em-month-page input{
   .em-month-links a{transition:none}
   .em-month-links a:hover{transform:none}
 }
-  </style>
+  
+
+/* =========================================================
+   OCTOBER · VISUAL BRIDGE PASS
+   Brings the monthly page into the same family as the
+   Chapter Playbook + Plan a Meeting without changing its job.
+   ========================================================= */
+
+body.em-month-page{
+  background:#fff;
+}
+
+/* HERO: use the cleaner Plan a Meeting language */
+.em-hero{
+  padding:30px 0 72px !important;
+  background:#fff !important;
+}
+.em-hero::after{
+  bottom:-35px !important;
+  height:72px !important;
+  background:#5A3F98 !important;
+  opacity:1 !important;
+  border-radius:50% 50% 0 0 / 52% 52% 0 0 !important;
+}
+.em-hero-grid{
+  grid-template-columns:minmax(0,1.08fr) minmax(360px,.62fr) !important;
+  gap:64px !important;
+  align-items:center !important;
+}
+.em-month-pill{
+  margin-top:7px !important;
+  margin-bottom:18px !important;
+  background:#F37735 !important;
+  color:#211B28 !important;
+  min-height:36px !important;
+  padding:7px 14px !important;
+  font-size:.76rem !important;
+}
+.em-display{
+  max-width:720px !important;
+  font-size:clamp(3.65rem,5.5vw,5.7rem) !important;
+  line-height:.88 !important;
+}
+.em-display span{
+  display:inline !important;
+  margin:0 !important;
+  color:#5A3F98 !important;
+}
+.em-hero-lede{
+  max-width:720px !important;
+  margin-top:24px !important;
+  font-size:1.08rem !important;
+  line-height:1.65 !important;
+}
+.em-phase-card{
+  padding:29px 30px 31px !important;
+  border-radius:28px 28px 62px 28px !important;
+  background:#EEEAF8 !important;
+  box-shadow:none !important;
+  overflow:hidden !important;
+}
+.em-phase-card::before{
+  content:"";
+  position:absolute;
+  width:86px;
+  height:86px;
+  right:-22px;
+  top:-24px;
+  border-radius:50%;
+  background:#FFD420;
+}
+.em-phase-card::after{
+  content:"";
+  position:absolute;
+  width:72px;
+  height:72px;
+  right:22px;
+  bottom:-30px;
+  border-radius:50%;
+  background:#8FD1C4;
+}
+.em-phase-card h2{
+  position:relative;
+  z-index:1;
+  font-size:2.05rem !important;
+}
+.em-phase-card p,
+.em-phase-card .em-phase-label{
+  position:relative;
+  z-index:1;
+}
+
+/* MONTH SWITCHER: lighter and integrated, not a separate giant band */
+.em-month-nav{
+  padding:26px 0 31px !important;
+  background:#5A3F98 !important;
+}
+.em-month-nav-inner{
+  grid-template-columns:auto minmax(0,1fr) !important;
+  gap:26px !important;
+}
+.em-month-links{
+  gap:11px !important;
+}
+.em-month-links a{
+  min-height:46px !important;
+  border-color:rgba(255,255,255,.34) !important;
+  background:rgba(255,255,255,.04);
+}
+.em-month-links a[aria-current="page"]{
+  background:#FFD420 !important;
+  border-color:#FFD420 !important;
+  color:#211B28 !important;
+}
+
+/* PRIORITIES: give this the Playbook's purple canvas + stacked white cards */
+.em-priorities{
+  padding:76px 0 84px !important;
+  background:#5A3F98 !important;
+  color:#fff !important;
+}
+.em-priorities .em-section-kicker{
+  color:#FFD420 !important;
+}
+.em-priorities .em-section-title{
+  color:#fff !important;
+  max-width:640px !important;
+}
+.em-priorities .em-section-intro{
+  color:rgba(255,255,255,.88) !important;
+  max-width:560px !important;
+}
+.em-priority-grid,
+.em-priority-grid.three{
+  grid-template-columns:1fr !important;
+  gap:12px !important;
+}
+.em-priority{
+  min-height:0 !important;
+  display:grid !important;
+  grid-template-columns:58px minmax(0,1fr) !important;
+  column-gap:20px !important;
+  align-items:center !important;
+  padding:19px 25px 20px 19px !important;
+  border:0 !important;
+  border-radius:18px 18px 42px 18px !important;
+  background:#fff !important;
+  color:#4F4854 !important;
+}
+.em-priority:nth-child(2),
+.em-priority:nth-child(3),
+.em-priority:nth-child(4){
+  background:#fff !important;
+}
+.em-number{
+  grid-row:1 / span 2;
+  display:grid !important;
+  place-items:center !important;
+  width:50px !important;
+  height:50px !important;
+  margin:0 !important;
+  border-radius:50%;
+  background:#EEEAF8;
+  color:#5A3F98 !important;
+  font-size:1rem !important;
+}
+.em-priority:nth-child(2) .em-number{background:#FFF2B7 !important}
+.em-priority:nth-child(3) .em-number{background:#DDF2ED !important}
+.em-priority:nth-child(4) .em-number{background:#FBE2D5 !important}
+.em-priority h3{
+  align-self:end;
+  margin:0 0 3px !important;
+  font-size:1.56rem !important;
+  line-height:1 !important;
+}
+.em-priority p{
+  align-self:start;
+  margin:0 !important;
+  max-width:980px;
+  font-size:.96rem !important;
+  line-height:1.55 !important;
+}
+.em-now-note{
+  margin-top:18px !important;
+  background:rgba(255,255,255,.1) !important;
+  border:1px solid rgba(255,255,255,.18);
+  color:#fff !important;
+}
+.em-now-note p{color:#fff !important}
+
+/* MEETING SECTION: a white/lavender work surface inside the same visual system */
+.em-meeting{
+  padding:82px 0 88px !important;
+  background:#F5F3FA !important;
+  color:#4F4854 !important;
+}
+.em-meeting::before{
+  width:210px !important;
+  height:150px !important;
+  top:-78px !important;
+  right:-65px !important;
+  background:#F37735 !important;
+  opacity:1 !important;
+}
+.em-meeting .em-section-kicker{
+  color:#5A3F98 !important;
+}
+.em-meeting-title{
+  color:#211B28 !important;
+  max-width:720px !important;
+}
+.em-meeting-copy{
+  color:#4F4854 !important;
+  font-size:1rem !important;
+}
+.em-phase-thread{
+  margin:25px 0 27px !important;
+}
+.em-phase-thread span{
+  border-color:#D8D1E8 !important;
+  background:#fff !important;
+  color:#5A3F98 !important;
+}
+.em-phase-thread .current{
+  border-color:#5A3F98 !important;
+  background:#5A3F98 !important;
+  color:#fff !important;
+}
+.em-activity-grid{
+  gap:14px !important;
+}
+.em-activity{
+  min-height:315px !important;
+  border:1px solid #E0DBEA !important;
+  border-radius:22px 22px 54px 22px !important;
+  box-shadow:0 10px 30px rgba(56,40,90,.06);
+}
+.em-activity:nth-child(1){border-top:8px solid #8FD1C4 !important}
+.em-activity:nth-child(2){border-top:8px solid #FFD420 !important}
+.em-activity:nth-child(3){border-top:8px solid #F37735 !important}
+.em-timely{
+  border:0 !important;
+  background:#fff !important;
+  box-shadow:0 8px 25px rgba(56,40,90,.05);
+}
+.em-timely-label{color:#F37735 !important}
+.em-timely h3{color:#211B28 !important}
+.em-timely p{color:#4F4854 !important}
+.em-timely a{color:#5A3F98 !important}
+
+/* CTA borrows directly from Plan a Meeting */
+.em-plan-cta{
+  margin-top:22px !important;
+  border-radius:23px 23px 58px 23px !important;
+  background:#FFD420 !important;
+}
+.em-plan-cta strong{
+  font-size:2.05rem !important;
+}
+.em-plan-button{
+  background:#5A3F98 !important;
+}
+
+/* Calendar is now a slim teal bridge, not another full section */
+.em-calendar-bridge{
+  padding:28px 0 !important;
+  background:#8FD1C4 !important;
+}
+
+/* Resources keep breathing room but feel less generic */
+.em-resources{
+  padding:72px 0 78px !important;
+  background:#fff !important;
+}
+.em-resource-grid{
+  gap:13px !important;
+}
+.em-resource{
+  border-radius:20px 20px 48px 20px !important;
+  background:#F8F7F4 !important;
+}
+
+/* Support becomes the quiet lavender close */
+.em-support{
+  padding:20px 0 58px !important;
+}
+.em-support-inner{
+  border-radius:24px 24px 58px 24px !important;
+  background:#EEEAF8 !important;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .em-hero-grid{grid-template-columns:1fr !important}
+  .em-phase-card{max-width:none !important}
+}
+@media(max-width:780px){
+  .em-display{font-size:clamp(3.05rem,14vw,4.35rem) !important}
+  .em-priority{
+    grid-template-columns:48px minmax(0,1fr) !important;
+    column-gap:14px !important;
+    padding:17px 18px !important;
+  }
+  .em-number{width:42px !important;height:42px !important}
+  .em-priority h3{font-size:1.4rem !important}
+}
+
+</style>
 
   <script src="access.js" defer></script>
   <script src="accessibility.js" defer></script>
@@ -1013,7 +1320,7 @@ body.em-month-page input{
         <div>
           <span class="em-kicker">Elementary &amp; Middle School</span>
           <span class="em-month-pill">October</span>
-          <h1 class="em-display" id="em-title">Getting to Know You</h1>
+          <h1 class="em-display" id="em-title">Getting to <span>Know You</span></h1>
           <p class="em-hero-lede">October is a good time to bring people together, learn about one another, and let the first few meetings feel comfortable rather than overplanned.</p>
         </div>
 
@@ -1045,7 +1352,7 @@ body.em-month-page input{
           <span class="em-section-kicker">October at a glance</span>
           <h2 class="em-section-title" id="priorities-title">What matters this month.</h2>
         </div>
-        <p class="em-section-intro">Use this as the short list. The Chapter Playbook holds the whole year, while this page keeps the next few things close.</p>
+        <p class="em-section-intro">The Playbook holds the whole year. These are the few things worth keeping close in October.</p>
       </div>
 
       <div class="em-priority-grid ">
@@ -1085,7 +1392,7 @@ body.em-month-page input{
           <span class="em-section-kicker">Good October choices</span>
           <h2 class="em-meeting-title" id="meeting-title">Names, interests, and common ground.</h2>
         </div>
-        <p class="em-meeting-copy">October can carry the rest of Phase One. The guide already gives you a natural progression from breaking the ice to understanding one another and finding common interests.</p>
+        <p class="em-meeting-copy">October carries the rest of Phase One naturally: break the ice, learn more about one another, then look for common interests.</p>
       </div>
 
       <div class="em-phase-thread" aria-label="October Program Guide focus">
