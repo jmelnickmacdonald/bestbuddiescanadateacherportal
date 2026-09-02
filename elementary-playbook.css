@@ -3106,3 +3106,78 @@
     margin-left:-18% !important;
   }
 }
+
+/* =========================================================
+   V18 — WAVE LAYERING + HERO RHYTHM
+   Students sit behind the lavender transition, the stage path
+   rises slightly, and the hero title gets a touch more air.
+   ========================================================= */
+
+/* Keep both words at the existing hero scale; loosen the tracking only. */
+.epb-page .epb-hero h1{
+  letter-spacing:-.025em !important;
+}
+
+.epb-page .epb-hero h1 span{
+  font-size:1em !important;
+  line-height:inherit !important;
+  letter-spacing:inherit !important;
+  font-weight:inherit !important;
+}
+
+/* The lavender wave now passes IN FRONT of the lower edge of the cutout. */
+.epb-page .epb-hero::after{
+  z-index:3 !important;
+}
+
+.epb-page .epb-hero > .portal-container{
+  z-index:2 !important;
+}
+
+/* Keep the stage controls above the transition itself. */
+.epb-page .epb-jump-strip{
+  z-index:4 !important;
+}
+
+/* Desktop: lift the student treatment so the wave catches the lower edge
+   instead of the cutout sitting on top of the lavender. */
+@media(min-width:1280px){
+  .epb-page .epb-hero-photo{
+    transform:translateX(clamp(64px,5.5vw,96px)) translateY(8px) !important;
+  }
+
+  .epb-page .epb-jump-strip-inner{
+    transform:translateY(-12px) !important;
+    margin-bottom:-12px !important;
+  }
+}
+
+@media(min-width:1001px) and (max-width:1279px){
+  .epb-page .epb-hero-photo{
+    transform:translateX(24px) translateY(6px) !important;
+  }
+
+  .epb-page .epb-jump-strip-inner{
+    transform:translateY(-10px) !important;
+    margin-bottom:-10px !important;
+  }
+}
+
+@media(min-width:761px) and (max-width:1000px){
+  .epb-page .epb-hero-photo{
+    transform:translateY(8px) !important;
+  }
+
+  .epb-page .epb-jump-strip-inner{
+    transform:translateY(-8px) !important;
+    margin-bottom:-8px !important;
+  }
+}
+
+/* Mobile keeps the generous visual pause we added, but the cutout now
+   sits slightly higher so the lavender wave can overlap its bottom edge. */
+@media(max-width:760px){
+  .epb-page .epb-hero-photo{
+    transform:translateY(2px) !important;
+  }
+}
