@@ -751,3 +751,324 @@
     transform:none;
   }
 }
+
+/* =========================================================
+   ELEMENTARY + MIDDLE · COMPACT PRECISION FIX
+   Append to the VERY BOTTOM of program-home-simple.css
+
+   This intentionally keeps the current architecture and copy.
+   It only restores the tighter proportions and cleans up the
+   lower half of the page.
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   MAIN ROUTE CARDS · back to a tighter, cleaner scale
+   --------------------------------------------------------- */
+
+.program-home-simple .simple-routes{
+  padding:72px 0 64px !important;
+}
+
+.program-home-simple .simple-routes-heading{
+  margin-bottom:24px !important;
+}
+
+.program-home-simple .simple-routes h2{
+  max-width:680px !important;
+  font-size:clamp(2.35rem,3.35vw,3.45rem) !important;
+  line-height:.95 !important;
+}
+
+.program-home-simple .simple-route-grid{
+  gap:14px !important;
+}
+
+.program-home-simple .simple-route-card{
+  min-height:255px !important;
+  padding:24px 26px 22px !important;
+  border-radius:22px 22px 52px 22px !important;
+}
+
+.program-home-simple .route-number{
+  top:18px !important;
+  right:22px !important;
+  font-size:2.7rem !important;
+}
+
+.program-home-simple .route-kicker{
+  margin-bottom:8px !important;
+  font-size:.74rem !important;
+}
+
+.program-home-simple .simple-route-card h3{
+  font-size:1.6rem !important;
+  line-height:1 !important;
+}
+
+.program-home-simple .simple-route-card p{
+  margin-top:11px !important;
+  max-width:520px !important;
+  font-size:.94rem !important;
+  line-height:1.55 !important;
+}
+
+.program-home-simple .route-help{
+  margin-top:13px !important;
+  padding-top:12px !important;
+  font-size:.84rem !important;
+  line-height:1.48 !important;
+}
+
+.program-home-simple .route-action{
+  padding-top:15px !important;
+  font-size:.84rem !important;
+}
+
+.program-home-simple .route-action b{
+  width:31px !important;
+  height:31px !important;
+  font-size:.9rem !important;
+}
+
+
+/* ---------------------------------------------------------
+   RIGHT NOW · compact horizontal bridge, not a giant section
+   --------------------------------------------------------- */
+
+.program-home-simple .simple-current-month{
+  padding:0 !important;
+  background:#fff !important;
+}
+
+.program-home-simple .simple-current-month .portal-container{
+  padding-top:0 !important;
+  padding-bottom:0 !important;
+}
+
+.program-home-simple .simple-current-month-inner{
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) auto !important;
+  align-items:center !important;
+  gap:34px !important;
+
+  margin:0 !important;
+  padding:28px 34px !important;
+
+  border-radius:0 !important;
+  background:#EEEAF8 !important;
+  color:#211B28 !important;
+  box-shadow:none !important;
+}
+
+.program-home-simple .simple-current-copy{
+  max-width:760px !important;
+}
+
+.program-home-simple .simple-current-eyebrow{
+  color:#51AB9D !important;
+  margin-bottom:3px !important;
+}
+
+.program-home-simple .simple-current-label{
+  color:#5A3F98 !important;
+  margin-bottom:4px !important;
+}
+
+.program-home-simple .simple-current-month h2{
+  color:#211B28 !important;
+  font-size:2.25rem !important;
+  line-height:.96 !important;
+}
+
+.program-home-simple .simple-current-month p{
+  max-width:700px !important;
+  margin-top:9px !important;
+  color:#4F4854 !important;
+  font-size:.94rem !important;
+  line-height:1.55 !important;
+}
+
+.program-home-simple .simple-current-actions{
+  width:210px !important;
+  min-width:210px !important;
+  gap:8px !important;
+}
+
+.program-home-simple .simple-current-button{
+  min-height:42px !important;
+  padding:8px 14px !important;
+  font-size:.82rem !important;
+}
+
+.program-home-simple .simple-current-button-secondary{
+  background:#5A3F98 !important;
+  color:#fff !important;
+}
+
+.program-home-simple .simple-all-months{
+  margin-top:0 !important;
+  color:#5A3F98 !important;
+  font-size:.8rem !important;
+}
+
+
+/* ---------------------------------------------------------
+   QUICK GUIDES · quieter and more compact
+   --------------------------------------------------------- */
+
+.program-home-simple .quick-help{
+  padding:54px 0 58px !important;
+  background:#fff !important;
+}
+
+.program-home-simple .quick-help-grid{
+  grid-template-columns:minmax(250px,.68fr) minmax(0,1.5fr) !important;
+  gap:48px !important;
+}
+
+.program-home-simple .quick-help-head{
+  padding-left:16px !important;
+  border-left-width:5px !important;
+}
+
+.program-home-simple .quick-help-head h2{
+  max-width:400px !important;
+  font-size:2.45rem !important;
+  line-height:.95 !important;
+}
+
+.program-home-simple .quick-help-head p{
+  margin-top:13px !important;
+  max-width:410px !important;
+  font-size:.91rem !important;
+  line-height:1.56 !important;
+}
+
+.program-home-simple .quick-help-all{
+  margin-top:14px !important;
+  font-size:.81rem !important;
+}
+
+.program-home-simple .quick-help-links{
+  gap:9px !important;
+}
+
+.program-home-simple .quick-help-link{
+  min-height:88px !important;
+  padding:16px 19px !important;
+  border-left-width:5px !important;
+  border-radius:17px 17px 36px 17px !important;
+  box-shadow:0 6px 18px rgba(48,31,77,.04) !important;
+}
+
+.program-home-simple .quick-help-tag{
+  margin-bottom:2px !important;
+  font-size:.7rem !important;
+}
+
+.program-home-simple .quick-help-link strong{
+  font-size:1.12rem !important;
+  line-height:1.05 !important;
+}
+
+.program-home-simple .quick-help-link span:not(.quick-help-tag):not(.link-arrow){
+  margin-top:4px !important;
+  font-size:.84rem !important;
+  line-height:1.45 !important;
+}
+
+.program-home-simple .link-arrow{
+  font-size:.92rem !important;
+}
+
+
+/* ---------------------------------------------------------
+   PROGRAM SUPPORT · slim finishing strip
+   --------------------------------------------------------- */
+
+.program-home-simple .program-support-band{
+  padding:0 0 42px !important;
+  background:#fff !important;
+}
+
+.program-home-simple .program-support-inner{
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) auto !important;
+  align-items:center !important;
+  gap:28px !important;
+
+  padding:24px 30px !important;
+
+  border-radius:20px 20px 46px 20px !important;
+  background:#8FD1C4 !important;
+}
+
+.program-home-simple .support-kicker{
+  margin-bottom:4px !important;
+  font-size:.72rem !important;
+}
+
+.program-home-simple .program-support-inner h2{
+  font-size:2.1rem !important;
+  line-height:.96 !important;
+}
+
+.program-home-simple .program-support-inner p{
+  margin-top:7px !important;
+  font-size:.88rem !important;
+  line-height:1.52 !important;
+}
+
+.program-home-simple .program-support-button{
+  min-height:43px !important;
+  padding:8px 15px !important;
+  font-size:.82rem !important;
+}
+
+
+/* ---------------------------------------------------------
+   SMALLER SCREENS
+   --------------------------------------------------------- */
+
+@media(max-width:900px){
+
+  .program-home-simple .simple-current-month-inner,
+  .program-home-simple .program-support-inner{
+    grid-template-columns:1fr !important;
+  }
+
+  .program-home-simple .simple-current-actions{
+    width:min(100%,300px) !important;
+    min-width:0 !important;
+  }
+
+  .program-home-simple .quick-help-grid{
+    grid-template-columns:1fr !important;
+    gap:28px !important;
+  }
+}
+
+@media(max-width:680px){
+
+  .program-home-simple .simple-route-card{
+    min-height:0 !important;
+    padding:22px 21px 20px !important;
+  }
+
+  .program-home-simple .simple-current-month-inner{
+    padding:24px 22px !important;
+  }
+
+  .program-home-simple .quick-help{
+    padding:46px 0 50px !important;
+  }
+
+  .program-home-simple .quick-help-head h2{
+    font-size:2.2rem !important;
+  }
+
+  .program-home-simple .program-support-inner{
+    padding:22px 22px !important;
+  }
+}
+
