@@ -1,0 +1,654 @@
+/* =========================================================
+   BEST BUDDIES CANADA TEACHER HUB
+   Program Calendar v4
+   Calendar-first layout. Uses portal-home.css for shared
+   header, footer, typography variables, and brand tokens.
+========================================================= */
+
+
+/* =========================================================
+   PAGE RESET / DIFFERENTIATION
+========================================================= */
+
+.calendar-page-v4{
+  background:#fff;
+}
+
+/* Remove inherited decorative calendar blobs/circles. */
+.calendar-page-v4 .calendar4-hero::before,
+.calendar-page-v4 .calendar4-hero::after,
+.calendar-page-v4 .calendar4-live::before,
+.calendar-page-v4 .calendar4-live::after,
+.calendar-page-v4 .calendar4-meetings::before,
+.calendar-page-v4 .calendar4-meetings::after{
+  content:none !important;
+  display:none !important;
+}
+
+
+/* =========================================================
+   COMPACT HERO
+========================================================= */
+
+.calendar4-hero{
+  background:#fff;
+  padding:44px 0 34px;
+}
+
+.calendar4-hero-inner{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(340px,.78fr);
+  gap:64px;
+  align-items:end;
+}
+
+.calendar4-hero .section-label{
+  margin-bottom:10px;
+}
+
+.calendar4-hero .section-label::after{
+  width:38px;
+  height:5px;
+  margin-top:7px;
+  background:var(--teal);
+}
+
+.calendar4-hero h1{
+  max-width:790px;
+  margin:0;
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:clamp(2.75rem,4.15vw,4.6rem);
+  font-weight:800;
+  line-height:.98;
+  letter-spacing:-.04em;
+}
+
+.calendar4-hero h1 span{
+  color:var(--purple);
+}
+
+.calendar4-hero-lede{
+  max-width:610px;
+  margin:0 0 7px;
+  color:var(--muted);
+  font-size:1rem;
+  line-height:1.58;
+}
+
+
+/* =========================================================
+   SMALL CALENDAR LANGUAGE
+========================================================= */
+
+.calendar4-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  margin-bottom:9px;
+  color:var(--purple);
+  font-size:.76rem;
+  font-weight:800;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.calendar4-mini-dot{
+  flex:0 0 auto;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+}
+
+.calendar4-mini-dot.yellow{background:var(--yellow)}
+.calendar4-mini-dot.teal{background:var(--teal)}
+.calendar4-mini-dot.purple{background:var(--purple)}
+
+
+/* =========================================================
+   LIVE CALENDAR — THE PAGE
+========================================================= */
+
+.calendar4-live{
+  padding:42px 0 54px;
+  background:var(--lavender);
+  border-top:1px solid rgba(90,63,152,.06);
+  border-bottom:1px solid rgba(90,63,152,.08);
+}
+
+.calendar4-live-inner{
+  max-width:1290px;
+}
+
+.calendar4-live-heading{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(320px,.7fr);
+  gap:52px;
+  align-items:end;
+  margin-bottom:22px;
+}
+
+.calendar4-live-heading h2{
+  max-width:710px;
+  margin:0;
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:clamp(2rem,2.65vw,2.9rem);
+  font-weight:800;
+  line-height:1.04;
+  letter-spacing:-.03em;
+}
+
+.calendar4-live-heading p{
+  max-width:600px;
+  margin:0 0 3px;
+  color:var(--muted);
+  font-size:.94rem;
+  line-height:1.55;
+}
+
+.calendar4-shell{
+  overflow:hidden;
+  background:#fff;
+  border:1px solid rgba(57,44,74,.16);
+  border-radius:22px;
+  box-shadow:0 14px 34px rgba(48,31,77,.09);
+}
+
+.calendar4-toolbar{
+  min-height:67px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:13px 18px 13px 20px;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+
+.calendar4-toolbar-title{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  min-width:0;
+}
+
+.calendar4-status-dot{
+  flex:0 0 auto;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:var(--yellow);
+  box-shadow:0 0 0 4px var(--yellow-soft);
+}
+
+.calendar4-toolbar-title span:last-child{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+}
+
+.calendar4-toolbar-title small{
+  color:var(--purple);
+  font-size:.64rem;
+  font-weight:800;
+  line-height:1.2;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.calendar4-toolbar-title strong{
+  margin-top:2px;
+  color:var(--ink);
+  font-size:1rem;
+  font-weight:800;
+  line-height:1.25;
+}
+
+.calendar4-full-link{
+  flex:0 0 auto;
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border-radius:999px;
+  background:var(--purple);
+  color:#fff;
+  font-size:.78rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.calendar4-full-link:hover{
+  background:#4d3587;
+}
+
+.calendar4-months-wrap{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:17px;
+  align-items:center;
+  padding:11px 18px;
+  background:var(--wash);
+  border-bottom:1px solid var(--line);
+}
+
+.calendar4-months-label{
+  color:var(--muted);
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.055em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.calendar4-months{
+  min-width:0;
+  display:grid;
+  grid-template-columns:repeat(10,minmax(50px,1fr));
+  gap:5px;
+}
+
+.calendar4-month{
+  min-height:38px;
+  padding:6px 8px;
+  border:0;
+  border-radius:10px;
+  background:transparent;
+  color:var(--text);
+  font-size:.76rem;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.calendar4-month:hover{
+  background:#fff;
+  color:var(--purple);
+}
+
+.calendar4-month[aria-pressed="true"]{
+  background:var(--yellow);
+  color:var(--ink);
+  font-weight:800;
+}
+
+.calendar4-frame{
+  height:540px;
+  background:#fff;
+}
+
+.calendar4-frame iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+.calendar4-status{
+  margin:10px 2px 0;
+  color:var(--muted);
+  font-size:.75rem;
+}
+
+
+/* =========================================================
+   MEETING STARTERS — ONLY THREE
+========================================================= */
+
+.calendar4-meetings{
+  padding:70px 0 76px;
+  background:#fff;
+}
+
+.calendar4-section-heading{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(320px,.72fr);
+  gap:52px;
+  align-items:end;
+  margin-bottom:28px;
+}
+
+.calendar4-section-heading h2{
+  max-width:760px;
+  margin:0;
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:clamp(2rem,2.8vw,3.05rem);
+  font-weight:800;
+  line-height:1.05;
+  letter-spacing:-.03em;
+}
+
+.calendar4-section-heading p{
+  max-width:590px;
+  margin:0 0 3px;
+  color:var(--muted);
+  font-size:.94rem;
+  line-height:1.55;
+}
+
+.calendar4-bundle-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+
+.calendar4-bundle{
+  position:relative;
+  min-width:0;
+  min-height:305px;
+  display:flex;
+  flex-direction:column;
+  padding:23px 23px 20px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-top-width:6px;
+  border-radius:18px;
+}
+
+.calendar4-bundle.bundle-yellow{border-top-color:var(--yellow)}
+.calendar4-bundle.bundle-teal{border-top-color:var(--teal)}
+.calendar4-bundle.bundle-orange{border-top-color:var(--orange)}
+
+.calendar4-bundle-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:18px;
+}
+
+.calendar4-bundle-tag{
+  display:inline-flex;
+  align-items:center;
+  min-height:29px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:var(--lavender);
+  color:var(--purple);
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.045em;
+  text-transform:uppercase;
+}
+
+.calendar4-bundle-number{
+  color:#b8b1c1;
+  font-family:var(--display);
+  font-size:.86rem;
+  font-weight:900;
+  letter-spacing:.07em;
+}
+
+.calendar4-bundle h3{
+  margin:0 0 9px;
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:1.4rem;
+  font-weight:800;
+  line-height:1.1;
+  letter-spacing:-.025em;
+}
+
+.calendar4-bundle p{
+  margin:0;
+  color:var(--muted);
+  font-size:.87rem;
+  line-height:1.55;
+}
+
+.calendar4-bundle-links{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:4px;
+  margin-top:auto;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+}
+
+.calendar4-bundle-links a{
+  min-height:39px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:5px 3px;
+  color:var(--purple);
+  font-size:.76rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.calendar4-bundle-links a:hover{
+  text-decoration:underline;
+}
+
+
+/* =========================================================
+   QUIET PLAYBOOK BRIDGE
+========================================================= */
+
+.calendar4-bridge{
+  padding:0 0 70px;
+  background:#fff;
+}
+
+.calendar4-bridge-inner{
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) auto;
+  gap:30px;
+  align-items:center;
+  padding:23px 0 22px;
+  border-top:2px solid var(--ink);
+  border-bottom:1px solid var(--line);
+}
+
+.calendar4-bridge-copy{
+  display:flex;
+  align-items:flex-start;
+  gap:11px;
+}
+
+.calendar4-bridge-copy .calendar4-mini-dot{
+  margin-top:8px;
+}
+
+.calendar4-bridge-copy p{
+  margin:0;
+  color:var(--muted);
+  font-size:.86rem;
+}
+
+.calendar4-bridge-copy strong{
+  color:var(--ink);
+}
+
+.calendar4-bridge-links{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:22px;
+  flex-wrap:wrap;
+}
+
+.calendar4-bridge-links a{
+  color:var(--purple);
+  font-size:.76rem;
+  font-weight:800;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.calendar4-bridge-links a:hover{
+  text-decoration:underline;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px){
+  .calendar4-hero-inner,
+  .calendar4-live-heading,
+  .calendar4-section-heading{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .calendar4-hero-lede,
+  .calendar4-live-heading p,
+  .calendar4-section-heading p{
+    max-width:760px;
+  }
+
+  .calendar4-frame{
+    height:510px;
+  }
+
+  .calendar4-bundle-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .calendar4-bundle:last-child{
+    grid-column:1 / -1;
+    min-height:250px;
+  }
+
+  .calendar4-bridge-inner{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .calendar4-bridge-links{
+    justify-content:flex-start;
+  }
+}
+
+@media(max-width:760px){
+  .calendar4-hero{
+    padding:32px 0 27px;
+  }
+
+  .calendar4-hero h1{
+    font-size:clamp(2.25rem,10.2vw,3.25rem);
+    line-height:1;
+  }
+
+  .calendar4-hero-lede{
+    font-size:.9rem;
+  }
+
+  .calendar4-live{
+    padding:32px 0 42px;
+  }
+
+  .calendar4-live-heading{
+    margin-bottom:17px;
+  }
+
+  .calendar4-live-heading h2,
+  .calendar4-section-heading h2{
+    font-size:clamp(1.75rem,7.6vw,2.35rem);
+  }
+
+  .calendar4-toolbar{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:11px;
+    padding:15px 16px;
+  }
+
+  .calendar4-full-link{
+    min-height:40px;
+  }
+
+  .calendar4-months-wrap{
+    display:block;
+    padding:10px 14px 9px;
+  }
+
+  .calendar4-months-label{
+    display:block;
+    margin-bottom:7px;
+  }
+
+  .calendar4-months{
+    display:flex;
+    gap:6px;
+    overflow-x:auto;
+    padding:0 0 5px;
+    scrollbar-width:thin;
+    scroll-snap-type:x proximity;
+  }
+
+  .calendar4-month{
+    flex:0 0 59px;
+    min-height:40px;
+    scroll-snap-align:start;
+  }
+
+  .calendar4-frame{
+    height:455px;
+  }
+
+  .calendar4-meetings{
+    padding:56px 0 60px;
+  }
+
+  .calendar4-section-heading{
+    margin-bottom:22px;
+  }
+
+  .calendar4-bundle-grid{
+    grid-template-columns:1fr;
+    gap:13px;
+  }
+
+  .calendar4-bundle,
+  .calendar4-bundle:last-child{
+    grid-column:auto;
+    min-height:0;
+  }
+
+  .calendar4-bundle-links{
+    margin-top:18px;
+  }
+
+  .calendar4-bridge{
+    padding-bottom:54px;
+  }
+
+  .calendar4-bridge-links{
+    gap:12px 18px;
+  }
+}
+
+@media(max-width:430px){
+  .calendar4-frame{
+    height:420px;
+  }
+
+  .calendar4-bundle{
+    padding:20px 19px 17px;
+  }
+
+  .calendar4-bridge-links{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+}
+
+
+/* =========================================================
+   MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+  .calendar4-month,
+  .calendar4-full-link{
+    transition:none;
+  }
+}
