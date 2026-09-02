@@ -44,6 +44,7 @@
       prep: "No special prep",
       space: "Any room",
       summary: "Open with one easy prompt about something members are looking forward to.",
+      example: "This might look like: a field trip, recess, seeing a friend, a favourite class, a game after school, the weekend, or something happening at home.",
       steps: [
         "Ask one simple question: “What’s something you’re looking forward to?”",
         "Offer a few examples or visible choices if that makes the question easier to enter.",
@@ -67,6 +68,7 @@
       prep: "Two simple choices",
       space: "Any room",
       summary: "Use a few light either-or choices to get everyone responding without putting anyone on the spot.",
+      example: "This might look like: cats or dogs, drawing or building, music or movies, gym or art, sweet or salty, indoors or outdoors.",
       steps: [
         "Offer two choices at a time, such as music or movies, indoors or outdoors, sweet or salty.",
         "Members can answer by moving, pointing, holding up a card, signing, speaking, or using a communication device.",
@@ -89,9 +91,10 @@
       minutes: 5,
       prep: "Optional picture or word choices",
       space: "Any room",
-      summary: "Invite members to show how they’re arriving today with a word, picture, gesture, or another simple response.",
+      summary: "Invite members to choose a simple feeling, word, picture, or gesture that shows how they feel today.",
+      example: "This might look like: happy, tired, excited, nervous, calm, silly, thumbs-up, a smiley face, or pointing to a picture that fits.",
       steps: [
-        "Ask: “How are you arriving today?”",
+        "Ask: “How are you feeling today?” or “Pick one word, picture, or gesture for today.”",
         "Offer a few words or pictures if useful.",
         "Keep responses brief and make listening or passing valid choices."
       ],
@@ -112,7 +115,8 @@
       minutes: 5,
       prep: "No materials",
       space: "Pairs or small groups",
-      summary: "A short movement warm-up where partners take turns leading and mirroring simple motions.",
+      summary: "A short movement warm-up where partners take turns leading and copying simple motions.",
+      example: "This might look like: wave, tap your knees, make a funny face, reach up, clap twice, roll your shoulders, or make a small hand motion.",
       steps: [
         "Pair up or make small groups.",
         "One person chooses a simple motion and the other person mirrors it.",
@@ -136,6 +140,7 @@
       prep: "No materials",
       space: "Circle or small group",
       summary: "Pair a name with a simple movement, then let the group echo it back.",
+      example: "This might look like: “I’m Maya” + a wave, “I’m Leo” + two claps, or a name shown on a communication device + a chosen gesture.",
       steps: [
         "Invite a member to share their name and choose a simple movement or gesture.",
         "The group repeats the name and movement together.",
@@ -159,6 +164,7 @@
       prep: "No special prep",
       space: "Any room",
       summary: "Close with one thing someone enjoyed, noticed, learned, or wants to remember.",
+      example: "This might look like: “I liked the game,” “I learned Sam likes hockey,” “drawing was my favourite,” or choosing a picture for something that felt good.",
       steps: [
         "Ask: “What’s one thing you’re taking with you from today?”",
         "Offer examples or visible choices if helpful.",
@@ -182,6 +188,7 @@
       prep: "Optional visible choices",
       space: "Any room",
       summary: "Let members help choose what kind of activity they’d like to do next time.",
+      example: "This might look like a simple vote between: play a game, make something, do a teamwork challenge, talk in pairs, or choose a movement activity.",
       steps: [
         "Ask what kind of activity the group wants next.",
         "Offer two to four visible choices if helpful: game, art, teamwork, conversation, movement, or another idea.",
@@ -679,6 +686,39 @@
     return list;
   }
 
+  function renderModeSwitcher(active = "") {
+    const modes = [
+      ["guided", "Activity Builder", "5 quick questions"],
+      ["manual", "Choose the pieces", "Browse activities"],
+      ["quick", "Quick plan", "Use a ready-to-run start"]
+    ];
+
+    return `<nav class="gb-mode-switcher" aria-label="Ways to plan your meeting">
+      <span class="gb-mode-switcher-label">Plan your way</span>
+      <div class="gb-mode-switcher-buttons">
+        ${modes.map(([key,label,small]) => `<button type="button" class="${active === key ? "active" : ""}" data-switch-mode="${key}"${active === key ? ' aria-current="page"' : ""}>
+          <strong>${esc(label)}</strong><small>${esc(small)}</small>
+        </button>`).join("")}
+        <button type="button" class="home" data-home><strong>Planning home</strong><small>See all 3 options</small></button>
+      </div>
+    </nav>`;
+  }
+
+  function manualStepHelp() {
+    return `<div class="gb-manual-help">
+      <div>
+        <span class="gb-kicker">How to use this view</span>
+        <h3>Build one part at a time.</h3>
+      </div>
+      <ol>
+        <li><b>1</b><span>Choose one of the four meeting parts.</span></li>
+        <li><b>2</b><span>Pick one activity you like.</span></li>
+        <li><b>3</b><span>Move to the next part. Your choices stay saved.</span></li>
+        <li><b>4</b><span>When all four are filled, choose <strong>Use my meeting</strong>.</span></li>
+      </ol>
+    </div>`;
+  }
+
   function renderMonthContext() {
     const c = monthContext[monthSelect.value] || monthContext.any;
     return `<div class="gb-month-context">
@@ -751,6 +791,7 @@
     const countNote = q.max ? `<span class="gb-selection-count">${(val || []).length} of ${q.max} selected</span>` : "";
 
     root.innerHTML = `<section class="gb-panel">
+      ${renderModeSwitcher("guided")}
       <div class="gb-panel-head">
         <span class="gb-kicker">Guided Activity Builder</span>
         <h2>Let’s build your meeting.</h2>
@@ -799,6 +840,7 @@
     state.generated = [first,second];
 
     root.innerHTML = `<section class="gb-panel">
+      ${renderModeSwitcher("guided")}
       <div class="gb-panel-head">
         <span class="gb-kicker">Two starting points</span>
         <h2>Here are two ways to run it.</h2>
@@ -832,8 +874,11 @@
     if (!a) return "";
     const src = sourceInfo(a);
     const steps = Array.isArray(a.steps) ? a.steps : [];
-    const memberCheckinExample = id === "member-checkin"
-      ? `<div class="gb-example"><strong>Try this:</strong> “What sounds good today?” <span>Talk together · Play a game · Make something · Move around</span></div>`
+    const exampleText = a.example || (id === "member-checkin"
+      ? "This might look like: ask ‘What sounds good today?’ and offer 3–4 choices such as talk together, play a game, make something, or move around."
+      : "");
+    const exampleMarkup = exampleText
+      ? `<div class="gb-example"><strong>This might look like</strong><span>${esc(exampleText.replace(/^This might look like:\s*/i, ""))}</span></div>`
       : "";
 
     return `<details class="gb-activity-detail">
@@ -845,7 +890,7 @@
         </div>
         <div>
           <h5>How it works</h5>
-          ${memberCheckinExample}
+          ${exampleMarkup}
           ${steps.length ? `<ol>${steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol>` : `<p>${esc(a.summary || "")}</p>`}
         </div>
         <div>
@@ -932,6 +977,7 @@
     };
 
     root.innerHTML = `<section class="gb-panel gb-final-panel">
+      ${renderModeSwitcher(state.chosen?.mode === "manual" ? "manual" : state.chosen?.mode === "quick" ? "quick" : "guided")}
       <div class="gb-panel-head gb-final-intro">
         <div>
           <span class="gb-kicker">${esc(plan.label || "Your meeting")}</span>
@@ -997,11 +1043,14 @@
     const ids = stagePool(stage,true);
 
     root.innerHTML = `<section class="gb-panel">
+      ${renderModeSwitcher("manual")}
       <div class="gb-panel-head">
         <span class="gb-kicker">Build it yourself</span>
         <h2>Choose the pieces.</h2>
-        <p>Recommended ideas for ${esc(monthLabels[monthSelect.value])} appear first, but the full Elementary &amp; Middle activity bank stays available.</p>
+        <p>Build your meeting one part at a time. Choose <strong>Share, Energize, Core Activity, or Take-Away</strong> below, pick one activity, then move to the next part. Your selections stay in place while you browse.</p>
       </div>
+
+      ${manualStepHelp()}
 
       <div class="gb-stage-tabs" role="tablist" aria-label="Meeting parts">
         ${["share","energize","main","close"].map((key,i) => `<button type="button" class="${stage === key ? "active" : ""}" data-browser-stage="${key}">
@@ -1027,19 +1076,27 @@
           ${ids.map((id) => activityCard(id,stage)).join("")}
         </div>
 
+        <div class="gb-manual-next">
+          <span>You’re choosing <strong>${esc(stageName(stage))}</strong>.</span>
+          <div>
+            ${["share","energize","main","close"].indexOf(stage) > 0 ? `<button type="button" data-browser-stage="${["share","energize","main","close"][["share","energize","main","close"].indexOf(stage)-1]}">← Previous part</button>` : ""}
+            ${["share","energize","main","close"].indexOf(stage) < 3 ? `<button class="next" type="button" data-browser-stage="${["share","energize","main","close"][["share","energize","main","close"].indexOf(stage)+1]}">Next: ${esc(stageName(["share","energize","main","close"][["share","energize","main","close"].indexOf(stage)+1]))} →</button>` : ""}
+          </div>
+        </div>
+
         <div class="gb-manual-plan">
           <div>
             <strong>${manualIds().length} of 4 parts selected</strong>
             <span>${manualIds().length ? ` · About ${total(manualIds())} minutes so far` : " · Start with any section."}</span>
           </div>
           <div class="gb-mini-plan">
-            ${["share","energize","main","close"].map((key) => `<span class="${state.manual[key] ? "filled" : ""}">${esc(stageName(key))}${state.manual[key] ? `: ${esc(acts[state.manual[key]].title)}` : ""}</span>`).join("")}
+            ${["share","energize","main","close"].map((key) => `<button type="button" class="${state.manual[key] ? "filled" : ""}${stage === key ? " current" : ""}" data-browser-stage="${key}">${esc(stageName(key))}${state.manual[key] ? `: ${esc(acts[state.manual[key]].title)}` : " · choose"}</button>`).join("")}
           </div>
           <button type="button" data-use-manual ${manualIds().length === 4 ? "" : "disabled"}>Use my meeting →</button>
         </div>
 
         <div class="gb-question-actions">
-          <button class="gb-btn secondary" type="button" data-home>Back to planning choices</button>
+          <button class="gb-btn secondary" type="button" data-home>← Back to all planning options</button>
         </div>
       </div>
     </section>`;
@@ -1077,6 +1134,20 @@
   root.addEventListener("click", (e) => {
     const t = e.target.closest("button");
     if (!t) return;
+
+    if (t.matches("[data-switch-mode]")) {
+      const mode = t.dataset.switchMode;
+      if (mode === "guided") {
+        state.step = Math.min(state.step || 0, questions.length - 1);
+        renderQuestion();
+      } else if (mode === "manual") {
+        renderManual();
+      } else if (mode === "quick") {
+        state.swapIndex = null;
+        renderFinal(quickPlan());
+      }
+      return;
+    }
 
     if (t.matches("[data-path='guided']")) {
       state.step = 0;
