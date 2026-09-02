@@ -159,8 +159,8 @@
 
 .portal-home-page .hub-hero-art img{
   position:absolute !important;
-  top:-8px !important;
-  right:-44px !important;
+  top:-14px !important;
+  right:-36px !important;
   bottom:auto !important;
   display:block !important;
   width:clamp(820px,48vw,930px) !important;
@@ -234,33 +234,57 @@
   right:18px !important;
   bottom:16px !important;
   min-height:0 !important;
-  padding:17px 19px !important;
+  padding:14px 16px !important;
+  background:rgba(255,255,255,.96) !important;
+}
+
+.portal-home-page .program-overlay > div{
+  width:100% !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) auto !important;
+  grid-template-areas:
+    "label action"
+    "title action" !important;
+  column-gap:18px !important;
+  row-gap:3px !important;
+  align-items:center !important;
+}
+
+.portal-home-page .program-overlay > div > span:first-child{
+  grid-area:label !important;
+  margin:0 !important;
 }
 
 .portal-home-page .program-overlay h3{
+  grid-area:title !important;
   min-height:0 !important;
   max-width:none !important;
   margin:0 !important;
-  font-size:clamp(1.35rem,1.65vw,1.8rem) !important;
+  font-size:clamp(1.22rem,1.45vw,1.58rem) !important;
   line-height:1.08 !important;
 }
 
 .portal-home-page .program-open{
+  grid-area:action !important;
   display:inline-flex !important;
   align-items:center !important;
+  justify-content:center !important;
   gap:6px !important;
   width:max-content !important;
-  margin-top:11px !important;
-  padding:8px 13px !important;
+  min-height:42px !important;
+  margin:0 !important;
+  padding:9px 14px !important;
   border:0 !important;
   border-radius:999px !important;
   background:#5A3F98 !important;
   color:#fff !important;
-  font-size:.7rem !important;
+  font-size:.68rem !important;
   font-weight:800 !important;
   letter-spacing:.02em !important;
   line-height:1 !important;
   text-transform:uppercase !important;
+  white-space:nowrap !important;
+  box-shadow:0 5px 12px rgba(90,63,152,.18) !important;
 }
 
 .portal-home-page .program-open span{
@@ -333,13 +357,67 @@
   white-space:nowrap !important;
   border:0 !important;
 }
+
+
+
 /* =========================================================
-   NARROW DESKTOP
-   Keep the desktop side-by-side layout when the browser
-   window is reduced, rather than switching to tablet early.
+   HEADER LAYOUT LOCK
+   Prevent portal-home.css from turning narrow desktop into
+   the tablet/mobile header too early.
 ========================================================= */
 
+@media (min-width:901px){
+
+  .portal-header-inner{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:24px !important;
+  }
+
+  .header-actions{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    gap:10px !important;
+    margin-left:auto !important;
+  }
+
+  .portal-nav,
+  .portal-lang{
+    display:flex !important;
+  }
+
+  .site-menu{
+    display:none !important;
+  }
+}
+
+
+/* Compact desktop, but still a desktop header and hero. */
 @media (min-width:901px) and (max-width:1200px){
+
+  .portal-header-inner{
+    min-height:82px !important;
+  }
+
+  .portal-brand img{
+    height:68px !important;
+  }
+
+  .portal-nav a{
+    min-height:42px !important;
+    padding:7px 13px !important;
+    font-size:.78rem !important;
+  }
+
+  .portal-lang a{
+    min-width:40px !important;
+    min-height:40px !important;
+  }
 
   .portal-home-page .teacher-hub-hero-grid{
     grid-template-columns:minmax(0,.92fr) minmax(430px,1.08fr) !important;
@@ -349,8 +427,8 @@
   }
 
   .portal-home-page .hub-copy-column{
-    gap:28px !important;
-    padding:20px 0 72px !important;
+    gap:27px !important;
+    padding:20px 0 70px !important;
   }
 
   .portal-home-page .hub-intro h1{
@@ -358,13 +436,13 @@
   }
 
   .portal-home-page .hub-intro p{
-    max-width:500px !important;
+    max-width:510px !important;
     font-size:.92rem !important;
   }
 
   .portal-home-page .hub-message h2{
-    max-width:520px !important;
-    font-size:2.55rem !important;
+    max-width:550px !important;
+    font-size:2.58rem !important;
   }
 
   .portal-home-page .hub-hero-art{
@@ -373,15 +451,16 @@
   }
 
   .portal-home-page .hub-hero-art img{
-    top:2px !important;
-    right:-42px !important;
-    width:640px !important;
+    top:-12px !important;
+    right:-34px !important;
+    width:660px !important;
   }
 
   .portal-home-page .teacher-hub-hero::after{
     height:86px !important;
   }
 }
+
 
 /* =========================================================
    TABLET
@@ -468,7 +547,7 @@
     gap:0 !important;
     height:auto !important;
     min-height:0 !important;
-    padding-top:8px !important;
+    padding-top:24px !important;
     padding-bottom:48px !important;
   }
 
@@ -583,5 +662,52 @@
   .portal-home-page .program-tile:hover,
   .portal-home-page .program-tile:hover .program-photo img{
     transform:none !important;
+  }
+}
+
+
+@media (min-width:761px) and (max-width:900px){
+  .portal-nav,
+  .portal-lang{
+    display:none !important;
+  }
+
+  .site-menu{
+    display:block !important;
+  }
+
+  .portal-home-page .hub-hero-art{
+    margin:18px 0 8px !important;
+  }
+
+  .portal-home-page .hub-hero-art img{
+    width:min(88vw,720px) !important;
+    margin:0 auto !important;
+  }
+}
+
+
+@media (max-width:600px){
+
+  .portal-home-page .program-overlay{
+    left:12px !important;
+    right:12px !important;
+    bottom:12px !important;
+    padding:13px 14px !important;
+  }
+
+  .portal-home-page .program-overlay > div{
+    grid-template-columns:1fr auto !important;
+    column-gap:10px !important;
+  }
+
+  .portal-home-page .program-overlay h3{
+    font-size:1.08rem !important;
+  }
+
+  .portal-home-page .program-open{
+    min-height:36px !important;
+    padding:7px 10px !important;
+    font-size:.61rem !important;
   }
 }
