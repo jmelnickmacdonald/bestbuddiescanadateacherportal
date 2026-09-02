@@ -930,3 +930,26 @@
     padding-top:29px !important;
   }
 }
+
+
+/* =========================================================
+   V8 REMOVE TABLET/MOBILE GREY SPACER
+   Desktop remains unchanged.
+========================================================= */
+
+@media (max-width:900px){
+
+  /* Once the friendship message turns white, there should be
+     no remaining grey padding below it. */
+  .portal-home-page .teacher-hub-hero-grid{
+    padding-bottom:0 !important;
+  }
+
+  .portal-home-page .hub-message{
+    margin-bottom:0 !important;
+  }
+
+  .portal-home-page .program-launch{
+    margin-top:0 !important;
+  }
+}
