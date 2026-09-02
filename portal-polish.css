@@ -1025,4 +1025,24 @@
   .portal-home-page .hub-hero-art::after{
     bottom:-1px !important;
   }
+
+   /* =========================================================
+   FINAL HERO POSITION
+   Artwork sits slightly lower while keeping the white wave
+   overlapping the teal base.
+========================================================= */
+
+/* Full desktop */
+@media (min-width:1201px){
+  .portal-home-page .hub-hero-art img{
+    top:-60px !important;
+  }
+}
+
+/* Narrow desktop */
+@media (min-width:901px) and (max-width:1200px){
+  .portal-home-page .hub-hero-art img{
+    transform:translateY(-28px) !important;
+  }
+}
 }
