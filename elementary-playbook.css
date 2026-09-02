@@ -2705,3 +2705,202 @@
     margin-top:12px !important;
   }
 }
+
+/* =========================================================
+   V16 — CUTOUT HERO + MOBILE COLOUR FIELD
+   Uses the transparent Elementary/Middle hero image and gives
+   it breathing room plus a playful Best Buddies colour layer.
+   ========================================================= */
+
+/* The cutout now floats over colour rather than sitting in a frame. */
+.epb-page .epb-hero-photo{
+  position:relative !important;
+  isolation:isolate !important;
+  overflow:visible !important;
+  background:transparent !important;
+}
+
+.epb-page .epb-hero-photo::before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  width:88%;
+  height:78%;
+  left:7%;
+  bottom:7%;
+  border-radius:45% 55% 49% 51% / 55% 43% 57% 45%;
+  background:var(--epb-purple);
+  transform:rotate(-2deg);
+  pointer-events:none;
+}
+
+/* White wave cut into the bottom of the colour field. The students remain
+   above it, so the cutout feels connected rather than cropped. */
+.epb-page .epb-hero-photo::after{
+  content:"";
+  position:absolute;
+  z-index:2;
+  left:-5%;
+  bottom:0;
+  width:110%;
+  height:23%;
+  background:#fff;
+  clip-path:path("M 0 42 C 20 58, 42 24, 64 38 C 86 54, 108 21, 130 34 C 152 48, 174 17, 196 31 C 218 45, 240 14, 262 28 C 284 41, 306 11, 328 25 C 350 38, 372 10, 394 22 C 416 34, 438 15, 460 24 L 460 100 L 0 100 Z");
+  pointer-events:none;
+}
+
+/* Supporting shapes. Existing spans are repurposed so no extra HTML is needed. */
+.epb-page .epb-photo-teal{
+  z-index:1 !important;
+  width:72% !important;
+  height:61% !important;
+  left:2% !important;
+  right:auto !important;
+  bottom:12% !important;
+  border-radius:58% 42% 51% 49% / 45% 58% 42% 55% !important;
+  background:var(--epb-teal) !important;
+  transform:rotate(5deg) !important;
+}
+
+.epb-page .epb-photo-yellow{
+  z-index:1 !important;
+  width:24% !important;
+  aspect-ratio:1 !important;
+  height:auto !important;
+  top:5% !important;
+  right:2% !important;
+  border-radius:50% !important;
+  background:var(--epb-yellow) !important;
+  transform:none !important;
+}
+
+.epb-page .epb-photo-yellow::after{
+  content:"";
+  position:absolute;
+  width:48%;
+  aspect-ratio:1;
+  left:-22%;
+  bottom:-106%;
+  border-radius:50% 46% 54% 48%;
+  background:var(--epb-orange);
+  transform:rotate(14deg);
+}
+
+.epb-page .epb-hero-photo img{
+  position:relative !important;
+  z-index:3 !important;
+  display:block !important;
+  width:112% !important;
+  max-width:none !important;
+  height:auto !important;
+  object-fit:contain !important;
+  object-position:center bottom !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:transparent !important;
+  transform:translateX(-4%) !important;
+}
+
+/* Desktop keeps the photo in its right-hand zone, but without the old frame. */
+@media(min-width:1280px){
+  .epb-page .epb-hero-photo{
+    width:430px !important;
+    max-width:430px !important;
+    min-height:400px !important;
+    height:400px !important;
+    margin-top:0 !important;
+    transform:translateX(clamp(72px,6vw,108px)) !important;
+  }
+
+  .epb-page .epb-hero-photo img{
+    width:108% !important;
+    transform:translateX(-2%) translateY(-1%) !important;
+  }
+}
+
+@media(min-width:1001px) and (max-width:1279px){
+  .epb-page .epb-hero-photo{
+    width:370px !important;
+    max-width:370px !important;
+    min-height:360px !important;
+    height:360px !important;
+    transform:translateX(30px) !important;
+  }
+}
+
+/* MOBILE: give the visual a real pause between the actions and the stage path. */
+@media(max-width:760px){
+  .epb-page .epb-hero{
+    padding-bottom:34px !important;
+  }
+
+  .epb-page .epb-hero-grid{
+    gap:0 !important;
+  }
+
+  .epb-page .epb-hero-photo{
+    width:100% !important;
+    min-height:0 !important;
+    height:auto !important;
+    aspect-ratio:1 / 1.06 !important;
+    margin-top:42px !important;
+    margin-bottom:46px !important;
+    padding:12px 0 0 !important;
+    transform:none !important;
+  }
+
+  .epb-page .epb-hero-photo::before{
+    width:92%;
+    height:75%;
+    left:4%;
+    bottom:8%;
+    border-radius:46% 54% 43% 57% / 52% 45% 55% 48%;
+    transform:rotate(-3deg);
+  }
+
+  .epb-page .epb-photo-teal{
+    width:74% !important;
+    height:58% !important;
+    left:-1% !important;
+    bottom:13% !important;
+  }
+
+  .epb-page .epb-photo-yellow{
+    width:23% !important;
+    top:3% !important;
+    right:1% !important;
+  }
+
+  .epb-page .epb-hero-photo::after{
+    left:-7%;
+    bottom:-1px;
+    width:114%;
+    height:25%;
+    /* A smooth CSS wave that scales with the mobile width. */
+    clip-path:polygon(
+      0 48%, 6% 42%, 12% 44%, 18% 50%, 24% 53%, 30% 51%,
+      36% 45%, 42% 39%, 48% 38%, 54% 42%, 60% 47%, 66% 49%,
+      72% 47%, 78% 42%, 84% 38%, 90% 38%, 96% 42%, 100% 45%,
+      100% 100%, 0 100%
+    );
+  }
+
+  .epb-page .epb-hero-photo img{
+    width:118% !important;
+    margin-left:-9% !important;
+    transform:translateY(-2%) !important;
+  }
+}
+
+@media(max-width:430px){
+  .epb-page .epb-hero-photo{
+    margin-top:38px !important;
+    margin-bottom:42px !important;
+    aspect-ratio:1 / 1.1 !important;
+  }
+
+  .epb-page .epb-hero-photo img{
+    width:121% !important;
+    margin-left:-10.5% !important;
+  }
+}
