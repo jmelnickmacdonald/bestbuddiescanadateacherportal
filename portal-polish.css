@@ -711,3 +711,83 @@
     font-size:.61rem !important;
   }
 }
+
+
+/* =========================================================
+   R3 HEADER RESTORE + HERO ART POSITION
+   ========================================================= */
+
+/* Desktop + tablet-width browsers keep the original full nav.
+   Only true mobile switches to the Menu button. */
+@media (min-width:761px){
+
+  .portal-header-inner{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:24px !important;
+  }
+
+  .header-actions{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    gap:10px !important;
+    margin-left:auto !important;
+  }
+
+  .portal-nav,
+  .portal-lang{
+    display:flex !important;
+  }
+
+  .site-menu{
+    display:none !important;
+  }
+}
+
+/* True mobile gets the Menu control. */
+@media (max-width:760px){
+
+  .portal-nav,
+  .portal-lang{
+    display:none !important;
+  }
+
+  .site-menu{
+    display:block !important;
+  }
+}
+
+/* Full desktop: move the artwork up without resizing it. */
+@media (min-width:1201px){
+
+  .portal-home-page .hub-hero-art img{
+    top:-42px !important;
+    right:-36px !important;
+  }
+}
+
+/* Narrow desktop: same composition, slightly gentler lift. */
+@media (min-width:901px) and (max-width:1200px){
+
+  .portal-home-page .hub-hero-art img{
+    top:-32px !important;
+    right:-34px !important;
+  }
+}
+
+/* Tablet: keep it visually centred, but bring it upward a bit. */
+@media (min-width:761px) and (max-width:900px){
+
+  .portal-home-page .hub-hero-art{
+    margin-top:6px !important;
+  }
+
+  .portal-home-page .hub-hero-art img{
+    margin:-10px auto 0 !important;
+  }
+}
