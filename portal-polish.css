@@ -1106,3 +1106,310 @@
   content: none !important;
   display: none !important;
 }
+
+/* =========================================================
+   FINAL INTERMEDIATE-SCREEN HERO
+   761px–1200px
+
+   Full desktop >1200px stays unchanged.
+   Mobile <=760px stays unchanged.
+========================================================= */
+
+@media (min-width:761px) and (max-width:1200px){
+
+  /* -------------------------------------------------------
+     RESET OLD DESKTOP/TABLET CONSTRAINTS
+  ------------------------------------------------------- */
+
+  .portal-home-page .teacher-hub-hero{
+    position:relative !important;
+
+    width:100% !important;
+
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    overflow:visible !important;
+
+    background:#F2F2F0 !important;
+  }
+
+
+  .portal-home-page .teacher-hub-hero-grid{
+    position:relative !important;
+
+    display:grid !important;
+
+    grid-template-columns:1fr !important;
+    grid-template-rows:auto auto auto !important;
+
+    width:100% !important;
+
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+
+    gap:0 !important;
+
+    padding-top:30px !important;
+    padding-bottom:0 !important;
+
+    overflow:visible !important;
+  }
+
+
+  /*
+    This allows intro and friendship message to become
+    separate grid items, with artwork between them.
+  */
+  .portal-home-page .hub-copy-column{
+    display:contents !important;
+
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+  }
+
+
+  /* -------------------------------------------------------
+     INTRO
+  ------------------------------------------------------- */
+
+  .portal-home-page .hub-intro{
+    grid-column:1 !important;
+    grid-row:1 !important;
+
+    position:relative !important;
+
+    width:100% !important;
+    max-width:650px !important;
+
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+
+    margin:0 !important;
+    padding:0 0 8px !important;
+
+    overflow:visible !important;
+  }
+
+
+  .portal-home-page .hub-intro h1{
+    font-size:clamp(2.7rem,5vw,3.35rem) !important;
+  }
+
+
+  .portal-home-page .hub-intro p{
+    max-width:560px !important;
+    font-size:.92rem !important;
+    line-height:1.5 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     ARTWORK
+  ------------------------------------------------------- */
+
+  .portal-home-page .hub-hero-art{
+    grid-column:1 !important;
+    grid-row:2 !important;
+
+    position:relative !important;
+
+    display:block !important;
+
+    width:100% !important;
+
+    height:clamp(390px,52vw,500px) !important;
+    min-height:390px !important;
+    max-height:none !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    overflow:hidden !important;
+  }
+
+
+  .portal-home-page .hub-hero-art img{
+    position:absolute !important;
+
+    left:50% !important;
+    right:auto !important;
+
+    top:auto !important;
+    bottom:-8px !important;
+
+    display:block !important;
+
+    width:min(100%,790px) !important;
+    max-width:none !important;
+
+    height:auto !important;
+
+    margin:0 !important;
+
+    transform:translateX(-50%) !important;
+  }
+
+
+  /* -------------------------------------------------------
+     WAVE ATTACHED TO ARTWORK
+  ------------------------------------------------------- */
+
+  .portal-home-page .teacher-hub-hero::after{
+    content:none !important;
+    display:none !important;
+  }
+
+
+  .portal-home-page .hub-hero-art::after{
+    content:"" !important;
+
+    position:absolute !important;
+    z-index:20 !important;
+
+    left:50% !important;
+    bottom:-1px !important;
+
+    width:100vw !important;
+    height:56px !important;
+
+    transform:translateX(-50%) !important;
+
+    pointer-events:none !important;
+
+    background-repeat:no-repeat !important;
+    background-position:center bottom !important;
+    background-size:100% 100% !important;
+
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 110' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 64 C120 84 215 30 350 59 C485 86 580 31 715 58 C850 84 950 30 1080 59 C1215 83 1320 32 1445 58 C1520 72 1570 66 1600 61 L1600 110 L0 110 Z'/%3E%3C/svg%3E")
+      !important;
+  }
+
+
+  /* -------------------------------------------------------
+     FRIENDSHIP MESSAGE
+     This is the part currently getting chopped.
+  ------------------------------------------------------- */
+
+  .portal-home-page .hub-message{
+    grid-column:1 !important;
+    grid-row:3 !important;
+
+    position:relative !important;
+    z-index:30 !important;
+
+    display:block !important;
+
+    width:100% !important;
+    max-width:none !important;
+
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+
+    margin:0 !important;
+
+    padding:
+      38px
+      0
+      42px
+      !important;
+
+    overflow:visible !important;
+
+    background:#fff !important;
+
+    box-shadow:
+      0 0 0 100vmax #fff
+      !important;
+
+    clip-path:
+      inset(0 -100vmax)
+      !important;
+  }
+
+
+  .portal-home-page .hub-message h2{
+    display:block !important;
+
+    width:100% !important;
+    max-width:620px !important;
+
+    height:auto !important;
+    max-height:none !important;
+
+    margin:0 0 14px !important;
+
+    overflow:visible !important;
+
+    font-size:
+      clamp(2.25rem,5vw,3rem)
+      !important;
+
+    line-height:.98 !important;
+  }
+
+
+  .portal-home-page .hub-message h2 > span{
+    display:block !important;
+
+    white-space:normal !important;
+
+    height:auto !important;
+    overflow:visible !important;
+  }
+
+
+  .portal-home-page .hub-message .hero-thanks{
+    display:block !important;
+
+    height:auto !important;
+    max-height:none !important;
+
+    margin:0 !important;
+
+    overflow:visible !important;
+  }
+
+
+  /* -------------------------------------------------------
+     NEXT SECTION
+     Prevent it climbing back into the hero.
+  ------------------------------------------------------- */
+
+  .portal-home-page .program-launch{
+    position:relative !important;
+    z-index:1 !important;
+
+    clear:both !important;
+
+    width:100% !important;
+
+    margin:
+      0
+      !important;
+
+    padding-top:
+      30px
+      !important;
+
+    transform:none !important;
+
+    background:#fff !important;
+  }
+
+
+  .portal-home-page .program-launch::before,
+  .portal-home-page .program-launch::after{
+    content:none !important;
+    display:none !important;
+  }
+}
