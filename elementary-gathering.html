@@ -71,8 +71,8 @@
           </p>
         </div>
 
-        <aside class="gb-rhythm-card" aria-label="Program Guide meeting rhythm">
-          <span class="gb-kicker">The Program Guide rhythm</span>
+        <aside class="gb-rhythm-card" aria-label="Best Buddies Program Guide meeting rhythm">
+          <span class="gb-kicker">Best Buddies Program Guide</span>
           <h2>Four simple parts.</h2>
           <div class="gb-rhythm">
             <span class="share"><b>1</b> Share</span>
@@ -80,9 +80,6 @@
             <span class="core"><b>3</b> Core Activity</span>
             <span class="takeaway"><b>4</b> Take-Away</span>
           </div>
-          <p>
-            The Hub keeps that structure visible while helping you find activities that fit your group.
-          </p>
         </aside>
       </div>
     </div>
@@ -91,17 +88,23 @@
   <section class="gb-builder-section" aria-label="Meeting planner">
     <div class="portal-container">
 
-      <div class="gb-month-row">
-        <span>Planning for</span>
-        <label class="sr-only" for="gb-month">Planning month</label>
-        <select id="gb-month" data-gb-month>
-          <option value="september">September</option>
-          <option value="october">October</option>
-          <option value="november">November</option>
-          <option value="december">December</option>
-          <option value="january">January</option>
-          <option value="any">Any time</option>
-        </select>
+      <div class="gb-month-picker">
+        <div class="gb-month-picker-copy">
+          <span class="gb-kicker">Start here</span>
+          <label for="gb-month">Which month are you planning for?</label>
+          <p>This helps us surface activities that fit where your chapter is in the year.</p>
+        </div>
+
+        <div class="gb-month-select-wrap">
+          <select id="gb-month" data-gb-month aria-label="Choose a planning month">
+            <option value="september">September</option>
+            <option value="october">October</option>
+            <option value="november">November</option>
+            <option value="december">December</option>
+            <option value="january">January</option>
+            <option value="any">Any time</option>
+          </select>
+        </div>
       </div>
 
       <div class="gb-app" data-gathering-builder aria-live="polite"></div>
