@@ -1833,3 +1833,111 @@
     bottom:-8px !important;
   }
 }
+
+/* =========================================================
+   NARROW DESKTOP HERO · FINAL TUNE
+   761px–1200px ONLY
+
+   Desktop 1201px+ is intentionally untouched.
+   ========================================================= */
+
+@media (min-width:761px) and (max-width:1200px){
+
+  /* Keep the intended:
+     intro → artwork → wave → friendship message
+  */
+
+  .portal-home-page .teacher-hub-hero-grid{
+    padding-top:28px !important;
+    padding-bottom:0 !important;
+  }
+
+
+  /* Slightly tighter intro */
+
+  .portal-home-page .hub-intro{
+    padding-bottom:2px !important;
+  }
+
+  .portal-home-page .hub-intro p{
+    max-width:560px !important;
+  }
+
+
+  /* -------------------------------------------------------
+     ARTWORK
+
+     Make the artwork feel intentional and substantial,
+     rather than floating in a tall grey box.
+     ------------------------------------------------------- */
+
+  .portal-home-page .hub-hero-art{
+    height:clamp(390px,47vw,470px) !important;
+    min-height:390px !important;
+
+    overflow:hidden !important;
+  }
+
+
+  .portal-home-page .hub-hero-art img{
+    left:48% !important;
+    right:auto !important;
+
+    top:auto !important;
+    bottom:-36px !important;
+
+    width:min(116%,860px) !important;
+    max-width:none !important;
+    height:auto !important;
+
+    transform:translateX(-50%) !important;
+  }
+
+
+  /* -------------------------------------------------------
+     WAVE
+
+     Pull the white wave visibly OVER the bottom of the
+     artwork rather than placing it beneath the image.
+     ------------------------------------------------------- */
+
+  .portal-home-page .hub-hero-art::after{
+    bottom:-1px !important;
+
+    height:82px !important;
+
+    background-size:100% 100% !important;
+
+    z-index:30 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     FRIENDSHIP MESSAGE
+
+     Bring it closer to the artwork/wave.
+     ------------------------------------------------------- */
+
+  .portal-home-page .hub-message{
+    min-height:0 !important;
+
+    padding:
+      26px
+      0
+      34px
+      !important;
+  }
+
+
+  .portal-home-page .hub-message h2{
+    margin-bottom:12px !important;
+  }
+
+
+  /* Don't leave a big pause before Choose Your Program */
+
+  .portal-home-page .program-launch{
+    padding-top:24px !important;
+  }
+
+}
