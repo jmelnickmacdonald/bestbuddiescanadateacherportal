@@ -65,13 +65,13 @@ function openAccessGate() {
     <div class="access-gate-card">
 
       <img
-        src="assets/bb-logo.png"
+        src="assets/bb-logo-coloured.png"
         alt="Best Buddies Canada"
         class="access-logo"
       >
 
       <div class="access-kicker">
-        Teacher Hub
+        Teacher Hub prototype
       </div>
 
       <div class="access-program">
@@ -79,11 +79,11 @@ function openAccessGate() {
       </div>
 
       <h1 id="access-title">
-        Welcome back.
+        Open the prototype.
       </h1>
 
       <p class="access-intro">
-        Enter the Teacher Hub password to open this program area.
+        Enter the shared prototype password to continue. This access gate is separate from the optional My Chapter personalization shown inside the Hub.
       </p>
 
       <form id="access-form">
