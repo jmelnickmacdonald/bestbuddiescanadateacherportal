@@ -12,8 +12,10 @@
   <title>Resources | Best Buddies Canada Teacher Hub</title>
 
   <link rel="stylesheet" href="portal-home.css">
+  <link rel="stylesheet" href="my-chapter.css">
   <link rel="stylesheet" href="accessibility.css">
   <script src="accessibility.js" defer></script>
+  <script src="my-chapter.js" defer></script>
 
   <style>
     :root{
@@ -389,6 +391,29 @@
     }
 
     /* =========================================================
+       TEACHER HUB QUICK GUIDES
+       ========================================================= */
+
+    .rh-quick-guides{position:relative;overflow:hidden;padding:70px 0 76px;background:var(--rh-teal);}
+    .rh-quick-guides::before{content:"";position:absolute;left:-4%;right:-4%;top:-38px;height:78px;border-radius:0 0 50% 50% / 0 0 64% 64%;background:var(--rh-purple);transform:rotate(.7deg);}
+    .rh-quick-guides-head{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,.52fr);gap:46px;align-items:end;margin-bottom:26px;}
+    .rh-quick-guides .rh-kicker{color:var(--rh-purple);}
+    .rh-quick-guides h2{max-width:760px;margin:7px 0 0;color:var(--rh-ink);font-family:"League Spartan","Poppins",Arial,sans-serif;font-size:clamp(2.7rem,4vw,4.15rem);font-weight:900;line-height:.94;letter-spacing:-.032em;}
+    .rh-quick-guides-head-copy p{margin:0;color:#334B47;font-size:.94rem;line-height:1.58;}
+    .rh-quick-guides-all{display:inline-flex;margin-top:14px;color:var(--rh-purple);font-size:.84rem;font-weight:800;text-decoration:none;}
+    .rh-quick-guides-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;}
+    .rh-quick-guide-card{--qg-accent:var(--rh-lilac);min-height:250px;display:flex;flex-direction:column;padding:23px 22px 21px;border-top:8px solid var(--qg-accent);border-radius:21px 21px 50px 21px;background:#fff;color:var(--rh-text);text-decoration:none;box-shadow:0 10px 28px rgba(41,25,67,.10);transition:transform .15s ease,box-shadow .15s ease;}
+    .rh-quick-guide-card.qg-yellow{--qg-accent:var(--rh-yellow)}
+    .rh-quick-guide-card.qg-teal{--qg-accent:var(--rh-teal)}
+    .rh-quick-guide-card.qg-orange{--qg-accent:var(--rh-orange)}
+    .rh-quick-guide-card.qg-violet{--qg-accent:var(--rh-lilac)}
+    .rh-quick-guide-card:hover,.rh-quick-guide-card:focus-visible{transform:translateY(-3px);box-shadow:0 16px 34px rgba(41,25,67,.14);}
+    .rh-quick-guide-label{display:block;color:var(--rh-purple);font-size:.7rem;font-weight:800;letter-spacing:.065em;text-transform:uppercase;}
+    .rh-quick-guide-card h3{margin:12px 0 0;color:var(--rh-ink);font-size:1.5rem;font-weight:850;line-height:1.02;}
+    .rh-quick-guide-card p{margin:11px 0 0;color:var(--rh-muted);font-size:.87rem;line-height:1.5;}
+    .rh-quick-guide-card strong{margin-top:auto;padding-top:17px;color:var(--rh-purple);font-size:.8rem;font-weight:800;}
+
+    /* =========================================================
        BROWSE BY NEED
        ========================================================= */
 
@@ -416,7 +441,7 @@
 
     .rh-door-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:repeat(3,minmax(0,1fr));
       gap:14px;
     }
 
@@ -437,7 +462,6 @@
 
     .rh-door:nth-child(2){--door-accent:var(--rh-yellow)}
     .rh-door:nth-child(3){--door-accent:var(--rh-teal)}
-    .rh-door:nth-child(4){--door-accent:var(--rh-orange)}
 
     .rh-door span{
       display:block;
@@ -703,10 +727,16 @@
        RESPONSIVE
        ========================================================= */
 
+    @media(max-width:1100px){
+      .rh-quick-guides-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .rh-door-grid{grid-template-columns:1fr 1fr;}
+    }
+
     @media(max-width:950px){
       .rh-hero-grid,
       .rh-search-grid,
-      .rh-most-head{
+      .rh-most-head,
+      .rh-quick-guides-head{
         grid-template-columns:1fr;
         gap:24px;
       }
@@ -748,6 +778,7 @@
       }
 
       .rh-most-grid,
+      .rh-quick-guides-grid,
       .rh-door-grid,
       .rh-search-list{
         grid-template-columns:1fr;
@@ -873,7 +904,67 @@
     </div>
   </section>
 
-  <section class="rh-most-used" aria-labelledby="rh-most-title">
+    <!-- =====================================================
+       TEACHER HUB QUICK GUIDES
+  ====================================================== -->
+
+  <section class="rh-quick-guides" aria-labelledby="rh-quick-guides-title">
+    <div class="rh-container">
+
+      <div class="rh-quick-guides-head">
+        <div>
+          <span class="rh-kicker">Teacher Hub Quick Guides</span>
+          <h2 id="rh-quick-guides-title">A little help with the question in front of you.</h2>
+        </div>
+
+        <div class="rh-quick-guides-head-copy">
+          <p>
+            Short, practical guidance for common chapter moments. These are Teacher Hub
+            supports, designed to help you make sense of the next step without replacing
+            the original Best Buddies resources.
+          </p>
+
+          <a href="teacher-companion.html" class="rh-quick-guides-all">
+            Browse all Quick Guides →
+          </a>
+        </div>
+      </div>
+
+      <div class="rh-quick-guides-grid">
+
+        <a class="rh-quick-guide-card qg-yellow" href="teacher-companion.html">
+          <span class="rh-quick-guide-label">Getting started</span>
+          <h3>Your First 30 Days</h3>
+          <p>What matters first, what can wait, and how to start building the chapter without planning the whole year at once.</p>
+          <strong>Open Quick Guides →</strong>
+        </a>
+
+        <a class="rh-quick-guide-card qg-teal" href="teacher-companion.html">
+          <span class="rh-quick-guide-label">Planning</span>
+          <h3>Planning a Chapter Meeting</h3>
+          <p>A simple way to think about lunch meetings, regular chapter meetings, and larger socials.</p>
+          <strong>Open Quick Guides →</strong>
+        </a>
+
+        <a class="rh-quick-guide-card qg-orange" href="teacher-companion.html">
+          <span class="rh-quick-guide-label">Friendship support</span>
+          <h3>Supporting Buddy Pairs</h3>
+          <p>Shared interests, communication, first hangouts, and what to do when a friendship needs a little support.</p>
+          <strong>Open Quick Guides →</strong>
+        </a>
+
+        <a class="rh-quick-guide-card qg-violet" href="teacher-companion.html">
+          <span class="rh-quick-guide-label">Staff Advisor</span>
+          <h3>Staff Advisor Quick Guide</h3>
+          <p>What you may own, what students can own, and where Best Buddies can step in to help.</p>
+          <strong>Open Quick Guides →</strong>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+<section class="rh-most-used" aria-labelledby="rh-most-title">
     <div class="rh-container">
 
       <div class="rh-most-head">
@@ -982,7 +1073,7 @@
       <h2 id="rh-browse-title">Go straight to the kind of help you need.</h2>
 
       <p class="rh-browse-intro">
-        The full Best Buddies library is extensive. These four starting points keep the resources Staff Advisors use most within easy reach.
+        Use these three starting points when you need the actual form, guide, training, or planning material.
       </p>
 
       <div class="rh-door-grid">
@@ -1008,12 +1099,6 @@
           <b>→</b>
         </button>
 
-        <button class="rh-door" type="button" data-open-resource="guides">
-          <span>Quick help + role guides</span>
-          <strong>Show me how</strong>
-          <small>Teacher Hub Quick Guides, the Chapter Playbook, and Best Buddies guides for volunteers, Peer Buddies, and Buddies.</small>
-          <b>→</b>
-        </button>
 
       </div>
     </div>
@@ -1515,113 +1600,7 @@
 </dialog>
 
 
-<!-- =====================================================
-     GUIDES & HOW-TOS
-====================================================== -->
-<dialog class="rh-dialog" id="resource-guides">
-  <div class="rh-dialog-inner">
 
-    <div class="rh-dialog-top">
-      <div>
-        <span class="rh-kicker">Quick help + role guides</span>
-        <h2>Show me how</h2>
-        <p class="rh-dialog-intro">
-          Shorter help for common chapter moments, plus Best Buddies role guides you can open when you need them.
-        </p>
-      </div>
-
-      <button class="rh-dialog-close" type="button" data-close-resource aria-label="Close">×</button>
-    </div>
-
-    <section class="rh-dialog-group">
-      <h3 class="rh-dialog-group-title">Teacher Hub</h3>
-
-      <div class="rh-dialog-list">
-
-        <a
-          class="rh-item rh-searchable"
-          href="teacher-companion.html"
-          data-search="quick guides first 30 days getting started planning meeting participation friendships teacher companion"
-        >
-          <span>
-            <strong>Teacher Hub Quick Guides</strong>
-            <small>Your First 30 Days, planning, participation, friendship support, and other practical help.</small>
-            <em class="rh-item-meta">Teacher Hub</em>
-          </span>
-          <b>→</b>
-        </a>
-
-        <a
-          class="rh-item rh-searchable"
-          data-accent="yellow"
-          href="elementary-playbook.html"
-          data-search="elementary middle chapter playbook steps setup recruit registration first meeting year end"
-        >
-          <span>
-            <strong>Elementary &amp; Middle Chapter Playbook</strong>
-            <small>A practical route through the Best Buddies year.</small>
-            <em class="rh-item-meta">Teacher Hub</em>
-          </span>
-          <b>→</b>
-        </a>
-
-      </div>
-    </section>
-
-    <section class="rh-dialog-group">
-      <h3 class="rh-dialog-group-title">Best Buddies role guides</h3>
-
-      <div class="rh-dialog-list">
-
-        <a
-          class="rh-item rh-searchable"
-          href="https://bestbuddies.ca/wp-content/uploads/2023/09/Volunteer-Guide-Best-Buddies.pdf"
-          target="_blank"
-          rel="noopener"
-          data-search="volunteer guide member best buddy associate member staff advisor chapter president roles"
-        >
-          <span>
-            <strong>Volunteer Guide</strong>
-            <small>Quick overview of roles, expectations, and friendship ideas.</small>
-          </span>
-          <b>→</b>
-        </a>
-
-        <a
-          class="rh-item rh-searchable"
-          data-accent="teal"
-          href="https://bestbuddies.ca/wp-content/uploads/2023/09/Peer-Buddy-Guide.pdf"
-          target="_blank"
-          rel="noopener"
-          data-search="peer buddy guide role expectations peer buddy"
-        >
-          <span>
-            <strong>Peer Buddy Guide</strong>
-            <small>Quick guidance for Peer Buddies.</small>
-          </span>
-          <b>→</b>
-        </a>
-
-        <a
-          class="rh-item rh-searchable"
-          data-accent="orange"
-          href="https://bestbuddies.ca/wp-content/uploads/2023/09/Buddy-Guide.pdf"
-          target="_blank"
-          rel="noopener"
-          data-search="buddy guide role expectations buddy friendship"
-        >
-          <span>
-            <strong>Buddy Guide</strong>
-            <small>Quick guidance for Buddies.</small>
-          </span>
-          <b>→</b>
-        </a>
-
-      </div>
-    </section>
-
-  </div>
-</dialog>
 
 
 <script>
