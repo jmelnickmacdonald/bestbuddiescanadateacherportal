@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <meta name="description" content="Buddy Board prototype for the Best Buddies Canada Teacher Hub.">
+  <meta name="description" content="Buddy Board prototype for the Best Buddies Canada Teacher Hub. Share ideas, ask questions, reply to other chapter contacts, and save useful ideas to your Buddy Bank.">
   <title>Buddy Board | Best Buddies Canada Teacher Hub</title>
 
   <link rel="stylesheet" href="portal-home.css">
@@ -33,6 +33,8 @@
       --bb-line:#E3DFE8;
       --bb-lavender:#EEEAF8;
       --bb-wash:#F7F6F3;
+      --bb-teal-soft:#EAF7F4;
+      --bb-yellow-soft:#FFF6C7;
     }
 
     *{box-sizing:border-box}
@@ -78,7 +80,10 @@
       text-transform:uppercase;
     }
 
-    /* Header */
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
     .buddy-board-page .portal-header{
       border-top:5px solid var(--bb-yellow);
       background:var(--bb-teal);
@@ -144,11 +149,16 @@
       color:var(--bb-ink);
     }
 
-    /* Hero */
+    .buddy-board-page .site-menu{display:none}
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
     .board-hero{
       position:relative;
       overflow:hidden;
-      padding:46px 0 78px;
+      padding:48px 0 78px;
       background:#fff;
     }
 
@@ -174,10 +184,10 @@
     }
 
     .board-hero h1{
-      max-width:760px;
+      max-width:790px;
       margin:7px 0 0;
       color:var(--bb-ink);
-      font-size:clamp(3.9rem,6vw,6.1rem);
+      font-size:clamp(3.8rem,5.8vw,6rem);
       font-weight:900;
       line-height:.86;
       letter-spacing:-.045em;
@@ -189,16 +199,72 @@
     }
 
     .board-hero-copy p{
-      max-width:580px;
+      max-width:590px;
       margin:0 0 6px;
       color:var(--bb-text);
       font-size:1.04rem;
       line-height:1.65;
     }
 
-    /* Toolbar */
+    /* =========================================================
+       LOCKED STATE
+       ========================================================= */
+
+    .bb-community-locked{
+      padding:68px 0;
+      background:var(--bb-purple);
+    }
+
+    .bb-community-locked-card{
+      max-width:760px;
+      padding:30px;
+      border-radius:24px 24px 60px 24px;
+      background:#fff;
+    }
+
+    .bb-community-locked-card > span{
+      color:var(--bb-purple);
+      font-size:.72rem;
+      font-weight:800;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+    }
+
+    .bb-community-locked-card h2{
+      margin:7px 0 0;
+      color:var(--bb-ink);
+      font-size:2.7rem;
+      line-height:.94;
+    }
+
+    .bb-community-locked-card p{
+      max-width:650px;
+      margin:12px 0 0;
+      color:var(--bb-muted);
+      font-size:.92rem;
+      line-height:1.58;
+    }
+
+    .bb-community-locked-card a{
+      min-height:43px;
+      display:inline-flex;
+      align-items:center;
+      margin-top:18px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:var(--bb-yellow);
+      color:var(--bb-ink);
+      font-size:.8rem;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    /* =========================================================
+       COMMUNITY BOARD
+       ========================================================= */
+
     .board-main{
-      padding:56px 0 72px;
+      padding:58px 0 72px;
       background:var(--bb-purple);
     }
 
@@ -207,23 +273,23 @@
       grid-template-columns:minmax(0,1fr) auto;
       gap:22px;
       align-items:center;
-      margin-bottom:17px;
+      margin-bottom:15px;
     }
 
     .board-tabs{
       display:flex;
       flex-wrap:wrap;
-      gap:8px;
+      gap:7px;
     }
 
     .board-tab{
-      min-height:42px;
-      padding:8px 14px;
-      border:1px solid rgba(255,255,255,.2);
+      min-height:40px;
+      padding:7px 13px;
+      border:1px solid rgba(255,255,255,.22);
       border-radius:999px;
       background:rgba(255,255,255,.1);
       color:#fff;
-      font-size:.78rem;
+      font-size:.75rem;
       font-weight:800;
       cursor:pointer;
     }
@@ -251,18 +317,22 @@
       grid-template-columns:minmax(0,1fr) auto;
       gap:10px;
       align-items:center;
-      margin-bottom:22px;
+      margin-bottom:16px;
     }
 
     .board-search{
       width:100%;
-      min-height:48px;
-      padding:10px 15px;
+      min-height:50px;
+      padding:10px 16px;
       border:0;
-      border-radius:16px 16px 36px 16px;
+      border-radius:16px 16px 38px 16px;
       background:#fff;
       color:var(--bb-ink);
       font-size:.85rem;
+    }
+
+    .board-search:focus{
+      outline:3px solid rgba(255,212,32,.28);
     }
 
     .board-bank-count{
@@ -273,9 +343,33 @@
       border-radius:999px;
       background:var(--bb-teal);
       color:var(--bb-ink);
-      font-size:.77rem;
+      font-size:.76rem;
       font-weight:800;
       white-space:nowrap;
+    }
+
+    .board-filters{
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+      margin-bottom:18px;
+    }
+
+    .board-filter{
+      min-height:36px;
+      padding:6px 11px;
+      border:0;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      color:#fff;
+      font-size:.7rem;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .board-filter.is-active{
+      background:#fff;
+      color:var(--bb-purple);
     }
 
     .board-prototype-note{
@@ -284,7 +378,7 @@
       border-radius:14px;
       background:rgba(255,255,255,.1);
       color:rgba(255,255,255,.86);
-      font-size:.73rem;
+      font-size:.72rem;
       line-height:1.48;
     }
 
@@ -296,7 +390,7 @@
 
     .board-card{
       --accent:var(--bb-teal);
-      min-height:310px;
+      min-height:300px;
       display:flex;
       flex-direction:column;
       padding:23px 23px 21px;
@@ -311,6 +405,10 @@
     .board-card[data-accent="orange"]{--accent:var(--bb-orange)}
     .board-card[data-accent="lilac"]{--accent:var(--bb-lilac)}
 
+    .board-card.is-question{
+      background:#F8F6FC;
+    }
+
     .board-card-meta{
       display:flex;
       justify-content:space-between;
@@ -319,17 +417,40 @@
     }
 
     .board-card-label{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
       color:var(--bb-purple);
-      font-size:.68rem;
+      font-size:.67rem;
       font-weight:800;
       letter-spacing:.06em;
       text-transform:uppercase;
     }
 
+    .board-post-type{
+      display:inline-flex;
+      min-height:25px;
+      align-items:center;
+      padding:3px 8px;
+      border-radius:999px;
+      background:var(--bb-teal-soft);
+      color:#386E65;
+      font-size:.62rem;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    .board-card.is-question .board-post-type{
+      background:var(--bb-yellow-soft);
+      color:#6B5911;
+    }
+
     .board-card-program{
       color:var(--bb-muted);
-      font-size:.68rem;
+      font-size:.67rem;
       font-weight:700;
+      text-align:right;
     }
 
     .board-card h2{
@@ -362,7 +483,7 @@
     .board-what span{
       display:block;
       color:var(--bb-purple);
-      font-size:.63rem;
+      font-size:.62rem;
       font-weight:800;
       letter-spacing:.05em;
       text-transform:uppercase;
@@ -373,6 +494,17 @@
       color:var(--bb-text);
       font-size:.75rem;
       line-height:1.42;
+    }
+
+    .board-question-prompt{
+      margin-top:14px;
+      padding:12px 13px;
+      border-left:5px solid var(--bb-yellow);
+      border-radius:0 13px 28px 0;
+      background:var(--bb-yellow-soft);
+      color:#5E542D;
+      font-size:.78rem;
+      line-height:1.46;
     }
 
     .board-tags{
@@ -387,27 +519,35 @@
       border-radius:999px;
       background:var(--bb-lavender);
       color:var(--bb-purple);
-      font-size:.64rem;
+      font-size:.63rem;
       font-weight:800;
     }
 
     .board-card-actions{
       display:flex;
+      flex-wrap:wrap;
       justify-content:space-between;
-      gap:10px;
+      gap:9px;
       align-items:center;
       margin-top:auto;
       padding-top:17px;
     }
 
-    .board-save{
-      min-height:38px;
-      padding:7px 11px;
+    .board-action-group{
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+    }
+
+    .board-save,
+    .board-replies-button{
+      min-height:37px;
+      padding:7px 10px;
       border:1px solid #D8D1E6;
       border-radius:999px;
       background:#fff;
       color:var(--bb-purple);
-      font-size:.72rem;
+      font-size:.7rem;
       font-weight:800;
       cursor:pointer;
     }
@@ -418,9 +558,92 @@
       color:#fff;
     }
 
+    .board-replies-button{
+      background:var(--bb-lavender);
+      border-color:transparent;
+    }
+
     .board-chapter-source{
       color:#847D89;
-      font-size:.66rem;
+      font-size:.64rem;
+    }
+
+    /* Replies */
+    .board-thread{
+      display:none;
+      margin-top:17px;
+      padding-top:15px;
+      border-top:1px solid var(--bb-line);
+    }
+
+    .board-thread.is-open{
+      display:block;
+    }
+
+    .board-thread-title{
+      margin:0 0 9px;
+      color:var(--bb-purple);
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.055em;
+      text-transform:uppercase;
+    }
+
+    .board-reply-list{
+      display:grid;
+      gap:7px;
+    }
+
+    .board-reply{
+      padding:10px 11px;
+      border-radius:12px 12px 25px 12px;
+      background:var(--bb-wash);
+    }
+
+    .board-reply strong{
+      display:block;
+      color:var(--bb-ink);
+      font-size:.72rem;
+      line-height:1.3;
+    }
+
+    .board-reply p{
+      margin:4px 0 0;
+      color:var(--bb-muted);
+      font-size:.74rem;
+      line-height:1.46;
+    }
+
+    .board-reply-form{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:7px;
+      margin-top:9px;
+    }
+
+    .board-reply-form textarea{
+      min-height:58px;
+      resize:vertical;
+      padding:9px 10px;
+      border:1px solid #D8D1E6;
+      border-radius:12px;
+      background:#fff;
+      color:var(--bb-ink);
+      font-size:.74rem;
+      line-height:1.42;
+    }
+
+    .board-reply-form button{
+      align-self:end;
+      min-height:38px;
+      padding:7px 10px;
+      border:0;
+      border-radius:999px;
+      background:var(--bb-purple);
+      color:#fff;
+      font-size:.7rem;
+      font-weight:800;
+      cursor:pointer;
     }
 
     .board-empty{
@@ -435,7 +658,10 @@
 
     .board-empty.is-visible{display:block}
 
-    /* Buddy Bank explainer */
+    /* =========================================================
+       BUDDY BANK
+       ========================================================= */
+
     .bank-explainer{
       padding:64px 0 58px;
       background:var(--bb-teal);
@@ -496,9 +722,12 @@
       text-decoration:none;
     }
 
-    /* Share dialog */
+    /* =========================================================
+       CREATE POST DIALOG
+       ========================================================= */
+
     .share-dialog{
-      width:min(650px,calc(100% - 32px));
+      width:min(680px,calc(100% - 32px));
       padding:0;
       border:0;
       border-radius:26px 26px 58px 26px;
@@ -534,16 +763,63 @@
       padding:11px 13px;
       border-left:5px solid var(--bb-yellow);
       border-radius:0 12px 24px 0;
-      background:#FFF7D1;
+      background:var(--bb-yellow-soft);
       color:#5D542E;
       font-size:.75rem;
       line-height:1.45;
     }
 
+    .share-type-options{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+      margin-top:18px;
+    }
+
+    .share-type-option{
+      position:relative;
+      display:block;
+      cursor:pointer;
+    }
+
+    .share-type-option input{
+      position:absolute;
+      opacity:0;
+      pointer-events:none;
+    }
+
+    .share-type-card{
+      min-height:94px;
+      display:block;
+      padding:14px;
+      border:2px solid var(--bb-line);
+      border-radius:16px 16px 34px 16px;
+      background:#fff;
+    }
+
+    .share-type-card strong{
+      display:block;
+      color:var(--bb-ink);
+      font-size:.88rem;
+    }
+
+    .share-type-card span{
+      display:block;
+      margin-top:4px;
+      color:var(--bb-muted);
+      font-size:.72rem;
+      line-height:1.4;
+    }
+
+    .share-type-option input:checked + .share-type-card{
+      border-color:var(--bb-purple);
+      background:var(--bb-lavender);
+    }
+
     .share-fields{
       display:grid;
       gap:11px;
-      margin-top:18px;
+      margin-top:16px;
     }
 
     .share-fields label{
@@ -569,9 +845,11 @@
     .share-fields select{min-height:46px}
 
     .share-fields textarea{
-      min-height:88px;
+      min-height:86px;
       resize:vertical;
     }
+
+    .share-idea-only[hidden]{display:none}
 
     .share-actions{
       display:flex;
@@ -605,7 +883,7 @@
       right:22px;
       bottom:22px;
       z-index:50;
-      max-width:360px;
+      max-width:390px;
       display:none;
       padding:15px 17px;
       border-radius:16px 16px 34px 16px;
@@ -618,6 +896,7 @@
 
     .share-toast.is-visible{display:block}
 
+    /* Footer */
     .buddy-board-page .portal-footer{
       padding:28px 0 32px;
       background:#fff;
@@ -668,7 +947,7 @@
       }
 
       .board-hero h1{
-        font-size:clamp(3.3rem,14vw,4.8rem);
+        font-size:clamp(3.2rem,14vw,4.8rem);
       }
 
       .board-toolbar,
@@ -681,12 +960,60 @@
         width:max-content;
       }
 
-      .board-what{
+      .board-what,
+      .share-type-options,
+      .board-reply-form{
         grid-template-columns:1fr;
+      }
+
+      .board-reply-form button{
+        justify-self:start;
       }
 
       .buddy-board-page .portal-nav{
         display:none;
+      }
+
+      .buddy-board-page .site-menu{
+        display:block;
+        position:relative;
+      }
+
+      .buddy-board-page .site-menu summary{
+        list-style:none;
+        min-height:42px;
+        display:flex;
+        align-items:center;
+        padding:8px 14px;
+        border-radius:999px;
+        background:#fff;
+        color:var(--bb-purple);
+        font-size:.82rem;
+        font-weight:800;
+        cursor:pointer;
+      }
+
+      .buddy-board-page .site-menu summary::-webkit-details-marker{display:none}
+
+      .buddy-board-page .site-menu-panel{
+        position:absolute;
+        right:0;
+        top:50px;
+        width:230px;
+        padding:10px;
+        border-radius:18px;
+        background:#fff;
+        box-shadow:0 16px 36px rgba(40,24,67,.16);
+      }
+
+      .buddy-board-page .site-menu-panel a{
+        display:block;
+        padding:10px 11px;
+        border-radius:10px;
+        color:var(--bb-purple);
+        font-size:.84rem;
+        font-weight:700;
+        text-decoration:none;
       }
 
       .buddy-board-page .portal-footer-inner{
@@ -711,6 +1038,7 @@
 
     <div class="header-actions">
       <nav class="portal-nav" aria-label="Main navigation">
+        <a href="my-chapter.html">My Chapter</a>
         <a href="buddy-board.html" aria-current="page">Buddy Board</a>
         <a href="resources.html">Resources</a>
         <a href="support.html">Support</a>
@@ -720,6 +1048,16 @@
         <a class="current" href="#" aria-current="page">EN</a>
         <a href="fr.html" lang="fr-CA">FR</a>
       </div>
+
+      <details class="site-menu">
+        <summary>Menu</summary>
+        <div class="site-menu-panel">
+          <a href="my-chapter.html">My Chapter</a>
+          <a href="buddy-board.html" aria-current="page">Buddy Board</a>
+          <a href="resources.html">Resources</a>
+          <a href="support.html">Support</a>
+        </div>
+      </details>
     </div>
   </div>
 </header>
@@ -728,19 +1066,17 @@
 
   <section class="board-hero">
     <div class="board-container board-hero-grid">
-
       <div>
         <span class="board-kicker">Buddy Board</span>
-        <h1>Ideas worth <span>borrowing.</span></h1>
+        <h1>Ideas, questions, and <span>what’s working.</span></h1>
       </div>
 
       <div class="board-hero-copy">
         <p>
-          See what other chapters are trying, save useful ideas to your Buddy Bank,
-          and share something that worked for your group.
+          Swap practical ideas with other Best Buddies chapters, ask a quick question,
+          reply when you have something useful to add, and save the ideas you want to try later.
         </p>
       </div>
-
     </div>
   </section>
 
@@ -750,7 +1086,9 @@
         <span>Buddy Board</span>
         <h2>Chapter community lives inside My Chapter.</h2>
         <p>
-          The regular Teacher Hub stays available without a personal profile. Sign in to My Chapter to browse community ideas, save them to your Buddy Bank, and share an idea with other chapters.
+          The regular Teacher Hub stays available without a personal profile.
+          Sign in to My Chapter to browse community ideas, ask questions, reply,
+          and save useful ideas to your Buddy Bank.
         </p>
         <a href="my-chapter.html">Sign in to My Chapter →</a>
       </div>
@@ -759,343 +1097,85 @@
 
   <div data-my-chapter-required hidden>
 
-  <section class="board-main">
-    <div class="board-container">
+    <section class="board-main">
+      <div class="board-container">
 
-      <div class="board-toolbar">
-        <div class="board-tabs" role="group" aria-label="Buddy Board view">
-          <button class="board-tab is-active" type="button" data-board-view="all">
-            Buddy Board
-          </button>
+        <div class="board-toolbar">
+          <div class="board-tabs" role="group" aria-label="Buddy Board view">
+            <button class="board-tab is-active" type="button" data-board-view="all">
+              Buddy Board
+            </button>
 
-          <button class="board-tab" type="button" data-board-view="bank">
-            My Buddy Bank · <span data-bank-count>0</span>
+            <button class="board-tab" type="button" data-board-view="bank">
+              My Buddy Bank · <span data-bank-count>0</span>
+            </button>
+          </div>
+
+          <button class="board-share" type="button" data-open-share>
+            + Start a post
           </button>
         </div>
 
-        <button class="board-share" type="button" data-open-share>
-          + Share an idea
-        </button>
-      </div>
+        <div class="board-controls">
+          <input
+            class="board-search"
+            id="board-search"
+            type="search"
+            placeholder="Search questions, meetings, recruitment, participation, fundraising…"
+            autocomplete="off"
+            aria-label="Search Buddy Board"
+          >
 
-      <div class="board-controls">
-        <input
-          class="board-search"
-          id="board-search"
-          type="search"
-          placeholder="Search meetings, recruitment, participation, fundraising…"
-          autocomplete="off"
-          aria-label="Search Buddy Board"
-        >
-
-        <div class="board-bank-count">
-          <span data-bank-count>0</span>&nbsp; saved to Buddy Bank
+          <div class="board-bank-count">
+            <span data-bank-count>0</span>&nbsp; ideas saved to Buddy Bank
+          </div>
         </div>
-      </div>
 
-      <div class="board-tabs" aria-label="Filter by category" style="margin-bottom:18px;">
-        <button class="board-tab is-active" type="button" data-filter="all">All</button>
-        <button class="board-tab" type="button" data-filter="meetings">Meetings</button>
-        <button class="board-tab" type="button" data-filter="recruitment">Recruitment</button>
-        <button class="board-tab" type="button" data-filter="friendship">Friendship</button>
-        <button class="board-tab" type="button" data-filter="inclusion">Inclusion</button>
-        <button class="board-tab" type="button" data-filter="fundraising">Fundraising</button>
-        <button class="board-tab" type="button" data-filter="celebrations">Celebrations</button>
-        <button class="board-tab" type="button" data-filter="leadership">Leadership</button>
-      </div>
+        <div class="board-filters" aria-label="Filter Buddy Board">
+          <button class="board-filter is-active" type="button" data-filter="all">All</button>
+          <button class="board-filter" type="button" data-filter="ideas">Ideas</button>
+          <button class="board-filter" type="button" data-filter="questions">Questions</button>
+          <button class="board-filter" type="button" data-filter="meetings">Meetings</button>
+          <button class="board-filter" type="button" data-filter="recruitment">Recruitment</button>
+          <button class="board-filter" type="button" data-filter="friendship">Friendship</button>
+          <button class="board-filter" type="button" data-filter="inclusion">Inclusion</button>
+          <button class="board-filter" type="button" data-filter="fundraising">Fundraising</button>
+          <button class="board-filter" type="button" data-filter="celebrations">Celebrations</button>
+          <button class="board-filter" type="button" data-filter="leadership">Leadership</button>
+        </div>
 
-      <p class="board-prototype-note">
-        Prototype only: these are sample chapter ideas, not real chapter submissions.
-        In a live version, community posts would be authenticated, reviewed, and clearly separate from official Best Buddies Canada guidance.
-      </p>
+        <p class="board-prototype-note">
+          Prototype only: chapter posts and replies on this page are examples or are saved only on this browser.
+          A live version would use authenticated chapter contacts, moderation, and clear privacy rules.
+        </p>
 
-      <div class="board-grid" id="board-grid">
-
-        <article
-          class="board-card"
-          data-idea-id="activity-stations"
-          data-category="meetings inclusion"
-          data-search="first meeting activity stations participation choice quiet space games colouring music"
-        >
-          <div class="board-card-meta">
-            <span class="board-card-label">Chapter idea · Meetings</span>
-            <span class="board-card-program">Elementary &amp; Middle</span>
-          </div>
-
-          <h2>Low-pressure first meeting: activity stations</h2>
-
-          <p>
-            Set up a game table, colouring, music, and a quieter conversation space,
-            then let members choose where they want to begin.
-          </p>
-
-          <div class="board-what">
-            <div>
-              <span>What worked</span>
-              <p>Choice took pressure off conversation and made it easier to join gradually.</p>
-            </div>
-
-            <div>
-              <span>Next time</span>
-              <p>Use three stations instead of four so the room feels a little calmer.</p>
-            </div>
-          </div>
-
-          <div class="board-tags">
-            <span>First meeting</span>
-            <span>Participation</span>
-            <span>Choice</span>
-          </div>
-
-          <div class="board-card-actions">
-            <button class="board-save" type="button" data-save="activity-stations">Save to Buddy Bank</button>
-            <span class="board-chapter-source">Prototype chapter example</span>
-          </div>
-        </article>
-
-
-        <article
-          class="board-card"
-          data-accent="yellow"
-          data-idea-id="student-recruitment"
-          data-category="recruitment leadership"
-          data-search="student leaders recruitment poster announcements lunch table welcome chapter president leadership"
-        >
-          <div class="board-card-meta">
-            <span class="board-card-label">Chapter idea · Leadership</span>
-            <span class="board-card-program">High School</span>
-          </div>
-
-          <h2>Let student leaders own recruitment</h2>
-
-          <p>
-            Give the student executive the poster, announcements, lunch-table recruitment,
-            and welcoming role instead of having the Staff Advisor run every piece.
-          </p>
-
-          <div class="board-what">
-            <div>
-              <span>What worked</span>
-              <p>Students talked about the chapter in their own voice and brought friends with them.</p>
-            </div>
-
-            <div>
-              <span>Next time</span>
-              <p>Start one week earlier and give each leader one clear recruitment job.</p>
-            </div>
-          </div>
-
-          <div class="board-tags">
-            <span>Recruitment</span>
-            <span>Student leadership</span>
-          </div>
-
-          <div class="board-card-actions">
-            <button class="board-save" type="button" data-save="student-recruitment">Save to Buddy Bank</button>
-            <span class="board-chapter-source">Prototype chapter example</span>
-          </div>
-        </article>
-
-
-        <article
-          class="board-card"
-          data-accent="lilac"
-          data-idea-id="watch-first"
-          data-category="inclusion meetings"
-          data-search="watch first join gradually participation pass AAC nonspeaking inclusion activity"
-        >
-          <div class="board-card-meta">
-            <span class="board-card-label">Chapter idea · Inclusion</span>
-            <span class="board-card-program">Elementary &amp; Middle</span>
-          </div>
-
-          <h2>Make “watch first” a real option</h2>
-
-          <p>
-            At the start of an activity, tell the whole group that they can watch a round,
-            pass, or join when they are ready. It makes the option feel normal instead of exceptional.
-          </p>
-
-          <div class="board-what">
-            <div>
-              <span>What worked</span>
-              <p>Members could see how the activity worked before deciding how they wanted to take part.</p>
-            </div>
-
-            <div>
-              <span>Next time</span>
-              <p>Put the participation choices on a small visual card too.</p>
-            </div>
-          </div>
-
-          <div class="board-tags">
-            <span>Participation</span>
-            <span>Watch first</span>
-            <span>Choice</span>
-          </div>
-
-          <div class="board-card-actions">
-            <button class="board-save" type="button" data-save="watch-first">Save to Buddy Bank</button>
-            <span class="board-chapter-source">Prototype chapter example</span>
-          </div>
-        </article>
-
-
-        <article
-          class="board-card"
-          data-accent="orange"
-          data-idea-id="question-jar"
-          data-category="friendship meetings"
-          data-search="friendship question jar conversation getting to know you common interests buddy pairs"
-        >
-          <div class="board-card-meta">
-            <span class="board-card-label">Chapter idea · Friendship</span>
-            <span class="board-card-program">High School</span>
-          </div>
-
-          <h2>A question jar for the quiet moments</h2>
-
-          <p>
-            Put easy conversation prompts in a jar and leave it on a table. Buddy pairs or small groups
-            can use it when they want something to talk about, without making it a whole-group activity.
-          </p>
-
-          <div class="board-what">
-            <div>
-              <span>What worked</span>
-              <p>It gave people somewhere to start without putting anyone on the spot.</p>
-            </div>
-
-            <div>
-              <span>Next time</span>
-              <p>Add a few non-verbal choice prompts, like choosing between two pictures or activities.</p>
-            </div>
-          </div>
-
-          <div class="board-tags">
-            <span>Friendship</span>
-            <span>Conversation</span>
-          </div>
-
-          <div class="board-card-actions">
-            <button class="board-save" type="button" data-save="question-jar">Save to Buddy Bank</button>
-            <span class="board-chapter-source">Prototype chapter example</span>
-          </div>
-        </article>
-
-
-        <article
-          class="board-card"
-          data-idea-id="memory-wall"
-          data-category="celebrations friendship"
-          data-search="year end memory wall celebration photos moments friendship wrap up"
-        >
-          <div class="board-card-meta">
-            <span class="board-card-label">Chapter idea · Celebrations</span>
-            <span class="board-card-program">Elementary &amp; Middle</span>
-          </div>
-
-          <h2>Build a year-end memory wall together</h2>
-
-          <p>
-            Invite members to add a drawing, sentence, photo, symbol, or favourite moment from the year.
-            The wall grows during the last few meetings instead of becoming one big final project.
-          </p>
-
-          <div class="board-what">
-            <div>
-              <span>What worked</span>
-              <p>There were lots of ways to contribute, and it gave everyone something to look back on.</p>
-            </div>
-
-            <div>
-              <span>Next time</span>
-              <p>Start it earlier so there is more time for members to add to it.</p>
-            </div>
-          </div>
-
-          <div class="board-tags">
-            <span>Celebration</span>
-            <span>Year-end</span>
-          </div>
-
-          <div class="board-card-actions">
-            <button class="board-save" type="button" data-save="memory-wall">Save to Buddy Bank</button>
-            <span class="board-chapter-source">Prototype chapter example</span>
-          </div>
-        </article>
-
-
-        <article
-          class="board-card"
-          data-accent="yellow"
-          data-idea-id="one-fundraiser"
-          data-category="fundraising leadership"
-          data-search="fundraising one simple fundraiser student leaders planning chapter"
-        >
-          <div class="board-card-meta">
-            <span class="board-card-label">Chapter idea · Fundraising</span>
-            <span class="board-card-program">High School</span>
-          </div>
-
-          <h2>Pick one fundraiser and let students run the plan</h2>
-
-          <p>
-            Instead of collecting a long list of possibilities, choose one realistic fundraiser
-            and give student leaders clear pieces of the plan to own.
-          </p>
-
-          <div class="board-what">
-            <div>
-              <span>What worked</span>
-              <p>Keeping the goal small made it easier to get started and easier to divide the work.</p>
-            </div>
-
-            <div>
-              <span>Next time</span>
-              <p>Choose the date earlier and assign communication roles at the same meeting.</p>
-            </div>
-          </div>
-
-          <div class="board-tags">
-            <span>Fundraising</span>
-            <span>Leadership</span>
-          </div>
-
-          <div class="board-card-actions">
-            <button class="board-save" type="button" data-save="one-fundraiser">Save to Buddy Bank</button>
-            <span class="board-chapter-source">Prototype chapter example</span>
-          </div>
-        </article>
+        <div class="board-grid" id="board-grid"></div>
 
         <div class="board-empty" id="board-empty">
           Nothing matches this view yet. Try another category or return to the full Buddy Board.
         </div>
 
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="bank-explainer" id="bank">
-    <div class="board-container bank-explainer-grid">
+    <section class="bank-explainer" id="bank">
+      <div class="board-container bank-explainer-grid">
+        <div>
+          <span class="board-kicker">Buddy Bank</span>
+          <h2>Keep the ideas you want to try later.</h2>
+          <p>
+            Buddy Bank is intentionally simple: save useful <strong>ideas</strong> from the community
+            and come back to them when you are planning. Questions stay on the Buddy Board.
+          </p>
+        </div>
 
-      <div>
-        <span class="board-kicker">Buddy Bank</span>
-        <h2>Keep the ideas you want to try later.</h2>
-        <p>
-          Save a chapter idea once and it stays in your Buddy Bank on this browser.
-          In a live version, those saved ideas would follow the teacher’s account.
-        </p>
+        <div class="bank-count-card">
+          <span>Your Buddy Bank</span>
+          <strong><span data-bank-count>0</span> saved ideas</strong>
+          <a href="#main-content" data-open-bank>Show my saved ideas →</a>
+        </div>
       </div>
-
-      <div class="bank-count-card">
-        <span>Your Buddy Bank</span>
-        <strong><span data-bank-count>0</span> saved ideas</strong>
-        <a href="#main-content" data-open-bank>Show my saved ideas →</a>
-      </div>
-
-    </div>
-  </section>
+    </section>
 
   </div>
 
@@ -1109,127 +1189,496 @@
   </div>
 </footer>
 
+
+<!-- =====================================================
+     NEW COMMUNITY POST
+====================================================== -->
+
 <dialog class="share-dialog" id="share-dialog">
-  <form class="share-dialog-inner" id="share-form" method="dialog">
-    <span class="board-kicker">Share something that worked</span>
-    <h2>Add to the Buddy Board.</h2>
+  <form class="share-dialog-inner" id="share-form">
+    <span class="board-kicker">Buddy Board</span>
+    <h2>Start a post.</h2>
 
     <p class="share-intro">
-      A real version could send this to a simple Best Buddies review queue before it appears for other chapters.
+      Share something that worked, or ask other chapter contacts a practical question.
     </p>
 
     <p class="share-privacy">
-      Please don’t include student names, personal information, medical information, or other identifying details.
+      Please don’t include student names, personal information, medical information,
+      disability information, or other identifying details.
     </p>
 
-    <div class="share-fields">
-      <label>
-        What did your chapter try?
-        <input type="text" name="title" required>
+    <div class="share-type-options" aria-label="Choose post type">
+      <label class="share-type-option">
+        <input type="radio" name="postType" value="idea" checked>
+        <span class="share-type-card">
+          <strong>Share an idea</strong>
+          <span>Something your chapter tried, learned, or would recommend.</span>
+        </span>
       </label>
 
-      <label>
-        Tell us a little about it
-        <textarea name="description" required></textarea>
-      </label>
-
-      <label>
-        What worked well?
-        <textarea name="worked" required></textarea>
-      </label>
-
-      <label>
-        Anything you’d change next time?
-        <textarea name="change"></textarea>
-      </label>
-
-      <label>
-        This could help with
-        <select name="category">
-          <option>Meetings</option>
-          <option>Recruitment</option>
-          <option>Friendship</option>
-          <option>Inclusion</option>
-          <option>Fundraising</option>
-          <option>Celebrations</option>
-          <option>Leadership</option>
-        </select>
+      <label class="share-type-option">
+        <input type="radio" name="postType" value="question">
+        <span class="share-type-card">
+          <strong>Ask a question</strong>
+          <span>See how other chapters are approaching something.</span>
+        </span>
       </label>
     </div>
 
+    <div class="share-fields">
+
+      <label>
+        Title
+        <input
+          type="text"
+          name="title"
+          placeholder="e.g. How are you recruiting Peer Buddies?"
+          required
+        >
+      </label>
+
+      <label>
+        Tell us a little more
+        <textarea
+          name="description"
+          placeholder="Keep it practical and leave out identifying details."
+          required
+        ></textarea>
+      </label>
+
+      <div class="share-idea-only" data-idea-only>
+        <label>
+          What worked well?
+          <textarea name="worked"></textarea>
+        </label>
+      </div>
+
+      <div class="share-idea-only" data-idea-only>
+        <label>
+          Anything you’d change next time?
+          <textarea name="change"></textarea>
+        </label>
+      </div>
+
+      <label>
+        This is mostly about
+        <select name="category">
+          <option value="meetings">Meetings</option>
+          <option value="recruitment">Recruitment</option>
+          <option value="friendship">Friendship</option>
+          <option value="inclusion">Inclusion</option>
+          <option value="fundraising">Fundraising</option>
+          <option value="celebrations">Celebrations</option>
+          <option value="leadership">Leadership</option>
+        </select>
+      </label>
+
+      <label>
+        Program
+        <select name="program">
+          <option>Elementary &amp; Middle</option>
+          <option>High School</option>
+        </select>
+      </label>
+
+    </div>
+
     <div class="share-actions">
-      <button class="share-submit" type="submit">Share idea →</button>
+      <button class="share-submit" type="submit">Post to Buddy Board →</button>
       <button class="share-cancel" type="button" data-close-share>Cancel</button>
     </div>
   </form>
 </dialog>
 
-<div class="share-toast" id="share-toast" role="status">
-  Thanks! In a live version, this idea would go to Best Buddies for review before it appears on the Buddy Board.
-</div>
+<div class="share-toast" id="share-toast" role="status"></div>
+
 
 <script>
 (() => {
   const BANK_KEY = "bbBuddyBankV1";
-  const cards = Array.from(document.querySelectorAll(".board-card"));
-  const saveButtons = Array.from(document.querySelectorAll("[data-save]"));
+  const POSTS_KEY = "bbBuddyBoardPostsV1";
+  const REPLIES_KEY = "bbBuddyBoardRepliesV1";
+
+  const boardGrid = document.getElementById("board-grid");
+  const empty = document.getElementById("board-empty");
+  const search = document.getElementById("board-search");
+
   const countTargets = document.querySelectorAll("[data-bank-count]");
   const filterButtons = Array.from(document.querySelectorAll("[data-filter]"));
   const viewButtons = Array.from(document.querySelectorAll("[data-board-view]"));
-  const search = document.getElementById("board-search");
-  const empty = document.getElementById("board-empty");
+
   const shareDialog = document.getElementById("share-dialog");
   const shareForm = document.getElementById("share-form");
   const toast = document.getElementById("share-toast");
+  const ideaOnlyFields = Array.from(document.querySelectorAll("[data-idea-only]"));
 
   let currentFilter = "all";
   let currentView = window.location.hash === "#bank" ? "bank" : "all";
+  const openThreads = new Set();
 
-  function readBank(){
+  const SAMPLE_POSTS = [
+    {
+      id:"activity-stations",
+      type:"idea",
+      category:"meetings",
+      extraCategories:["inclusion"],
+      program:"Elementary & Middle",
+      accent:"teal",
+      title:"Low-pressure first meeting: activity stations",
+      description:"Set up a game table, colouring, music, and a quieter conversation space, then let members choose where they want to begin.",
+      worked:"Choice took pressure off conversation and made it easier to join gradually.",
+      change:"Use three stations instead of four so the room feels a little calmer.",
+      tags:["First meeting","Participation","Choice"],
+      source:"Prototype chapter example",
+      sampleReplies:[
+        {
+          author:"Staff Advisor · Elementary & Middle",
+          text:"We do something similar and leave one station intentionally quiet. It gives people somewhere to land if the room feels busy."
+        }
+      ]
+    },
+    {
+      id:"peer-buddy-recruitment-question",
+      type:"question",
+      category:"recruitment",
+      extraCategories:["leadership"],
+      program:"High School",
+      accent:"yellow",
+      title:"How are other chapters recruiting Peer Buddies?",
+      description:"We have good interest from Buddies, but we are finding it harder to bring in enough Peer Buddies this year. What has actually worked at your school?",
+      prompt:"Looking for practical recruitment approaches other chapters have tried.",
+      tags:["Recruitment","Peer Buddies","Student leadership"],
+      source:"Prototype chapter question",
+      sampleReplies:[
+        {
+          author:"Staff Advisor · High School",
+          text:"Our student executive did short visits to Grade 10 homerooms. It worked much better than relying on posters alone."
+        },
+        {
+          author:"Staff Advisor · High School",
+          text:"We connected with students already looking for leadership or volunteer opportunities and invited them to come to one meeting first."
+        }
+      ]
+    },
+    {
+      id:"watch-first",
+      type:"idea",
+      category:"inclusion",
+      extraCategories:["meetings"],
+      program:"Elementary & Middle",
+      accent:"lilac",
+      title:"Make “watch first” a real option",
+      description:"At the start of an activity, tell the whole group that they can watch a round, pass, or join when they are ready. It makes the option feel normal instead of exceptional.",
+      worked:"Members could see how the activity worked before deciding how they wanted to take part.",
+      change:"Put the participation choices on a small visual card too.",
+      tags:["Participation","Watch first","Choice"],
+      source:"Prototype chapter example",
+      sampleReplies:[]
+    },
+    {
+      id:"large-chapter-question",
+      type:"question",
+      category:"meetings",
+      extraCategories:["inclusion"],
+      program:"High School",
+      accent:"orange",
+      title:"What works when your chapter gets really big?",
+      description:"Our membership has grown quickly and whole-group activities are starting to feel chaotic. How are larger chapters keeping meetings social without everyone needing to do the same thing?",
+      prompt:"Looking for ideas that work with a large group and different participation preferences.",
+      tags:["Large chapters","Meetings","Participation"],
+      source:"Prototype chapter question",
+      sampleReplies:[
+        {
+          author:"Staff Advisor · High School",
+          text:"We use a short welcome together, then break into smaller choices. The whole chapter only comes back together for the last few minutes."
+        }
+      ]
+    },
+    {
+      id:"student-recruitment",
+      type:"idea",
+      category:"leadership",
+      extraCategories:["recruitment"],
+      program:"High School",
+      accent:"yellow",
+      title:"Let student leaders own recruitment",
+      description:"Give the student executive the poster, announcements, lunch-table recruitment, and welcoming role instead of having the Staff Advisor run every piece.",
+      worked:"Students talked about the chapter in their own voice and brought friends with them.",
+      change:"Start one week earlier and give each leader one clear recruitment job.",
+      tags:["Recruitment","Student leadership"],
+      source:"Prototype chapter example",
+      sampleReplies:[]
+    },
+    {
+      id:"memory-wall",
+      type:"idea",
+      category:"celebrations",
+      extraCategories:["friendship"],
+      program:"Elementary & Middle",
+      accent:"teal",
+      title:"Build a year-end memory wall together",
+      description:"Invite members to add a drawing, sentence, photo, symbol, or favourite moment from the year. The wall grows during the last few meetings instead of becoming one big final project.",
+      worked:"There were lots of ways to contribute, and it gave everyone something to look back on.",
+      change:"Start it earlier so there is more time for members to add to it.",
+      tags:["Celebration","Year-end","Friendship"],
+      source:"Prototype chapter example",
+      sampleReplies:[]
+    }
+  ];
+
+  function readJSON(key, fallback){
     try{
-      return JSON.parse(localStorage.getItem(BANK_KEY)) || [];
+      const raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
     }catch(error){
-      return [];
+      return fallback;
     }
   }
 
-  function writeBank(value){
-    localStorage.setItem(BANK_KEY, JSON.stringify(value));
+  function writeJSON(key, value){
+    localStorage.setItem(key, JSON.stringify(value));
   }
 
-  function renderBank(){
-    const bank = readBank();
-
-    countTargets.forEach(target => {
-      target.textContent = bank.length;
-    });
-
-    saveButtons.forEach(button => {
-      const saved = bank.includes(button.dataset.save);
-      button.classList.toggle("is-saved", saved);
-      button.textContent = saved ? "✓ Saved to Buddy Bank" : "Save to Buddy Bank";
-    });
+  function readBank(){
+    const value = readJSON(BANK_KEY, []);
+    return Array.isArray(value) ? value : [];
   }
 
-  function renderCards(){
-    const bank = readBank();
+  function readLocalPosts(){
+    const value = readJSON(POSTS_KEY, []);
+    return Array.isArray(value) ? value : [];
+  }
+
+  function readReplies(){
+    const value = readJSON(REPLIES_KEY, {});
+    return value && typeof value === "object" ? value : {};
+  }
+
+  function allPosts(){
+    return [...readLocalPosts(), ...SAMPLE_POSTS];
+  }
+
+  function escapeHTML(value){
+    return String(value ?? "")
+      .replaceAll("&","&amp;")
+      .replaceAll("<","&lt;")
+      .replaceAll(">","&gt;")
+      .replaceAll('"',"&quot;")
+      .replaceAll("'","&#039;");
+  }
+
+  function categoryLabel(value){
+    const labels = {
+      meetings:"Meetings",
+      recruitment:"Recruitment",
+      friendship:"Friendship",
+      inclusion:"Inclusion",
+      fundraising:"Fundraising",
+      celebrations:"Celebrations",
+      leadership:"Leadership"
+    };
+    return labels[value] || value;
+  }
+
+  function validIdeaIds(){
+    return allPosts()
+      .filter(post => post.type === "idea")
+      .map(post => post.id);
+  }
+
+  function normalizedBank(){
+    const valid = new Set(validIdeaIds());
+    return readBank().filter(id => valid.has(id));
+  }
+
+  function replyIdentity(){
+    const profile = window.BBMyChapter?.getProfile?.();
+    const name = profile?.firstName ? `${profile.firstName} · Staff Advisor` : "You · Staff Advisor";
+    return name;
+  }
+
+  function combinedReplies(post){
+    const stored = readReplies()[post.id] || [];
+    return [...(post.sampleReplies || []), ...stored];
+  }
+
+  function postMatchesFilter(post){
+    if(currentFilter === "all") return true;
+    if(currentFilter === "ideas") return post.type === "idea";
+    if(currentFilter === "questions") return post.type === "question";
+
+    const categories = [post.category, ...(post.extraCategories || [])];
+    return categories.includes(currentFilter);
+  }
+
+  function postMatchesSearch(post){
     const query = (search?.value || "").trim().toLowerCase();
-    let visibleCount = 0;
+    if(!query) return true;
 
-    cards.forEach(card => {
-      const categories = (card.dataset.category || "").split(/\s+/);
-      const haystack = `${card.dataset.search || ""} ${card.textContent}`.toLowerCase();
+    const haystack = [
+      post.type,
+      post.category,
+      ...(post.extraCategories || []),
+      post.program,
+      post.title,
+      post.description,
+      post.worked || "",
+      post.change || "",
+      post.prompt || "",
+      ...(post.tags || [])
+    ].join(" ").toLowerCase();
 
-      const categoryMatch = currentFilter === "all" || categories.includes(currentFilter);
-      const viewMatch = currentView === "all" || bank.includes(card.dataset.ideaId);
-      const searchMatch = !query || haystack.includes(query);
-      const visible = categoryMatch && viewMatch && searchMatch;
+    return haystack.includes(query);
+  }
 
-      card.hidden = !visible;
-      if(visible) visibleCount += 1;
+  function postMatchesView(post){
+    if(currentView !== "bank") return true;
+    return post.type === "idea" && normalizedBank().includes(post.id);
+  }
+
+  function renderBankCounts(){
+    const count = normalizedBank().length;
+    countTargets.forEach(target => {
+      target.textContent = count;
     });
+  }
 
-    empty?.classList.toggle("is-visible", visibleCount === 0);
+  function renderReplyList(post){
+    const replies = combinedReplies(post);
+
+    if(!replies.length){
+      return `
+        <div class="board-reply">
+          <strong>No replies yet</strong>
+          <p>Be the first chapter contact to add something useful.</p>
+        </div>
+      `;
+    }
+
+    return replies.map(reply => `
+      <div class="board-reply">
+        <strong>${escapeHTML(reply.author)}</strong>
+        <p>${escapeHTML(reply.text)}</p>
+      </div>
+    `).join("");
+  }
+
+  function renderPost(post){
+    const replies = combinedReplies(post);
+    const isSaved = normalizedBank().includes(post.id);
+    const isOpen = openThreads.has(post.id);
+    const typeLabel = post.type === "question" ? "Question" : "Idea";
+    const accent = post.accent || (post.type === "question" ? "yellow" : "teal");
+
+    const ideaBody = post.type === "idea"
+      ? `
+        <div class="board-what">
+          ${post.worked ? `
+            <div>
+              <span>What worked</span>
+              <p>${escapeHTML(post.worked)}</p>
+            </div>
+          ` : ""}
+          ${post.change ? `
+            <div>
+              <span>Next time</span>
+              <p>${escapeHTML(post.change)}</p>
+            </div>
+          ` : ""}
+        </div>
+      `
+      : `
+        <div class="board-question-prompt">
+          ${escapeHTML(post.prompt || "What are other chapters trying?")}
+        </div>
+      `;
+
+    const saveButton = post.type === "idea"
+      ? `
+        <button
+          class="board-save ${isSaved ? "is-saved" : ""}"
+          type="button"
+          data-save="${escapeHTML(post.id)}"
+        >
+          ${isSaved ? "✓ Saved to Buddy Bank" : "Save to Buddy Bank"}
+        </button>
+      `
+      : "";
+
+    return `
+      <article
+        class="board-card ${post.type === "question" ? "is-question" : ""}"
+        data-accent="${escapeHTML(accent)}"
+        data-post-id="${escapeHTML(post.id)}"
+      >
+        <div class="board-card-meta">
+          <div class="board-card-label">
+            <span class="board-post-type">${typeLabel}</span>
+            ${escapeHTML(categoryLabel(post.category))}
+          </div>
+
+          <span class="board-card-program">${escapeHTML(post.program)}</span>
+        </div>
+
+        <h2>${escapeHTML(post.title)}</h2>
+
+        <p>${escapeHTML(post.description)}</p>
+
+        ${ideaBody}
+
+        <div class="board-tags">
+          ${(post.tags || []).map(tag => `<span>${escapeHTML(tag)}</span>`).join("")}
+        </div>
+
+        <div class="board-card-actions">
+          <div class="board-action-group">
+            ${saveButton}
+
+            <button
+              class="board-replies-button"
+              type="button"
+              data-toggle-thread="${escapeHTML(post.id)}"
+              aria-expanded="${isOpen ? "true" : "false"}"
+            >
+              ${replies.length} ${replies.length === 1 ? "reply" : "replies"}
+            </button>
+          </div>
+
+          <span class="board-chapter-source">${escapeHTML(post.source)}</span>
+        </div>
+
+        <div class="board-thread ${isOpen ? "is-open" : ""}" data-thread="${escapeHTML(post.id)}">
+          <p class="board-thread-title">Community replies</p>
+
+          <div class="board-reply-list">
+            ${renderReplyList(post)}
+          </div>
+
+          <form class="board-reply-form" data-reply-form="${escapeHTML(post.id)}">
+            <textarea
+              name="reply"
+              aria-label="Add a reply"
+              placeholder="Add a practical reply…"
+              required
+            ></textarea>
+            <button type="submit">Reply →</button>
+          </form>
+        </div>
+      </article>
+    `;
+  }
+
+  function renderBoard(){
+    if(!boardGrid) return;
+
+    const posts = allPosts()
+      .filter(postMatchesView)
+      .filter(postMatchesFilter)
+      .filter(postMatchesSearch);
+
+    boardGrid.innerHTML = posts.map(renderPost).join("");
+    empty?.classList.toggle("is-visible", posts.length === 0);
 
     viewButtons.forEach(button => {
       button.classList.toggle("is-active", button.dataset.boardView === currentView);
@@ -1238,30 +1687,83 @@
     filterButtons.forEach(button => {
       button.classList.toggle("is-active", button.dataset.filter === currentFilter);
     });
+
+    renderBankCounts();
   }
 
-  saveButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const bank = readBank();
-      const id = button.dataset.save;
-      const index = bank.indexOf(id);
+  function saveToggle(id){
+    const bank = readBank();
+    const index = bank.indexOf(id);
 
-      if(index >= 0){
-        bank.splice(index, 1);
-      }else{
-        bank.push(id);
-      }
+    if(index >= 0){
+      bank.splice(index,1);
+    }else{
+      bank.push(id);
+    }
 
-      writeBank(bank);
-      renderBank();
-      renderCards();
+    writeJSON(BANK_KEY, bank);
+    renderBoard();
+    window.BBMyChapter?.renderAll?.();
+  }
+
+  function toggleThread(id){
+    if(openThreads.has(id)){
+      openThreads.delete(id);
+    }else{
+      openThreads.add(id);
+    }
+
+    renderBoard();
+  }
+
+  function addReply(postId, text){
+    const clean = text.trim();
+    if(!clean) return;
+
+    const replies = readReplies();
+
+    if(!Array.isArray(replies[postId])){
+      replies[postId] = [];
+    }
+
+    replies[postId].push({
+      author:replyIdentity(),
+      text:clean,
+      createdAt:new Date().toISOString()
     });
+
+    writeJSON(REPLIES_KEY, replies);
+    openThreads.add(postId);
+    renderBoard();
+  }
+
+  boardGrid?.addEventListener("click", event => {
+    const saveButton = event.target.closest("[data-save]");
+    if(saveButton){
+      saveToggle(saveButton.dataset.save);
+      return;
+    }
+
+    const threadButton = event.target.closest("[data-toggle-thread]");
+    if(threadButton){
+      toggleThread(threadButton.dataset.toggleThread);
+    }
+  });
+
+  boardGrid?.addEventListener("submit", event => {
+    const form = event.target.closest("[data-reply-form]");
+    if(!form) return;
+
+    event.preventDefault();
+
+    const textarea = form.querySelector('textarea[name="reply"]');
+    addReply(form.dataset.replyForm, textarea?.value || "");
   });
 
   filterButtons.forEach(button => {
     button.addEventListener("click", () => {
       currentFilter = button.dataset.filter;
-      renderCards();
+      renderBoard();
     });
   });
 
@@ -1269,24 +1771,28 @@
     button.addEventListener("click", () => {
       currentView = button.dataset.boardView;
       window.location.hash = currentView === "bank" ? "bank" : "";
-      renderCards();
+      renderBoard();
     });
   });
+
+  search?.addEventListener("input", renderBoard);
 
   document.querySelectorAll("[data-open-bank]").forEach(link => {
     link.addEventListener("click", event => {
       event.preventDefault();
       currentView = "bank";
       window.location.hash = "bank";
-      renderCards();
+      renderBoard();
       document.querySelector(".board-main")?.scrollIntoView({behavior:"smooth"});
     });
   });
 
-  search?.addEventListener("input", renderCards);
-
   document.querySelectorAll("[data-open-share]").forEach(button => {
-    button.addEventListener("click", () => shareDialog?.showModal());
+    button.addEventListener("click", () => {
+      if(shareDialog && typeof shareDialog.showModal === "function"){
+        shareDialog.showModal();
+      }
+    });
   });
 
   document.querySelectorAll("[data-close-share]").forEach(button => {
@@ -1294,22 +1800,88 @@
   });
 
   shareDialog?.addEventListener("click", event => {
-    if(event.target === shareDialog) shareDialog.close();
+    if(event.target === shareDialog){
+      shareDialog.close();
+    }
+  });
+
+  function updatePostTypeFields(){
+    const type = shareForm?.querySelector('input[name="postType"]:checked')?.value || "idea";
+    const ideaMode = type === "idea";
+
+    ideaOnlyFields.forEach(field => {
+      field.hidden = !ideaMode;
+    });
+
+    const submit = shareForm?.querySelector(".share-submit");
+    if(submit){
+      submit.textContent = ideaMode ? "Share idea →" : "Ask the community →";
+    }
+  }
+
+  shareForm?.querySelectorAll('input[name="postType"]').forEach(input => {
+    input.addEventListener("change", updatePostTypeFields);
   });
 
   shareForm?.addEventListener("submit", event => {
     event.preventDefault();
+
+    const formData = new FormData(shareForm);
+    const type = formData.get("postType") === "question" ? "question" : "idea";
+    const category = String(formData.get("category") || "meetings");
+
+    const post = {
+      id:`local-${Date.now()}`,
+      type,
+      category,
+      extraCategories:[],
+      program:String(formData.get("program") || "Elementary & Middle"),
+      accent:type === "question" ? "yellow" : "teal",
+      title:String(formData.get("title") || "").trim(),
+      description:String(formData.get("description") || "").trim(),
+      worked:type === "idea" ? String(formData.get("worked") || "").trim() : "",
+      change:type === "idea" ? String(formData.get("change") || "").trim() : "",
+      prompt:type === "question" ? "What are other chapters trying?" : "",
+      tags:[categoryLabel(category)],
+      source:"Your prototype post",
+      sampleReplies:[],
+      createdAt:new Date().toISOString()
+    };
+
+    if(!post.title || !post.description){
+      return;
+    }
+
+    const posts = readLocalPosts();
+    posts.unshift(post);
+    writeJSON(POSTS_KEY, posts.slice(0,20));
+
     shareDialog?.close();
     shareForm.reset();
+    updatePostTypeFields();
 
-    toast?.classList.add("is-visible");
-    window.setTimeout(() => {
-      toast?.classList.remove("is-visible");
-    }, 4200);
+    currentView = "all";
+    currentFilter = type === "question" ? "questions" : "ideas";
+    window.location.hash = "";
+    renderBoard();
+
+    if(toast){
+      toast.textContent = type === "question"
+        ? "Question added to this browser’s prototype Buddy Board. In a live version, it would go through moderation first."
+        : "Idea added to this browser’s prototype Buddy Board. In a live version, it would go through moderation first.";
+
+      toast.classList.add("is-visible");
+
+      window.setTimeout(() => {
+        toast.classList.remove("is-visible");
+      }, 4300);
+    }
   });
 
-  renderBank();
-  renderCards();
+  updatePostTypeFields();
+  renderBoard();
+
+  window.addEventListener("bb:my-chapter-change", renderBoard);
 })();
 </script>
 
