@@ -6,6 +6,13 @@
 .bb-my-chapter-nav{
   background:#FFD420 !important;
   color:#211B28 !important;
+  font-weight:800 !important;
+}
+
+.bb-my-chapter-nav:hover,
+.bb-my-chapter-nav:focus-visible{
+  background:#FFE153 !important;
+  color:#211B28 !important;
 }
 
 .bb-my-chapter-nav.is-signed-in{
