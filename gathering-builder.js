@@ -1000,7 +1000,8 @@
         </div>
 
         <div class="gb-final-actions">
-          <button class="gb-btn primary" type="button" data-print>Print this plan</button>
+          ${window.BBMyChapter?.isSignedIn() ? `<button class="gb-btn primary" type="button" data-save-chapter>Save to My Chapter</button>` : ""}
+          <button class="gb-btn ${window.BBMyChapter?.isSignedIn() ? "secondary" : "primary"}" type="button" data-print>Print this plan</button>
           <button class="gb-btn secondary" type="button" data-email>Email this plan</button>
           <button class="gb-btn secondary" type="button" data-path="manual">Browse all activities</button>
           <button class="gb-text-button" type="button" data-edit-answers>Change my answers</button>
@@ -1259,6 +1260,24 @@
       return;
     }
 
+    if (t.matches("[data-save-chapter]")) {
+      if (!state.chosen || !window.BBMyChapter?.isSignedIn()) return;
+
+      const saved = window.BBMyChapter.saveMeetingPlan({
+        title: state.chosen.title || `${monthLabels[monthSelect.value]} meeting`,
+        month: monthLabels[monthSelect.value],
+        minutes: total(state.chosen.ids),
+        activityIds: [...state.chosen.ids],
+        activityTitles: state.chosen.ids.map((id) => acts[id]?.title || id)
+      });
+
+      if (saved) {
+        t.textContent = "Saved to My Chapter ✓";
+        t.disabled = true;
+      }
+      return;
+    }
+
     if (t.matches("[data-print]")) {
       printPlan();
       return;
@@ -1292,6 +1311,10 @@
     state.swapIndex = null;
     state.manual = { share:"", energize:"", main:"", close:"" };
     renderHome();
+  });
+
+  window.addEventListener("bb:my-chapter-change", () => {
+    if (state.screen === "final" && state.chosen) renderFinal(state.chosen);
   });
 
   renderHome();
