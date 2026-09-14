@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <meta name="description" content="Best Buddies Canada Teacher Hub: Elementary & Middle School chapter planning, monthly support, resources, and program help.">
+  <title>Elementary & Middle School | Best Buddies Canada Teacher Hub</title>
+
+  <link rel="stylesheet" href="portal-home.css">
+  <link rel="stylesheet" href="access.css">
+  <link rel="stylesheet" href="accessibility.css">
+  <link rel="stylesheet" href="portal-polish.css">
+  <link rel="stylesheet" href="program-home.css">
+  <link rel="stylesheet" href="program-home-simple.css">
+
+  <script src="access.js" defer></script>
+  <script src="accessibility.js" defer></script>
+
+<style>
+/* =========================================================
+   MY CHAPTER + COMMUNITY PREVIEW · DEMO PERSONALIZATION
+   Prototype only: profile/progress are stored in localStorage.
+   ========================================================= */
+
+.program-home-simple .portal-nav a[href="#my-chapter"]{
+  background:#FFD420;
+  color:#211B28;
+}
+
+.chapter-personal{
+  position:relative;
+  padding:54px 0 60px;
+  background:#fff;
+}
+
+.chapter-personal-shell{
+  display:grid;
+  grid-template-columns:minmax(0,1.28fr) minmax(300px,.62fr);
+  gap:14px;
+  align-items:stretch;
+}
+
+.chapter-personal-main,
+.chapter-checkin{
+  border-radius:24px 24px 58px 24px;
+}
+
+.chapter-personal-main{
+  padding:28px 30px 27px;
+  background:#EEEAF8;
+}
+
+.chapter-personal-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.chapter-personal-kicker,
+.chapter-checkin-kicker,
+.buddy-preview-kicker{
+  display:block;
+  color:#5A3F98;
+  font-family:"Poppins",Arial,sans-serif;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.075em;
+  text-transform:uppercase;
+}
+
+.chapter-personal h2{
+  margin:6px 0 0;
+  color:#211B28;
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:2.6rem;
+  font-weight:900;
+  line-height:.94;
+}
+
+.chapter-school{
+  margin:8px 0 0;
+  color:#5A3F98;
+  font-size:.88rem;
+  font-weight:700;
+}
+
+.chapter-edit{
+  flex:0 0 auto;
+  min-height:38px;
+  padding:7px 12px;
+  border:1px solid #D3CBE6;
+  border-radius:999px;
+  background:#fff;
+  color:#5A3F98;
+  font-size:.76rem;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.chapter-progress-row{
+  display:grid;
+  grid-template-columns:auto minmax(100px,1fr);
+  gap:16px;
+  align-items:center;
+  margin-top:23px;
+  padding-top:19px;
+  border-top:1px solid #D8D1E6;
+}
+
+.chapter-progress-copy{
+  color:#4F4854;
+  font-size:.83rem;
+}
+
+.chapter-progress-copy strong{
+  color:#211B28;
+}
+
+.chapter-progress-track{
+  height:9px;
+  overflow:hidden;
+  border-radius:999px;
+  background:#DCD5E8;
+}
+
+.chapter-progress-track span{
+  display:block;
+  width:0;
+  height:100%;
+  border-radius:999px;
+  background:#5A3F98;
+  transition:width .2s ease;
+}
+
+.chapter-task-list{
+  display:grid;
+  gap:8px;
+  margin-top:17px;
+}
+
+.chapter-task{
+  display:grid;
+  grid-template-columns:28px minmax(0,1fr);
+  gap:10px;
+  align-items:center;
+  min-height:48px;
+  padding:9px 12px;
+  border:1px solid #DED8E9;
+  border-radius:14px 14px 28px 14px;
+  background:#fff;
+  cursor:pointer;
+}
+
+.chapter-task input{
+  width:18px;
+  height:18px;
+  accent-color:#5A3F98;
+}
+
+.chapter-task span{
+  color:#211B28;
+  font-size:.86rem;
+  font-weight:700;
+}
+
+.chapter-task:has(input:checked) span{
+  color:#6D6671;
+  text-decoration:line-through;
+  text-decoration-thickness:1px;
+}
+
+.chapter-personal-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:18px;
+}
+
+.chapter-personal-actions a{
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  padding:8px 14px;
+  border-radius:999px;
+  background:#5A3F98;
+  color:#fff;
+  font-size:.8rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.chapter-personal-actions a:first-child{
+  background:#FFD420;
+  color:#211B28;
+}
+
+.chapter-demo-note{
+  margin:14px 0 0;
+  color:#77707E;
+  font-size:.7rem;
+  line-height:1.45;
+}
+
+.chapter-demo-note button{
+  padding:0;
+  border:0;
+  background:transparent;
+  color:#5A3F98;
+  font-size:inherit;
+  font-weight:800;
+  cursor:pointer;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+
+.chapter-checkin{
+  padding:28px 26px;
+  background:#8FD1C4;
+}
+
+.chapter-checkin h3{
+  margin:7px 0 0;
+  color:#211B28;
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:2rem;
+  font-weight:900;
+  line-height:.98;
+}
+
+.chapter-checkin > p{
+  margin:9px 0 0;
+  color:#334B47;
+  font-size:.84rem;
+  line-height:1.5;
+}
+
+.chapter-checkin-options{
+  display:grid;
+  gap:7px;
+  margin-top:18px;
+}
+
+.chapter-checkin-option{
+  min-height:42px;
+  padding:8px 12px;
+  border:1px solid rgba(90,63,152,.14);
+  border-radius:999px;
+  background:#fff;
+  color:#5A3F98;
+  font-size:.78rem;
+  font-weight:800;
+  text-align:left;
+  cursor:pointer;
+}
+
+.chapter-checkin-option.is-selected{
+  background:#5A3F98;
+  color:#fff;
+}
+
+.chapter-help-categories{
+  display:none;
+  margin-top:14px;
+  padding-top:13px;
+  border-top:1px solid rgba(51,75,71,.18);
+}
+
+.chapter-help-categories.is-visible{
+  display:block;
+}
+
+.chapter-help-categories > span{
+  display:block;
+  color:#334B47;
+  font-size:.72rem;
+  font-weight:800;
+}
+
+.chapter-help-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:8px;
+}
+
+.chapter-help-chip{
+  min-height:34px;
+  padding:6px 10px;
+  border:0;
+  border-radius:999px;
+  background:rgba(255,255,255,.78);
+  color:#5A3F98;
+  font-size:.7rem;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.chapter-help-chip.is-selected{
+  background:#FFD420;
+  color:#211B28;
+}
+
+.chapter-checkin-status{
+  min-height:20px;
+  margin:11px 0 0;
+  color:#334B47;
+  font-size:.72rem;
+  line-height:1.45;
+}
+
+/* Buddy Board preview */
+.buddy-preview{
+  padding:62px 0 68px;
+  background:#fff;
+}
+
+.buddy-preview-head{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(300px,.45fr);
+  gap:42px;
+  align-items:end;
+  margin-bottom:23px;
+}
+
+.buddy-preview h2{
+  max-width:700px;
+  margin:7px 0 0;
+  color:#211B28;
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:clamp(2.55rem,3.8vw,3.9rem);
+  font-weight:900;
+  line-height:.94;
+}
+
+.buddy-preview-head p{
+  margin:0 0 5px;
+  color:#6D6671;
+  font-size:.88rem;
+  line-height:1.55;
+}
+
+.buddy-preview-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr)) minmax(250px,.52fr);
+  gap:12px;
+}
+
+.buddy-preview-card,
+.buddy-bank-preview{
+  min-height:235px;
+  padding:21px;
+  border-radius:20px 20px 48px 20px;
+}
+
+.buddy-preview-card{
+  position:relative;
+  border:1px solid #E3DFE8;
+  border-top:7px solid #8FD1C4;
+  background:#F7F6F3;
+}
+
+.buddy-preview-card:nth-child(2){
+  border-top-color:#FFD420;
+}
+
+.buddy-preview-label{
+  color:#5A3F98;
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.buddy-preview-card h3{
+  margin:10px 0 0;
+  color:#211B28;
+  font-size:1.4rem;
+  line-height:1.03;
+}
+
+.buddy-preview-card p{
+  margin:10px 0 0;
+  color:#6D6671;
+  font-size:.83rem;
+  line-height:1.5;
+}
+
+.buddy-preview-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-top:12px;
+}
+
+.buddy-preview-tags span{
+  padding:4px 8px;
+  border-radius:999px;
+  background:#EEEAF8;
+  color:#5A3F98;
+  font-size:.65rem;
+  font-weight:800;
+}
+
+.buddy-save{
+  min-height:36px;
+  display:inline-flex;
+  align-items:center;
+  margin-top:14px;
+  padding:6px 10px;
+  border:1px solid #D8D1E6;
+  border-radius:999px;
+  background:#fff;
+  color:#5A3F98;
+  font-size:.72rem;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.buddy-save.is-saved{
+  border-color:#5A3F98;
+  background:#5A3F98;
+  color:#fff;
+}
+
+.buddy-bank-preview{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:#5A3F98;
+  color:#fff;
+}
+
+.buddy-bank-preview span{
+  color:#FFD420;
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.buddy-bank-preview strong{
+  display:block;
+  margin-top:9px;
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:2rem;
+  line-height:.98;
+}
+
+.buddy-bank-preview p{
+  margin:10px 0 0;
+  color:rgba(255,255,255,.82);
+  font-size:.82rem;
+  line-height:1.5;
+}
+
+.buddy-bank-preview a{
+  min-height:40px;
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  margin-top:18px;
+  padding:7px 12px;
+  border-radius:999px;
+  background:#fff;
+  color:#5A3F98;
+  font-size:.75rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.buddy-preview-disclaimer{
+  margin:13px 0 0;
+  color:#77707E;
+  font-size:.69rem;
+  line-height:1.45;
+}
+
+/* setup dialog */
+.chapter-setup-dialog{
+  width:min(560px,calc(100% - 32px));
+  padding:0;
+  border:0;
+  border-radius:26px 26px 58px 26px;
+  background:#fff;
+  box-shadow:0 30px 80px rgba(37,24,61,.32);
+}
+
+.chapter-setup-dialog::backdrop{
+  background:rgba(31,21,43,.58);
+  backdrop-filter:blur(3px);
+}
+
+.chapter-setup-inner{
+  padding:29px;
+}
+
+.chapter-setup-dialog .chapter-personal-kicker{
+  color:#5A3F98;
+}
+
+.chapter-setup-dialog h2{
+  margin:6px 0 0;
+  color:#211B28;
+  font-family:"League Spartan","Poppins",Arial,sans-serif;
+  font-size:2.7rem;
+  line-height:.94;
+}
+
+.chapter-setup-dialog .setup-intro{
+  margin:10px 0 0;
+  color:#6D6671;
+  font-size:.88rem;
+  line-height:1.55;
+}
+
+.chapter-setup-fields{
+  display:grid;
+  gap:12px;
+  margin-top:21px;
+}
+
+.chapter-setup-fields label{
+  color:#211B28;
+  font-size:.76rem;
+  font-weight:800;
+}
+
+.chapter-setup-fields input,
+.chapter-setup-fields select{
+  width:100%;
+  min-height:48px;
+  margin-top:5px;
+  padding:10px 12px;
+  border:1px solid #D8D1E6;
+  border-radius:13px;
+  background:#fff;
+  color:#211B28;
+  font-size:.86rem;
+}
+
+.chapter-setup-fields input:focus,
+.chapter-setup-fields select:focus{
+  outline:3px solid rgba(90,63,152,.12);
+  border-color:#5A3F98;
+}
+
+.chapter-setup-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:20px;
+}
+
+.chapter-setup-actions button{
+  min-height:43px;
+  padding:8px 14px;
+  border:0;
+  border-radius:999px;
+  font-size:.78rem;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.chapter-setup-save{
+  background:#5A3F98;
+  color:#fff;
+}
+
+.chapter-demo-profile{
+  background:#FFD420;
+  color:#211B28;
+}
+
+.chapter-setup-cancel{
+  background:#EEEAF8;
+  color:#5A3F98;
+}
+
+@media(max-width:950px){
+  .chapter-personal-shell,
+  .buddy-preview-head{
+    grid-template-columns:1fr;
+  }
+
+  .buddy-preview-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .buddy-bank-preview{
+    grid-column:1 / -1;
+    min-height:0;
+  }
+}
+
+@media(max-width:700px){
+  .chapter-personal{
+    padding:42px 0 48px;
+  }
+
+  .chapter-personal-shell,
+  .buddy-preview-grid{
+    grid-template-columns:1fr;
+  }
+
+  .chapter-personal-main,
+  .chapter-checkin{
+    padding:23px 21px;
+  }
+
+  .chapter-personal-top{
+    flex-direction:column;
+  }
+
+  .chapter-progress-row{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .buddy-bank-preview{
+    grid-column:auto;
+  }
+
+  .buddy-preview{
+    padding:48px 0 54px;
+  }
+}
+</style>
+
+</head>
+
+<body data-protected="true" data-program="elementary-middle" class="access-pending program-home-page program-home-simple">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="portal-header">
+  <div class="portal-container portal-header-inner">
+    <a class="portal-brand" href="index.html" aria-label="Best Buddies Canada Teacher Hub home">
+      <img src="assets/bb-logo-coloured.png" alt="Best Buddies Canada">
+    </a>
+
+    <div class="header-actions">
+      <nav class="portal-nav" aria-label="Main navigation">
+        <a href="#my-chapter">My Chapter</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="resources.html">Resources</a>
+        <a href="support.html">Support</a>
+      </nav>
+
+      <div class="portal-lang" aria-label="Language">
+        <a class="current" href="#" aria-current="page">EN</a>
+        <a href="fr.html" lang="fr-CA">FR</a>
+      </div>
+
+      <details class="site-menu">
+        <summary>Menu</summary>
+        <div class="site-menu-panel">
+          <a href="#my-chapter">My Chapter</a>
+          <a href="buddy-board.html">Buddy Board</a>
+          <a href="elementary-playbook.html">Chapter Playbook</a>
+          <a href="elementary-months.html">Plan by Month</a>
+          <a href="elementary-gathering.html">Plan a Meeting</a>
+          <a href="calendar.html">Program Calendar</a>
+          <a href="resources.html">Resources</a>
+          <a href="support.html">Support</a>
+          <a href="fr.html" lang="fr-CA">Français</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- =====================================================
+       PROGRAM INTRO
+  ====================================================== -->
+  <section class="simple-program-hero" aria-labelledby="program-title">
+    <div class="portal-container">
+      <a class="program-back" href="index.html#programs">← Switch program</a>
+
+      <div class="simple-program-hero-grid">
+        <div class="simple-program-copy">
+          <span class="program-home-kicker">Elementary &amp; Middle School</span>
+
+          <h1 id="program-title">
+            For wherever you are in your <span>Best Buddies year.</span>
+          </h1>
+
+          <p class="simple-program-lede">
+            Start with the whole picture, focus on the month you’re in, or jump straight
+            into planning a meeting. Resources and your Program Advisor are here when you need them.
+          </p>
+        </div>
+
+        <div class="simple-program-photo">
+          <img src="assets/elementary-hero.png" alt="Best Buddies elementary and middle school participants">
+        </div>
+      </div>
+    </div>
+
+    <div class="simple-program-wave" aria-hidden="true"></div>
+  </section>
+
+
+
+  <!-- =====================================================
+       MY CHAPTER · DEMO PERSONALIZATION
+  ====================================================== -->
+  <section class="chapter-personal" id="my-chapter" aria-labelledby="my-chapter-title">
+    <div class="portal-container">
+      <div class="chapter-personal-shell">
+
+        <div class="chapter-personal-main">
+
+          <div class="chapter-personal-top">
+            <div>
+              <span class="chapter-personal-kicker">My Chapter</span>
+              <h2 id="my-chapter-title">Hi, <span data-chapter-name>there</span>.</h2>
+              <p class="chapter-school">
+                <span data-chapter-school>Your school</span> · Elementary &amp; Middle School
+              </p>
+            </div>
+
+            <button class="chapter-edit" type="button" data-edit-chapter>
+              Edit
+            </button>
+          </div>
+
+          <div class="chapter-progress-row">
+            <div class="chapter-progress-copy">
+              <strong>September</strong> · <span data-chapter-progress>0 of 3 complete</span>
+            </div>
+
+            <div class="chapter-progress-track" aria-hidden="true">
+              <span data-chapter-progress-bar></span>
+            </div>
+          </div>
+
+          <div class="chapter-task-list" aria-label="September chapter steps">
+
+            <label class="chapter-task">
+              <input type="checkbox" data-chapter-task="organized">
+              <span>Get your chapter organized</span>
+            </label>
+
+            <label class="chapter-task">
+              <input type="checkbox" data-chapter-task="registration">
+              <span>Share registration information</span>
+            </label>
+
+            <label class="chapter-task">
+              <input type="checkbox" data-chapter-task="meeting">
+              <span>Plan your first meeting</span>
+            </label>
+
+          </div>
+
+          <div class="chapter-personal-actions">
+            <a href="elementary-september.html">See September →</a>
+            <a href="elementary-gathering.html?month=september">Plan a Meeting →</a>
+          </div>
+
+          <p class="chapter-demo-note">
+            For this prototype, progress is saved on this browser only.
+            <button type="button" data-reset-demo>Reset demo</button>
+          </p>
+
+        </div>
+
+        <aside class="chapter-checkin" aria-labelledby="chapter-checkin-title">
+          <span class="chapter-checkin-kicker">Quick check-in</span>
+          <h3 id="chapter-checkin-title">How are things going?</h3>
+          <p>One quick signal is enough. In a live version, your Program Advisor could see when support would be useful.</p>
+
+          <div class="chapter-checkin-options">
+            <button class="chapter-checkin-option" type="button" data-checkin="well">
+              Going well
+            </button>
+
+            <button class="chapter-checkin-option" type="button" data-checkin="help">
+              Could use a little help
+            </button>
+
+            <button class="chapter-checkin-option" type="button" data-checkin="reachout">
+              I’d like someone to reach out
+            </button>
+          </div>
+
+          <div class="chapter-help-categories" data-help-categories>
+            <span>What could we help with?</span>
+
+            <div class="chapter-help-chips">
+              <button class="chapter-help-chip" type="button" data-help-topic="Recruitment">Recruitment</button>
+              <button class="chapter-help-chip" type="button" data-help-topic="Registration">Registration</button>
+              <button class="chapter-help-chip" type="button" data-help-topic="Meetings">Meetings</button>
+              <button class="chapter-help-chip" type="button" data-help-topic="Participation">Participation</button>
+              <button class="chapter-help-chip" type="button" data-help-topic="Something else">Something else</button>
+            </div>
+          </div>
+
+          <p class="chapter-checkin-status" data-checkin-status></p>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       MAIN ROUTES
+  ====================================================== -->
+  <section class="simple-routes" aria-labelledby="routes-title">
+    <div class="portal-container">
+
+      <div class="simple-routes-heading">
+        <span class="section-kicker">Start where you need to</span>
+        <h2 id="routes-title">Where do you want to start?</h2>
+      </div>
+
+      <div class="simple-route-grid">
+
+        <a class="simple-route-card route-playbook" href="elementary-playbook.html">
+          <span class="route-number" aria-hidden="true">01</span>
+          <span class="route-kicker">The whole year</span>
+          <h3>Chapter Playbook</h3>
+          <p>
+            See how the chapter year fits together, from getting set up to keeping
+            friendships growing and wrapping up the year.
+          </p>
+          <span class="route-help">
+            A good starting point if you’re new or wondering what comes next.
+          </span>
+          <span class="route-action">Open the Playbook <b aria-hidden="true">→</b></span>
+        </a>
+
+        <a class="simple-route-card route-calendar" href="calendar.html">
+          <span class="route-number" aria-hidden="true">02</span>
+          <span class="route-kicker">Dates + reminders</span>
+          <h3>Program Calendar</h3>
+          <p>
+            Check program dates, reminders, celebrations, and milestones across
+            the Best Buddies school year.
+          </p>
+          <span class="route-help">
+            Use this when you need to know what’s coming up and when.
+          </span>
+          <span class="route-action">View the Calendar <b aria-hidden="true">→</b></span>
+        </a>
+
+        <a class="simple-route-card route-resources" href="resources.html">
+          <span class="route-number" aria-hidden="true">03</span>
+          <span class="route-kicker">Guides + materials</span>
+          <h3>Resources</h3>
+          <p>
+            Find Program Guides, activities, training, forms, registration information,
+            and other chapter materials.
+          </p>
+          <span class="route-help">
+            Go straight to the original materials when you know what you need.
+          </span>
+          <span class="route-action">Browse Resources <b aria-hidden="true">→</b></span>
+        </a>
+
+        <a class="simple-route-card route-support" href="support.html">
+          <span class="route-number" aria-hidden="true">04</span>
+          <span class="route-kicker">Chapter-specific help</span>
+          <h3>Program Support</h3>
+          <p>
+            Connect with your Program Advisor when the answer depends on your school,
+            chapter, participants, or situation.
+          </p>
+          <span class="route-help">
+            Use this when a general resource isn’t quite enough.
+          </span>
+          <span class="route-action">Get Support <b aria-hidden="true">→</b></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       RIGHT NOW
+  ====================================================== -->
+  <section class="simple-current-month" aria-labelledby="current-month-title">
+    <div class="portal-container">
+      <div class="simple-current-month-inner">
+
+        <div class="simple-current-copy">
+          <span class="simple-current-eyebrow">Right now</span>
+          <span class="simple-current-label">September</span>
+
+          <h2 id="current-month-title">Getting Set Up</h2>
+
+          <p>
+            Get the chapter organized, start welcoming students and families,
+            and bring the group together when you’re ready.
+          </p>
+        </div>
+
+        <div class="simple-current-actions">
+          <a class="simple-current-button" href="elementary-september.html">
+            See September →
+          </a>
+
+          <a class="simple-current-button simple-current-button-secondary"
+             href="elementary-gathering.html?month=september">
+            Plan a Meeting →
+          </a>
+
+          <a class="simple-all-months" href="elementary-months.html">
+            Browse all months →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       QUICK GUIDES
+  ====================================================== -->
+  <section class="quick-help" aria-labelledby="quick-help-title">
+    <div class="portal-container quick-help-grid">
+
+      <div class="quick-help-head">
+        <span class="section-kicker">Quick Guides</span>
+        <h2 id="quick-help-title">A little extra help when you need it.</h2>
+
+        <p>
+          Short, practical guidance for common chapter moments, without making
+          you dig through everything else first.
+        </p>
+
+        <a class="quick-help-all" href="resources.html#quick-help">
+          Browse all Quick Guides →
+        </a>
+      </div>
+
+      <div class="quick-help-links">
+
+        <a class="quick-help-link" href="resources.html#quick-help">
+          <div>
+            <span class="quick-help-tag">Getting going</span>
+            <strong>Your First 30 Days</strong>
+            <span>Get a chapter started without trying to do everything at once.</span>
+          </div>
+          <span class="link-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="quick-help-link" href="elementary-gathering.html">
+          <div>
+            <span class="quick-help-tag">Planning</span>
+            <strong>Planning a Meeting</strong>
+            <span>Turn an activity idea into a simple meeting that fits your group.</span>
+          </div>
+          <span class="link-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="quick-help-link" href="resources.html#quick-help">
+          <div>
+            <span class="quick-help-tag">Participation</span>
+            <strong>Making Activities Work for More People</strong>
+            <span>Support communication, movement, choice, space, and different ways to take part.</span>
+          </div>
+          <span class="link-arrow" aria-hidden="true">→</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- =====================================================
+       BUDDY BOARD PREVIEW
+  ====================================================== -->
+  <section class="buddy-preview" aria-labelledby="buddy-preview-title">
+    <div class="portal-container">
+
+      <div class="buddy-preview-head">
+        <div>
+          <span class="buddy-preview-kicker">From the Buddy Board</span>
+          <h2 id="buddy-preview-title">See what other chapters are trying.</h2>
+        </div>
+
+        <p>
+          Chapter-shared ideas sit alongside the Hub, but stay clearly separate from
+          official Best Buddies Canada guidance.
+        </p>
+      </div>
+
+      <div class="buddy-preview-grid">
+
+        <article class="buddy-preview-card">
+          <span class="buddy-preview-label">Chapter idea · Meetings</span>
+          <h3>Low-pressure first meeting: activity stations</h3>
+          <p>
+            Set up a few simple choices around the room so members can start with
+            something comfortable instead of everyone doing the same activity at once.
+          </p>
+
+          <div class="buddy-preview-tags">
+            <span>First meeting</span>
+            <span>Participation</span>
+          </div>
+
+          <button class="buddy-save" type="button" data-save-buddy="activity-stations">
+            Save to Buddy Bank
+          </button>
+        </article>
+
+        <article class="buddy-preview-card">
+          <span class="buddy-preview-label">Chapter idea · Leadership</span>
+          <h3>Let student leaders own recruitment</h3>
+          <p>
+            Give student leaders the poster, announcements, lunch-table plan, and
+            welcoming role instead of having the Staff Advisor run every piece.
+          </p>
+
+          <div class="buddy-preview-tags">
+            <span>Recruitment</span>
+            <span>Student leadership</span>
+          </div>
+
+          <button class="buddy-save" type="button" data-save-buddy="student-recruitment">
+            Save to Buddy Bank
+          </button>
+        </article>
+
+        <aside class="buddy-bank-preview">
+          <div>
+            <span>My Buddy Bank</span>
+            <strong><span data-buddy-count>0</span> ideas saved</strong>
+            <p>Keep good chapter ideas in one place so they are easy to find when you need them.</p>
+          </div>
+
+          <a href="buddy-board.html#bank">Open Buddy Bank →</a>
+        </aside>
+
+      </div>
+
+      <p class="buddy-preview-disclaimer">
+        Prototype chapter ideas shown here are examples only. A live version would use authenticated chapter submissions and moderation.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       PROGRAM SUPPORT
+  ====================================================== -->
+  <section class="program-support-band" aria-labelledby="support-title">
+    <div class="portal-container">
+      <div class="program-support-inner">
+
+        <div>
+          <span class="support-kicker">Need to talk it through?</span>
+          <h2 id="support-title">Your Program Advisor can help.</h2>
+          <p>
+            Reach out when a question is specific to your students, your school,
+            or your chapter.
+          </p>
+        </div>
+
+        <a class="program-support-button" href="support.html">
+          Program Support →
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="portal-footer">
+  <div class="portal-container portal-footer-inner">
+    <img src="assets/bb-logo-coloured.png" alt="Best Buddies Canada">
+    <p>Best Buddies Canada Teacher Hub</p>
+    <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca</a>
+  </div>
+</footer>
+
+
+<dialog class="chapter-setup-dialog" id="chapter-setup-dialog">
+  <form class="chapter-setup-inner" method="dialog" id="chapter-setup-form">
+    <span class="chapter-personal-kicker">Set up My Chapter</span>
+    <h2>Make the Hub yours.</h2>
+
+    <p class="setup-intro">
+      For tomorrow’s prototype, this is stored on this browser only. No account or chapter data is being sent anywhere.
+    </p>
+
+    <div class="chapter-setup-fields">
+      <label>
+        First name
+        <input id="chapter-first-name" name="firstName" type="text" autocomplete="given-name" required>
+      </label>
+
+      <label>
+        School
+        <input id="chapter-school-name" name="schoolName" type="text" autocomplete="organization" required>
+      </label>
+
+      <label>
+        Program
+        <select id="chapter-program" name="program">
+          <option value="elementary">Elementary &amp; Middle School</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="chapter-setup-actions">
+      <button class="chapter-setup-save" type="submit" value="save">
+        Set up my Hub →
+      </button>
+
+      <button class="chapter-demo-profile" type="button" data-demo-profile>
+        Use demo profile
+      </button>
+
+      <button class="chapter-setup-cancel" type="button" data-close-setup>
+        Not now
+      </button>
+    </div>
+  </form>
+</dialog>
+
+
+
+<script>
+(() => {
+  const PROFILE_KEY = "bbTeacherHubProfileV1";
+  const TASK_KEY = "bbTeacherHubTasksV1";
+  const CHECKIN_KEY = "bbTeacherHubCheckinV1";
+  const BANK_KEY = "bbBuddyBankV1";
+
+  const setupDialog = document.getElementById("chapter-setup-dialog");
+  const setupForm = document.getElementById("chapter-setup-form");
+  const firstNameInput = document.getElementById("chapter-first-name");
+  const schoolInput = document.getElementById("chapter-school-name");
+
+  const nameTargets = document.querySelectorAll("[data-chapter-name]");
+  const schoolTargets = document.querySelectorAll("[data-chapter-school]");
+  const taskInputs = Array.from(document.querySelectorAll("[data-chapter-task]"));
+  const progressText = document.querySelector("[data-chapter-progress]");
+  const progressBar = document.querySelector("[data-chapter-progress-bar]");
+  const checkinButtons = Array.from(document.querySelectorAll("[data-checkin]"));
+  const helpCategories = document.querySelector("[data-help-categories]");
+  const helpChips = Array.from(document.querySelectorAll("[data-help-topic]"));
+  const checkinStatus = document.querySelector("[data-checkin-status]");
+  const bankCountTargets = document.querySelectorAll("[data-buddy-count]");
+  const saveButtons = Array.from(document.querySelectorAll("[data-save-buddy]"));
+
+  function read(key, fallback){
+    try{
+      const value = JSON.parse(localStorage.getItem(key));
+      return value ?? fallback;
+    }catch(error){
+      return fallback;
+    }
+  }
+
+  function write(key, value){
+    localStorage.setItem(key, JSON.stringify(value));
+  }
+
+  function getProfile(){
+    return read(PROFILE_KEY, null);
+  }
+
+  function getTasks(){
+    return read(TASK_KEY, {
+      organized:false,
+      registration:false,
+      meeting:false
+    });
+  }
+
+  function getCheckin(){
+    return read(CHECKIN_KEY, {
+      status:"",
+      topic:""
+    });
+  }
+
+  function getBank(){
+    return read(BANK_KEY, []);
+  }
+
+  function renderProfile(){
+    const profile = getProfile();
+
+    nameTargets.forEach(target => {
+      target.textContent = profile?.firstName || "there";
+    });
+
+    schoolTargets.forEach(target => {
+      target.textContent = profile?.schoolName || "Your school";
+    });
+  }
+
+  function renderTasks(){
+    const tasks = getTasks();
+
+    taskInputs.forEach(input => {
+      input.checked = Boolean(tasks[input.dataset.chapterTask]);
+    });
+
+    const completed = Object.values(tasks).filter(Boolean).length;
+    const total = taskInputs.length;
+    const percent = total ? (completed / total) * 100 : 0;
+
+    if(progressText){
+      progressText.textContent = `${completed} of ${total} complete`;
+    }
+
+    if(progressBar){
+      progressBar.style.width = `${percent}%`;
+    }
+  }
+
+  function renderCheckin(){
+    const state = getCheckin();
+
+    checkinButtons.forEach(button => {
+      button.classList.toggle("is-selected", button.dataset.checkin === state.status);
+    });
+
+    const needsHelp = state.status === "help" || state.status === "reachout";
+    helpCategories?.classList.toggle("is-visible", needsHelp);
+
+    helpChips.forEach(chip => {
+      chip.classList.toggle("is-selected", chip.dataset.helpTopic === state.topic);
+    });
+
+    if(!checkinStatus) return;
+
+    if(state.status === "well"){
+      checkinStatus.textContent = "Thanks — we’ll keep the Hub focused on what’s next.";
+    }else if(needsHelp && state.topic){
+      checkinStatus.textContent = `Thanks. In a live version, your Program Advisor would see that you’d like help with ${state.topic.toLowerCase()}.`;
+    }else if(needsHelp){
+      checkinStatus.textContent = "Choose a topic if you want to show what kind of help would be useful.";
+    }else{
+      checkinStatus.textContent = "";
+    }
+  }
+
+  function renderBank(){
+    const saved = getBank();
+
+    bankCountTargets.forEach(target => {
+      target.textContent = saved.length;
+    });
+
+    saveButtons.forEach(button => {
+      const id = button.dataset.saveBuddy;
+      const isSaved = saved.includes(id);
+      button.classList.toggle("is-saved", isSaved);
+      button.textContent = isSaved ? "✓ Saved to Buddy Bank" : "Save to Buddy Bank";
+    });
+  }
+
+  function openSetup(){
+    const profile = getProfile();
+
+    if(profile){
+      firstNameInput.value = profile.firstName || "";
+      schoolInput.value = profile.schoolName || "";
+    }
+
+    if(setupDialog && typeof setupDialog.showModal === "function"){
+      setupDialog.showModal();
+    }
+  }
+
+  taskInputs.forEach(input => {
+    input.addEventListener("change", () => {
+      const tasks = getTasks();
+      tasks[input.dataset.chapterTask] = input.checked;
+      write(TASK_KEY, tasks);
+      renderTasks();
+    });
+  });
+
+  checkinButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const state = getCheckin();
+      state.status = button.dataset.checkin;
+
+      if(state.status === "well"){
+        state.topic = "";
+      }
+
+      write(CHECKIN_KEY, state);
+      renderCheckin();
+    });
+  });
+
+  helpChips.forEach(chip => {
+    chip.addEventListener("click", () => {
+      const state = getCheckin();
+      state.topic = chip.dataset.helpTopic;
+      write(CHECKIN_KEY, state);
+      renderCheckin();
+    });
+  });
+
+  saveButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const id = button.dataset.saveBuddy;
+      const saved = getBank();
+      const index = saved.indexOf(id);
+
+      if(index >= 0){
+        saved.splice(index, 1);
+      }else{
+        saved.push(id);
+      }
+
+      write(BANK_KEY, saved);
+      renderBank();
+    });
+  });
+
+  document.querySelectorAll("[data-edit-chapter]").forEach(button => {
+    button.addEventListener("click", openSetup);
+  });
+
+  document.querySelectorAll("[data-demo-profile]").forEach(button => {
+    button.addEventListener("click", () => {
+      firstNameInput.value = "Sarah";
+      schoolInput.value = "Harbour Ridge Middle School";
+    });
+  });
+
+  document.querySelectorAll("[data-close-setup]").forEach(button => {
+    button.addEventListener("click", () => setupDialog?.close());
+  });
+
+  document.querySelectorAll("[data-reset-demo]").forEach(button => {
+    button.addEventListener("click", () => {
+      localStorage.removeItem(PROFILE_KEY);
+      localStorage.removeItem(TASK_KEY);
+      localStorage.removeItem(CHECKIN_KEY);
+      localStorage.removeItem(BANK_KEY);
+      renderProfile();
+      renderTasks();
+      renderCheckin();
+      renderBank();
+      openSetup();
+    });
+  });
+
+  setupForm?.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const firstName = firstNameInput.value.trim();
+    const schoolName = schoolInput.value.trim();
+
+    if(!firstName || !schoolName) return;
+
+    write(PROFILE_KEY, {
+      firstName,
+      schoolName,
+      program:"elementary"
+    });
+
+    setupDialog?.close();
+    renderProfile();
+  });
+
+  renderProfile();
+  renderTasks();
+  renderCheckin();
+  renderBank();
+
+  if(!getProfile()){
+    window.setTimeout(openSetup, 250);
+  }
+})();
+</script>
+
+</body>
+</html>
