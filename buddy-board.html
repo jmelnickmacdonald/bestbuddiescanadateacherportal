@@ -12,11 +12,13 @@
   <title>Buddy Board | Best Buddies Canada Teacher Hub</title>
 
   <link rel="stylesheet" href="portal-home.css">
+  <link rel="stylesheet" href="my-chapter.css">
   <link rel="stylesheet" href="access.css">
   <link rel="stylesheet" href="accessibility.css">
 
   <script src="access.js" defer></script>
   <script src="accessibility.js" defer></script>
+  <script src="my-chapter.js" defer></script>
 
   <style>
     :root{
@@ -709,7 +711,6 @@
 
     <div class="header-actions">
       <nav class="portal-nav" aria-label="Main navigation">
-        <a href="elementary-middle.html#my-chapter">My Chapter</a>
         <a href="buddy-board.html" aria-current="page">Buddy Board</a>
         <a href="resources.html">Resources</a>
         <a href="support.html">Support</a>
@@ -742,6 +743,21 @@
 
     </div>
   </section>
+
+  <section class="bb-community-locked" data-my-chapter-locked hidden>
+    <div class="board-container">
+      <div class="bb-community-locked-card">
+        <span>Buddy Board</span>
+        <h2>Chapter community lives inside My Chapter.</h2>
+        <p>
+          The regular Teacher Hub stays available without a personal profile. Sign in to My Chapter to browse community ideas, save them to your Buddy Bank, and share an idea with other chapters.
+        </p>
+        <a href="my-chapter.html">Sign in to My Chapter →</a>
+      </div>
+    </div>
+  </section>
+
+  <div data-my-chapter-required hidden>
 
   <section class="board-main">
     <div class="board-container">
@@ -1080,6 +1096,8 @@
 
     </div>
   </section>
+
+  </div>
 
 </main>
 
