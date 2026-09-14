@@ -62,7 +62,7 @@ body.access-locked{
 .access-kicker{
   margin-bottom:7px;
   color:#5A3F98;
-  font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  font-family:"Poppins","Helvetica Neue",Arial,sans-serif;
   font-size:.7rem;
   font-weight:800;
   letter-spacing:.07em;
@@ -78,7 +78,7 @@ body.access-locked{
   border-radius:999px;
   background:#ECE9F7;
   color:#5A3F98;
-  font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  font-family:"Poppins","Helvetica Neue",Arial,sans-serif;
   font-size:.7rem;
   font-weight:800;
 }
@@ -86,7 +86,7 @@ body.access-locked{
 .access-gate-card h1{
   margin:0 0 12px;
   color:#211B28;
-  font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  font-family:"Poppins","Helvetica Neue",Arial,sans-serif;
   font-size:clamp(2rem,6vw,2.8rem);
   font-weight:800;
   line-height:1;
@@ -96,7 +96,7 @@ body.access-locked{
 .access-intro{
   margin:0 0 22px;
   color:#625A68;
-  font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  font-family:"Poppins","Helvetica Neue",Arial,sans-serif;
   font-size:.92rem;
   line-height:1.55;
 }
@@ -105,7 +105,7 @@ body.access-locked{
   display:block;
   margin-bottom:7px;
   color:#211B28;
-  font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  font-family:"Poppins","Helvetica Neue",Arial,sans-serif;
   font-size:.78rem;
   font-weight:800;
 }
@@ -141,7 +141,7 @@ body.access-locked{
   border-radius:999px;
   background:#5A3F98;
   color:#fff;
-  font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  font-family:"Poppins","Helvetica Neue",Arial,sans-serif;
   font-weight:800;
   cursor:pointer;
 }
