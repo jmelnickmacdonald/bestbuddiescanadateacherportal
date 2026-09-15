@@ -421,7 +421,9 @@
           aria-controls="bb-chapter-tools-drawer"
           data-tools-toggle
         >
-          <span class="bb-tools-tab-mark">BB</span>
+          <span class="bb-tools-tab-logo" aria-hidden="true">
+            <img src="assets/bb-logo-coloured.png" alt="">
+          </span>
           <span class="bb-tools-tab-label">My Chapter</span>
         </button>
 
@@ -489,25 +491,25 @@
               ${pinned ? "✓ Pinned" : "Pin this page"}
             </button>
 
-            <button type="button" class="bb-tools-action" data-add-note-open>
-              Add sticky note
-            </button>
+            <details class="bb-tools-note-details" data-note-details>
+              <summary class="bb-tools-action">Add sticky note</summary>
 
-            <form class="bb-tools-note-form" data-note-form hidden>
-              <label for="bb-tools-note-text">Quick note</label>
-              <textarea
-                id="bb-tools-note-text"
-                name="note"
-                rows="3"
-                placeholder="What do you want to remember from this page?"
-                required
-              ></textarea>
-              <p>Keep notes chapter-focused. Please don’t include student names or personal information.</p>
-              <div>
-                <button type="submit">Save note →</button>
-                <button type="button" data-note-cancel>Cancel</button>
-              </div>
-            </form>
+              <form class="bb-tools-note-form" data-note-form>
+                <label for="bb-tools-note-text">Quick note</label>
+                <textarea
+                  id="bb-tools-note-text"
+                  name="note"
+                  rows="3"
+                  placeholder="What do you want to remember from this page?"
+                  required
+                ></textarea>
+                <p>Keep notes chapter-focused. Please don’t include student names or personal information.</p>
+                <div>
+                  <button type="submit">Save note →</button>
+                  <button type="button" data-note-cancel>Cancel</button>
+                </div>
+              </form>
+            </details>
           </section>
 
           <section class="bb-tools-section" data-tools-panel="notes">
@@ -600,25 +602,13 @@
     });
   }
 
-  function openNoteForm() {
-    openToolbar();
-
-    const form = document.querySelector("[data-chapter-tools] [data-note-form]");
-    if (!form) return;
-
-    form.hidden = false;
-
-    requestAnimationFrame(() => {
-      form.querySelector("textarea")?.focus();
-    });
-  }
 
   function closeNoteForm() {
+    const details = document.querySelector("[data-chapter-tools] [data-note-details]");
     const form = document.querySelector("[data-chapter-tools] [data-note-form]");
-    if (!form) return;
 
-    form.hidden = true;
-    form.reset();
+    if (form) form.reset();
+    if (details) details.open = false;
   }
 
   function handleToolbarClick(event) {
@@ -706,6 +696,8 @@
     const saved = addNote(value);
 
     if (saved) {
+      closeNoteForm();
+
       requestAnimationFrame(() => {
         showToolSection("notes");
       });
@@ -777,8 +769,11 @@
     renderAll
   };
 
-  document.addEventListener("DOMContentLoaded", () => {
-    bindToolbarDelegation();
+  bindToolbarDelegation();
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", renderAll, { once: true });
+  } else {
     renderAll();
-  });
+  }
 })();
