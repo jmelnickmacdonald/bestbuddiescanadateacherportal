@@ -285,6 +285,66 @@
     }
 
     /* =========================================================
+       FRIENDSHIP WALK FEATURE
+       ========================================================= */
+
+    .rh-walk-feature{
+      padding:54px 0 58px;
+      background:#fff;
+    }
+
+    .rh-walk-card{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:34px;
+      align-items:center;
+      padding:28px 30px;
+      border-radius:24px 24px 62px 24px;
+      background:var(--rh-lavender);
+    }
+
+    .rh-walk-card h2{
+      margin:7px 0 0;
+      color:var(--rh-ink);
+      font-size:clamp(2.25rem,3.5vw,3.35rem);
+      font-weight:900;
+      line-height:.95;
+    }
+
+    .rh-walk-card p{
+      max-width:760px;
+      margin:11px 0 0;
+      color:var(--rh-muted);
+      font-size:.88rem;
+      line-height:1.55;
+    }
+
+    .rh-walk-card a{
+      min-height:45px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:9px 15px;
+      border-radius:999px;
+      background:var(--rh-yellow);
+      color:var(--rh-ink);
+      font-size:.78rem;
+      font-weight:800;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+
+    @media(max-width:760px){
+      .rh-walk-card{
+        grid-template-columns:1fr;
+      }
+
+      .rh-walk-card a{
+        width:max-content;
+      }
+    }
+
+    /* =========================================================
        MOST USED
        ========================================================= */
 
@@ -960,6 +1020,23 @@
           <strong>Open Quick Guides →</strong>
         </a>
 
+      </div>
+    </div>
+  </section>
+
+  <section class="rh-walk-feature" aria-labelledby="rh-walk-title">
+    <div class="rh-container">
+      <div class="rh-walk-card">
+        <div>
+          <span class="rh-kicker">Friendship Walk</span>
+          <h2 id="rh-walk-title">One place for the Walk, without the overwhelm.</h2>
+          <p>
+            Join a community Walk, host one at school, share it with families,
+            or find a fundraising approach that feels realistic for your chapter.
+          </p>
+        </div>
+
+        <a href="friendship-walk.html">Explore Friendship Walk →</a>
       </div>
     </div>
   </section>
