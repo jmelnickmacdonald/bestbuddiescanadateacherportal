@@ -126,3 +126,12 @@
   }
 
 }
+
+/* Remove oatmeal strip under artwork on narrow/tablet screens */
+@media (min-width:520px) and (max-width:1200px){
+
+  .portal-home-page .teacher-hub-hero{
+    background:#fff !important;
+  }
+
+}
