@@ -1389,3 +1389,68 @@
   }
 }
 
+
+
+/* =========================================================
+   PLAYBOOK-FIRST CORE ROUTES
+   ========================================================= */
+
+.program-home-simple .simple-routes-lede{
+  max-width:780px;
+  margin:12px 0 0;
+  color:var(--bb-muted);
+  font-size:.94rem;
+  line-height:1.58;
+}
+
+.program-home-simple .simple-route-grid-core{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+
+.program-home-simple .simple-route-grid-core .simple-route-card{
+  min-height:350px;
+}
+
+.program-home-simple .route-month{
+  --route-accent:#D6AE00;
+  --route-soft:var(--bb-yellow-soft);
+}
+
+.program-home-simple .route-meeting{
+  --route-accent:#51AB9D;
+  --route-soft:var(--bb-teal-soft);
+}
+
+.program-home-simple .simple-utility-links{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:9px 18px;
+  margin-top:25px;
+  padding:17px 0;
+  border-top:1px solid var(--bb-line);
+  border-bottom:1px solid var(--bb-line);
+}
+
+.program-home-simple .simple-utility-links span{
+  color:var(--bb-muted);
+  font-size:.76rem;
+  font-weight:800;
+}
+
+.program-home-simple .simple-utility-links a{
+  color:var(--bb-purple);
+  font-size:.78rem;
+  font-weight:850;
+  text-decoration:none;
+}
+
+@media(max-width:1050px){
+  .program-home-simple .simple-route-grid-core{
+    grid-template-columns:1fr;
+  }
+
+  .program-home-simple .simple-route-grid-core .simple-route-card{
+    min-height:0;
+  }
+}

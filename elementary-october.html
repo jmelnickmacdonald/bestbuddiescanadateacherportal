@@ -1635,6 +1635,36 @@ body.em-month-page{
   }
 }
     
+
+/* ---------- MONTH → PLAYBOOK CONTEXT ---------- */
+.em-playbook-bridge{
+  background:#fff;
+  border-bottom:1px solid rgba(90,63,152,.12);
+}
+.em-playbook-bridge .em-wrap{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding-top:11px;
+  padding-bottom:11px;
+}
+.em-playbook-bridge span{
+  color:#5B5560;
+  font-family:"Poppins",Arial,sans-serif;
+  font-size:.73rem;
+  line-height:1.4;
+}
+.em-playbook-bridge a{
+  color:#5A3F98;
+  font-family:"Poppins",Arial,sans-serif;
+  font-size:.72rem;
+  font-weight:800;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
 </style>
 
   <script src="access.js" defer></script>
@@ -1670,7 +1700,7 @@ body.em-month-page{
         <div class="site-menu-panel">
           <a href="elementary-middle.html">Elementary &amp; Middle</a>
           <a href="elementary-playbook.html">Chapter Playbook</a>
-          <a href="elementary-months.html">Plan by Month</a>
+          <a href="elementary-months.html">Monthly Planning</a>
           <a href="elementary-gathering.html">Plan a Meeting</a>
           <a href="calendar.html">Program Calendar</a>
           <a href="resources.html">Resources</a>
@@ -1709,9 +1739,9 @@ body.em-month-page{
     </div>
   </section>
 
-  <nav class="em-month-nav" aria-label="Plan by month">
+  <nav class="em-month-nav" aria-label="Monthly Planning">
     <div class="em-wrap em-month-nav-inner">
-      <span class="em-month-nav-label">Plan by month</span>
+      <span class="em-month-nav-label">Monthly Planning</span>
       <div class="em-month-links">
         <a href="elementary-september.html">September</a>
 <a href="elementary-october.html" aria-current="page">October</a>
@@ -1720,6 +1750,13 @@ body.em-month-page{
       </div>
     </div>
   </nav>
+
+  <div class="em-playbook-bridge" aria-label="Chapter Playbook shortcut">
+    <div class="em-wrap">
+      <span>Want to see where this month fits in the whole year?</span>
+      <a href="elementary-playbook.html">Chapter Playbook →</a>
+    </div>
+  </div>
 
   <section class="em-priorities" aria-labelledby="priorities-title">
     <div class="em-wrap">
@@ -1809,7 +1846,7 @@ body.em-month-page{
           <strong>Ready to plan the meeting?</strong>
           <p>Open Plan a Meeting with October already selected, then use the Activity Builder, choose the pieces yourself, or start with a quick plan.</p>
         </div>
-        <a class="em-plan-button" href="elementary-gathering.html?month=october">Plan a October Meeting →</a>
+        <a class="em-plan-button" href="elementary-gathering.html?month=october">Plan an October Meeting →</a>
       </div>
     </div>
   </section>

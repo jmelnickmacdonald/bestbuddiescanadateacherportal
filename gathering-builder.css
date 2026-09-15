@@ -1721,3 +1721,33 @@ button.gb-choice{
 .gb-back{
   font-family:"Poppins",Arial,sans-serif !important;
 }
+
+
+/* =========================================================
+   CONTEXT LINKS — PLAYBOOK / MONTHLY PLANNING
+   ========================================================= */
+.gb-context-links{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:7px;
+  margin:12px 0 22px;
+}
+.gb-context-links span{
+  margin-right:3px;
+  color:#6D6671;
+  font-size:.72rem;
+  font-weight:700;
+}
+.gb-context-links a{
+  min-height:35px;
+  display:inline-flex;
+  align-items:center;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#EEEAF8;
+  color:#5A3F98;
+  font-size:.7rem;
+  font-weight:800;
+  text-decoration:none;
+}

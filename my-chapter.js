@@ -390,6 +390,12 @@
     const plans = getSavedPlans();
     const pinned = currentPageIsPinned();
 
+    const isHighSchool = user?.program === "high-school";
+    const playbookHref = isHighSchool ? "high-school-playbook.html" : "elementary-playbook.html";
+    const monthHref = isHighSchool ? "high-school-september.html" : "elementary-september.html";
+    const meetingHref = isHighSchool ? "teacher-companion.html" : "elementary-gathering.html?month=september";
+    const meetingLabel = isHighSchool ? "Meeting planning" : "Plan a Meeting";
+
     const noteRows = notes.length
       ? notes.slice(0, 4).map((note) => `
           <article class="bb-tool-note">
@@ -444,19 +450,38 @@
           </div>
 
           <nav class="bb-tools-links" aria-label="My Chapter quick links">
+            <span class="bb-tools-group-label">Chapter tools</span>
+
+            <a class="bb-tools-core-link" href="${playbookHref}">
+              <span><small>Roadmap</small>Chapter Playbook</span>
+              <b>→</b>
+            </a>
+
+            <a class="bb-tools-core-link" href="${monthHref}">
+              <span><small>This month</small>September Planning</span>
+              <b>→</b>
+            </a>
+
+            <a class="bb-tools-core-link" href="${meetingHref}">
+              <span><small>This meeting</small>${meetingLabel}</span>
+              <b>→</b>
+            </a>
+
+            <a class="bb-tools-core-link" href="calendar.html">
+              <span><small>Dates + reminders</small>Program Calendar</span>
+              <b>→</b>
+            </a>
+
+            <a class="bb-tools-core-link" href="resources.html">
+              <span><small>Guides + materials</small>Resources</span>
+              <b>→</b>
+            </a>
+
+            <span class="bb-tools-group-label bb-tools-group-label-workspace">My stuff</span>
+
             <a href="my-chapter.html">
-              <span>My Chapter</span>
+              <span>My Chapter home</span>
               <b>→</b>
-            </a>
-
-            <a href="buddy-board.html">
-              <span>Buddy Board</span>
-              <b>→</b>
-            </a>
-
-            <a href="buddy-board.html#bank">
-              <span>Buddy Bank</span>
-              <small>${bank.length}</small>
             </a>
 
             <button type="button" data-tools-section="notes">
@@ -472,6 +497,18 @@
             <a href="my-chapter.html#saved-plans">
               <span>Saved Plans</span>
               <small>${plans.length}</small>
+            </a>
+
+            <a href="buddy-board.html#bank">
+              <span>Buddy Bank</span>
+              <small>${bank.length}</small>
+            </a>
+
+            <span class="bb-tools-group-label bb-tools-group-label-help">Community + help</span>
+
+            <a href="buddy-board.html">
+              <span>Buddy Board</span>
+              <b>→</b>
             </a>
 
             <a href="support.html">
@@ -644,12 +681,6 @@
       return;
     }
 
-    const noteOpen = event.target.closest("[data-add-note-open]");
-    if (noteOpen) {
-      event.preventDefault();
-      openNoteForm();
-      return;
-    }
 
     const noteCancel = event.target.closest("[data-note-cancel]");
     if (noteCancel) {

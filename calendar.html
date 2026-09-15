@@ -735,6 +735,20 @@
       .calendar-month{transition:none}
       .calendar-month:hover{transform:none}
     }
+  
+    /* Playbook bridge now sits directly under the hero. */
+    .calendar-hero + .calendar-more{
+      padding:30px 0 34px;
+      background:#fff;
+    }
+
+    .calendar-hero + .calendar-more .calendar-more-inner{
+      padding:20px 22px;
+      border:0;
+      border-radius:16px 16px 38px 16px;
+      background:var(--lavender);
+    }
+
   </style>
 </head>
 
@@ -787,8 +801,24 @@
       </div>
 
       <p class="calendar-hero-lede">
-        Important dates, reminders, celebrations, and program milestones across the Best Buddies school year.
+        Use the Calendar when you need a date or reminder. When you want the bigger picture, the Chapter Playbook shows how the year fits together.
       </p>
+
+    </div>
+  </section>
+
+  <section class="calendar-more" aria-label="Chapter Playbook">
+    <div class="portal-container calendar-more-inner">
+
+      <p>
+        <strong>Following the Chapter Playbook?</strong>
+        Keep it beside the Calendar. The Playbook is the roadmap through the year; the Calendar is where you check the dates and reminders.
+      </p>
+
+      <div class="calendar-more-links">
+        <a href="elementary-playbook.html">Elementary &amp; Middle Playbook →</a>
+        <a href="high-school.html">High School →</a>
+      </div>
 
     </div>
   </section>
@@ -900,22 +930,7 @@
     </div>
   </section>
 
-  <section class="calendar-more" aria-label="More program help">
-    <div class="portal-container calendar-more-inner">
 
-      <p>
-        <strong>Looking for the whole picture?</strong>
-        The Chapter Playbook walks through how the Best Buddies year fits together.
-      </p>
-
-      <div class="calendar-more-links">
-        <a href="elementary-playbook.html">Elementary &amp; Middle Playbook →</a>
-        <a href="high-school.html">High School →</a>
-        <a href="support.html">Program Support →</a>
-      </div>
-
-    </div>
-  </section>
 
 </main>
 
@@ -1023,7 +1038,7 @@
         planningLink.textContent = `Elementary & Middle · ${label} →`;
       } else {
         planningLink.href = "elementary-months.html";
-        planningLink.textContent = "Elementary & Middle · Plan by Month →";
+        planningLink.textContent = "Elementary & Middle · Monthly Planning →";
       }
     }
 

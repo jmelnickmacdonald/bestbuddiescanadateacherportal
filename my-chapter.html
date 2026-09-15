@@ -393,6 +393,316 @@
       .my-chapter-page .portal-footer-inner{flex-wrap:wrap}
       .my-chapter-page .portal-footer a{margin-left:0}
     }
+  
+
+    /* =========================================================
+       MY CHAPTER — PLAYBOOK-FIRST DASHBOARD
+       ========================================================= */
+
+    .mc-dashboard-hero{
+      padding-bottom:52px;
+    }
+
+    .mc-core{
+      padding:54px 0 62px;
+      background:#fff;
+    }
+
+    .mc-core-head{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(310px,.55fr);
+      gap:42px;
+      align-items:end;
+      margin-bottom:24px;
+    }
+
+    .mc-core-head h2,
+    .mc-useful-head h2,
+    .mc-workspace-head h2{
+      margin:7px 0 0;
+      color:var(--mc-ink);
+      font-size:clamp(2.5rem,3.8vw,3.8rem);
+      font-weight:900;
+      line-height:.94;
+    }
+
+    .mc-core-head p{
+      margin:0;
+      color:var(--mc-muted);
+      font-size:.9rem;
+      line-height:1.58;
+    }
+
+    .mc-core-rhythm{
+      margin-top:14px;
+      color:var(--mc-purple);
+      font-size:.79rem;
+      font-weight:800;
+    }
+
+    .mc-core-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:11px;
+    }
+
+    .mc-core-card{
+      --mc-card-accent:var(--mc-purple);
+      min-height:260px;
+      display:flex;
+      flex-direction:column;
+      padding:20px 19px 18px;
+      border:1px solid var(--mc-line);
+      border-top:7px solid var(--mc-card-accent);
+      border-radius:19px 19px 46px 19px;
+      background:#fff;
+      color:var(--mc-text);
+      text-decoration:none;
+      box-shadow:0 9px 24px rgba(45,29,72,.06);
+    }
+
+    .mc-core-card.month{--mc-card-accent:var(--mc-yellow)}
+    .mc-core-card.meeting{--mc-card-accent:var(--mc-teal)}
+    .mc-core-card.calendar{--mc-card-accent:var(--mc-orange)}
+
+    .mc-core-card .mc-core-label{
+      color:var(--mc-card-accent);
+      font-size:.64rem;
+      font-weight:900;
+      letter-spacing:.065em;
+      text-transform:uppercase;
+    }
+
+    .mc-core-card.month .mc-core-label{color:#8A7200}
+
+    .mc-core-card h3{
+      margin:11px 0 0;
+      color:var(--mc-ink);
+      font-size:1.55rem;
+      line-height:.98;
+    }
+
+    .mc-core-card p{
+      margin:10px 0 0;
+      color:var(--mc-muted);
+      font-size:.78rem;
+      line-height:1.5;
+    }
+
+    .mc-core-card .mc-core-open{
+      margin-top:auto;
+      padding-top:16px;
+      color:var(--mc-purple);
+      font-size:.72rem;
+      font-weight:900;
+    }
+
+    .mc-useful{
+      padding:54px 0 58px;
+      background:var(--mc-lavender);
+    }
+
+    .mc-useful-head{
+      max-width:760px;
+      margin-bottom:22px;
+    }
+
+    .mc-useful-head p{
+      max-width:680px;
+      margin:11px 0 0;
+      color:var(--mc-muted);
+      font-size:.86rem;
+      line-height:1.55;
+    }
+
+    .mc-useful-grid{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:9px;
+    }
+
+    .mc-useful-link{
+      min-height:132px;
+      display:flex;
+      flex-direction:column;
+      padding:15px;
+      border-radius:15px 15px 34px 15px;
+      background:#fff;
+      color:var(--mc-ink);
+      text-decoration:none;
+    }
+
+    .mc-useful-link strong{
+      font-size:.8rem;
+      line-height:1.3;
+    }
+
+    .mc-useful-link span{
+      margin-top:5px;
+      color:var(--mc-muted);
+      font-size:.68rem;
+      line-height:1.43;
+    }
+
+    .mc-useful-link b{
+      margin-top:auto;
+      padding-top:11px;
+      color:var(--mc-purple);
+      font-size:.72rem;
+    }
+
+    .mc-support-wrap{
+      padding:58px 0;
+      background:#fff;
+    }
+
+    .mc-support-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(320px,.7fr);
+      gap:16px;
+      align-items:stretch;
+    }
+
+    .mc-support-note{
+      padding:27px;
+      border-radius:22px 22px 54px 22px;
+      background:var(--mc-teal);
+    }
+
+    .mc-support-note h2{
+      margin:7px 0 0;
+      color:var(--mc-ink);
+      font-size:2.35rem;
+      line-height:.95;
+    }
+
+    .mc-support-note p{
+      margin:11px 0 0;
+      color:#334B47;
+      font-size:.84rem;
+      line-height:1.52;
+    }
+
+    .mc-workspace{
+      padding:58px 0 68px;
+      background:var(--mc-purple);
+    }
+
+    .mc-workspace .mc-kicker{color:var(--mc-yellow)}
+
+    .mc-workspace-head{
+      margin-bottom:22px;
+    }
+
+    .mc-workspace-head h2{color:#fff}
+
+    .mc-workspace-head p{
+      max-width:720px;
+      margin:11px 0 0;
+      color:rgba(255,255,255,.84);
+      font-size:.86rem;
+      line-height:1.55;
+    }
+
+    .mc-workspace-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:11px;
+    }
+
+    .mc-work-card{
+      min-height:190px;
+      padding:20px;
+      border-radius:18px 18px 44px 18px;
+      background:#fff;
+    }
+
+    .mc-work-card h3{
+      margin:7px 0 0;
+      color:var(--mc-ink);
+      font-size:1.55rem;
+      line-height:1;
+    }
+
+    .mc-work-card > p{
+      margin:9px 0 0;
+      color:var(--mc-muted);
+      font-size:.75rem;
+      line-height:1.48;
+    }
+
+    .mc-work-card > a{
+      display:inline-flex;
+      margin-top:13px;
+      color:var(--mc-purple);
+      font-size:.72rem;
+      font-weight:900;
+      text-decoration:none;
+    }
+
+    .mc-mini-list{
+      display:grid;
+      gap:6px;
+      margin-top:12px;
+    }
+
+    .mc-mini-item{
+      padding:9px 10px;
+      border-radius:10px 10px 22px 10px;
+      background:#F7F6F3;
+    }
+
+    .mc-mini-item strong{
+      display:block;
+      color:var(--mc-ink);
+      font-size:.69rem;
+      line-height:1.35;
+    }
+
+    .mc-mini-item span,
+    .mc-mini-item a{
+      display:block;
+      margin-top:2px;
+      color:var(--mc-muted);
+      font-size:.64rem;
+      line-height:1.42;
+      text-decoration:none;
+    }
+
+    .mc-work-hint{
+      margin:10px 0 0;
+      color:var(--mc-muted);
+      font-size:.67rem;
+      line-height:1.45;
+    }
+
+    @media(max-width:1000px){
+      .mc-core-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .mc-useful-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    }
+
+    @media(max-width:760px){
+      .mc-core-head,
+      .mc-support-grid{
+        grid-template-columns:1fr;
+      }
+
+      .mc-core-grid,
+      .mc-workspace-grid{
+        grid-template-columns:1fr;
+      }
+
+      .mc-useful-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .mc-core-card{min-height:0}
+    }
+
+    @media(max-width:480px){
+      .mc-useful-grid{grid-template-columns:1fr}
+    }
+
   </style>
 </head>
 
@@ -429,7 +739,7 @@
         <h1>Make the Hub <span>remember you.</span></h1>
         <p>
           The Teacher Hub works without a personal profile. Signing in to My Chapter simply adds
-          progress, quick check-ins, saved meeting plans, and your Buddy Bank on top of the same Hub.
+          your own shortcuts, sticky notes, saved meeting plans, Buddy Bank, and a quick way back to the main chapter tools.
         </p>
       </div>
 
@@ -483,64 +793,119 @@
       </div>
     </section>
 
-    <section class="mc-main">
-      <div class="mc-container mc-main-grid">
 
-        <section class="mc-card mc-next" aria-labelledby="mc-next-title">
-          <div class="mc-next-head">
-            <div>
-              <span class="mc-kicker">September</span>
-              <h2 id="mc-next-title">Here’s what’s next.</h2>
-            </div>
+    <section class="mc-core" aria-labelledby="mc-core-title">
+      <div class="mc-container">
 
-            <span class="mc-progress-copy" id="mc-progress-copy">0 of 3 complete</span>
+        <div class="mc-core-head">
+          <div>
+            <span class="mc-kicker">Use the Hub your way</span>
+            <h2 id="mc-core-title">Need a roadmap, or know exactly what you need?</h2>
+            <div class="mc-core-rhythm">Whole year · This month · This meeting</div>
           </div>
 
-          <div class="mc-progress-track" aria-hidden="true"><span id="mc-progress-bar"></span></div>
-
-          <div id="mc-elementary-tasks">
-            <div class="mc-task-list">
-              <label class="mc-task">
-                <input type="checkbox" data-mc-task="organized">
-                <span>Get your chapter organized</span>
-              </label>
-
-              <label class="mc-task">
-                <input type="checkbox" data-mc-task="registration">
-                <span>Welcome students and share registration information</span>
-              </label>
-
-              <label class="mc-task">
-                <input type="checkbox" data-mc-task="meeting">
-                <span>Plan your first meeting</span>
-              </label>
-            </div>
-
-            <div class="mc-next-actions">
-              <a href="elementary-september.html">See September →</a>
-              <a class="secondary" href="elementary-gathering.html?month=september">Plan a Meeting →</a>
-            </div>
-          </div>
-
-          <div id="mc-high-school-next" hidden>
-            <p style="margin:17px 0 0;color:#6D6671;font-size:.88rem;line-height:1.55;">
-              For this prototype, the detailed My Chapter checklist is focused on Elementary &amp; Middle School while the High School workflow is being finalized.
-            </p>
-            <div class="mc-next-actions">
-              <a href="high-school.html">Open High School Hub →</a>
-              <a class="secondary" href="calendar.html">Program Calendar →</a>
-            </div>
-          </div>
-
-          <p class="mc-prototype-note">
-            These first few prototype steps are deliberately simple. The fuller chapter workflow can grow as the program team finalizes it.
+          <p>
+            Open the Playbook when you want the bigger picture, or jump straight to the month,
+            meeting builder, Calendar, or Resources. Nothing here has to be completed in order.
           </p>
-        </section>
+        </div>
+
+        <div class="mc-core-grid">
+
+          <a class="mc-core-card" id="mc-playbook-link" href="elementary-playbook.html">
+            <span class="mc-core-label">Want the roadmap?</span>
+            <h3>Chapter Playbook</h3>
+            <p>See the whole school year in one place. Use it from the beginning, or dip back in whenever you need the bigger picture.</p>
+            <span class="mc-core-open">Open the Playbook →</span>
+          </a>
+
+          <a class="mc-core-card month" id="mc-month-link" href="elementary-september.html">
+            <span class="mc-core-label">Need the short version?</span>
+            <h3 id="mc-month-title">September Planning</h3>
+            <p>Go straight to what matters this month, with timely priorities, ideas, and planning support.</p>
+            <span class="mc-core-open">Plan this month →</span>
+          </a>
+
+          <a class="mc-core-card meeting" id="mc-meeting-link" href="elementary-gathering.html?month=september">
+            <span class="mc-core-label">Planning today?</span>
+            <h3 id="mc-meeting-title">Plan a Meeting</h3>
+            <p id="mc-meeting-copy">Skip straight to the builder when you already know what your chapter needs next.</p>
+            <span class="mc-core-open" id="mc-meeting-open">Start planning →</span>
+          </a>
+
+          <a class="mc-core-card calendar" href="calendar.html">
+            <span class="mc-core-label">Need a date?</span>
+            <h3>Program Calendar</h3>
+            <p>Check deadlines, reminders, and what’s coming up. You can use it on its own or alongside the Playbook.</p>
+            <span class="mc-core-open">Open Calendar →</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="mc-useful" aria-labelledby="mc-useful-title">
+      <div class="mc-container">
+
+        <div class="mc-useful-head">
+          <span class="mc-kicker">Jump straight there</span>
+          <h2 id="mc-useful-title">Know what you need? Go right to it.</h2>
+          <p>Resources, Quick Guides, Friendship Walk support, community ideas, and your Program Advisor are all one click away.</p>
+        </div>
+
+        <div class="mc-useful-grid">
+
+          <a class="mc-useful-link" href="resources.html">
+            <strong>Resources</strong>
+            <span>Program Guides, forms, training, activity materials, and current links.</span>
+            <b>Open →</b>
+          </a>
+
+          <a class="mc-useful-link" href="teacher-companion.html">
+            <strong>Quick Guides</strong>
+            <span>Short, practical help for common chapter moments.</span>
+            <b>Open →</b>
+          </a>
+
+          <a class="mc-useful-link" href="friendship-walk.html">
+            <strong>Friendship Walk</strong>
+            <span>Join one, host one, share it with families, or get fundraising support.</span>
+            <b>Open →</b>
+          </a>
+
+          <a class="mc-useful-link" href="buddy-board.html">
+            <strong>Buddy Board</strong>
+            <span>Questions, ideas, and what other chapters are trying.</span>
+            <b>Open →</b>
+          </a>
+
+          <a class="mc-useful-link" href="support.html">
+            <strong>Program Advisor</strong>
+            <span>For the questions that depend on your chapter, school, or situation.</span>
+            <b>Get support →</b>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="mc-support-wrap">
+      <div class="mc-container mc-support-grid">
+
+        <div class="mc-support-note">
+          <span class="mc-kicker">A quick check-in</span>
+          <h2>Need us?</h2>
+          <p>
+            This is just a quick way to signal how things are going. In a live version,
+            your Program Advisor could see when a little help would be useful.
+          </p>
+        </div>
 
         <aside class="mc-card mc-checkin" aria-labelledby="mc-checkin-title">
-          <span class="mc-kicker">Quick check-in</span>
-          <h2 id="mc-checkin-title">How are things going?</h2>
-          <p>One quick signal is enough. A live version could surface this to the chapter’s Program Advisor.</p>
+          <span class="mc-kicker">How are things going?</span>
+          <h2 id="mc-checkin-title">One click is enough.</h2>
 
           <div class="mc-checkin-options">
             <button class="mc-checkin-option" type="button" data-mc-checkin="well">Going well</button>
@@ -555,6 +920,8 @@
               <button class="mc-help-chip" type="button" data-mc-topic="Registration">Registration</button>
               <button class="mc-help-chip" type="button" data-mc-topic="Meetings">Meetings</button>
               <button class="mc-help-chip" type="button" data-mc-topic="Participation">Participation</button>
+              <button class="mc-help-chip" type="button" data-mc-topic="Fundraising">Fundraising</button>
+              <button class="mc-help-chip" type="button" data-mc-topic="Friendship Walk">Friendship Walk</button>
               <button class="mc-help-chip" type="button" data-mc-topic="Something else">Something else</button>
             </div>
           </div>
@@ -565,30 +932,50 @@
       </div>
     </section>
 
-    <section class="mc-lower">
-      <div class="mc-container mc-lower-grid">
 
-        <section class="mc-lower-card">
-          <span class="mc-kicker">Saved meeting plans</span>
-          <h2>Pick up where you left off.</h2>
-          <div class="mc-saved-plan-list" id="mc-plan-list"></div>
-          <a href="elementary-gathering.html">Plan a Meeting →</a>
-        </section>
+    <section class="mc-workspace" id="saved-plans" aria-labelledby="mc-workspace-title">
+      <div class="mc-container">
 
-        <section class="mc-lower-card">
-          <span class="mc-kicker">Buddy Bank</span>
-          <h2><span id="mc-bank-count">0</span> ideas saved.</h2>
-          <p>Keep useful ideas from other chapters together so you can find them again when you need them.</p>
-          <a href="buddy-board.html#bank">Open My Buddy Bank →</a>
-        </section>
+        <div class="mc-workspace-head">
+          <span class="mc-kicker">Your workspace</span>
+          <h2 id="mc-workspace-title">The things you saved for later.</h2>
+          <p>
+            Notes stay linked to the page where you wrote them. Pinned pages are your own shortcuts.
+            Meeting plans and Buddy Bank ideas stay here too.
+          </p>
+        </div>
 
-        <section class="mc-lower-card">
-          <span class="mc-kicker">Chapter community</span>
-          <h2>See what other chapters are trying.</h2>
-          <p>Browse practical chapter ideas, save the ones you like, or share something that worked for your group.</p>
-          <a href="buddy-board.html">Browse Buddy Board →</a>
-        </section>
+        <div class="mc-workspace-grid">
 
+          <section class="mc-work-card">
+            <span class="mc-kicker">Sticky notes · <span id="mc-note-count">0</span></span>
+            <h3>Your notes</h3>
+            <div class="mc-mini-list" id="mc-note-list"></div>
+            <p class="mc-work-hint">Add a note from the orange My Chapter tab while you’re anywhere in the Hub.</p>
+          </section>
+
+          <section class="mc-work-card">
+            <span class="mc-kicker">Pinned · <span id="mc-pin-count">0</span></span>
+            <h3>Pages you kept handy</h3>
+            <div class="mc-mini-list" id="mc-pin-list"></div>
+            <p class="mc-work-hint">Pin a page from the orange My Chapter tab and it will show up here.</p>
+          </section>
+
+          <section class="mc-work-card">
+            <span class="mc-kicker">Saved meeting plans</span>
+            <h3>Pick up where you left off.</h3>
+            <div class="mc-saved-plan-list" id="mc-plan-list"></div>
+            <a id="mc-plan-new-link" href="elementary-gathering.html">Plan a Meeting →</a>
+          </section>
+
+          <section class="mc-work-card">
+            <span class="mc-kicker">Buddy Bank</span>
+            <h3><span id="mc-bank-count">0</span> ideas saved.</h3>
+            <p>Keep useful ideas from other chapters together so they’re easy to find again.</p>
+            <a href="buddy-board.html#bank">Open My Buddy Bank →</a>
+          </section>
+
+        </div>
       </div>
     </section>
 
@@ -611,6 +998,15 @@
     else callback();
   }
 
+  function escapeHTML(value){
+    return String(value || "")
+      .replaceAll("&","&amp;")
+      .replaceAll("<","&lt;")
+      .replaceAll(">","&gt;")
+      .replaceAll('"',"&quot;")
+      .replaceAll("'","&#039;");
+  }
+
   ready(() => {
     const api = window.BBMyChapter;
     if(!api) return;
@@ -623,9 +1019,101 @@
     const program = document.getElementById("mc-program");
     const demo = document.getElementById("mc-demo-profile");
     const signout = document.getElementById("mc-signout");
-    const taskInputs = Array.from(document.querySelectorAll("[data-mc-task]"));
     const checkinButtons = Array.from(document.querySelectorAll("[data-mc-checkin]"));
     const topicButtons = Array.from(document.querySelectorAll("[data-mc-topic]"));
+
+    function renderMiniNotes(){
+      const notes = api.getNotes ? api.getNotes() : [];
+      const count = document.getElementById("mc-note-count");
+      const list = document.getElementById("mc-note-list");
+
+      count.textContent = notes.length;
+
+      if(!notes.length){
+        list.innerHTML = '<p class="mc-work-hint">No notes yet.</p>';
+        return;
+      }
+
+      list.innerHTML = notes.slice(0,3).map((note) => `
+        <div class="mc-mini-item">
+          <strong>${escapeHTML(note.title || "Teacher Hub")}</strong>
+          <span>${escapeHTML(note.text || "")}</span>
+          <a href="${escapeHTML(note.url || "index.html")}">Return to page →</a>
+        </div>
+      `).join("");
+    }
+
+    function renderPins(){
+      const pins = api.getPins ? api.getPins() : [];
+      const count = document.getElementById("mc-pin-count");
+      const list = document.getElementById("mc-pin-list");
+
+      count.textContent = pins.length;
+
+      if(!pins.length){
+        list.innerHTML = '<p class="mc-work-hint">Nothing pinned yet.</p>';
+        return;
+      }
+
+      list.innerHTML = pins.slice(0,4).map((pin) => `
+        <div class="mc-mini-item">
+          <strong>${escapeHTML(pin.title || "Teacher Hub page")}</strong>
+          <a href="${escapeHTML(pin.url || "index.html")}">Open page →</a>
+        </div>
+      `).join("");
+    }
+
+    function renderPlans(elementary){
+      const plans = api.getSavedPlans();
+      const planList = document.getElementById("mc-plan-list");
+      const newPlanLink = document.getElementById("mc-plan-new-link");
+
+      if(elementary){
+        newPlanLink.href = "elementary-gathering.html";
+        newPlanLink.textContent = "Plan a Meeting →";
+      }else{
+        newPlanLink.href = "teacher-companion.html";
+        newPlanLink.textContent = "Open Meeting Planning guide →";
+      }
+
+      if(!plans.length){
+        planList.innerHTML = '<p class="mc-work-hint">No saved meeting plans yet.</p>';
+      }else{
+        planList.innerHTML = plans.slice(0,3).map((plan) => `
+          <div class="mc-saved-plan">
+            <strong>${escapeHTML(plan.title || "Saved meeting plan")}</strong>
+            <small>${escapeHTML(plan.month || "Meeting")} ${plan.minutes ? `· ${escapeHTML(String(plan.minutes))} min` : ""}</small>
+          </div>
+        `).join("");
+      }
+    }
+
+    function renderCheckin(){
+      const checkin = api.getCheckin();
+
+      checkinButtons.forEach((button) => {
+        button.classList.toggle("is-selected", button.dataset.mcCheckin === checkin.status);
+      });
+
+      const needsHelp = checkin.status === "help" || checkin.status === "reachout";
+      document.getElementById("mc-help").classList.toggle("is-visible", needsHelp);
+
+      topicButtons.forEach((button) => {
+        button.classList.toggle("is-selected", button.dataset.mcTopic === checkin.topic);
+      });
+
+      const status = document.getElementById("mc-checkin-status");
+
+      if(checkin.status === "well"){
+        status.textContent = "Thanks — that’s all we need.";
+      }else if(needsHelp && checkin.topic){
+        status.textContent = `Thanks. In a live version, your Program Advisor would see that ${checkin.topic.toLowerCase()} support would be useful.`;
+      }else if(needsHelp){
+        status.textContent = "Choose a topic if you want to show what kind of help would be useful.";
+      }else{
+        status.textContent = "";
+      }
+    }
 
     function render(){
       const signed = api.isSignedIn();
@@ -641,69 +1129,39 @@
       document.getElementById("mc-program-label").textContent = api.programLabel(user.program);
 
       const elementary = user.program !== "high-school";
-      document.getElementById("mc-elementary-tasks").hidden = !elementary;
-      document.getElementById("mc-high-school-next").hidden = elementary;
 
-      const tasks = api.getTasks(user.program);
-      taskInputs.forEach((input) => {
-        input.checked = Boolean(tasks[input.dataset.mcTask]);
-      });
+      const playbook = document.getElementById("mc-playbook-link");
+      const month = document.getElementById("mc-month-link");
+      const meeting = document.getElementById("mc-meeting-link");
 
-      const progress = api.taskProgress(user.program);
-      const progressCopy = document.getElementById("mc-progress-copy");
-      const progressBar = document.getElementById("mc-progress-bar");
+      playbook.href = elementary ? "elementary-playbook.html" : "high-school-playbook.html";
+      month.href = elementary ? "elementary-september.html" : "high-school-september.html";
 
       if(elementary){
-        progressCopy.textContent = `${progress.complete} of ${progress.total} complete`;
-        progressBar.style.width = progress.total ? `${(progress.complete / progress.total) * 100}%` : "0%";
+        meeting.href = "elementary-gathering.html?month=september";
+        document.getElementById("mc-meeting-title").textContent = "Plan a Meeting";
+        document.getElementById("mc-meeting-copy").textContent = "Turn Best Buddies activities into a meeting plan that fits your group.";
+        document.getElementById("mc-meeting-open").textContent = "Start planning →";
       }else{
-        progressCopy.textContent = "High School workflow in progress";
-        progressBar.style.width = "0%";
-      }
-
-      const checkin = api.getCheckin();
-      checkinButtons.forEach((button) => {
-        button.classList.toggle("is-selected", button.dataset.mcCheckin === checkin.status);
-      });
-
-      const needsHelp = checkin.status === "help" || checkin.status === "reachout";
-      document.getElementById("mc-help").classList.toggle("is-visible", needsHelp);
-
-      topicButtons.forEach((button) => {
-        button.classList.toggle("is-selected", button.dataset.mcTopic === checkin.topic);
-      });
-
-      const status = document.getElementById("mc-checkin-status");
-      if(checkin.status === "well"){
-        status.textContent = "Thanks — we’ll keep the Hub focused on what’s next.";
-      }else if(needsHelp && checkin.topic){
-        status.textContent = `Thanks. In a live version, your Program Advisor would see that ${checkin.topic.toLowerCase()} support would be useful.`;
-      }else if(needsHelp){
-        status.textContent = "Choose a topic if you want to show what kind of help would be useful.";
-      }else{
-        status.textContent = "";
+        meeting.href = "teacher-companion.html";
+        document.getElementById("mc-meeting-title").textContent = "Meeting planning";
+        document.getElementById("mc-meeting-copy").textContent = "Use the Quick Guide when your Staff Advisor or student leaders want a simple planning structure.";
+        document.getElementById("mc-meeting-open").textContent = "Open the Quick Guide →";
       }
 
       document.getElementById("mc-bank-count").textContent = api.getBank().length;
 
-      const plans = api.getSavedPlans();
-      const planList = document.getElementById("mc-plan-list");
-      if(!plans.length){
-        planList.innerHTML = '<p style="margin:0;color:#6D6671;font-size:.79rem;line-height:1.48;">No saved plans yet. When you’re signed in, Plan a Meeting can save a finished plan here.</p>';
-      }else{
-        planList.innerHTML = plans.slice(0,3).map((plan) => `
-          <div class="mc-saved-plan">
-            <strong>${escapeHTML(plan.title || "Saved meeting plan")}</strong>
-            <small>${escapeHTML(plan.month || "Meeting")} ${plan.minutes ? `· ${escapeHTML(String(plan.minutes))} min` : ""}</small>
-          </div>
-        `).join("");
-      }
+      renderMiniNotes();
+      renderPins();
+      renderPlans(elementary);
+      renderCheckin();
 
       api.renderAll();
     }
 
     form.addEventListener("submit", (event) => {
       event.preventDefault();
+
       const first = firstName.value.trim();
       const school = schoolName.value.trim();
       if(!first || !school) return;
@@ -713,6 +1171,7 @@
         schoolName:school,
         program:program.value
       });
+
       render();
     });
 
@@ -728,17 +1187,13 @@
       window.scrollTo({top:0,behavior:"smooth"});
     });
 
-    taskInputs.forEach((input) => {
-      input.addEventListener("change", () => {
-        api.setTask(input.dataset.mcTask, input.checked, api.getProfile()?.program);
-        render();
-      });
-    });
-
     checkinButtons.forEach((button) => {
       button.addEventListener("click", () => {
         const value = button.dataset.mcCheckin;
-        api.setCheckin({status:value, topic:value === "well" ? "" : api.getCheckin().topic});
+        api.setCheckin({
+          status:value,
+          topic:value === "well" ? "" : api.getCheckin().topic
+        });
         render();
       });
     });
@@ -753,15 +1208,6 @@
     window.addEventListener("bb:my-chapter-change", render);
     render();
   });
-
-  function escapeHTML(value){
-    return String(value || "")
-      .replaceAll("&","&amp;")
-      .replaceAll("<","&lt;")
-      .replaceAll(">","&gt;")
-      .replaceAll('"',"&quot;")
-      .replaceAll("'","&#039;");
-  }
 })();
 </script>
 
