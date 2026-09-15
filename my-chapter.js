@@ -16,6 +16,8 @@
   const CHECKIN_KEY = "bbMyChapterCheckinV1";
   const BANK_KEY = "bbBuddyBankV1";
   const PLANS_KEY = "bbSavedMeetingPlansV1";
+  const NOTES_KEY = "bbMyChapterNotesV1";
+  const PINS_KEY = "bbMyChapterPinsV1";
 
   const DEFAULT_TASKS = {
     elementary: {
@@ -103,6 +105,100 @@
     return readJSON(PLANS_KEY, []);
   }
 
+
+  function currentPageTitle() {
+    const heading = document.querySelector("main h1");
+    if (heading && heading.textContent.trim()) {
+      return heading.textContent.trim().replace(/\s+/g, " ");
+    }
+
+    return (document.title || "Teacher Hub")
+      .replace(/\s*\|\s*Best Buddies Canada.*$/i, "")
+      .trim() || "Teacher Hub";
+  }
+
+  function currentPageURL() {
+    const url = new URL(window.location.href);
+    return `${url.pathname.split("/").pop() || "index.html"}${url.search}${url.hash}`;
+  }
+
+  function getNotes() {
+    const notes = readJSON(NOTES_KEY, []);
+    return Array.isArray(notes) ? notes : [];
+  }
+
+  function addNote(text) {
+    const clean = String(text || "").trim();
+    if (!clean || !isSignedIn()) return false;
+
+    const notes = getNotes();
+    const note = {
+      id: `note-${Date.now()}`,
+      text: clean,
+      title: currentPageTitle(),
+      url: currentPageURL(),
+      createdAt: new Date().toISOString()
+    };
+
+    notes.unshift(note);
+    writeJSON(NOTES_KEY, notes.slice(0, 50));
+    dispatchChange("notes");
+    renderAll();
+    return note;
+  }
+
+  function removeNote(id) {
+    writeJSON(
+      NOTES_KEY,
+      getNotes().filter((note) => note.id !== id)
+    );
+    dispatchChange("notes");
+    renderAll();
+  }
+
+  function getPins() {
+    const pins = readJSON(PINS_KEY, []);
+    return Array.isArray(pins) ? pins : [];
+  }
+
+  function currentPageIsPinned() {
+    const url = currentPageURL();
+    return getPins().some((pin) => pin.url === url);
+  }
+
+  function togglePinCurrentPage() {
+    if (!isSignedIn()) return false;
+
+    const url = currentPageURL();
+    const pins = getPins();
+    const existing = pins.findIndex((pin) => pin.url === url);
+
+    if (existing >= 0) {
+      pins.splice(existing, 1);
+    } else {
+      pins.unshift({
+        id: `pin-${Date.now()}`,
+        title: currentPageTitle(),
+        url,
+        createdAt: new Date().toISOString()
+      });
+    }
+
+    writeJSON(PINS_KEY, pins.slice(0, 30));
+    dispatchChange("pins");
+    renderAll();
+    return existing < 0;
+  }
+
+  function removePin(id) {
+    writeJSON(
+      PINS_KEY,
+      getPins().filter((pin) => pin.id !== id)
+    );
+    dispatchChange("pins");
+    renderAll();
+  }
+
   function saveMeetingPlan(plan) {
     if (!isSignedIn()) return false;
 
@@ -144,7 +240,7 @@
   }
 
   function resetDemo() {
-    [PROFILE_KEY, TASKS_KEY, CHECKIN_KEY, BANK_KEY, PLANS_KEY].forEach((key) => {
+    [PROFILE_KEY, TASKS_KEY, CHECKIN_KEY, BANK_KEY, PLANS_KEY, NOTES_KEY, PINS_KEY].forEach((key) => {
       localStorage.removeItem(key);
     });
     dispatchChange("reset");
@@ -159,7 +255,7 @@
     const signed = isSignedIn();
     return `
       <a class="bb-my-chapter-nav ${signed ? "is-signed-in" : ""}" href="my-chapter.html">
-        ${signed ? "My Chapter" : "My Chapter · Sign in"}
+        ${signed ? "My Chapter" : "Sign in"}
       </a>
     `;
   }
@@ -175,19 +271,19 @@
       const signed = isSignedIn();
       menu.insertAdjacentHTML(
         "afterbegin",
-        `<a class="bb-my-chapter-menu-link" href="my-chapter.html">${signed ? "My Chapter" : "My Chapter · Sign in"}</a>`
+        `<a class="bb-my-chapter-menu-link" href="my-chapter.html">${signed ? "My Chapter" : "Sign in to My Chapter"}</a>`
       );
     });
   }
 
   function refreshNavLink() {
     document.querySelectorAll(".bb-my-chapter-nav").forEach((link) => {
-      link.textContent = isSignedIn() ? "My Chapter" : "My Chapter · Sign in";
+      link.textContent = isSignedIn() ? "My Chapter" : "Sign in";
       link.classList.toggle("is-signed-in", isSignedIn());
     });
 
     document.querySelectorAll(".bb-my-chapter-menu-link").forEach((link) => {
-      link.textContent = isSignedIn() ? "My Chapter" : "My Chapter · Sign in";
+      link.textContent = isSignedIn() ? "My Chapter" : "Sign in to My Chapter";
     });
   }
 
@@ -281,11 +377,294 @@
     });
   }
 
+
+  function toolbarMarkup() {
+    const user = profile();
+    const notes = getNotes();
+    const pins = getPins();
+    const bank = getBank();
+    const plans = getSavedPlans();
+    const pinned = currentPageIsPinned();
+
+    const noteRows = notes.length
+      ? notes.slice(0, 4).map((note) => `
+          <article class="bb-tool-note">
+            <div class="bb-tool-note-top">
+              <strong>${escapeHTML(note.title)}</strong>
+              <button type="button" class="bb-tool-remove" data-remove-note="${escapeHTML(note.id)}" aria-label="Delete note">×</button>
+            </div>
+            <p>${escapeHTML(note.text)}</p>
+            <a href="${escapeHTML(note.url)}">Return to page →</a>
+          </article>
+        `).join("")
+      : `<p class="bb-tool-empty">No sticky notes yet. Add one while you’re on a page you want to remember.</p>`;
+
+    const pinRows = pins.length
+      ? pins.slice(0, 5).map((pin) => `
+          <div class="bb-tool-pin">
+            <a href="${escapeHTML(pin.url)}">${escapeHTML(pin.title)} →</a>
+            <button type="button" class="bb-tool-remove" data-remove-pin="${escapeHTML(pin.id)}" aria-label="Unpin page">×</button>
+          </div>
+        `).join("")
+      : `<p class="bb-tool-empty">Nothing pinned yet.</p>`;
+
+    return `
+      <div class="bb-chapter-tools" data-chapter-tools>
+        <button
+          class="bb-chapter-tools-tab"
+          type="button"
+          aria-expanded="false"
+          aria-controls="bb-chapter-tools-drawer"
+          data-tools-toggle
+        >
+          <span class="bb-tools-tab-mark">BB</span>
+          <span class="bb-tools-tab-label">My Chapter</span>
+        </button>
+
+        <div class="bb-chapter-tools-scrim" data-tools-close></div>
+
+        <aside
+          class="bb-chapter-tools-drawer"
+          id="bb-chapter-tools-drawer"
+          aria-label="My Chapter tools"
+          aria-hidden="true"
+        >
+          <div class="bb-tools-head">
+            <div>
+              <span>My Chapter</span>
+              <strong>${escapeHTML(user?.schoolName || "")}</strong>
+            </div>
+            <button type="button" class="bb-tools-close" data-tools-close aria-label="Close My Chapter tools">×</button>
+          </div>
+
+          <nav class="bb-tools-links" aria-label="My Chapter quick links">
+            <a href="my-chapter.html">
+              <span>My Chapter</span>
+              <b>→</b>
+            </a>
+
+            <a href="buddy-board.html">
+              <span>Buddy Board</span>
+              <b>→</b>
+            </a>
+
+            <a href="buddy-board.html#bank">
+              <span>Buddy Bank</span>
+              <small>${bank.length}</small>
+            </a>
+
+            <button type="button" data-tools-section="notes">
+              <span>Notes</span>
+              <small>${notes.length}</small>
+            </button>
+
+            <button type="button" data-tools-section="pins">
+              <span>Pinned</span>
+              <small>${pins.length}</small>
+            </button>
+
+            <a href="my-chapter.html#saved-plans">
+              <span>Saved Plans</span>
+              <small>${plans.length}</small>
+            </a>
+
+            <a href="support.html">
+              <span>Program Advisor</span>
+              <b>→</b>
+            </a>
+          </nav>
+
+          <section class="bb-tools-on-page">
+            <span class="bb-tools-kicker">On this page</span>
+
+            <button
+              type="button"
+              class="bb-tools-action ${pinned ? "is-active" : ""}"
+              data-pin-current
+            >
+              ${pinned ? "✓ Pinned" : "Pin this page"}
+            </button>
+
+            <button type="button" class="bb-tools-action" data-add-note-open>
+              Add sticky note
+            </button>
+
+            <form class="bb-tools-note-form" data-note-form hidden>
+              <label for="bb-tools-note-text">Quick note</label>
+              <textarea
+                id="bb-tools-note-text"
+                name="note"
+                rows="3"
+                placeholder="What do you want to remember from this page?"
+                required
+              ></textarea>
+              <p>Keep notes chapter-focused. Please don’t include student names or personal information.</p>
+              <div>
+                <button type="submit">Save note →</button>
+                <button type="button" data-note-cancel>Cancel</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="bb-tools-section" data-tools-panel="notes">
+            <div class="bb-tools-section-head">
+              <span class="bb-tools-kicker">Sticky notes</span>
+              <small>${notes.length}</small>
+            </div>
+            <div class="bb-tools-note-list">${noteRows}</div>
+          </section>
+
+          <section class="bb-tools-section" data-tools-panel="pins">
+            <div class="bb-tools-section-head">
+              <span class="bb-tools-kicker">Pinned</span>
+              <small>${pins.length}</small>
+            </div>
+            <div class="bb-tools-pin-list">${pinRows}</div>
+          </section>
+        </aside>
+      </div>
+    `;
+  }
+
+  function ensureToolbar() {
+    const existing = document.querySelector("[data-chapter-tools]");
+
+    if (!isSignedIn()) {
+      existing?.remove();
+      document.body.classList.remove("bb-tools-open");
+      return;
+    }
+
+    if (!existing) {
+      document.body.insertAdjacentHTML("beforeend", toolbarMarkup());
+      bindToolbar();
+      return;
+    }
+
+    const wasOpen = existing.classList.contains("is-open");
+    existing.outerHTML = toolbarMarkup();
+    bindToolbar();
+
+    if (wasOpen) {
+      openToolbar();
+    }
+  }
+
+  function openToolbar() {
+    const wrap = document.querySelector("[data-chapter-tools]");
+    if (!wrap) return;
+
+    wrap.classList.add("is-open");
+    document.body.classList.add("bb-tools-open");
+
+    const drawer = wrap.querySelector(".bb-chapter-tools-drawer");
+    const toggle = wrap.querySelector("[data-tools-toggle]");
+
+    drawer?.setAttribute("aria-hidden", "false");
+    toggle?.setAttribute("aria-expanded", "true");
+  }
+
+  function closeToolbar() {
+    const wrap = document.querySelector("[data-chapter-tools]");
+    if (!wrap) return;
+
+    wrap.classList.remove("is-open");
+    document.body.classList.remove("bb-tools-open");
+
+    const drawer = wrap.querySelector(".bb-chapter-tools-drawer");
+    const toggle = wrap.querySelector("[data-tools-toggle]");
+
+    drawer?.setAttribute("aria-hidden", "true");
+    toggle?.setAttribute("aria-expanded", "false");
+  }
+
+  function showToolSection(name) {
+    const wrap = document.querySelector("[data-chapter-tools]");
+    if (!wrap) return;
+
+    wrap.querySelectorAll("[data-tools-panel]").forEach((panel) => {
+      panel.classList.toggle("is-highlighted", panel.dataset.toolsPanel === name);
+    });
+
+    wrap.querySelector(`[data-tools-panel="${name}"]`)?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+    });
+  }
+
+  function bindToolbar() {
+    const wrap = document.querySelector("[data-chapter-tools]");
+    if (!wrap || wrap.dataset.bound === "true") return;
+
+    wrap.dataset.bound = "true";
+
+    wrap.querySelector("[data-tools-toggle]")?.addEventListener("click", () => {
+      wrap.classList.contains("is-open") ? closeToolbar() : openToolbar();
+    });
+
+    wrap.querySelectorAll("[data-tools-close]").forEach((button) => {
+      button.addEventListener("click", closeToolbar);
+    });
+
+    wrap.querySelectorAll("[data-tools-section]").forEach((button) => {
+      button.addEventListener("click", () => showToolSection(button.dataset.toolsSection));
+    });
+
+    wrap.querySelector("[data-pin-current]")?.addEventListener("click", () => {
+      togglePinCurrentPage();
+      openToolbar();
+    });
+
+    const form = wrap.querySelector("[data-note-form]");
+
+    wrap.querySelector("[data-add-note-open]")?.addEventListener("click", () => {
+      if (!form) return;
+      form.hidden = false;
+      form.querySelector("textarea")?.focus();
+    });
+
+    wrap.querySelector("[data-note-cancel]")?.addEventListener("click", () => {
+      if (!form) return;
+      form.hidden = true;
+      form.reset();
+    });
+
+    form?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const field = form.querySelector('textarea[name="note"]');
+      if (addNote(field?.value || "")) {
+        openToolbar();
+        showToolSection("notes");
+      }
+    });
+
+    wrap.querySelectorAll("[data-remove-note]").forEach((button) => {
+      button.addEventListener("click", () => {
+        removeNote(button.dataset.removeNote);
+        openToolbar();
+        showToolSection("notes");
+      });
+    });
+
+    wrap.querySelectorAll("[data-remove-pin]").forEach((button) => {
+      button.addEventListener("click", () => {
+        removePin(button.dataset.removePin);
+        openToolbar();
+        showToolSection("pins");
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeToolbar();
+    }, { once: true });
+  }
+
   function renderAll() {
     ensureNavLink();
     refreshNavLink();
     renderSlots();
     renderProtectedCommunity();
+    ensureToolbar();
   }
 
   function escapeHTML(value) {
@@ -303,6 +682,8 @@
     CHECKIN_KEY,
     BANK_KEY,
     PLANS_KEY,
+    NOTES_KEY,
+    PINS_KEY,
     isSignedIn,
     getProfile: profile,
     setProfile,
@@ -315,6 +696,12 @@
     setCheckin,
     getBank,
     getSavedPlans,
+    getNotes,
+    addNote,
+    removeNote,
+    getPins,
+    togglePinCurrentPage,
+    removePin,
     saveMeetingPlan,
     removeMeetingPlan,
     programLabel,
