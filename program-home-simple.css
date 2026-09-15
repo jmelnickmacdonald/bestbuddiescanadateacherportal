@@ -1454,3 +1454,232 @@
     min-height:0;
   }
 }
+
+
+/* =========================================================
+   FINAL VISUAL POLISH — ELEMENTARY & MIDDLE LANDING
+   Larger readable type, cleaner rhythm, more mobile air.
+========================================================= */
+
+.program-home-simple .simple-routes-lede{
+  max-width:820px !important;
+  font-size:1rem !important;
+  line-height:1.62 !important;
+}
+
+.program-home-simple .simple-route-grid-core{
+  gap:18px !important;
+}
+
+.program-home-simple .simple-route-grid-core .simple-route-card{
+  min-height:330px !important;
+  padding:28px 28px 25px !important;
+}
+
+.program-home-simple .simple-route-grid-core .route-kicker{
+  font-size:.76rem !important;
+}
+
+.program-home-simple .simple-route-grid-core .simple-route-card h3{
+  font-size:1.82rem !important;
+  line-height:1.02 !important;
+}
+
+.program-home-simple .simple-route-grid-core .simple-route-card p{
+  font-size:1rem !important;
+  line-height:1.58 !important;
+}
+
+.program-home-simple .simple-route-grid-core .route-help{
+  font-size:.91rem !important;
+  line-height:1.52 !important;
+}
+
+.program-home-simple .simple-route-grid-core .route-action{
+  font-size:.9rem !important;
+}
+
+.program-home-simple .simple-utility-links{
+  margin-top:30px !important;
+  padding:19px 0 !important;
+}
+
+.program-home-simple .simple-utility-links span,
+.program-home-simple .simple-utility-links a{
+  font-size:.84rem !important;
+}
+
+.program-home-simple .quick-help{
+  padding-top:64px !important;
+  padding-bottom:68px !important;
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+.program-home-simple .quick-help-head::before{
+  margin-bottom:18px !important;
+}
+
+.program-home-simple .quick-help-head h2{
+  max-width:700px !important;
+  font-size:clamp(2.6rem,3.35vw,3.35rem) !important;
+  line-height:.98 !important;
+}
+
+.program-home-simple .quick-help-head p{
+  max-width:700px !important;
+  margin-top:15px !important;
+  font-size:1rem !important;
+  line-height:1.6 !important;
+}
+
+.program-home-simple .quick-help-all{
+  margin-top:16px !important;
+  font-size:.88rem !important;
+}
+
+.program-home-simple .quick-help-links{
+  gap:16px !important;
+}
+
+.program-home-simple .quick-help-link{
+  min-height:178px !important;
+  padding:23px 22px 21px !important;
+}
+
+.program-home-simple .quick-help-tag{
+  font-size:.73rem !important;
+}
+
+.program-home-simple .quick-help-link strong{
+  font-size:1.35rem !important;
+  line-height:1.06 !important;
+}
+
+.program-home-simple .quick-help-link span:not(.quick-help-tag):not(.link-arrow){
+  margin-top:9px !important;
+  font-size:.94rem !important;
+  line-height:1.52 !important;
+}
+
+.program-home-simple .program-support-band{
+  border-top:0 !important;
+  border-bottom:0 !important;
+  box-shadow:none !important;
+}
+
+.program-home-simple .program-support-band::after{
+  content:none !important;
+  display:none !important;
+}
+
+.program-home-simple .program-support-inner h2{
+  font-size:clamp(2.35rem,3vw,2.8rem) !important;
+  line-height:.98 !important;
+}
+
+.program-home-simple .program-support-inner p{
+  font-size:.96rem !important;
+  line-height:1.58 !important;
+}
+
+@media(max-width:1050px){
+  .program-home-simple .simple-route-grid-core{
+    gap:16px !important;
+  }
+
+  .program-home-simple .simple-route-grid-core .simple-route-card{
+    min-height:0 !important;
+  }
+}
+
+@media(max-width:680px){
+  .program-home-simple .simple-program-hero{
+    padding-top:32px !important;
+    padding-bottom:70px !important;
+  }
+
+  .program-home-simple .program-back{
+    margin-bottom:34px !important;
+  }
+
+  .program-home-simple .simple-program-copy h1{
+    margin-top:14px !important;
+    font-size:clamp(3.1rem,13vw,4.4rem) !important;
+    line-height:.94 !important;
+  }
+
+  .program-home-simple .simple-program-lede{
+    margin-top:24px !important;
+    font-size:1rem !important;
+    line-height:1.62 !important;
+  }
+
+  .program-home-simple .simple-routes{
+    padding-top:72px !important;
+    padding-bottom:66px !important;
+  }
+
+  .program-home-simple .simple-routes-heading{
+    margin-bottom:32px !important;
+  }
+
+  .program-home-simple .simple-routes h2{
+    font-size:clamp(2.45rem,11vw,3.15rem) !important;
+    line-height:.98 !important;
+  }
+
+  .program-home-simple .simple-routes-lede{
+    margin-top:16px !important;
+    font-size:.98rem !important;
+    line-height:1.62 !important;
+  }
+
+  .program-home-simple .simple-route-grid-core{
+    gap:18px !important;
+  }
+
+  .program-home-simple .simple-route-grid-core .simple-route-card{
+    padding:27px 24px 25px !important;
+  }
+
+  .program-home-simple .simple-route-grid-core .simple-route-card h3{
+    font-size:1.75rem !important;
+  }
+
+  .program-home-simple .simple-route-grid-core .simple-route-card p{
+    font-size:.98rem !important;
+  }
+
+  .program-home-simple .simple-utility-links{
+    gap:12px 18px !important;
+    margin-top:30px !important;
+    padding:22px 0 !important;
+  }
+
+  .program-home-simple .quick-help{
+    padding-top:60px !important;
+    padding-bottom:64px !important;
+  }
+
+  .program-home-simple .quick-help-grid{
+    gap:34px !important;
+  }
+
+  .program-home-simple .quick-help-head h2{
+    font-size:clamp(2.35rem,10vw,2.8rem) !important;
+  }
+
+  .program-home-simple .quick-help-link{
+    padding:23px 21px !important;
+  }
+
+  .program-home-simple .program-support-band{
+    padding-top:64px !important;
+    padding-bottom:54px !important;
+  }
+
+  .program-home-simple .program-support-inner{
+    gap:22px !important;
+  }
+}
