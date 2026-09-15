@@ -304,6 +304,16 @@
 
       applySettings(settings);
 
+      /* Keep the same Best Buddies Canada logo at the top of every
+         Teacher Hub page, even if an older page still references a
+         legacy/reversed logo. */
+      document
+        .querySelectorAll('header img[alt*="Best Buddies Canada"]')
+        .forEach((logo) => {
+          logo.src = "assets/bb-logo-coloured.png";
+          logo.classList.add("bb-global-header-logo");
+        });
+
 
       const {
         launcher,

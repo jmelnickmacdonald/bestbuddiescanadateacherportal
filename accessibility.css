@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap");
+
 /* =========================================================
    BEST BUDDIES CANADA TEACHER HUB
    Accessibility preferences
@@ -175,7 +177,7 @@
   color:#5A3F98;
 
   font-family:
-    "Montserrat",
+    "Poppins",
     "Helvetica Neue",
     Arial,
     sans-serif;
@@ -195,7 +197,7 @@
   color:#211B28;
 
   font-family:
-    "Montserrat",
+    "Poppins",
     "Helvetica Neue",
     Arial,
     sans-serif;
@@ -216,7 +218,7 @@
   color:#625A68;
 
   font-family:
-    "Montserrat",
+    "Poppins",
     "Helvetica Neue",
     Arial,
     sans-serif;
@@ -292,7 +294,7 @@
   color:#211B28;
 
   font-family:
-    "Montserrat",
+    "Poppins",
     "Helvetica Neue",
     Arial,
     sans-serif;
@@ -332,7 +334,7 @@
   color:#5A3F98;
 
   font-family:
-    "Montserrat",
+    "Poppins",
     "Helvetica Neue",
     Arial,
     sans-serif;
@@ -762,3 +764,315 @@ html[
   }
 
 }
+
+/* =========================================================
+   TEACHER HUB — GLOBAL TYPE + LOGO CONSISTENCY
+   Loaded last on Teacher Hub pages so every page uses the
+   same approved type system, including headers and footers.
+========================================================= */
+
+html,
+body,
+button,
+input,
+select,
+textarea{
+  font-family:"Poppins","Helvetica Neue",Arial,sans-serif !important;
+}
+
+body,
+p,
+li,
+a,
+span,
+small,
+strong,
+label,
+button,
+input,
+select,
+textarea,
+summary,
+.portal-nav,
+.portal-footer,
+.month-footer,
+.site-header,
+.month-site-header{
+  font-family:"Poppins","Helvetica Neue",Arial,sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+[role="heading"],
+.month-display,
+.section-title,
+.display-title{
+  font-family:"League Spartan","Poppins",Arial,sans-serif !important;
+}
+
+/* Keep the same Best Buddies logo scale across header systems. */
+header .portal-brand img,
+header .month-brand img,
+header .brand img,
+header .logo-shell img,
+header img.bb-global-header-logo{
+  width:84px !important;
+  height:74px !important;
+  max-width:84px !important;
+  max-height:74px !important;
+  object-fit:contain !important;
+  flex:0 0 auto !important;
+}
+
+/* Don't let legacy header copy swap the visual identity back to
+   another typeface. */
+.portal-brand-copy,
+.month-brand-copy,
+.brand-name,
+.header-actions,
+.portal-nav a,
+.month-nav-pill a,
+.month-mobile-menu a,
+.portal-lang a,
+.month-language-pill a{
+  font-family:"Poppins","Helvetica Neue",Arial,sans-serif !important;
+}
+
+/* Footer typography should be quiet and consistent site-wide. */
+.portal-footer,
+.portal-footer *,
+.month-footer,
+.month-footer *,
+footer,
+footer *{
+  font-family:"Poppins","Helvetica Neue",Arial,sans-serif !important;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY PANEL — SAME TYPE SYSTEM
+========================================================= */
+
+.accessibility-panel,
+.accessibility-panel *,
+.accessibility-launcher,
+.accessibility-launcher *{
+  font-family:"Poppins","Helvetica Neue",Arial,sans-serif !important;
+}
+
+.accessibility-panel h2{
+  font-family:"League Spartan","Poppins",Arial,sans-serif !important;
+  font-size:1.75rem;
+  line-height:1.02;
+}
+
+
+/* =========================================================
+   HIGH CONTRAST — TRUE BLACK / WHITE MODE
+   The previous version only changed a handful of surfaces.
+   This intentionally makes the visual change obvious.
+========================================================= */
+
+html[data-a11y-contrast="high"]{
+  color-scheme:light !important;
+  background:#fff !important;
+}
+
+html[data-a11y-contrast="high"] body,
+html[data-a11y-contrast="high"] main{
+  background:#fff !important;
+  color:#000 !important;
+}
+
+/* Remove decorative backgrounds, gradients, waves and shadows. */
+html[data-a11y-contrast="high"] body *,
+html[data-a11y-contrast="high"] body *::before,
+html[data-a11y-contrast="high"] body *::after{
+  text-shadow:none !important;
+  box-shadow:none !important;
+}
+
+html[data-a11y-contrast="high"] main section,
+html[data-a11y-contrast="high"] main article,
+html[data-a11y-contrast="high"] main aside,
+html[data-a11y-contrast="high"] main [class*="card"],
+html[data-a11y-contrast="high"] main [class*="box"],
+html[data-a11y-contrast="high"] main [class*="panel"],
+html[data-a11y-contrast="high"] main [class*="callout"],
+html[data-a11y-contrast="high"] main [class*="tile"],
+html[data-a11y-contrast="high"] main [class*="banner"],
+html[data-a11y-contrast="high"] main [class*="hero"],
+html[data-a11y-contrast="high"] main [class*="section"]{
+  background:#fff !important;
+  background-image:none !important;
+  color:#000 !important;
+}
+
+/* Give cards/boxes a visible boundary once colour is removed. */
+html[data-a11y-contrast="high"] main [class*="card"],
+html[data-a11y-contrast="high"] main [class*="box"],
+html[data-a11y-contrast="high"] main [class*="panel"],
+html[data-a11y-contrast="high"] main [class*="callout"],
+html[data-a11y-contrast="high"] main [class*="tile"]{
+  border-color:#000 !important;
+}
+
+/* Text is truly black. */
+html[data-a11y-contrast="high"] main h1,
+html[data-a11y-contrast="high"] main h2,
+html[data-a11y-contrast="high"] main h3,
+html[data-a11y-contrast="high"] main h4,
+html[data-a11y-contrast="high"] main h5,
+html[data-a11y-contrast="high"] main h6,
+html[data-a11y-contrast="high"] main p,
+html[data-a11y-contrast="high"] main li,
+html[data-a11y-contrast="high"] main span,
+html[data-a11y-contrast="high"] main small,
+html[data-a11y-contrast="high"] main strong,
+html[data-a11y-contrast="high"] main label{
+  color:#000 !important;
+}
+
+/* Links become unmistakable. */
+html[data-a11y-contrast="high"] a{
+  color:#000 !important;
+  text-decoration:underline !important;
+  text-decoration-thickness:3px !important;
+  text-underline-offset:.18em !important;
+}
+
+/* Header becomes a strong black anchor. */
+html[data-a11y-contrast="high"] .portal-header,
+html[data-a11y-contrast="high"] .month-site-header,
+html[data-a11y-contrast="high"] .site-header{
+  background:#000 !important;
+  background-image:none !important;
+  border-color:#000 !important;
+}
+
+/* Put the coloured logo on a clean white patch in contrast mode. */
+html[data-a11y-contrast="high"] header .portal-brand img,
+html[data-a11y-contrast="high"] header .month-brand img,
+html[data-a11y-contrast="high"] header .brand img,
+html[data-a11y-contrast="high"] header .logo-shell img{
+  background:#fff !important;
+  border:2px solid #fff !important;
+  border-radius:8px !important;
+  padding:2px !important;
+}
+
+/* Navigation and menus are black/white, not coloured. */
+html[data-a11y-contrast="high"] .portal-nav,
+html[data-a11y-contrast="high"] .portal-lang,
+html[data-a11y-contrast="high"] .month-nav-pill,
+html[data-a11y-contrast="high"] .month-language-pill,
+html[data-a11y-contrast="high"] .site-menu summary,
+html[data-a11y-contrast="high"] .site-menu-panel,
+html[data-a11y-contrast="high"] .month-mobile-menu{
+  background:#fff !important;
+  color:#000 !important;
+  border:2px solid #000 !important;
+}
+
+html[data-a11y-contrast="high"] .portal-nav a,
+html[data-a11y-contrast="high"] .portal-lang a,
+html[data-a11y-contrast="high"] .month-nav-pill a,
+html[data-a11y-contrast="high"] .month-language-pill a,
+html[data-a11y-contrast="high"] .site-menu summary,
+html[data-a11y-contrast="high"] .site-menu-panel a,
+html[data-a11y-contrast="high"] .month-mobile-menu a{
+  background:#fff !important;
+  color:#000 !important;
+}
+
+html[data-a11y-contrast="high"] .portal-nav a[aria-current="page"],
+html[data-a11y-contrast="high"] .portal-lang .current,
+html[data-a11y-contrast="high"] .month-nav-pill a[aria-current="page"],
+html[data-a11y-contrast="high"] .month-language-pill a[aria-current="page"]{
+  background:#000 !important;
+  color:#fff !important;
+  text-decoration:none !important;
+}
+
+/* Buttons and controls use the strongest possible contrast. */
+html[data-a11y-contrast="high"] button,
+html[data-a11y-contrast="high"] input,
+html[data-a11y-contrast="high"] select,
+html[data-a11y-contrast="high"] textarea,
+html[data-a11y-contrast="high"] [class*="button"],
+html[data-a11y-contrast="high"] [class*="btn"],
+html[data-a11y-contrast="high"] [class*="action"]{
+  border-color:#000 !important;
+}
+
+html[data-a11y-contrast="high"] button,
+html[data-a11y-contrast="high"] [class*="button"],
+html[data-a11y-contrast="high"] [class*="btn"]{
+  background:#000 !important;
+  color:#fff !important;
+}
+
+html[data-a11y-contrast="high"] input,
+html[data-a11y-contrast="high"] select,
+html[data-a11y-contrast="high"] textarea{
+  background:#fff !important;
+  color:#000 !important;
+  border:2px solid #000 !important;
+}
+
+/* The accessibility control itself remains obvious in contrast mode. */
+html[data-a11y-contrast="high"] .accessibility-launcher{
+  background:#fff !important;
+  color:#000 !important;
+  border:3px solid #000 !important;
+}
+
+html[data-a11y-contrast="high"] .accessibility-panel{
+  background:#fff !important;
+  color:#000 !important;
+  border:3px solid #000 !important;
+}
+
+html[data-a11y-contrast="high"] .accessibility-choice,
+html[data-a11y-contrast="high"] .accessibility-toggle,
+html[data-a11y-contrast="high"] .accessibility-reset{
+  background:#fff !important;
+  color:#000 !important;
+  border:2px solid #000 !important;
+}
+
+html[data-a11y-contrast="high"] .accessibility-choice[aria-pressed="true"],
+html[data-a11y-contrast="high"] .accessibility-toggle[aria-pressed="true"]{
+  background:#000 !important;
+  color:#fff !important;
+}
+
+/* Footer becomes plain and readable too. */
+html[data-a11y-contrast="high"] .portal-footer,
+html[data-a11y-contrast="high"] .month-footer,
+html[data-a11y-contrast="high"] footer{
+  background:#fff !important;
+  color:#000 !important;
+  border-top:2px solid #000 !important;
+}
+
+
+/* =========================================================
+   LARGE TEXT — KEEP THE PANEL USABLE
+========================================================= */
+
+html[data-a11y-text="large"] .accessibility-panel,
+html[data-a11y-text="larger"] .accessibility-panel{
+  width:min(430px,calc(100vw - 24px));
+}
+
+html[data-a11y-text="larger"] .accessibility-choice,
+html[data-a11y-text="larger"] .accessibility-toggle,
+html[data-a11y-text="larger"] .accessibility-reset{
+  min-height:48px;
+}
+
