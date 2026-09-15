@@ -431,3 +431,77 @@
     padding-top:24px !important;
   }
 }
+
+/* =========================================================
+   HOME HERO — DESKTOP COPY BREATHING ROOM
+   Gives the left side enough width to feel intentional rather
+   than squeezed, without changing the approved artwork/wave.
+========================================================= */
+
+@media (min-width:1201px){
+
+  .portal-home-page .teacher-hub-hero-grid{
+    grid-template-columns:minmax(700px,1.18fr) minmax(500px,.82fr) !important;
+    column-gap:26px !important;
+    min-height:690px !important;
+    padding-top:46px !important;
+  }
+
+  .portal-home-page .hub-copy-column{
+    max-width:820px !important;
+  }
+
+  .portal-home-page .hub-intro h1{
+    font-size:clamp(3.65rem,4.2vw,4.9rem) !important;
+    line-height:.91 !important;
+    letter-spacing:-.03em !important;
+  }
+
+  .portal-home-page .hub-title-accent{
+    width:58px !important;
+    height:6px !important;
+    margin-top:18px !important;
+    margin-bottom:18px !important;
+  }
+
+  .portal-home-page .hub-intro p{
+    max-width:700px !important;
+    margin-bottom:0 !important;
+    font-size:1.12rem !important;
+    line-height:1.55 !important;
+  }
+
+  .portal-home-page .hub-message{
+    max-width:820px !important;
+    padding-top:2px !important;
+    padding-bottom:54px !important;
+  }
+
+  .portal-home-page .hub-message h2{
+    max-width:820px !important;
+    margin-top:0 !important;
+    margin-bottom:22px !important;
+    font-size:clamp(3.25rem,3.55vw,4.15rem) !important;
+    line-height:.99 !important;
+    letter-spacing:-.028em !important;
+  }
+
+  .portal-home-page .hub-message .hero-thanks{
+    font-size:1.02rem !important;
+    line-height:1.5 !important;
+  }
+}
+
+/* Slightly wider laptop treatment too, so it does not suddenly
+   feel squeezed just below the full-desktop breakpoint. */
+@media (min-width:1000px) and (max-width:1200px){
+  .portal-home-page .hub-intro p{
+    max-width:680px !important;
+    font-size:1.05rem !important;
+  }
+
+  .portal-home-page .hub-message h2{
+    max-width:700px !important;
+  }
+}
+
