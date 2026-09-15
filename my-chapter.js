@@ -19,6 +19,10 @@
   const NOTES_KEY = "bbMyChapterNotesV1";
   const PINS_KEY = "bbMyChapterPinsV1";
 
+  let toolbarOpen = false;
+  let activeToolbarSection = "";
+
+
   const DEFAULT_TASKS = {
     elementary: {
       organized: false,
@@ -531,132 +535,196 @@
 
     if (!isSignedIn()) {
       existing?.remove();
+      toolbarOpen = false;
+      activeToolbarSection = "";
       document.body.classList.remove("bb-tools-open");
       return;
     }
 
+    const markup = toolbarMarkup();
+
     if (!existing) {
-      document.body.insertAdjacentHTML("beforeend", toolbarMarkup());
-      bindToolbar();
-      return;
+      document.body.insertAdjacentHTML("beforeend", markup);
+    } else {
+      existing.outerHTML = markup;
     }
 
-    const wasOpen = existing.classList.contains("is-open");
-    existing.outerHTML = toolbarMarkup();
-    bindToolbar();
+    applyToolbarState();
+  }
 
-    if (wasOpen) {
-      openToolbar();
-    }
+  function applyToolbarState() {
+    const wrap = document.querySelector("[data-chapter-tools]");
+    if (!wrap) return;
+
+    wrap.classList.toggle("is-open", toolbarOpen);
+    document.body.classList.toggle("bb-tools-open", toolbarOpen);
+
+    const drawer = wrap.querySelector(".bb-chapter-tools-drawer");
+    const toggle = wrap.querySelector("[data-tools-toggle]");
+
+    drawer?.setAttribute("aria-hidden", toolbarOpen ? "false" : "true");
+    toggle?.setAttribute("aria-expanded", toolbarOpen ? "true" : "false");
+
+    wrap.querySelectorAll("[data-tools-panel]").forEach((panel) => {
+      panel.classList.toggle(
+        "is-highlighted",
+        Boolean(activeToolbarSection) &&
+        panel.dataset.toolsPanel === activeToolbarSection
+      );
+    });
   }
 
   function openToolbar() {
-    const wrap = document.querySelector("[data-chapter-tools]");
-    if (!wrap) return;
-
-    wrap.classList.add("is-open");
-    document.body.classList.add("bb-tools-open");
-
-    const drawer = wrap.querySelector(".bb-chapter-tools-drawer");
-    const toggle = wrap.querySelector("[data-tools-toggle]");
-
-    drawer?.setAttribute("aria-hidden", "false");
-    toggle?.setAttribute("aria-expanded", "true");
+    toolbarOpen = true;
+    applyToolbarState();
   }
 
   function closeToolbar() {
-    const wrap = document.querySelector("[data-chapter-tools]");
-    if (!wrap) return;
-
-    wrap.classList.remove("is-open");
-    document.body.classList.remove("bb-tools-open");
-
-    const drawer = wrap.querySelector(".bb-chapter-tools-drawer");
-    const toggle = wrap.querySelector("[data-tools-toggle]");
-
-    drawer?.setAttribute("aria-hidden", "true");
-    toggle?.setAttribute("aria-expanded", "false");
+    toolbarOpen = false;
+    applyToolbarState();
   }
 
   function showToolSection(name) {
-    const wrap = document.querySelector("[data-chapter-tools]");
-    if (!wrap) return;
+    activeToolbarSection = name || "";
+    openToolbar();
 
-    wrap.querySelectorAll("[data-tools-panel]").forEach((panel) => {
-      panel.classList.toggle("is-highlighted", panel.dataset.toolsPanel === name);
-    });
+    requestAnimationFrame(() => {
+      const panel = document.querySelector(
+        `[data-chapter-tools] [data-tools-panel="${name}"]`
+      );
 
-    wrap.querySelector(`[data-tools-panel="${name}"]`)?.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest"
+      panel?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
     });
   }
 
-  function bindToolbar() {
-    const wrap = document.querySelector("[data-chapter-tools]");
-    if (!wrap || wrap.dataset.bound === "true") return;
+  function openNoteForm() {
+    openToolbar();
 
-    wrap.dataset.bound = "true";
+    const form = document.querySelector("[data-chapter-tools] [data-note-form]");
+    if (!form) return;
 
-    wrap.querySelector("[data-tools-toggle]")?.addEventListener("click", () => {
-      wrap.classList.contains("is-open") ? closeToolbar() : openToolbar();
-    });
+    form.hidden = false;
 
-    wrap.querySelectorAll("[data-tools-close]").forEach((button) => {
-      button.addEventListener("click", closeToolbar);
-    });
-
-    wrap.querySelectorAll("[data-tools-section]").forEach((button) => {
-      button.addEventListener("click", () => showToolSection(button.dataset.toolsSection));
-    });
-
-    wrap.querySelector("[data-pin-current]")?.addEventListener("click", () => {
-      togglePinCurrentPage();
-      openToolbar();
-    });
-
-    const form = wrap.querySelector("[data-note-form]");
-
-    wrap.querySelector("[data-add-note-open]")?.addEventListener("click", () => {
-      if (!form) return;
-      form.hidden = false;
+    requestAnimationFrame(() => {
       form.querySelector("textarea")?.focus();
     });
+  }
 
-    wrap.querySelector("[data-note-cancel]")?.addEventListener("click", () => {
-      if (!form) return;
-      form.hidden = true;
-      form.reset();
-    });
+  function closeNoteForm() {
+    const form = document.querySelector("[data-chapter-tools] [data-note-form]");
+    if (!form) return;
 
-    form?.addEventListener("submit", (event) => {
+    form.hidden = true;
+    form.reset();
+  }
+
+  function handleToolbarClick(event) {
+    const wrap = event.target.closest("[data-chapter-tools]");
+    if (!wrap) return;
+
+    const toggle = event.target.closest("[data-tools-toggle]");
+    if (toggle) {
       event.preventDefault();
-      const field = form.querySelector('textarea[name="note"]');
-      if (addNote(field?.value || "")) {
-        openToolbar();
-        showToolSection("notes");
-      }
-    });
+      toolbarOpen ? closeToolbar() : openToolbar();
+      return;
+    }
 
-    wrap.querySelectorAll("[data-remove-note]").forEach((button) => {
-      button.addEventListener("click", () => {
-        removeNote(button.dataset.removeNote);
-        openToolbar();
+    const close = event.target.closest("[data-tools-close]");
+    if (close) {
+      event.preventDefault();
+      closeToolbar();
+      return;
+    }
+
+    const sectionButton = event.target.closest("[data-tools-section]");
+    if (sectionButton) {
+      event.preventDefault();
+      showToolSection(sectionButton.dataset.toolsSection);
+      return;
+    }
+
+    const pinButton = event.target.closest("[data-pin-current]");
+    if (pinButton) {
+      event.preventDefault();
+      toolbarOpen = true;
+      togglePinCurrentPage();
+      return;
+    }
+
+    const noteOpen = event.target.closest("[data-add-note-open]");
+    if (noteOpen) {
+      event.preventDefault();
+      openNoteForm();
+      return;
+    }
+
+    const noteCancel = event.target.closest("[data-note-cancel]");
+    if (noteCancel) {
+      event.preventDefault();
+      closeNoteForm();
+      return;
+    }
+
+    const removeNoteButton = event.target.closest("[data-remove-note]");
+    if (removeNoteButton) {
+      event.preventDefault();
+      toolbarOpen = true;
+      activeToolbarSection = "notes";
+      removeNote(removeNoteButton.dataset.removeNote);
+      return;
+    }
+
+    const removePinButton = event.target.closest("[data-remove-pin]");
+    if (removePinButton) {
+      event.preventDefault();
+      toolbarOpen = true;
+      activeToolbarSection = "pins";
+      removePin(removePinButton.dataset.removePin);
+    }
+  }
+
+  function handleToolbarSubmit(event) {
+    const form = event.target.closest("[data-chapter-tools] [data-note-form]");
+    if (!form) return;
+
+    event.preventDefault();
+
+    const field = form.querySelector('textarea[name="note"]');
+    const value = field?.value || "";
+
+    if (!value.trim()) {
+      field?.focus();
+      return;
+    }
+
+    toolbarOpen = true;
+    activeToolbarSection = "notes";
+
+    const saved = addNote(value);
+
+    if (saved) {
+      requestAnimationFrame(() => {
         showToolSection("notes");
       });
-    });
+    }
+  }
 
-    wrap.querySelectorAll("[data-remove-pin]").forEach((button) => {
-      button.addEventListener("click", () => {
-        removePin(button.dataset.removePin);
-        openToolbar();
-        showToolSection("pins");
-      });
-    });
+  function bindToolbarDelegation() {
+    if (document.documentElement.dataset.bbToolsBound === "true") return;
+
+    document.documentElement.dataset.bbToolsBound = "true";
+
+    document.addEventListener("click", handleToolbarClick);
+    document.addEventListener("submit", handleToolbarSubmit);
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeToolbar();
-    }, { once: true });
+      if (event.key === "Escape" && toolbarOpen) {
+        closeToolbar();
+      }
+    });
   }
 
   function renderAll() {
@@ -709,5 +777,8 @@
     renderAll
   };
 
-  document.addEventListener("DOMContentLoaded", renderAll);
+  document.addEventListener("DOMContentLoaded", () => {
+    bindToolbarDelegation();
+    renderAll();
+  });
 })();
