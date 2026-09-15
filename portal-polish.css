@@ -165,3 +165,12 @@
   }
 
 }
+
+/* Tighten space between desktop hero and Choose Your Program */
+@media (min-width:1201px){
+
+  .portal-home-page .program-launch{
+    padding-top:28px !important;
+  }
+
+}
