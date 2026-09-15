@@ -372,6 +372,36 @@
       color:var(--bb-purple);
     }
 
+    .board-official-link{
+      display:none;
+      margin:0 0 14px;
+      padding:14px 16px;
+      border-radius:16px 16px 36px 16px;
+      background:var(--bb-yellow);
+      color:var(--bb-ink);
+      font-size:.76rem;
+      line-height:1.5;
+    }
+
+    .board-official-link.is-visible{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    .board-official-link strong{
+      color:var(--bb-ink);
+    }
+
+    .board-official-link a{
+      color:var(--bb-purple);
+      font-weight:800;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+
     .board-prototype-note{
       margin:0 0 18px;
       padding:12px 14px;
@@ -1038,7 +1068,6 @@
 
     <div class="header-actions">
       <nav class="portal-nav" aria-label="Main navigation">
-        <a href="my-chapter.html">My Chapter</a>
         <a href="buddy-board.html" aria-current="page">Buddy Board</a>
         <a href="resources.html">Resources</a>
         <a href="support.html">Support</a>
@@ -1052,8 +1081,7 @@
       <details class="site-menu">
         <summary>Menu</summary>
         <div class="site-menu-panel">
-          <a href="my-chapter.html">My Chapter</a>
-          <a href="buddy-board.html" aria-current="page">Buddy Board</a>
+            <a href="buddy-board.html" aria-current="page">Buddy Board</a>
           <a href="resources.html">Resources</a>
           <a href="support.html">Support</a>
         </div>
@@ -1140,8 +1168,17 @@
           <button class="board-filter" type="button" data-filter="friendship">Friendship</button>
           <button class="board-filter" type="button" data-filter="inclusion">Inclusion</button>
           <button class="board-filter" type="button" data-filter="fundraising">Fundraising</button>
+          <button class="board-filter" type="button" data-filter="friendship-walk">Friendship Walk</button>
           <button class="board-filter" type="button" data-filter="celebrations">Celebrations</button>
           <button class="board-filter" type="button" data-filter="leadership">Leadership</button>
+        </div>
+
+        <div class="board-official-link" id="walk-official-link">
+          <span>
+            <strong>Looking for the official Friendship Walk information?</strong>
+            Registration, school options, guides, and fundraising support are in the Friendship Walk Hub.
+          </span>
+          <a href="friendship-walk.html">Open Friendship Walk →</a>
         </div>
 
         <p class="board-prototype-note">
@@ -1269,6 +1306,7 @@
           <option value="friendship">Friendship</option>
           <option value="inclusion">Inclusion</option>
           <option value="fundraising">Fundraising</option>
+          <option value="friendship-walk">Friendship Walk</option>
           <option value="celebrations">Celebrations</option>
           <option value="leadership">Leadership</option>
         </select>
@@ -1313,7 +1351,12 @@
   const toast = document.getElementById("share-toast");
   const ideaOnlyFields = Array.from(document.querySelectorAll("[data-idea-only]"));
 
-  let currentFilter = "all";
+  const validFilters = new Set([
+    "all","ideas","questions","meetings","recruitment","friendship",
+    "inclusion","fundraising","friendship-walk","celebrations","leadership"
+  ]);
+  const requestedFilter = new URLSearchParams(window.location.search).get("filter");
+  let currentFilter = validFilters.has(requestedFilter) ? requestedFilter : "all";
   let currentView = window.location.hash === "#bank" ? "bank" : "all";
   const openThreads = new Set();
 
@@ -1411,6 +1454,45 @@
       sampleReplies:[]
     },
     {
+      id:"friendship-walk-year-end",
+      type:"idea",
+      category:"friendship-walk",
+      extraCategories:["celebrations"],
+      program:"High School",
+      accent:"teal",
+      title:"We made the Walk our year-end chapter celebration",
+      description:"Instead of planning a separate year-end event, we treated the Walk as the chapter celebration and kept the rest of the month simple.",
+      worked:"It gave everyone something to look forward to without asking the chapter team to organize two different events.",
+      change:"We’d share the date with families earlier next time.",
+      tags:["Friendship Walk","Year-end","Celebration"],
+      source:"Prototype chapter example",
+      sampleReplies:[
+        {
+          author:"Staff Advisor · High School",
+          text:"I like this approach. Combining things is often the only way we can make a spring event realistic."
+        }
+      ]
+    },
+    {
+      id:"friendship-walk-school-question",
+      type:"question",
+      category:"friendship-walk",
+      extraCategories:["meetings"],
+      program:"Elementary & Middle",
+      accent:"yellow",
+      title:"What did your Youth Friendship Walk actually look like?",
+      description:"We’re interested in doing something at school, but I’m trying to picture the simplest version. Did you keep it to your chapter or involve the whole school?",
+      prompt:"Looking for real examples of how schools kept a Youth Walk manageable.",
+      tags:["Friendship Walk","Youth Walk","School event"],
+      source:"Prototype chapter question",
+      sampleReplies:[
+        {
+          author:"Staff Advisor · Elementary & Middle",
+          text:"Ours was chapter-sized. We did one lap together, music outside, and a banner. It still felt special without becoming a school-wide event."
+        }
+      ]
+    },
+    {
       id:"memory-wall",
       type:"idea",
       category:"celebrations",
@@ -1475,6 +1557,7 @@
       friendship:"Friendship",
       inclusion:"Inclusion",
       fundraising:"Fundraising",
+      "friendship-walk":"Friendship Walk",
       celebrations:"Celebrations",
       leadership:"Leadership"
     };
@@ -1687,6 +1770,11 @@
     filterButtons.forEach(button => {
       button.classList.toggle("is-active", button.dataset.filter === currentFilter);
     });
+
+    document.getElementById("walk-official-link")?.classList.toggle(
+      "is-visible",
+      currentFilter === "friendship-walk"
+    );
 
     renderBankCounts();
   }
