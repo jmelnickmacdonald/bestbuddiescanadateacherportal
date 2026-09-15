@@ -1076,3 +1076,155 @@ html[data-a11y-text="larger"] .accessibility-reset{
   min-height:48px;
 }
 
+/* =========================================================
+   ELEMENTARY & MIDDLE — ALWAYS-VISIBLE PROGRAM SHORTCUTS
+   Keeps the Playbook easy to find without making it mandatory.
+========================================================= */
+
+.bb-program-shortcuts{
+  position:relative;
+  z-index:80;
+  width:100%;
+  border-bottom:1px solid #E3DFE8;
+  background:#F7F5FB;
+  font-family:"Poppins","Helvetica Neue",Arial,sans-serif !important;
+}
+
+.bb-program-shortcuts-inner{
+  width:min(calc(100% - 48px),1220px);
+  min-height:62px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.bb-program-shortcuts-home{
+  flex:0 0 auto;
+  color:#211B28 !important;
+  font-size:.78rem !important;
+  font-weight:800 !important;
+  line-height:1.25 !important;
+  text-decoration:none !important;
+}
+
+.bb-program-shortcuts-home small{
+  display:block;
+  margin-bottom:2px;
+  color:#6D6671 !important;
+  font-size:.64rem !important;
+  font-weight:700 !important;
+  letter-spacing:.055em;
+  text-transform:uppercase;
+}
+
+.bb-program-shortcuts-links{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-left:auto;
+}
+
+.bb-program-shortcuts-links a{
+  min-height:39px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:7px 12px;
+  border:1px solid #D9D2E8;
+  border-radius:999px;
+  background:#fff;
+  color:#5A3F98 !important;
+  font-size:.76rem !important;
+  font-weight:800 !important;
+  line-height:1.2 !important;
+  text-decoration:none !important;
+  white-space:nowrap;
+}
+
+.bb-program-shortcuts-links a.bb-program-playbook{
+  border-color:#FFD420;
+  background:#FFD420;
+  color:#211B28 !important;
+}
+
+.bb-program-shortcuts-links a[aria-current="page"]{
+  border-color:#5A3F98;
+  background:#5A3F98;
+  color:#fff !important;
+}
+
+.bb-program-shortcuts-links a:hover,
+.bb-program-shortcuts-links a:focus-visible{
+  transform:translateY(-1px);
+}
+
+@media(max-width:760px){
+  .bb-program-shortcuts{
+    overflow:hidden;
+  }
+
+  .bb-program-shortcuts-inner{
+    width:100%;
+    min-height:0;
+    display:block;
+    padding:12px 16px 13px;
+  }
+
+  .bb-program-shortcuts-home{
+    display:block;
+    margin-bottom:9px;
+    font-size:.8rem !important;
+  }
+
+  .bb-program-shortcuts-home small{
+    display:inline;
+    margin-right:5px;
+  }
+
+  .bb-program-shortcuts-links{
+    width:100%;
+    overflow-x:auto;
+    justify-content:flex-start;
+    gap:7px;
+    margin:0;
+    padding-bottom:2px;
+    scrollbar-width:none;
+  }
+
+  .bb-program-shortcuts-links::-webkit-scrollbar{
+    display:none;
+  }
+
+  .bb-program-shortcuts-links a{
+    flex:0 0 auto;
+    min-height:42px;
+    padding:8px 12px;
+    font-size:.79rem !important;
+  }
+}
+
+/* The program shortcuts remain usable in black/white contrast mode. */
+html[data-a11y-contrast="high"] .bb-program-shortcuts{
+  background:#fff !important;
+  border-top:2px solid #000 !important;
+  border-bottom:2px solid #000 !important;
+}
+
+html[data-a11y-contrast="high"] .bb-program-shortcuts-home,
+html[data-a11y-contrast="high"] .bb-program-shortcuts-home small{
+  color:#000 !important;
+}
+
+html[data-a11y-contrast="high"] .bb-program-shortcuts-links a{
+  border:2px solid #000 !important;
+  background:#fff !important;
+  color:#000 !important;
+  text-decoration:none !important;
+}
+
+html[data-a11y-contrast="high"] .bb-program-shortcuts-links a[aria-current="page"]{
+  background:#000 !important;
+  color:#fff !important;
+}
+

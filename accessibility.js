@@ -302,7 +302,77 @@
 
       let settings = loadSettings();
 
+
+      function addElementaryProgramShortcuts() {
+        const file = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
+
+        const allowed = new Set([
+          "elementary-middle.html",
+          "elementary-playbook.html",
+          "elementary-months.html",
+          "elementary-september.html",
+          "elementary-october.html",
+          "elementary-november.html",
+          "elementary-december.html",
+          "elementary-gathering.html"
+        ]);
+
+        if (!allowed.has(file)) return;
+        if (document.querySelector(".bb-program-shortcuts")) return;
+
+        let active = "";
+        if (file === "elementary-playbook.html") active = "playbook";
+        if (
+          file === "elementary-months.html" ||
+          file === "elementary-september.html" ||
+          file === "elementary-october.html" ||
+          file === "elementary-november.html" ||
+          file === "elementary-december.html"
+        ) active = "months";
+        if (file === "elementary-gathering.html") active = "meeting";
+
+        const bar = document.createElement("nav");
+        bar.className = "bb-program-shortcuts";
+        bar.setAttribute("aria-label", "Elementary and Middle program tools");
+
+        bar.innerHTML = `
+          <div class="bb-program-shortcuts-inner">
+            <a class="bb-program-shortcuts-home" href="elementary-middle.html">
+              <small>Program</small>
+              Elementary &amp; Middle
+            </a>
+
+            <div class="bb-program-shortcuts-links">
+              <a
+                class="bb-program-playbook"
+                href="elementary-playbook.html"
+                ${active === "playbook" ? 'aria-current="page"' : ""}
+              >Chapter Playbook</a>
+
+              <a
+                href="elementary-months.html"
+                ${active === "months" ? 'aria-current="page"' : ""}
+              >Monthly Planning</a>
+
+              <a
+                href="elementary-gathering.html"
+                ${active === "meeting" ? 'aria-current="page"' : ""}
+              >Plan a Meeting</a>
+            </div>
+          </div>
+        `;
+
+        const header = document.querySelector("header");
+        if (header) {
+          header.insertAdjacentElement("afterend", bar);
+        } else {
+          document.body.insertAdjacentElement("afterbegin", bar);
+        }
+      }
+
       applySettings(settings);
+
+      addElementaryProgramShortcuts();
 
       /* Keep the same Best Buddies Canada logo at the top of every
          Teacher Hub page, even if an older page still references a
