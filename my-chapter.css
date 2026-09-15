@@ -775,3 +775,360 @@
   padding-top:13px;
   border-top:1px solid var(--bb-tools-line);
 }
+
+/* =========================================================
+   MY CHAPTER — ACCESSIBLE DASHBOARD POLISH
+   Lightens the first signed-in screen and restores readable type.
+   Scoped to the signed-in dashboard only.
+   ========================================================= */
+
+/* The signed-in area should feel like the rest of the Hub,
+   not like one large purple panel. */
+.my-chapter-page .mc-dashboard-hero::after{
+  background:#EEEAF8 !important;
+}
+
+.my-chapter-page .mc-main{
+  padding:58px 0 70px !important;
+  background:#EEEAF8 !important;
+}
+
+.my-chapter-page .mc-main-grid{
+  gap:20px !important;
+}
+
+/* Main “what’s next” card */
+.my-chapter-page .mc-next{
+  padding:32px 34px 30px !important;
+  border-top:7px solid #5A3F98 !important;
+  box-shadow:0 10px 26px rgba(45,29,72,.08) !important;
+}
+
+/* Check-in stays colourful, but gets more room. */
+.my-chapter-page .mc-checkin{
+  padding:31px 29px 30px !important;
+  border-top:7px solid #FFD420 !important;
+  box-shadow:none !important;
+}
+
+/* Larger, more accessible hierarchy */
+.my-chapter-page .mc-kicker{
+  font-size:.82rem !important;
+  line-height:1.35 !important;
+}
+
+.my-chapter-page .mc-next h2,
+.my-chapter-page .mc-checkin h2,
+.my-chapter-page .mc-lower h2{
+  font-size:clamp(2.45rem,3vw,3rem) !important;
+  line-height:.98 !important;
+  letter-spacing:-.018em !important;
+}
+
+.my-chapter-page .mc-progress-copy{
+  font-size:.9rem !important;
+  line-height:1.4 !important;
+}
+
+.my-chapter-page .mc-task-list{
+  gap:10px !important;
+  margin-top:21px !important;
+}
+
+.my-chapter-page .mc-task{
+  grid-template-columns:30px minmax(0,1fr) !important;
+  gap:12px !important;
+  min-height:60px !important;
+  padding:12px 15px !important;
+  border-radius:15px 15px 30px 15px !important;
+  background:#FAF9F7 !important;
+}
+
+.my-chapter-page .mc-task input{
+  width:20px !important;
+  height:20px !important;
+}
+
+.my-chapter-page .mc-task span{
+  font-size:1rem !important;
+  line-height:1.45 !important;
+}
+
+.my-chapter-page .mc-next-actions{
+  gap:10px !important;
+  margin-top:21px !important;
+}
+
+.my-chapter-page .mc-next-actions a{
+  min-height:46px !important;
+  padding:9px 15px !important;
+  font-size:.9rem !important;
+}
+
+/* Check-in readability */
+.my-chapter-page .mc-checkin > p{
+  margin-top:12px !important;
+  font-size:.96rem !important;
+  line-height:1.58 !important;
+}
+
+.my-chapter-page .mc-checkin-options{
+  gap:9px !important;
+  margin-top:19px !important;
+}
+
+.my-chapter-page .mc-checkin-option{
+  min-height:48px !important;
+  padding:10px 14px !important;
+  font-size:.9rem !important;
+  line-height:1.35 !important;
+}
+
+.my-chapter-page .mc-help{
+  margin-top:17px !important;
+  padding-top:16px !important;
+}
+
+.my-chapter-page .mc-help > span{
+  font-size:.86rem !important;
+  line-height:1.4 !important;
+}
+
+.my-chapter-page .mc-help-chips{
+  gap:8px !important;
+  margin-top:10px !important;
+}
+
+.my-chapter-page .mc-help-chip{
+  min-height:39px !important;
+  padding:7px 11px !important;
+  font-size:.82rem !important;
+}
+
+.my-chapter-page .mc-checkin-status{
+  min-height:24px !important;
+  margin-top:12px !important;
+  font-size:.85rem !important;
+  line-height:1.5 !important;
+}
+
+/* Prototype note should be readable too — not tiny legal-looking text. */
+.my-chapter-page .mc-prototype-note{
+  margin-top:18px !important;
+  color:#6D6671 !important;
+  font-size:.82rem !important;
+  line-height:1.5 !important;
+}
+
+/* Hero details */
+.my-chapter-page .mc-school{
+  font-size:1rem !important;
+  line-height:1.5 !important;
+}
+
+.my-chapter-page .mc-signout{
+  min-height:45px !important;
+  padding:9px 15px !important;
+  font-size:.84rem !important;
+}
+
+/* Anything below the first dashboard should also avoid tiny copy. */
+.my-chapter-page .mc-lower-card p{
+  font-size:.94rem !important;
+  line-height:1.56 !important;
+}
+
+.my-chapter-page .mc-lower-card a{
+  font-size:.86rem !important;
+}
+
+.my-chapter-page .mc-saved-plan strong{
+  font-size:.88rem !important;
+}
+
+.my-chapter-page .mc-saved-plan small{
+  font-size:.78rem !important;
+}
+
+/* If the newer My Chapter sections are present, keep those readable too. */
+.my-chapter-page .mc-core-head p,
+.my-chapter-page .mc-useful-head p,
+.my-chapter-page .mc-support-note p,
+.my-chapter-page .mc-workspace-head p{
+  font-size:1rem !important;
+  line-height:1.58 !important;
+}
+
+.my-chapter-page .mc-core-card p{
+  font-size:.94rem !important;
+  line-height:1.55 !important;
+}
+
+.my-chapter-page .mc-core-card .mc-core-label{
+  font-size:.76rem !important;
+}
+
+.my-chapter-page .mc-core-card .mc-core-open{
+  font-size:.84rem !important;
+}
+
+.my-chapter-page .mc-useful-link strong{
+  font-size:.94rem !important;
+}
+
+.my-chapter-page .mc-useful-link span{
+  font-size:.84rem !important;
+  line-height:1.5 !important;
+}
+
+.my-chapter-page .mc-useful-link b{
+  font-size:.82rem !important;
+}
+
+.my-chapter-page .mc-work-card > p,
+.my-chapter-page .mc-work-hint{
+  font-size:.86rem !important;
+  line-height:1.52 !important;
+}
+
+.my-chapter-page .mc-work-card > a{
+  font-size:.84rem !important;
+}
+
+.my-chapter-page .mc-mini-item strong{
+  font-size:.82rem !important;
+}
+
+.my-chapter-page .mc-mini-item span,
+.my-chapter-page .mc-mini-item a{
+  font-size:.78rem !important;
+  line-height:1.48 !important;
+}
+
+/* Mobile: give the first signed-in screen breathing room rather than
+   shrinking everything to make it fit. */
+@media(max-width:900px){
+  .my-chapter-page .mc-main{
+    padding:44px 0 54px !important;
+  }
+
+  .my-chapter-page .mc-main-grid{
+    gap:18px !important;
+  }
+}
+
+@media(max-width:760px){
+  .my-chapter-page .mc-dashboard-hero{
+    padding-top:38px !important;
+    padding-bottom:62px !important;
+  }
+
+  .my-chapter-page .mc-dashboard-hero-grid{
+    gap:22px !important;
+  }
+
+  .my-chapter-page .mc-dashboard-hero h1{
+    font-size:clamp(3.2rem,14vw,4.4rem) !important;
+    line-height:.92 !important;
+  }
+
+  .my-chapter-page .mc-main{
+    padding:38px 0 48px !important;
+  }
+
+  .my-chapter-page .mc-next,
+  .my-chapter-page .mc-checkin{
+    padding:25px 22px 24px !important;
+  }
+
+  .my-chapter-page .mc-next h2,
+  .my-chapter-page .mc-checkin h2{
+    font-size:2.35rem !important;
+  }
+
+  .my-chapter-page .mc-task{
+    min-height:62px !important;
+  }
+
+  .my-chapter-page .mc-task span,
+  .my-chapter-page .mc-checkin > p{
+    font-size:1rem !important;
+  }
+
+  .my-chapter-page .mc-checkin-option{
+    min-height:50px !important;
+    font-size:.94rem !important;
+  }
+}
+
+/* =========================================================
+   MY CHAPTER — PURPLE HERO / CLEAN TRANSITION
+   Keeps the signed-in page bold and colourful without the
+   awkward curved purple transition.
+   ========================================================= */
+
+/* Remove the large curved transition shape. */
+.my-chapter-page .mc-dashboard-hero::after{
+  content:none !important;
+  display:none !important;
+}
+
+/* Bring the purple back as the main signed-in workspace. */
+.my-chapter-page .mc-main{
+  position:relative !important;
+  padding:58px 0 72px !important;
+  background:#5A3F98 !important;
+}
+
+/* Add a simple colour accent at the top instead of a giant curve. */
+.my-chapter-page .mc-main::before{
+  content:"" !important;
+  position:absolute !important;
+  left:0 !important;
+  right:0 !important;
+  top:0 !important;
+  height:10px !important;
+  background:linear-gradient(
+    90deg,
+    #8FD1C4 0 38%,
+    #FFD420 38% 67%,
+    #F37735 67% 100%
+  ) !important;
+}
+
+/* Give the cards a bit more presence against the purple. */
+.my-chapter-page .mc-next{
+  background:#fff !important;
+  border-top:7px solid #FFD420 !important;
+  box-shadow:0 14px 34px rgba(31,19,52,.18) !important;
+}
+
+.my-chapter-page .mc-checkin{
+  background:#8FD1C4 !important;
+  border-top:7px solid #F37735 !important;
+  box-shadow:0 14px 34px rgba(31,19,52,.14) !important;
+}
+
+/* Keep surrounding text readable on purple. */
+.my-chapter-page .mc-main > .mc-container,
+.my-chapter-page .mc-main .mc-main-grid{
+  position:relative !important;
+  z-index:1 !important;
+}
+
+/* Lower sections can stay light so the page has rhythm. */
+.my-chapter-page .mc-lower{
+  background:#fff !important;
+}
+
+/* Mobile: same flat transition, no curve. */
+@media(max-width:760px){
+  .my-chapter-page .mc-main{
+    padding-top:42px !important;
+  }
+
+  .my-chapter-page .mc-main::before{
+    height:8px !important;
+  }
+}
+

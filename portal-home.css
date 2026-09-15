@@ -3434,3 +3434,94 @@ body{
     font-size:clamp(1.78rem,8.9vw,2.17rem);
   }
 }
+
+/* =========================================================
+   TEACHER HUB — SHARED READABILITY FLOOR
+   Keeps page-specific design intact while preventing core
+   interface copy from shrinking into hard-to-read sizes.
+========================================================= */
+
+body{
+  font-size:18px;
+}
+
+/* Normal reading copy should never feel like fine print. */
+main p,
+main li{
+  font-size:.98rem !important;
+  line-height:1.6 !important;
+}
+
+/* Form and action text stays comfortably readable. */
+main button,
+main input,
+main select,
+main textarea{
+  font-size:.9rem;
+}
+
+main label{
+  font-size:.88rem;
+  line-height:1.45;
+}
+
+main small{
+  font-size:.78rem;
+  line-height:1.45;
+}
+
+/* Global navigation remains compact, but not tiny. */
+.portal-nav a{
+  font-size:.88rem;
+}
+
+.portal-lang a{
+  font-size:.82rem;
+}
+
+.site-menu summary,
+.site-menu-panel > a{
+  font-size:.9rem;
+}
+
+/* Keep common small explanatory / metadata copy readable. */
+[class*="prototype-note"],
+[class*="source-note"],
+[class*="helper"],
+[class*="hint"],
+[class*="meta"]{
+  line-height:1.5 !important;
+}
+
+/* Mobile should gain space rather than sacrifice type size. */
+@media(max-width:760px){
+  body{
+    font-size:17px;
+  }
+
+  main p,
+  main li{
+    font-size:1rem !important;
+    line-height:1.62 !important;
+  }
+
+  main button,
+  main input,
+  main select,
+  main textarea{
+    font-size:.95rem;
+  }
+
+  main label{
+    font-size:.9rem;
+  }
+
+  .portal-container{
+    width:min(calc(100% - 32px),var(--max));
+  }
+
+  section{
+    scroll-margin-top:84px;
+  }
+}
+
