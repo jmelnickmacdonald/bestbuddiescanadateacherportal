@@ -135,3 +135,33 @@
   }
 
 }
+
+/* =========================================================
+   FINAL FULL DESKTOP HERO FIX
+   Does NOT affect tablet / narrow layouts
+========================================================= */
+
+@media (min-width:1201px){
+
+  /* Put the artwork back down where it belongs */
+  .portal-home-page .hub-hero-art img{
+    bottom:-34px !important;
+  }
+
+  /* Bring the white wave up over the bottom of the artwork */
+  .portal-home-page .teacher-hub-hero::after{
+    display:block !important;
+    content:"" !important;
+
+    height:150px !important;
+
+    left:-2px !important;
+    right:-2px !important;
+    bottom:-1px !important;
+
+    z-index:20 !important;
+
+    background-size:100% 100% !important;
+  }
+
+}
