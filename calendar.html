@@ -175,7 +175,7 @@
     .calendar-hero{
       position:relative;
       overflow:hidden;
-      padding:46px 0 76px;
+      padding:52px 0 78px;
       background:#fff;
     }
 
@@ -214,10 +214,10 @@
       max-width:760px;
       margin:0;
       color:var(--ink);
-      font-size:clamp(3.7rem,5.7vw,5.9rem);
-      font-weight:900;
-      line-height:.87;
-      letter-spacing:-.045em;
+      font-size:clamp(3.9rem,5.4vw,5.6rem);
+      font-weight:800;
+      line-height:.9;
+      letter-spacing:-.035em;
     }
 
     .calendar-hero h1 span{
@@ -229,8 +229,24 @@
       max-width:560px;
       margin:0 0 5px;
       color:var(--text);
-      font-size:1.08rem;
-      line-height:1.66;
+      font-size:1.05rem;
+      line-height:1.62;
+    }
+
+    .calendar-hero-lede a{
+      display:inline-block;
+      margin-top:12px;
+      color:var(--purple);
+      font-size:.84rem;
+      font-weight:800;
+      line-height:1.4;
+      text-decoration:none;
+    }
+
+    .calendar-hero-lede a:hover,
+    .calendar-hero-lede a:focus-visible{
+      text-decoration:underline;
+      text-underline-offset:3px;
     }
 
     /* =========================================================
@@ -421,18 +437,19 @@
 
     .calendar-planning{
       position:relative;
-      padding:76px 0 72px;
+      padding:64px 0 70px;
       background:#fff;
     }
 
     .calendar-planning-inner{
       display:grid;
-      grid-template-columns:minmax(0,1fr) auto;
-      gap:48px;
+      grid-template-columns:minmax(0,1fr) minmax(300px,.42fr);
+      gap:42px;
       align-items:center;
-      padding:34px 36px;
+      padding:34px 36px 36px;
       border-radius:26px 26px 64px 26px;
       background:var(--teal);
+      box-shadow:0 12px 30px rgba(32,25,40,.07);
     }
 
     .calendar-planning .calendar-kicker{
@@ -444,34 +461,54 @@
       max-width:720px;
       margin:0;
       color:var(--ink);
-      font-size:clamp(2.35rem,3.4vw,3.7rem);
-      font-weight:900;
-      line-height:.94;
+      font-size:clamp(2.65rem,3.6vw,3.9rem);
+      font-weight:800;
+      line-height:.95;
+      letter-spacing:-.025em;
     }
 
     .calendar-planning p{
       max-width:720px;
       margin:13px 0 0;
       color:#334B47;
-      font-size:.98rem;
-      line-height:1.62;
+      font-size:.97rem;
+      line-height:1.58;
+    }
+
+    .calendar-planning-points{
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+      margin-top:16px;
+    }
+
+    .calendar-planning-points span{
+      display:inline-flex;
+      align-items:center;
+      min-height:31px;
+      padding:5px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.72);
+      color:var(--purple);
+      font-size:.7rem;
+      font-weight:800;
     }
 
     .calendar-planning-actions{
-      min-width:310px;
+      min-width:300px;
       display:flex;
       flex-direction:column;
       gap:10px;
     }
 
     .calendar-planning-actions a{
-      min-height:49px;
+      min-height:50px;
       display:flex;
       align-items:center;
       justify-content:center;
       padding:10px 17px;
       border-radius:999px;
-      font-size:.86rem;
+      font-size:.84rem;
       font-weight:800;
       text-align:center;
       text-decoration:none;
@@ -487,49 +524,6 @@
       color:var(--purple);
     }
 
-    /* =========================================================
-       QUIET WHOLE-YEAR BRIDGE
-       ========================================================= */
-
-    .calendar-more{
-      padding:0 0 68px;
-      background:#fff;
-    }
-
-    .calendar-more-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:30px;
-      padding:22px 0;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-
-    .calendar-more p{
-      margin:0;
-      color:var(--muted);
-      font-size:.92rem;
-      line-height:1.56;
-    }
-
-    .calendar-more p strong{
-      color:var(--ink);
-    }
-
-    .calendar-more-links{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-      gap:16px;
-    }
-
-    .calendar-more-links a{
-      color:var(--purple);
-      font-size:.84rem;
-      font-weight:800;
-      text-decoration:none;
-    }
 
     /* =========================================================
        FOOTER
@@ -797,31 +791,18 @@
 
       <div>
         <span class="calendar-kicker">Program Calendar</span>
-        <h1 id="calendar-title">See what’s <span>coming up.</span></h1>
+        <h1 id="calendar-title">Keep the year <span>in view.</span></h1>
       </div>
 
       <p class="calendar-hero-lede">
-        Use the Calendar when you need a date or reminder. When you want the bigger picture, the Chapter Playbook shows how the year fits together.
+        Dates, reminders, and key program moments, all in one place.
+        Check the timing here, then jump into Monthly Planning when you’re ready to decide what to do.
+        <a href="elementary-playbook.html">Want the whole-year roadmap? Open the Chapter Playbook →</a>
       </p>
 
     </div>
   </section>
 
-  <section class="calendar-more" aria-label="Chapter Playbook">
-    <div class="portal-container calendar-more-inner">
-
-      <p>
-        <strong>Following the Chapter Playbook?</strong>
-        Keep it beside the Calendar. The Playbook is the roadmap through the year; the Calendar is where you check the dates and reminders.
-      </p>
-
-      <div class="calendar-more-links">
-        <a href="elementary-playbook.html">Elementary &amp; Middle Playbook →</a>
-        <a href="high-school.html">High School →</a>
-      </div>
-
-    </div>
-  </section>
 
   <section class="calendar-live" aria-labelledby="live-calendar-title">
     <div class="portal-container">
@@ -833,7 +814,7 @@
         </div>
 
         <p>
-          Choose a month to move through the school year. Dates and reminders shown here come directly from the live Best Buddies Canada Program Calendar.
+          Choose a month to see the dates and reminders on the live Best Buddies Canada Program Calendar.
         </p>
       </div>
 
@@ -901,12 +882,18 @@
     <div class="portal-container calendar-planning-inner">
 
       <div>
-        <span class="calendar-kicker">Planning this month?</span>
-        <h2 id="calendar-planning-title">Go from the date to what matters now.</h2>
+        <span class="calendar-kicker">Ready to plan around it?</span>
+        <h2 id="calendar-planning-title">See what matters this month.</h2>
         <p>
-          Monthly Planning keeps the priorities and timely meeting ideas together.
-          The Program Calendar stays focused on dates and reminders.
+          Monthly Planning pulls together the month’s priorities, timely activity ideas,
+          and a direct route into Plan a Meeting. Start here when you want more than the date.
         </p>
+
+        <div class="calendar-planning-points" aria-label="What Monthly Planning includes">
+          <span>Monthly priorities</span>
+          <span>Timely activity ideas</span>
+          <span>Meeting planning</span>
+        </div>
       </div>
 
       <div class="calendar-planning-actions">
@@ -915,7 +902,7 @@
           id="calendar-month-planning-link"
           href="elementary-september.html"
         >
-          Elementary &amp; Middle · September →
+          Open September Planning →
         </a>
 
         <a
