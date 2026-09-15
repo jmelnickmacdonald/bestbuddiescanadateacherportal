@@ -85,3 +85,44 @@
   }
 
 }
+/* =========================================================
+   HOME HERO — FORCE WAVE OVER VISIBLE ART
+   narrow desktop / tablet only
+========================================================= */
+
+@media (min-width:761px) and (max-width:1200px){
+
+  /* Turn off the old wave */
+  .portal-home-page .hub-hero-art::after{
+    display:none !important;
+  }
+
+  /* Put a new wave UP over the artwork */
+  .portal-home-page .hub-hero-art::before{
+    content:"" !important;
+
+    position:absolute !important;
+    z-index:50 !important;
+
+    left:50% !important;
+
+    /* THIS is the important part */
+    top:calc(100% - 150px) !important;
+
+    width:100vw !important;
+    height:150px !important;
+
+    transform:translateX(-50%) !important;
+
+    pointer-events:none !important;
+
+    background-repeat:no-repeat !important;
+    background-position:center bottom !important;
+    background-size:100% 100% !important;
+
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 110' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 64 C120 84 215 30 350 59 C485 86 580 31 715 58 C850 84 950 30 1080 59 C1215 83 1320 32 1445 58 C1520 72 1570 66 1600 61 L1600 110 L0 110 Z'/%3E%3C/svg%3E")
+      !important;
+  }
+
+}
