@@ -56,3 +56,30 @@
   }
 
 }
+/* =========================================================
+   HOME HERO — RAISE WHITE WAVE ON TABLET / NARROW DESKTOP
+========================================================= */
+
+@media
+  (min-width:520px)
+  and (max-width:760px)
+  and (hover:hover)
+  and (pointer:fine){
+
+  .portal-home-page .hub-hero-art::after{
+    bottom:18px !important;
+    height:92px !important;
+    z-index:40 !important;
+  }
+
+}
+
+@media (min-width:761px) and (max-width:1200px){
+
+  .portal-home-page .hub-hero-art::after{
+    bottom:22px !important;
+    height:100px !important;
+    z-index:40 !important;
+  }
+
+}
