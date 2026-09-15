@@ -1,116 +1,125 @@
 /* =========================================================
-   HOME HERO — SAFE TOP BUFFER ON NARROW / TABLET SCREENS
-   Keeps full desktop untouched.
+   TEACHER HUB HOME HERO — FINAL RESPONSIVE OVERRIDES
+   ---------------------------------------------------------
+   Desktop: keeps the approved side-by-side layout.
+   Tablet/mobile: Intro → Artwork → Friendship message → Programs.
 ========================================================= */
 
 
-/* Very narrow desktop / split-screen browser */
-@media (max-width:519px){
-
-  .portal-home-page .hub-hero-art{
-    margin-top:28px !important;
-  }
-
-  .portal-home-page .hub-hero-art img{
-    margin-top:0 !important;
-  }
-
-}
-
-
-/* Narrow desktop that has switched to the mobile-style menu */
-@media
-  (min-width:520px)
-  and (max-width:760px)
-  and (hover:hover)
-  and (pointer:fine){
-
-  .portal-home-page .hub-hero-art{
-    height:clamp(420px,72vw,520px) !important;
-    min-height:420px !important;
-  }
-
-  .portal-home-page .hub-hero-art img{
-    top:28px !important;
-    bottom:auto !important;
-
-    width:min(110%,800px) !important;
-  }
-
-}
-
-
-/* Tablet / minimized desktop */
-@media (min-width:761px) and (max-width:1200px){
-
-  .portal-home-page .hub-hero-art{
-    height:clamp(470px,56vw,550px) !important;
-    min-height:470px !important;
-  }
-
-  .portal-home-page .hub-hero-art img{
-    top:30px !important;
-    bottom:auto !important;
-
-    width:min(108%,840px) !important;
-  }
-
-}
-/*
 /* =========================================================
-   HOME HERO — WAVE OVERLAPS ART ON NARROW / TABLET
+   TABLET + MOBILE
+   1200px and below
 ========================================================= */
 
-@media
-  (min-width:520px)
-  and (max-width:760px)
-  and (hover:hover)
-  and (pointer:fine){
+@media (max-width:1200px){
 
-  .portal-home-page .hub-hero-art::after{
-    bottom:82px !important;
-    height:105px !important;
-    z-index:40 !important;
+  .portal-home-page .teacher-hub-hero{
+    height:auto !important;
+    min-height:0 !important;
+    overflow:hidden !important;
+    background:#fff !important;
   }
 
-}
 
+  /* Rebuild the hero into a clean vertical sequence */
+  .portal-home-page .teacher-hub-hero-grid{
+    display:grid !important;
 
-@media (min-width:761px) and (max-width:1200px){
+    grid-template-columns:1fr !important;
+    grid-template-rows:auto auto auto !important;
 
-  .portal-home-page .hub-hero-art::after{
-    bottom:96px !important;
-    height:112px !important;
-    z-index:40 !important;
+    gap:0 !important;
+
+    height:auto !important;
+    min-height:0 !important;
+
+    padding-bottom:0 !important;
   }
 
-}
-/* =========================================================
-   HOME HERO — FORCE WAVE OVER VISIBLE ART
-   narrow desktop / tablet only
-========================================================= */
 
-@media (min-width:761px) and (max-width:1200px){
+  /*
+     The intro + friendship statement normally live
+     inside the same copy column.
 
-  /* Turn off the old wave */
-  .portal-home-page .hub-hero-art::after{
+     display:contents allows us to place them on
+     opposite sides of the artwork.
+  */
+  .portal-home-page .hub-copy-column{
+    display:contents !important;
+  }
+
+
+  /* 1 — Teacher Hub intro */
+  .portal-home-page .hub-intro{
+    grid-column:1 !important;
+    grid-row:1 !important;
+
+    margin:0 !important;
+    padding-bottom:0 !important;
+  }
+
+
+  /* 2 — Artwork */
+  .portal-home-page .hub-hero-art{
+    grid-column:1 !important;
+    grid-row:2 !important;
+
+    position:relative !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    overflow:hidden !important;
+    background:#fff !important;
+  }
+
+
+  /* 3 — Friendship statement */
+  .portal-home-page .hub-message{
+    grid-column:1 !important;
+    grid-row:3 !important;
+
+    min-height:0 !important;
+
+    margin:0 !important;
+    padding:22px 0 24px !important;
+
+    background:#fff !important;
+  }
+
+
+  /* Remove the desktop hero wave */
+  .portal-home-page .teacher-hub-hero::after{
+    content:none !important;
     display:none !important;
   }
 
-  /* Put a new wave UP over the artwork */
+
+  /* Remove any earlier replacement wave */
   .portal-home-page .hub-hero-art::before{
+    content:none !important;
+    display:none !important;
+  }
+
+
+  /*
+     One responsive wave only.
+     This sits directly over the visible artwork.
+  */
+  .portal-home-page .hub-hero-art::after{
     content:"" !important;
+    display:block !important;
 
     position:absolute !important;
     z-index:50 !important;
 
     left:50% !important;
+    right:auto !important;
 
-    /* THIS is the important part */
-    top:calc(100% - 150px) !important;
+    bottom:-1px !important;
 
-    width:100vw !important;
-    height:150px !important;
+    width:101vw !important;
+    height:82px !important;
 
     transform:translateX(-50%) !important;
 
@@ -125,30 +134,167 @@
       !important;
   }
 
-}
 
-/* Remove oatmeal strip under artwork on narrow/tablet screens */
-@media (min-width:520px) and (max-width:1200px){
+  /* Keep Start Here reasonably close to the hero */
+  .portal-home-page .program-launch{
+    margin-top:0 !important;
+    padding-top:18px !important;
 
-  .portal-home-page .teacher-hub-hero{
     background:#fff !important;
   }
 
 }
 
+
+
 /* =========================================================
-   FINAL FULL DESKTOP HERO FIX
-   Does NOT affect tablet / narrow layouts
+   TABLET / NARROW DESKTOP
+   761px – 1200px
+========================================================= */
+
+@media (min-width:761px) and (max-width:1200px){
+
+  .portal-home-page .teacher-hub-hero-grid{
+    padding-top:28px !important;
+  }
+
+
+  .portal-home-page .hub-intro{
+    padding-bottom:8px !important;
+  }
+
+
+  .portal-home-page .hub-intro p{
+    max-width:560px !important;
+  }
+
+
+  .portal-home-page .hub-hero-art{
+    height:500px !important;
+    min-height:500px !important;
+
+    margin-top:12px !important;
+  }
+
+
+  .portal-home-page .hub-hero-art img{
+    position:absolute !important;
+
+    left:50% !important;
+    right:auto !important;
+
+    top:auto !important;
+    bottom:-30px !important;
+
+    width:min(108%,840px) !important;
+    max-width:none !important;
+    height:auto !important;
+
+    margin:0 !important;
+
+    transform:translateX(-50%) !important;
+  }
+
+
+  .portal-home-page .hub-hero-art::after{
+    height:92px !important;
+  }
+
+
+  .portal-home-page .hub-message{
+    padding:22px 0 28px !important;
+  }
+
+
+  .portal-home-page .program-launch{
+    padding-top:18px !important;
+  }
+
+}
+
+
+
+/* =========================================================
+   PHONE / SMALL SCREEN
+   760px and below
+========================================================= */
+
+@media (max-width:760px){
+
+  .portal-home-page .teacher-hub-hero-grid{
+    padding-top:22px !important;
+  }
+
+
+  .portal-home-page .hub-intro{
+    padding-bottom:4px !important;
+  }
+
+
+  .portal-home-page .hub-hero-art{
+    height:clamp(300px,88vw,390px) !important;
+    min-height:0 !important;
+
+    margin-top:14px !important;
+  }
+
+
+  .portal-home-page .hub-hero-art img{
+    position:absolute !important;
+
+    left:50% !important;
+    right:auto !important;
+
+    top:auto !important;
+    bottom:-20px !important;
+
+    width:118% !important;
+    max-width:none !important;
+    height:auto !important;
+
+    margin:0 !important;
+
+    transform:translateX(-50%) !important;
+  }
+
+
+  .portal-home-page .hub-hero-art::after{
+    height:66px !important;
+  }
+
+
+  .portal-home-page .hub-message{
+    padding:18px 0 20px !important;
+  }
+
+
+  .portal-home-page .program-launch{
+    padding-top:14px !important;
+  }
+
+}
+
+
+
+/* =========================================================
+   FULL DESKTOP
+   1201px+
 ========================================================= */
 
 @media (min-width:1201px){
 
-  /* Put the artwork back down where it belongs */
+  /*
+     Drop the artwork lower into the bottom of the hero.
+  */
   .portal-home-page .hub-hero-art img{
     bottom:-72px !important;
   }
 
-  /* Bring the white wave up over the bottom of the artwork */
+
+  /*
+     Desktop keeps the original hero wave,
+     but taller so it overlaps the artwork properly.
+  */
   .portal-home-page .teacher-hub-hero::after{
     display:block !important;
     content:"" !important;
@@ -164,11 +310,11 @@
     background-size:100% 100% !important;
   }
 
-}
 
-/* Tighten space between desktop hero and Choose Your Program */
-@media (min-width:1201px){
-
+  /*
+     Remove excess white space before
+     Choose Your Program.
+  */
   .portal-home-page .program-launch{
     padding-top:28px !important;
   }
