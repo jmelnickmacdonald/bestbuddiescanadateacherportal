@@ -320,3 +320,114 @@
   }
 
 }
+
+
+/* =========================================================
+   FINAL VISUAL POLISH — TYPE + SPACING ONLY
+   Artwork/wave positioning is intentionally untouched.
+========================================================= */
+
+@media (min-width:1201px){
+  .portal-home-page .teacher-hub-hero-grid{
+    grid-template-columns:minmax(0,1fr) minmax(540px,1fr) !important;
+    column-gap:56px !important;
+    min-height:680px !important;
+    padding-top:42px !important;
+  }
+
+  .portal-home-page .hub-intro h1{
+    font-size:clamp(3.35rem,4vw,4.55rem) !important;
+    line-height:.92 !important;
+  }
+
+  .portal-home-page .hub-title-accent{
+    margin-top:16px !important;
+    margin-bottom:18px !important;
+  }
+
+  .portal-home-page .hub-intro p{
+    max-width:660px !important;
+    font-size:1.05rem !important;
+    line-height:1.6 !important;
+  }
+
+  .portal-home-page .hub-message{
+    padding-bottom:48px !important;
+  }
+
+  .portal-home-page .hub-message h2{
+    max-width:720px !important;
+    font-size:clamp(2.8rem,3.15vw,3.75rem) !important;
+    line-height:1.04 !important;
+    letter-spacing:-.025em !important;
+    margin-bottom:20px !important;
+  }
+
+  .portal-home-page .hub-message .hero-thanks{
+    font-size:.96rem !important;
+    line-height:1.5 !important;
+  }
+}
+
+@media (min-width:761px) and (max-width:1200px){
+  .portal-home-page .hub-intro h1{
+    font-size:clamp(3rem,6vw,3.75rem) !important;
+    line-height:.96 !important;
+  }
+
+  .portal-home-page .hub-intro p{
+    max-width:590px !important;
+    font-size:1rem !important;
+    line-height:1.58 !important;
+  }
+
+  .portal-home-page .hub-message{
+    padding-top:30px !important;
+    padding-bottom:34px !important;
+  }
+
+  .portal-home-page .hub-message h2{
+    max-width:620px !important;
+    font-size:clamp(2.5rem,5.1vw,3.25rem) !important;
+    line-height:1.04 !important;
+  }
+}
+
+@media (max-width:760px){
+  .portal-home-page .teacher-hub-hero-grid{
+    padding-top:30px !important;
+  }
+
+  .portal-home-page .hub-intro{
+    padding-bottom:10px !important;
+  }
+
+  .portal-home-page .hub-intro h1{
+    font-size:clamp(2.8rem,12vw,3.55rem) !important;
+    line-height:.98 !important;
+  }
+
+  .portal-home-page .hub-intro p{
+    font-size:1rem !important;
+    line-height:1.6 !important;
+  }
+
+  .portal-home-page .hub-hero-art{
+    margin-top:22px !important;
+  }
+
+  .portal-home-page .hub-message{
+    padding-top:28px !important;
+    padding-bottom:30px !important;
+  }
+
+  .portal-home-page .hub-message h2{
+    font-size:clamp(2.3rem,10.2vw,3rem) !important;
+    line-height:1.05 !important;
+    margin-bottom:16px !important;
+  }
+
+  .portal-home-page .program-launch{
+    padding-top:24px !important;
+  }
+}
