@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <meta name="description" content="Friendship Walk support for Best Buddies Canada school chapters. Find a community Walk, explore a Youth Friendship Walk, fundraising support, and official resources.">
+  <title>Friendship Walk | Best Buddies Canada Teacher Hub</title>
+
+  <link rel="stylesheet" href="portal-home.css">
+  <link rel="stylesheet" href="my-chapter.css">
+  <link rel="stylesheet" href="access.css">
+  <link rel="stylesheet" href="accessibility.css">
+
+  <script src="access.js" defer></script>
+  <script src="accessibility.js" defer></script>
+  <script src="my-chapter.js" defer></script>
+
+  <style>
+    :root{
+      --fw-purple:#5A3F98;
+      --fw-yellow:#FFD420;
+      --fw-teal:#8FD1C4;
+      --fw-orange:#F37735;
+      --fw-lilac:#9396CA;
+      --fw-ink:#211B28;
+      --fw-text:#4F4854;
+      --fw-muted:#6D6671;
+      --fw-line:#E3DFE8;
+      --fw-lavender:#EEEAF8;
+      --fw-wash:#F7F6F3;
+      --fw-yellow-soft:#FFF6C7;
+      --fw-teal-soft:#EAF7F4;
+    }
+
+    *{box-sizing:border-box}
+
+    body.friendship-walk-page{
+      margin:0;
+      background:#fff;
+      color:var(--fw-text);
+      font-family:"Poppins",Arial,sans-serif;
+      font-size:18px;
+      line-height:1.62;
+    }
+
+    .friendship-walk-page a,
+    .friendship-walk-page button,
+    .friendship-walk-page p,
+    .friendship-walk-page span,
+    .friendship-walk-page small,
+    .friendship-walk-page strong{
+      font-family:"Poppins",Arial,sans-serif;
+    }
+
+    .friendship-walk-page h1,
+    .friendship-walk-page h2,
+    .friendship-walk-page h3{
+      font-family:"League Spartan","Poppins",Arial,sans-serif;
+    }
+
+    .fw-container{
+      width:min(calc(100% - 56px),1220px);
+      margin-inline:auto;
+    }
+
+    .fw-kicker{
+      display:block;
+      color:var(--fw-purple);
+      font-size:.76rem;
+      font-weight:800;
+      letter-spacing:.075em;
+      line-height:1.2;
+      text-transform:uppercase;
+    }
+
+    .fw-button{
+      min-height:44px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:9px 15px;
+      border-radius:999px;
+      background:var(--fw-purple);
+      color:#fff;
+      font-size:.78rem;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .fw-button.yellow{
+      background:var(--fw-yellow);
+      color:var(--fw-ink);
+    }
+
+    .fw-button.light{
+      background:#fff;
+      color:var(--fw-purple);
+    }
+
+    /* Header */
+    .friendship-walk-page .portal-header{
+      border-top:5px solid var(--fw-yellow);
+      background:var(--fw-teal);
+    }
+
+    .friendship-walk-page .portal-header-inner{
+      min-height:96px;
+    }
+
+    .friendship-walk-page .portal-brand img{
+      width:84px;
+      height:74px;
+      object-fit:contain;
+    }
+
+    .friendship-walk-page .portal-nav a,
+    .friendship-walk-page .portal-lang a,
+    .friendship-walk-page .site-menu summary,
+    .friendship-walk-page .site-menu-panel a{
+      font-family:"Poppins",Arial,sans-serif !important;
+    }
+
+    /* Hero */
+    .fw-hero{
+      position:relative;
+      overflow:hidden;
+      padding:48px 0 86px;
+      background:#fff;
+    }
+
+    .fw-hero::after{
+      content:"";
+      position:absolute;
+      left:-4%;
+      right:-4%;
+      bottom:-41px;
+      height:82px;
+      border-radius:50% 50% 0 0 / 64% 64% 0 0;
+      background:var(--fw-purple);
+      transform:rotate(-.7deg);
+    }
+
+    .fw-hero-grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(330px,.55fr);
+      gap:60px;
+      align-items:end;
+    }
+
+    .fw-hero h1{
+      max-width:780px;
+      margin:8px 0 0;
+      color:var(--fw-ink);
+      font-size:clamp(3.7rem,5.6vw,5.9rem);
+      font-weight:900;
+      line-height:.88;
+      letter-spacing:-.044em;
+    }
+
+    .fw-hero h1 span{
+      display:block;
+      color:var(--fw-purple);
+    }
+
+    .fw-hero-copy p{
+      max-width:560px;
+      margin:0;
+      color:var(--fw-text);
+      font-size:1.03rem;
+      line-height:1.64;
+    }
+
+    .fw-hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:18px;
+    }
+
+    /* Three options */
+    .fw-options{
+      padding:58px 0 72px;
+      background:var(--fw-purple);
+    }
+
+    .fw-options-head{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(320px,.48fr);
+      gap:48px;
+      align-items:end;
+      margin-bottom:24px;
+    }
+
+    .fw-options .fw-kicker{color:var(--fw-yellow)}
+
+    .fw-options h2{
+      max-width:760px;
+      margin:7px 0 0;
+      color:#fff;
+      font-size:clamp(2.6rem,4vw,4rem);
+      font-weight:900;
+      line-height:.94;
+      letter-spacing:-.035em;
+    }
+
+    .fw-options-head p{
+      margin:0;
+      color:rgba(255,255,255,.84);
+      font-size:.9rem;
+      line-height:1.57;
+    }
+
+    .fw-option-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:13px;
+    }
+
+    .fw-option{
+      --accent:var(--fw-teal);
+      min-height:330px;
+      display:flex;
+      flex-direction:column;
+      padding:24px 23px 22px;
+      border-top:8px solid var(--accent);
+      border-radius:22px 22px 56px 22px;
+      background:#fff;
+    }
+
+    .fw-option.yellow{--accent:var(--fw-yellow)}
+    .fw-option.orange{--accent:var(--fw-orange)}
+
+    .fw-option-number{
+      color:var(--fw-purple);
+      font-size:.67rem;
+      font-weight:800;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+    }
+
+    .fw-option h3{
+      margin:12px 0 0;
+      color:var(--fw-ink);
+      font-size:1.8rem;
+      line-height:1;
+    }
+
+    .fw-option p{
+      margin:11px 0 0;
+      color:var(--fw-muted);
+      font-size:.86rem;
+      line-height:1.53;
+    }
+
+    .fw-option a{
+      margin-top:auto;
+      padding-top:20px;
+      color:var(--fw-purple);
+      font-size:.78rem;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    /* Youth Walk */
+    .fw-youth{
+      position:relative;
+      overflow:hidden;
+      padding:70px 0 74px;
+      background:var(--fw-teal);
+    }
+
+    .fw-youth-grid{
+      display:grid;
+      grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);
+      gap:54px;
+      align-items:start;
+    }
+
+    .fw-youth-copy h2{
+      margin:7px 0 0;
+      color:var(--fw-ink);
+      font-size:clamp(2.65rem,4vw,4.2rem);
+      font-weight:900;
+      line-height:.94;
+    }
+
+    .fw-youth-copy p{
+      max-width:520px;
+      margin:14px 0 0;
+      color:#334B47;
+      font-size:.9rem;
+      line-height:1.56;
+    }
+
+    .fw-youth-copy .fw-button{
+      margin-top:18px;
+    }
+
+    .fw-facts{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+    }
+
+    .fw-fact{
+      min-height:148px;
+      padding:19px 18px;
+      border-radius:18px 18px 42px 18px;
+      background:#fff;
+    }
+
+    .fw-fact strong{
+      display:block;
+      color:var(--fw-ink);
+      font-size:.9rem;
+      line-height:1.25;
+    }
+
+    .fw-fact p{
+      margin:7px 0 0;
+      color:var(--fw-muted);
+      font-size:.77rem;
+      line-height:1.48;
+    }
+
+    /* Fundraising */
+    .fw-fundraising{
+      padding:70px 0;
+      background:#fff;
+    }
+
+    .fw-fundraising-head{
+      max-width:810px;
+    }
+
+    .fw-fundraising h2{
+      margin:7px 0 0;
+      color:var(--fw-ink);
+      font-size:clamp(2.7rem,4vw,4.1rem);
+      font-weight:900;
+      line-height:.94;
+    }
+
+    .fw-fundraising-head > p{
+      max-width:700px;
+      margin:14px 0 0;
+      color:var(--fw-muted);
+      font-size:.92rem;
+      line-height:1.58;
+    }
+
+    .fw-fundraising-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      margin-top:27px;
+    }
+
+    .fw-fund-card{
+      padding:21px 20px;
+      border-radius:19px 19px 45px 19px;
+      background:var(--fw-wash);
+    }
+
+    .fw-fund-card:nth-child(2){background:var(--fw-yellow-soft)}
+    .fw-fund-card:nth-child(3){background:var(--fw-lavender)}
+
+    .fw-fund-card strong{
+      display:block;
+      color:var(--fw-ink);
+      font-size:.88rem;
+    }
+
+    .fw-fund-card p{
+      margin:7px 0 0;
+      color:var(--fw-muted);
+      font-size:.76rem;
+      line-height:1.47;
+    }
+
+    .fw-fund-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:20px;
+    }
+
+    /* Resources */
+    .fw-resources{
+      padding:68px 0 72px;
+      background:var(--fw-lavender);
+    }
+
+    .fw-resources-grid{
+      display:grid;
+      grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);
+      gap:52px;
+      align-items:start;
+    }
+
+    .fw-resources h2{
+      margin:7px 0 0;
+      color:var(--fw-ink);
+      font-size:clamp(2.6rem,3.7vw,3.8rem);
+      font-weight:900;
+      line-height:.94;
+    }
+
+    .fw-resources-copy p{
+      margin:13px 0 0;
+      color:var(--fw-muted);
+      font-size:.88rem;
+      line-height:1.55;
+    }
+
+    .fw-resource-list{
+      display:grid;
+      gap:8px;
+    }
+
+    .fw-resource{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:18px;
+      align-items:center;
+      padding:15px 17px;
+      border-radius:15px 15px 34px 15px;
+      background:#fff;
+      color:var(--fw-ink);
+      text-decoration:none;
+    }
+
+    .fw-resource strong{
+      display:block;
+      font-size:.82rem;
+    }
+
+    .fw-resource small{
+      display:block;
+      margin-top:2px;
+      color:var(--fw-muted);
+      font-size:.69rem;
+      line-height:1.4;
+    }
+
+    .fw-resource b{
+      color:var(--fw-purple);
+      font-size:1.1rem;
+    }
+
+    /* Community */
+    .fw-community{
+      padding:66px 0 70px;
+      background:var(--fw-yellow);
+    }
+
+    .fw-community-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(300px,.48fr);
+      gap:50px;
+      align-items:center;
+    }
+
+    .fw-community h2{
+      margin:7px 0 0;
+      color:var(--fw-ink);
+      font-size:clamp(2.6rem,3.9vw,4rem);
+      font-weight:900;
+      line-height:.94;
+    }
+
+    .fw-community p{
+      max-width:690px;
+      margin:13px 0 0;
+      color:#594D1F;
+      font-size:.9rem;
+      line-height:1.56;
+    }
+
+    .fw-community-actions{
+      display:grid;
+      gap:8px;
+    }
+
+    .fw-community-actions a{
+      min-height:48px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 15px;
+      border-radius:15px 15px 35px 15px;
+      background:#fff;
+      color:var(--fw-purple);
+      font-size:.77rem;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    /* Support */
+    .fw-support{
+      position:relative;
+      overflow:hidden;
+      padding:68px 0 72px;
+      background:var(--fw-purple);
+    }
+
+    .fw-support-card{
+      max-width:860px;
+      padding:30px;
+      border-radius:24px 24px 62px 24px;
+      background:#fff;
+    }
+
+    .fw-support-card h2{
+      margin:7px 0 0;
+      color:var(--fw-ink);
+      font-size:2.9rem;
+      line-height:.94;
+    }
+
+    .fw-support-card p{
+      max-width:700px;
+      margin:12px 0 0;
+      color:var(--fw-muted);
+      font-size:.88rem;
+      line-height:1.56;
+    }
+
+    .fw-support-card .fw-button{
+      margin-top:18px;
+    }
+
+    /* Footer */
+    .friendship-walk-page .portal-footer{
+      padding:28px 0 32px;
+      background:#fff;
+    }
+
+    .friendship-walk-page .portal-footer-inner{
+      display:flex;
+      align-items:center;
+      gap:20px;
+    }
+
+    .friendship-walk-page .portal-footer img{
+      width:62px;
+      height:58px;
+      object-fit:contain;
+    }
+
+    .friendship-walk-page .portal-footer p{
+      margin:0;
+      color:var(--fw-ink);
+      font-size:.9rem;
+    }
+
+    .friendship-walk-page .portal-footer a{
+      margin-left:auto;
+      color:var(--fw-purple);
+      font-size:.88rem;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    @media(max-width:960px){
+      .fw-option-grid,
+      .fw-fundraising-grid{
+        grid-template-columns:1fr;
+      }
+
+      .fw-hero-grid,
+      .fw-options-head,
+      .fw-youth-grid,
+      .fw-resources-grid,
+      .fw-community-grid{
+        grid-template-columns:1fr;
+      }
+
+      .fw-option{min-height:0}
+    }
+
+    @media(max-width:700px){
+      body.friendship-walk-page{font-size:17px}
+
+      .fw-container{
+        width:min(calc(100% - 32px),1220px);
+      }
+
+      .fw-hero{
+        padding-top:36px;
+      }
+
+      .fw-hero h1{
+        font-size:clamp(3rem,14vw,4.6rem);
+      }
+
+      .fw-facts{
+        grid-template-columns:1fr;
+      }
+
+      .friendship-walk-page .portal-footer-inner{
+        flex-wrap:wrap;
+      }
+
+      .friendship-walk-page .portal-footer a{
+        margin-left:0;
+      }
+    }
+  </style>
+</head>
+
+<body data-protected="true" class="access-pending friendship-walk-page">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="portal-header">
+  <div class="portal-container portal-header-inner">
+    <a class="portal-brand" href="index.html" aria-label="Best Buddies Canada Teacher Hub home">
+      <img src="assets/bb-logo-coloured.png" alt="Best Buddies Canada">
+    </a>
+
+    <div class="header-actions">
+      <nav class="portal-nav" aria-label="Main navigation">
+        <a href="calendar.html">Calendar</a>
+        <a href="resources.html" aria-current="page">Resources</a>
+        <a href="support.html">Support</a>
+      </nav>
+
+      <div class="portal-lang" aria-label="Language">
+        <a class="current" href="#" aria-current="page">EN</a>
+        <a href="fr.html" lang="fr-CA">FR</a>
+      </div>
+
+      <details class="site-menu">
+        <summary>Menu</summary>
+        <div class="site-menu-panel">
+          <a href="index.html">Teacher Hub home</a>
+          <a href="calendar.html">Program Calendar</a>
+          <a href="resources.html">Resources</a>
+          <a href="support.html">Support</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <section class="fw-hero">
+    <div class="fw-container fw-hero-grid">
+      <div>
+        <span class="fw-kicker">Friendship Walk</span>
+        <h1>Celebrate friendship <span>in a way that works.</span></h1>
+      </div>
+
+      <div class="fw-hero-copy">
+        <p>
+          Some chapters join a community Walk. Some hold a Youth Friendship Walk at school.
+          Some simply pass the invitation along to families. Pick the version that feels realistic this year.
+        </p>
+
+        <div class="fw-hero-actions">
+          <a class="fw-button yellow" href="#ways-to-take-part">See the options ↓</a>
+          <a
+            class="fw-button"
+            href="https://bestbuddiescanada.akaraisin.com/ui/FriendshipWalk2026"
+            target="_blank"
+            rel="noopener"
+          >Find a 2026 Walk →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="fw-options" id="ways-to-take-part" aria-labelledby="fw-options-title">
+    <div class="fw-container">
+
+      <div class="fw-options-head">
+        <div>
+          <span class="fw-kicker">Choose what works this year</span>
+          <h2 id="fw-options-title">There’s more than one way to take part.</h2>
+        </div>
+
+        <p>
+          You don’t have to turn the Walk into another major project.
+          Start with the option that fits your chapter, your school, and the time you have.
+        </p>
+      </div>
+
+      <div class="fw-option-grid">
+
+        <article class="fw-option">
+          <span class="fw-option-number">Option 1</span>
+          <h3>Join a community Walk</h3>
+          <p>
+            If there’s a Walk near you, your chapter can register a school team and join the celebration.
+            Community Walks are free to attend.
+          </p>
+          <a
+            href="https://bestbuddiescanada.akaraisin.com/ui/FriendshipWalk2026"
+            target="_blank"
+            rel="noopener"
+          >Find a Walk &amp; register →</a>
+        </article>
+
+        <article class="fw-option yellow">
+          <span class="fw-option-number">Option 2</span>
+          <h3>Host one at school</h3>
+          <p>
+            A Youth Friendship Walk happens during the school day and can be a chapter activity,
+            a classroom initiative, or a wider school celebration.
+          </p>
+          <a
+            href="https://bestbuddies.ca/wp-content/uploads/2025/11/2026-Youth-Friendship-Walk-Guide.pdf"
+            target="_blank"
+            rel="noopener"
+          >Open the School Youth Walk Guide →</a>
+        </article>
+
+        <article class="fw-option orange">
+          <span class="fw-option-number">Option 3</span>
+          <h3>Share it with families</h3>
+          <p>
+            No room to add another school activity? You can still send the Walk information home
+            so interested families can join a community event together.
+          </p>
+          <a
+            href="https://bestbuddiescanada.akaraisin.com/ui/FriendshipWalk2026"
+            target="_blank"
+            rel="noopener"
+          >Open the 2026 Walk page →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="fw-youth" aria-labelledby="fw-youth-title">
+    <div class="fw-container fw-youth-grid">
+
+      <div class="fw-youth-copy">
+        <span class="fw-kicker">Youth Friendship Walk</span>
+        <h2 id="fw-youth-title">If a school Walk feels like the right fit.</h2>
+        <p>
+          A Youth Walk can be kept small or opened up to the wider school.
+          The guide walks through the details, and Best Buddies has materials to help with the day.
+        </p>
+
+        <a
+          class="fw-button"
+          href="https://bestbuddies.ca/wp-content/uploads/2025/11/2026-Youth-Friendship-Walk-Guide.pdf"
+          target="_blank"
+          rel="noopener"
+        >Read the school guide →</a>
+      </div>
+
+      <div class="fw-facts">
+        <div class="fw-fact">
+          <strong>It happens at school.</strong>
+          <p>You can hold the Walk on school grounds during the school day.</p>
+        </div>
+
+        <div class="fw-fact">
+          <strong>It can match your capacity.</strong>
+          <p>Make it a chapter activity, a classroom initiative, or a school-wide event.</p>
+        </div>
+
+        <div class="fw-fact">
+          <strong>You have room on timing.</strong>
+          <p>School Youth Walks can be planned during the spring or fall Walk season.</p>
+        </div>
+
+        <div class="fw-fact">
+          <strong>There are materials to help.</strong>
+          <p>The school guide includes information about digital materials, lesson plans, Walk items, and more.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="fw-fundraising" aria-labelledby="fw-fundraising-title">
+    <div class="fw-container">
+
+      <div class="fw-fundraising-head">
+        <span class="fw-kicker">Fundraising</span>
+        <h2 id="fw-fundraising-title">Keep it manageable.</h2>
+        <p>
+          If your chapter wants to fundraise through the Walk, it doesn’t need to become a second job.
+          Sharing your team link is a simple place to start. If students want to do more, choose one idea
+          that fits naturally into the school day.
+        </p>
+      </div>
+
+      <div class="fw-fundraising-grid">
+        <div class="fw-fund-card">
+          <strong>Share the team link</strong>
+          <p>Send it to students, staff, and families who may want to join the team or make a donation.</p>
+        </div>
+
+        <div class="fw-fund-card">
+          <strong>Pick one simple idea</strong>
+          <p>A small school fundraiser can be enough. There’s no need to build a full calendar of events.</p>
+        </div>
+
+        <div class="fw-fund-card">
+          <strong>Ask for a hand</strong>
+          <p>Your Program Advisor can help with the team page, materials, fundraising ideas, or figuring out what makes sense.</p>
+        </div>
+      </div>
+
+      <div class="fw-fund-links">
+        <a
+          class="fw-button yellow"
+          href="https://bestbuddies.ca/wp-content/uploads/2025/04/2025-Fundraising-Ideas.pdf"
+          target="_blank"
+          rel="noopener"
+        >Fundraising ideas →</a>
+
+        <a
+          class="fw-button"
+          href="https://bestbuddies.ca/wp-content/uploads/2023/09/Fundraising-Manual-8.5-x-11.pdf"
+          target="_blank"
+          rel="noopener"
+        >General Fundraising Manual →</a>
+
+        <a class="fw-button light" href="buddy-board.html?filter=fundraising">
+          Ask other chapters →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="fw-resources" aria-labelledby="fw-resources-title">
+    <div class="fw-container fw-resources-grid">
+
+      <div class="fw-resources-copy">
+        <span class="fw-kicker">Official materials</span>
+        <h2 id="fw-resources-title">Everything in one place.</h2>
+        <p>
+          Start with the guide that matches what you’re doing. You don’t need to read every document.
+        </p>
+      </div>
+
+      <div class="fw-resource-list">
+
+        <a
+          class="fw-resource"
+          href="https://bestbuddiescanada.akaraisin.com/ui/FriendshipWalk2026"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>
+            <strong>2026 Friendship Walk</strong>
+            <small>Walk locations, registration, teams, and the main campaign page.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="fw-resource"
+          href="https://bestbuddies.ca/wp-content/uploads/2025/11/2026-Youth-Friendship-Walk-Guide.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>
+            <strong>School Youth Walk Guide</strong>
+            <small>For chapters and schools thinking about hosting a Walk on school grounds.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="fw-resource"
+          href="https://bestbuddies.ca/wp-content/uploads/2025/11/2026-Team-Captain-Guide-FINAL.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>
+            <strong>Team Captain Guide</strong>
+            <small>For anyone leading a registered Friendship Walk team.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+        <a
+          class="fw-resource"
+          href="https://bestbuddies.ca/helpful-resources/"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>
+            <strong>All Best Buddies Canada Walk resources</strong>
+            <small>Find the full set of current Friendship Walk materials.</small>
+          </span>
+          <b>→</b>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="fw-community" aria-labelledby="fw-community-title">
+    <div class="fw-container fw-community-grid">
+
+      <div>
+        <span class="fw-kicker">From other chapters</span>
+        <h2 id="fw-community-title">Wondering what it looked like in a real school?</h2>
+        <p>
+          The Buddy Board is where chapters can ask practical questions, share what worked,
+          and talk about what they’d change next time.
+        </p>
+      </div>
+
+      <div class="fw-community-actions">
+        <a href="buddy-board.html?filter=friendship-walk">
+          <span>Friendship Walk on Buddy Board</span>
+          <b>→</b>
+        </a>
+
+        <a href="buddy-board.html?filter=fundraising">
+          <span>Fundraising ideas from chapters</span>
+          <b>→</b>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="fw-support" aria-labelledby="fw-support-title">
+    <div class="fw-container">
+      <div class="fw-support-card">
+        <span class="fw-kicker">Not sure what makes sense?</span>
+        <h2 id="fw-support-title">Talk it through with us.</h2>
+        <p>
+          Your Program Advisor can help you choose an option that fits your school,
+          find the right materials, or get a team started without making the process heavier than it needs to be.
+        </p>
+        <a class="fw-button yellow" href="support.html">Go to Program Support →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="portal-footer">
+  <div class="portal-container portal-footer-inner">
+    <img src="assets/bb-logo-coloured.png" alt="Best Buddies Canada">
+    <p>Best Buddies Canada Teacher Hub</p>
+    <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca</a>
+  </div>
+</footer>
+
+</body>
+</html>
