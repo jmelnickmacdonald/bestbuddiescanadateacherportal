@@ -8,31 +8,36 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
 
 <style>
 :root{
   --purple:#6f2c91;
-  --purple-dark:#56206f;
-  --purple-soft:#f4edf8;
+  --purple-dark:#55206d;
+  --purple-soft:#f5eef8;
 
-  --teal:#16b8b1;
-  --teal-dark:#109790;
-  --teal-soft:#eaf9f8;
+  --teal:#18b8b1;
+  --teal-dark:#108f89;
+  --teal-soft:#e9f9f8;
 
   --yellow:#ffd43b;
-  --yellow-soft:#fff8d9;
+  --yellow-soft:#fff7d6;
 
-  --orange:#f15a29;
+  --coral:#f47b61;
+  --coral-soft:#fff0ec;
 
-  --ink:#292633;
-  --muted:#6f6977;
-  --line:#e7e2e9;
+  --ink:#252232;
+  --muted:#6e6876;
 
+  --line:#e6e1e9;
+  --bg:#f7f6f8;
   --white:#ffffff;
-  --background:#f8f7f9;
 
-  --shadow:0 18px 55px rgba(54,34,69,.10);
+  --shadow:0 15px 45px rgba(54,35,68,.08);
 }
 
 *{
@@ -45,15 +50,13 @@ html{
 
 body{
   margin:0;
-  font-family:"Poppins",Arial,sans-serif;
+  background:var(--bg);
   color:var(--ink);
-  background:var(--background);
+  font-family:"Poppins",Arial,sans-serif;
 }
 
 button,
-input,
-select,
-textarea{
+input{
   font:inherit;
 }
 
@@ -61,127 +64,153 @@ button{
   cursor:pointer;
 }
 
-a{
-  color:inherit;
-}
-
 .hidden{
   display:none !important;
 }
 
 
-/* =====================================================
+/* ======================================================
    LOGIN
-===================================================== */
+====================================================== */
 
 .login-screen{
   min-height:100vh;
   display:grid;
   place-items:center;
+
   padding:24px;
+
   background:
-    radial-gradient(circle at top left, rgba(22,184,177,.18), transparent 34%),
-    radial-gradient(circle at bottom right, rgba(111,44,145,.16), transparent 34%),
+    radial-gradient(
+      circle at 12% 15%,
+      rgba(24,184,177,.18),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 86%,
+      rgba(111,44,145,.14),
+      transparent 32%
+    ),
     #f8f7f9;
 }
 
 .login-card{
-  width:min(470px,100%);
+  width:min(460px,100%);
   background:white;
-  border-radius:28px;
+
+  border-radius:26px;
   padding:38px;
+
   box-shadow:var(--shadow);
   border:1px solid rgba(111,44,145,.08);
 }
 
 .login-logo{
-  width:165px;
-  max-width:55%;
-  margin-bottom:28px;
+  height:65px;
+  width:auto;
+  margin-bottom:22px;
 }
 
 .eyebrow{
-  font-size:.76rem;
+  font-size:.75rem;
   font-weight:800;
-  letter-spacing:.10em;
-  text-transform:uppercase;
+
   color:var(--purple);
+
+  letter-spacing:.1em;
+  text-transform:uppercase;
 }
 
 .login-card h1{
-  margin:8px 0 10px;
-  font-size:2.15rem;
+  margin:7px 0 10px;
+
+  font-size:2rem;
   line-height:1.08;
-  letter-spacing:-.03em;
+  letter-spacing:-.04em;
 }
 
 .help{
   color:var(--muted);
-  line-height:1.6;
+  line-height:1.55;
 }
 
 .error{
   color:#b3261e;
-  font-size:.88rem;
-  margin-top:12px;
+  font-size:.85rem;
+  margin-top:10px;
 }
 
 
-/* =====================================================
-   FORM BASICS
-===================================================== */
+/* ======================================================
+   HEADER
+====================================================== */
 
-.field{
-  margin:18px 0;
+.site-header{
+  height:74px;
+
+  background:var(--teal);
+  color:white;
 }
 
-label{
-  display:block;
-  font-size:.91rem;
-  font-weight:700;
-  margin-bottom:7px;
+.header-inner{
+  max-width:1200px;
+  height:100%;
+
+  margin:auto;
+  padding:0 24px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
-.optional{
-  font-weight:500;
-  color:var(--muted);
+.brand{
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
 
-input,
-select,
-textarea{
-  width:100%;
-  padding:13px 14px;
-  border:1px solid #dcd6df;
-  border-radius:12px;
+.brand-logo{
+  height:48px;
+
   background:white;
-  color:var(--ink);
-  transition:.15s ease;
+
+  border-radius:10px;
+  padding:6px 8px;
 }
 
-input:focus,
-select:focus,
-textarea:focus{
-  outline:none;
-  border-color:var(--teal);
-  box-shadow:0 0 0 4px rgba(22,184,177,.12);
+.brand-copy strong{
+  display:block;
+  font-size:1rem;
 }
 
-textarea{
-  resize:vertical;
-  min-height:110px;
+.brand-copy span{
+  display:block;
+
+  margin-top:2px;
+
+  font-size:.78rem;
+  opacity:.88;
+}
+
+.header-actions{
+  display:flex;
+  gap:8px;
 }
 
 
-/* =====================================================
+/* ======================================================
    BUTTONS
-===================================================== */
+====================================================== */
 
 .btn{
   border:0;
-  border-radius:12px;
-  padding:12px 18px;
+  border-radius:11px;
+
+  padding:11px 17px;
+
   font-weight:700;
+
   transition:.15s ease;
 }
 
@@ -209,7 +238,9 @@ textarea{
 
 .btn-light{
   background:white;
+
   color:var(--ink);
+
   border:1px solid var(--line);
 }
 
@@ -219,309 +250,353 @@ textarea{
 }
 
 .btn-small{
-  padding:9px 13px;
-  font-size:.86rem;
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-.site-header{
-  background:var(--teal);
-  color:white;
-  position:sticky;
-  top:0;
-  z-index:40;
-  box-shadow:0 2px 12px rgba(0,0,0,.06);
-}
-
-.header-inner{
-  max-width:1180px;
-  margin:auto;
-  min-height:76px;
-  padding:12px 22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-}
-
-.header-left{
-  display:flex;
-  align-items:center;
-  gap:18px;
-}
-
-.header-logo{
-  height:46px;
-  width:auto;
-  background:white;
-  padding:6px 9px;
-  border-radius:9px;
-}
-
-.header-title{
-  line-height:1.25;
-}
-
-.header-title strong{
-  display:block;
-  font-size:1rem;
-}
-
-.header-title span{
-  display:block;
-  font-size:.79rem;
-  opacity:.9;
-  margin-top:3px;
-}
-
-.header-actions{
-  display:flex;
-  gap:9px;
-}
-
-
-/* =====================================================
-   PAGE WRAPPER
-===================================================== */
-
-.page{
-  max-width:1120px;
-  margin:auto;
-  padding:38px 22px 80px;
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero{
-  position:relative;
-  overflow:hidden;
-  background:white;
-  border:1px solid var(--line);
-  border-radius:28px;
-  padding:42px 44px;
-  box-shadow:0 13px 40px rgba(45,32,55,.06);
-  margin-bottom:28px;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  width:220px;
-  height:220px;
-  border-radius:50%;
-  background:var(--yellow);
-  right:-95px;
-  top:-105px;
-  opacity:.9;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  width:125px;
-  height:125px;
-  border-radius:50%;
-  background:var(--purple);
-  right:75px;
-  bottom:-78px;
-  opacity:.08;
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:760px;
-}
-
-.hero h1{
-  font-size:clamp(2.1rem,5vw,3.5rem);
-  line-height:1.04;
-  letter-spacing:-.05em;
-  margin:8px 0 16px;
-}
-
-.hero p{
-  max-width:680px;
-  color:var(--muted);
-  line-height:1.65;
-  margin:0;
-}
-
-.hero-accent{
-  margin-top:25px;
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
-  background:var(--teal-soft);
-  color:#116f6a;
-  border-radius:999px;
   padding:9px 14px;
   font-size:.84rem;
-  font-weight:700;
 }
 
-.hero-accent-dot{
-  width:9px;
-  height:9px;
-  border-radius:50%;
+
+/* ======================================================
+   PAGE
+====================================================== */
+
+.page{
+  max-width:1180px;
+
+  margin:auto;
+
+  padding:28px 22px 50px;
+}
+
+
+/* ======================================================
+   INTRO
+====================================================== */
+
+.intro{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+
+  gap:25px;
+
+  margin-bottom:22px;
+}
+
+.intro h1{
+  margin:5px 0;
+
+  font-size:clamp(1.8rem,4vw,2.6rem);
+
+  letter-spacing:-.045em;
+  line-height:1.05;
+}
+
+.intro p{
+  max-width:690px;
+
+  margin:0;
+
+  color:var(--muted);
+
+  line-height:1.5;
+}
+
+.intro-mark{
+  flex:0 0 auto;
+
+  display:flex;
+  gap:7px;
+  align-items:flex-end;
+}
+
+.mark{
+  width:12px;
+
+  border-radius:20px;
+}
+
+.mark:nth-child(1){
+  height:34px;
+  background:var(--purple);
+}
+
+.mark:nth-child(2){
+  height:48px;
   background:var(--teal);
 }
 
+.mark:nth-child(3){
+  height:27px;
+  background:var(--yellow);
+}
 
-/* =====================================================
-   PROGRESS NAV
-===================================================== */
+.mark:nth-child(4){
+  height:40px;
+  background:var(--coral);
+}
 
-.progress-shell{
+
+/* ======================================================
+   PROGRESS
+====================================================== */
+
+.progress-wrap{
   background:white;
+
   border:1px solid var(--line);
-  border-radius:20px;
-  padding:18px 24px;
-  margin-bottom:24px;
+  border-radius:16px;
+
+  padding:14px 22px;
+  margin-bottom:14px;
 }
 
-.progress-steps{
+.progress{
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
-  position:relative;
 }
 
-.progress-steps::before{
+.progress-item{
+  position:relative;
+
+  text-align:center;
+}
+
+.progress-item:not(:last-child)::after{
   content:"";
+
   position:absolute;
-  top:19px;
-  left:16%;
-  right:16%;
+
+  top:17px;
+  left:55%;
+
+  width:90%;
   height:2px;
-  background:#e6e0e9;
+
+  background:#e8e3ea;
+
   z-index:0;
 }
 
-.progress-step{
-  text-align:center;
+.progress-circle{
   position:relative;
   z-index:1;
-}
 
-.step-circle{
-  width:40px;
-  height:40px;
+  width:35px;
+  height:35px;
+
+  margin:0 auto 5px;
+
   border-radius:50%;
-  margin:0 auto 8px;
+  border:4px solid white;
+
   display:grid;
   place-items:center;
-  background:#ece8ef;
-  color:#766f7b;
+
+  background:#eeeaf0;
+  color:#7b7480;
+
+  font-size:.8rem;
   font-weight:800;
-  border:4px solid white;
-  transition:.2s ease;
 }
 
-.progress-step.active .step-circle{
+.progress-label{
+  font-size:.76rem;
+  color:var(--muted);
+  font-weight:600;
+}
+
+.progress-item.active .progress-circle{
   background:var(--purple);
   color:white;
 }
 
-.progress-step.complete .step-circle{
+.progress-item.done .progress-circle{
   background:var(--teal);
   color:white;
 }
 
-.step-name{
-  font-size:.82rem;
-  font-weight:700;
-  color:var(--muted);
-}
-
-.progress-step.active .step-name,
-.progress-step.complete .step-name{
+.progress-item.active .progress-label,
+.progress-item.done .progress-label{
   color:var(--ink);
 }
 
 
-/* =====================================================
-   BUILDER
-===================================================== */
+/* ======================================================
+   WORKSPACE
+====================================================== */
 
-.builder-card{
-  background:white;
-  border-radius:24px;
-  border:1px solid var(--line);
-  box-shadow:0 12px 35px rgba(45,32,55,.05);
+.workspace{
+  position:relative;
+
+  min-height:620px;
+
   overflow:hidden;
+
+  background:white;
+
+  border:1px solid var(--line);
+  border-radius:22px;
+
+  box-shadow:var(--shadow);
 }
 
-.step-panel{
-  padding:34px;
+.colour-bar{
+  height:7px;
+
+  display:grid;
+
+  grid-template-columns:2fr 2fr 1fr 1fr;
 }
 
-.step-heading{
-  max-width:720px;
-  margin-bottom:28px;
+.colour-bar div:nth-child(1){
+  background:var(--purple);
 }
 
-.step-kicker{
+.colour-bar div:nth-child(2){
+  background:var(--teal);
+}
+
+.colour-bar div:nth-child(3){
+  background:var(--yellow);
+}
+
+.colour-bar div:nth-child(4){
+  background:var(--coral);
+}
+
+.step{
+  min-height:540px;
+
+  padding:30px 38px 95px;
+}
+
+.step-head{
+  margin-bottom:24px;
+}
+
+.step-number{
+  margin-bottom:4px;
+
   color:var(--purple);
-  font-size:.77rem;
+
+  font-size:.72rem;
   font-weight:800;
-  letter-spacing:.09em;
+
+  letter-spacing:.1em;
   text-transform:uppercase;
-  margin-bottom:5px;
 }
 
-.step-heading h2{
-  margin:0 0 8px;
-  font-size:1.8rem;
-  letter-spacing:-.025em;
+.step h2{
+  margin:0 0 7px;
+
+  font-size:1.7rem;
+
+  letter-spacing:-.03em;
 }
 
-.step-heading p{
+.step-head p{
   margin:0;
+
   color:var(--muted);
-  line-height:1.6;
+
+  line-height:1.5;
 }
+
+
+/* ======================================================
+   FIELDS
+====================================================== */
 
 .form-grid{
   display:grid;
+
   grid-template-columns:1fr 1fr;
-  gap:0 24px;
+
+  gap:20px 24px;
 }
 
 .full{
-  grid-column:1 / -1;
+  grid-column:1/-1;
+}
+
+.field label,
+.field-title{
+  display:block;
+
+  margin-bottom:8px;
+
+  font-size:.86rem;
+  font-weight:700;
+}
+
+.optional{
+  color:var(--muted);
+  font-weight:500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+  width:100%;
+  height:52px;
+
+  border:1px solid #ddd7e0;
+  border-radius:12px;
+
+  padding:0 14px;
+
+  color:var(--ink);
+  background:white;
+}
+
+input:focus{
+  outline:none;
+
+  border-color:var(--teal);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(24,184,177,.11);
 }
 
 
-/* =====================================================
+/* ======================================================
    CHOICE CARDS
-===================================================== */
+====================================================== */
 
 .choice-grid{
   display:grid;
+
   grid-template-columns:1fr 1fr;
-  gap:14px;
-  margin-top:10px;
+  grid-auto-rows:1fr;
+
+  gap:12px;
 }
 
 .choice-card{
   position:relative;
+
+  height:100%;
+  min-height:125px;
+
+  display:flex;
+  flex-direction:column;
+
   border:2px solid var(--line);
-  border-radius:16px;
-  padding:18px;
+  border-radius:15px;
+
+  padding:17px;
+
+  background:white;
+
   cursor:pointer;
-  transition:.16s ease;
-  background:#fff;
+
+  transition:.15s ease;
 }
 
 .choice-card:hover{
-  border-color:#c7b6d0;
+  border-color:#cbb9d5;
 }
 
 .choice-card.selected{
@@ -531,81 +606,109 @@ textarea{
 
 .choice-card input{
   position:absolute;
+
   opacity:0;
   pointer-events:none;
 }
 
 .choice-card strong{
   display:block;
-  margin-bottom:5px;
+
+  margin-bottom:6px;
+
+  font-size:.91rem;
 }
 
 .choice-card span{
-  display:block;
   color:var(--muted);
-  font-size:.84rem;
-  line-height:1.5;
+
+  font-size:.8rem;
+
+  line-height:1.45;
 }
 
 
-/* =====================================================
-   PACKAGE PREVIEW
-===================================================== */
+/* ======================================================
+   PACKAGE CHOICES
+====================================================== */
 
-.package-box{
-  border:1px solid var(--line);
-  border-radius:20px;
-  overflow:hidden;
-  margin-top:22px;
+.package-choice-grid{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+  grid-auto-rows:1fr;
+
+  gap:13px;
+
+  margin-top:17px;
 }
 
-.package-header{
-  background:var(--purple);
-  color:white;
-  padding:24px;
-}
+.package-choice{
+  position:relative;
 
-.package-header .small{
-  text-transform:uppercase;
-  font-size:.72rem;
-  letter-spacing:.08em;
-  font-weight:800;
-  opacity:.85;
-}
+  min-height:170px;
 
-.package-header h3{
-  font-size:1.45rem;
-  margin:5px 0 3px;
-}
-
-.package-header p{
-  margin:0;
-  opacity:.88;
-  font-size:.88rem;
-}
-
-.package-items{
-  padding:5px 22px;
-}
-
-.package-item{
   display:flex;
-  gap:15px;
-  padding:18px 0;
-  border-bottom:1px solid var(--line);
+  flex-direction:column;
+
+  border:2px solid var(--line);
+  border-radius:17px;
+
+  padding:19px;
+
+  background:white;
+
+  cursor:pointer;
+
+  transition:.15s ease;
 }
 
-.package-item:last-child{
-  border-bottom:0;
+.package-choice:hover{
+  border-color:#c9b9d1;
 }
 
-.package-icon{
-  width:42px;
-  height:42px;
-  border-radius:12px;
-  flex:0 0 auto;
+.package-choice.selected{
+  border-color:var(--purple);
+  background:#fbf7fd;
+}
+
+.package-check{
+  position:absolute;
+
+  right:15px;
+  top:15px;
+
+  width:25px;
+  height:25px;
+
   display:grid;
   place-items:center;
+
+  border-radius:50%;
+
+  background:#eee9f1;
+  color:transparent;
+
+  font-weight:900;
+}
+
+.package-choice.selected .package-check{
+  background:var(--purple);
+  color:white;
+}
+
+.resource-icon{
+  width:43px;
+  height:43px;
+
+  margin-bottom:14px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:12px;
+
+  font-size:.78rem;
   font-weight:800;
 }
 
@@ -621,247 +724,477 @@ textarea{
 
 .icon-yellow{
   background:var(--yellow-soft);
-  color:#8b6b00;
+  color:#896b00;
 }
 
-.package-item strong{
-  display:block;
-  margin-bottom:3px;
-}
+.package-choice strong{
+  margin-bottom:6px;
+  padding-right:25px;
 
-.package-item p{
-  margin:0;
-  color:var(--muted);
-  font-size:.84rem;
-  line-height:1.5;
-}
-
-
-/* =====================================================
-   REVIEW / EMAIL
-===================================================== */
-
-.review-grid{
-  display:grid;
-  grid-template-columns:.85fr 1.15fr;
-  gap:22px;
-}
-
-.review-card{
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:20px;
-}
-
-.review-card h3{
-  margin:0 0 14px;
-}
-
-.detail-row{
-  padding:10px 0;
-  border-bottom:1px solid var(--line);
-}
-
-.detail-row:last-child{
-  border-bottom:0;
-}
-
-.detail-label{
-  font-size:.72rem;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  font-weight:800;
-  color:var(--muted);
-  margin-bottom:3px;
-}
-
-.detail-value{
-  font-size:.93rem;
-  font-weight:600;
-}
-
-.email-preview{
-  white-space:pre-wrap;
-  line-height:1.6;
   font-size:.9rem;
-  background:#fbfafc;
-  border-radius:12px;
-  padding:17px;
-  border:1px solid var(--line);
-  max-height:480px;
-  overflow:auto;
+}
+
+.package-choice p{
+  margin:0;
+
+  color:var(--muted);
+
+  font-size:.79rem;
+  line-height:1.45;
 }
 
 
-/* =====================================================
-   ACTION FOOTER
-===================================================== */
+/* ======================================================
+   ADVISOR SUMMARY
+====================================================== */
 
-.step-actions{
+.advisor-line{
+  min-height:52px;
+
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  gap:12px;
-  padding:20px 34px;
-  border-top:1px solid var(--line);
+  justify-content:space-between;
+
+  gap:15px;
+
+  border:1px solid var(--line);
+  border-radius:12px;
+
+  padding:11px 14px;
+}
+
+.advisor-line strong{
+  display:block;
+
+  font-size:.86rem;
+}
+
+.advisor-line span{
+  display:block;
+
+  margin-top:2px;
+
+  color:var(--muted);
+
+  font-size:.75rem;
+}
+
+.toggle-row{
+  margin-top:16px;
+
+  display:flex;
+  align-items:flex-start;
+
+  gap:10px;
+
+  font-size:.82rem;
+
+  line-height:1.45;
+}
+
+.toggle-row input{
+  margin-top:3px;
+}
+
+
+/* ======================================================
+   SEND PAGE
+====================================================== */
+
+.send-grid{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:18px;
+
+  margin-bottom:18px;
+}
+
+.send-summary{
+  min-height:94px;
+
+  border:1px solid var(--line);
+  border-radius:16px;
+
+  padding:17px 19px;
+
   background:#fcfbfd;
 }
 
-.step-actions-right{
-  margin-left:auto;
+.send-summary-label{
+  margin-bottom:4px;
+
+  color:var(--muted);
+
+  font-size:.68rem;
+  font-weight:800;
+
+  text-transform:uppercase;
+  letter-spacing:.07em;
+}
+
+.send-summary-value{
+  font-size:.9rem;
+  font-weight:700;
+}
+
+.selected-resources{
   display:flex;
-  gap:10px;
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin:10px 0 18px;
+}
+
+.resource-chip{
+  display:inline-flex;
+  align-items:center;
+
+  gap:6px;
+
+  padding:8px 11px;
+
+  border-radius:999px;
+
+  background:var(--purple-soft);
+  color:var(--purple);
+
+  font-size:.73rem;
+  font-weight:700;
+}
+
+.resource-chip::before{
+  content:"✓";
 }
 
 
-/* =====================================================
-   MY DETAILS MODAL
-===================================================== */
+/* ======================================================
+   EMAIL PREVIEW
+====================================================== */
 
-.modal-backdrop{
+.message-preview{
+  overflow:hidden;
+
+  border:1px solid var(--line);
+  border-radius:17px;
+}
+
+.preview-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:12px;
+
+  padding:11px 16px;
+
+  background:#faf8fb;
+
+  border-bottom:1px solid var(--line);
+}
+
+.preview-top strong{
+  font-size:.84rem;
+}
+
+.preview-top span{
+  color:var(--muted);
+
+  font-size:.73rem;
+}
+
+.preview-body{
+  max-height:285px;
+
+  overflow:auto;
+
+  padding:19px 21px;
+
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:.87rem;
+
+  line-height:1.55;
+}
+
+.preview-body p{
+  margin:0 0 12px;
+}
+
+.preview-resource{
+  margin:10px 0;
+  padding:11px 14px;
+
+  background:#faf8fb;
+
+  border-left:4px solid var(--purple);
+  border-radius:6px;
+}
+
+.preview-resource strong{
+  color:var(--purple);
+}
+
+.preview-resource span{
+  display:block;
+
+  margin-top:3px;
+
+  color:#69636d;
+
+  font-size:.8rem;
+}
+
+
+/* ======================================================
+   STEP FOOTER
+====================================================== */
+
+.step-actions{
+  position:absolute;
+
+  left:0;
+  right:0;
+  bottom:0;
+
+  min-height:72px;
+
+  padding:13px 38px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:12px;
+
+  border-top:1px solid var(--line);
+
+  background:rgba(252,251,253,.98);
+}
+
+.action-right{
+  margin-left:auto;
+
+  display:flex;
+
+  gap:9px;
+}
+
+
+/* ======================================================
+   MODAL
+====================================================== */
+
+.modal-bg{
   position:fixed;
   inset:0;
-  background:rgba(31,25,36,.48);
+
+  z-index:100;
+
   display:grid;
   place-items:center;
+
   padding:20px;
-  z-index:100;
+
+  background:rgba(31,25,36,.48);
 }
 
 .modal{
-  width:min(560px,100%);
-  max-height:90vh;
-  overflow:auto;
+  width:min(540px,100%);
+
+  overflow:hidden;
+
   background:white;
-  border-radius:24px;
-  box-shadow:0 24px 75px rgba(20,10,30,.28);
+
+  border-radius:22px;
+
+  box-shadow:
+    0 25px 80px
+    rgba(25,10,35,.25);
 }
 
-.modal-header{
-  padding:24px 26px 15px;
+.modal-head{
+  padding:23px 25px 12px;
+
   display:flex;
-  justify-content:space-between;
   align-items:flex-start;
+  justify-content:space-between;
+
   gap:15px;
 }
 
-.modal-header h2{
-  margin:0 0 4px;
+.modal-head h2{
+  margin:3px 0 0;
+
+  font-size:1.5rem;
 }
 
 .modal-body{
-  padding:0 26px 22px;
+  padding:0 25px 20px;
 }
 
 .modal-footer{
-  padding:18px 26px;
-  border-top:1px solid var(--line);
+  padding:16px 25px;
+
   display:flex;
   justify-content:flex-end;
-  gap:10px;
+
+  gap:9px;
+
+  border-top:1px solid var(--line);
 }
 
-.close-btn{
+.modal-field{
+  margin:15px 0;
+}
+
+.modal-field label{
+  display:block;
+
+  margin-bottom:7px;
+
+  font-size:.83rem;
+  font-weight:700;
+}
+
+.close{
+  width:34px;
+  height:34px;
+
   border:0;
-  background:#f2eff4;
-  width:36px;
-  height:36px;
   border-radius:50%;
-  font-size:1.15rem;
+
+  background:#f1eef3;
+
+  font-size:1.05rem;
 }
 
 
-/* =====================================================
-   INFO CALLOUT
-===================================================== */
+/* ======================================================
+   TOAST
+====================================================== */
 
-.callout{
-  display:flex;
-  gap:13px;
-  align-items:flex-start;
-  background:var(--teal-soft);
-  border-radius:14px;
-  padding:15px 16px;
-  color:#285c59;
-  margin-top:20px;
-  font-size:.87rem;
-  line-height:1.5;
-}
+.toast{
+  position:fixed;
 
-.callout-mark{
-  width:28px;
-  height:28px;
-  border-radius:50%;
-  background:white;
-  display:grid;
-  place-items:center;
-  flex:0 0 auto;
-  font-weight:800;
-  color:var(--teal-dark);
-}
+  right:22px;
+  bottom:22px;
 
+  z-index:200;
 
-/* =====================================================
-   FOOTER
-===================================================== */
+  max-width:390px;
 
-.footer{
-  text-align:center;
-  color:var(--muted);
-  padding:30px 20px 40px;
-  font-size:.78rem;
+  padding:13px 16px;
+
+  background:var(--ink);
+  color:white;
+
+  border-radius:13px;
+
+  box-shadow:
+    0 14px 40px
+    rgba(0,0,0,.2);
+
+  font-size:.82rem;
+
+  line-height:1.4;
 }
 
 
-/* =====================================================
+/* ======================================================
    MOBILE
-===================================================== */
+====================================================== */
 
-@media(max-width:820px){
+@media(max-width:800px){
 
-  .hero{
-    padding:32px 26px;
+  .page{
+    padding:20px 12px 35px;
+  }
+
+  .intro{
+    align-items:flex-start;
+  }
+
+  .intro-mark{
+    display:none;
+  }
+
+  .brand-copy{
+    display:none;
+  }
+
+  .site-header{
+    height:66px;
+  }
+
+  .brand-logo{
+    height:43px;
+  }
+
+  .workspace{
+    min-height:0;
+  }
+
+  .step{
+    min-height:0;
+
+    padding:24px 18px 100px;
   }
 
   .form-grid,
-  .review-grid{
+  .send-grid{
     grid-template-columns:1fr;
   }
+
+  .package-choice-grid{
+    grid-template-columns:1fr;
+  }
+
+  .package-choice{
+    min-height:125px;
+  }
+
+  .step-actions{
+    position:sticky;
+
+    bottom:0;
+
+    padding:12px 18px;
+  }
+
+  .progress-wrap{
+    padding:12px 7px;
+  }
+
+  .progress-label{
+    font-size:.68rem;
+  }
+
+}
+
+@media(max-width:520px){
 
   .choice-grid{
     grid-template-columns:1fr;
   }
 
-  .header-title{
-    display:none;
+  .choice-card{
+    min-height:auto;
   }
 
-  .header-logo{
-    height:40px;
-  }
+  .header-actions .btn{
+    padding:8px 10px;
 
-  .step-panel{
-    padding:26px 20px;
-  }
-
-  .step-actions{
-    padding:18px 20px;
-  }
-
-  .progress-shell{
-    padding:15px 10px;
-  }
-
-  .step-name{
     font-size:.72rem;
   }
 
-  .progress-steps::before{
-    left:17%;
-    right:17%;
+  .action-right{
+    flex-wrap:wrap;
+    justify-content:flex-end;
   }
-}
 
+}
 </style>
 </head>
 
@@ -869,9 +1202,9 @@ textarea{
 <body>
 
 
-<!-- =====================================================
+<!-- ======================================================
      LOGIN
-===================================================== -->
+====================================================== -->
 
 <section id="loginScreen" class="login-screen">
 
@@ -893,13 +1226,20 @@ textarea{
     </h1>
 
     <p class="help">
-      Create polished, personalized getting started packages
-      for your Best Buddies school chapters.
+      Create personalized getting started packages
+      for your Best Buddies chapters.
     </p>
 
-    <div class="field">
+    <div style="margin-top:20px">
 
-      <label for="password">
+      <label
+        style="
+          display:block;
+          font-size:.85rem;
+          font-weight:700;
+          margin-bottom:7px
+        "
+      >
         Password
       </label>
 
@@ -914,26 +1254,22 @@ textarea{
 
     <button
       class="btn btn-primary"
-      style="width:100%"
+      style="width:100%;margin-top:14px"
       onclick="login()"
     >
       Continue
     </button>
 
-    <div
-      id="loginError"
-      class="error"
-    ></div>
+    <div id="loginError" class="error"></div>
 
   </div>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- ======================================================
      APP
-===================================================== -->
+====================================================== -->
 
 <div id="app" class="hidden">
 
@@ -942,16 +1278,16 @@ textarea{
 
   <div class="header-inner">
 
-    <div class="header-left">
+    <div class="brand">
 
       <img
         src="assets/bb-logo-coloured.png"
         alt="Best Buddies Canada"
-        class="header-logo"
+        class="brand-logo"
         onerror="this.style.display='none'"
       >
 
-      <div class="header-title">
+      <div class="brand-copy">
 
         <strong>
           Advisor Hub
@@ -989,61 +1325,64 @@ textarea{
 </header>
 
 
-
 <main class="page">
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- ======================================================
+     INTRO
+====================================================== -->
 
-<section class="hero">
+<section class="intro">
 
-  <div class="hero-content">
+  <div>
 
     <div class="eyebrow">
       Chapter Package Builder
     </div>
 
     <h1>
-      Create a Chapter Getting Started Package.
+      Create a Getting Started Package.
     </h1>
 
     <p>
-      Build a personalized chapter checklist, pair it with the
-      right Quick Start Guide and give your school easy access to
-      the resources they need — all in one simple package.
+      Build a personalized checklist and choose the resources
+      that will be most helpful for this chapter.
     </p>
 
-    <div class="hero-accent">
-      <span class="hero-accent-dot"></span>
-      Built for new, restarting and returning chapters
-    </div>
+  </div>
 
+
+  <div
+    class="intro-mark"
+    aria-hidden="true"
+  >
+    <div class="mark"></div>
+    <div class="mark"></div>
+    <div class="mark"></div>
+    <div class="mark"></div>
   </div>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- ======================================================
      PROGRESS
-===================================================== -->
+====================================================== -->
 
-<section class="progress-shell">
+<section class="progress-wrap">
 
-  <div class="progress-steps">
+  <div class="progress">
 
     <div
-      class="progress-step active"
+      class="progress-item active"
       id="progress1"
     >
 
-      <div class="step-circle">
+      <div class="progress-circle">
         1
       </div>
 
-      <div class="step-name">
+      <div class="progress-label">
         Chapter
       </div>
 
@@ -1051,32 +1390,32 @@ textarea{
 
 
     <div
-      class="progress-step"
+      class="progress-item"
       id="progress2"
     >
 
-      <div class="step-circle">
+      <div class="progress-circle">
         2
       </div>
 
-      <div class="step-name">
-        Personalize
+      <div class="progress-label">
+        Build Package
       </div>
 
     </div>
 
 
     <div
-      class="progress-step"
+      class="progress-item"
       id="progress3"
     >
 
-      <div class="step-circle">
+      <div class="progress-circle">
         3
       </div>
 
-      <div class="step-name">
-        Review & Send
+      <div class="progress-label">
+        Send
       </div>
 
     </div>
@@ -1086,27 +1425,33 @@ textarea{
 </section>
 
 
+<!-- ======================================================
+     WORKSPACE
+====================================================== -->
 
-<!-- =====================================================
-     BUILDER
-===================================================== -->
+<section class="workspace">
 
-<section class="builder-card">
+  <div class="colour-bar">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
 
-<!-- =====================================================
+<!-- ======================================================
      STEP 1
-===================================================== -->
+====================================================== -->
 
 <div
-  class="step-panel"
+  class="step"
   id="step1"
 >
 
-  <div class="step-heading">
+  <div class="step-head">
 
-    <div class="step-kicker">
-      Step 1
+    <div class="step-number">
+      Step 1 · Chapter
     </div>
 
     <h2>
@@ -1114,8 +1459,7 @@ textarea{
     </h2>
 
     <p>
-      Start with the basics. We’ll use these details to build
-      the right version of the package.
+      Just the basics to make sure we build the right version.
     </p>
 
   </div>
@@ -1123,14 +1467,19 @@ textarea{
 
   <div class="form-grid">
 
+
     <div class="field full">
 
-      <label for="schoolName">
+      <label
+        class="field-title"
+        for="schoolName"
+      >
         School / Chapter Name
       </label>
 
       <input
         id="schoolName"
+        type="text"
         placeholder="Hanwell Park Academy"
       >
 
@@ -1139,11 +1488,12 @@ textarea{
 
     <div class="field">
 
-      <label>
+      <div class="field-title">
         Program
-      </label>
+      </div>
 
       <div class="choice-grid">
+
 
         <label
           class="choice-card selected"
@@ -1152,7 +1502,7 @@ textarea{
 
           <input
             type="radio"
-            name="programChoice"
+            name="program"
             value="elementary"
             checked
             onchange="selectProgram('elementary')"
@@ -1176,7 +1526,7 @@ textarea{
 
           <input
             type="radio"
-            name="programChoice"
+            name="program"
             value="high"
             onchange="selectProgram('high')"
           >
@@ -1191,6 +1541,7 @@ textarea{
 
         </label>
 
+
       </div>
 
     </div>
@@ -1198,11 +1549,12 @@ textarea{
 
     <div class="field">
 
-      <label>
-        Chapter status
-      </label>
+      <div class="field-title">
+        Chapter Status
+      </div>
 
       <div class="choice-grid">
+
 
         <label
           class="choice-card selected"
@@ -1211,7 +1563,7 @@ textarea{
 
           <input
             type="radio"
-            name="statusChoice"
+            name="status"
             value="new"
             checked
             onchange="selectStatus('new')"
@@ -1222,7 +1574,7 @@ textarea{
           </strong>
 
           <span>
-            A chapter getting started or coming back after a pause.
+            A chapter getting started or returning after a pause.
           </span>
 
         </label>
@@ -1235,7 +1587,7 @@ textarea{
 
           <input
             type="radio"
-            name="statusChoice"
+            name="status"
             value="active"
             onchange="selectStatus('active')"
           >
@@ -1250,6 +1602,7 @@ textarea{
 
         </label>
 
+
       </div>
 
     </div>
@@ -1257,16 +1610,21 @@ textarea{
 
     <div class="field">
 
-      <label for="programYear">
+      <label
+        class="field-title"
+        for="programYear"
+      >
         Program Year
       </label>
 
       <input
         id="programYear"
+        type="text"
         value="2026-27"
       >
 
     </div>
+
 
   </div>
 
@@ -1280,7 +1638,7 @@ textarea{
 
   <div></div>
 
-  <div class="step-actions-right">
+  <div class="action-right">
 
     <button
       class="btn btn-primary"
@@ -1295,28 +1653,28 @@ textarea{
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      STEP 2
-===================================================== -->
+====================================================== -->
 
 <div
-  class="step-panel hidden"
+  class="step hidden"
   id="step2"
 >
 
-  <div class="step-heading">
+  <div class="step-head">
 
-    <div class="step-kicker">
-      Step 2
+    <div class="step-number">
+      Step 2 · Build Package
     </div>
 
     <h2>
-      Personalize the package.
+      Personalize what they receive.
     </h2>
 
     <p>
-      Add the school-specific details that will make the checklist
-      useful from day one.
+      Add school-specific details and choose which pieces
+      make sense for this chapter.
     </p>
 
   </div>
@@ -1324,9 +1682,13 @@ textarea{
 
   <div class="form-grid">
 
+
     <div class="field">
 
-      <label for="staffAdvisor">
+      <label
+        class="field-title"
+        for="staffAdvisor"
+      >
         Staff Advisor
         <span class="optional">
           optional
@@ -1335,6 +1697,7 @@ textarea{
 
       <input
         id="staffAdvisor"
+        type="text"
         placeholder="Kayla Gallant"
       >
 
@@ -1343,12 +1706,16 @@ textarea{
 
     <div class="field">
 
-      <label for="registrationLink">
+      <label
+        class="field-title"
+        for="registrationLink"
+      >
         School Registration Link
       </label>
 
       <input
         id="registrationLink"
+        type="text"
         placeholder="Paste current Salesforce registration link"
       >
 
@@ -1357,7 +1724,10 @@ textarea{
 
     <div class="field">
 
-      <label for="rosterLink">
+      <label
+        class="field-title"
+        for="rosterLink"
+      >
         Chapter Roster Link
         <span class="optional">
           optional
@@ -1366,6 +1736,7 @@ textarea{
 
       <input
         id="rosterLink"
+        type="text"
         placeholder="Paste roster link if applicable"
       >
 
@@ -1374,153 +1745,142 @@ textarea{
 
     <div class="field">
 
-      <label>
-        Program Advisor Contact
-      </label>
+      <div class="field-title">
+        Program Advisor
+      </div>
 
-      <div
-        class="choice-card selected"
-        style="cursor:default"
-      >
+      <div class="advisor-line">
 
-        <strong id="advisorSummaryName">
-          Add your details
-        </strong>
+        <div>
 
-        <span id="advisorSummaryContact">
-          Use “My Details” above to add your name and contact information.
-        </span>
+          <strong id="advisorSummaryName">
+            Add your details
+          </strong>
+
+          <span id="advisorSummaryContact">
+            Use My Details above.
+          </span>
+
+        </div>
+
+        <button
+          class="btn btn-light btn-small"
+          onclick="openAdvisorModal()"
+        >
+          Edit
+        </button>
 
       </div>
 
-    </div>
 
-
-    <div class="field full">
-
-      <label style="display:flex;gap:10px;align-items:flex-start">
+      <label class="toggle-row">
 
         <input
           id="showAdvisor"
           type="checkbox"
           checked
-          style="width:auto;margin-top:3px"
         >
 
         <span>
-          Show my direct contact information on the school’s checklist
+          Show my direct contact information on the school checklist.
         </span>
 
       </label>
 
     </div>
 
+
   </div>
 
 
-  <div class="package-box">
+  <div
+    class="field-title"
+    style="margin-top:20px"
+  >
+    What should this package include?
+  </div>
 
-    <div class="package-header">
 
-      <div class="small">
-        Your Package
+  <div class="package-choice-grid">
+
+
+    <div
+      class="package-choice selected"
+      id="includeChecklistCard"
+      onclick="togglePackageItem('checklist')"
+    >
+
+      <div class="package-check">
+        ✓
       </div>
 
-      <h3 id="packageTitleStep2">
-        School Getting Started Package
-      </h3>
+      <div class="resource-icon icon-purple">
+        ✓
+      </div>
+
+      <strong>
+        Personalized Chapter Checklist
+      </strong>
 
       <p>
-        These pieces will be included automatically.
+        School-specific steps, clickable checkboxes,
+        registration information and helpful links.
       </p>
 
     </div>
 
 
-    <div class="package-items">
+    <div
+      class="package-choice selected"
+      id="includeQuickStartCard"
+      onclick="togglePackageItem('quickStart')"
+    >
 
-
-      <div class="package-item">
-
-        <div class="package-icon icon-purple">
-          ✓
-        </div>
-
-        <div>
-
-          <strong>
-            Personalized Chapter Checklist
-          </strong>
-
-          <p>
-            A school-specific checklist with clickable boxes,
-            registration information and helpful links.
-          </p>
-
-        </div>
-
+      <div class="package-check">
+        ✓
       </div>
 
-
-      <div class="package-item">
-
-        <div class="package-icon icon-teal">
-          QS
-        </div>
-
-        <div>
-
-          <strong id="quickStartNameStep2">
-            Quick Start Guide
-          </strong>
-
-          <p>
-            Practical guidance for getting the chapter underway
-            and finding a rhythm that works.
-          </p>
-
-        </div>
-
+      <div class="resource-icon icon-teal">
+        QS
       </div>
 
+      <strong id="quickStartCardName">
+        Quick Start Guide
+      </strong>
 
-      <div class="package-item">
-
-        <div class="package-icon icon-yellow">
-          R
-        </div>
-
-        <div>
-
-          <strong>
-            Best Buddies Resource Library
-          </strong>
-
-          <p>
-            Activity ideas, recruitment materials, program guidance,
-            inclusive resources, fundraising tools and more.
-          </p>
-
-        </div>
-
-      </div>
-
+      <p>
+        Practical guidance for getting the chapter underway
+        and finding a rhythm that works.
+      </p>
 
     </div>
 
-  </div>
 
+    <div
+      class="package-choice selected"
+      id="includeResourcesCard"
+      onclick="togglePackageItem('resources')"
+    >
 
-  <div class="callout">
+      <div class="package-check">
+        ✓
+      </div>
 
-    <div class="callout-mark">
-      i
+      <div class="resource-icon icon-yellow">
+        R
+      </div>
+
+      <strong>
+        Resource Library
+      </strong>
+
+      <p>
+        Activity ideas, recruitment materials, program guidance,
+        fundraising tools and more.
+      </p>
+
     </div>
 
-    <div>
-      The correct Quick Start Guide and Resource Library are selected
-      automatically based on the program you chose.
-    </div>
 
   </div>
 
@@ -1539,13 +1899,13 @@ textarea{
     ← Back
   </button>
 
-  <div class="step-actions-right">
+  <div class="action-right">
 
     <button
       class="btn btn-primary"
       onclick="goToStep(3)"
     >
-      Review Package →
+      Review & Send →
     </button>
 
   </div>
@@ -1554,28 +1914,27 @@ textarea{
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      STEP 3
-===================================================== -->
+====================================================== -->
 
 <div
-  class="step-panel hidden"
+  class="step hidden"
   id="step3"
 >
 
-  <div class="step-heading">
+  <div class="step-head">
 
-    <div class="step-kicker">
-      Step 3
+    <div class="step-number">
+      Step 3 · Send
     </div>
 
     <h2>
-      Review and send.
+      Everything looks good.
     </h2>
 
     <p>
-      Add the recipient, preview the package and open the finished
-      message directly in Outlook.
+      Add the recipient, take a quick look and send it through Outlook.
     </p>
 
   </div>
@@ -1583,14 +1942,19 @@ textarea{
 
   <div class="form-grid">
 
+
     <div class="field">
 
-      <label for="recipientName">
+      <label
+        class="field-title"
+        for="recipientName"
+      >
         Recipient First Name
       </label>
 
       <input
         id="recipientName"
+        type="text"
         placeholder="Kayla"
         oninput="buildPackage()"
       >
@@ -1600,7 +1964,10 @@ textarea{
 
     <div class="field">
 
-      <label for="recipientEmail">
+      <label
+        class="field-title"
+        for="recipientEmail"
+      >
         Recipient Email
       </label>
 
@@ -1612,124 +1979,81 @@ textarea{
 
     </div>
 
+
   </div>
 
 
-  <div class="review-grid">
+  <div class="send-grid">
 
 
-    <div class="review-card">
+    <div class="send-summary">
 
-      <h3>
-        Package Preview
-      </h3>
+      <div>
 
-
-      <div class="detail-row">
-
-        <div class="detail-label">
-          School
+        <div class="send-summary-label">
+          Chapter
         </div>
 
         <div
-          class="detail-value"
+          class="send-summary-value"
           id="reviewSchool"
         ></div>
 
       </div>
 
+    </div>
 
-      <div class="detail-row">
 
-        <div class="detail-label">
-          Program
+    <div class="send-summary">
+
+      <div>
+
+        <div class="send-summary-label">
+          Email Subject
         </div>
 
         <div
-          class="detail-value"
-          id="reviewProgram"
+          class="send-summary-value"
+          id="reviewSubject"
         ></div>
-
-      </div>
-
-
-      <div class="detail-row">
-
-        <div class="detail-label">
-          Chapter Status
-        </div>
-
-        <div
-          class="detail-value"
-          id="reviewStatus"
-        ></div>
-
-      </div>
-
-
-      <div class="detail-row">
-
-        <div class="detail-label">
-          Program Year
-        </div>
-
-        <div
-          class="detail-value"
-          id="reviewYear"
-        ></div>
-
-      </div>
-
-
-      <div class="detail-row">
-
-        <div class="detail-label">
-          Included
-        </div>
-
-        <div class="detail-value">
-          Personalized Checklist<br>
-          Quick Start Guide<br>
-          Best Buddies Resource Library
-        </div>
-
-      </div>
-
-
-      <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px">
-
-        <button
-          class="btn btn-soft btn-small"
-          onclick="previewChecklist()"
-        >
-          Preview Checklist
-        </button>
-
-        <button
-          class="btn btn-light btn-small"
-          onclick="copyChecklist()"
-        >
-          Copy Checklist Link
-        </button>
 
       </div>
 
     </div>
 
 
-    <div class="review-card">
+  </div>
 
-      <h3>
+
+  <div class="field-title">
+    Included in this package
+  </div>
+
+
+  <div
+    class="selected-resources"
+    id="selectedResources"
+  ></div>
+
+
+  <div class="message-preview">
+
+    <div class="preview-top">
+
+      <strong>
         Email Preview
-      </h3>
+      </strong>
 
-      <div
-        id="emailPreview"
-        class="email-preview"
-      ></div>
+      <span>
+        Links will appear as clean clickable text
+      </span>
 
     </div>
 
+    <div
+      class="preview-body"
+      id="emailPreview"
+    ></div>
 
   </div>
 
@@ -1749,20 +2073,28 @@ textarea{
   </button>
 
 
-  <div class="step-actions-right">
+  <div class="action-right">
+
+    <button
+      class="btn btn-light"
+      onclick="previewChecklist()"
+      id="previewChecklistButton"
+    >
+      Preview Checklist
+    </button>
 
     <button
       class="btn btn-soft"
-      onclick="copyEmail()"
+      onclick="copyPolishedEmail()"
     >
       Copy Email
     </button>
 
     <button
       class="btn btn-teal"
-      onclick="openOutlook()"
+      onclick="copyAndOpenOutlook()"
     >
-      Open in Outlook
+      Copy + Open Outlook
     </button>
 
   </div>
@@ -1773,30 +2105,26 @@ textarea{
 </section>
 
 
-<div class="footer">
-  Best Buddies Canada · Advisor Hub
-</div>
-
-
 </main>
 
 </div>
 
 
 
-<!-- =====================================================
-     MY DETAILS MODAL
-===================================================== -->
+<!-- ======================================================
+     ADVISOR MODAL
+====================================================== -->
 
 <div
   id="advisorModal"
-  class="modal-backdrop hidden"
-  onclick="closeModalFromBackdrop(event)"
+  class="modal-bg hidden"
+  onclick="closeModalBackdrop(event)"
 >
 
   <div class="modal">
 
-    <div class="modal-header">
+
+    <div class="modal-head">
 
       <div>
 
@@ -1808,15 +2136,18 @@ textarea{
           My Details
         </h2>
 
-        <div class="help">
-          Save these once and they’ll be used automatically in your packages.
-        </div>
+        <p
+          class="help"
+          style="margin:5px 0 0;font-size:.84rem"
+        >
+          Save these once and they’ll be used automatically.
+        </p>
 
       </div>
 
 
       <button
-        class="close-btn"
+        class="close"
         onclick="closeAdvisorModal()"
         aria-label="Close"
       >
@@ -1828,7 +2159,8 @@ textarea{
 
     <div class="modal-body">
 
-      <div class="field">
+
+      <div class="modal-field">
 
         <label for="advisorName">
           Name
@@ -1836,13 +2168,14 @@ textarea{
 
         <input
           id="advisorName"
+          type="text"
           placeholder="Julianna Melnick-MacDonald"
         >
 
       </div>
 
 
-      <div class="field">
+      <div class="modal-field">
 
         <label for="advisorTitle">
           Title
@@ -1850,13 +2183,14 @@ textarea{
 
         <input
           id="advisorTitle"
+          type="text"
           placeholder="Program Advisor, Eastern Canada"
         >
 
       </div>
 
 
-      <div class="field">
+      <div class="modal-field">
 
         <label for="advisorEmail">
           Email
@@ -1871,7 +2205,7 @@ textarea{
       </div>
 
 
-      <div class="field">
+      <div class="modal-field">
 
         <label for="advisorPhone">
           Phone
@@ -1879,10 +2213,12 @@ textarea{
 
         <input
           id="advisorPhone"
+          type="text"
           placeholder="416-531-0003 ext. 5300"
         >
 
       </div>
+
 
     </div>
 
@@ -1900,10 +2236,11 @@ textarea{
         class="btn btn-primary"
         onclick="saveAdvisor()"
       >
-        Save My Details
+        Save Details
       </button>
 
     </div>
+
 
   </div>
 
@@ -1911,11 +2248,18 @@ textarea{
 
 
 
+<div
+  id="toast"
+  class="toast hidden"
+></div>
+
+
+
 <script>
 
-/* =====================================================
+/* ======================================================
    CONFIG
-===================================================== */
+====================================================== */
 
 const PASSWORD =
   "BestBuddiesAdvisor2026";
@@ -1944,27 +2288,51 @@ const QUICK_START_GUIDES = {
 
 
 let currentStep = 1;
-let selectedProgram = "elementary";
-let selectedStatus = "new";
 
-let currentChecklist = "";
-let currentEmail = "";
-let currentSubject = "";
+let selectedProgram =
+  "elementary";
+
+let selectedStatus =
+  "new";
 
 
-/* =====================================================
+const packageItems = {
+
+  checklist:true,
+  quickStart:true,
+  resources:true
+
+};
+
+
+let currentChecklist =
+  "";
+
+let currentSubject =
+  "";
+
+let currentPlainEmail =
+  "";
+
+let currentHtmlEmail =
+  "";
+
+
+/* ======================================================
    LOGIN
-===================================================== */
+====================================================== */
 
 function login(){
 
-  const value =
+  const password =
     document
       .getElementById("password")
       .value;
 
 
-  if(value === PASSWORD){
+  if(
+    password === PASSWORD
+  ){
 
     sessionStorage.setItem(
       "bbAdvisorAccess",
@@ -1976,7 +2344,9 @@ function login(){
   }else{
 
     document
-      .getElementById("loginError")
+      .getElementById(
+        "loginError"
+      )
       .textContent =
       "That password didn't work.";
 
@@ -1999,13 +2369,19 @@ function logout(){
 function showApp(){
 
   document
-    .getElementById("loginScreen")
-    .classList.add("hidden");
+    .getElementById(
+      "loginScreen"
+    )
+    .classList
+    .add("hidden");
 
 
   document
-    .getElementById("app")
-    .classList.remove("hidden");
+    .getElementById(
+      "app"
+    )
+    .classList
+    .remove("hidden");
 
 
   loadAdvisor();
@@ -2013,15 +2389,18 @@ function showApp(){
 }
 
 
-/* =====================================================
+/* ======================================================
    ADVISOR PROFILE
-===================================================== */
+====================================================== */
 
 function openAdvisorModal(){
 
   document
-    .getElementById("advisorModal")
-    .classList.remove("hidden");
+    .getElementById(
+      "advisorModal"
+    )
+    .classList
+    .remove("hidden");
 
 }
 
@@ -2029,16 +2408,20 @@ function openAdvisorModal(){
 function closeAdvisorModal(){
 
   document
-    .getElementById("advisorModal")
-    .classList.add("hidden");
+    .getElementById(
+      "advisorModal"
+    )
+    .classList
+    .add("hidden");
 
 }
 
 
-function closeModalFromBackdrop(event){
+function closeModalBackdrop(event){
 
   if(
-    event.target.id === "advisorModal"
+    event.target.id ===
+    "advisorModal"
   ){
 
     closeAdvisorModal();
@@ -2048,40 +2431,56 @@ function closeModalFromBackdrop(event){
 }
 
 
-function saveAdvisor(){
+function getAdvisor(){
 
-  const profile = {
+  return{
 
     name:
       document
-        .getElementById("advisorName")
+        .getElementById(
+          "advisorName"
+        )
         .value
         .trim(),
 
     title:
       document
-        .getElementById("advisorTitle")
+        .getElementById(
+          "advisorTitle"
+        )
         .value
         .trim(),
 
     email:
       document
-        .getElementById("advisorEmail")
+        .getElementById(
+          "advisorEmail"
+        )
         .value
         .trim(),
 
     phone:
       document
-        .getElementById("advisorPhone")
+        .getElementById(
+          "advisorPhone"
+        )
         .value
         .trim()
 
   };
 
+}
+
+
+function saveAdvisor(){
+
+  const advisor =
+    getAdvisor();
+
 
   localStorage.setItem(
     "bbAdvisorProfile",
-    JSON.stringify(profile)
+    JSON.stringify(advisor)
   );
 
 
@@ -2089,16 +2488,21 @@ function saveAdvisor(){
 
   closeAdvisorModal();
 
+  showToast(
+    "Advisor details saved."
+  );
+
 }
 
 
 function loadAdvisor(){
 
-  let profile = {};
+  let advisor = {};
+
 
   try{
 
-    profile =
+    advisor =
       JSON.parse(
         localStorage.getItem(
           "bbAdvisorProfile"
@@ -2107,69 +2511,44 @@ function loadAdvisor(){
 
   }catch(error){
 
-    profile = {};
+    advisor = {};
 
   }
 
 
-  document.getElementById(
-    "advisorName"
-  ).value =
-    profile.name || "";
+  document
+    .getElementById(
+      "advisorName"
+    )
+    .value =
+    advisor.name || "";
 
 
-  document.getElementById(
-    "advisorTitle"
-  ).value =
-    profile.title || "";
+  document
+    .getElementById(
+      "advisorTitle"
+    )
+    .value =
+    advisor.title || "";
 
 
-  document.getElementById(
-    "advisorEmail"
-  ).value =
-    profile.email || "";
+  document
+    .getElementById(
+      "advisorEmail"
+    )
+    .value =
+    advisor.email || "";
 
 
-  document.getElementById(
-    "advisorPhone"
-  ).value =
-    profile.phone || "";
+  document
+    .getElementById(
+      "advisorPhone"
+    )
+    .value =
+    advisor.phone || "";
 
 
   updateAdvisorSummary();
-
-}
-
-
-function getAdvisor(){
-
-  return {
-
-    name:
-      document
-        .getElementById("advisorName")
-        .value
-        .trim(),
-
-    title:
-      document
-        .getElementById("advisorTitle")
-        .value
-        .trim(),
-
-    email:
-      document
-        .getElementById("advisorEmail")
-        .value
-        .trim(),
-
-    phone:
-      document
-        .getElementById("advisorPhone")
-        .value
-        .trim()
-
-  };
 
 }
 
@@ -2180,55 +2559,60 @@ function updateAdvisorSummary(){
     getAdvisor();
 
 
-  document.getElementById(
-    "advisorSummaryName"
-  ).textContent =
+  document
+    .getElementById(
+      "advisorSummaryName"
+    )
+    .textContent =
     advisor.name ||
-    "Add your advisor details";
+    "Add your details";
 
 
-  let contact = [];
+  const pieces = [];
 
 
   if(advisor.title){
-    contact.push(advisor.title);
+    pieces.push(
+      advisor.title
+    );
   }
 
 
   if(advisor.email){
-    contact.push(advisor.email);
+    pieces.push(
+      advisor.email
+    );
   }
 
 
-  if(advisor.phone){
-    contact.push(advisor.phone);
-  }
-
-
-  document.getElementById(
-    "advisorSummaryContact"
-  ).textContent =
-    contact.length
-      ? contact.join(" · ")
-      : "Use “My Details” above to add your name and contact information.";
+  document
+    .getElementById(
+      "advisorSummaryContact"
+    )
+    .textContent =
+    pieces.length
+      ? pieces.join(" · ")
+      : "Use My Details above.";
 
 }
 
 
-/* =====================================================
-   PROGRAM / STATUS SELECTION
-===================================================== */
+/* ======================================================
+   SELECTORS
+====================================================== */
 
 function selectProgram(value){
 
-  selectedProgram = value;
+  selectedProgram =
+    value;
 
 
   document
     .getElementById(
       "programElementaryCard"
     )
-    .classList.toggle(
+    .classList
+    .toggle(
       "selected",
       value === "elementary"
     );
@@ -2238,27 +2622,30 @@ function selectProgram(value){
     .getElementById(
       "programHighCard"
     )
-    .classList.toggle(
+    .classList
+    .toggle(
       "selected",
       value === "high"
     );
 
 
-  updatePackageNames();
+  updateQuickStartName();
 
 }
 
 
 function selectStatus(value){
 
-  selectedStatus = value;
+  selectedStatus =
+    value;
 
 
   document
     .getElementById(
       "statusNewCard"
     )
-    .classList.toggle(
+    .classList
+    .toggle(
       "selected",
       value === "new"
     );
@@ -2268,7 +2655,8 @@ function selectStatus(value){
     .getElementById(
       "statusActiveCard"
     )
-    .classList.toggle(
+    .classList
+    .toggle(
       "selected",
       value === "active"
     );
@@ -2276,20 +2664,76 @@ function selectStatus(value){
 }
 
 
-/* =====================================================
+function updateQuickStartName(){
+
+  document
+    .getElementById(
+      "quickStartCardName"
+    )
+    .textContent =
+
+    selectedProgram ===
+    "elementary"
+
+      ? "Elementary & Middle Quick Start Guide"
+
+      : "High School Quick Start Guide";
+
+}
+
+
+/* ======================================================
+   PACKAGE TOGGLES
+====================================================== */
+
+function togglePackageItem(item){
+
+  packageItems[item] =
+    !packageItems[item];
+
+
+  const ids = {
+
+    checklist:
+      "includeChecklistCard",
+
+    quickStart:
+      "includeQuickStartCard",
+
+    resources:
+      "includeResourcesCard"
+
+  };
+
+
+  document
+    .getElementById(
+      ids[item]
+    )
+    .classList
+    .toggle(
+      "selected",
+      packageItems[item]
+    );
+
+}
+
+
+/* ======================================================
    STEP NAVIGATION
-===================================================== */
+====================================================== */
 
 function goToStep(step){
 
   if(
-    step > currentStep &&
-    currentStep === 1
+    step === 2
   ){
 
     const school =
       document
-        .getElementById("schoolName")
+        .getElementById(
+          "schoolName"
+        )
         .value
         .trim();
 
@@ -2308,21 +2752,38 @@ function goToStep(step){
 
 
   if(
-    step > currentStep &&
-    currentStep === 2
+    step === 3
   ){
 
     const advisor =
       getAdvisor();
 
 
-    if(!advisor.name){
-
-      alert(
-        "Please add your advisor details before continuing."
-      );
+    if(
+      !advisor.name ||
+      !advisor.email
+    ){
 
       openAdvisorModal();
+
+      showToast(
+        "Add your advisor name and email before continuing."
+      );
+
+      return;
+
+    }
+
+
+    if(
+      !packageItems.checklist &&
+      !packageItems.quickStart &&
+      !packageItems.resources
+    ){
+
+      alert(
+        "Choose at least one item to include in the package."
+      );
 
       return;
 
@@ -2331,193 +2792,122 @@ function goToStep(step){
   }
 
 
-  currentStep = step;
+  currentStep =
+    step;
 
 
-  [1,2,3].forEach(number=>{
+  [1,2,3].forEach(
+    number => {
 
-    document
-      .getElementById(
-        "step" + number
-      )
-      .classList.toggle(
-        "hidden",
-        number !== step
-      );
+      document
+        .getElementById(
+          "step" + number
+        )
+        .classList
+        .toggle(
+          "hidden",
+          number !== step
+        );
 
 
-    document
-      .getElementById(
-        "actions" + number
-      )
-      .classList.toggle(
-        "hidden",
-        number !== step
-      );
+      document
+        .getElementById(
+          "actions" + number
+        )
+        .classList
+        .toggle(
+          "hidden",
+          number !== step
+        );
 
-  });
+    }
+  );
 
 
   updateProgress();
 
 
-  if(step === 2){
-
-    updatePackageNames();
-
-  }
-
-
-  if(step === 3){
+  if(
+    step === 3
+  ){
 
     buildPackage();
 
   }
 
-
-  window.scrollTo({
-    top:200,
-    behavior:"smooth"
-  });
-
 }
 
+
+/* ======================================================
+   PROGRESS
+====================================================== */
 
 function updateProgress(){
 
-  [1,2,3].forEach(number=>{
+  [1,2,3].forEach(
+    number => {
 
-    const item =
-      document.getElementById(
-        "progress" + number
-      );
-
-
-    item.classList.remove(
-      "active",
-      "complete"
-    );
+      const item =
+        document
+          .getElementById(
+            "progress" + number
+          );
 
 
-    if(number < currentStep){
+      item
+        .classList
+        .remove(
+          "active",
+          "done"
+        );
 
-      item.classList.add(
-        "complete"
-      );
 
-    }else if(
-      number === currentStep
-    ){
+      if(
+        number <
+        currentStep
+      ){
 
-      item.classList.add(
-        "active"
-      );
+        item
+          .classList
+          .add("done");
+
+      }else if(
+        number ===
+        currentStep
+      ){
+
+        item
+          .classList
+          .add("active");
+
+      }
 
     }
-
-  });
-
-}
-
-
-/* =====================================================
-   PACKAGE DISPLAY
-===================================================== */
-
-function updatePackageNames(){
-
-  const school =
-    document
-      .getElementById("schoolName")
-      .value
-      .trim() ||
-    "Your School";
-
-
-  document.getElementById(
-    "packageTitleStep2"
-  ).textContent =
-    `${school} Getting Started Package`;
-
-
-  document.getElementById(
-    "quickStartNameStep2"
-  ).textContent =
-    selectedProgram === "elementary"
-      ? "Elementary & Middle School Quick Start Guide"
-      : "High School Quick Start Guide";
+  );
 
 }
 
 
-/* =====================================================
-   BUILD PACKAGE
-===================================================== */
+/* ======================================================
+   BUILD CHECKLIST
+====================================================== */
 
-function buildPackage(){
-
-  const school =
-    document
-      .getElementById("schoolName")
-      .value
-      .trim();
-
-
-  const year =
-    document
-      .getElementById("programYear")
-      .value
-      .trim();
-
-
-  const staff =
-    document
-      .getElementById("staffAdvisor")
-      .value
-      .trim();
-
-
-  const registration =
-    document
-      .getElementById("registrationLink")
-      .value
-      .trim();
-
-
-  const roster =
-    document
-      .getElementById("rosterLink")
-      .value
-      .trim();
-
-
-  const showAdvisor =
-    document
-      .getElementById("showAdvisor")
-      .checked;
-
+function buildChecklistUrl(){
 
   const advisor =
     getAdvisor();
-
-
-  const resourceFolder =
-    RESOURCE_FOLDERS[
-      selectedProgram
-    ];
-
-
-  const quickStart =
-    QUICK_START_GUIDES[
-      selectedProgram
-    ];
 
 
   const params =
     new URLSearchParams({
 
       school:
-        school,
+        document
+          .getElementById(
+            "schoolName"
+          )
+          .value
+          .trim(),
 
       program:
         selectedProgram,
@@ -2526,16 +2916,36 @@ function buildPackage(){
         selectedStatus,
 
       year:
-        year,
+        document
+          .getElementById(
+            "programYear"
+          )
+          .value
+          .trim(),
 
       staff:
-        staff,
+        document
+          .getElementById(
+            "staffAdvisor"
+          )
+          .value
+          .trim(),
 
       registration:
-        registration,
+        document
+          .getElementById(
+            "registrationLink"
+          )
+          .value
+          .trim(),
 
       roster:
-        roster,
+        document
+          .getElementById(
+            "rosterLink"
+          )
+          .value
+          .trim(),
 
       advisor:
         advisor.name,
@@ -2550,72 +2960,58 @@ function buildPackage(){
         advisor.phone,
 
       showAdvisor:
-        showAdvisor
+        document
+          .getElementById(
+            "showAdvisor"
+          )
+          .checked
           ? "1"
           : "0",
 
       resourceFolder:
-        resourceFolder
+        RESOURCE_FOLDERS[
+          selectedProgram
+        ]
 
     });
 
 
-  currentChecklist =
-
+  return(
     new URL(
       "chapter-checklist.html",
       window.location.href
-    ).href +
+    ).href
+    +
+    "?"
+    +
+    params.toString()
+  );
 
-    "?" +
-
-    params.toString();
-
-
-  /* ---------------------------------------------
-     REVIEW DETAILS
-  --------------------------------------------- */
+}
 
 
-  document.getElementById(
-    "reviewSchool"
-  ).textContent =
-    school;
+/* ======================================================
+   BUILD PACKAGE
+====================================================== */
+
+function buildPackage(){
+
+  const school =
+    document
+      .getElementById(
+        "schoolName"
+      )
+      .value
+      .trim();
 
 
-  document.getElementById(
-    "reviewProgram"
-  ).textContent =
-
-    selectedProgram ===
-    "elementary"
-
-      ? "Elementary & Middle School"
-
-      : "High School";
-
-
-  document.getElementById(
-    "reviewStatus"
-  ).textContent =
-
-    selectedStatus ===
-    "new"
-
-      ? "New / Restarting Chapter"
-
-      : "Existing / Active Chapter";
-
-
-  document.getElementById(
-    "reviewYear"
-  ).textContent =
-    year;
-
-
-  /* ---------------------------------------------
-     EMAIL
-  --------------------------------------------- */
+  const year =
+    document
+      .getElementById(
+        "programYear"
+      )
+      .value
+      .trim();
 
 
   const recipientName =
@@ -2627,59 +3023,352 @@ function buildPackage(){
       .trim();
 
 
+  const advisor =
+    getAdvisor();
+
+
+  const quickStart =
+    QUICK_START_GUIDES[
+      selectedProgram
+    ];
+
+
+  const resourceFolder =
+    RESOURCE_FOLDERS[
+      selectedProgram
+    ];
+
+
+  currentChecklist =
+    buildChecklistUrl();
+
+
+  currentSubject =
+
+    selectedStatus === "new"
+
+      ? `Getting Started with Best Buddies | ${school}`
+
+      : `Best Buddies ${year} | ${school}`;
+
+
   const greeting =
 
     recipientName
 
-      ? `Hi ${recipientName},`
+      ? `Hi ${escapeHtml(recipientName)},`
 
       : "Hi there,";
 
 
-  const programLabel =
+  const quickStartTitle =
 
     selectedProgram ===
     "elementary"
 
-      ? "Elementary & Middle School"
+      ? "Elementary & Middle School Quick Start Guide"
 
-      : "High School";
+      : "High School Quick Start Guide";
+
+
+  /* ----------------------------------------
+     Build selected resource chips
+  ---------------------------------------- */
+
+  const chips = [];
 
 
   if(
-    selectedStatus === "new"
+    packageItems.checklist
   ){
 
-    currentSubject =
-      `Getting Started with Best Buddies | ${school}`;
-
-  }else{
-
-    currentSubject =
-      `Best Buddies ${year} | ${school}`;
+    chips.push(
+      "Chapter Checklist"
+    );
 
   }
 
 
-  currentEmail =
-`${greeting}
+  if(
+    packageItems.quickStart
+  ){
+
+    chips.push(
+      "Quick Start Guide"
+    );
+
+  }
+
+
+  if(
+    packageItems.resources
+  ){
+
+    chips.push(
+      "Resource Library"
+    );
+
+  }
+
+
+  document
+    .getElementById(
+      "selectedResources"
+    )
+    .innerHTML =
+    chips
+      .map(
+        chip =>
+          `<div class="resource-chip">${escapeHtml(chip)}</div>`
+      )
+      .join("");
+
+
+  document
+    .getElementById(
+      "reviewSchool"
+    )
+    .textContent =
+    school;
+
+
+  document
+    .getElementById(
+      "reviewSubject"
+    )
+    .textContent =
+    currentSubject;
+
+
+  /* ----------------------------------------
+     Rich email sections
+  ---------------------------------------- */
+
+  let htmlSections =
+    "";
+
+
+  let plainSections =
+    "";
+
+
+  if(
+    packageItems.checklist
+  ){
+
+    htmlSections += `
+      <div style="
+        margin:16px 0;
+        padding:14px 16px;
+        background:#f8f4fa;
+        border-left:4px solid #6f2c91;
+        border-radius:6px;
+      ">
+        <strong style="color:#6f2c91;">
+          Your Chapter Checklist
+        </strong>
+
+        <div style="
+          margin-top:5px;
+          color:#555;
+          line-height:1.5;
+        ">
+          Your personalized checklist for ${escapeHtml(school)},
+          including key steps, registration information and helpful links.
+        </div>
+
+        <div style="margin-top:9px;">
+          <a
+            href="${escapeAttribute(currentChecklist)}"
+            style="
+              color:#6f2c91;
+              font-weight:700;
+            "
+          >
+            Open your Chapter Checklist
+          </a>
+        </div>
+      </div>
+    `;
+
+
+    plainSections +=
+`\nYOUR CHAPTER CHECKLIST
+Open your personalized checklist:
+${currentChecklist}
+`;
+
+  }
+
+
+  if(
+    packageItems.quickStart
+  ){
+
+    htmlSections += `
+      <div style="
+        margin:16px 0;
+        padding:14px 16px;
+        background:#edf9f8;
+        border-left:4px solid #18b8b1;
+        border-radius:6px;
+      ">
+        <strong style="color:#108f89;">
+          ${escapeHtml(quickStartTitle)}
+        </strong>
+
+        <div style="
+          margin-top:5px;
+          color:#555;
+          line-height:1.5;
+        ">
+          Practical guidance for getting your chapter underway,
+          recruiting students and finding a rhythm that works.
+        </div>
+
+        <div style="margin-top:9px;">
+          <a
+            href="${escapeAttribute(quickStart)}"
+            style="
+              color:#108f89;
+              font-weight:700;
+            "
+          >
+            Open the Quick Start Guide
+          </a>
+        </div>
+      </div>
+    `;
+
+
+    plainSections +=
+`\n${quickStartTitle.toUpperCase()}
+Open the Quick Start Guide:
+${quickStart}
+`;
+
+  }
+
+
+  if(
+    packageItems.resources
+  ){
+
+    htmlSections += `
+      <div style="
+        margin:16px 0;
+        padding:14px 16px;
+        background:#fff9df;
+        border-left:4px solid #ffd43b;
+        border-radius:6px;
+      ">
+        <strong style="color:#6f2c91;">
+          Best Buddies Resource Library
+        </strong>
+
+        <div style="
+          margin-top:5px;
+          color:#555;
+          line-height:1.5;
+        ">
+          Activity ideas, recruitment materials, program guidance,
+          inclusive activity resources, fundraising tools and more.
+        </div>
+
+        <div style="margin-top:9px;">
+          <a
+            href="${escapeAttribute(resourceFolder)}"
+            style="
+              color:#6f2c91;
+              font-weight:700;
+            "
+          >
+            Explore the Resource Library
+          </a>
+        </div>
+      </div>
+    `;
+
+
+    plainSections +=
+`\nBEST BUDDIES RESOURCE LIBRARY
+Explore the Resource Library:
+${resourceFolder}
+`;
+
+  }
+
+
+  /* ----------------------------------------
+     Full HTML email
+  ---------------------------------------- */
+
+  currentHtmlEmail = `
+    <div style="
+      font-family:Arial,Helvetica,sans-serif;
+      color:#222;
+      font-size:15px;
+      line-height:1.6;
+    ">
+
+      <p>
+        ${greeting}
+      </p>
+
+      <p>
+        It was lovely connecting with you! I’ve pulled together
+        a few things to help make getting started with Best Buddies
+        as easy as possible.
+      </p>
+
+      ${htmlSections}
+
+      <p>
+        Please reach out anytime if questions come up or if there’s
+        anything I can help with along the way.
+      </p>
+
+      <p>
+        Warmly,
+      </p>
+
+      <p>
+        <strong>
+          ${escapeHtml(advisor.name)}
+        </strong>
+
+        ${
+          advisor.title
+          ? `<br>${escapeHtml(advisor.title)}`
+          : ""
+        }
+
+        ${
+          advisor.email
+          ? `<br><a href="mailto:${escapeAttribute(advisor.email)}">${escapeHtml(advisor.email)}</a>`
+          : ""
+        }
+
+        ${
+          advisor.phone
+          ? `<br>${escapeHtml(advisor.phone)}`
+          : ""
+        }
+      </p>
+
+    </div>
+  `;
+
+
+  /* ----------------------------------------
+     Plain text fallback
+  ---------------------------------------- */
+
+  currentPlainEmail =
+`${recipientName ? `Hi ${recipientName},` : "Hi there,"}
 
 It was lovely connecting with you! I’ve pulled together a few things to help make getting started with Best Buddies as easy as possible.
-
-YOUR CHAPTER CHECKLIST
-${currentChecklist}
-
-This is your personalized checklist for ${school}. It includes your key chapter steps, registration information and helpful links. You can check things off online as you go, or print/save a copy if that works better for you.
-
-${programLabel.toUpperCase()} QUICK START GUIDE
-${quickStart}
-
-This guide walks through getting your chapter going, recruiting students, planning gatherings and finding a rhythm that works for your school.
-
-BEST BUDDIES RESOURCE LIBRARY
-${resourceFolder}
-
-You’ll find activity ideas, recruitment materials, program guidance, inclusive activity resources, fundraising tools and more.
+${plainSections}
 
 Please reach out anytime if questions come up or if there’s anything I can help with along the way.
 
@@ -2691,63 +3380,189 @@ ${advisor.email}
 ${advisor.phone}`;
 
 
-  document.getElementById(
-    "emailPreview"
-  ).textContent =
-    currentEmail;
+  /* ----------------------------------------
+     Clean visual preview
+     NO RAW LINKS
+  ---------------------------------------- */
 
-}
+  let previewHtml =
+    `<p>${greeting}</p>
 
-
-/* =====================================================
-   CHECKLIST ACTIONS
-===================================================== */
-
-function previewChecklist(){
-
-  buildPackage();
+     <p>
+       It was lovely connecting with you! I’ve pulled together
+       a few things to help make getting started with Best Buddies
+       as easy as possible.
+     </p>`;
 
 
-  if(currentChecklist){
+  if(
+    packageItems.checklist
+  ){
 
-    window.open(
-      currentChecklist,
-      "_blank"
+    previewHtml += `
+      <div class="preview-resource">
+        <strong>
+          Your Chapter Checklist
+        </strong>
+
+        <span>
+          Personalized for ${escapeHtml(school)}.
+          Open your Chapter Checklist →
+        </span>
+      </div>
+    `;
+
+  }
+
+
+  if(
+    packageItems.quickStart
+  ){
+
+    previewHtml += `
+      <div class="preview-resource">
+        <strong>
+          ${escapeHtml(quickStartTitle)}
+        </strong>
+
+        <span>
+          Practical guidance for getting started.
+          Open the Quick Start Guide →
+        </span>
+      </div>
+    `;
+
+  }
+
+
+  if(
+    packageItems.resources
+  ){
+
+    previewHtml += `
+      <div class="preview-resource">
+        <strong>
+          Best Buddies Resource Library
+        </strong>
+
+        <span>
+          Activity ideas, recruitment materials and more.
+          Explore the Resource Library →
+        </span>
+      </div>
+    `;
+
+  }
+
+
+  previewHtml += `
+    <p>
+      Please reach out anytime if questions come up or if there’s
+      anything I can help with along the way.
+    </p>
+
+    <p>
+      Warmly,<br><br>
+
+      <strong>
+        ${escapeHtml(advisor.name)}
+      </strong>
+
+      ${
+        advisor.title
+        ? `<br>${escapeHtml(advisor.title)}`
+        : ""
+      }
+
+    </p>
+  `;
+
+
+  document
+    .getElementById(
+      "emailPreview"
+    )
+    .innerHTML =
+    previewHtml;
+
+
+  document
+    .getElementById(
+      "previewChecklistButton"
+    )
+    .classList
+    .toggle(
+      "hidden",
+      !packageItems.checklist
     );
 
-  }
-
 }
 
 
-async function copyChecklist(){
+/* ======================================================
+   COPY RICH EMAIL
+====================================================== */
+
+async function copyPolishedEmail(){
 
   buildPackage();
-
-
-  if(!currentChecklist){
-
-    return;
-
-  }
 
 
   try{
 
-    await navigator.clipboard.writeText(
-      currentChecklist
-    );
+    const htmlBlob =
+      new Blob(
+        [currentHtmlEmail],
+        {
+          type:"text/html"
+        }
+      );
 
 
-    alert(
-      "Checklist link copied."
+    const textBlob =
+      new Blob(
+        [currentPlainEmail],
+        {
+          type:"text/plain"
+        }
+      );
+
+
+    const clipboardItem =
+      new ClipboardItem({
+
+        "text/html":
+          htmlBlob,
+
+        "text/plain":
+          textBlob
+
+      });
+
+
+    await navigator.clipboard.write([
+      clipboardItem
+    ]);
+
+
+    showToast(
+      "Polished email copied. Paste it into Outlook."
     );
 
   }catch(error){
 
-    prompt(
-      "Copy this checklist link:",
-      currentChecklist
+    /*
+      Fallback for browsers that do not support
+      rich ClipboardItem copying.
+    */
+
+    await navigator.clipboard.writeText(
+      currentPlainEmail
+    );
+
+
+    showToast(
+      "Email copied. Your browser used the plain-text version."
     );
 
   }
@@ -2755,39 +3570,11 @@ async function copyChecklist(){
 }
 
 
-/* =====================================================
-   EMAIL ACTIONS
-===================================================== */
+/* ======================================================
+   COPY + OPEN OUTLOOK
+====================================================== */
 
-async function copyEmail(){
-
-  buildPackage();
-
-
-  try{
-
-    await navigator.clipboard.writeText(
-      currentEmail
-    );
-
-
-    alert(
-      "Email copied."
-    );
-
-  }catch(error){
-
-    prompt(
-      "Copy the email below:",
-      currentEmail
-    );
-
-  }
-
-}
-
-
-function openOutlook(){
+async function copyAndOpenOutlook(){
 
   buildPackage();
 
@@ -2801,23 +3588,29 @@ function openOutlook(){
       .trim();
 
 
+  await copyPolishedEmail();
+
+
+  /*
+    Outlook is opened WITHOUT a prefilled body.
+    That lets the advisor paste the rich formatted
+    email with clean hidden links.
+  */
+
   const outlookUrl =
 
-    "https://outlook.office.com/mail/deeplink/compose" +
+    "https://outlook.office.com/mail/deeplink/compose"
 
-    "?to=" +
-    encodeURIComponent(
+    + "?to="
+
+    + encodeURIComponent(
       recipient
-    ) +
+    )
 
-    "&subject=" +
-    encodeURIComponent(
+    + "&subject="
+
+    + encodeURIComponent(
       currentSubject
-    ) +
-
-    "&body=" +
-    encodeURIComponent(
-      currentEmail
     );
 
 
@@ -2826,12 +3619,124 @@ function openOutlook(){
     "_blank"
   );
 
+
+  showToast(
+    "Email copied and Outlook opened. Paste into the message and send."
+  );
+
 }
 
 
-/* =====================================================
+/* ======================================================
+   CHECKLIST PREVIEW
+====================================================== */
+
+function previewChecklist(){
+
+  buildPackage();
+
+
+  if(
+    currentChecklist
+  ){
+
+    window.open(
+      currentChecklist,
+      "_blank"
+    );
+
+  }
+
+}
+
+
+/* ======================================================
+   HELPERS
+====================================================== */
+
+function showToast(message){
+
+  const toast =
+    document.getElementById(
+      "toast"
+    );
+
+
+  toast.textContent =
+    message;
+
+
+  toast
+    .classList
+    .remove("hidden");
+
+
+  clearTimeout(
+    window.bbToastTimer
+  );
+
+
+  window.bbToastTimer =
+    setTimeout(
+      () => {
+
+        toast
+          .classList
+          .add("hidden");
+
+      },
+      3200
+    );
+
+}
+
+
+function escapeHtml(value){
+
+  return String(
+    value || ""
+  )
+
+  .replaceAll(
+    "&",
+    "&amp;"
+  )
+
+  .replaceAll(
+    "<",
+    "&lt;"
+  )
+
+  .replaceAll(
+    ">",
+    "&gt;"
+  )
+
+  .replaceAll(
+    '"',
+    "&quot;"
+  )
+
+  .replaceAll(
+    "'",
+    "&#039;"
+  );
+
+}
+
+
+function escapeAttribute(value){
+
+  return escapeHtml(
+    value
+  );
+
+}
+
+
+/* ======================================================
    INITIALIZE
-===================================================== */
+====================================================== */
 
 if(
   sessionStorage.getItem(
@@ -2843,6 +3748,8 @@ if(
 
 }
 
+
+updateQuickStartName();
 
 updateProgress();
 
