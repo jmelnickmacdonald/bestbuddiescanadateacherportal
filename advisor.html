@@ -18,7 +18,6 @@
 
   --teal:#19b7b1;
   --teal-dark:#108f89;
-  --teal-soft:#edf9f8;
 
   --ink:#252232;
   --muted:#6e6876;
@@ -29,9 +28,7 @@
   --shadow:0 14px 42px rgba(55,35,68,.08);
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 html,body{
   margin:0;
@@ -48,9 +45,7 @@ button,input{
   font:inherit;
 }
 
-button{
-  cursor:pointer;
-}
+button{cursor:pointer}
 
 .hidden{
   display:none!important;
@@ -64,6 +59,7 @@ button{
   display:grid;
   place-items:center;
   padding:24px;
+
   background:
     radial-gradient(circle at 15% 15%,rgba(25,183,177,.16),transparent 32%),
     radial-gradient(circle at 90% 85%,rgba(111,44,145,.13),transparent 32%),
@@ -73,8 +69,10 @@ button{
 .login-card{
   width:min(450px,100%);
   padding:36px;
+
   border:1px solid rgba(111,44,145,.08);
   border-radius:24px;
+
   background:white;
   box-shadow:var(--shadow);
 }
@@ -87,14 +85,17 @@ button{
 
 .eyebrow{
   color:var(--purple);
+
   font-size:.74rem;
   font-weight:800;
+
   letter-spacing:.1em;
   text-transform:uppercase;
 }
 
 .login-card h1{
   margin:7px 0 9px;
+
   font-size:1.95rem;
   line-height:1.08;
   letter-spacing:-.04em;
@@ -141,7 +142,9 @@ button{
   height:46px;
   width:auto;
   padding:6px 8px;
+
   border-radius:9px;
+
   background:white;
 }
 
@@ -153,6 +156,7 @@ button{
 .brand-copy span{
   display:block;
   margin-top:2px;
+
   font-size:.76rem;
   opacity:.88;
 }
@@ -168,8 +172,11 @@ button{
 .btn{
   border:0;
   border-radius:10px;
+
   padding:10px 16px;
+
   font-weight:700;
+
   transition:.15s ease;
 }
 
@@ -226,6 +233,7 @@ button{
 
 .page-title h1{
   margin:4px 0 0;
+
   font-size:1.9rem;
   line-height:1.1;
   letter-spacing:-.035em;
@@ -237,8 +245,10 @@ button{
 .progress-wrap{
   margin-bottom:12px;
   padding:11px 20px;
+
   border:1px solid var(--line);
   border-radius:15px;
+
   background:white;
 }
 
@@ -254,12 +264,16 @@ button{
 
 .progress-item:not(:last-child)::after{
   content:"";
+
   position:absolute;
   z-index:0;
+
   top:16px;
   left:55%;
+
   width:90%;
   height:2px;
+
   background:#e8e3ea;
 }
 
@@ -269,6 +283,7 @@ button{
 
   width:33px;
   height:33px;
+
   margin:0 auto 4px;
 
   display:grid;
@@ -311,6 +326,7 @@ button{
 .workspace{
   position:relative;
   min-height:535px;
+
   overflow:hidden;
 
   border:1px solid var(--line);
@@ -331,15 +347,19 @@ button{
 
 .step-number{
   margin-bottom:3px;
+
   color:var(--purple);
+
   font-size:.7rem;
   font-weight:800;
+
   letter-spacing:.1em;
   text-transform:uppercase;
 }
 
 .step h2{
   margin:0;
+
   font-size:1.6rem;
   letter-spacing:-.03em;
 }
@@ -360,7 +380,9 @@ button{
 .field label,
 .field-title{
   display:block;
+
   margin-bottom:7px;
+
   font-size:.84rem;
   font-weight:700;
 }
@@ -387,34 +409,44 @@ input[type="password"]{
 
 input:focus{
   outline:none;
+
   border-color:var(--teal);
+
   box-shadow:0 0 0 4px rgba(25,183,177,.11);
 }
 
 
-/* CHOICE CARDS */
+/* PROGRAM CARDS */
 
-.choice-grid{
+.program-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:11px;
+}
+
+.status-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  grid-auto-rows:1fr;
   gap:11px;
 }
 
 .choice-card{
   position:relative;
 
-  min-height:78px;
-  height:100%;
-  padding:17px;
+  min-height:72px;
+  padding:16px;
 
   display:flex;
   align-items:center;
+  justify-content:center;
 
   border:2px solid var(--line);
   border-radius:14px;
 
   background:white;
+
+  text-align:center;
+
   cursor:pointer;
 
   transition:.15s ease;
@@ -436,7 +468,7 @@ input:focus{
 }
 
 .choice-card strong{
-  font-size:.9rem;
+  font-size:.88rem;
 }
 
 
@@ -463,7 +495,9 @@ input:focus{
 .advisor-line span{
   display:block;
   margin-top:2px;
+
   color:var(--muted);
+
   font-size:.72rem;
 }
 
@@ -489,6 +523,7 @@ input:focus{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:12px;
+
   margin-top:12px;
 }
 
@@ -502,6 +537,7 @@ input:focus{
   border-radius:15px;
 
   background:white;
+
   cursor:pointer;
 
   transition:.15s ease;
@@ -518,6 +554,7 @@ input:focus{
 
 .package-check{
   position:absolute;
+
   top:14px;
   right:14px;
 
@@ -546,12 +583,15 @@ input:focus{
 .package-choice strong{
   display:block;
   margin-bottom:5px;
+
   font-size:.86rem;
 }
 
 .package-choice p{
   margin:0;
+
   color:var(--muted);
+
   font-size:.73rem;
   line-height:1.4;
 }
@@ -563,6 +603,7 @@ input:focus{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:16px 20px;
+
   margin-bottom:16px;
 }
 
@@ -570,6 +611,7 @@ input:focus{
   display:flex;
   flex-wrap:wrap;
   gap:7px;
+
   margin:7px 0 15px;
 }
 
@@ -587,6 +629,7 @@ input:focus{
 
 .message-preview{
   overflow:hidden;
+
   border:1px solid var(--line);
   border-radius:15px;
 }
@@ -646,6 +689,7 @@ input:focus{
 
 .step-actions{
   position:absolute;
+
   right:0;
   bottom:0;
   left:0;
@@ -659,6 +703,7 @@ input:focus{
   gap:10px;
 
   border-top:1px solid var(--line);
+
   background:#fcfbfd;
 }
 
@@ -691,6 +736,7 @@ input:focus{
   border-radius:20px;
 
   background:white;
+
   box-shadow:0 25px 80px rgba(25,10,35,.25);
 }
 
@@ -728,6 +774,7 @@ input:focus{
 .modal-field label{
   display:block;
   margin-bottom:6px;
+
   font-size:.81rem;
   font-weight:700;
 }
@@ -747,6 +794,7 @@ input:focus{
 
 .toast{
   position:fixed;
+
   right:20px;
   bottom:20px;
   z-index:200;
@@ -798,6 +846,14 @@ input:focus{
     grid-template-columns:1fr;
   }
 
+  .program-grid{
+    grid-template-columns:1fr;
+  }
+
+  .status-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
   .package-choice-grid{
     grid-template-columns:1fr;
   }
@@ -816,12 +872,8 @@ input:focus{
 
 @media(max-width:520px){
 
-  .choice-grid{
+  .status-grid{
     grid-template-columns:1fr;
-  }
-
-  .choice-card{
-    min-height:58px;
   }
 
   .header-actions .btn{
@@ -1021,13 +1073,13 @@ input:focus{
     </div>
 
 
-    <div class="field">
+    <div class="field full">
 
       <div class="field-title">
         Program
       </div>
 
-      <div class="choice-grid">
+      <div class="program-grid">
 
         <label
           class="choice-card selected"
@@ -1067,6 +1119,25 @@ input:focus{
 
         </label>
 
+
+        <label
+          class="choice-card"
+          id="programCombinedCard"
+        >
+
+          <input
+            type="radio"
+            name="program"
+            value="combined"
+            onchange="selectProgram('combined')"
+          >
+
+          <strong>
+            Elementary + Secondary
+          </strong>
+
+        </label>
+
       </div>
 
     </div>
@@ -1078,7 +1149,7 @@ input:focus{
         Chapter Status
       </div>
 
-      <div class="choice-grid">
+      <div class="status-grid">
 
         <label
           class="choice-card selected"
@@ -1317,7 +1388,7 @@ input:focus{
         Elementary & Middle Quick Start Guide
       </strong>
 
-      <p>
+      <p id="quickStartCardDescription">
         Practical chapter launch guidance.
       </p>
 
@@ -1332,11 +1403,11 @@ input:focus{
 
       <div class="package-check">✓</div>
 
-      <strong>
+      <strong id="resourceCardName">
         Resource Library
       </strong>
 
-      <p>
+      <p id="resourceCardDescription">
         Activities, recruitment, fundraising and program resources.
       </p>
 
@@ -1706,6 +1777,7 @@ function login(){
   const password =
     document.getElementById("password").value;
 
+
   if(password === PASSWORD){
 
     sessionStorage.setItem(
@@ -1744,16 +1816,18 @@ function showApp(){
     "loginScreen"
   ).classList.add("hidden");
 
+
   document.getElementById(
     "app"
   ).classList.remove("hidden");
+
 
   loadAdvisor();
 
 }
 
 
-/* ADVISOR PROFILE */
+/* ADVISOR */
 
 function openAdvisorModal(){
 
@@ -1814,14 +1888,20 @@ function saveAdvisor(){
   const advisor =
     getAdvisor();
 
+
   localStorage.setItem(
     "bbAdvisorProfile",
     JSON.stringify(advisor)
   );
 
+
   updateAdvisorSummary();
+
   closeAdvisorModal();
-  showToast("Advisor details saved.");
+
+  showToast(
+    "Advisor details saved."
+  );
 
 }
 
@@ -1829,6 +1909,7 @@ function saveAdvisor(){
 function loadAdvisor(){
 
   let advisor = {};
+
 
   try{
 
@@ -1845,25 +1926,30 @@ function loadAdvisor(){
 
   }
 
+
   document.getElementById(
     "advisorName"
   ).value =
     advisor.name || "";
+
 
   document.getElementById(
     "advisorTitle"
   ).value =
     advisor.title || "";
 
+
   document.getElementById(
     "advisorEmail"
   ).value =
     advisor.email || "";
 
+
   document.getElementById(
     "advisorPhone"
   ).value =
     advisor.phone || "";
+
 
   updateAdvisorSummary();
 
@@ -1875,20 +1961,25 @@ function updateAdvisorSummary(){
   const advisor =
     getAdvisor();
 
+
   document.getElementById(
     "advisorSummaryName"
   ).textContent =
     advisor.name || "Add your details";
 
+
   const details = [];
+
 
   if(advisor.title){
     details.push(advisor.title);
   }
 
+
   if(advisor.email){
     details.push(advisor.email);
   }
+
 
   document.getElementById(
     "advisorSummaryContact"
@@ -1906,12 +1997,14 @@ function selectProgram(value){
 
   selectedProgram = value;
 
+
   document.getElementById(
     "programElementaryCard"
   ).classList.toggle(
     "selected",
     value === "elementary"
   );
+
 
   document.getElementById(
     "programHighCard"
@@ -1920,7 +2013,16 @@ function selectProgram(value){
     value === "high"
   );
 
-  updateQuickStartName();
+
+  document.getElementById(
+    "programCombinedCard"
+  ).classList.toggle(
+    "selected",
+    value === "combined"
+  );
+
+
+  updatePackageLabels();
 
 }
 
@@ -1929,12 +2031,14 @@ function selectStatus(value){
 
   selectedStatus = value;
 
+
   document.getElementById(
     "statusNewCard"
   ).classList.toggle(
     "selected",
     value === "new"
   );
+
 
   document.getElementById(
     "statusActiveCard"
@@ -1946,14 +2050,81 @@ function selectStatus(value){
 }
 
 
-function updateQuickStartName(){
+function updatePackageLabels(){
 
-  document.getElementById(
-    "quickStartCardName"
-  ).textContent =
-    selectedProgram === "elementary"
-      ? "Elementary & Middle Quick Start Guide"
-      : "High School Quick Start Guide";
+  const quickStartName =
+    document.getElementById(
+      "quickStartCardName"
+    );
+
+
+  const quickStartDescription =
+    document.getElementById(
+      "quickStartCardDescription"
+    );
+
+
+  const resourceName =
+    document.getElementById(
+      "resourceCardName"
+    );
+
+
+  const resourceDescription =
+    document.getElementById(
+      "resourceCardDescription"
+    );
+
+
+  if(selectedProgram === "elementary"){
+
+    quickStartName.textContent =
+      "Elementary & Middle Quick Start Guide";
+
+    quickStartDescription.textContent =
+      "Practical chapter launch guidance.";
+
+    resourceName.textContent =
+      "Elementary & Middle Resource Library";
+
+    resourceDescription.textContent =
+      "Activities, recruitment, fundraising and program resources.";
+
+  }
+
+
+  if(selectedProgram === "high"){
+
+    quickStartName.textContent =
+      "High School Quick Start Guide";
+
+    quickStartDescription.textContent =
+      "Practical chapter launch guidance.";
+
+    resourceName.textContent =
+      "High School Resource Library";
+
+    resourceDescription.textContent =
+      "Activities, recruitment, fundraising and program resources.";
+
+  }
+
+
+  if(selectedProgram === "combined"){
+
+    quickStartName.textContent =
+      "Elementary + High School Quick Start Guides";
+
+    quickStartDescription.textContent =
+      "Both school-level guides.";
+
+    resourceName.textContent =
+      "Elementary + High School Resource Libraries";
+
+    resourceDescription.textContent =
+      "Both school-level resource collections.";
+
+  }
 
 }
 
@@ -1965,11 +2136,13 @@ function togglePackageItem(item){
   packageItems[item] =
     !packageItems[item];
 
+
   const ids = {
     checklist:"includeChecklistCard",
     quickStart:"includeQuickStartCard",
     resources:"includeResourcesCard"
   };
+
 
   document.getElementById(
     ids[item]
@@ -1992,6 +2165,7 @@ function goToStep(step){
         "schoolName"
       ).value.trim();
 
+
     if(!school){
 
       alert(
@@ -2009,6 +2183,7 @@ function goToStep(step){
 
     const advisor =
       getAdvisor();
+
 
     if(
       !advisor.name ||
@@ -2043,7 +2218,8 @@ function goToStep(step){
   }
 
 
-  currentStep = step;
+  currentStep =
+    step;
 
 
   [1,2,3].forEach(number=>{
@@ -2054,6 +2230,7 @@ function goToStep(step){
       "hidden",
       number !== step
     );
+
 
     document.getElementById(
       "actions"+number
@@ -2071,6 +2248,7 @@ function goToStep(step){
   if(step === 3){
 
     subjectDirty = false;
+
     buildPackage();
 
   }
@@ -2089,10 +2267,12 @@ function updateProgress(){
         "progress"+number
       );
 
+
     item.classList.remove(
       "active",
       "done"
     );
+
 
     if(number < currentStep){
 
@@ -2115,6 +2295,7 @@ function buildChecklistUrl(){
 
   const advisor =
     getAdvisor();
+
 
   const params =
     new URLSearchParams({
@@ -2167,12 +2348,7 @@ function buildChecklistUrl(){
           "showAdvisor"
         ).checked
           ? "1"
-          : "0",
-
-      resourceFolder:
-        RESOURCE_FOLDERS[
-          selectedProgram
-        ]
+          : "0"
 
     });
 
@@ -2200,28 +2376,18 @@ function buildPackage(){
       "schoolName"
     ).value.trim();
 
+
   const year =
     document.getElementById(
       "programYear"
     ).value.trim();
+
 
   const recipientName =
     document.getElementById(
       "recipientName"
     ).value.trim();
 
-  const advisor =
-    getAdvisor();
-
-  const quickStart =
-    QUICK_START_GUIDES[
-      selectedProgram
-    ];
-
-  const resourceFolder =
-    RESOURCE_FOLDERS[
-      selectedProgram
-    ];
 
   currentChecklist =
     buildChecklistUrl();
@@ -2261,26 +2427,223 @@ function buildPackage(){
       : "Hi there,";
 
 
-  const quickStartTitle =
-    selectedProgram === "elementary"
-      ? "Elementary & Middle School Quick Start Guide"
-      : "High School Quick Start Guide";
+  let preview = `
+    <p>${greeting}</p>
+
+    <p>
+      It was lovely connecting with you! I’ve pulled together
+      a few things to help make getting started with Best Buddies
+      as easy as possible.
+    </p>
+  `;
 
 
-  /* CHIPS */
-
+  let htmlResources = "";
+  let plainResources = "";
   const chips = [];
 
+
   if(packageItems.checklist){
+
     chips.push("Chapter Checklist");
+
+    preview += `
+      <div class="preview-link">
+        <strong>Your Chapter Checklist</strong>
+        <div>
+          A personalized checklist for ${escapeHtml(school)}
+          with key chapter steps and helpful links.
+        </div>
+        <a href="${escapeAttribute(currentChecklist)}" target="_blank">
+          Open your Chapter Checklist
+        </a>
+      </div>
+    `;
+
+
+    htmlResources += `
+      <p>
+        <strong>Your Chapter Checklist</strong><br>
+        A personalized checklist for ${escapeHtml(school)}
+        with key chapter steps and helpful links.<br>
+        <a href="${escapeAttribute(currentChecklist)}">
+          Open your Chapter Checklist
+        </a>
+      </p>
+    `;
+
+
+    plainResources +=
+`\nYour Chapter Checklist
+${currentChecklist}
+`;
+
   }
+
 
   if(packageItems.quickStart){
-    chips.push("Quick Start Guide");
+
+    if(selectedProgram === "elementary"){
+
+      chips.push("Quick Start Guide");
+
+      preview += guidePreview(
+        "Elementary & Middle School Quick Start Guide",
+        QUICK_START_GUIDES.elementary
+      );
+
+      htmlResources += guideHtml(
+        "Elementary & Middle School Quick Start Guide",
+        QUICK_START_GUIDES.elementary
+      );
+
+      plainResources +=
+`\nElementary & Middle School Quick Start Guide
+${QUICK_START_GUIDES.elementary}
+`;
+
+    }
+
+
+    if(selectedProgram === "high"){
+
+      chips.push("Quick Start Guide");
+
+      preview += guidePreview(
+        "High School Quick Start Guide",
+        QUICK_START_GUIDES.high
+      );
+
+      htmlResources += guideHtml(
+        "High School Quick Start Guide",
+        QUICK_START_GUIDES.high
+      );
+
+      plainResources +=
+`\nHigh School Quick Start Guide
+${QUICK_START_GUIDES.high}
+`;
+
+    }
+
+
+    if(selectedProgram === "combined"){
+
+      chips.push("2 Quick Start Guides");
+
+      preview += guidePreview(
+        "Elementary & Middle School Quick Start Guide",
+        QUICK_START_GUIDES.elementary
+      );
+
+      preview += guidePreview(
+        "High School Quick Start Guide",
+        QUICK_START_GUIDES.high
+      );
+
+      htmlResources += guideHtml(
+        "Elementary & Middle School Quick Start Guide",
+        QUICK_START_GUIDES.elementary
+      );
+
+      htmlResources += guideHtml(
+        "High School Quick Start Guide",
+        QUICK_START_GUIDES.high
+      );
+
+      plainResources +=
+`\nElementary & Middle School Quick Start Guide
+${QUICK_START_GUIDES.elementary}
+
+High School Quick Start Guide
+${QUICK_START_GUIDES.high}
+`;
+
+    }
+
   }
 
+
   if(packageItems.resources){
-    chips.push("Resource Library");
+
+    if(selectedProgram === "elementary"){
+
+      chips.push("Resource Library");
+
+      preview += resourcePreview(
+        "Elementary & Middle Resource Library",
+        RESOURCE_FOLDERS.elementary
+      );
+
+      htmlResources += resourceHtml(
+        "Elementary & Middle Resource Library",
+        RESOURCE_FOLDERS.elementary
+      );
+
+      plainResources +=
+`\nElementary & Middle Resource Library
+${RESOURCE_FOLDERS.elementary}
+`;
+
+    }
+
+
+    if(selectedProgram === "high"){
+
+      chips.push("Resource Library");
+
+      preview += resourcePreview(
+        "High School Resource Library",
+        RESOURCE_FOLDERS.high
+      );
+
+      htmlResources += resourceHtml(
+        "High School Resource Library",
+        RESOURCE_FOLDERS.high
+      );
+
+      plainResources +=
+`\nHigh School Resource Library
+${RESOURCE_FOLDERS.high}
+`;
+
+    }
+
+
+    if(selectedProgram === "combined"){
+
+      chips.push("2 Resource Libraries");
+
+      preview += resourcePreview(
+        "Elementary & Middle Resource Library",
+        RESOURCE_FOLDERS.elementary
+      );
+
+      preview += resourcePreview(
+        "High School Resource Library",
+        RESOURCE_FOLDERS.high
+      );
+
+      htmlResources += resourceHtml(
+        "Elementary & Middle Resource Library",
+        RESOURCE_FOLDERS.elementary
+      );
+
+      htmlResources += resourceHtml(
+        "High School Resource Library",
+        RESOURCE_FOLDERS.high
+      );
+
+      plainResources +=
+`\nElementary & Middle Resource Library
+${RESOURCE_FOLDERS.elementary}
+
+High School Resource Library
+${RESOURCE_FOLDERS.high}
+`;
+
+    }
+
   }
 
 
@@ -2293,73 +2656,6 @@ function buildPackage(){
           `<div class="resource-chip">${escapeHtml(item)}</div>`
       )
       .join("");
-
-
-  /* EMAIL PREVIEW */
-
-  let preview = `
-    <p>${greeting}</p>
-
-    <p>
-      It was lovely connecting with you! I’ve pulled together
-      a few things to help make getting started with Best Buddies
-      as easy as possible.
-    </p>
-  `;
-
-
-  if(packageItems.checklist){
-
-    preview += `
-      <div class="preview-link">
-        <strong>Your Chapter Checklist</strong>
-        <div>
-          A personalized checklist for ${escapeHtml(school)}
-          with your key steps, registration information and helpful links.
-        </div>
-        <a href="${escapeAttribute(currentChecklist)}" target="_blank">
-          Open your Chapter Checklist
-        </a>
-      </div>
-    `;
-
-  }
-
-
-  if(packageItems.quickStart){
-
-    preview += `
-      <div class="preview-link">
-        <strong>${escapeHtml(quickStartTitle)}</strong>
-        <div>
-          A practical guide to getting your chapter underway,
-          welcoming students and planning your first gatherings.
-        </div>
-        <a href="${escapeAttribute(quickStart)}" target="_blank">
-          Open the Quick Start Guide
-        </a>
-      </div>
-    `;
-
-  }
-
-
-  if(packageItems.resources){
-
-    preview += `
-      <div class="preview-link">
-        <strong>Best Buddies Resource Library</strong>
-        <div>
-          Activity ideas, recruitment materials, program guidance,
-          inclusive activity resources, fundraising tools and more.
-        </div>
-        <a href="${escapeAttribute(resourceFolder)}" target="_blank">
-          Explore the Resource Library
-        </a>
-      </div>
-    `;
-
-  }
 
 
   if(packageItems.checklist){
@@ -2396,70 +2692,6 @@ function buildPackage(){
   );
 
 
-  /* HTML EMAIL */
-
-  let htmlResources = "";
-
-
-  if(packageItems.checklist){
-
-    htmlResources += `
-      <p>
-        <strong>Your Chapter Checklist</strong><br>
-        A personalized checklist for ${escapeHtml(school)}
-        with your key steps, registration information and helpful links.<br>
-        <a href="${escapeAttribute(currentChecklist)}">
-          Open your Chapter Checklist
-        </a>
-      </p>
-    `;
-
-  }
-
-
-  if(packageItems.quickStart){
-
-    htmlResources += `
-      <p>
-        <strong>${escapeHtml(quickStartTitle)}</strong><br>
-        A practical guide to getting your chapter underway,
-        welcoming students and planning your first gatherings.<br>
-        <a href="${escapeAttribute(quickStart)}">
-          Open the Quick Start Guide
-        </a>
-      </p>
-    `;
-
-  }
-
-
-  if(packageItems.resources){
-
-    htmlResources += `
-      <p>
-        <strong>Best Buddies Resource Library</strong><br>
-        Activity ideas, recruitment materials, program guidance,
-        inclusive activity resources, fundraising tools and more.<br>
-        <a href="${escapeAttribute(resourceFolder)}">
-          Explore the Resource Library
-        </a>
-      </p>
-    `;
-
-  }
-
-
-  const checklistNote =
-    packageItems.checklist
-      ? `
-        <p>
-          You can use the Chapter Checklist online and check things off
-          as you go, or print/save a copy if that works better for you.
-        </p>
-      `
-      : "";
-
-
   currentHtmlEmail = `
     <div style="
       font-family:Arial,Helvetica,sans-serif;
@@ -2478,7 +2710,16 @@ function buildPackage(){
 
       ${htmlResources}
 
-      ${checklistNote}
+      ${
+        packageItems.checklist
+          ? `
+            <p>
+              You can use the Chapter Checklist online and check things off
+              as you go, or print/save a copy if that works better for you.
+            </p>
+          `
+          : ""
+      }
 
       <p>
         Please reach out anytime if questions come up or if there’s
@@ -2487,41 +2728,6 @@ function buildPackage(){
 
     </div>
   `;
-
-
-  /* PLAIN TEXT FALLBACK */
-
-  let plainResources = "";
-
-
-  if(packageItems.checklist){
-
-    plainResources +=
-`\nYour Chapter Checklist
-${currentChecklist}
-`;
-
-  }
-
-
-  if(packageItems.quickStart){
-
-    plainResources +=
-`\n${quickStartTitle}
-${quickStart}
-`;
-
-  }
-
-
-  if(packageItems.resources){
-
-    plainResources +=
-`\nBest Buddies Resource Library
-${resourceFolder}
-`;
-
-  }
 
 
   currentPlainEmail =
@@ -2535,7 +2741,71 @@ Please reach out anytime if questions come up or if there’s anything I can hel
 }
 
 
-/* COPY EMAIL */
+/* EMAIL BLOCK HELPERS */
+
+function guidePreview(title,url){
+
+  return `
+    <div class="preview-link">
+      <strong>${escapeHtml(title)}</strong>
+      <div>Practical guidance for getting started.</div>
+      <a href="${escapeAttribute(url)}" target="_blank">
+        Open the Quick Start Guide
+      </a>
+    </div>
+  `;
+
+}
+
+
+function guideHtml(title,url){
+
+  return `
+    <p>
+      <strong>${escapeHtml(title)}</strong><br>
+      Practical guidance for getting started.<br>
+      <a href="${escapeAttribute(url)}">
+        Open the Quick Start Guide
+      </a>
+    </p>
+  `;
+
+}
+
+
+function resourcePreview(title,url){
+
+  return `
+    <div class="preview-link">
+      <strong>${escapeHtml(title)}</strong>
+      <div>
+        Activities, recruitment, fundraising and program resources.
+      </div>
+      <a href="${escapeAttribute(url)}" target="_blank">
+        Explore the Resource Library
+      </a>
+    </div>
+  `;
+
+}
+
+
+function resourceHtml(title,url){
+
+  return `
+    <p>
+      <strong>${escapeHtml(title)}</strong><br>
+      Activities, recruitment, fundraising and program resources.<br>
+      <a href="${escapeAttribute(url)}">
+        Explore the Resource Library
+      </a>
+    </p>
+  `;
+
+}
+
+
+/* COPY */
 
 async function copyPolishedEmail(){
 
@@ -2587,7 +2857,7 @@ async function copyPolishedEmail(){
 }
 
 
-/* OPEN OUTLOOK */
+/* OUTLOOK */
 
 async function copyAndOpenOutlook(){
 
@@ -2629,6 +2899,7 @@ async function copyAndOpenOutlook(){
 function previewChecklist(){
 
   buildPackage();
+
 
   if(currentChecklist){
 
@@ -2696,7 +2967,7 @@ function escapeAttribute(value){
 }
 
 
-/* INITIALIZE */
+/* INIT */
 
 if(
   sessionStorage.getItem(
@@ -2709,7 +2980,7 @@ if(
 }
 
 
-updateQuickStartName();
+updatePackageLabels();
 updateProgress();
 
 </script>
