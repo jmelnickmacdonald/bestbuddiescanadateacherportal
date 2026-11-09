@@ -20,8 +20,6 @@
   --teal-dark:#108f89;
   --teal-soft:#edf9f8;
 
-  --yellow:#ffd43b;
-
   --ink:#252232;
   --muted:#6e6876;
   --line:#e5e0e8;
@@ -31,7 +29,9 @@
   --shadow:0 14px 42px rgba(55,35,68,.08);
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 html,body{
   margin:0;
@@ -48,7 +48,9 @@ button,input{
   font:inherit;
 }
 
-button{cursor:pointer}
+button{
+  cursor:pointer;
+}
 
 .hidden{
   display:none!important;
@@ -69,60 +71,60 @@ button{cursor:pointer}
 }
 
 .login-card{
-  width:min(460px,100%);
-  padding:38px;
+  width:min(450px,100%);
+  padding:36px;
   border:1px solid rgba(111,44,145,.08);
-  border-radius:26px;
+  border-radius:24px;
   background:white;
   box-shadow:var(--shadow);
 }
 
 .login-logo{
-  height:65px;
+  height:62px;
   width:auto;
-  margin-bottom:22px;
+  margin-bottom:20px;
 }
 
 .eyebrow{
   color:var(--purple);
-  font-size:.75rem;
+  font-size:.74rem;
   font-weight:800;
   letter-spacing:.1em;
   text-transform:uppercase;
 }
 
 .login-card h1{
-  margin:7px 0 10px;
-  font-size:2rem;
+  margin:7px 0 9px;
+  font-size:1.95rem;
   line-height:1.08;
   letter-spacing:-.04em;
 }
 
 .help{
   color:var(--muted);
-  line-height:1.55;
+  line-height:1.5;
 }
 
 .error{
   color:#b3261e;
   margin-top:10px;
-  font-size:.85rem;
+  font-size:.84rem;
 }
 
 
 /* HEADER */
 
 .site-header{
-  height:74px;
+  height:72px;
   background:var(--teal);
   color:white;
 }
 
 .header-inner{
-  max-width:1200px;
+  max-width:1180px;
   height:100%;
   margin:auto;
-  padding:0 24px;
+  padding:0 22px;
 
   display:flex;
   align-items:center;
@@ -132,26 +134,26 @@ button{cursor:pointer}
 .brand{
   display:flex;
   align-items:center;
-  gap:15px;
+  gap:14px;
 }
 
 .brand-logo{
-  height:48px;
+  height:46px;
   width:auto;
   padding:6px 8px;
-  border-radius:10px;
+  border-radius:9px;
   background:white;
 }
 
 .brand-copy strong{
   display:block;
-  font-size:1rem;
+  font-size:.98rem;
 }
 
 .brand-copy span{
   display:block;
   margin-top:2px;
-  font-size:.78rem;
+  font-size:.76rem;
   opacity:.88;
 }
 
@@ -165,8 +167,8 @@ button{cursor:pointer}
 
 .btn{
   border:0;
-  border-radius:11px;
-  padding:11px 17px;
+  border-radius:10px;
+  padding:10px 16px;
   font-weight:700;
   transition:.15s ease;
 }
@@ -205,45 +207,38 @@ button{cursor:pointer}
 }
 
 .btn-small{
-  padding:9px 14px;
-  font-size:.83rem;
+  padding:8px 13px;
+  font-size:.82rem;
 }
 
 
 /* PAGE */
 
 .page{
-  max-width:1160px;
+  max-width:1140px;
   margin:auto;
-  padding:27px 22px 50px;
+  padding:22px 20px 45px;
 }
 
-.intro{
-  margin-bottom:20px;
+.page-title{
+  margin-bottom:16px;
 }
 
-.intro h1{
-  margin:5px 0;
-  font-size:clamp(1.8rem,4vw,2.55rem);
-  line-height:1.05;
-  letter-spacing:-.045em;
-}
-
-.intro p{
-  max-width:700px;
-  margin:0;
-  color:var(--muted);
-  line-height:1.5;
+.page-title h1{
+  margin:4px 0 0;
+  font-size:1.9rem;
+  line-height:1.1;
+  letter-spacing:-.035em;
 }
 
 
 /* PROGRESS */
 
 .progress-wrap{
-  margin-bottom:14px;
-  padding:13px 22px;
+  margin-bottom:12px;
+  padding:11px 20px;
   border:1px solid var(--line);
-  border-radius:16px;
+  border-radius:15px;
   background:white;
 }
 
@@ -261,7 +256,7 @@ button{cursor:pointer}
   content:"";
   position:absolute;
   z-index:0;
-  top:17px;
+  top:16px;
   left:55%;
   width:90%;
   height:2px;
@@ -272,9 +267,9 @@ button{cursor:pointer}
   position:relative;
   z-index:1;
 
-  width:35px;
-  height:35px;
-  margin:0 auto 5px;
+  width:33px;
+  height:33px;
+  margin:0 auto 4px;
 
   display:grid;
   place-items:center;
@@ -285,13 +280,13 @@ button{cursor:pointer}
   background:#eeeaf0;
   color:#7b7480;
 
-  font-size:.8rem;
+  font-size:.78rem;
   font-weight:800;
 }
 
 .progress-label{
   color:var(--muted);
-  font-size:.75rem;
+  font-size:.72rem;
   font-weight:600;
 }
 
@@ -315,44 +310,38 @@ button{cursor:pointer}
 
 .workspace{
   position:relative;
-  min-height:605px;
+  min-height:535px;
   overflow:hidden;
 
   border:1px solid var(--line);
-  border-radius:22px;
+  border-radius:20px;
 
   background:white;
   box-shadow:var(--shadow);
 }
 
 .step{
-  min-height:525px;
-  padding:30px 38px 95px;
+  min-height:455px;
+  padding:28px 36px 88px;
 }
 
 .step-head{
-  margin-bottom:24px;
+  margin-bottom:22px;
 }
 
 .step-number{
-  margin-bottom:4px;
+  margin-bottom:3px;
   color:var(--purple);
-  font-size:.72rem;
+  font-size:.7rem;
   font-weight:800;
   letter-spacing:.1em;
   text-transform:uppercase;
 }
 
 .step h2{
-  margin:0 0 7px;
-  font-size:1.7rem;
-  letter-spacing:-.03em;
-}
-
-.step-head p{
   margin:0;
-  color:var(--muted);
-  line-height:1.5;
+  font-size:1.6rem;
+  letter-spacing:-.03em;
 }
 
 
@@ -361,7 +350,7 @@ button{cursor:pointer}
 .form-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:20px 24px;
+  gap:18px 22px;
 }
 
 .full{
@@ -371,8 +360,8 @@ button{cursor:pointer}
 .field label,
 .field-title{
   display:block;
-  margin-bottom:8px;
-  font-size:.86rem;
+  margin-bottom:7px;
+  font-size:.84rem;
   font-weight:700;
 }
 
@@ -385,12 +374,12 @@ input[type="text"],
 input[type="email"],
 input[type="password"]{
   width:100%;
-  height:52px;
+  height:50px;
 
   padding:0 14px;
 
   border:1px solid #ddd7e0;
-  border-radius:12px;
+  border-radius:11px;
 
   background:white;
   color:var(--ink);
@@ -403,27 +392,27 @@ input:focus{
 }
 
 
-/* STEP 1 CHOICES */
+/* CHOICE CARDS */
 
 .choice-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   grid-auto-rows:1fr;
-  gap:12px;
+  gap:11px;
 }
 
 .choice-card{
   position:relative;
 
-  min-height:122px;
+  min-height:78px;
   height:100%;
   padding:17px;
 
   display:flex;
-  flex-direction:column;
+  align-items:center;
 
   border:2px solid var(--line);
-  border-radius:15px;
+  border-radius:14px;
 
   background:white;
   cursor:pointer;
@@ -447,53 +436,46 @@ input:focus{
 }
 
 .choice-card strong{
-  margin-bottom:6px;
-  font-size:.91rem;
-}
-
-.choice-card span{
-  color:var(--muted);
-  font-size:.8rem;
-  line-height:1.45;
+  font-size:.9rem;
 }
 
 
 /* ADVISOR SUMMARY */
 
 .advisor-line{
-  min-height:52px;
-  padding:11px 14px;
+  min-height:50px;
+  padding:10px 13px;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:15px;
+  gap:14px;
 
   border:1px solid var(--line);
-  border-radius:12px;
+  border-radius:11px;
 }
 
 .advisor-line strong{
   display:block;
-  font-size:.86rem;
+  font-size:.84rem;
 }
 
 .advisor-line span{
   display:block;
   margin-top:2px;
   color:var(--muted);
-  font-size:.74rem;
+  font-size:.72rem;
 }
 
 .toggle-row{
-  margin-top:15px;
+  margin-top:13px;
 
   display:flex;
   align-items:flex-start;
-  gap:10px;
+  gap:9px;
 
-  font-size:.82rem;
-  line-height:1.45;
+  font-size:.8rem;
+  line-height:1.4;
 }
 
 .toggle-row input{
@@ -506,22 +488,18 @@ input:focus{
 .package-choice-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  grid-auto-rows:1fr;
-  gap:13px;
-  margin-top:15px;
+  gap:12px;
+  margin-top:12px;
 }
 
 .package-choice{
   position:relative;
 
-  min-height:145px;
-  padding:19px 48px 18px 19px;
-
-  display:flex;
-  flex-direction:column;
+  min-height:105px;
+  padding:17px 44px 16px 17px;
 
   border:2px solid var(--line);
-  border-radius:17px;
+  border-radius:15px;
 
   background:white;
   cursor:pointer;
@@ -540,22 +518,22 @@ input:focus{
 
 .package-check{
   position:absolute;
-  top:16px;
-  right:16px;
+  top:14px;
+  right:14px;
 
-  width:23px;
-  height:23px;
+  width:22px;
+  height:22px;
 
   display:grid;
   place-items:center;
 
-  border:2px solid #cfc8d4;
+  border:2px solid #cbc4d0;
   border-radius:6px;
 
   background:white;
   color:transparent;
 
-  font-size:.8rem;
+  font-size:.76rem;
   font-weight:900;
 }
 
@@ -566,59 +544,59 @@ input:focus{
 }
 
 .package-choice strong{
-  margin-bottom:7px;
-  font-size:.9rem;
+  display:block;
+  margin-bottom:5px;
+  font-size:.86rem;
 }
 
 .package-choice p{
   margin:0;
   color:var(--muted);
-  font-size:.79rem;
-  line-height:1.48;
+  font-size:.73rem;
+  line-height:1.4;
 }
 
 
-/* REVIEW */
+/* SEND */
 
 .send-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:18px;
-  margin-bottom:18px;
+  gap:16px 20px;
+  margin-bottom:16px;
 }
 
 .selected-resources{
   display:flex;
   flex-wrap:wrap;
-  gap:8px;
-  margin:8px 0 18px;
+  gap:7px;
+  margin:7px 0 15px;
 }
 
 .resource-chip{
-  padding:7px 11px;
+  padding:6px 10px;
 
   border-radius:999px;
 
   background:var(--purple-soft);
   color:var(--purple);
 
-  font-size:.72rem;
+  font-size:.7rem;
   font-weight:700;
 }
 
 .message-preview{
   overflow:hidden;
   border:1px solid var(--line);
-  border-radius:16px;
+  border-radius:15px;
 }
 
 .preview-top{
-  padding:10px 16px;
+  padding:9px 14px;
 
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:12px;
+  gap:10px;
 
   border-bottom:1px solid var(--line);
 
@@ -626,36 +604,35 @@ input:focus{
 }
 
 .preview-top strong{
-  font-size:.83rem;
+  font-size:.81rem;
 }
 
 .preview-top span{
   color:var(--muted);
-  font-size:.72rem;
+  font-size:.69rem;
 }
 
 .preview-body{
-  max-height:265px;
+  max-height:225px;
   overflow:auto;
 
-  padding:18px 20px;
+  padding:16px 18px;
 
   font-family:Arial,Helvetica,sans-serif;
-  font-size:.88rem;
-  line-height:1.58;
+  font-size:.86rem;
+  line-height:1.55;
 }
 
 .preview-body p{
-  margin:0 0 12px;
+  margin:0 0 11px;
 }
 
 .preview-link{
-  margin:5px 0 13px;
+  margin:4px 0 11px;
 }
 
 .preview-link strong{
   display:block;
-  margin-bottom:2px;
 }
 
 .preview-link a{
@@ -665,7 +642,7 @@ input:focus{
 }
 
 
-/* STEP ACTIONS */
+/* ACTIONS */
 
 .step-actions{
   position:absolute;
@@ -673,23 +650,22 @@ input:focus{
   bottom:0;
   left:0;
 
-  min-height:72px;
-  padding:13px 38px;
+  min-height:68px;
+  padding:12px 36px;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:12px;
+  gap:10px;
 
   border-top:1px solid var(--line);
-
   background:#fcfbfd;
 }
 
 .action-right{
   margin-left:auto;
   display:flex;
-  gap:9px;
+  gap:8px;
 }
 
 
@@ -709,64 +685,61 @@ input:focus{
 }
 
 .modal{
-  width:min(540px,100%);
+  width:min(520px,100%);
   overflow:hidden;
 
-  border-radius:22px;
+  border-radius:20px;
 
   background:white;
   box-shadow:0 25px 80px rgba(25,10,35,.25);
 }
 
 .modal-head{
-  padding:23px 25px 12px;
+  padding:22px 24px 10px;
 
   display:flex;
-  align-items:flex-start;
   justify-content:space-between;
   gap:15px;
 }
 
 .modal-head h2{
   margin:3px 0 0;
-  font-size:1.5rem;
+  font-size:1.4rem;
 }
 
 .modal-body{
-  padding:0 25px 20px;
+  padding:0 24px 18px;
 }
 
 .modal-footer{
-  padding:16px 25px;
+  padding:15px 24px;
 
   display:flex;
   justify-content:flex-end;
-  gap:9px;
+  gap:8px;
 
   border-top:1px solid var(--line);
 }
 
 .modal-field{
-  margin:15px 0;
+  margin:14px 0;
 }
 
 .modal-field label{
   display:block;
-  margin-bottom:7px;
-  font-size:.83rem;
+  margin-bottom:6px;
+  font-size:.81rem;
   font-weight:700;
 }
 
 .close{
-  width:34px;
-  height:34px;
+  width:32px;
+  height:32px;
 
   border:0;
   border-radius:50%;
 
   background:#f1eef3;
-
-  font-size:1.05rem;
 }
 
 
@@ -774,23 +747,20 @@ input:focus{
 
 .toast{
   position:fixed;
-  right:22px;
-  bottom:22px;
+  right:20px;
+  bottom:20px;
   z-index:200;
 
-  max-width:390px;
+  max-width:360px;
 
-  padding:13px 16px;
+  padding:12px 15px;
 
-  border-radius:13px;
+  border-radius:12px;
 
   background:var(--ink);
   color:white;
 
-  box-shadow:0 14px 40px rgba(0,0,0,.2);
-
-  font-size:.82rem;
-  line-height:1.4;
+  font-size:.8rem;
 }
 
 
@@ -799,7 +769,7 @@ input:focus{
 @media(max-width:800px){
 
   .page{
-    padding:20px 12px 35px;
+    padding:18px 11px 30px;
   }
 
   .brand-copy{
@@ -807,11 +777,11 @@ input:focus{
   }
 
   .site-header{
-    height:66px;
+    height:64px;
   }
 
   .brand-logo{
-    height:43px;
+    height:41px;
   }
 
   .workspace{
@@ -820,7 +790,7 @@ input:focus{
 
   .step{
     min-height:0;
-    padding:24px 18px 100px;
+    padding:22px 17px 95px;
   }
 
   .form-grid,
@@ -833,21 +803,13 @@ input:focus{
   }
 
   .package-choice{
-    min-height:105px;
+    min-height:auto;
   }
 
   .step-actions{
     position:sticky;
     bottom:0;
-    padding:12px 18px;
-  }
-
-  .progress-wrap{
-    padding:12px 7px;
-  }
-
-  .progress-label{
-    font-size:.68rem;
+    padding:11px 17px;
   }
 
 }
@@ -859,12 +821,12 @@ input:focus{
   }
 
   .choice-card{
-    min-height:auto;
+    min-height:58px;
   }
 
   .header-actions .btn{
-    padding:8px 10px;
-    font-size:.72rem;
+    padding:8px 9px;
+    font-size:.7rem;
   }
 
   .action-right{
@@ -897,16 +859,16 @@ input:focus{
     </div>
 
     <h1>
-      Welcome to the Advisor Hub.
+      Advisor Hub
     </h1>
 
     <p class="help">
-      Create personalized getting started packages for your Best Buddies chapters.
+      Chapter package builder.
     </p>
 
     <div style="margin-top:20px">
 
-      <label style="display:block;font-size:.85rem;font-weight:700;margin-bottom:7px">
+      <label style="display:block;font-size:.84rem;font-weight:700;margin-bottom:7px">
         Password
       </label>
 
@@ -921,7 +883,7 @@ input:focus{
 
     <button
       class="btn btn-primary"
-      style="width:100%;margin-top:14px"
+      style="width:100%;margin-top:13px"
       onclick="login()"
     >
       Continue
@@ -985,19 +947,15 @@ input:focus{
 <main class="page">
 
 
-<section class="intro">
+<section class="page-title">
 
   <div class="eyebrow">
     Chapter Package Builder
   </div>
 
   <h1>
-    Create a Getting Started Package.
+    Getting Started Package
   </h1>
-
-  <p>
-    Build a personalized checklist and choose the resources that will be most helpful for this chapter.
-  </p>
 
 </section>
 
@@ -1013,7 +971,7 @@ input:focus{
 
     <div class="progress-item" id="progress2">
       <div class="progress-circle">2</div>
-      <div class="progress-label">Build Package</div>
+      <div class="progress-label">Package</div>
     </div>
 
     <div class="progress-item" id="progress3">
@@ -1040,12 +998,8 @@ input:focus{
     </div>
 
     <h2>
-      Tell us about the chapter.
+      Chapter details
     </h2>
-
-    <p>
-      Just the basics to make sure we build the right version.
-    </p>
 
   </div>
 
@@ -1092,10 +1046,6 @@ input:focus{
             Elementary & Middle
           </strong>
 
-          <span>
-            For elementary and middle school chapters.
-          </span>
-
         </label>
 
 
@@ -1114,10 +1064,6 @@ input:focus{
           <strong>
             High School
           </strong>
-
-          <span>
-            For secondary school chapters.
-          </span>
 
         </label>
 
@@ -1151,10 +1097,6 @@ input:focus{
             New / Restarting
           </strong>
 
-          <span>
-            A chapter getting started or returning after a pause.
-          </span>
-
         </label>
 
 
@@ -1173,10 +1115,6 @@ input:focus{
           <strong>
             Existing / Active
           </strong>
-
-          <span>
-            A returning chapter preparing for the year ahead.
-          </span>
 
         </label>
 
@@ -1230,16 +1168,12 @@ input:focus{
   <div class="step-head">
 
     <div class="step-number">
-      Step 2 · Build Package
+      Step 2 · Package
     </div>
 
     <h2>
-      Personalize what they receive.
+      Build package
     </h2>
-
-    <p>
-      Add the chapter-specific details and choose what makes sense to include.
-    </p>
 
   </div>
 
@@ -1265,13 +1199,13 @@ input:focus{
     <div class="field">
 
       <label class="field-title" for="registrationLink">
-        School Registration Link
+        Registration Link
       </label>
 
       <input
         id="registrationLink"
         type="text"
-        placeholder="Paste current Salesforce registration link"
+        placeholder="Paste current Salesforce link"
       >
 
     </div>
@@ -1280,14 +1214,14 @@ input:focus{
     <div class="field">
 
       <label class="field-title" for="rosterLink">
-        Chapter Roster Link
+        Roster Link
         <span class="optional">optional</span>
       </label>
 
       <input
         id="rosterLink"
         type="text"
-        placeholder="Paste roster link if applicable"
+        placeholder="Paste roster link"
       >
 
     </div>
@@ -1308,7 +1242,7 @@ input:focus{
           </strong>
 
           <span id="advisorSummaryContact">
-            Use My Details above.
+            Use My Details.
           </span>
 
         </div>
@@ -1332,7 +1266,7 @@ input:focus{
         >
 
         <span>
-          Show my direct contact information on the school checklist.
+          Show my direct contact information on the checklist
         </span>
 
       </label>
@@ -1344,9 +1278,9 @@ input:focus{
 
   <div
     class="field-title"
-    style="margin-top:20px"
+    style="margin-top:18px"
   >
-    What should this package include?
+    Include
   </div>
 
 
@@ -1361,11 +1295,11 @@ input:focus{
       <div class="package-check">✓</div>
 
       <strong>
-        Personalized Chapter Checklist
+        Chapter Checklist
       </strong>
 
       <p>
-        School-specific steps, clickable checkboxes, registration information and helpful links.
+        Personalized steps, registration and clickable links.
       </p>
 
     </div>
@@ -1384,7 +1318,7 @@ input:focus{
       </strong>
 
       <p>
-        Practical guidance for getting the chapter underway and finding a rhythm that works.
+        Practical chapter launch guidance.
       </p>
 
     </div>
@@ -1399,11 +1333,11 @@ input:focus{
       <div class="package-check">✓</div>
 
       <strong>
-        Best Buddies Resource Library
+        Resource Library
       </strong>
 
       <p>
-        Activity ideas, recruitment materials, program guidance, fundraising tools and more.
+        Activities, recruitment, fundraising and program resources.
       </p>
 
     </div>
@@ -1451,12 +1385,8 @@ input:focus{
     </div>
 
     <h2>
-      Review and send.
+      Review & send
     </h2>
-
-    <p>
-      Add the recipient, make any final changes and open the finished message in Outlook.
-    </p>
 
   </div>
 
@@ -1496,22 +1426,22 @@ input:focus{
   </div>
 
 
-  <div class="field" style="margin-bottom:18px">
+  <div class="field">
 
     <label class="field-title" for="subjectLine">
-      Email Subject
+      Subject
     </label>
 
     <input
       id="subjectLine"
       type="text"
-      oninput="subjectDirty=true; currentSubject=this.value;"
+      oninput="subjectDirty=true;currentSubject=this.value;"
     >
 
   </div>
 
 
-  <div class="field-title">
+  <div class="field-title" style="margin-top:15px">
     Included
   </div>
 
@@ -1530,7 +1460,7 @@ input:focus{
       </strong>
 
       <span>
-        Outlook will add your usual signature
+        Outlook will add your signature
       </span>
 
     </div>
@@ -1595,7 +1525,7 @@ input:focus{
 
 
 
-<!-- ADVISOR DETAILS MODAL -->
+<!-- ADVISOR MODAL -->
 
 <div
   id="advisorModal"
@@ -1616,13 +1546,6 @@ input:focus{
         <h2>
           My Details
         </h2>
-
-        <p
-          class="help"
-          style="margin:5px 0 0;font-size:.84rem"
-        >
-          Save these once and they’ll be used automatically in your chapter checklists.
-        </p>
 
       </div>
 
@@ -1714,7 +1637,7 @@ input:focus{
         class="btn btn-primary"
         onclick="saveAdvisor()"
       >
-        Save Details
+        Save
       </button>
 
     </div>
@@ -1759,22 +1682,14 @@ const QUICK_START_GUIDES = {
 
 
 let currentStep = 1;
-
-let selectedProgram =
-  "elementary";
-
-let selectedStatus =
-  "new";
-
+let selectedProgram = "elementary";
+let selectedStatus = "new";
 
 let packageItems = {
-
   checklist:true,
   quickStart:true,
   resources:true
-
 };
-
 
 let currentChecklist = "";
 let currentSubject = "";
@@ -1790,7 +1705,6 @@ function login(){
 
   const password =
     document.getElementById("password").value;
-
 
   if(password === PASSWORD){
 
@@ -1830,18 +1744,16 @@ function showApp(){
     "loginScreen"
   ).classList.add("hidden");
 
-
   document.getElementById(
     "app"
   ).classList.remove("hidden");
-
 
   loadAdvisor();
 
 }
 
 
-/* ADVISOR */
+/* ADVISOR PROFILE */
 
 function openAdvisorModal(){
 
@@ -1873,7 +1785,6 @@ function closeModalBackdrop(event){
 function getAdvisor(){
 
   return{
-
     name:
       document.getElementById(
         "advisorName"
@@ -1893,7 +1804,6 @@ function getAdvisor(){
       document.getElementById(
         "advisorPhone"
       ).value.trim()
-
   };
 
 }
@@ -1904,20 +1814,14 @@ function saveAdvisor(){
   const advisor =
     getAdvisor();
 
-
   localStorage.setItem(
     "bbAdvisorProfile",
     JSON.stringify(advisor)
   );
 
-
   updateAdvisorSummary();
-
   closeAdvisorModal();
-
-  showToast(
-    "Advisor details saved."
-  );
+  showToast("Advisor details saved.");
 
 }
 
@@ -1941,30 +1845,25 @@ function loadAdvisor(){
 
   }
 
-
   document.getElementById(
     "advisorName"
   ).value =
     advisor.name || "";
-
 
   document.getElementById(
     "advisorTitle"
   ).value =
     advisor.title || "";
 
-
   document.getElementById(
     "advisorEmail"
   ).value =
     advisor.email || "";
 
-
   document.getElementById(
     "advisorPhone"
   ).value =
     advisor.phone || "";
-
 
   updateAdvisorSummary();
 
@@ -1976,44 +1875,36 @@ function updateAdvisorSummary(){
   const advisor =
     getAdvisor();
 
-
   document.getElementById(
     "advisorSummaryName"
   ).textContent =
-    advisor.name ||
-    "Add your details";
-
+    advisor.name || "Add your details";
 
   const details = [];
-
 
   if(advisor.title){
     details.push(advisor.title);
   }
 
-
   if(advisor.email){
     details.push(advisor.email);
   }
-
 
   document.getElementById(
     "advisorSummaryContact"
   ).textContent =
     details.length
       ? details.join(" · ")
-      : "Use My Details above.";
+      : "Use My Details.";
 
 }
 
 
-/* PROGRAM + STATUS */
+/* PROGRAM */
 
 function selectProgram(value){
 
-  selectedProgram =
-    value;
-
+  selectedProgram = value;
 
   document.getElementById(
     "programElementaryCard"
@@ -2022,14 +1913,12 @@ function selectProgram(value){
     value === "elementary"
   );
 
-
   document.getElementById(
     "programHighCard"
   ).classList.toggle(
     "selected",
     value === "high"
   );
-
 
   updateQuickStartName();
 
@@ -2038,9 +1927,7 @@ function selectProgram(value){
 
 function selectStatus(value){
 
-  selectedStatus =
-    value;
-
+  selectedStatus = value;
 
   document.getElementById(
     "statusNewCard"
@@ -2048,7 +1935,6 @@ function selectStatus(value){
     "selected",
     value === "new"
   );
-
 
   document.getElementById(
     "statusActiveCard"
@@ -2065,7 +1951,6 @@ function updateQuickStartName(){
   document.getElementById(
     "quickStartCardName"
   ).textContent =
-
     selectedProgram === "elementary"
       ? "Elementary & Middle Quick Start Guide"
       : "High School Quick Start Guide";
@@ -2073,27 +1958,18 @@ function updateQuickStartName(){
 }
 
 
-/* PACKAGE SELECTION */
+/* PACKAGE TOGGLES */
 
 function togglePackageItem(item){
 
   packageItems[item] =
     !packageItems[item];
 
-
   const ids = {
-
-    checklist:
-      "includeChecklistCard",
-
-    quickStart:
-      "includeQuickStartCard",
-
-    resources:
-      "includeResourcesCard"
-
+    checklist:"includeChecklistCard",
+    quickStart:"includeQuickStartCard",
+    resources:"includeResourcesCard"
   };
-
 
   document.getElementById(
     ids[item]
@@ -2105,7 +1981,7 @@ function togglePackageItem(item){
 }
 
 
-/* NAVIGATION */
+/* STEPS */
 
 function goToStep(step){
 
@@ -2115,7 +1991,6 @@ function goToStep(step){
       document.getElementById(
         "schoolName"
       ).value.trim();
-
 
     if(!school){
 
@@ -2135,7 +2010,6 @@ function goToStep(step){
     const advisor =
       getAdvisor();
 
-
     if(
       !advisor.name ||
       !advisor.email
@@ -2144,7 +2018,7 @@ function goToStep(step){
       openAdvisorModal();
 
       showToast(
-        "Add your advisor name and email before continuing."
+        "Add your advisor name and email."
       );
 
       return;
@@ -2169,8 +2043,7 @@ function goToStep(step){
   }
 
 
-  currentStep =
-    step;
+  currentStep = step;
 
 
   [1,2,3].forEach(number=>{
@@ -2181,7 +2054,6 @@ function goToStep(step){
       "hidden",
       number !== step
     );
-
 
     document.getElementById(
       "actions"+number
@@ -2199,13 +2071,14 @@ function goToStep(step){
   if(step === 3){
 
     subjectDirty = false;
-
     buildPackage();
 
   }
 
 }
 
+
+/* PROGRESS */
 
 function updateProgress(){
 
@@ -2216,12 +2089,10 @@ function updateProgress(){
         "progress"+number
       );
 
-
     item.classList.remove(
       "active",
       "done"
     );
-
 
     if(number < currentStep){
 
@@ -2238,13 +2109,12 @@ function updateProgress(){
 }
 
 
-/* CHECKLIST LINK */
+/* CHECKLIST URL */
 
 function buildChecklistUrl(){
 
   const advisor =
     getAdvisor();
-
 
   const params =
     new URLSearchParams({
@@ -2321,7 +2191,7 @@ function buildChecklistUrl(){
 }
 
 
-/* PACKAGE + EMAIL */
+/* BUILD PACKAGE */
 
 function buildPackage(){
 
@@ -2330,45 +2200,36 @@ function buildPackage(){
       "schoolName"
     ).value.trim();
 
-
   const year =
     document.getElementById(
       "programYear"
     ).value.trim();
-
 
   const recipientName =
     document.getElementById(
       "recipientName"
     ).value.trim();
 
-
   const advisor =
     getAdvisor();
-
 
   const quickStart =
     QUICK_START_GUIDES[
       selectedProgram
     ];
 
-
   const resourceFolder =
     RESOURCE_FOLDERS[
       selectedProgram
     ];
-
 
   currentChecklist =
     buildChecklistUrl();
 
 
   const defaultSubject =
-
     selectedStatus === "new"
-
       ? `Getting Started with Best Buddies | ${school}`
-
       : `Best Buddies ${year} | ${school}`;
 
 
@@ -2401,28 +2262,22 @@ function buildPackage(){
 
 
   const quickStartTitle =
-
     selectedProgram === "elementary"
-
       ? "Elementary & Middle School Quick Start Guide"
-
       : "High School Quick Start Guide";
 
 
-  /* SELECTED CHIPS */
+  /* CHIPS */
 
   const chips = [];
-
 
   if(packageItems.checklist){
     chips.push("Chapter Checklist");
   }
 
-
   if(packageItems.quickStart){
     chips.push("Quick Start Guide");
   }
-
 
   if(packageItems.resources){
     chips.push("Resource Library");
@@ -2432,14 +2287,15 @@ function buildPackage(){
   document.getElementById(
     "selectedResources"
   ).innerHTML =
+    chips
+      .map(
+        item =>
+          `<div class="resource-chip">${escapeHtml(item)}</div>`
+      )
+      .join("");
 
-    chips.map(
-      item =>
-        `<div class="resource-chip">${escapeHtml(item)}</div>`
-    ).join("");
 
-
-  /* PREVIEW */
+  /* EMAIL PREVIEW */
 
   let preview = `
     <p>${greeting}</p>
@@ -2456,15 +2312,11 @@ function buildPackage(){
 
     preview += `
       <div class="preview-link">
-        <strong>
-          Your Chapter Checklist
-        </strong>
-
+        <strong>Your Chapter Checklist</strong>
         <div>
           A personalized checklist for ${escapeHtml(school)}
           with your key steps, registration information and helpful links.
         </div>
-
         <a href="${escapeAttribute(currentChecklist)}" target="_blank">
           Open your Chapter Checklist
         </a>
@@ -2478,15 +2330,11 @@ function buildPackage(){
 
     preview += `
       <div class="preview-link">
-        <strong>
-          ${escapeHtml(quickStartTitle)}
-        </strong>
-
+        <strong>${escapeHtml(quickStartTitle)}</strong>
         <div>
           A practical guide to getting your chapter underway,
           welcoming students and planning your first gatherings.
         </div>
-
         <a href="${escapeAttribute(quickStart)}" target="_blank">
           Open the Quick Start Guide
         </a>
@@ -2500,15 +2348,11 @@ function buildPackage(){
 
     preview += `
       <div class="preview-link">
-        <strong>
-          Best Buddies Resource Library
-        </strong>
-
+        <strong>Best Buddies Resource Library</strong>
         <div>
           Activity ideas, recruitment materials, program guidance,
           inclusive activity resources, fundraising tools and more.
         </div>
-
         <a href="${escapeAttribute(resourceFolder)}" target="_blank">
           Explore the Resource Library
         </a>
@@ -2522,8 +2366,8 @@ function buildPackage(){
 
     preview += `
       <p>
-        You can use the Chapter Checklist online and check things
-        off as you go, or print/save a copy if that works better for you.
+        You can use the Chapter Checklist online and check things off
+        as you go, or print/save a copy if that works better for you.
       </p>
     `;
 
@@ -2609,17 +2453,12 @@ function buildPackage(){
     packageItems.checklist
       ? `
         <p>
-          You can use the Chapter Checklist online and check things
-          off as you go, or print/save a copy if that works better for you.
+          You can use the Chapter Checklist online and check things off
+          as you go, or print/save a copy if that works better for you.
         </p>
       `
       : "";
 
-
-  /*
-    No signature is added here.
-    Outlook can apply the advisor's normal email signature.
-  */
 
   currentHtmlEmail = `
     <div style="
@@ -2696,7 +2535,7 @@ Please reach out anytime if questions come up or if there’s anything I can hel
 }
 
 
-/* CLIPBOARD */
+/* COPY EMAIL */
 
 async function copyPolishedEmail(){
 
@@ -2740,7 +2579,7 @@ async function copyPolishedEmail(){
 
 
     showToast(
-      "Email copied using the plain-text fallback."
+      "Email copied using plain text."
     );
 
   }
@@ -2748,7 +2587,7 @@ async function copyPolishedEmail(){
 }
 
 
-/* OUTLOOK */
+/* OPEN OUTLOOK */
 
 async function copyAndOpenOutlook(){
 
@@ -2765,18 +2604,11 @@ async function copyAndOpenOutlook(){
 
 
   const outlookUrl =
-
     "https://outlook.office.com/mail/deeplink/compose"
-
     + "?to="
-
     + encodeURIComponent(recipient)
-
     + "&subject="
-
-    + encodeURIComponent(
-      currentSubject
-    );
+    + encodeURIComponent(currentSubject);
 
 
   window.open(
@@ -2786,18 +2618,17 @@ async function copyAndOpenOutlook(){
 
 
   showToast(
-    "Outlook opened. Paste the copied email above your usual signature."
+    "Outlook opened. Paste the email above your normal signature."
   );
 
 }
 
 
-/* CHECKLIST PREVIEW */
+/* CHECKLIST */
 
 function previewChecklist(){
 
   buildPackage();
-
 
   if(currentChecklist){
 
@@ -2838,11 +2669,9 @@ function showToast(message){
   window.bbToastTimer =
     setTimeout(
       ()=>{
-        toast.classList.add(
-          "hidden"
-        );
+        toast.classList.add("hidden");
       },
-      3200
+      3000
     );
 
 }
