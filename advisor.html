@@ -17,31 +17,59 @@
   --border:#e5dfea;
   --white:#fff;
 }
-*{box-sizing:border-box}
+
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   color:var(--ink);
   background:#f7f6f8;
 }
-button,input,select,textarea{font:inherit}
-a{color:var(--purple)}
-.hidden{display:none!important}
+
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+a{
+  color:var(--purple);
+}
+
+.hidden{
+  display:none !important;
+}
+
+
+/* ----------------------------------------------------
+   LOGIN
+---------------------------------------------------- */
 
 .login-screen{
   min-height:100vh;
   display:grid;
   place-items:center;
   padding:25px;
-  background:linear-gradient(135deg,#f5eff8,#eefafa);
+  background:
+    linear-gradient(
+      135deg,
+      #f5eff8,
+      #eefafa
+    );
 }
+
 .login-card{
-  background:white;
+  background:#fff;
   width:min(460px,100%);
   border-radius:22px;
   padding:35px;
   box-shadow:0 18px 50px rgba(44,30,60,.12);
 }
+
 .eyebrow{
   font-weight:800;
   letter-spacing:.08em;
@@ -49,19 +77,49 @@ a{color:var(--purple)}
   color:var(--purple);
   font-size:.78rem;
 }
-h1,h2,h3{margin-top:0}
-.login-card h1{font-size:2rem;margin:8px 0 10px}
-.help{color:var(--muted);line-height:1.5}
-.field{margin:18px 0}
-label{display:block;font-weight:700;margin-bottom:7px}
-input,select,textarea{
+
+.login-card h1{
+  font-size:2rem;
+  margin:8px 0 10px;
+}
+
+.help{
+  color:var(--muted);
+  line-height:1.5;
+}
+
+.field{
+  margin:18px 0;
+}
+
+label{
+  display:block;
+  font-weight:700;
+  margin-bottom:7px;
+}
+
+input,
+select,
+textarea{
   width:100%;
   padding:12px 14px;
   border:1px solid #d8d2dd;
   border-radius:10px;
   background:#fff;
 }
-textarea{min-height:95px;resize:vertical}
+
+input:focus,
+select:focus,
+textarea:focus{
+  outline:3px solid rgba(24,185,179,.16);
+  border-color:var(--teal);
+}
+
+textarea{
+  min-height:95px;
+  resize:vertical;
+}
+
 .btn{
   border:0;
   border-radius:10px;
@@ -69,17 +127,48 @@ textarea{min-height:95px;resize:vertical}
   font-weight:800;
   cursor:pointer;
 }
-.btn-primary{background:var(--purple);color:white}
-.btn-teal{background:var(--teal);color:white}
-.btn-soft{background:#f0e9f4;color:var(--purple)}
-.btn-outline{background:white;border:1px solid var(--border);color:var(--ink)}
-.btn-small{padding:9px 12px;font-size:.9rem}
+
+.btn:hover{
+  opacity:.93;
+}
+
+.btn-primary{
+  background:var(--purple);
+  color:white;
+}
+
+.btn-teal{
+  background:var(--teal);
+  color:white;
+}
+
+.btn-soft{
+  background:#f0e9f4;
+  color:var(--purple);
+}
+
+.btn-outline{
+  background:white;
+  border:1px solid var(--border);
+  color:var(--ink);
+}
+
+.btn-small{
+  padding:9px 12px;
+  font-size:.9rem;
+}
+
+
+/* ----------------------------------------------------
+   HEADER
+---------------------------------------------------- */
 
 .topbar{
   background:var(--teal);
   color:white;
   padding:18px 28px;
 }
+
 .topbar-inner{
   max-width:1180px;
   margin:auto;
@@ -88,43 +177,77 @@ textarea{min-height:95px;resize:vertical}
   align-items:center;
   gap:20px;
 }
-.brand strong{font-size:1.15rem}
-.brand span{display:block;font-size:.85rem;opacity:.9;margin-top:3px}
+
+.brand strong{
+  font-size:1.15rem;
+}
+
+.brand span{
+  display:block;
+  font-size:.85rem;
+  opacity:.9;
+  margin-top:3px;
+}
+
+
+/* ----------------------------------------------------
+   PAGE LAYOUT
+---------------------------------------------------- */
 
 main{
   max-width:1180px;
   margin:auto;
   padding:32px 22px 70px;
 }
+
 .hero{
   display:grid;
   grid-template-columns:1.3fr .7fr;
   gap:26px;
   margin-bottom:28px;
 }
-.hero-card,.panel{
+
+.hero-card,
+.panel{
   background:white;
   border-radius:18px;
   border:1px solid var(--border);
   padding:26px;
 }
+
 .hero-card{
-  background:linear-gradient(135deg,#faf6fc,#f1fbfb);
+  background:
+    linear-gradient(
+      135deg,
+      #faf6fc,
+      #f1fbfb
+    );
 }
-.hero h1{font-size:2.35rem;margin:8px 0 10px;line-height:1.05}
+
+.hero h1{
+  font-size:2.35rem;
+  margin:8px 0 10px;
+  line-height:1.05;
+}
+
 .hero-side{
   background:var(--purple);
   color:white;
   border-radius:18px;
   padding:25px;
 }
-.hero-side p{line-height:1.5;margin-bottom:0}
+
+.hero-side p{
+  line-height:1.5;
+  margin-bottom:0;
+}
 
 .grid-2{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:22px;
 }
+
 .section-title{
   display:flex;
   align-items:flex-start;
@@ -132,19 +255,43 @@ main{
   gap:15px;
   margin-bottom:20px;
 }
-.section-title h2{margin-bottom:4px}
-.mini{font-size:.87rem;color:var(--muted);line-height:1.45}
+
+.section-title h2{
+  margin:0 0 4px;
+}
+
+.mini{
+  font-size:.87rem;
+  color:var(--muted);
+  line-height:1.45;
+}
 
 .toggle-row{
   display:flex;
-  align-items:center;
+  align-items:flex-start;
   gap:10px;
   padding:10px 0;
 }
-.toggle-row input{width:auto}
-.divider{
-  height:1px;background:var(--border);margin:24px 0;
+
+.toggle-row input{
+  width:auto;
+  margin-top:3px;
 }
+
+.toggle-row label{
+  margin:0;
+}
+
+.divider{
+  height:1px;
+  background:var(--border);
+  margin:24px 0;
+}
+
+
+/* ----------------------------------------------------
+   PACKAGE PREVIEW
+---------------------------------------------------- */
 
 .package-preview{
   background:#faf9fb;
@@ -152,17 +299,27 @@ main{
   border-radius:14px;
   padding:18px;
 }
+
 .preview-item{
   display:flex;
   gap:13px;
   padding:13px 0;
   border-bottom:1px solid var(--border);
 }
-.preview-item:last-child{border-bottom:0}
+
+.preview-item:last-child{
+  border-bottom:0;
+}
+
 .icon{
-  width:34px;height:34px;border-radius:9px;
-  display:grid;place-items:center;
-  background:#efe6f4;color:var(--purple);font-weight:900;
+  width:38px;
+  height:38px;
+  border-radius:9px;
+  display:grid;
+  place-items:center;
+  background:#efe6f4;
+  color:var(--purple);
+  font-weight:900;
   flex:0 0 auto;
 }
 
@@ -194,449 +351,1431 @@ main{
   line-height:1.45;
 }
 
+.package-summary{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:18px;
+}
+
+.summary-box{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:14px;
+  background:#fff;
+}
+
+.summary-box strong{
+  display:block;
+  margin-bottom:4px;
+}
+
+.summary-box a{
+  font-size:.86rem;
+  font-weight:700;
+}
+
+
+/* ----------------------------------------------------
+   MOBILE
+---------------------------------------------------- */
+
 @media(max-width:850px){
-  .hero,.grid-2{grid-template-columns:1fr}
-  .hero h1{font-size:2rem}
+
+  .hero,
+  .grid-2,
+  .package-summary{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:2rem;
+  }
+
+  .topbar{
+    padding:15px 18px;
+  }
+
+  main{
+    padding:24px 15px 60px;
+  }
 }
 </style>
 </head>
 
+
 <body>
 
-<section id="loginScreen" class="login-screen">
-  <div class="login-card">
-    <div class="eyebrow">Best Buddies Canada</div>
-    <h1>Program Advisor Tools</h1>
-    <p class="help">Create a personalized chapter checklist and ready-to-send onboarding package.</p>
 
-    <div class="field">
-      <label for="password">Advisor access</label>
-      <input type="password" id="password" placeholder="Enter password">
+<!-- ==================================================
+     LOGIN
+================================================== -->
+
+<section id="loginScreen" class="login-screen">
+
+  <div class="login-card">
+
+    <div class="eyebrow">
+      Best Buddies Canada
     </div>
 
-    <button class="btn btn-primary" style="width:100%" onclick="login()">Continue</button>
-    <p id="loginError" class="mini" style="color:#b02a37;margin-top:10px"></p>
+    <h1>
+      Program Advisor Tools
+    </h1>
+
+    <p class="help">
+      Create personalized chapter checklists and ready-to-send
+      school resource packages.
+    </p>
+
+    <div class="field">
+
+      <label for="password">
+        Advisor access
+      </label>
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter password"
+        onkeydown="if(event.key==='Enter') login()"
+      >
+
+    </div>
+
+    <button
+      class="btn btn-primary"
+      style="width:100%"
+      onclick="login()"
+    >
+      Continue
+    </button>
+
+    <p
+      id="loginError"
+      class="mini"
+      style="color:#b02a37;margin-top:10px"
+    ></p>
+
   </div>
+
 </section>
 
+
+
+<!-- ==================================================
+     APP
+================================================== -->
 
 <div id="app" class="hidden">
 
+
 <header class="topbar">
+
   <div class="topbar-inner">
+
     <div class="brand">
-      <strong>Best Buddies Canada</strong>
-      <span>Program Advisor Tools</span>
+
+      <strong>
+        Best Buddies Canada
+      </strong>
+
+      <span>
+        Program Advisor Tools
+      </span>
+
     </div>
-    <button class="btn btn-outline btn-small" onclick="logout()">Log out</button>
+
+    <button
+      class="btn btn-outline btn-small"
+      onclick="logout()"
+    >
+      Log out
+    </button>
+
   </div>
+
 </header>
+
+
 
 <main>
 
+
+<!-- ==================================================
+     INTRO
+================================================== -->
+
 <section class="hero">
+
   <div class="hero-card">
-    <div class="eyebrow">Chapter Package Builder</div>
-    <h1>Build the school’s next steps in one place.</h1>
+
+    <div class="eyebrow">
+      Chapter Package Builder
+    </div>
+
+    <h1>
+      Build the school’s next steps in one place.
+    </h1>
+
     <p class="help">
-      Create a personalized, clickable chapter checklist and a simple resource email without duplicating Salesforce.
+      Create a personalized, clickable chapter checklist and
+      a simple onboarding email without duplicating Salesforce.
     </p>
+
   </div>
+
 
   <div class="hero-side">
-    <strong>Salesforce stays the source of truth.</strong>
+
+    <strong>
+      Salesforce stays the source of truth.
+    </strong>
+
     <p>
-      This tool is for onboarding and support only. It does not store participant data,
-      registrations, references, VSC information or chapter records.
+      This tool is for onboarding and chapter support only.
+      It does not store participant information, registrations,
+      references, VSC information or official chapter records.
     </p>
+
   </div>
+
 </section>
 
+
+
+<!-- ==================================================
+     CHAPTER + ADVISOR DETAILS
+================================================== -->
 
 <div class="grid-2">
 
+
+<!-- CHAPTER DETAILS -->
+
 <section class="panel">
+
   <div class="section-title">
+
     <div>
-      <h2>1. Chapter details</h2>
-      <div class="mini">Only enter what is needed to build the package.</div>
+
+      <h2>
+        1. Chapter details
+      </h2>
+
+      <div class="mini">
+        Add only what is needed to create the school’s package.
+      </div>
+
     </div>
+
   </div>
 
-  <div class="field">
-    <label>School / chapter name</label>
-    <input id="schoolName" placeholder="Hanwell Park Academy">
-  </div>
 
   <div class="field">
-    <label>Program</label>
+
+    <label for="schoolName">
+      School / chapter name
+    </label>
+
+    <input
+      id="schoolName"
+      placeholder="Hanwell Park Academy"
+    >
+
+  </div>
+
+
+  <div class="field">
+
+    <label for="program">
+      Program
+    </label>
+
     <select id="program">
-      <option value="elementary">Elementary & Middle School</option>
-      <option value="high">High School</option>
+
+      <option value="elementary">
+        Elementary & Middle School
+      </option>
+
+      <option value="high">
+        High School
+      </option>
+
     </select>
+
   </div>
 
+
   <div class="field">
-    <label>Chapter status</label>
+
+    <label for="status">
+      Chapter status
+    </label>
+
     <select id="status">
-      <option value="new">New / Restarting Chapter</option>
-      <option value="active">Existing / Active Chapter</option>
+
+      <option value="new">
+        New / Restarting Chapter
+      </option>
+
+      <option value="active">
+        Existing / Active Chapter
+      </option>
+
     </select>
+
   </div>
 
-  <div class="field">
-    <label>Program year</label>
-    <input id="year" value="2026-27">
-  </div>
 
   <div class="field">
-    <label>Staff Advisor name <span class="mini">(optional)</span></label>
-    <input id="staffAdvisor" placeholder="Kayla Gallant">
+
+    <label for="year">
+      Program year
+    </label>
+
+    <input
+      id="year"
+      value="2026-27"
+    >
+
   </div>
 
-  <div class="field">
-    <label>School-specific registration link</label>
-    <input id="registrationLink" placeholder="Paste Salesforce registration link">
-  </div>
 
   <div class="field">
-    <label>Roster link <span class="mini">(optional)</span></label>
-    <input id="rosterLink" placeholder="Paste roster link if applicable">
+
+    <label for="staffAdvisor">
+      Staff Advisor name
+      <span class="mini">
+        (optional)
+      </span>
+    </label>
+
+    <input
+      id="staffAdvisor"
+      placeholder="Kayla Gallant"
+    >
+
   </div>
 
-  <div class="field">
-    <label>Recipient name <span class="mini">(for email)</span></label>
-    <input id="recipientName" placeholder="Kayla">
-  </div>
 
   <div class="field">
-    <label>Recipient email</label>
-    <input id="recipientEmail" type="email" placeholder="teacher@school.ca">
+
+    <label for="registrationLink">
+      School-specific registration link
+    </label>
+
+    <input
+      id="registrationLink"
+      placeholder="Paste Salesforce registration link"
+    >
+
   </div>
+
+
+  <div class="field">
+
+    <label for="rosterLink">
+      Roster link
+      <span class="mini">
+        (optional)
+      </span>
+    </label>
+
+    <input
+      id="rosterLink"
+      placeholder="Paste roster link if applicable"
+    >
+
+  </div>
+
+
+  <div class="divider"></div>
+
+
+  <h3>
+    Email recipient
+  </h3>
+
+
+  <div class="field">
+
+    <label for="recipientName">
+      Recipient first name
+    </label>
+
+    <input
+      id="recipientName"
+      placeholder="Kayla"
+    >
+
+  </div>
+
+
+  <div class="field">
+
+    <label for="recipientEmail">
+      Recipient email
+    </label>
+
+    <input
+      id="recipientEmail"
+      type="email"
+      placeholder="teacher@school.ca"
+    >
+
+  </div>
+
 </section>
 
 
+
+<!-- ADVISOR DETAILS -->
+
 <section class="panel">
+
   <div class="section-title">
+
     <div>
-      <h2>2. Your advisor details</h2>
-      <div class="mini">Saved on this device so you only enter them once.</div>
+
+      <h2>
+        2. Your advisor details
+      </h2>
+
+      <div class="mini">
+        These are saved on this device so you only need to enter them once.
+      </div>
+
     </div>
+
   </div>
 
-  <div class="field">
-    <label>Name</label>
-    <input id="advisorName" placeholder="Julianna Melnick-MacDonald">
-  </div>
 
   <div class="field">
-    <label>Title</label>
-    <input id="advisorTitle" placeholder="Program Advisor, Eastern Canada">
+
+    <label for="advisorName">
+      Name
+    </label>
+
+    <input
+      id="advisorName"
+      placeholder="Julianna Melnick-MacDonald"
+    >
+
   </div>
 
-  <div class="field">
-    <label>Email</label>
-    <input id="advisorEmail" type="email" placeholder="julianna@bestbuddies.ca">
-  </div>
 
   <div class="field">
-    <label>Phone</label>
-    <input id="advisorPhone" placeholder="416-531-0003 ext. 5300">
+
+    <label for="advisorTitle">
+      Title
+    </label>
+
+    <input
+      id="advisorTitle"
+      placeholder="Program Advisor, Eastern Canada"
+    >
+
   </div>
+
+
+  <div class="field">
+
+    <label for="advisorEmail">
+      Email
+    </label>
+
+    <input
+      id="advisorEmail"
+      type="email"
+      placeholder="julianna@bestbuddies.ca"
+    >
+
+  </div>
+
+
+  <div class="field">
+
+    <label for="advisorPhone">
+      Phone
+    </label>
+
+    <input
+      id="advisorPhone"
+      placeholder="416-531-0003 ext. 5300"
+    >
+
+  </div>
+
 
   <div class="toggle-row">
-    <input type="checkbox" id="showAdvisor" checked>
-    <label for="showAdvisor" style="margin:0">Show my direct contact information on the checklist</label>
+
+    <input
+      type="checkbox"
+      id="showAdvisor"
+      checked
+    >
+
+    <label for="showAdvisor">
+      Show my direct contact information on the school checklist
+    </label>
+
   </div>
 
-  <button class="btn btn-soft" onclick="saveAdvisor()">Save my details</button>
+
+  <button
+    class="btn btn-soft"
+    onclick="saveAdvisor()"
+  >
+    Save my details
+  </button>
+
 
   <div class="divider"></div>
 
-  <h3>Quick Start Guide links</h3>
+
+  <h3>
+    What gets sent
+  </h3>
+
   <p class="mini">
-    Paste these once. They will be remembered on this device until we hard-code the final approved Drive links.
+    Best Buddies resource links are already built in.
+    Advisors only need to add school-specific information.
   </p>
 
-  <div class="field">
-    <label>Elementary & Middle Quick Start Guide</label>
-    <input id="elemQuickStart" placeholder="Google Drive link">
+
+  <div class="package-preview">
+
+    <div class="preview-item">
+
+      <div class="icon">
+        ✓
+      </div>
+
+      <div>
+
+        <strong>
+          Personalized Chapter Checklist
+        </strong>
+
+        <div class="mini">
+          School-specific, clickable, printable and saved on the school’s device.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="preview-item">
+
+      <div class="icon">
+        QS
+      </div>
+
+      <div>
+
+        <strong>
+          Quick Start Guide
+        </strong>
+
+        <div class="mini">
+          The correct Elementary/Middle or High School guide is selected automatically.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="preview-item">
+
+      <div class="icon">
+        R
+      </div>
+
+      <div>
+
+        <strong>
+          Best Buddies Resource Library
+        </strong>
+
+        <div class="mini">
+          The correct Google Drive resource folder is selected automatically.
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="field">
-    <label>High School Quick Start Guide</label>
-    <input id="highQuickStart" placeholder="Google Drive link">
-  </div>
-
-  <button class="btn btn-soft" onclick="saveQuickStartLinks()">Save guide links</button>
 </section>
 
 </div>
 
 
-<section class="panel" style="margin-top:22px">
+
+<!-- ==================================================
+     GENERATE
+================================================== -->
+
+<section
+  class="panel"
+  style="margin-top:22px"
+>
+
   <div class="section-title">
+
     <div>
-      <h2>3. Build the package</h2>
-      <div class="mini">The correct resource library is selected automatically.</div>
+
+      <h2>
+        3. Create the chapter package
+      </h2>
+
+      <div class="mini">
+        Generate the personalized checklist and email.
+      </div>
+
     </div>
+
   </div>
 
-  <div class="package-preview">
-    <div class="preview-item">
-      <div class="icon">✓</div>
-      <div>
-        <strong>Personalized Chapter Checklist</strong>
-        <div class="mini">Clickable, autosaving, printable and accessible without logging into Chapter Hub.</div>
-      </div>
-    </div>
 
-    <div class="preview-item">
-      <div class="icon">QS</div>
-      <div>
-        <strong>Quick Start Guide</strong>
-        <div class="mini">Automatically uses the Elementary/Middle or High School version.</div>
-      </div>
-    </div>
+  <button
+    class="btn btn-primary"
+    onclick="generatePackage()"
+  >
+    Generate Chapter Package
+  </button>
 
-    <div class="preview-item">
-      <div class="icon">R</div>
-      <div>
-        <strong>Best Buddies Resource Library</strong>
-        <div class="mini">Automatically links to the appropriate Google Drive resource folder.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="action-bar">
-    <button class="btn btn-primary" onclick="generatePackage()">Generate Chapter Package</button>
-  </div>
 </section>
 
 
-<section id="output" class="panel hidden" style="margin-top:22px">
+
+<!-- ==================================================
+     OUTPUT
+================================================== -->
+
+<section
+  id="output"
+  class="panel hidden"
+  style="margin-top:22px"
+>
+
+
   <div class="section-title">
+
     <div>
-      <h2>Your package is ready</h2>
-      <div class="mini">Review everything before sending.</div>
+
+      <h2>
+        Your package is ready
+      </h2>
+
+      <div class="mini">
+        Review the checklist and email before sending.
+      </div>
+
     </div>
+
   </div>
+
+
+  <div class="package-summary">
+
+    <div class="summary-box">
+
+      <strong>
+        Chapter Checklist
+      </strong>
+
+      <span class="mini">
+        Personalized for this school.
+      </span>
+
+    </div>
+
+
+    <div class="summary-box">
+
+      <strong>
+        Quick Start Guide
+      </strong>
+
+      <a
+        id="quickStartPreview"
+        href="#"
+        target="_blank"
+      >
+        Open guide
+      </a>
+
+    </div>
+
+
+    <div class="summary-box">
+
+      <strong>
+        Resource Library
+      </strong>
+
+      <a
+        id="resourcePreview"
+        href="#"
+        target="_blank"
+      >
+        Open resources
+      </a>
+
+    </div>
+
+  </div>
+
 
   <div class="field">
-    <label>Checklist link</label>
-    <input id="checklistUrl" readonly>
+
+    <label for="checklistUrl">
+      Personalized checklist link
+    </label>
+
+    <input
+      id="checklistUrl"
+      readonly
+    >
+
   </div>
 
+
   <div class="action-bar">
-    <button class="btn btn-soft" onclick="copyChecklist()">Copy checklist link</button>
-    <button class="btn btn-outline" onclick="previewChecklist()">Preview checklist</button>
+
+    <button
+      class="btn btn-soft"
+      onclick="copyChecklist()"
+    >
+      Copy Checklist Link
+    </button>
+
+    <button
+      class="btn btn-outline"
+      onclick="previewChecklist()"
+    >
+      Preview Checklist
+    </button>
+
   </div>
+
 
   <div class="divider"></div>
 
-  <h3>Email preview</h3>
-  <div id="emailPreview" class="email-preview"></div>
+
+  <h3>
+    Email preview
+  </h3>
+
+
+  <div
+    id="emailPreview"
+    class="email-preview"
+  ></div>
+
 
   <div class="action-bar">
-    <button class="btn btn-teal" onclick="openOutlook()">Open in Outlook</button>
-    <button class="btn btn-soft" onclick="copyEmail()">Copy email</button>
+
+    <button
+      class="btn btn-teal"
+      onclick="openOutlook()"
+    >
+      Open in Outlook
+    </button>
+
+    <button
+      class="btn btn-soft"
+      onclick="copyEmail()"
+    >
+      Copy Email
+    </button>
+
   </div>
+
 
   <div class="note">
-    <strong>Outlook note:</strong> this opens Outlook on the web with the recipient, subject and message prefilled.
-    The advisor reviews the email and sends it from their own account.
+
+    <strong>
+      Outlook:
+    </strong>
+
+    This opens a new Outlook on the web message with the recipient,
+    subject and email text already filled in. The advisor reviews
+    everything before sending.
+
   </div>
+
 </section>
 
+
 </main>
+
 </div>
+
 
 
 <script>
+
+/* =====================================================
+   ACCESS
+===================================================== */
+
 const PASSWORD = "BestBuddiesAdvisor2026";
 
+
+/* =====================================================
+   APPROVED BEST BUDDIES RESOURCE LINKS
+===================================================== */
+
 const RESOURCE_FOLDERS = {
-  elementary: "https://drive.google.com/drive/folders/16C0F-nopssdrhwHvULpLmmxCjjrQVMOF?usp=drive_link",
-  high: "https://drive.google.com/drive/folders/16Uwn3LYo8EsuvttK0mPTNN7XhKpT33pc?usp=drive_link"
+
+  elementary:
+    "https://drive.google.com/drive/folders/16C0F-nopssdrhwHvULpLmmxCjjrQVMOF?usp=drive_link",
+
+  high:
+    "https://drive.google.com/drive/folders/16Uwn3LYo8EsuvttK0mPTNN7XhKpT33pc?usp=drive_link"
+
 };
+
+
+const QUICK_START_GUIDES = {
+
+  elementary:
+    "https://drive.google.com/file/d/1pb1TeEajRZj8eqJH510tqEYpNLc7hrGq/view?usp=drive_link",
+
+  high:
+    "https://drive.google.com/file/d/1QeYcvyD93UyNzDJjFTUSerH6Vz8PlDyc/view?usp=drive_link"
+
+};
+
 
 let currentEmail = "";
 let currentSubject = "";
 
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
 function login(){
-  const pw = document.getElementById("password").value;
-  if(pw === PASSWORD){
-    sessionStorage.setItem("bbAdvisorAccess","yes");
+
+  const password =
+    document.getElementById("password").value;
+
+  if(password === PASSWORD){
+
+    sessionStorage.setItem(
+      "bbAdvisorAccess",
+      "yes"
+    );
+
     showApp();
-  } else {
-    document.getElementById("loginError").textContent = "That password didn't work.";
+
+  }else{
+
+    document.getElementById(
+      "loginError"
+    ).textContent =
+      "That password didn't work.";
+
   }
 }
+
 
 function logout(){
-  sessionStorage.removeItem("bbAdvisorAccess");
+
+  sessionStorage.removeItem(
+    "bbAdvisorAccess"
+  );
+
   location.reload();
+
 }
+
 
 function showApp(){
-  document.getElementById("loginScreen").classList.add("hidden");
-  document.getElementById("app").classList.remove("hidden");
-  loadSaved();
+
+  document
+    .getElementById("loginScreen")
+    .classList.add("hidden");
+
+  document
+    .getElementById("app")
+    .classList.remove("hidden");
+
+  loadSavedAdvisor();
+
 }
 
-function saveAdvisor(){
-  const data = {
-    name: advisorName.value,
-    title: advisorTitle.value,
-    email: advisorEmail.value,
-    phone: advisorPhone.value,
-    show: showAdvisor.checked
+
+/* =====================================================
+   ADVISOR PROFILE
+===================================================== */
+
+function saveAdvisor(showMessage = true){
+
+  const profile = {
+
+    name:
+      document
+        .getElementById("advisorName")
+        .value
+        .trim(),
+
+    title:
+      document
+        .getElementById("advisorTitle")
+        .value
+        .trim(),
+
+    email:
+      document
+        .getElementById("advisorEmail")
+        .value
+        .trim(),
+
+    phone:
+      document
+        .getElementById("advisorPhone")
+        .value
+        .trim(),
+
+    show:
+      document
+        .getElementById("showAdvisor")
+        .checked
+
   };
-  localStorage.setItem("bbAdvisorProfile",JSON.stringify(data));
-  alert("Advisor details saved on this device.");
-}
 
-function saveQuickStartLinks(){
-  const data = {
-    elementary: elemQuickStart.value,
-    high: highQuickStart.value
-  };
-  localStorage.setItem("bbQuickStartLinks",JSON.stringify(data));
-  alert("Quick Start Guide links saved.");
-}
 
-function loadSaved(){
-  const profile = JSON.parse(localStorage.getItem("bbAdvisorProfile") || "{}");
-  advisorName.value = profile.name || "";
-  advisorTitle.value = profile.title || "";
-  advisorEmail.value = profile.email || "";
-  advisorPhone.value = profile.phone || "";
-  showAdvisor.checked = profile.show !== false;
+  localStorage.setItem(
+    "bbAdvisorProfile",
+    JSON.stringify(profile)
+  );
 
-  const guides = JSON.parse(localStorage.getItem("bbQuickStartLinks") || "{}");
-  elemQuickStart.value = guides.elementary || "";
-  highQuickStart.value = guides.high || "";
-}
 
-function enc(v){ return encodeURIComponent(v || ""); }
+  if(showMessage){
 
-function generatePackage(){
-  const school = schoolName.value.trim();
-  if(!school){
-    alert("Please enter the school name.");
-    return;
+    alert(
+      "Advisor details saved on this device."
+    );
+
   }
 
-  saveAdvisor();
-  saveQuickStartLinks();
+}
 
-  const p = program.value;
-  const qs = p === "elementary" ? elemQuickStart.value.trim() : highQuickStart.value.trim();
 
-  const params = new URLSearchParams({
-    school,
-    program:p,
-    status:status.value,
-    year:year.value,
-    staff:staffAdvisor.value,
-    registration:registrationLink.value,
-    roster:rosterLink.value,
-    advisor:advisorName.value,
-    advisorTitle:advisorTitle.value,
-    advisorEmail:advisorEmail.value,
-    advisorPhone:advisorPhone.value,
-    showAdvisor:showAdvisor.checked ? "1" : "0",
-    resourceFolder:RESOURCE_FOLDERS[p]
-  });
+function loadSavedAdvisor(){
 
-  /*
-    Use the deployed page location so this works automatically
-    when both HTML files live beside one another in your Git repo.
-  */
+  let profile = {};
+
+  try{
+
+    profile =
+      JSON.parse(
+        localStorage.getItem(
+          "bbAdvisorProfile"
+        ) || "{}"
+      );
+
+  }catch(error){
+
+    profile = {};
+
+  }
+
+
+  document.getElementById(
+    "advisorName"
+  ).value =
+    profile.name || "";
+
+
+  document.getElementById(
+    "advisorTitle"
+  ).value =
+    profile.title || "";
+
+
+  document.getElementById(
+    "advisorEmail"
+  ).value =
+    profile.email || "";
+
+
+  document.getElementById(
+    "advisorPhone"
+  ).value =
+    profile.phone || "";
+
+
+  document.getElementById(
+    "showAdvisor"
+  ).checked =
+    profile.show !== false;
+
+}
+
+
+/* =====================================================
+   GENERATE PACKAGE
+===================================================== */
+
+function generatePackage(){
+
+  const school =
+    document
+      .getElementById("schoolName")
+      .value
+      .trim();
+
+
+  if(!school){
+
+    alert(
+      "Please enter the school or chapter name."
+    );
+
+    return;
+
+  }
+
+
+  saveAdvisor(false);
+
+
+  const program =
+    document
+      .getElementById("program")
+      .value;
+
+
+  const status =
+    document
+      .getElementById("status")
+      .value;
+
+
+  const year =
+    document
+      .getElementById("year")
+      .value
+      .trim();
+
+
+  const staff =
+    document
+      .getElementById("staffAdvisor")
+      .value
+      .trim();
+
+
+  const registration =
+    document
+      .getElementById("registrationLink")
+      .value
+      .trim();
+
+
+  const roster =
+    document
+      .getElementById("rosterLink")
+      .value
+      .trim();
+
+
+  const advisor =
+    document
+      .getElementById("advisorName")
+      .value
+      .trim();
+
+
+  const advisorTitle =
+    document
+      .getElementById("advisorTitle")
+      .value
+      .trim();
+
+
+  const advisorEmail =
+    document
+      .getElementById("advisorEmail")
+      .value
+      .trim();
+
+
+  const advisorPhone =
+    document
+      .getElementById("advisorPhone")
+      .value
+      .trim();
+
+
+  const showAdvisor =
+    document
+      .getElementById("showAdvisor")
+      .checked;
+
+
+  const quickStart =
+    QUICK_START_GUIDES[program];
+
+
+  const resourceFolder =
+    RESOURCE_FOLDERS[program];
+
+
+  /* ---------------------------------------------
+     CREATE PERSONALIZED CHECKLIST LINK
+  --------------------------------------------- */
+
+  const params =
+    new URLSearchParams({
+
+      school:
+        school,
+
+      program:
+        program,
+
+      status:
+        status,
+
+      year:
+        year,
+
+      staff:
+        staff,
+
+      registration:
+        registration,
+
+      roster:
+        roster,
+
+      advisor:
+        advisor,
+
+      advisorTitle:
+        advisorTitle,
+
+      advisorEmail:
+        advisorEmail,
+
+      advisorPhone:
+        advisorPhone,
+
+      showAdvisor:
+        showAdvisor ? "1" : "0",
+
+      resourceFolder:
+        resourceFolder
+
+    });
+
+
+  const checklistBase =
+    new URL(
+      "chapter-checklist.html",
+      window.location.href
+    ).href;
+
+
   const checklist =
-    new URL("chapter-checklist.html", window.location.href).href +
-    "?" + params.toString();
+    checklistBase +
+    "?" +
+    params.toString();
 
-  checklistUrl.value = checklist;
 
-  const firstName = recipientName.value.trim();
-  const greeting = firstName ? `Hi ${firstName},` : "Hi there,";
+  document.getElementById(
+    "checklistUrl"
+  ).value =
+    checklist;
+
+
+  /* ---------------------------------------------
+     UPDATE RESOURCE PREVIEW LINKS
+  --------------------------------------------- */
+
+  const quickStartPreview =
+    document.getElementById(
+      "quickStartPreview"
+    );
+
+
+  quickStartPreview.href =
+    quickStart;
+
+
+  const resourcePreview =
+    document.getElementById(
+      "resourcePreview"
+    );
+
+
+  resourcePreview.href =
+    resourceFolder;
+
+
+  /* ---------------------------------------------
+     BUILD EMAIL
+  --------------------------------------------- */
+
+  const recipientName =
+    document
+      .getElementById("recipientName")
+      .value
+      .trim();
+
+
+  const greeting =
+    recipientName
+      ? `Hi ${recipientName},`
+      : "Hi there,";
+
 
   const programLabel =
-    p === "elementary" ? "Elementary & Middle School" : "High School";
+    program === "elementary"
+      ? "Elementary & Middle School"
+      : "High School";
 
-  let email =
+
+  currentSubject =
+    `Best Buddies resources | ${school}`;
+
+
+  currentEmail =
 `${greeting}
 
-It was lovely connecting with you! I've pulled together a few resources to help keep things simple as your Best Buddies chapter gets underway.
+It was lovely connecting with you! I've pulled together a few things to help keep everything simple as your Best Buddies chapter gets underway.
 
-Your personalized Chapter Checklist:
+YOUR PERSONALIZED CHAPTER CHECKLIST
 ${checklist}
 
-${programLabel} Quick Start Guide:
-${qs || "[Quick Start Guide link]"}
+This is your school-specific checklist for the year. You can check items off online, return to it later on the same device, or print/save a copy as a PDF.
 
-Best Buddies Resource Library:
-${RESOURCE_FOLDERS[p]}
+${programLabel.toUpperCase()} QUICK START GUIDE
+${quickStart}
 
-Your school-specific registration information is included directly in the checklist.
+BEST BUDDIES RESOURCE LIBRARY
+${resourceFolder}
+
+The Resource Library includes additional activity ideas, program guidance, recruitment materials, inclusive activity resources, fundraising tools and other helpful resources.
+
+Your school's current registration information is included directly in your personalized checklist.
 
 Please reach out anytime if questions come up or if I can help with anything along the way.
 
 Warmly,
-${advisorName.value || "Your Best Buddies Program Advisor"}
-${advisorTitle.value || ""}
-${advisorEmail.value || ""}
-${advisorPhone.value || ""}`;
+${advisor || "Your Best Buddies Program Advisor"}
+${advisorTitle || ""}
+${advisorEmail || ""}
+${advisorPhone || ""}`;
 
-  currentEmail = email;
-  currentSubject = `Best Buddies resources | ${school}`;
 
-  emailPreview.textContent = email;
-  output.classList.remove("hidden");
-  output.scrollIntoView({behavior:"smooth"});
+  document.getElementById(
+    "emailPreview"
+  ).textContent =
+    currentEmail;
+
+
+  const output =
+    document.getElementById(
+      "output"
+    );
+
+
+  output.classList.remove(
+    "hidden"
+  );
+
+
+  output.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
 }
+
+
+/* =====================================================
+   CHECKLIST ACTIONS
+===================================================== */
 
 function previewChecklist(){
-  if(checklistUrl.value) window.open(checklistUrl.value,"_blank");
-}
 
-async function copyChecklist(){
-  await navigator.clipboard.writeText(checklistUrl.value);
-  alert("Checklist link copied.");
-}
+  const checklist =
+    document
+      .getElementById("checklistUrl")
+      .value;
 
-async function copyEmail(){
-  await navigator.clipboard.writeText(currentEmail);
-  alert("Email copied.");
-}
 
-function openOutlook(){
-  if(!currentEmail){
-    alert("Generate a package first.");
-    return;
+  if(checklist){
+
+    window.open(
+      checklist,
+      "_blank"
+    );
+
   }
 
-  const to = recipientEmail.value.trim();
+}
 
-  /*
-    Outlook on the web compose deeplink.
-    If the user's organization redirects to another Microsoft 365
-    host, they can still use Copy Email as a fallback.
-  */
-  const url =
+
+async function copyChecklist(){
+
+  const checklist =
+    document
+      .getElementById("checklistUrl")
+      .value;
+
+
+  if(!checklist){
+
+    alert(
+      "Generate a package first."
+    );
+
+    return;
+
+  }
+
+
+  try{
+
+    await navigator.clipboard.writeText(
+      checklist
+    );
+
+    alert(
+      "Checklist link copied."
+    );
+
+  }catch(error){
+
+    document
+      .getElementById("checklistUrl")
+      .select();
+
+    document.execCommand("copy");
+
+    alert(
+      "Checklist link copied."
+    );
+
+  }
+
+}
+
+
+/* =====================================================
+   EMAIL ACTIONS
+===================================================== */
+
+async function copyEmail(){
+
+  if(!currentEmail){
+
+    alert(
+      "Generate a package first."
+    );
+
+    return;
+
+  }
+
+
+  try{
+
+    await navigator.clipboard.writeText(
+      currentEmail
+    );
+
+    alert(
+      "Email copied."
+    );
+
+  }catch(error){
+
+    alert(
+      "Your browser blocked automatic copying. You can select the email preview and copy it manually."
+    );
+
+  }
+
+}
+
+
+function openOutlook(){
+
+  if(!currentEmail){
+
+    alert(
+      "Generate a package first."
+    );
+
+    return;
+
+  }
+
+
+  const recipient =
+    document
+      .getElementById("recipientEmail")
+      .value
+      .trim();
+
+
+  const outlookUrl =
+
     "https://outlook.office.com/mail/deeplink/compose" +
-    "?to=" + encodeURIComponent(to) +
-    "&subject=" + encodeURIComponent(currentSubject) +
-    "&body=" + encodeURIComponent(currentEmail);
 
-  window.open(url,"_blank");
+    "?to=" +
+    encodeURIComponent(
+      recipient
+    ) +
+
+    "&subject=" +
+    encodeURIComponent(
+      currentSubject
+    ) +
+
+    "&body=" +
+    encodeURIComponent(
+      currentEmail
+    );
+
+
+  window.open(
+    outlookUrl,
+    "_blank"
+  );
+
 }
 
-if(sessionStorage.getItem("bbAdvisorAccess")==="yes"){
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+if(
+  sessionStorage.getItem(
+    "bbAdvisorAccess"
+  ) === "yes"
+){
+
   showApp();
+
 }
+
 </script>
+
 
 </body>
 </html>
