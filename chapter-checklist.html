@@ -40,7 +40,8 @@ body{
   font-family:"Poppins",Arial,sans-serif;
 }
 
-button{
+button,
+input{
   font:inherit;
 }
 
@@ -327,6 +328,58 @@ td:nth-child(4){
 
 
 /* =====================================================
+   INLINE DATE FIELDS
+===================================================== */
+
+.inline-fields{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.inline-field-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+
+  color:var(--muted);
+
+  font-size:.7rem;
+  font-weight:600;
+}
+
+.inline-field-row span{
+  line-height:1.25;
+}
+
+.inline-field{
+  width:132px;
+  height:31px;
+
+  flex:0 0 132px;
+
+  padding:3px 6px;
+
+  border:1px solid #d4ced7;
+  border-radius:6px;
+
+  background:white;
+  color:var(--ink);
+
+  font-size:.68rem;
+}
+
+.inline-field:focus{
+  outline:none;
+
+  border-color:var(--purple);
+
+  box-shadow:0 0 0 2px rgba(111,44,145,.08);
+}
+
+
+/* =====================================================
    BOTTOM
 ===================================================== */
 
@@ -478,6 +531,17 @@ td:nth-child(4){
     width:44px;
   }
 
+  .inline-field-row{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:4px;
+  }
+
+  .inline-field{
+    width:100%;
+    flex:auto;
+  }
+
 }
 
 
@@ -554,6 +618,29 @@ td:nth-child(4){
     color:black;
     font-size:.61rem;
     text-decoration:none;
+  }
+
+  .inline-fields{
+    gap:4px;
+  }
+
+  .inline-field-row{
+    font-size:.58rem;
+  }
+
+  .inline-field{
+    width:108px;
+    height:24px;
+    flex:0 0 108px;
+
+    padding:1px 4px;
+
+    border:1px solid #aaa;
+    border-radius:3px;
+
+    font-size:.56rem;
+
+    box-shadow:none;
   }
 
   .bottom{
@@ -893,6 +980,10 @@ const storageKey =
   ].join("|");
 
 
+const fieldStorageKey =
+  storageKey + ":fields";
+
+
 /* =====================================================
    ELEMENTARY / MIDDLE — NEW
 ===================================================== */
@@ -1007,7 +1098,6 @@ const elementaryNew = [
 
 /* =====================================================
    ELEMENTARY / MIDDLE — ACTIVE
-   Mirrors the Hanwell checklist closely.
 ===================================================== */
 
 const elementaryActive = [
@@ -1755,10 +1845,16 @@ function taskLinks(task){
 
   if(task.type === "resources"){
 
+    const folder =
+      data.program === "high"
+        ? RESOURCE_FOLDERS.high
+        : RESOURCE_FOLDERS.elementary;
+
+
     return `
       <a
         class="resource-link"
-        href="${escapeAttribute(RESOURCE_FOLDERS.elementary)}"
+        href="${escapeAttribute(folder)}"
         target="_blank"
       >
         Recruitment & Chapter Resources
@@ -1880,10 +1976,40 @@ function taskLinks(task){
   if(task.type === "meet"){
 
     return `
-      <span class="task-note">
-        Recruitment completed: __________<br>
-        Meet & Greet completed: __________
-      </span>
+      <div class="inline-fields">
+
+        <label class="inline-field-row">
+
+          <span>
+            Recruitment completed
+          </span>
+
+          <input
+            type="date"
+            class="inline-field"
+            data-field="recruitmentCompleted"
+            aria-label="Recruitment completed date"
+          >
+
+        </label>
+
+
+        <label class="inline-field-row">
+
+          <span>
+            Meet & Greet completed
+          </span>
+
+          <input
+            type="date"
+            class="inline-field"
+            data-field="meetGreetCompleted"
+            aria-label="Meet and Greet completed date"
+          >
+
+        </label>
+
+      </div>
     `;
 
   }
@@ -1965,6 +2091,92 @@ function saveState(){
 
 
   updateProgress();
+
+}
+
+
+/* =====================================================
+   SAVED DATE FIELD STATE
+===================================================== */
+
+function loadFieldState(){
+
+  try{
+
+    return JSON.parse(
+      localStorage.getItem(
+        fieldStorageKey
+      ) || "{}"
+    );
+
+  }catch{
+
+    return {};
+
+  }
+
+}
+
+
+function saveFieldState(){
+
+  const state = {};
+
+
+  document.querySelectorAll(
+    ".inline-field"
+  ).forEach(input=>{
+
+    state[
+      input.dataset.field
+    ] =
+      input.value;
+
+  });
+
+
+  localStorage.setItem(
+    fieldStorageKey,
+    JSON.stringify(state)
+  );
+
+}
+
+
+function setupInlineFields(){
+
+  const saved =
+    loadFieldState();
+
+
+  document.querySelectorAll(
+    ".inline-field"
+  ).forEach(input=>{
+
+    const fieldName =
+      input.dataset.field;
+
+
+    if(saved[fieldName]){
+
+      input.value =
+        saved[fieldName];
+
+    }
+
+
+    input.addEventListener(
+      "change",
+      saveFieldState
+    );
+
+
+    input.addEventListener(
+      "input",
+      saveFieldState
+    );
+
+  });
 
 }
 
@@ -2064,6 +2276,8 @@ function renderTasks(){
     }
   );
 
+
+  setupInlineFields();
 
   updateProgress();
 
