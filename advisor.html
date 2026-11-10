@@ -377,12 +377,20 @@ button{
 
 .form-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px 22px;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px 12px;
 }
 
 .full{
   grid-column:1/-1;
+}
+
+.status-field{
+  grid-column:span 2;
+}
+
+.year-field{
+  grid-column:span 1;
 }
 
 .field label,
@@ -420,62 +428,75 @@ input:focus{
 
 
 /* =====================================================
-   PROGRAM / STATUS CHOICES
+   SEGMENTED CONTROLS
 ===================================================== */
 
-.program-grid{
+.segmented-control{
+  width:100%;
+
   display:grid;
+
+  padding:4px;
+
+  border:1px solid var(--line);
+  border-radius:12px;
+
+  background:#f7f5f8;
+}
+
+.program-segments{
   grid-template-columns:repeat(3,1fr);
-  gap:11px;
 }
 
-.status-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:11px;
+.status-segments{
+  grid-template-columns:repeat(2,1fr);
 }
 
-.choice-card{
+.segment{
   position:relative;
 
-  height:72px;
-  min-height:72px;
-
-  padding:0 16px;
+  height:46px;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  border:2px solid var(--line);
-  border-radius:14px;
+  padding:0 14px;
 
-  background:white;
+  border-radius:9px;
+
+  color:var(--muted);
+
+  font-size:.82rem;
+  font-weight:700;
 
   text-align:center;
+
   cursor:pointer;
 
-  transition:.15s ease;
+  transition:
+    background .15s ease,
+    color .15s ease,
+    box-shadow .15s ease;
 }
 
-.choice-card:hover{
-  border-color:#cbb9d5;
+.segment:hover{
+  color:var(--purple);
 }
 
-.choice-card.selected{
-  border-color:var(--purple);
-  background:var(--purple-soft);
+.segment.selected{
+  background:var(--purple);
+  color:white;
+
+  box-shadow:
+    0 3px 10px
+    rgba(111,44,145,.16);
 }
 
-.choice-card input{
+.segment input{
   position:absolute;
   opacity:0;
   pointer-events:none;
-}
-
-.choice-card strong{
-  font-size:.88rem;
-  line-height:1.2;
 }
 
 
@@ -857,11 +878,17 @@ input:focus{
     grid-template-columns:1fr;
   }
 
-  .program-grid{
+  .full,
+  .status-field,
+  .year-field{
+    grid-column:1;
+  }
+
+  .program-segments{
     grid-template-columns:1fr;
   }
 
-  .status-grid{
+  .status-segments{
     grid-template-columns:1fr 1fr;
   }
 
@@ -883,7 +910,7 @@ input:focus{
 
 @media(max-width:520px){
 
-  .status-grid{
+  .status-segments{
     grid-template-columns:1fr;
   }
 
@@ -1096,10 +1123,10 @@ input:focus{
         Program
       </div>
 
-      <div class="program-grid">
+      <div class="segmented-control program-segments">
 
         <label
-          class="choice-card selected"
+          class="segment selected"
           id="programElementaryCard"
         >
 
@@ -1111,15 +1138,15 @@ input:focus{
             onchange="selectProgram('elementary')"
           >
 
-          <strong>
+          <span>
             Elementary & Middle
-          </strong>
+          </span>
 
         </label>
 
 
         <label
-          class="choice-card"
+          class="segment"
           id="programHighCard"
         >
 
@@ -1130,15 +1157,15 @@ input:focus{
             onchange="selectProgram('high')"
           >
 
-          <strong>
+          <span>
             High School
-          </strong>
+          </span>
 
         </label>
 
 
         <label
-          class="choice-card"
+          class="segment"
           id="programCombinedCard"
         >
 
@@ -1149,9 +1176,9 @@ input:focus{
             onchange="selectProgram('combined')"
           >
 
-          <strong>
+          <span>
             Elementary + Secondary
-          </strong>
+          </span>
 
         </label>
 
@@ -1160,16 +1187,16 @@ input:focus{
     </div>
 
 
-    <div class="field">
+    <div class="field status-field">
 
       <div class="field-title">
         Chapter Status
       </div>
 
-      <div class="status-grid">
+      <div class="segmented-control status-segments">
 
         <label
-          class="choice-card selected"
+          class="segment selected"
           id="statusNewCard"
         >
 
@@ -1181,15 +1208,15 @@ input:focus{
             onchange="selectStatus('new')"
           >
 
-          <strong>
+          <span>
             New / Restarting
-          </strong>
+          </span>
 
         </label>
 
 
         <label
-          class="choice-card"
+          class="segment"
           id="statusActiveCard"
         >
 
@@ -1200,9 +1227,9 @@ input:focus{
             onchange="selectStatus('active')"
           >
 
-          <strong>
+          <span>
             Existing / Active
-          </strong>
+          </span>
 
         </label>
 
@@ -1211,7 +1238,7 @@ input:focus{
     </div>
 
 
-    <div class="field">
+    <div class="field year-field">
 
       <label class="field-title" for="programYear">
         Program Year
@@ -2294,6 +2321,7 @@ function goToStep(step){
   if(step === 3){
 
     subjectDirty = false;
+
     buildPackage();
 
   }
