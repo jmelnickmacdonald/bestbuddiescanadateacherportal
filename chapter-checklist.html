@@ -45,7 +45,9 @@ button{
 }
 
 
-/* TOOLBAR */
+/* =====================================================
+   TOOLBAR
+===================================================== */
 
 .toolbar{
   max-width:1100px;
@@ -94,7 +96,9 @@ button{
 }
 
 
-/* DOCUMENT */
+/* =====================================================
+   DOCUMENT
+===================================================== */
 
 .document{
   max-width:1100px;
@@ -122,7 +126,9 @@ button{
 }
 
 
-/* HEADER */
+/* =====================================================
+   HEADER
+===================================================== */
 
 .chapter-header{
   padding:23px 29px 21px;
@@ -206,7 +212,9 @@ button{
 }
 
 
-/* NOTICE */
+/* =====================================================
+   NOTICE
+===================================================== */
 
 .notice{
   margin:0;
@@ -222,7 +230,9 @@ button{
 }
 
 
-/* TABLE */
+/* =====================================================
+   TABLE
+===================================================== */
 
 table{
   width:100%;
@@ -316,7 +326,9 @@ td:nth-child(4){
 }
 
 
-/* BOTTOM */
+/* =====================================================
+   BOTTOM
+===================================================== */
 
 .bottom{
   padding:21px 24px;
@@ -421,7 +433,9 @@ td:nth-child(4){
 }
 
 
-/* MOBILE */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:780px){
 
@@ -467,7 +481,9 @@ td:nth-child(4){
 }
 
 
-/* PRINT */
+/* =====================================================
+   PRINT
+===================================================== */
 
 @media print{
 
@@ -559,7 +575,9 @@ td:nth-child(4){
 <body>
 
 
-<!-- TOOLBAR -->
+<!-- =====================================================
+     TOOLBAR
+===================================================== -->
 
 <div class="toolbar">
 
@@ -596,7 +614,9 @@ td:nth-child(4){
 </div>
 
 
-<!-- DOCUMENT -->
+<!-- =====================================================
+     DOCUMENT
+===================================================== -->
 
 <main class="document">
 
@@ -785,7 +805,9 @@ td:nth-child(4){
 
 <script>
 
-/* CONFIG */
+/* =====================================================
+   RESOURCE FOLDERS
+===================================================== */
 
 const RESOURCE_FOLDERS = {
 
@@ -798,7 +820,9 @@ const RESOURCE_FOLDERS = {
 };
 
 
-/* DATA */
+/* =====================================================
+   DATA FROM GENERATED LINK
+===================================================== */
 
 const params =
   new URLSearchParams(
@@ -869,108 +893,136 @@ const storageKey =
   ].join("|");
 
 
-/* CHECKLISTS */
+/* =====================================================
+   ELEMENTARY / MIDDLE — NEW
+===================================================== */
 
 const elementaryNew = [
 
   {
-    id:"connect",
-    title:"Connect with your Program Advisor and confirm school approval.",
-    note:"Complete the school’s Program Application Form (PAF), where applicable.",
+    id:"contacts",
+    title:"Confirm the primary Staff Advisor, a second contact where possible, and any other staff supporting the chapter.",
+    note:"Email your Program Advisor with any contact updates.",
     when:"Getting started",
     type:"advisor"
   },
 
   {
-    id:"team",
-    title:"Confirm the primary Staff Advisor and identify additional staff support where possible.",
+    id:"approval",
+    title:"Confirm school approval and complete the Program Application Form (PAF), where applicable.",
     note:"",
-    when:"Getting started"
+    when:"Getting started",
+    type:"advisor"
   },
 
   {
     id:"format",
-    title:"Choose a chapter format, meeting time and welcoming, accessible location.",
+    title:"Choose your chapter format, meeting time and accessible meeting location.",
     note:"",
     when:"Getting started"
   },
 
   {
     id:"recruit",
-    title:"Introduce Best Buddies and recruit interested students.",
+    title:"Recruit participating students using current recruitment materials and share the Parent Letter with families.",
     note:"",
-    when:"Early chapter setup",
+    when:"Getting started / as needed",
     type:"resources"
   },
 
   {
     id:"registration",
-    title:"Share your school’s current registration link with participating families.",
-    note:"",
+    title:"Send the school’s unique current-year registration link to parents/guardians of every participating Buddy and Peer Buddy.",
+    note:"Parents/guardians register their own children. Do not reuse another school’s or a prior-year link.",
     when:"After recruitment",
     type:"registration"
   },
 
   {
-    id:"review",
-    title:"Review registered participants and identify chapter roles or friendship opportunities.",
+    id:"matching",
+    title:"Review registered participants and complete or update matches only if your chapter uses formal matching.",
     note:"",
-    when:"Before first gathering"
-  },
-
-  {
-    id:"first",
-    title:"Plan and hold your first chapter gathering.",
-    note:"",
-    when:"When ready",
+    when:"Before first activity",
     type:"resources"
   },
 
   {
     id:"roster",
-    title:"Review your chapter roster and report missing or incorrect registrations.",
+    title:"Review the online roster using the school-specific roster link and report missing or incorrect registrations.",
     note:"",
-    when:"After registration",
+    when:"Start of year / ongoing",
     type:"roster"
   },
 
   {
     id:"abuse",
-    title:"Complete the annual Staff Advisor Abuse Policy requirement when it is sent.",
+    title:"The designated teacher electronically signs the annual Abuse Policy when the separate Best Buddies email arrives.",
+    note:"This is mandatory for Best Buddies Canada’s insurance requirements.",
+    when:"Required annually",
+    type:"abuse"
+  },
+
+  {
+    id:"meet",
+    title:"Complete recruitment and hold your first gathering or Meet & Greet. Confirm both with your Program Advisor.",
     note:"",
-    when:"Required annually"
+    when:"Start of chapter",
+    type:"meet"
   },
 
   {
     id:"activities",
-    title:"Schedule regular, inclusive chapter activities and stay connected with your Program Advisor.",
-    note:"",
+    title:"Schedule and hold regular inclusive chapter activities.",
+    note:"Consider a Youth Friendship Walk or Community Friendship Walk and report participation, successes, concerns and support needs to your Program Advisor.",
     when:"Throughout the year",
-    type:"resources"
+    type:"walks"
+  },
+
+  {
+    id:"checkins",
+    title:"Reply to Program Advisor check-ins and report contact, participant or operating changes, along with any support needed.",
+    note:"",
+    when:"Monthly / term check-ins",
+    type:"advisor"
+  },
+
+  {
+    id:"funding",
+    title:"Discuss fundraising or activity support with your Program Advisor before using a funding or gift-card form.",
+    note:"",
+    when:"Only if needed",
+    type:"funding"
   },
 
   {
     id:"yearend",
     title:"Complete the End-of-Year Report when released and confirm plans for next year.",
     note:"",
-    when:"End of program year"
+    when:"End of program year",
+    type:"yearend"
   }
 
 ];
 
 
+/* =====================================================
+   ELEMENTARY / MIDDLE — ACTIVE
+   Mirrors the Hanwell checklist closely.
+===================================================== */
+
 const elementaryActive = [
 
   {
     id:"contacts",
-    title:"Confirm the primary staff lead, second contact where possible, and any contact changes.",
+    title:"Confirm the primary staff lead, second contact where possible, and any contact changes from last year. Email your Program Advisor with any updates.",
     note:"",
-    when:"Start of year"
+    when:"Start of year",
+    type:"contacts"
   },
 
   {
     id:"continue",
-    title:"Confirm that the chapter will continue this year.",
+    title:"Confirm that the chapter will continue.",
     note:"",
     when:"Start of year",
     type:"advisor"
@@ -978,7 +1030,7 @@ const elementaryActive = [
 
   {
     id:"recruit",
-    title:"Recruit returning and new participants using current recruitment materials.",
+    title:"Recruit returning and new participants using the current recruitment materials. Share the Parent Letter with families.",
     note:"",
     when:"Start of year / as needed",
     type:"resources"
@@ -986,22 +1038,23 @@ const elementaryActive = [
 
   {
     id:"registration",
-    title:"Send this year’s unique school-specific registration link to participating families.",
-    note:"",
+    title:"Send this year’s unique school-specific registration link to parents/guardians of every participating Buddy and Peer Buddy.",
+    note:"Parents/guardians register their own children. Do not reuse another school’s or a prior-year link.",
     when:"After recruitment",
     type:"registration"
   },
 
   {
     id:"matching",
-    title:"Review registered participants and update friendships or formal matches where applicable.",
+    title:"Review the registered participant list and update matches only if your chapter uses formal matching.",
     note:"",
-    when:"Before first activity"
+    when:"Before first activity",
+    type:"resources"
   },
 
   {
     id:"roster",
-    title:"Review the online roster and report missing or incorrect registrations.",
+    title:"Review the online roster using the school-specific roster link and report missing or incorrect registrations.",
     note:"",
     when:"Start of year / ongoing",
     type:"roster"
@@ -1009,87 +1062,104 @@ const elementaryActive = [
 
   {
     id:"abuse",
-    title:"Complete the annual Staff Advisor Abuse Policy requirement.",
-    note:"",
-    when:"Required annually"
+    title:"The designated teacher electronically signs the annual Abuse Policy when the separate Best Buddies email arrives.",
+    note:"This is mandatory for Best Buddies Canada’s insurance requirements.",
+    when:"Required annually",
+    type:"abuse"
   },
 
   {
-    id:"gather",
-    title:"Confirm recruitment and hold your first gathering or Meet & Greet.",
+    id:"meet",
+    title:"Confirm with your Program Advisor when recruitment and the Meet & Greet have been completed.",
     note:"",
-    when:"Start of year"
+    when:"Start of year",
+    type:"meet"
   },
 
   {
     id:"activities",
-    title:"Hold regular inclusive chapter activities and explore Friendship Walk opportunities.",
-    note:"",
+    title:"Schedule and hold regular inclusive chapter activities. Consider hosting a Youth Friendship Walk or joining a Community Friendship Walk.",
+    note:"Report participation, successes, concerns and support needs to your Program Advisor.",
     when:"Throughout the year",
-    type:"resources"
+    type:"walks"
   },
 
   {
     id:"checkins",
-    title:"Reply to Program Advisor check-ins and report chapter or contact changes.",
+    title:"Reply to Program Advisor check-ins and report contact, participant or operating changes, along with any support needed.",
     note:"",
     when:"Monthly / term check-ins",
     type:"advisor"
   },
 
   {
-    id:"yearend",
-    title:"Complete the End-of-Year Report and confirm plans for next year.",
+    id:"funding",
+    title:"Discuss fundraising or activity support with your Program Advisor before using a funding or gift-card form.",
     note:"",
-    when:"End of program year"
+    when:"Only if needed",
+    type:"funding"
+  },
+
+  {
+    id:"yearend",
+    title:"Complete the End-of-Year Report when released and confirm plans for next year.",
+    note:"",
+    when:"End of program year",
+    type:"yearend"
   }
 
 ];
 
 
+/* =====================================================
+   HIGH SCHOOL — NEW
+===================================================== */
+
 const highNew = [
 
   {
-    id:"connect",
-    title:"Connect with your Program Advisor and confirm school approval.",
+    id:"contacts",
+    title:"Confirm the primary Staff Advisor, a second contact where possible, and interested student leadership contacts.",
+    note:"Email your Program Advisor with any contact updates.",
+    when:"Getting started",
+    type:"advisor"
+  },
+
+  {
+    id:"approval",
+    title:"Confirm school approval and complete the Program Application Form (PAF), where applicable.",
     note:"",
     when:"Getting started",
     type:"advisor"
   },
 
   {
-    id:"team",
-    title:"Confirm your Staff Advisor and begin building a student leadership team.",
+    id:"leadership",
+    title:"Identify a Chapter President or student leadership team and begin sharing chapter responsibilities.",
     note:"",
-    when:"Getting started"
-  },
-
-  {
-    id:"format",
-    title:"Choose how your chapter will operate.",
-    note:"Group activities, one-to-one friendships or a combination.",
-    when:"Getting started"
+    when:"Getting started",
+    type:"resources"
   },
 
   {
     id:"recruit",
-    title:"Recruit Buddies, Peer Buddies and interested student leaders.",
+    title:"Recruit Buddies, Peer Buddies and student leaders using current recruitment materials. Share the Parent Letter with families.",
     note:"",
-    when:"Early chapter setup",
+    when:"Getting started / as needed",
     type:"resources"
   },
 
   {
     id:"registration",
-    title:"Share your school’s current registration link.",
-    note:"",
+    title:"Send the school’s unique current-year registration link to parents/guardians of participating Buddies and Peer Buddies.",
+    note:"Do not reuse another school’s or a prior-year registration link.",
     when:"After recruitment",
     type:"registration"
   },
 
   {
     id:"training",
-    title:"Complete required Sensitivity Training and Chapter Leadership Training where applicable.",
+    title:"Complete required Sensitivity Training and Chapter Leadership Training for student executives where applicable.",
     note:"",
     when:"Early in the year",
     type:"resources"
@@ -1097,64 +1167,88 @@ const highNew = [
 
   {
     id:"matching",
-    title:"Prepare buddy pairings where your chapter uses one-to-one friendships.",
+    title:"Review registered participants and complete buddy matching only if your chapter uses formal one-to-one matches.",
     note:"",
-    when:"Before matching"
-  },
-
-  {
-    id:"meet",
-    title:"Hold your first gathering or Meet & Greet.",
-    note:"",
-    when:"When ready",
+    when:"Before first activity",
     type:"resources"
   },
 
   {
     id:"roster",
-    title:"Review your chapter roster and report missing or incorrect registrations.",
+    title:"Review the online roster using the school-specific roster link and report missing or incorrect registrations.",
     note:"",
-    when:"After registration",
+    when:"Start of year / ongoing",
     type:"roster"
   },
 
   {
     id:"abuse",
-    title:"Complete the annual Staff Advisor Abuse Policy requirement.",
+    title:"The designated teacher electronically signs the annual Abuse Policy when the separate Best Buddies email arrives.",
+    note:"This is mandatory for Best Buddies Canada’s insurance requirements.",
+    when:"Required annually",
+    type:"abuse"
+  },
+
+  {
+    id:"meet",
+    title:"Complete recruitment and hold your first gathering or Meet & Greet. Confirm both with your Program Advisor.",
     note:"",
-    when:"Required annually"
+    when:"Start of chapter",
+    type:"meet"
   },
 
   {
     id:"activities",
-    title:"Hold regular chapter activities and support friendships throughout the year.",
-    note:"",
+    title:"Schedule and hold regular inclusive chapter activities and support buddy friendships where applicable.",
+    note:"Consider a Youth Friendship Walk or Community Friendship Walk and keep your Program Advisor updated.",
     when:"Throughout the year",
-    type:"resources"
+    type:"walks"
+  },
+
+  {
+    id:"checkins",
+    title:"Reply to Program Advisor check-ins and report contact, participant or operating changes, along with any support needed.",
+    note:"",
+    when:"Monthly / term check-ins",
+    type:"advisor"
+  },
+
+  {
+    id:"funding",
+    title:"Discuss fundraising or activity support with your Program Advisor before using a funding or gift-card form.",
+    note:"",
+    when:"Only if needed",
+    type:"funding"
   },
 
   {
     id:"yearend",
-    title:"Complete year-end reporting and begin planning next year’s student leadership.",
+    title:"Complete the End-of-Year Report and confirm the chapter’s leadership and plans for next year.",
     note:"",
-    when:"End of program year"
+    when:"End of program year",
+    type:"yearend"
   }
 
 ];
 
+
+/* =====================================================
+   HIGH SCHOOL — ACTIVE
+===================================================== */
 
 const highActive = [
 
   {
     id:"contacts",
-    title:"Confirm the Staff Advisor, student leadership contacts and any changes from last year.",
+    title:"Confirm the primary Staff Advisor, second contact where possible, student leadership contacts and any changes from last year.",
     note:"",
-    when:"Start of year"
+    when:"Start of year",
+    type:"contacts"
   },
 
   {
     id:"continue",
-    title:"Confirm that the chapter will continue this year.",
+    title:"Confirm that the chapter will continue.",
     note:"",
     when:"Start of year",
     type:"advisor"
@@ -1162,14 +1256,15 @@ const highActive = [
 
   {
     id:"leadership",
-    title:"Confirm returning student leaders and recruit new executive members as needed.",
+    title:"Confirm returning Chapter President / executive members and recruit new student leaders as needed.",
     note:"",
-    when:"Start of year"
+    when:"Start of year",
+    type:"resources"
   },
 
   {
     id:"recruit",
-    title:"Recruit returning and new Buddies and Peer Buddies.",
+    title:"Recruit returning and new Buddies and Peer Buddies using current recruitment materials. Share the Parent Letter with families.",
     note:"",
     when:"Start of year / ongoing",
     type:"resources"
@@ -1177,15 +1272,15 @@ const highActive = [
 
   {
     id:"registration",
-    title:"Share this year’s unique school-specific registration link.",
-    note:"",
+    title:"Send this year’s unique school-specific registration link to participating families.",
+    note:"Do not reuse another school’s or a prior-year registration link.",
     when:"After recruitment",
     type:"registration"
   },
 
   {
     id:"training",
-    title:"Confirm required Sensitivity Training and Chapter Leadership Training are completed.",
+    title:"Confirm required Sensitivity Training and Chapter Leadership Training are completed where applicable.",
     note:"",
     when:"Early year",
     type:"resources"
@@ -1193,14 +1288,15 @@ const highActive = [
 
   {
     id:"matching",
-    title:"Review and update buddy pairings where your chapter uses formal matching.",
+    title:"Review the registered participant list and update matches only if your chapter uses formal matching.",
     note:"",
-    when:"Before first activity"
+    when:"Before first activity",
+    type:"resources"
   },
 
   {
     id:"roster",
-    title:"Review the chapter roster and report missing or incorrect registrations.",
+    title:"Review the online roster using the school-specific roster link and report missing or incorrect registrations.",
     note:"",
     when:"Start of year / ongoing",
     type:"roster"
@@ -1208,89 +1304,103 @@ const highActive = [
 
   {
     id:"abuse",
-    title:"Complete the annual Staff Advisor Abuse Policy requirement.",
-    note:"",
-    when:"Required annually"
+    title:"The designated teacher electronically signs the annual Abuse Policy when the separate Best Buddies email arrives.",
+    note:"This is mandatory for Best Buddies Canada’s insurance requirements.",
+    when:"Required annually",
+    type:"abuse"
   },
 
   {
-    id:"gather",
-    title:"Hold your first gathering or Meet & Greet and begin regular chapter programming.",
+    id:"meet",
+    title:"Confirm with your Program Advisor when recruitment and the Meet & Greet have been completed.",
     note:"",
     when:"Start of year",
-    type:"resources"
+    type:"meet"
   },
 
   {
     id:"activities",
-    title:"Support regular inclusive activities, friendships and student-led opportunities.",
-    note:"",
+    title:"Schedule and hold regular inclusive chapter activities and support buddy friendships where applicable.",
+    note:"Consider hosting a Youth Friendship Walk or joining a Community Friendship Walk.",
     when:"Throughout the year",
-    type:"resources"
+    type:"walks"
+  },
+
+  {
+    id:"checkins",
+    title:"Reply to Program Advisor check-ins and report contact, participant or operating changes, along with any support needed.",
+    note:"",
+    when:"Monthly / term check-ins",
+    type:"advisor"
+  },
+
+  {
+    id:"funding",
+    title:"Discuss fundraising or activity support with your Program Advisor before using a funding or gift-card form.",
+    note:"",
+    when:"Only if needed",
+    type:"funding"
   },
 
   {
     id:"yearend",
-    title:"Complete year-end reporting and prepare next year’s student leadership.",
+    title:"Complete the End-of-Year Report and confirm next year’s student leadership and chapter plans.",
     note:"",
-    when:"End of program year"
+    when:"End of program year",
+    type:"yearend"
   }
 
 ];
 
 
-/* COMBINED SCHOOL */
+/* =====================================================
+   ELEMENTARY + SECONDARY — NEW
+===================================================== */
 
 const combinedNew = [
 
   {
-    id:"connect",
-    title:"Connect with your Program Advisor and confirm school approval.",
+    id:"contacts",
+    title:"Confirm the primary Staff Advisor, second contact where possible, and staff or student leadership contacts across the grades involved.",
     note:"",
     when:"Getting started",
     type:"advisor"
   },
 
   {
-    id:"team",
-    title:"Confirm the Staff Advisor(s) and identify staff support across the grades involved.",
+    id:"approval",
+    title:"Confirm school approval and complete the Program Application Form (PAF), where applicable.",
     note:"",
-    when:"Getting started"
+    when:"Getting started",
+    type:"advisor"
   },
 
   {
     id:"format",
-    title:"Choose how the chapter will operate across elementary, middle and/or secondary grades.",
-    note:"",
-    when:"Getting started"
-  },
-
-  {
-    id:"leadership",
-    title:"Identify student leadership opportunities where appropriate.",
+    title:"Choose how the chapter will operate across the elementary, middle and secondary grades involved.",
     note:"",
     when:"Getting started"
   },
 
   {
     id:"recruit",
-    title:"Introduce Best Buddies and recruit participating students.",
+    title:"Recruit participating students using current recruitment materials and share the Parent Letter with families.",
     note:"",
-    when:"Early chapter setup",
+    when:"Getting started / as needed",
     type:"resourcesBoth"
   },
 
   {
     id:"registration",
-    title:"Share the current school-specific registration link with participating families.",
-    note:"",
+    title:"Send the school’s unique current-year registration link to participating families.",
+    note:"Do not reuse another school’s or a prior-year registration link.",
     when:"After recruitment",
     type:"registration"
   },
 
   {
     id:"training",
-    title:"Complete required training for participating students and student leaders where applicable.",
+    title:"Complete required Sensitivity Training and Chapter Leadership Training for secondary student leaders where applicable.",
     note:"",
     when:"Early in the year",
     type:"resourcesBoth"
@@ -1298,79 +1408,96 @@ const combinedNew = [
 
   {
     id:"matching",
-    title:"Review participants and prepare friendship opportunities or formal buddy pairings where applicable.",
+    title:"Review registered participants and complete or update formal buddy matches only where your chapter uses them.",
     note:"",
-    when:"Before first gathering"
-  },
-
-  {
-    id:"first",
-    title:"Plan and hold your first chapter gathering or Meet & Greet.",
-    note:"",
-    when:"When ready",
+    when:"Before first activity",
     type:"resourcesBoth"
   },
 
   {
     id:"roster",
-    title:"Review the chapter roster and report missing or incorrect registrations.",
+    title:"Review the online roster using the school-specific roster link and report missing or incorrect registrations.",
     note:"",
-    when:"After registration",
+    when:"Start of year / ongoing",
     type:"roster"
   },
 
   {
     id:"abuse",
-    title:"Complete the annual Staff Advisor Abuse Policy requirement.",
+    title:"The designated teacher electronically signs the annual Abuse Policy when the separate Best Buddies email arrives.",
+    note:"This is mandatory for Best Buddies Canada’s insurance requirements.",
+    when:"Required annually",
+    type:"abuse"
+  },
+
+  {
+    id:"meet",
+    title:"Complete recruitment and hold your first gathering or Meet & Greet. Confirm both with your Program Advisor.",
     note:"",
-    when:"Required annually"
+    when:"Start of chapter",
+    type:"meet"
   },
 
   {
     id:"activities",
-    title:"Hold regular inclusive chapter activities and support friendships throughout the year.",
-    note:"",
+    title:"Schedule and hold regular inclusive chapter activities across the grades involved.",
+    note:"Consider Friendship Walk opportunities and report participation, successes, concerns and support needs.",
     when:"Throughout the year",
-    type:"resourcesBoth"
+    type:"walksBoth"
+  },
+
+  {
+    id:"checkins",
+    title:"Reply to Program Advisor check-ins and report contact, participant or operating changes, along with any support needed.",
+    note:"",
+    when:"Monthly / term check-ins",
+    type:"advisor"
+  },
+
+  {
+    id:"funding",
+    title:"Discuss fundraising or activity support with your Program Advisor before using a funding or gift-card form.",
+    note:"",
+    when:"Only if needed",
+    type:"funding"
   },
 
   {
     id:"yearend",
-    title:"Complete year-end reporting and confirm plans for next year.",
+    title:"Complete the End-of-Year Report and confirm chapter plans and student leadership for next year.",
     note:"",
-    when:"End of program year"
+    when:"End of program year",
+    type:"yearend"
   }
 
 ];
 
 
+/* =====================================================
+   ELEMENTARY + SECONDARY — ACTIVE
+===================================================== */
+
 const combinedActive = [
 
   {
     id:"contacts",
-    title:"Confirm Staff Advisor contacts and any changes from last year.",
+    title:"Confirm the primary Staff Advisor, second contact where possible, student leadership contacts and any changes from last year.",
     note:"",
-    when:"Start of year"
+    when:"Start of year",
+    type:"contacts"
   },
 
   {
     id:"continue",
-    title:"Confirm that the chapter will continue this year.",
+    title:"Confirm that the chapter will continue.",
     note:"",
     when:"Start of year",
     type:"advisor"
   },
 
   {
-    id:"leadership",
-    title:"Confirm student leaders and leadership opportunities across the grades involved.",
-    note:"",
-    when:"Start of year"
-  },
-
-  {
     id:"recruit",
-    title:"Recruit returning and new participants.",
+    title:"Recruit returning and new participants using current recruitment materials. Share the Parent Letter with families.",
     note:"",
     when:"Start of year / ongoing",
     type:"resourcesBoth"
@@ -1378,15 +1505,15 @@ const combinedActive = [
 
   {
     id:"registration",
-    title:"Share this year’s unique school-specific registration link.",
-    note:"",
+    title:"Send this year’s unique school-specific registration link to participating families.",
+    note:"Do not reuse another school’s or a prior-year registration link.",
     when:"After recruitment",
     type:"registration"
   },
 
   {
     id:"training",
-    title:"Confirm required training is completed where applicable.",
+    title:"Confirm required Sensitivity Training and Chapter Leadership Training are completed for secondary student leaders where applicable.",
     note:"",
     when:"Early year",
     type:"resourcesBoth"
@@ -1394,14 +1521,15 @@ const combinedActive = [
 
   {
     id:"matching",
-    title:"Review friendship opportunities or formal buddy pairings where applicable.",
+    title:"Review registered participants and update formal matches only where your chapter uses them.",
     note:"",
-    when:"Before first activity"
+    when:"Before first activity",
+    type:"resourcesBoth"
   },
 
   {
     id:"roster",
-    title:"Review the chapter roster and report missing or incorrect registrations.",
+    title:"Review the online roster using the school-specific roster link and report missing or incorrect registrations.",
     note:"",
     when:"Start of year / ongoing",
     type:"roster"
@@ -1409,38 +1537,58 @@ const combinedActive = [
 
   {
     id:"abuse",
-    title:"Complete the annual Staff Advisor Abuse Policy requirement.",
-    note:"",
-    when:"Required annually"
+    title:"The designated teacher electronically signs the annual Abuse Policy when the separate Best Buddies email arrives.",
+    note:"This is mandatory for Best Buddies Canada’s insurance requirements.",
+    when:"Required annually",
+    type:"abuse"
   },
 
   {
-    id:"gather",
-    title:"Hold your first gathering or Meet & Greet and begin regular chapter programming.",
+    id:"meet",
+    title:"Confirm with your Program Advisor when recruitment and the Meet & Greet have been completed.",
     note:"",
     when:"Start of year",
-    type:"resourcesBoth"
+    type:"meet"
   },
 
   {
     id:"activities",
-    title:"Support regular inclusive activities, friendships and student leadership throughout the year.",
-    note:"",
+    title:"Schedule and hold regular inclusive chapter activities across the grades involved.",
+    note:"Consider Friendship Walk opportunities and report participation, successes, concerns and support needs.",
     when:"Throughout the year",
-    type:"resourcesBoth"
+    type:"walksBoth"
+  },
+
+  {
+    id:"checkins",
+    title:"Reply to Program Advisor check-ins and report contact, participant or operating changes, along with any support needed.",
+    note:"",
+    when:"Monthly / term check-ins",
+    type:"advisor"
+  },
+
+  {
+    id:"funding",
+    title:"Discuss fundraising or activity support with your Program Advisor before using a funding or gift-card form.",
+    note:"",
+    when:"Only if needed",
+    type:"funding"
   },
 
   {
     id:"yearend",
-    title:"Complete year-end reporting and confirm plans for next year.",
+    title:"Complete the End-of-Year Report and confirm chapter plans and student leadership for next year.",
     note:"",
-    when:"End of program year"
+    when:"End of program year",
+    type:"yearend"
   }
 
 ];
 
 
-/* TASK SET */
+/* =====================================================
+   CHOOSE TASK SET
+===================================================== */
 
 function getTasks(){
 
@@ -1469,13 +1617,15 @@ function getTasks(){
 }
 
 
-/* HEADER */
+/* =====================================================
+   HEADER
+===================================================== */
 
 function renderHeader(){
 
   const statusLabel =
     data.status === "active"
-      ? "Existing / Active Chapter Checklist"
+      ? "Existing / Active Chapter Annual Checklist"
       : "New / Restarting Chapter Checklist";
 
 
@@ -1541,14 +1691,29 @@ function renderHeader(){
 
     `<strong>Registration reminder:</strong>
      Use only the current school-specific registration link included in this checklist.
-     Please do not reuse another school’s or a previous-year registration link.`;
+     Teachers share the link with families, and parents/guardians register their own children as Buddies or Peer Buddies.
+     Do not use another school’s or a prior-year link.`;
 
 }
 
 
-/* LINKS */
+/* =====================================================
+   LINK / NOTES COLUMN
+===================================================== */
 
 function taskLinks(task){
+
+  if(task.type === "contacts"){
+
+    return `
+      <span class="task-note">
+        Program Advisor: ${escapeHtml(data.advisor)}
+        ${data.advisorEmail ? `<br>${escapeHtml(data.advisorEmail)}` : ""}
+      </span>
+    `;
+
+  }
+
 
   if(task.type === "registration"){
 
@@ -1582,7 +1747,7 @@ function taskLinks(task){
          </a>`
 
       : `<span class="task-note">
-           Contact your Program Advisor for roster information.
+           Contact your Program Advisor for the school-specific roster link.
          </span>`;
 
   }
@@ -1590,19 +1755,13 @@ function taskLinks(task){
 
   if(task.type === "resources"){
 
-    const url =
-      data.program === "high"
-        ? RESOURCE_FOLDERS.high
-        : RESOURCE_FOLDERS.elementary;
-
-
     return `
       <a
         class="resource-link"
-        href="${escapeAttribute(url)}"
+        href="${escapeAttribute(RESOURCE_FOLDERS.elementary)}"
         target="_blank"
       >
-        Open Resource Library
+        Recruitment & Chapter Resources
       </a>
     `;
 
@@ -1634,6 +1793,62 @@ function taskLinks(task){
   }
 
 
+  if(task.type === "walks"){
+
+    const folder =
+      data.program === "high"
+        ? RESOURCE_FOLDERS.high
+        : RESOURCE_FOLDERS.elementary;
+
+
+    return `
+      <a
+        class="resource-link"
+        href="${escapeAttribute(folder)}"
+        target="_blank"
+      >
+        Activity & Friendship Walk Resources
+      </a>
+
+      <div class="task-note">
+        Youth Walks: Sept–Nov / Apr–Jun<br>
+        Community Walks: Sept–Oct / Apr–Jun
+      </div>
+    `;
+
+  }
+
+
+  if(task.type === "walksBoth"){
+
+    return `
+      <a
+        class="resource-link"
+        href="${escapeAttribute(RESOURCE_FOLDERS.elementary)}"
+        target="_blank"
+      >
+        Elementary & Middle Resources
+      </a>
+
+      <br>
+
+      <a
+        class="resource-link"
+        href="${escapeAttribute(RESOURCE_FOLDERS.high)}"
+        target="_blank"
+      >
+        High School Resources
+      </a>
+
+      <div class="task-note">
+        Youth Walks: Sept–Nov / Apr–Jun<br>
+        Community Walks: Sept–Oct / Apr–Jun
+      </div>
+    `;
+
+  }
+
+
   if(task.type === "advisor"){
 
     return data.advisorEmail
@@ -1650,12 +1865,60 @@ function taskLinks(task){
   }
 
 
+  if(task.type === "abuse"){
+
+    return `
+      <span class="task-note">
+        Sent separately by email.
+        Contact your Program Advisor if it is not received.
+      </span>
+    `;
+
+  }
+
+
+  if(task.type === "meet"){
+
+    return `
+      <span class="task-note">
+        Recruitment completed: __________<br>
+        Meet & Greet completed: __________
+      </span>
+    `;
+
+  }
+
+
+  if(task.type === "funding"){
+
+    return `
+      <span class="task-note">
+        Program Advisor approval required first.
+      </span>
+    `;
+
+  }
+
+
+  if(task.type === "yearend"){
+
+    return `
+      <span class="task-note">
+        Report link provided when released.
+      </span>
+    `;
+
+  }
+
+
   return `<span class="task-note">—</span>`;
 
 }
 
 
-/* STATE */
+/* =====================================================
+   SAVED CHECKBOX STATE
+===================================================== */
 
 function loadState(){
 
@@ -1706,7 +1969,9 @@ function saveState(){
 }
 
 
-/* TASKS */
+/* =====================================================
+   RENDER TASKS
+===================================================== */
 
 function renderTasks(){
 
@@ -1805,7 +2070,9 @@ function renderTasks(){
 }
 
 
-/* PROGRESS */
+/* =====================================================
+   PROGRESS
+===================================================== */
 
 function updateProgress(){
 
@@ -1844,7 +2111,9 @@ function updateProgress(){
 }
 
 
-/* ADVISOR */
+/* =====================================================
+   ADVISOR CARD
+===================================================== */
 
 function renderAdvisor(){
 
@@ -1924,17 +2193,16 @@ I have a question about our Best Buddies chapter at ${data.school}.
 
 
   window.location.href =
-
     `mailto:${encodeURIComponent(data.advisorEmail)}`
-
     + `?subject=${encodeURIComponent(subject)}`
-
     + `&body=${encodeURIComponent(body)}`;
 
 }
 
 
-/* PAGE ACTIONS */
+/* =====================================================
+   PAGE ACTIONS
+===================================================== */
 
 async function copyPageLink(){
 
@@ -1968,7 +2236,9 @@ function openHub(){
 }
 
 
-/* HELPERS */
+/* =====================================================
+   HELPERS
+===================================================== */
 
 function firstName(name){
 
@@ -1998,7 +2268,9 @@ function escapeAttribute(value){
 }
 
 
-/* INIT */
+/* =====================================================
+   INIT
+===================================================== */
 
 renderHeader();
 renderTasks();
