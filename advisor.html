@@ -15,16 +15,13 @@
   --purple:#6f2c91;
   --purple-dark:#55206d;
   --purple-soft:#f6eff9;
-
   --teal:#19b7b1;
   --teal-dark:#108f89;
-
   --ink:#252232;
   --muted:#6e6876;
   --line:#e5e0e8;
   --bg:#f7f6f8;
   --white:#ffffff;
-
   --shadow:0 14px 42px rgba(55,35,68,.08);
 }
 
@@ -58,9 +55,7 @@ button{
 }
 
 
-/* =====================================================
-   LOGIN
-===================================================== */
+/* LOGIN */
 
 .login-screen{
   min-height:100vh;
@@ -101,6 +96,7 @@ button{
 
 .login-card h1{
   margin:7px 0 9px;
+
   font-size:1.95rem;
   line-height:1.08;
   letter-spacing:-.04em;
@@ -118,9 +114,7 @@ button{
 }
 
 
-/* =====================================================
-   HEADER
-===================================================== */
+/* HEADER */
 
 .site-header{
   height:72px;
@@ -173,15 +167,15 @@ button{
 }
 
 
-/* =====================================================
-   BUTTONS
-===================================================== */
+/* BUTTONS */
 
 .btn{
   border:0;
   border-radius:10px;
   padding:10px 16px;
+
   font-weight:700;
+
   transition:.15s ease;
 }
 
@@ -209,6 +203,7 @@ button{
 
 .btn-light{
   border:1px solid var(--line);
+
   background:white;
   color:var(--ink);
 }
@@ -224,9 +219,7 @@ button{
 }
 
 
-/* =====================================================
-   PAGE
-===================================================== */
+/* PAGE */
 
 .page{
   max-width:1140px;
@@ -240,15 +233,14 @@ button{
 
 .page-title h1{
   margin:4px 0 0;
+
   font-size:1.9rem;
   line-height:1.1;
   letter-spacing:-.035em;
 }
 
 
-/* =====================================================
-   PROGRESS
-===================================================== */
+/* PROGRESS */
 
 .progress-wrap{
   margin-bottom:12px;
@@ -272,6 +264,7 @@ button{
 
 .progress-item:not(:last-child)::after{
   content:"";
+
   position:absolute;
   z-index:0;
 
@@ -290,6 +283,7 @@ button{
 
   width:33px;
   height:33px;
+
   margin:0 auto 4px;
 
   display:grid;
@@ -307,6 +301,7 @@ button{
 
 .progress-label{
   color:var(--muted);
+
   font-size:.72rem;
   font-weight:600;
 }
@@ -327,13 +322,12 @@ button{
 }
 
 
-/* =====================================================
-   WORKSPACE
-===================================================== */
+/* WORKSPACE */
 
 .workspace{
   position:relative;
-  min-height:535px;
+
+  min-height:560px;
 
   overflow:hidden;
 
@@ -341,11 +335,12 @@ button{
   border-radius:20px;
 
   background:white;
+
   box-shadow:var(--shadow);
 }
 
 .step{
-  min-height:455px;
+  min-height:480px;
   padding:28px 36px 88px;
 }
 
@@ -360,20 +355,20 @@ button{
 
   font-size:.7rem;
   font-weight:800;
+
   letter-spacing:.1em;
   text-transform:uppercase;
 }
 
 .step h2{
   margin:0;
+
   font-size:1.6rem;
   letter-spacing:-.03em;
 }
 
 
-/* =====================================================
-   FIELDS
-===================================================== */
+/* FIELDS */
 
 .form-grid{
   display:grid;
@@ -396,7 +391,9 @@ button{
 .field label,
 .field-title{
   display:block;
+
   margin-bottom:7px;
+
   font-size:.84rem;
   font-weight:700;
 }
@@ -411,6 +408,7 @@ input[type="email"],
 input[type="password"]{
   width:100%;
   height:50px;
+
   padding:0 14px;
 
   border:1px solid #ddd7e0;
@@ -422,14 +420,16 @@ input[type="password"]{
 
 input:focus{
   outline:none;
+
   border-color:var(--teal);
-  box-shadow:0 0 0 4px rgba(25,183,177,.11);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(25,183,177,.11);
 }
 
 
-/* =====================================================
-   SEGMENTED CONTROLS
-===================================================== */
+/* SEGMENTED CONTROLS */
 
 .segmented-control{
   width:100%;
@@ -471,7 +471,6 @@ input:focus{
   font-weight:700;
 
   text-align:center;
-
   cursor:pointer;
 
   transition:
@@ -500,9 +499,7 @@ input:focus{
 }
 
 
-/* =====================================================
-   ADVISOR SUMMARY
-===================================================== */
+/* ADVISOR */
 
 .advisor-line{
   min-height:50px;
@@ -524,6 +521,7 @@ input:focus{
 
 .advisor-line span{
   display:block;
+
   margin-top:2px;
 
   color:var(--muted);
@@ -534,7 +532,7 @@ input:focus{
 .toggle-row{
   margin-top:13px;
 
-  display:flex;
+  display:flex!important;
   align-items:flex-start;
   gap:9px;
 
@@ -547,27 +545,32 @@ input:focus{
 }
 
 
-/* =====================================================
-   PACKAGE SELECTION
-===================================================== */
+/* PACKAGE CARDS */
 
 .package-choice-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(4,1fr);
   gap:12px;
+
   margin-top:12px;
 }
 
 .package-choice{
   position:relative;
 
-  min-height:105px;
-  padding:17px 44px 16px 17px;
+  min-height:112px;
+
+  padding:
+    17px
+    44px
+    16px
+    17px;
 
   border:2px solid var(--line);
   border-radius:15px;
 
   background:white;
+
   cursor:pointer;
 
   transition:.15s ease;
@@ -584,6 +587,7 @@ input:focus{
 
 .package-check{
   position:absolute;
+
   top:14px;
   right:14px;
 
@@ -605,14 +609,17 @@ input:focus{
 
 .package-choice.selected .package-check{
   border-color:var(--purple);
+
   background:var(--purple);
   color:white;
 }
 
 .package-choice strong{
   display:block;
+
   margin-bottom:5px;
-  font-size:.86rem;
+
+  font-size:.84rem;
 }
 
 .package-choice p{
@@ -620,19 +627,18 @@ input:focus{
 
   color:var(--muted);
 
-  font-size:.73rem;
+  font-size:.71rem;
   line-height:1.4;
 }
 
 
-/* =====================================================
-   SEND
-===================================================== */
+/* SEND */
 
 .send-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:16px 20px;
+
   margin-bottom:16px;
 }
 
@@ -640,11 +646,13 @@ input:focus{
   display:flex;
   flex-wrap:wrap;
   gap:7px;
+
   margin:7px 0 15px;
 }
 
 .resource-chip{
   padding:6px 10px;
+
   border-radius:999px;
 
   background:var(--purple-soft);
@@ -679,16 +687,19 @@ input:focus{
 
 .preview-top span{
   color:var(--muted);
+
   font-size:.69rem;
 }
 
 .preview-body{
-  max-height:225px;
+  max-height:240px;
+
   overflow:auto;
 
   padding:16px 18px;
 
   font-family:Arial,Helvetica,sans-serif;
+
   font-size:.86rem;
   line-height:1.55;
 }
@@ -707,22 +718,23 @@ input:focus{
 
 .preview-link a{
   color:var(--purple);
+
   font-weight:700;
   text-decoration:underline;
 }
 
 
-/* =====================================================
-   ACTIONS
-===================================================== */
+/* ACTIONS */
 
 .step-actions{
   position:absolute;
+
   right:0;
   bottom:0;
   left:0;
 
   min-height:68px;
+
   padding:12px 36px;
 
   display:flex;
@@ -731,22 +743,23 @@ input:focus{
   gap:10px;
 
   border-top:1px solid var(--line);
+
   background:#fcfbfd;
 }
 
 .action-right{
   margin-left:auto;
+
   display:flex;
   gap:8px;
 }
 
 
-/* =====================================================
-   MODAL
-===================================================== */
+/* MODAL */
 
 .modal-bg{
   position:fixed;
+
   inset:0;
   z-index:100;
 
@@ -755,18 +768,22 @@ input:focus{
   display:grid;
   place-items:center;
 
-  background:rgba(31,25,36,.48);
+  background:
+    rgba(31,25,36,.48);
 }
 
 .modal{
   width:min(520px,100%);
+
   overflow:hidden;
 
   border-radius:20px;
 
   background:white;
 
-  box-shadow:0 25px 80px rgba(25,10,35,.25);
+  box-shadow:
+    0 25px 80px
+    rgba(25,10,35,.25);
 }
 
 .modal-head{
@@ -802,7 +819,9 @@ input:focus{
 
 .modal-field label{
   display:block;
+
   margin-bottom:6px;
+
   font-size:.81rem;
   font-weight:700;
 }
@@ -818,9 +837,7 @@ input:focus{
 }
 
 
-/* =====================================================
-   TOAST
-===================================================== */
+/* TOAST */
 
 .toast{
   position:fixed;
@@ -842,9 +859,15 @@ input:focus{
 }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+  .package-choice-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
 
 @media(max-width:800px){
 
@@ -896,13 +919,10 @@ input:focus{
     grid-template-columns:1fr;
   }
 
-  .package-choice{
-    min-height:auto;
-  }
-
   .step-actions{
     position:sticky;
     bottom:0;
+
     padding:11px 17px;
   }
 
@@ -916,6 +936,7 @@ input:focus{
 
   .header-actions .btn{
     padding:8px 9px;
+
     font-size:.7rem;
   }
 
@@ -931,11 +952,10 @@ input:focus{
 <body>
 
 
-<!-- =====================================================
-     LOGIN
-===================================================== -->
-
-<section id="loginScreen" class="login-screen">
+<section
+  id="loginScreen"
+  class="login-screen"
+>
 
   <div class="login-card">
 
@@ -981,18 +1001,21 @@ input:focus{
       Continue
     </button>
 
-    <div id="loginError" class="error"></div>
+    <div
+      id="loginError"
+      class="error"
+    ></div>
 
   </div>
 
 </section>
 
 
-<!-- =====================================================
-     APP
-===================================================== -->
 
-<div id="app" class="hidden">
+<div
+  id="app"
+  class="hidden"
+>
 
 <header class="site-header">
 
@@ -1008,8 +1031,15 @@ input:focus{
       >
 
       <div class="brand-copy">
-        <strong>Advisor Hub</strong>
-        <span>Best Buddies Canada</span>
+
+        <strong>
+          Advisor Hub
+        </strong>
+
+        <span>
+          Best Buddies Canada
+        </span>
+
       </div>
 
     </div>
@@ -1058,19 +1088,51 @@ input:focus{
 
   <div class="progress">
 
-    <div class="progress-item active" id="progress1">
-      <div class="progress-circle">1</div>
-      <div class="progress-label">Chapter</div>
+    <div
+      class="progress-item active"
+      id="progress1"
+    >
+
+      <div class="progress-circle">
+        1
+      </div>
+
+      <div class="progress-label">
+        Chapter
+      </div>
+
     </div>
 
-    <div class="progress-item" id="progress2">
-      <div class="progress-circle">2</div>
-      <div class="progress-label">Package</div>
+
+    <div
+      class="progress-item"
+      id="progress2"
+    >
+
+      <div class="progress-circle">
+        2
+      </div>
+
+      <div class="progress-label">
+        Package
+      </div>
+
     </div>
 
-    <div class="progress-item" id="progress3">
-      <div class="progress-circle">3</div>
-      <div class="progress-label">Send</div>
+
+    <div
+      class="progress-item"
+      id="progress3"
+    >
+
+      <div class="progress-circle">
+        3
+      </div>
+
+      <div class="progress-label">
+        Send
+      </div>
+
     </div>
 
   </div>
@@ -1081,11 +1143,12 @@ input:focus{
 <section class="workspace">
 
 
-<!-- =====================================================
-     STEP 1
-===================================================== -->
+<!-- STEP 1 -->
 
-<div class="step" id="step1">
+<div
+  class="step"
+  id="step1"
+>
 
   <div class="step-head">
 
@@ -1104,7 +1167,10 @@ input:focus{
 
     <div class="field full">
 
-      <label class="field-title" for="schoolName">
+      <label
+        class="field-title"
+        for="schoolName"
+      >
         School / Chapter Name
       </label>
 
@@ -1240,7 +1306,10 @@ input:focus{
 
     <div class="field year-field">
 
-      <label class="field-title" for="programYear">
+      <label
+        class="field-title"
+        for="programYear"
+      >
         Program Year
       </label>
 
@@ -1257,7 +1326,10 @@ input:focus{
 </div>
 
 
-<div class="step-actions" id="actions1">
+<div
+  class="step-actions"
+  id="actions1"
+>
 
   <div></div>
 
@@ -1276,11 +1348,12 @@ input:focus{
 
 
 
-<!-- =====================================================
-     STEP 2
-===================================================== -->
+<!-- STEP 2 -->
 
-<div class="step hidden" id="step2">
+<div
+  class="step hidden"
+  id="step2"
+>
 
   <div class="step-head">
 
@@ -1299,9 +1372,14 @@ input:focus{
 
     <div class="field">
 
-      <label class="field-title" for="staffAdvisor">
+      <label
+        class="field-title"
+        for="staffAdvisor"
+      >
         Staff Advisor
-        <span class="optional">optional</span>
+        <span class="optional">
+          optional
+        </span>
       </label>
 
       <input
@@ -1315,7 +1393,52 @@ input:focus{
 
     <div class="field">
 
-      <label class="field-title" for="registrationLink">
+      <label
+        class="field-title"
+        for="staffEmail"
+      >
+        Staff Advisor Email
+        <span class="optional">
+          optional
+        </span>
+      </label>
+
+      <input
+        id="staffEmail"
+        type="email"
+        placeholder="teacher@school.ca"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label
+        class="field-title"
+        for="staffPhone"
+      >
+        Staff Advisor Phone
+        <span class="optional">
+          optional
+        </span>
+      </label>
+
+      <input
+        id="staffPhone"
+        type="text"
+        placeholder="902-555-1234"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label
+        class="field-title"
+        for="registrationLink"
+      >
         Registration Link
       </label>
 
@@ -1330,9 +1453,14 @@ input:focus{
 
     <div class="field">
 
-      <label class="field-title" for="rosterLink">
+      <label
+        class="field-title"
+        for="rosterLink"
+      >
         Roster Link
-        <span class="optional">optional</span>
+        <span class="optional">
+          optional
+        </span>
       </label>
 
       <input
@@ -1403,13 +1531,16 @@ input:focus{
 
   <div class="package-choice-grid">
 
+
     <div
       class="package-choice selected"
       id="includeChecklistCard"
       onclick="togglePackageItem('checklist')"
     >
 
-      <div class="package-check">✓</div>
+      <div class="package-check">
+        ✓
+      </div>
 
       <strong>
         Chapter Checklist
@@ -1428,7 +1559,9 @@ input:focus{
       onclick="togglePackageItem('quickStart')"
     >
 
-      <div class="package-check">✓</div>
+      <div class="package-check">
+        ✓
+      </div>
 
       <strong id="quickStartCardName">
         Elementary & Middle Quick Start Guide
@@ -1447,7 +1580,9 @@ input:focus{
       onclick="togglePackageItem('resources')"
     >
 
-      <div class="package-check">✓</div>
+      <div class="package-check">
+        ✓
+      </div>
 
       <strong id="resourceCardName">
         Resource Library
@@ -1458,6 +1593,28 @@ input:focus{
       </p>
 
     </div>
+
+
+    <div
+      class="package-choice selected"
+      id="includeParentLetterCard"
+      onclick="togglePackageItem('parentLetter')"
+    >
+
+      <div class="package-check">
+        ✓
+      </div>
+
+      <strong>
+        Parent Letter
+      </strong>
+
+      <p>
+        School-specific letter with registration link and QR code.
+      </p>
+
+    </div>
+
 
   </div>
 
@@ -1491,11 +1648,12 @@ input:focus{
 
 
 
-<!-- =====================================================
-     STEP 3
-===================================================== -->
+<!-- STEP 3 -->
 
-<div class="step hidden" id="step3">
+<div
+  class="step hidden"
+  id="step3"
+>
 
   <div class="step-head">
 
@@ -1514,7 +1672,10 @@ input:focus{
 
     <div class="field">
 
-      <label class="field-title" for="recipientName">
+      <label
+        class="field-title"
+        for="recipientName"
+      >
         Recipient First Name
       </label>
 
@@ -1530,7 +1691,10 @@ input:focus{
 
     <div class="field">
 
-      <label class="field-title" for="recipientEmail">
+      <label
+        class="field-title"
+        for="recipientEmail"
+      >
         Recipient Email
       </label>
 
@@ -1547,7 +1711,10 @@ input:focus{
 
   <div class="field">
 
-    <label class="field-title" for="subjectLine">
+    <label
+      class="field-title"
+      for="subjectLine"
+    >
       Subject
     </label>
 
@@ -1560,9 +1727,13 @@ input:focus{
   </div>
 
 
-  <div class="field-title" style="margin-top:15px">
+  <div
+    class="field-title"
+    style="margin-top:15px"
+  >
     Included
   </div>
+
 
   <div
     id="selectedResources"
@@ -1618,6 +1789,14 @@ input:focus{
     </button>
 
     <button
+      id="previewParentLetterButton"
+      class="btn btn-light"
+      onclick="previewParentLetter()"
+    >
+      Preview Parent Letter
+    </button>
+
+    <button
       class="btn btn-soft"
       onclick="copyPolishedEmail()"
     >
@@ -1644,9 +1823,7 @@ input:focus{
 
 
 
-<!-- =====================================================
-     ADVISOR MODAL
-===================================================== -->
+<!-- ADVISOR MODAL -->
 
 <div
   id="advisorModal"
@@ -1768,16 +1945,14 @@ input:focus{
 </div>
 
 
-<div id="toast" class="toast hidden"></div>
+<div
+  id="toast"
+  class="toast hidden"
+></div>
 
 
 
 <script>
-
-/* =====================================================
-   CONFIG
-===================================================== */
-
 const PASSWORD =
   "BestBuddiesAdvisor2026";
 
@@ -1805,31 +1980,48 @@ const QUICK_START_GUIDES = {
 
 
 let currentStep = 1;
-let selectedProgram = "elementary";
-let selectedStatus = "new";
+
+let selectedProgram =
+  "elementary";
+
+let selectedStatus =
+  "new";
+
 
 let packageItems = {
+
   checklist:true,
+
   quickStart:true,
-  resources:true
+
+  resources:true,
+
+  parentLetter:true
+
 };
 
+
 let currentChecklist = "";
+
+let currentParentLetter = "";
+
 let currentSubject = "";
+
 let currentPlainEmail = "";
+
 let currentHtmlEmail = "";
 
 let subjectDirty = false;
 
 
-/* =====================================================
-   LOGIN
-===================================================== */
+/* LOGIN */
 
 function login(){
 
   const password =
-    document.getElementById("password").value;
+    document.getElementById(
+      "password"
+    ).value;
 
 
   if(password === PASSWORD){
@@ -1868,12 +2060,16 @@ function showApp(){
 
   document.getElementById(
     "loginScreen"
-  ).classList.add("hidden");
+  ).classList.add(
+    "hidden"
+  );
 
 
   document.getElementById(
     "app"
-  ).classList.remove("hidden");
+  ).classList.remove(
+    "hidden"
+  );
 
 
   loadAdvisor();
@@ -1881,15 +2077,15 @@ function showApp(){
 }
 
 
-/* =====================================================
-   ADVISOR
-===================================================== */
+/* ADVISOR */
 
 function openAdvisorModal(){
 
   document.getElementById(
     "advisorModal"
-  ).classList.remove("hidden");
+  ).classList.remove(
+    "hidden"
+  );
 
 }
 
@@ -1898,15 +2094,22 @@ function closeAdvisorModal(){
 
   document.getElementById(
     "advisorModal"
-  ).classList.add("hidden");
+  ).classList.add(
+    "hidden"
+  );
 
 }
 
 
 function closeModalBackdrop(event){
 
-  if(event.target.id === "advisorModal"){
+  if(
+    event.target.id ===
+    "advisorModal"
+  ){
+
     closeAdvisorModal();
+
   }
 
 }
@@ -2023,19 +2226,28 @@ function updateAdvisorSummary(){
   document.getElementById(
     "advisorSummaryName"
   ).textContent =
-    advisor.name || "Add your details";
+    advisor.name ||
+    "Add your details";
 
 
   const details = [];
 
 
   if(advisor.title){
-    details.push(advisor.title);
+
+    details.push(
+      advisor.title
+    );
+
   }
 
 
   if(advisor.email){
-    details.push(advisor.email);
+
+    details.push(
+      advisor.email
+    );
+
   }
 
 
@@ -2049,9 +2261,7 @@ function updateAdvisorSummary(){
 }
 
 
-/* =====================================================
-   PROGRAM
-===================================================== */
+/* PROGRAM */
 
 function selectProgram(value){
 
@@ -2138,7 +2348,10 @@ function updatePackageLabels(){
     );
 
 
-  if(selectedProgram === "elementary"){
+  if(
+    selectedProgram ===
+    "elementary"
+  ){
 
     quickStartName.textContent =
       "Elementary & Middle Quick Start Guide";
@@ -2155,7 +2368,10 @@ function updatePackageLabels(){
   }
 
 
-  if(selectedProgram === "high"){
+  if(
+    selectedProgram ===
+    "high"
+  ){
 
     quickStartName.textContent =
       "High School Quick Start Guide";
@@ -2172,7 +2388,10 @@ function updatePackageLabels(){
   }
 
 
-  if(selectedProgram === "combined"){
+  if(
+    selectedProgram ===
+    "combined"
+  ){
 
     quickStartName.textContent =
       "Both Quick Start Guides";
@@ -2191,11 +2410,11 @@ function updatePackageLabels(){
 }
 
 
-/* =====================================================
-   PACKAGE TOGGLES
-===================================================== */
+/* PACKAGE */
 
-function togglePackageItem(item){
+function togglePackageItem(
+  item
+){
 
   packageItems[item] =
     !packageItems[item];
@@ -2210,7 +2429,10 @@ function togglePackageItem(item){
       "includeQuickStartCard",
 
     resources:
-      "includeResourcesCard"
+      "includeResourcesCard",
+
+    parentLetter:
+      "includeParentLetterCard"
 
   };
 
@@ -2225,9 +2447,7 @@ function togglePackageItem(item){
 }
 
 
-/* =====================================================
-   STEPS
-===================================================== */
+/* STEPS */
 
 function goToStep(step){
 
@@ -2277,11 +2497,28 @@ function goToStep(step){
     if(
       !packageItems.checklist &&
       !packageItems.quickStart &&
-      !packageItems.resources
+      !packageItems.resources &&
+      !packageItems.parentLetter
     ){
 
       alert(
         "Choose at least one item to include."
+      );
+
+      return;
+
+    }
+
+
+    if(
+      packageItems.parentLetter &&
+      !document.getElementById(
+        "registrationLink"
+      ).value.trim()
+    ){
+
+      alert(
+        "Add the school-specific registration link to generate the Parent Letter and QR code."
       );
 
       return;
@@ -2295,24 +2532,26 @@ function goToStep(step){
     step;
 
 
-  [1,2,3].forEach(number=>{
+  [1,2,3].forEach(
+    number=>{
 
-    document.getElementById(
-      "step"+number
-    ).classList.toggle(
-      "hidden",
-      number !== step
-    );
+      document.getElementById(
+        "step"+number
+      ).classList.toggle(
+        "hidden",
+        number !== step
+      );
 
 
-    document.getElementById(
-      "actions"+number
-    ).classList.toggle(
-      "hidden",
-      number !== step
-    );
+      document.getElementById(
+        "actions"+number
+      ).classList.toggle(
+        "hidden",
+        number !== step
+      );
 
-  });
+    }
+  );
 
 
   updateProgress();
@@ -2320,7 +2559,8 @@ function goToStep(step){
 
   if(step === 3){
 
-    subjectDirty = false;
+    subjectDirty =
+      false;
 
     buildPackage();
 
@@ -2329,44 +2569,52 @@ function goToStep(step){
 }
 
 
-/* =====================================================
-   PROGRESS
-===================================================== */
+/* PROGRESS */
 
 function updateProgress(){
 
-  [1,2,3].forEach(number=>{
+  [1,2,3].forEach(
+    number=>{
 
-    const item =
-      document.getElementById(
-        "progress"+number
+      const item =
+        document.getElementById(
+          "progress"+number
+        );
+
+
+      item.classList.remove(
+        "active",
+        "done"
       );
 
 
-    item.classList.remove(
-      "active",
-      "done"
-    );
+      if(
+        number <
+        currentStep
+      ){
 
+        item.classList.add(
+          "done"
+        );
 
-    if(number < currentStep){
+      }else if(
+        number ===
+        currentStep
+      ){
 
-      item.classList.add("done");
+        item.classList.add(
+          "active"
+        );
 
-    }else if(number === currentStep){
-
-      item.classList.add("active");
+      }
 
     }
-
-  });
+  );
 
 }
 
 
-/* =====================================================
-   CHECKLIST URL
-===================================================== */
+/* URL BUILDERS */
 
 function buildChecklistUrl(){
 
@@ -2378,9 +2626,9 @@ function buildChecklistUrl(){
     new URLSearchParams({
 
       school:
-        document.getElementById(
+        valueOf(
           "schoolName"
-        ).value.trim(),
+        ),
 
       program:
         selectedProgram,
@@ -2389,24 +2637,24 @@ function buildChecklistUrl(){
         selectedStatus,
 
       year:
-        document.getElementById(
+        valueOf(
           "programYear"
-        ).value.trim(),
+        ),
 
       staff:
-        document.getElementById(
+        valueOf(
           "staffAdvisor"
-        ).value.trim(),
+        ),
 
       registration:
-        document.getElementById(
+        valueOf(
           "registrationLink"
-        ).value.trim(),
+        ),
 
       roster:
-        document.getElementById(
+        valueOf(
           "rosterLink"
-        ).value.trim(),
+        ),
 
       advisor:
         advisor.name,
@@ -2444,37 +2692,104 @@ function buildChecklistUrl(){
 }
 
 
-/* =====================================================
-   BUILD PACKAGE
-===================================================== */
+function buildParentLetterUrl(){
+
+  const advisor =
+    getAdvisor();
+
+
+  const params =
+    new URLSearchParams({
+
+      school:
+        valueOf(
+          "schoolName"
+        ),
+
+      registration:
+        valueOf(
+          "registrationLink"
+        ),
+
+      staff:
+        valueOf(
+          "staffAdvisor"
+        ),
+
+      staffEmail:
+        valueOf(
+          "staffEmail"
+        ),
+
+      staffPhone:
+        valueOf(
+          "staffPhone"
+        ),
+
+      advisor:
+        advisor.name,
+
+      advisorTitle:
+        advisor.title,
+
+      advisorEmail:
+        advisor.email,
+
+      advisorPhone:
+        advisor.phone
+
+    });
+
+
+  return(
+    new URL(
+      "parent-letter.html",
+      window.location.href
+    ).href
+    +
+    "?"
+    +
+    params.toString()
+  );
+
+}
+
+
+/* BUILD EMAIL */
 
 function buildPackage(){
 
   const school =
-    document.getElementById(
+    valueOf(
       "schoolName"
-    ).value.trim();
+    );
 
 
   const year =
-    document.getElementById(
+    valueOf(
       "programYear"
-    ).value.trim();
+    );
 
 
   const recipientName =
-    document.getElementById(
+    valueOf(
       "recipientName"
-    ).value.trim();
+    );
 
 
   currentChecklist =
     buildChecklistUrl();
 
 
+  currentParentLetter =
+    buildParentLetterUrl();
+
+
   const defaultSubject =
     selectedStatus === "new"
+
       ? `Getting Started with Best Buddies | ${school}`
+
       : `Best Buddies ${year} | ${school}`;
 
 
@@ -2502,11 +2817,11 @@ function buildPackage(){
 
   const greeting =
     recipientName
+
       ? `Hi ${escapeHtml(recipientName)},`
+
       : "Hi there,";
 
-
-  const chips = [];
 
   let preview = `
     <p>${greeting}</p>
@@ -2520,12 +2835,17 @@ function buildPackage(){
 
 
   let htmlResources = "";
+
   let plainResources = "";
+
+  const chips = [];
 
 
   /* CHECKLIST */
 
-  if(packageItems.checklist){
+  if(
+    packageItems.checklist
+  ){
 
     chips.push(
       "Chapter Checklist"
@@ -2587,9 +2907,14 @@ ${currentChecklist}
 
   /* QUICK START */
 
-  if(packageItems.quickStart){
+  if(
+    packageItems.quickStart
+  ){
 
-    if(selectedProgram === "elementary"){
+    if(
+      selectedProgram ===
+      "elementary"
+    ){
 
       chips.push(
         "Quick Start Guide"
@@ -2618,7 +2943,10 @@ ${QUICK_START_GUIDES.elementary}
     }
 
 
-    if(selectedProgram === "high"){
+    if(
+      selectedProgram ===
+      "high"
+    ){
 
       chips.push(
         "Quick Start Guide"
@@ -2647,7 +2975,10 @@ ${QUICK_START_GUIDES.high}
     }
 
 
-    if(selectedProgram === "combined"){
+    if(
+      selectedProgram ===
+      "combined"
+    ){
 
       chips.push(
         "2 Quick Start Guides"
@@ -2697,9 +3028,14 @@ ${QUICK_START_GUIDES.high}
 
   /* RESOURCES */
 
-  if(packageItems.resources){
+  if(
+    packageItems.resources
+  ){
 
-    if(selectedProgram === "elementary"){
+    if(
+      selectedProgram ===
+      "elementary"
+    ){
 
       chips.push(
         "Resource Library"
@@ -2728,7 +3064,10 @@ ${RESOURCE_FOLDERS.elementary}
     }
 
 
-    if(selectedProgram === "high"){
+    if(
+      selectedProgram ===
+      "high"
+    ){
 
       chips.push(
         "Resource Library"
@@ -2757,7 +3096,10 @@ ${RESOURCE_FOLDERS.high}
     }
 
 
-    if(selectedProgram === "combined"){
+    if(
+      selectedProgram ===
+      "combined"
+    ){
 
       chips.push(
         "2 Resource Libraries"
@@ -2805,9 +3147,74 @@ ${RESOURCE_FOLDERS.high}
   }
 
 
+  /* PARENT LETTER */
+
+  if(
+    packageItems.parentLetter
+  ){
+
+    chips.push(
+      "Parent Letter"
+    );
+
+
+    preview += `
+      <div class="preview-link">
+
+        <strong>
+          Parent / Guardian Letter
+        </strong>
+
+        <div>
+          A personalized letter for ${escapeHtml(school)}
+          with the school-specific registration link and QR code.
+        </div>
+
+        <a
+          href="${escapeAttribute(currentParentLetter)}"
+          target="_blank"
+        >
+          Open the Parent Letter
+        </a>
+
+      </div>
+    `;
+
+
+    htmlResources += `
+      <p>
+
+        <strong>
+          Parent / Guardian Letter
+        </strong>
+
+        <br>
+
+        A personalized letter for ${escapeHtml(school)}
+        with the school-specific registration link and QR code.
+
+        <br>
+
+        <a href="${escapeAttribute(currentParentLetter)}">
+          Open the Parent Letter
+        </a>
+
+      </p>
+    `;
+
+
+    plainResources +=
+`\nParent / Guardian Letter
+${currentParentLetter}
+`;
+
+  }
+
+
   document.getElementById(
     "selectedResources"
   ).innerHTML =
+
     chips
       .map(
         item =>
@@ -2816,12 +3223,28 @@ ${RESOURCE_FOLDERS.high}
       .join("");
 
 
-  if(packageItems.checklist){
+  if(
+    packageItems.checklist
+  ){
 
     preview += `
       <p>
         You can use the Chapter Checklist online and check things off
         as you go, or print/save a copy if that works better for you.
+      </p>
+    `;
+
+  }
+
+
+  if(
+    packageItems.parentLetter
+  ){
+
+    preview += `
+      <p>
+        The Parent Letter is ready to print or save as a PDF
+        and share with families.
       </p>
     `;
 
@@ -2850,7 +3273,13 @@ ${RESOURCE_FOLDERS.high}
   );
 
 
-  /* HTML EMAIL */
+  document.getElementById(
+    "previewParentLetterButton"
+  ).classList.toggle(
+    "hidden",
+    !packageItems.parentLetter
+  );
+
 
   currentHtmlEmail = `
     <div style="
@@ -2881,6 +3310,17 @@ ${RESOURCE_FOLDERS.high}
           : ""
       }
 
+      ${
+        packageItems.parentLetter
+          ? `
+            <p>
+              The Parent Letter is ready to print or save as a PDF
+              and share with families.
+            </p>
+          `
+          : ""
+      }
+
       <p>
         Please reach out anytime if questions come up or if there’s
         anything I can help with along the way.
@@ -2890,24 +3330,24 @@ ${RESOURCE_FOLDERS.high}
   `;
 
 
-  /* TEXT FALLBACK */
-
   currentPlainEmail =
 `${recipientName ? `Hi ${recipientName},` : "Hi there,"}
 
 It was lovely connecting with you! I’ve pulled together a few things to help make getting started with Best Buddies as easy as possible.
 ${plainResources}
 ${packageItems.checklist ? "\nYou can use the Chapter Checklist online and check things off as you go, or print/save a copy if that works better for you.\n" : ""}
+${packageItems.parentLetter ? "\nThe Parent Letter is ready to print or save as a PDF and share with families.\n" : ""}
 Please reach out anytime if questions come up or if there’s anything I can help with along the way.`;
 
 }
 
 
-/* =====================================================
-   EMAIL HELPERS
-===================================================== */
+/* EMAIL HELPERS */
 
-function guidePreview(title,url){
+function guidePreview(
+  title,
+  url
+){
 
   return `
     <div class="preview-link">
@@ -2933,7 +3373,10 @@ function guidePreview(title,url){
 }
 
 
-function guideHtml(title,url){
+function guideHtml(
+  title,
+  url
+){
 
   return `
     <p>
@@ -2958,7 +3401,10 @@ function guideHtml(title,url){
 }
 
 
-function resourcePreview(title,url){
+function resourcePreview(
+  title,
+  url
+){
 
   return `
     <div class="preview-link">
@@ -2984,7 +3430,10 @@ function resourcePreview(title,url){
 }
 
 
-function resourceHtml(title,url){
+function resourceHtml(
+  title,
+  url
+){
 
   return `
     <p>
@@ -3009,9 +3458,7 @@ function resourceHtml(title,url){
 }
 
 
-/* =====================================================
-   COPY EMAIL
-===================================================== */
+/* COPY EMAIL */
 
 async function copyPolishedEmail(){
 
@@ -3063,9 +3510,7 @@ async function copyPolishedEmail(){
 }
 
 
-/* =====================================================
-   OUTLOOK
-===================================================== */
+/* OUTLOOK */
 
 async function copyAndOpenOutlook(){
 
@@ -3073,9 +3518,9 @@ async function copyAndOpenOutlook(){
 
 
   const recipient =
-    document.getElementById(
+    valueOf(
       "recipientEmail"
-    ).value.trim();
+    );
 
 
   await copyPolishedEmail();
@@ -3083,10 +3528,18 @@ async function copyAndOpenOutlook(){
 
   const outlookUrl =
     "https://outlook.office.com/mail/deeplink/compose"
-    + "?to="
-    + encodeURIComponent(recipient)
-    + "&subject="
-    + encodeURIComponent(currentSubject);
+    +
+    "?to="
+    +
+    encodeURIComponent(
+      recipient
+    )
+    +
+    "&subject="
+    +
+    encodeURIComponent(
+      currentSubject
+    );
 
 
   window.open(
@@ -3102,30 +3555,65 @@ async function copyAndOpenOutlook(){
 }
 
 
-/* =====================================================
-   CHECKLIST
-===================================================== */
+/* PREVIEWS */
 
 function previewChecklist(){
 
   buildPackage();
 
 
-  if(currentChecklist){
-
-    window.open(
-      currentChecklist,
-      "_blank"
-    );
-
-  }
+  window.open(
+    currentChecklist,
+    "_blank"
+  );
 
 }
 
 
-/* =====================================================
-   HELPERS
-===================================================== */
+function previewParentLetter(){
+
+  const registration =
+    valueOf(
+      "registrationLink"
+    );
+
+
+  if(!registration){
+
+    alert(
+      "Add the registration link first so the Parent Letter can generate its QR code."
+    );
+
+    return;
+
+  }
+
+
+  buildPackage();
+
+
+  window.open(
+    currentParentLetter,
+    "_blank"
+  );
+
+}
+
+
+/* HELPERS */
+
+function valueOf(id){
+
+  return(
+    document.getElementById(id)
+      ?.value
+      ?.trim()
+    ||
+    ""
+  );
+
+}
+
 
 function showToast(message){
 
@@ -3152,9 +3640,11 @@ function showToast(message){
   window.bbToastTimer =
     setTimeout(
       ()=>{
+
         toast.classList.add(
           "hidden"
         );
+
       },
       3000
     );
@@ -3164,26 +3654,45 @@ function showToast(message){
 
 function escapeHtml(value){
 
-  return String(value || "")
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
+  return String(
+    value || ""
+  )
+    .replaceAll(
+      "&",
+      "&amp;"
+    )
+    .replaceAll(
+      "<",
+      "&lt;"
+    )
+    .replaceAll(
+      ">",
+      "&gt;"
+    )
+    .replaceAll(
+      '"',
+      "&quot;"
+    )
+    .replaceAll(
+      "'",
+      "&#039;"
+    );
 
 }
 
 
-function escapeAttribute(value){
+function escapeAttribute(
+  value
+){
 
-  return escapeHtml(value);
+  return escapeHtml(
+    value
+  );
 
 }
 
 
-/* =====================================================
-   INIT
-===================================================== */
+/* INIT */
 
 if(
   sessionStorage.getItem(
@@ -3197,8 +3706,8 @@ if(
 
 
 updatePackageLabels();
-updateProgress();
 
+updateProgress();
 </script>
 
 </body>
