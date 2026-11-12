@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Best Buddies | Parent Letter</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<style>
+:root{
+  --purple:#6f2c91;
+  --teal:#19b7b1;
+  --navy:#173456;
+  --ink:#24212a;
+  --muted:#665f6b;
+  --line:#ded9e1;
+  --bg:#efedf1;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+button{
+  font:inherit;
+  cursor:pointer;
+}
+
+.toolbar{
+  max-width:850px;
+  margin:18px auto 0;
+  padding:0 16px;
+
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.toolbar-group{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:10px 15px;
+
+  border:0;
+  border-radius:9px;
+
+  font-weight:700;
+}
+
+.btn-purple{
+  background:var(--purple);
+  color:white;
+}
+
+.btn-light{
+  border:1px solid #d7d1da;
+  background:white;
+  color:var(--ink);
+}
+
+.letter{
+  width:min(8.5in,calc(100% - 24px));
+  min-height:11in;
+
+  margin:14px auto 40px;
+  padding:.6in .68in;
+
+  background:white;
+
+  box-shadow:
+    0 10px 34px
+    rgba(30,20,38,.1);
+}
+
+.brand-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+
+  margin-bottom:28px;
+  padding-bottom:15px;
+
+  border-bottom:3px solid var(--purple);
+}
+
+.logo{
+  width:110px;
+  max-height:58px;
+  object-fit:contain;
+}
+
+.brand-label{
+  color:var(--purple);
+
+  font-family:"Poppins",Arial,sans-serif;
+  font-size:12px;
+  font-weight:700;
+
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+
+p,
+li{
+  font-size:14.5px;
+  line-height:1.48;
+}
+
+p{
+  margin:0 0 15px;
+}
+
+h2{
+  margin:22px 0 4px;
+
+  font-size:15px;
+  line-height:1.3;
+
+  font-weight:700;
+}
+
+ul{
+  margin:6px 0 12px 24px;
+  padding:0;
+}
+
+li{
+  margin:2px 0;
+}
+
+.registration-box{
+  margin:9px 0 17px;
+  padding:16px 18px;
+
+  border:1px solid var(--line);
+  border-radius:10px;
+
+  background:#faf9fb;
+}
+
+.registration-grid{
+  display:grid;
+  grid-template-columns:1fr 150px;
+  gap:22px;
+  align-items:center;
+}
+
+.registration-step{
+  margin:0 0 8px;
+}
+
+.registration-link{
+  display:inline-block;
+
+  margin:4px 0 8px;
+
+  color:var(--purple);
+
+  font-weight:700;
+
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+
+.registration-url{
+  color:var(--muted);
+
+  font-size:10px;
+  line-height:1.35;
+
+  overflow-wrap:anywhere;
+  word-break:break-all;
+}
+
+.qr-area{
+  text-align:center;
+}
+
+#qrCode{
+  display:inline-block;
+  padding:7px;
+
+  background:white;
+}
+
+.qr-caption{
+  margin-top:5px;
+
+  color:var(--muted);
+
+  font-size:10px;
+}
+
+.contacts{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+
+  margin-top:20px;
+}
+
+.contact-card{
+  padding-top:10px;
+
+  border-top:1px solid var(--line);
+}
+
+.contact-title{
+  margin-bottom:7px;
+
+  font-weight:700;
+}
+
+.contact-line{
+  margin:2px 0;
+
+  font-size:13px;
+  line-height:1.4;
+}
+
+.contact-line a{
+  color:var(--purple);
+}
+
+.closing{
+  margin-top:24px;
+
+  font-weight:700;
+}
+
+.footer{
+  margin-top:28px;
+  padding-top:10px;
+
+  border-top:1px solid var(--line);
+
+  color:var(--muted);
+
+  font-size:9.5px;
+}
+
+@media(max-width:650px){
+
+  .letter{
+    min-height:0;
+    padding:28px 22px;
+  }
+
+  .registration-grid,
+  .contacts{
+    grid-template-columns:1fr;
+  }
+
+  .qr-area{
+    text-align:left;
+  }
+
+}
+
+@media print{
+
+  @page{
+    size:letter;
+    margin:0;
+  }
+
+  body{
+    background:white;
+  }
+
+  .toolbar{
+    display:none!important;
+  }
+
+  .letter{
+    width:8.5in;
+    min-height:11in;
+
+    margin:0;
+
+    padding:.55in .65in;
+
+    box-shadow:none;
+  }
+
+  .brand-row,
+  .registration-box{
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  p,
+  li{
+    font-size:12.5px;
+    line-height:1.4;
+  }
+
+  h2{
+    margin-top:16px;
+    font-size:13.5px;
+  }
+
+  .registration-box{
+    padding:12px 14px;
+  }
+
+  .contacts{
+    margin-top:15px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="toolbar">
+
+  <div class="toolbar-group">
+
+    <button
+      class="btn btn-purple"
+      onclick="window.print()"
+    >
+      Print / Save PDF
+    </button>
+
+    <button
+      class="btn btn-light"
+      onclick="copyPageLink()"
+    >
+      Copy Parent Letter Link
+    </button>
+
+  </div>
+
+</div>
+
+
+<main class="letter">
+
+  <div class="brand-row">
+
+    <img
+      src="assets/bb-logo-coloured.png"
+      alt="Best Buddies Canada"
+      class="logo"
+      onerror="this.style.display='none'"
+    >
+
+    <div class="brand-label">
+      Parent & Guardian Information
+    </div>
+
+  </div>
+
+
+  <p>
+    Dear Parents and Guardians,
+  </p>
+
+
+  <p>
+    Your child is invited to join Best Buddies at
+    <strong id="schoolIntro"></strong>.
+  </p>
+
+
+  <h2>
+    What is Best Buddies?
+  </h2>
+
+  <p>
+    Best Buddies is a friendship program. It brings students with
+    and without intellectual and developmental disabilities together.
+    Students get to know each other, do activities, and make friends.
+    Everyone should feel welcome and included.
+  </p>
+
+
+  <h2>
+    What will students do?
+  </h2>
+
+  <p style="margin-bottom:3px">
+    Students may:
+  </p>
+
+  <ul>
+    <li>Eat lunch together.</li>
+    <li>Play games or join group activities.</li>
+    <li>Take part in school events.</li>
+    <li>Spend time with a friend who enjoys the same things.</li>
+    <li>Help plan activities.</li>
+  </ul>
+
+  <p>
+    Each school plans its own Best Buddies activities. Some schools
+    have group activities. Others also match two students to spend
+    time together as friends.
+  </p>
+
+
+  <h2>
+    Why join?
+  </h2>
+
+  <p>
+    Your child can meet new people, make friends, and practise new skills.
+  </p>
+
+
+  <h2>
+    How do I sign up my child?
+  </h2>
+
+
+  <div class="registration-box">
+
+    <div class="registration-grid">
+
+      <div>
+
+        <p class="registration-step">
+          <strong>1.</strong>
+          Open the registration link below or scan the QR code with your phone.
+        </p>
+
+        <a
+          id="registrationButton"
+          class="registration-link"
+          target="_blank"
+        >
+          Open the Best Buddies registration form
+        </a>
+
+        <div
+          id="registrationUrl"
+          class="registration-url"
+        ></div>
+
+        <p style="margin:12px 0 0">
+          <strong>2.</strong>
+          Fill in the form.
+        </p>
+
+      </div>
+
+
+      <div class="qr-area">
+
+        <div id="qrCode"></div>
+
+        <div class="qr-caption">
+          Scan to register
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <p>
+    If you need help with the form, please contact us.
+  </p>
+
+
+  <div class="contacts">
+
+    <div class="contact-card">
+
+      <div class="contact-title">
+        Questions or help
+      </div>
+
+      <div
+        id="schoolContactName"
+        class="contact-line"
+      ></div>
+
+      <div
+        id="schoolContactRole"
+        class="contact-line"
+      ></div>
+
+      <div
+        id="schoolContactEmail"
+        class="contact-line"
+      ></div>
+
+      <div
+        id="schoolContactPhone"
+        class="contact-line"
+      ></div>
+
+    </div>
+
+
+    <div class="contact-card">
+
+      <div class="contact-title">
+        You can also contact:
+      </div>
+
+      <div
+        id="advisorName"
+        class="contact-line"
+      ></div>
+
+      <div
+        id="advisorTitle"
+        class="contact-line"
+      ></div>
+
+      <div
+        id="advisorEmail"
+        class="contact-line"
+      ></div>
+
+      <div
+        id="advisorPhone"
+        class="contact-line"
+      ></div>
+
+    </div>
+
+  </div>
+
+
+  <p class="closing">
+    We look forward to welcoming your child!
+  </p>
+
+
+  <div class="footer">
+    Best Buddies Canada
+  </div>
+
+</main>
+
+
+<script>
+const params =
+  new URLSearchParams(
+    window.location.search
+  );
+
+
+const data = {
+
+  school:
+    params.get("school") ||
+    "your school",
+
+  registration:
+    params.get("registration") ||
+    "",
+
+  staff:
+    params.get("staff") ||
+    "",
+
+  staffEmail:
+    params.get("staffEmail") ||
+    "",
+
+  staffPhone:
+    params.get("staffPhone") ||
+    "",
+
+  advisor:
+    params.get("advisor") ||
+    "Best Buddies Canada",
+
+  advisorTitle:
+    params.get("advisorTitle") ||
+    "Program Advisor",
+
+  advisorEmail:
+    params.get("advisorEmail") ||
+    "",
+
+  advisorPhone:
+    params.get("advisorPhone") ||
+    ""
+
+};
+
+
+function render(){
+
+  document.getElementById(
+    "schoolIntro"
+  ).textContent =
+    data.school;
+
+
+  const registrationButton =
+    document.getElementById(
+      "registrationButton"
+    );
+
+
+  if(data.registration){
+
+    registrationButton.href =
+      data.registration;
+
+    document.getElementById(
+      "registrationUrl"
+    ).textContent =
+      data.registration;
+
+
+    const qrElement =
+      document.getElementById(
+        "qrCode"
+      );
+
+
+    qrElement.innerHTML = "";
+
+
+    new QRCode(
+      qrElement,
+      {
+        text:data.registration,
+        width:130,
+        height:130,
+        correctLevel:
+          QRCode.CorrectLevel.M
+      }
+    );
+
+  }else{
+
+    registrationButton.removeAttribute(
+      "href"
+    );
+
+    registrationButton.textContent =
+      "Registration link to be provided";
+
+
+    document.getElementById(
+      "registrationUrl"
+    ).textContent =
+      "";
+
+    document.getElementById(
+      "qrCode"
+    ).innerHTML =
+      "<div style='font-size:11px;color:#777'>QR code unavailable</div>";
+
+  }
+
+
+  document.getElementById(
+    "schoolContactName"
+  ).textContent =
+    data.staff ||
+    "Best Buddies Staff Advisor";
+
+
+  document.getElementById(
+    "schoolContactRole"
+  ).textContent =
+    `Best Buddies teacher at ${data.school}`;
+
+
+  renderContactLink(
+    "schoolContactEmail",
+    data.staffEmail,
+    "mailto:"
+  );
+
+
+  renderContactLink(
+    "schoolContactPhone",
+    data.staffPhone,
+    "tel:"
+  );
+
+
+  document.getElementById(
+    "advisorName"
+  ).textContent =
+    data.advisor;
+
+
+  document.getElementById(
+    "advisorTitle"
+  ).textContent =
+    data.advisorTitle ||
+    "Best Buddies Canada";
+
+
+  renderContactLink(
+    "advisorEmail",
+    data.advisorEmail,
+    "mailto:"
+  );
+
+
+  renderContactLink(
+    "advisorPhone",
+    data.advisorPhone,
+    "tel:"
+  );
+
+}
+
+
+function renderContactLink(
+  id,
+  value,
+  prefix
+){
+
+  const element =
+    document.getElementById(id);
+
+
+  if(!value){
+
+    element.style.display =
+      "none";
+
+    return;
+
+  }
+
+
+  const link =
+    document.createElement("a");
+
+
+  link.textContent =
+    value;
+
+
+  link.href =
+    prefix +
+    value.replace(/\s/g,"");
+
+
+  element.innerHTML = "";
+
+  element.appendChild(
+    link
+  );
+
+}
+
+
+async function copyPageLink(){
+
+  try{
+
+    await navigator.clipboard.writeText(
+      window.location.href
+    );
+
+    alert(
+      "Parent letter link copied."
+    );
+
+  }catch(error){
+
+    prompt(
+      "Copy this parent letter link:",
+      window.location.href
+    );
+
+  }
+
+}
+
+
+render();
+</script>
+
+</body>
+</html>
