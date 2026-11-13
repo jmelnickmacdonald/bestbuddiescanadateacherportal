@@ -13,13 +13,14 @@
 <!-- QR code generator -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-<!-- Browser version of docx -->
+<!-- Browser DOCX generator -->
 <script src="https://unpkg.com/docx@9/dist/index.iife.js"></script>
 
 <style>
 :root{
   --purple:#6f2c91;
   --purple-dark:#55206d;
+  --purple-soft:#f6eff9;
   --teal:#19b7b1;
   --ink:#24212a;
   --muted:#665f6b;
@@ -44,7 +45,9 @@ button{
 }
 
 
-/* TOOLBAR */
+/* =====================================================
+   TOOLBAR
+===================================================== */
 
 .toolbar{
   max-width:850px;
@@ -71,8 +74,10 @@ button{
 
 .btn{
   padding:10px 15px;
+
   border:0;
   border-radius:9px;
+
   font-weight:700;
 }
 
@@ -92,14 +97,16 @@ button{
 }
 
 
-/* LETTER */
+/* =====================================================
+   LETTER
+===================================================== */
 
 .letter{
   width:min(8.5in,calc(100% - 24px));
   min-height:11in;
 
   margin:14px auto 40px;
-  padding:.6in .68in;
+  padding:.58in .68in;
 
   background:white;
 
@@ -114,14 +121,14 @@ button{
   justify-content:space-between;
   gap:20px;
 
-  margin-bottom:28px;
-  padding-bottom:15px;
+  margin-bottom:25px;
+  padding-bottom:14px;
 
   border-bottom:3px solid var(--purple);
 }
 
 .logo{
-  width:110px;
+  width:112px;
   max-height:58px;
   object-fit:contain;
 }
@@ -130,7 +137,7 @@ button{
   color:var(--purple);
 
   font-family:"Poppins",Arial,sans-serif;
-  font-size:12px;
+  font-size:11px;
   font-weight:700;
 
   letter-spacing:.05em;
@@ -139,24 +146,32 @@ button{
 
 p,
 li{
-  font-size:14.5px;
-  line-height:1.48;
+  font-size:13.8px;
+  line-height:1.47;
 }
 
 p{
-  margin:0 0 15px;
+  margin:0 0 13px;
 }
 
 h2{
-  margin:22px 0 4px;
+  margin:19px 0 5px;
 
-  font-size:15px;
-  line-height:1.3;
+  color:var(--ink);
+
+  font-family:"Poppins",Arial,sans-serif;
+  font-size:14.5px;
+  line-height:1.25;
   font-weight:700;
 }
 
+.section-intro{
+  margin-bottom:8px;
+  font-weight:600;
+}
+
 ul{
-  margin:6px 0 12px 24px;
+  margin:7px 0 12px 23px;
   padding:0;
 }
 
@@ -165,11 +180,13 @@ li{
 }
 
 
-/* REGISTRATION */
+/* =====================================================
+   REGISTRATION
+===================================================== */
 
 .registration-box{
-  margin:9px 0 17px;
-  padding:16px 18px;
+  margin:10px 0 16px;
+  padding:15px 17px;
 
   border:1px solid var(--line);
   border-radius:10px;
@@ -179,21 +196,18 @@ li{
 
 .registration-grid{
   display:grid;
-  grid-template-columns:1fr 150px;
-  gap:22px;
+  grid-template-columns:1fr 145px;
+  gap:20px;
   align-items:center;
-}
-
-.registration-step{
-  margin:0 0 8px;
 }
 
 .registration-link{
   display:inline-block;
 
-  margin:4px 0 8px;
+  margin:5px 0 7px;
 
   color:var(--purple);
+
   font-weight:700;
 
   overflow-wrap:anywhere;
@@ -203,8 +217,8 @@ li{
 .registration-url{
   color:var(--muted);
 
-  font-size:10px;
-  line-height:1.35;
+  font-size:9.5px;
+  line-height:1.3;
 
   overflow-wrap:anywhere;
   word-break:break-all;
@@ -216,7 +230,7 @@ li{
 
 #qrCode{
   display:inline-block;
-  padding:7px;
+  padding:6px;
   background:white;
 }
 
@@ -226,19 +240,27 @@ li{
 }
 
 .qr-caption{
-  margin-top:5px;
+  margin-top:4px;
   color:var(--muted);
-  font-size:10px;
+  font-size:9.5px;
 }
 
 
-/* CONTACTS */
+/* =====================================================
+   HELP / CONTACTS
+===================================================== */
+
+.help-note{
+  margin:16px 0 17px;
+  font-weight:700;
+}
 
 .contacts{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:26px;
-  margin-top:20px;
+  gap:24px;
+
+  margin-top:15px;
 }
 
 .contact-card{
@@ -246,14 +268,18 @@ li{
   border-top:1px solid var(--line);
 }
 
-.contact-title{
-  margin-bottom:7px;
+.contact-name{
+  margin-bottom:2px;
+
+  font-family:"Poppins",Arial,sans-serif;
+  font-size:13px;
   font-weight:700;
 }
 
 .contact-line{
   margin:2px 0;
-  font-size:13px;
+
+  font-size:12.5px;
   line-height:1.4;
 }
 
@@ -262,22 +288,24 @@ li{
 }
 
 .closing{
-  margin-top:24px;
-  font-weight:700;
+  margin-top:23px;
 }
 
 .footer{
-  margin-top:28px;
-  padding-top:10px;
+  margin-top:25px;
+  padding-top:9px;
 
   border-top:1px solid var(--line);
 
   color:var(--muted);
-  font-size:9.5px;
+
+  font-size:9px;
 }
 
 
-/* MOBILE */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:650px){
 
@@ -298,7 +326,9 @@ li{
 }
 
 
-/* PRINT */
+/* =====================================================
+   PRINT
+===================================================== */
 
 @media print{
 
@@ -320,7 +350,7 @@ li{
     min-height:11in;
 
     margin:0;
-    padding:.55in .65in;
+    padding:.48in .62in;
 
     box-shadow:none;
   }
@@ -333,20 +363,40 @@ li{
 
   p,
   li{
-    font-size:12.5px;
-    line-height:1.4;
+    font-size:11.5px;
+    line-height:1.35;
+  }
+
+  p{
+    margin-bottom:9px;
   }
 
   h2{
-    margin-top:16px;
-    font-size:13.5px;
+    margin-top:12px;
+    margin-bottom:3px;
+    font-size:12px;
+  }
+
+  ul{
+    margin-top:4px;
+    margin-bottom:8px;
   }
 
   .registration-box{
-    padding:12px 14px;
+    margin-top:6px;
+    margin-bottom:9px;
+    padding:10px 13px;
+  }
+
+  .help-note{
+    margin:10px 0;
   }
 
   .contacts{
+    margin-top:8px;
+  }
+
+  .closing{
     margin-top:15px;
   }
 
@@ -357,7 +407,9 @@ li{
 <body>
 
 
-<!-- TEACHER ACTIONS -->
+<!-- =====================================================
+     TEACHER ACTIONS
+===================================================== -->
 
 <div class="toolbar">
 
@@ -380,13 +432,15 @@ li{
   </div>
 
   <div class="toolbar-note">
-    Word is fully editable. PDF is ready to print or share.
+    Word is fully editable if you'd like to make changes for your school.
   </div>
 
 </div>
 
 
-<!-- LETTER -->
+<!-- =====================================================
+     LETTER
+===================================================== -->
 
 <main class="letter">
 
@@ -413,8 +467,19 @@ li{
 
 
   <p>
-    Your child is invited to join Best Buddies at
+    Your child has been invited to participate in Best Buddies at
     <strong id="schoolIntro"></strong>.
+  </p>
+
+
+  <p>
+    Best Buddies is a global nonprofit organization that creates
+    opportunities for friendship, leadership, inclusion, and belonging
+    for people with intellectual and developmental disabilities and their
+    peers. Through our school programs, students have opportunities to
+    build genuine friendships, take part in shared activities, develop
+    leadership skills, and help strengthen inclusion within their school
+    community.
   </p>
 
 
@@ -422,49 +487,58 @@ li{
     What is Best Buddies?
   </h2>
 
-  <p>
-    Best Buddies is a friendship program. It brings students with
-    and without intellectual and developmental disabilities together.
-    Students get to know each other, do activities, and make friends.
-    Everyone should feel welcome and included.
+  <p class="section-intro">
+    Best Buddies brings students together to build friendships and create
+    a more inclusive school community.
   </p>
 
-
-  <h2>
-    What will students do?
-  </h2>
-
-  <p style="margin-bottom:3px">
-    Students may:
+  <p>
+    Every chapter looks a little different. Depending on the age of
+    students and the way the school chooses to run its program, activities
+    may include:
   </p>
 
   <ul>
-    <li>Eat lunch together.</li>
-    <li>Play games or join group activities.</li>
-    <li>Take part in school events.</li>
-    <li>Spend time with a friend who enjoys the same things.</li>
-    <li>Help plan activities.</li>
+    <li>Shared lunches and group activities</li>
+    <li>School events and social gatherings</li>
+    <li>Opportunities to build meaningful one-to-one friendships</li>
+    <li>Student leadership opportunities</li>
+    <li>School-wide inclusion and awareness activities</li>
   </ul>
 
   <p>
-    Each school plans its own Best Buddies activities. Some schools
-    have group activities. Others also match two students to spend
-    time together as friends.
+    Some chapters focus mainly on group activities, while others,
+    particularly at the secondary level, may also include one-to-one
+    friendships based on shared interests. The program is flexible so
+    schools can create something that works well for their students and
+    community.
   </p>
 
 
   <h2>
-    Why join?
+    Why participate?
   </h2>
 
   <p>
-    Your child can meet new people, make friends, and practise new skills.
+    Best Buddies gives students opportunities to make new friends, build
+    confidence, strengthen social connections, develop leadership skills,
+    and take an active role in creating a more welcoming and inclusive
+    school community.
   </p>
 
 
   <h2>
-    How do I sign up my child?
+    How to Register
   </h2>
+
+  <p>
+    We would love for your child to be part of Best Buddies at
+    <strong id="schoolRegister"></strong>.
+  </p>
+
+  <p>
+    To register, please visit the link below or scan the QR code:
+  </p>
 
 
   <div class="registration-box">
@@ -472,11 +546,6 @@ li{
     <div class="registration-grid">
 
       <div>
-
-        <p class="registration-step">
-          <strong>1.</strong>
-          Open the registration link below or scan the QR code with your phone.
-        </p>
 
         <a
           id="registrationButton"
@@ -491,11 +560,6 @@ li{
           id="registrationUrl"
           class="registration-url"
         ></div>
-
-        <p style="margin:12px 0 0">
-          <strong>2.</strong>
-          Fill in the form.
-        </p>
 
       </div>
 
@@ -515,51 +579,23 @@ li{
   </div>
 
 
-  <p>
-    If you need help with the form, please contact us.
+  <p class="help-note">
+    If online registration is difficult for your family, or if you have
+    any questions about the program or registration process, please
+    contact us. We’re happy to help.
   </p>
 
 
   <div class="contacts">
 
-    <div class="contact-card">
 
-      <div class="contact-title">
-        Questions or help
-      </div>
-
-      <div
-        id="schoolContactName"
-        class="contact-line"
-      ></div>
-
-      <div
-        id="schoolContactRole"
-        class="contact-line"
-      ></div>
-
-      <div
-        id="schoolContactEmail"
-        class="contact-line"
-      ></div>
-
-      <div
-        id="schoolContactPhone"
-        class="contact-line"
-      ></div>
-
-    </div>
-
+    <!-- PROGRAM ADVISOR -->
 
     <div class="contact-card">
-
-      <div class="contact-title">
-        You can also contact:
-      </div>
 
       <div
         id="advisorName"
-        class="contact-line"
+        class="contact-name"
       ></div>
 
       <div
@@ -579,11 +615,40 @@ li{
 
     </div>
 
+
+    <!-- SCHOOL ADVISOR -->
+
+    <div class="contact-card">
+
+      <div
+        id="schoolContactName"
+        class="contact-name"
+      ></div>
+
+      <div
+        id="schoolContactRole"
+        class="contact-line"
+      ></div>
+
+      <div
+        id="schoolContactEmail"
+        class="contact-line"
+      ></div>
+
+      <div
+        id="schoolContactPhone"
+        class="contact-line"
+      ></div>
+
+    </div>
+
   </div>
 
 
   <p class="closing">
-    We look forward to welcoming your child!
+    Thank you for supporting your child’s participation in Best Buddies.
+    We’re excited to welcome them and look forward to seeing the
+    friendships and connections that grow throughout the year.
   </p>
 
 
@@ -597,7 +662,9 @@ li{
 
 <script>
 
-/* DATA */
+/* =====================================================
+   DATA
+===================================================== */
 
 const params =
   new URLSearchParams(
@@ -646,12 +713,20 @@ const data = {
 };
 
 
-/* WEB LETTER */
+/* =====================================================
+   RENDER WEB VERSION
+===================================================== */
 
 function render(){
 
   document.getElementById(
     "schoolIntro"
+  ).textContent =
+    data.school;
+
+
+  document.getElementById(
+    "schoolRegister"
   ).textContent =
     data.school;
 
@@ -680,7 +755,8 @@ function render(){
       );
 
 
-    qrElement.innerHTML = "";
+    qrElement.innerHTML =
+      "";
 
 
     new QRCode(
@@ -719,32 +795,7 @@ function render(){
   }
 
 
-  document.getElementById(
-    "schoolContactName"
-  ).textContent =
-    data.staff ||
-    "Best Buddies Staff Advisor";
-
-
-  document.getElementById(
-    "schoolContactRole"
-  ).textContent =
-    `Best Buddies teacher at ${data.school}`;
-
-
-  renderContactLink(
-    "schoolContactEmail",
-    data.staffEmail,
-    "mailto:"
-  );
-
-
-  renderContactLink(
-    "schoolContactPhone",
-    data.staffPhone,
-    "tel:"
-  );
-
+  /* PROGRAM ADVISOR */
 
   document.getElementById(
     "advisorName"
@@ -771,6 +822,35 @@ function render(){
     "tel:"
   );
 
+
+  /* SCHOOL ADVISOR */
+
+  document.getElementById(
+    "schoolContactName"
+  ).textContent =
+    data.staff ||
+    "Best Buddies Teacher Advisor";
+
+
+  document.getElementById(
+    "schoolContactRole"
+  ).textContent =
+    `Best Buddies Teacher Advisor, ${data.school}`;
+
+
+  renderContactLink(
+    "schoolContactEmail",
+    data.staffEmail,
+    "mailto:"
+  );
+
+
+  renderContactLink(
+    "schoolContactPhone",
+    data.staffPhone,
+    "tel:"
+  );
+
 }
 
 
@@ -786,7 +866,8 @@ function renderContactLink(
 
   if(!value){
 
-    element.style.display = "none";
+    element.style.display =
+      "none";
 
     return;
 
@@ -794,7 +875,9 @@ function renderContactLink(
 
 
   const link =
-    document.createElement("a");
+    document.createElement(
+      "a"
+    );
 
 
   link.textContent =
@@ -806,14 +889,20 @@ function renderContactLink(
     value.replace(/\s/g,"");
 
 
-  element.innerHTML = "";
+  element.innerHTML =
+    "";
 
-  element.appendChild(link);
+
+  element.appendChild(
+    link
+  );
 
 }
 
 
-/* WORD DOWNLOAD */
+/* =====================================================
+   EDITABLE WORD DOWNLOAD
+===================================================== */
 
 async function downloadEditableWord(){
 
@@ -850,7 +939,8 @@ async function downloadEditableWord(){
   } = window.docx;
 
 
-  let logoBytes = null;
+  let logoBytes =
+    null;
 
 
   try{
@@ -872,7 +962,8 @@ async function downloadEditableWord(){
 
   }catch(error){
 
-    logoBytes = null;
+    logoBytes =
+      null;
 
   }
 
@@ -892,7 +983,7 @@ async function downloadEditableWord(){
       new Paragraph({
 
         spacing:{
-          after:240
+          after:220
         },
 
         children:[
@@ -915,7 +1006,7 @@ async function downloadEditableWord(){
       new Paragraph({
 
         spacing:{
-          after:240
+          after:220
         },
 
         children:[
@@ -933,6 +1024,8 @@ async function downloadEditableWord(){
   }
 
 
+  /* INTRO */
+
   children.push(
     paragraphText(
       Paragraph,
@@ -946,13 +1039,13 @@ async function downloadEditableWord(){
     new Paragraph({
 
       spacing:{
-        after:180
+        after:160
       },
 
       children:[
 
         new TextRun({
-          text:"Your child is invited to join Best Buddies at ",
+          text:"Your child has been invited to participate in Best Buddies at ",
           size:22
         }),
 
@@ -974,6 +1067,17 @@ async function downloadEditableWord(){
 
 
   children.push(
+    paragraphText(
+      Paragraph,
+      TextRun,
+      "Best Buddies is a global nonprofit organization that creates opportunities for friendship, leadership, inclusion, and belonging for people with intellectual and developmental disabilities and their peers. Through our school programs, students have opportunities to build genuine friendships, take part in shared activities, develop leadership skills, and help strengthen inclusion within their school community."
+    )
+  );
+
+
+  /* WHAT IS */
+
+  children.push(
     heading(
       Paragraph,
       TextRun,
@@ -983,39 +1087,40 @@ async function downloadEditableWord(){
 
 
   children.push(
-    paragraphText(
-      Paragraph,
-      TextRun,
-      "Best Buddies is a friendship program. It brings students with and without intellectual and developmental disabilities together. Students get to know each other, do activities, and make friends. Everyone should feel welcome and included."
-    )
+    new Paragraph({
+
+      spacing:{
+        after:110
+      },
+
+      children:[
+        new TextRun({
+          text:"Best Buddies brings students together to build friendships and create a more inclusive school community.",
+          bold:true,
+          size:22
+        })
+      ]
+
+    })
   );
 
 
   children.push(
-    heading(
-      Paragraph,
-      TextRun,
-      "What will students do?"
-    )
-  );
-
-
-  children.push(
     paragraphText(
       Paragraph,
       TextRun,
-      "Students may:",
+      "Every chapter looks a little different. Depending on the age of students and the way the school chooses to run its program, activities may include:",
       80
     )
   );
 
 
   [
-    "Eat lunch together.",
-    "Play games or join group activities.",
-    "Take part in school events.",
-    "Spend time with a friend who enjoys the same things.",
-    "Help plan activities."
+    "Shared lunches and group activities",
+    "School events and social gatherings",
+    "Opportunities to build meaningful one-to-one friendships",
+    "Student leadership opportunities",
+    "School-wide inclusion and awareness activities"
   ].forEach(item=>{
 
     children.push(
@@ -1026,7 +1131,7 @@ async function downloadEditableWord(){
         },
 
         spacing:{
-          after:45
+          after:35
         },
 
         children:[
@@ -1046,16 +1151,18 @@ async function downloadEditableWord(){
     paragraphText(
       Paragraph,
       TextRun,
-      "Each school plans its own Best Buddies activities. Some schools have group activities. Others also match two students to spend time together as friends."
+      "Some chapters focus mainly on group activities, while others, particularly at the secondary level, may also include one-to-one friendships based on shared interests. The program is flexible so schools can create something that works well for their students and community."
     )
   );
 
+
+  /* WHY PARTICIPATE */
 
   children.push(
     heading(
       Paragraph,
       TextRun,
-      "Why join?"
+      "Why participate?"
     )
   );
 
@@ -1064,16 +1171,18 @@ async function downloadEditableWord(){
     paragraphText(
       Paragraph,
       TextRun,
-      "Your child can meet new people, make friends, and practise new skills."
+      "Best Buddies gives students opportunities to make new friends, build confidence, strengthen social connections, develop leadership skills, and take an active role in creating a more welcoming and inclusive school community."
     )
   );
 
+
+  /* REGISTER */
 
   children.push(
     heading(
       Paragraph,
       TextRun,
-      "How do I sign up my child?"
+      "How to Register"
     )
   );
 
@@ -1082,19 +1191,24 @@ async function downloadEditableWord(){
     new Paragraph({
 
       spacing:{
-        after:80
+        after:120
       },
 
       children:[
 
         new TextRun({
-          text:"1. ",
+          text:"We would love for your child to be part of Best Buddies at ",
+          size:22
+        }),
+
+        new TextRun({
+          text:data.school,
           bold:true,
           size:22
         }),
 
         new TextRun({
-          text:"Open this link:",
+          text:".",
           size:22
         })
 
@@ -1105,14 +1219,20 @@ async function downloadEditableWord(){
 
 
   children.push(
+    paragraphText(
+      Paragraph,
+      TextRun,
+      "To register, please visit the link below or scan the QR code:",
+      80
+    )
+  );
+
+
+  children.push(
     new Paragraph({
 
       spacing:{
         after:80
-      },
-
-      indent:{
-        left:360
       },
 
       children:[
@@ -1138,28 +1258,6 @@ async function downloadEditableWord(){
   );
 
 
-  children.push(
-    new Paragraph({
-
-      spacing:{
-        after:80
-      },
-
-      indent:{
-        left:360
-      },
-
-      children:[
-        new TextRun({
-          text:"Or scan the QR code with your phone.",
-          size:22
-        })
-      ]
-
-    })
-  );
-
-
   if(qrBytes){
 
     children.push(
@@ -1177,8 +1275,8 @@ async function downloadEditableWord(){
             type:"png",
             data:qrBytes,
             transformation:{
-              width:130,
-              height:130
+              width:125,
+              height:125
             }
           })
         ]
@@ -1189,127 +1287,61 @@ async function downloadEditableWord(){
   }
 
 
+  /* HELP */
+
   children.push(
     new Paragraph({
 
       spacing:{
-        after:180
+        after:160
       },
 
       children:[
-
         new TextRun({
-          text:"2. ",
+          text:"If online registration is difficult for your family, or if you have any questions about the program or registration process, please contact us. We’re happy to help.",
           bold:true,
           size:22
-        }),
-
-        new TextRun({
-          text:"Fill in the form.",
-          size:22
         })
-
       ]
 
     })
   );
 
 
+  /* PROGRAM ADVISOR */
+
   children.push(
-    paragraphText(
-      Paragraph,
-      TextRun,
-      "If you need help with the form, please contact us."
-    )
+    new Paragraph({
+
+      spacing:{
+        before:100,
+        after:35
+      },
+
+      children:[
+        new TextRun({
+          text:data.advisor,
+          bold:true,
+          size:22
+        })
+      ]
+
+    })
   );
 
 
-  children.push(
-    heading(
-      Paragraph,
-      TextRun,
-      "Questions or help"
-    )
-  );
-
-
-  children.push(
-    paragraphText(
-      Paragraph,
-      TextRun,
-      data.staff ||
-      "Best Buddies Staff Advisor",
-      40
-    )
-  );
-
-
-  children.push(
-    paragraphText(
-      Paragraph,
-      TextRun,
-      `Best Buddies teacher at ${data.school}`,
-      40
-    )
-  );
-
-
-  if(data.staffEmail){
+  if(data.advisorTitle){
 
     children.push(
       paragraphText(
         Paragraph,
         TextRun,
-        data.staffEmail,
-        40
+        data.advisorTitle,
+        30
       )
     );
 
   }
-
-
-  if(data.staffPhone){
-
-    children.push(
-      paragraphText(
-        Paragraph,
-        TextRun,
-        data.staffPhone,
-        120
-      )
-    );
-
-  }
-
-
-  children.push(
-    heading(
-      Paragraph,
-      TextRun,
-      "You can also contact:"
-    )
-  );
-
-
-  children.push(
-    paragraphText(
-      Paragraph,
-      TextRun,
-      data.advisor,
-      40
-    )
-  );
-
-
-  children.push(
-    paragraphText(
-      Paragraph,
-      TextRun,
-      data.advisorTitle ||
-      "Best Buddies Canada",
-      40
-    )
-  );
 
 
   if(data.advisorEmail){
@@ -1319,7 +1351,7 @@ async function downloadEditableWord(){
         Paragraph,
         TextRun,
         data.advisorEmail,
-        40
+        30
       )
     );
 
@@ -1333,23 +1365,28 @@ async function downloadEditableWord(){
         Paragraph,
         TextRun,
         data.advisorPhone,
-        160
+        110
       )
     );
 
   }
 
 
+  /* TEACHER ADVISOR */
+
   children.push(
     new Paragraph({
 
       spacing:{
-        before:160
+        before:80,
+        after:35
       },
 
       children:[
         new TextRun({
-          text:"We look forward to welcoming your child!",
+          text:
+            data.staff ||
+            "Best Buddies Teacher Advisor",
           bold:true,
           size:22
         })
@@ -1359,23 +1396,75 @@ async function downloadEditableWord(){
   );
 
 
+  children.push(
+    paragraphText(
+      Paragraph,
+      TextRun,
+      `Best Buddies Teacher Advisor, ${data.school}`,
+      30
+    )
+  );
+
+
+  if(data.staffEmail){
+
+    children.push(
+      paragraphText(
+        Paragraph,
+        TextRun,
+        data.staffEmail,
+        30
+      )
+    );
+
+  }
+
+
+  if(data.staffPhone){
+
+    children.push(
+      paragraphText(
+        Paragraph,
+        TextRun,
+        data.staffPhone,
+        130
+      )
+    );
+
+  }
+
+
+  /* CLOSING */
+
+  children.push(
+    paragraphText(
+      Paragraph,
+      TextRun,
+      "Thank you for supporting your child’s participation in Best Buddies. We’re excited to welcome them and look forward to seeing the friendships and connections that grow throughout the year.",
+      0
+    )
+  );
+
+
   const doc =
     new Document({
 
       sections:[
         {
+
           properties:{
             page:{
               margin:{
-                top:720,
-                right:850,
-                bottom:720,
-                left:850
+                top:650,
+                right:800,
+                bottom:650,
+                left:800
               }
             }
           },
 
           children:children
+
         }
       ]
 
@@ -1393,16 +1482,23 @@ async function downloadEditableWord(){
 
 
     const anchor =
-      document.createElement("a");
+      document.createElement(
+        "a"
+      );
 
 
-    anchor.href = url;
+    anchor.href =
+      url;
+
 
     anchor.download =
       `Best Buddies Parent Letter - ${safeFilename(data.school)}.docx`;
 
 
-    document.body.appendChild(anchor);
+    document.body.appendChild(
+      anchor
+    );
+
 
     anchor.click();
 
@@ -1411,7 +1507,9 @@ async function downloadEditableWord(){
 
     setTimeout(
       ()=>{
-        URL.revokeObjectURL(url);
+        URL.revokeObjectURL(
+          url
+        );
       },
       1000
     );
@@ -1429,20 +1527,22 @@ async function downloadEditableWord(){
 }
 
 
-/* WORD HELPERS */
+/* =====================================================
+   WORD HELPERS
+===================================================== */
 
 function paragraphText(
   Paragraph,
   TextRun,
   text,
-  after = 160
+  after = 145
 ){
 
   return new Paragraph({
 
     spacing:{
       after:after,
-      line:276
+      line:270
     },
 
     children:[
@@ -1466,8 +1566,8 @@ function heading(
   return new Paragraph({
 
     spacing:{
-      before:120,
-      after:50
+      before:110,
+      after:45
     },
 
     children:[
@@ -1582,7 +1682,9 @@ function safeFilename(value){
 }
 
 
-/* INIT */
+/* =====================================================
+   INIT
+===================================================== */
 
 render();
 
