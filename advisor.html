@@ -24,9 +24,12 @@
   --shadow:0 14px 42px rgba(55,35,68,.08);
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
-html,body{
+html,
+body{
   margin:0;
   min-height:100%;
 }
@@ -37,18 +40,23 @@ body{
   font-family:"Poppins",Arial,sans-serif;
 }
 
-button,input{
+button,
+input{
   font:inherit;
 }
 
-button{cursor:pointer}
+button{
+  cursor:pointer;
+}
 
 .hidden{
   display:none!important;
 }
 
 
-/* LOGIN */
+/* =====================================================
+   LOGIN
+===================================================== */
 
 .login-screen{
   min-height:100vh;
@@ -65,8 +73,10 @@ button{cursor:pointer}
 .login-card{
   width:min(450px,100%);
   padding:36px;
+
   border:1px solid rgba(111,44,145,.08);
   border-radius:24px;
+
   background:white;
   box-shadow:var(--shadow);
 }
@@ -87,6 +97,7 @@ button{cursor:pointer}
 
 .login-card h1{
   margin:7px 0 9px;
+
   font-size:1.95rem;
   line-height:1.08;
   letter-spacing:-.04em;
@@ -104,7 +115,9 @@ button{cursor:pointer}
 }
 
 
-/* HEADER */
+/* =====================================================
+   HEADER
+===================================================== */
 
 .site-header{
   height:72px;
@@ -133,6 +146,7 @@ button{cursor:pointer}
   height:46px;
   width:auto;
   padding:6px 8px;
+
   border-radius:9px;
   background:white;
 }
@@ -145,6 +159,7 @@ button{cursor:pointer}
 .brand-copy span{
   display:block;
   margin-top:2px;
+
   font-size:.76rem;
   opacity:.88;
 }
@@ -155,13 +170,17 @@ button{cursor:pointer}
 }
 
 
-/* BUTTONS */
+/* =====================================================
+   BUTTONS
+===================================================== */
 
 .btn{
   border:0;
   border-radius:10px;
   padding:10px 16px;
+
   font-weight:700;
+
   transition:.15s ease;
 }
 
@@ -204,7 +223,9 @@ button{cursor:pointer}
 }
 
 
-/* PAGE */
+/* =====================================================
+   PAGE
+===================================================== */
 
 .page{
   max-width:1140px;
@@ -218,13 +239,16 @@ button{cursor:pointer}
 
 .page-title h1{
   margin:4px 0 0;
+
   font-size:1.9rem;
   line-height:1.1;
   letter-spacing:-.035em;
 }
 
 
-/* PROGRESS */
+/* =====================================================
+   PROGRESS
+===================================================== */
 
 .progress-wrap{
   margin-bottom:12px;
@@ -267,6 +291,7 @@ button{cursor:pointer}
 
   width:33px;
   height:33px;
+
   margin:0 auto 4px;
 
   display:grid;
@@ -304,7 +329,9 @@ button{cursor:pointer}
 }
 
 
-/* WORKSPACE */
+/* =====================================================
+   WORKSPACE
+===================================================== */
 
 .workspace{
   position:relative;
@@ -345,7 +372,9 @@ button{cursor:pointer}
 }
 
 
-/* FIELDS */
+/* =====================================================
+   FIELDS
+===================================================== */
 
 .form-grid{
   display:grid;
@@ -404,7 +433,9 @@ input:focus{
 }
 
 
-/* SEGMENTED CONTROLS */
+/* =====================================================
+   SEGMENTED CONTROLS
+===================================================== */
 
 .segmented-control{
   width:100%;
@@ -469,7 +500,9 @@ input:focus{
 }
 
 
-/* ADVISOR */
+/* =====================================================
+   ADVISOR
+===================================================== */
 
 .advisor-line{
   min-height:50px;
@@ -515,7 +548,9 @@ input:focus{
 }
 
 
-/* PACKAGE */
+/* =====================================================
+   PACKAGE
+===================================================== */
 
 .package-choice-grid{
   display:grid;
@@ -529,7 +564,6 @@ input:focus{
   position:relative;
 
   min-height:112px;
-
   padding:17px 44px 16px 17px;
 
   border:2px solid var(--line);
@@ -582,7 +616,6 @@ input:focus{
 .package-choice strong{
   display:block;
   margin-bottom:5px;
-
   font-size:.84rem;
 }
 
@@ -603,7 +636,9 @@ input:focus{
 }
 
 
-/* SEND */
+/* =====================================================
+   SEND
+===================================================== */
 
 .send-grid{
   display:grid;
@@ -658,18 +693,16 @@ input:focus{
 
 .preview-top span{
   color:var(--muted);
-
   font-size:.69rem;
 }
 
 .preview-body{
-  max-height:310px;
+  max-height:320px;
   overflow:auto;
 
   padding:16px 18px;
 
   font-family:Arial,Helvetica,sans-serif;
-
   font-size:.86rem;
   line-height:1.55;
 }
@@ -694,7 +727,9 @@ input:focus{
 }
 
 
-/* ACTIONS */
+/* =====================================================
+   ACTIONS
+===================================================== */
 
 .step-actions{
   position:absolute;
@@ -725,7 +760,9 @@ input:focus{
 }
 
 
-/* MODAL */
+/* =====================================================
+   MODAL
+===================================================== */
 
 .modal-bg{
   position:fixed;
@@ -788,9 +825,7 @@ input:focus{
 
 .modal-field label{
   display:block;
-
   margin-bottom:6px;
-
   font-size:.81rem;
   font-weight:700;
 }
@@ -806,7 +841,9 @@ input:focus{
 }
 
 
-/* TOAST */
+/* =====================================================
+   TOAST
+===================================================== */
 
 .toast{
   position:fixed;
@@ -828,7 +865,9 @@ input:focus{
 }
 
 
-/* RESPONSIVE */
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
 @media(max-width:1000px){
 
@@ -905,7 +944,6 @@ input:focus{
 
   .header-actions .btn{
     padding:8px 9px;
-
     font-size:.7rem;
   }
 
@@ -920,6 +958,10 @@ input:focus{
 
 <body>
 
+
+<!-- =====================================================
+     LOGIN
+===================================================== -->
 
 <section id="loginScreen" class="login-screen">
 
@@ -944,7 +986,6 @@ input:focus{
       Chapter package builder.
     </p>
 
-
     <div style="margin-top:20px">
 
       <label style="display:block;font-size:.84rem;font-weight:700;margin-bottom:7px">
@@ -959,7 +1000,6 @@ input:focus{
       >
 
     </div>
-
 
     <button
       class="btn btn-primary"
@@ -976,6 +1016,10 @@ input:focus{
 </section>
 
 
+
+<!-- =====================================================
+     APP
+===================================================== -->
 
 <div id="app" class="hidden">
 
@@ -1096,7 +1140,9 @@ input:focus{
 <section class="workspace">
 
 
-<!-- STEP 1 -->
+<!-- =====================================================
+     STEP 1
+===================================================== -->
 
 <div class="step" id="step1">
 
@@ -1295,7 +1341,9 @@ input:focus{
 
 
 
-<!-- STEP 2 -->
+<!-- =====================================================
+     STEP 2
+===================================================== -->
 
 <div
   class="step hidden"
@@ -1436,7 +1484,6 @@ input:focus{
 
   <div class="package-choice-grid">
 
-
     <div
       class="package-choice selected"
       id="includeChecklistCard"
@@ -1519,7 +1566,6 @@ input:focus{
       </p>
 
     </div>
-
 
   </div>
 
@@ -1611,7 +1657,9 @@ input:focus{
 
 
 
-<!-- STEP 3 -->
+<!-- =====================================================
+     STEP 3
+===================================================== -->
 
 <div
   class="step hidden"
@@ -1786,7 +1834,9 @@ input:focus{
 
 
 
-<!-- ADVISOR MODAL -->
+<!-- =====================================================
+     ADVISOR MODAL
+===================================================== -->
 
 <div
   id="advisorModal"
@@ -1917,6 +1967,10 @@ input:focus{
 
 <script>
 
+/* =====================================================
+   CONFIG
+===================================================== */
+
 const PASSWORD =
   "BestBuddiesAdvisor2026";
 
@@ -1943,10 +1997,13 @@ const QUICK_START_GUIDES = {
 };
 
 
-let currentStep = 1;
+let currentStep =
+  1;
+
 
 let selectedProgram =
   "elementary";
+
 
 let selectedStatus =
   "new";
@@ -1954,13 +2011,17 @@ let selectedStatus =
 
 let packageItems = {
 
-  checklist:true,
+  checklist:
+    true,
 
-  quickStart:true,
+  quickStart:
+    true,
 
-  resources:true,
+  resources:
+    true,
 
-  parentLetter:true
+  parentLetter:
+    true
 
 };
 
@@ -1969,20 +2030,33 @@ let parentLetterManuallyChanged =
   false;
 
 
-let currentChecklist = "";
-
-let currentParentLetter = "";
-
-let currentSubject = "";
-
-let currentPlainEmail = "";
-
-let currentHtmlEmail = "";
-
-let subjectDirty = false;
+let currentChecklist =
+  "";
 
 
-/* LOGIN */
+let currentParentLetter =
+  "";
+
+
+let currentSubject =
+  "";
+
+
+let currentPlainEmail =
+  "";
+
+
+let currentHtmlEmail =
+  "";
+
+
+let subjectDirty =
+  false;
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
 
 function login(){
 
@@ -1992,12 +2066,16 @@ function login(){
     );
 
 
-  if(password === PASSWORD){
+  if(
+    password ===
+    PASSWORD
+  ){
 
     sessionStorage.setItem(
       "bbAdvisorAccess",
       "yes"
     );
+
 
     showApp();
 
@@ -2018,6 +2096,7 @@ function logout(){
   sessionStorage.removeItem(
     "bbAdvisorAccess"
   );
+
 
   location.reload();
 
@@ -2042,12 +2121,15 @@ function showApp(){
 
   loadAdvisor();
 
+
   updateParentLetterDetails();
 
 }
 
 
-/* ADVISOR */
+/* =====================================================
+   ADVISOR
+===================================================== */
 
 function openAdvisorModal(){
 
@@ -2124,11 +2206,14 @@ function saveAdvisor(){
 
   localStorage.setItem(
     "bbAdvisorProfile",
-    JSON.stringify(advisor)
+    JSON.stringify(
+      advisor
+    )
   );
 
 
   updateAdvisorSummary();
+
 
   closeAdvisorModal();
 
@@ -2142,7 +2227,8 @@ function saveAdvisor(){
 
 function loadAdvisor(){
 
-  let advisor = {};
+  let advisor =
+    {};
 
 
   try{
@@ -2151,12 +2237,14 @@ function loadAdvisor(){
       JSON.parse(
         localStorage.getItem(
           "bbAdvisorProfile"
-        ) || "{}"
+        ) ||
+        "{}"
       );
 
   }catch(error){
 
-    advisor = {};
+    advisor =
+      {};
 
   }
 
@@ -2164,25 +2252,29 @@ function loadAdvisor(){
   document.getElementById(
     "advisorName"
   ).value =
-    advisor.name || "";
+    advisor.name ||
+    "";
 
 
   document.getElementById(
     "advisorTitle"
   ).value =
-    advisor.title || "";
+    advisor.title ||
+    "";
 
 
   document.getElementById(
     "advisorEmail"
   ).value =
-    advisor.email || "";
+    advisor.email ||
+    "";
 
 
   document.getElementById(
     "advisorPhone"
   ).value =
-    advisor.phone || "";
+    advisor.phone ||
+    "";
 
 
   updateAdvisorSummary();
@@ -2203,10 +2295,13 @@ function updateAdvisorSummary(){
     "Add your details";
 
 
-  const details = [];
+  const details =
+    [];
 
 
-  if(advisor.title){
+  if(
+    advisor.title
+  ){
 
     details.push(
       advisor.title
@@ -2215,7 +2310,9 @@ function updateAdvisorSummary(){
   }
 
 
-  if(advisor.email){
+  if(
+    advisor.email
+  ){
 
     details.push(
       advisor.email
@@ -2228,13 +2325,19 @@ function updateAdvisorSummary(){
     "advisorSummaryContact"
   ).textContent =
     details.length
-      ? details.join(" · ")
+
+      ? details.join(
+          " · "
+        )
+
       : "Use My Details.";
 
 }
 
 
-/* PROGRAM */
+/* =====================================================
+   PROGRAM
+===================================================== */
 
 function selectProgram(
   value
@@ -2248,7 +2351,8 @@ function selectProgram(
     "programElementaryCard"
   ).classList.toggle(
     "selected",
-    value === "elementary"
+    value ===
+    "elementary"
   );
 
 
@@ -2256,7 +2360,8 @@ function selectProgram(
     "programHighCard"
   ).classList.toggle(
     "selected",
-    value === "high"
+    value ===
+    "high"
   );
 
 
@@ -2264,7 +2369,8 @@ function selectProgram(
     "programCombinedCard"
   ).classList.toggle(
     "selected",
-    value === "combined"
+    value ===
+    "combined"
   );
 
 
@@ -2285,7 +2391,8 @@ function selectStatus(
     "statusNewCard"
   ).classList.toggle(
     "selected",
-    value === "new"
+    value ===
+    "new"
   );
 
 
@@ -2293,7 +2400,8 @@ function selectStatus(
     "statusActiveCard"
   ).classList.toggle(
     "selected",
-    value === "active"
+    value ===
+    "active"
   );
 
 
@@ -2303,7 +2411,8 @@ function selectStatus(
 
     setPackageItem(
       "parentLetter",
-      value === "new"
+      value ===
+      "new"
     );
 
   }
@@ -2348,11 +2457,14 @@ function updatePackageLabels(){
     quickStartName.textContent =
       "Elementary & Middle Quick Start Guide";
 
+
     quickStartDescription.textContent =
       "Practical chapter launch guidance.";
 
+
     resourceName.textContent =
       "Elementary & Middle Resource Library";
+
 
     resourceDescription.textContent =
       "Activities, recruitment, fundraising and program resources.";
@@ -2368,11 +2480,14 @@ function updatePackageLabels(){
     quickStartName.textContent =
       "High School Quick Start Guide";
 
+
     quickStartDescription.textContent =
       "Practical chapter launch guidance.";
 
+
     resourceName.textContent =
       "High School Resource Library";
+
 
     resourceDescription.textContent =
       "Activities, recruitment, fundraising and program resources.";
@@ -2388,11 +2503,14 @@ function updatePackageLabels(){
     quickStartName.textContent =
       "Both Quick Start Guides";
 
+
     quickStartDescription.textContent =
       "Elementary/Middle and High School.";
 
+
     resourceName.textContent =
       "Both Resource Libraries";
+
 
     resourceDescription.textContent =
       "Elementary/Middle and High School collections.";
@@ -2402,7 +2520,9 @@ function updatePackageLabels(){
 }
 
 
-/* PACKAGE */
+/* =====================================================
+   PACKAGE
+===================================================== */
 
 function togglePackageItem(
   item
@@ -2421,7 +2541,9 @@ function togglePackageItem(
 
   setPackageItem(
     item,
-    !packageItems[item]
+    !packageItems[
+      item
+    ]
   );
 
 
@@ -2435,7 +2557,9 @@ function setPackageItem(
   selected
 ){
 
-  packageItems[item] =
+  packageItems[
+    item
+  ] =
     selected;
 
 
@@ -2457,7 +2581,9 @@ function setPackageItem(
 
 
   document.getElementById(
-    ids[item]
+    ids[
+      item
+    ]
   ).classList.toggle(
     "selected",
     selected
@@ -2474,8 +2600,12 @@ function updateParentLetterDetails(){
     );
 
 
-  if(!section){
+  if(
+    !section
+  ){
+
     return;
+
   }
 
 
@@ -2487,13 +2617,18 @@ function updateParentLetterDetails(){
 }
 
 
-/* STEPS */
+/* =====================================================
+   STEPS
+===================================================== */
 
 function goToStep(
   step
 ){
 
-  if(step === 2){
+  if(
+    step ===
+    2
+  ){
 
     if(
       !valueOf(
@@ -2505,6 +2640,7 @@ function goToStep(
         "Please enter the school or chapter name."
       );
 
+
       return;
 
     }
@@ -2512,7 +2648,10 @@ function goToStep(
   }
 
 
-  if(step === 3){
+  if(
+    step ===
+    3
+  ){
 
     const advisor =
       getAdvisor();
@@ -2530,6 +2669,7 @@ function goToStep(
         "Add your advisor name and email."
       );
 
+
       return;
 
     }
@@ -2546,6 +2686,7 @@ function goToStep(
         "Choose at least one item to include."
       );
 
+
       return;
 
     }
@@ -2561,6 +2702,7 @@ function goToStep(
       alert(
         "Add the school-specific registration link to generate the Parent Letter and QR code."
       );
+
 
       return;
 
@@ -2620,7 +2762,8 @@ function goToStep(
         "step"+number
       ).classList.toggle(
         "hidden",
-        number !== step
+        number !==
+        step
       );
 
 
@@ -2628,7 +2771,8 @@ function goToStep(
         "actions"+number
       ).classList.toggle(
         "hidden",
-        number !== step
+        number !==
+        step
       );
 
     }
@@ -2638,10 +2782,14 @@ function goToStep(
   updateProgress();
 
 
-  if(step === 3){
+  if(
+    step ===
+    3
+  ){
 
     subjectDirty =
       false;
+
 
     buildPackage();
 
@@ -2650,7 +2798,9 @@ function goToStep(
 }
 
 
-/* PROGRESS */
+/* =====================================================
+   PROGRESS
+===================================================== */
 
 function updateProgress(){
 
@@ -2695,7 +2845,9 @@ function updateProgress(){
 }
 
 
-/* URL BUILDERS */
+/* =====================================================
+   URL BUILDERS
+===================================================== */
 
 function buildChecklistUrl(){
 
@@ -2836,7 +2988,9 @@ function buildParentLetterUrl(){
 }
 
 
-/* BUILD PACKAGE */
+/* =====================================================
+   BUILD PACKAGE / EMAIL
+===================================================== */
 
 function buildPackage(){
 
@@ -2867,7 +3021,8 @@ function buildPackage(){
 
 
   const defaultSubject =
-    selectedStatus === "new"
+    selectedStatus ===
+    "new"
 
       ? `Getting Started with Best Buddies | ${school}`
 
@@ -2904,21 +3059,101 @@ function buildPackage(){
       : "Hi there,";
 
 
+  /*
+    STATUS-SPECIFIC OPENING
+  */
+
+  let openingPreview =
+    "";
+
+
+  let openingHtml =
+    "";
+
+
+  let openingPlain =
+    "";
+
+
+  if(
+    selectedStatus ===
+    "new"
+  ){
+
+    openingPreview = `
+      <p>
+        Thanks so much for sending along your Program Application Form!
+        I’m excited to have ${escapeHtml(school)} getting started with Best Buddies.
+      </p>
+
+      <p>
+        I’ve pulled together a few things below to help make the next steps
+        a little easier.
+      </p>
+    `;
+
+
+    openingHtml = `
+      <p>
+        Thanks so much for sending along your Program Application Form!
+        I’m excited to have ${escapeHtml(school)} getting started with Best Buddies.
+      </p>
+
+      <p>
+        I’ve pulled together a few things below to help make the next steps
+        a little easier.
+      </p>
+    `;
+
+
+    openingPlain =
+`Thanks so much for sending along your Program Application Form! I’m excited to have ${school} getting started with Best Buddies.
+
+I’ve pulled together a few things below to help make the next steps a little easier.`;
+
+  }else{
+
+    openingPreview = `
+      <p>
+        Thanks so much for continuing Best Buddies at ${escapeHtml(school)}!
+        I’ve pulled together a few things below to help make the year
+        a little easier to get underway.
+      </p>
+    `;
+
+
+    openingHtml = `
+      <p>
+        Thanks so much for continuing Best Buddies at ${escapeHtml(school)}!
+        I’ve pulled together a few things below to help make the year
+        a little easier to get underway.
+      </p>
+    `;
+
+
+    openingPlain =
+`Thanks so much for continuing Best Buddies at ${school}! I’ve pulled together a few things below to help make the year a little easier to get underway.`;
+
+  }
+
+
   let preview = `
     <p>${greeting}</p>
 
-    <p>
-      It was lovely connecting with you! I’ve pulled together a few things below
-      to help make getting started with Best Buddies a little easier.
-    </p>
+    ${openingPreview}
   `;
 
 
-  let htmlResources = "";
+  let htmlResources =
+    "";
 
-  let plainResources = "";
 
-  const chips = [];
+  let plainResources =
+    "";
+
+
+  const chips =
+    [];
 
 
   /* CHECKLIST */
@@ -3327,6 +3562,10 @@ Make small edits right on the page, download an editable Word copy, or print/sav
       .join("");
 
 
+  /*
+    WARM ONBOARDING FOLLOW-UP
+  */
+
   preview += `
     <p>
       Once you’ve had a chance to look through everything and do a bit of
@@ -3380,10 +3619,7 @@ Make small edits right on the page, download an editable Word copy, or print/sav
 
       <p>${greeting}</p>
 
-      <p>
-        It was lovely connecting with you! I’ve pulled together a few things below
-        to help make getting started with Best Buddies a little easier.
-      </p>
+      ${openingHtml}
 
       ${htmlResources}
 
@@ -3412,7 +3648,7 @@ Make small edits right on the page, download an editable Word copy, or print/sav
   currentPlainEmail =
 `${recipientName ? `Hi ${recipientName},` : "Hi there,"}
 
-It was lovely connecting with you! I’ve pulled together a few things below to help make getting started with Best Buddies a little easier.
+${openingPlain}
 ${plainResources}
 
 Once you’ve had a chance to look through everything and do a bit of thinking about what Best Buddies might look like at ${school}, I’d love to sit down for a brief onboarding chat. We can walk through the checklist together, talk through what feels realistic for your school, and go over any questions that have come up.
@@ -3424,7 +3660,9 @@ Looking forward to seeing how it comes together!`;
 }
 
 
-/* EMAIL HELPERS */
+/* =====================================================
+   EMAIL HELPERS
+===================================================== */
 
 function guidePreview(
   title,
@@ -3540,7 +3778,9 @@ function resourceHtml(
 }
 
 
-/* COPY */
+/* =====================================================
+   COPY
+===================================================== */
 
 async function copyPolishedEmail(){
 
@@ -3592,7 +3832,9 @@ async function copyPolishedEmail(){
 }
 
 
-/* OUTLOOK */
+/* =====================================================
+   OUTLOOK
+===================================================== */
 
 async function copyAndOpenOutlook(){
 
@@ -3637,7 +3879,9 @@ async function copyAndOpenOutlook(){
 }
 
 
-/* PREVIEWS */
+/* =====================================================
+   PREVIEWS
+===================================================== */
 
 function previewChecklist(){
 
@@ -3660,11 +3904,14 @@ function previewParentLetter(){
     );
 
 
-  if(!registration){
+  if(
+    !registration
+  ){
 
     alert(
       "Add the registration link first so the Parent Letter can generate its QR code."
     );
+
 
     return;
 
@@ -3682,14 +3929,18 @@ function previewParentLetter(){
 }
 
 
-/* HELPERS */
+/* =====================================================
+   HELPERS
+===================================================== */
 
 function valueOf(
   id
 ){
 
   return(
-    document.getElementById(id)
+    document.getElementById(
+      id
+    )
       ?.value
       ?.trim()
     ||
@@ -3776,7 +4027,9 @@ function escapeAttribute(
 }
 
 
-/* INIT */
+/* =====================================================
+   INIT
+===================================================== */
 
 if(
   sessionStorage.getItem(
