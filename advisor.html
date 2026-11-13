@@ -21,7 +21,6 @@
   --muted:#6e6876;
   --line:#e5e0e8;
   --bg:#f7f6f8;
-  --white:#ffffff;
   --shadow:0 14px 42px rgba(55,35,68,.08);
 }
 
@@ -44,9 +43,7 @@ button,input{
 
 button{cursor:pointer}
 
-.hidden{
-  display:none!important;
-}
+.hidden{display:none!important}
 
 
 /* LOGIN */
@@ -56,7 +53,6 @@ button{cursor:pointer}
   display:grid;
   place-items:center;
   padding:24px;
-
   background:
     radial-gradient(circle at 15% 15%,rgba(25,183,177,.16),transparent 32%),
     radial-gradient(circle at 90% 85%,rgba(111,44,145,.13),transparent 32%),
@@ -66,10 +62,8 @@ button{cursor:pointer}
 .login-card{
   width:min(450px,100%);
   padding:36px;
-
   border:1px solid rgba(111,44,145,.08);
   border-radius:24px;
-
   background:white;
   box-shadow:var(--shadow);
 }
@@ -120,7 +114,6 @@ button{cursor:pointer}
   height:100%;
   margin:auto;
   padding:0 22px;
-
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -136,7 +129,6 @@ button{cursor:pointer}
   height:46px;
   width:auto;
   padding:6px 8px;
-
   border-radius:9px;
   background:white;
 }
@@ -149,7 +141,6 @@ button{cursor:pointer}
 .brand-copy span{
   display:block;
   margin-top:2px;
-
   font-size:.76rem;
   opacity:.88;
 }
@@ -170,27 +161,21 @@ button{cursor:pointer}
   transition:.15s ease;
 }
 
-.btn:hover{
-  transform:translateY(-1px);
-}
+.btn:hover{transform:translateY(-1px)}
 
 .btn-primary{
   background:var(--purple);
   color:white;
 }
 
-.btn-primary:hover{
-  background:var(--purple-dark);
-}
+.btn-primary:hover{background:var(--purple-dark)}
 
 .btn-teal{
   background:var(--teal);
   color:white;
 }
 
-.btn-teal:hover{
-  background:var(--teal-dark);
-}
+.btn-teal:hover{background:var(--teal-dark)}
 
 .btn-light{
   border:1px solid var(--line);
@@ -234,10 +219,8 @@ button{cursor:pointer}
 .progress-wrap{
   margin-bottom:12px;
   padding:11px 20px;
-
   border:1px solid var(--line);
   border-radius:15px;
-
   background:white;
 }
 
@@ -253,36 +236,27 @@ button{cursor:pointer}
 
 .progress-item:not(:last-child)::after{
   content:"";
-
   position:absolute;
   z-index:0;
-
   top:16px;
   left:55%;
-
   width:90%;
   height:2px;
-
   background:#e8e3ea;
 }
 
 .progress-circle{
   position:relative;
   z-index:1;
-
   width:33px;
   height:33px;
   margin:0 auto 4px;
-
   display:grid;
   place-items:center;
-
   border:4px solid white;
   border-radius:50%;
-
   background:#eeeaf0;
   color:#7b7480;
-
   font-size:.78rem;
   font-weight:800;
 }
@@ -314,12 +288,9 @@ button{cursor:pointer}
 .workspace{
   position:relative;
   min-height:560px;
-
   overflow:hidden;
-
   border:1px solid var(--line);
   border-radius:20px;
-
   background:white;
   box-shadow:var(--shadow);
 }
@@ -335,9 +306,7 @@ button{cursor:pointer}
 
 .step-number{
   margin-bottom:3px;
-
   color:var(--purple);
-
   font-size:.7rem;
   font-weight:800;
   letter-spacing:.1em;
@@ -359,17 +328,9 @@ button{cursor:pointer}
   gap:18px 12px;
 }
 
-.full{
-  grid-column:1/-1;
-}
-
-.status-field{
-  grid-column:span 2;
-}
-
-.year-field{
-  grid-column:span 1;
-}
+.full{grid-column:1/-1}
+.status-field{grid-column:span 2}
+.year-field{grid-column:span 1}
 
 .field label,
 .field-title{
@@ -390,10 +351,8 @@ input[type="password"]{
   width:100%;
   height:50px;
   padding:0 14px;
-
   border:1px solid #ddd7e0;
   border-radius:11px;
-
   background:white;
   color:var(--ink);
 }
@@ -405,16 +364,14 @@ input:focus{
 }
 
 
-/* SEGMENTS */
+/* SEGMENTED CONTROLS */
 
 .segmented-control{
   width:100%;
   display:grid;
   padding:4px;
-
   border:1px solid var(--line);
   border-radius:12px;
-
   background:#f7f5f8;
 }
 
@@ -428,29 +385,21 @@ input:focus{
 
 .segment{
   position:relative;
-
   height:46px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   padding:0 14px;
-
   border-radius:9px;
-
   color:var(--muted);
-
   font-size:.82rem;
   font-weight:700;
   text-align:center;
-
   cursor:pointer;
+  transition:.15s ease;
 }
 
-.segment:hover{
-  color:var(--purple);
-}
+.segment:hover{color:var(--purple)}
 
 .segment.selected{
   background:var(--purple);
@@ -470,12 +419,10 @@ input:focus{
 .advisor-line{
   min-height:50px;
   padding:10px 13px;
-
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:14px;
-
   border:1px solid var(--line);
   border-radius:11px;
 }
@@ -488,18 +435,15 @@ input:focus{
 .advisor-line span{
   display:block;
   margin-top:2px;
-
   color:var(--muted);
   font-size:.72rem;
 }
 
 .toggle-row{
   margin-top:13px;
-
   display:flex!important;
   align-items:flex-start;
   gap:9px;
-
   font-size:.8rem;
   line-height:1.4;
 }
@@ -520,15 +464,13 @@ input:focus{
 
 .package-choice{
   position:relative;
-
   min-height:112px;
   padding:17px 44px 16px 17px;
-
   border:2px solid var(--line);
   border-radius:15px;
-
   background:white;
   cursor:pointer;
+  transition:.15s ease;
 }
 
 .package-choice:hover{
@@ -544,19 +486,14 @@ input:focus{
   position:absolute;
   top:14px;
   right:14px;
-
   width:22px;
   height:22px;
-
   display:grid;
   place-items:center;
-
   border:2px solid #cbc4d0;
   border-radius:6px;
-
   background:white;
   color:transparent;
-
   font-size:.76rem;
   font-weight:900;
 }
@@ -575,9 +512,7 @@ input:focus{
 
 .package-choice p{
   margin:0;
-
   color:var(--muted);
-
   font-size:.71rem;
   line-height:1.4;
 }
@@ -585,7 +520,6 @@ input:focus{
 .parent-letter-details{
   margin-top:18px;
   padding-top:17px;
-
   border-top:1px solid var(--line);
 }
 
@@ -608,30 +542,24 @@ input:focus{
 
 .resource-chip{
   padding:6px 10px;
-
   border-radius:999px;
-
   background:var(--purple-soft);
   color:var(--purple);
-
   font-size:.7rem;
   font-weight:700;
 }
 
 .message-preview{
   overflow:hidden;
-
   border:1px solid var(--line);
   border-radius:15px;
 }
 
 .preview-top{
   padding:9px 14px;
-
   display:flex;
   justify-content:space-between;
   gap:10px;
-
   border-bottom:1px solid var(--line);
   background:#faf9fb;
 }
@@ -646,11 +574,9 @@ input:focus{
 }
 
 .preview-body{
-  max-height:240px;
+  max-height:280px;
   overflow:auto;
-
   padding:16px 18px;
-
   font-family:Arial,Helvetica,sans-serif;
   font-size:.86rem;
   line-height:1.55;
@@ -679,19 +605,15 @@ input:focus{
 
 .step-actions{
   position:absolute;
-
   right:0;
   bottom:0;
   left:0;
-
   min-height:68px;
   padding:12px 36px;
-
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:10px;
-
   border-top:1px solid var(--line);
   background:#fcfbfd;
 }
@@ -709,28 +631,22 @@ input:focus{
   position:fixed;
   inset:0;
   z-index:100;
-
   padding:20px;
-
   display:grid;
   place-items:center;
-
   background:rgba(31,25,36,.48);
 }
 
 .modal{
   width:min(520px,100%);
   overflow:hidden;
-
   border-radius:20px;
-
   background:white;
   box-shadow:0 25px 80px rgba(25,10,35,.25);
 }
 
 .modal-head{
   padding:22px 24px 10px;
-
   display:flex;
   justify-content:space-between;
   gap:15px;
@@ -747,11 +663,9 @@ input:focus{
 
 .modal-footer{
   padding:15px 24px;
-
   display:flex;
   justify-content:flex-end;
   gap:8px;
-
   border-top:1px solid var(--line);
 }
 
@@ -762,7 +676,6 @@ input:focus{
 .modal-field label{
   display:block;
   margin-bottom:6px;
-
   font-size:.81rem;
   font-weight:700;
 }
@@ -770,10 +683,8 @@ input:focus{
 .close{
   width:32px;
   height:32px;
-
   border:0;
   border-radius:50%;
-
   background:#f1eef3;
 }
 
@@ -782,20 +693,14 @@ input:focus{
 
 .toast{
   position:fixed;
-
   right:20px;
   bottom:20px;
   z-index:200;
-
   max-width:360px;
-
   padding:12px 15px;
-
   border-radius:12px;
-
   background:var(--ink);
   color:white;
-
   font-size:.8rem;
 }
 
@@ -803,11 +708,9 @@ input:focus{
 /* RESPONSIVE */
 
 @media(max-width:1000px){
-
   .package-choice-grid{
     grid-template-columns:repeat(2,1fr);
   }
-
 }
 
 @media(max-width:800px){
@@ -816,21 +719,11 @@ input:focus{
     padding:18px 11px 30px;
   }
 
-  .brand-copy{
-    display:none;
-  }
+  .brand-copy{display:none}
 
-  .site-header{
-    height:64px;
-  }
-
-  .brand-logo{
-    height:41px;
-  }
-
-  .workspace{
-    min-height:0;
-  }
+  .site-header{height:64px}
+  .brand-logo{height:41px}
+  .workspace{min-height:0}
 
   .step{
     min-height:0;
@@ -865,7 +758,6 @@ input:focus{
     bottom:0;
     padding:11px 17px;
   }
-
 }
 
 @media(max-width:520px){
@@ -883,13 +775,11 @@ input:focus{
     flex-wrap:wrap;
     justify-content:flex-end;
   }
-
 }
 </style>
 </head>
 
 <body>
-
 
 <section id="loginScreen" class="login-screen">
 
@@ -964,7 +854,6 @@ input:focus{
 
     </div>
 
-
     <div class="header-actions">
 
       <button
@@ -1035,15 +924,8 @@ input:focus{
 <div class="step" id="step1">
 
   <div class="step-head">
-
-    <div class="step-number">
-      Step 1 · Chapter
-    </div>
-
-    <h2>
-      Chapter details
-    </h2>
-
+    <div class="step-number">Step 1 · Chapter</div>
+    <h2>Chapter details</h2>
   </div>
 
 
@@ -1082,9 +964,7 @@ input:focus{
             onchange="selectProgram('elementary')"
           >
 
-          <span>
-            Elementary & Middle
-          </span>
+          <span>Elementary & Middle</span>
 
         </label>
 
@@ -1098,9 +978,7 @@ input:focus{
             onchange="selectProgram('high')"
           >
 
-          <span>
-            High School
-          </span>
+          <span>High School</span>
 
         </label>
 
@@ -1114,9 +992,7 @@ input:focus{
             onchange="selectProgram('combined')"
           >
 
-          <span>
-            Elementary + Secondary
-          </span>
+          <span>Elementary + Secondary</span>
 
         </label>
 
@@ -1143,9 +1019,7 @@ input:focus{
             onchange="selectStatus('new')"
           >
 
-          <span>
-            New / Restarting
-          </span>
+          <span>New / Restarting</span>
 
         </label>
 
@@ -1159,9 +1033,7 @@ input:focus{
             onchange="selectStatus('active')"
           >
 
-          <span>
-            Existing / Active
-          </span>
+          <span>Existing / Active</span>
 
         </label>
 
@@ -1213,15 +1085,8 @@ input:focus{
 <div class="step hidden" id="step2">
 
   <div class="step-head">
-
-    <div class="step-number">
-      Step 2 · Package
-    </div>
-
-    <h2>
-      Build package
-    </h2>
-
+    <div class="step-number">Step 2 · Package</div>
+    <h2>Build package</h2>
   </div>
 
 
@@ -1343,7 +1208,7 @@ input:focus{
       </strong>
 
       <p>
-        Personalized steps, registration and clickable links.
+        Personalized steps, links and an editable Word option.
       </p>
 
     </div>
@@ -1487,15 +1352,8 @@ input:focus{
 <div class="step hidden" id="step3">
 
   <div class="step-head">
-
-    <div class="step-number">
-      Step 3 · Send
-    </div>
-
-    <h2>
-      Review & send
-    </h2>
-
+    <div class="step-number">Step 3 · Send</div>
+    <h2>Review & send</h2>
   </div>
 
 
@@ -1563,9 +1421,7 @@ input:focus{
 
     <div class="preview-top">
 
-      <strong>
-        Email Preview
-      </strong>
+      <strong>Email Preview</strong>
 
       <span>
         Outlook will add your signature
@@ -1656,9 +1512,7 @@ input:focus{
           Advisor Profile
         </div>
 
-        <h2>
-          My Details
-        </h2>
+        <h2>My Details</h2>
 
       </div>
 
@@ -1677,9 +1531,7 @@ input:focus{
 
       <div class="modal-field">
 
-        <label for="advisorName">
-          Name
-        </label>
+        <label for="advisorName">Name</label>
 
         <input
           id="advisorName"
@@ -1692,14 +1544,12 @@ input:focus{
 
       <div class="modal-field">
 
-        <label for="advisorTitle">
-          Title
-        </label>
+        <label for="advisorTitle">Title</label>
 
         <input
           id="advisorTitle"
           type="text"
-          placeholder="Eastern Canada Program Advisor"
+          placeholder="Program Advisor, Eastern Canada"
         >
 
       </div>
@@ -1707,9 +1557,7 @@ input:focus{
 
       <div class="modal-field">
 
-        <label for="advisorEmail">
-          Email
-        </label>
+        <label for="advisorEmail">Email</label>
 
         <input
           id="advisorEmail"
@@ -1722,14 +1570,12 @@ input:focus{
 
       <div class="modal-field">
 
-        <label for="advisorPhone">
-          Phone
-        </label>
+        <label for="advisorPhone">Phone</label>
 
         <input
           id="advisorPhone"
           type="text"
-          placeholder="416-531-0003 x 5300"
+          placeholder="416-531-0003 ext. 5300"
         >
 
       </div>
@@ -1766,27 +1612,28 @@ input:focus{
 
 <script>
 
-/* CONFIG */
-
 const PASSWORD =
   "BestBuddiesAdvisor2026";
 
 
-/* NEW UNIFIED RESOURCE LIBRARY */
+const RESOURCE_FOLDERS = {
 
-const RESOURCE_LIBRARY =
-  "https://drive.google.com/drive/folders/1FwFQG06iV3-saDjPgxNaJ9QZ2m0WjB8w?usp=sharing";
+  elementary:
+    "https://drive.google.com/drive/folders/16C0F-nopssdrhwHvULpLmmxCjjrQVMOF?usp=drive_link",
 
+  high:
+    "https://drive.google.com/drive/folders/16Uwn3LYo8EsuvttK0mPTNN7XhKpT33pc?usp=drive_link"
 
-/* UPDATED QUICK START GUIDES */
+};
+
 
 const QUICK_START_GUIDES = {
 
   elementary:
-    "https://drive.google.com/file/d/1ocgGIm9zRRaM7L894sv002fhl9Zrf1Bv/view?usp=drive_link",
+    "https://drive.google.com/file/d/1pb1TeEajRZj8eqJH510tqEYpNLc7hrGq/view?usp=drive_link",
 
   high:
-    "https://drive.google.com/file/d/1BxAXKTx6Y6yLdIHMZxAZtCJBQ6cu14mN/view?usp=drive_link"
+    "https://drive.google.com/file/d/1QeYcvyD93UyNzDJjFTUSerH6Vz8PlDyc/view?usp=drive_link"
 
 };
 
@@ -1894,9 +1741,7 @@ function closeAdvisorModal(){
 function closeModalBackdrop(event){
 
   if(event.target.id === "advisorModal"){
-
     closeAdvisorModal();
-
   }
 
 }
@@ -1927,8 +1772,8 @@ function saveAdvisor(){
 
 
   updateAdvisorSummary();
-  closeAdvisorModal();
 
+  closeAdvisorModal();
 
   showToast(
     "Advisor details saved."
@@ -1958,27 +1803,16 @@ function loadAdvisor(){
   }
 
 
-  document.getElementById(
-    "advisorName"
-  ).value =
+  document.getElementById("advisorName").value =
     advisor.name || "";
 
-
-  document.getElementById(
-    "advisorTitle"
-  ).value =
+  document.getElementById("advisorTitle").value =
     advisor.title || "";
 
-
-  document.getElementById(
-    "advisorEmail"
-  ).value =
+  document.getElementById("advisorEmail").value =
     advisor.email || "";
 
-
-  document.getElementById(
-    "advisorPhone"
-  ).value =
+  document.getElementById("advisorPhone").value =
     advisor.phone || "";
 
 
@@ -2007,7 +1841,6 @@ function updateAdvisorSummary(){
     details.push(advisor.title);
   }
 
-
   if(advisor.email){
     details.push(advisor.email);
   }
@@ -2027,8 +1860,7 @@ function updateAdvisorSummary(){
 
 function selectProgram(value){
 
-  selectedProgram =
-    value;
+  selectedProgram = value;
 
 
   document.getElementById(
@@ -2062,8 +1894,7 @@ function selectProgram(value){
 
 function selectStatus(value){
 
-  selectedStatus =
-    value;
+  selectedStatus = value;
 
 
   document.getElementById(
@@ -2104,18 +1935,15 @@ function updatePackageLabels(){
       "quickStartCardName"
     );
 
-
   const quickStartDescription =
     document.getElementById(
       "quickStartCardDescription"
     );
 
-
   const resourceName =
     document.getElementById(
       "resourceCardName"
     );
-
 
   const resourceDescription =
     document.getElementById(
@@ -2131,6 +1959,12 @@ function updatePackageLabels(){
     quickStartDescription.textContent =
       "Practical chapter launch guidance.";
 
+    resourceName.textContent =
+      "Elementary & Middle Resource Library";
+
+    resourceDescription.textContent =
+      "Activities, recruitment, fundraising and program resources.";
+
   }
 
 
@@ -2141,6 +1975,12 @@ function updatePackageLabels(){
 
     quickStartDescription.textContent =
       "Practical chapter launch guidance.";
+
+    resourceName.textContent =
+      "High School Resource Library";
+
+    resourceDescription.textContent =
+      "Activities, recruitment, fundraising and program resources.";
 
   }
 
@@ -2153,17 +1993,13 @@ function updatePackageLabels(){
     quickStartDescription.textContent =
       "Elementary/Middle and High School.";
 
+    resourceName.textContent =
+      "Both Resource Libraries";
+
+    resourceDescription.textContent =
+      "Elementary/Middle and High School collections.";
+
   }
-
-
-  /* One shared library now */
-
-  resourceName.textContent =
-    "Resource Library";
-
-
-  resourceDescription.textContent =
-    "Activities, recruitment, fundraising and program resources.";
 
 }
 
@@ -2173,10 +2009,7 @@ function updatePackageLabels(){
 function togglePackageItem(item){
 
   if(item === "parentLetter"){
-
-    parentLetterManuallyChanged =
-      true;
-
+    parentLetterManuallyChanged = true;
   }
 
 
@@ -2191,10 +2024,7 @@ function togglePackageItem(item){
 }
 
 
-function setPackageItem(
-  item,
-  selected
-){
+function setPackageItem(item,selected){
 
   packageItems[item] =
     selected;
@@ -2245,11 +2075,7 @@ function goToStep(step){
 
   if(step === 2){
 
-    const school =
-      valueOf("schoolName");
-
-
-    if(!school){
+    if(!valueOf("schoolName")){
 
       alert(
         "Please enter the school or chapter name."
@@ -2275,11 +2101,9 @@ function goToStep(step){
 
       openAdvisorModal();
 
-
       showToast(
         "Add your advisor name and email."
       );
-
 
       return;
 
@@ -2315,11 +2139,44 @@ function goToStep(step){
 
     }
 
+
+    /*
+      Save a little duplicate typing:
+      use the Staff Advisor details as the default
+      email recipient, but leave everything editable.
+    */
+
+    if(
+      !valueOf("recipientName") &&
+      valueOf("staffAdvisor")
+    ){
+
+      document.getElementById(
+        "recipientName"
+      ).value =
+        firstName(
+          valueOf("staffAdvisor")
+        );
+
+    }
+
+
+    if(
+      !valueOf("recipientEmail") &&
+      valueOf("staffEmail")
+    ){
+
+      document.getElementById(
+        "recipientEmail"
+      ).value =
+        valueOf("staffEmail");
+
+    }
+
   }
 
 
-  currentStep =
-    step;
+  currentStep = step;
 
 
   [1,2,3].forEach(number=>{
@@ -2347,9 +2204,7 @@ function goToStep(step){
 
   if(step === 3){
 
-    subjectDirty =
-      false;
-
+    subjectDirty = false;
 
     buildPackage();
 
@@ -2378,15 +2233,11 @@ function updateProgress(){
 
     if(number < currentStep){
 
-      item.classList.add(
-        "done"
-      );
+      item.classList.add("done");
 
     }else if(number === currentStep){
 
-      item.classList.add(
-        "active"
-      );
+      item.classList.add("active");
 
     }
 
@@ -2478,17 +2329,15 @@ function buildParentLetterUrl(){
 }
 
 
-/* EMAIL */
+/* PACKAGE / EMAIL */
 
 function buildPackage(){
 
   const school =
     valueOf("schoolName");
 
-
   const year =
     valueOf("programYear");
-
 
   const recipientName =
     valueOf("recipientName");
@@ -2542,19 +2391,15 @@ function buildPackage(){
     <p>${greeting}</p>
 
     <p>
-      It was lovely connecting with you! I’ve pulled together
-      a few things to help make getting started with Best Buddies
-      as easy as possible.
+      It was lovely connecting with you! I’ve pulled together a few
+      things below to help make getting started with Best Buddies
+      a little easier.
     </p>
   `;
 
 
-  let htmlResources =
-    "";
-
-
-  let plainResources =
-    "";
+  let htmlResources = "";
+  let plainResources = "";
 
 
   /* CHECKLIST */
@@ -2575,7 +2420,7 @@ function buildPackage(){
 
         <div>
           A personalized checklist for ${escapeHtml(school)}
-          with key chapter steps and helpful links.
+          with your key chapter steps and links.
         </div>
 
         <a
@@ -2584,6 +2429,10 @@ function buildPackage(){
         >
           Open your Chapter Checklist
         </a>
+
+        <div style="margin-top:2px;color:#6e6876;font-size:.92em">
+          Use it online, download an editable Word copy, or print/save a PDF.
+        </div>
 
       </div>
     `;
@@ -2594,11 +2443,16 @@ function buildPackage(){
         <strong>Your Chapter Checklist</strong><br>
 
         A personalized checklist for ${escapeHtml(school)}
-        with key chapter steps and helpful links.<br>
+        with your key chapter steps and links.<br>
 
         <a href="${escapeAttribute(currentChecklist)}">
           Open your Chapter Checklist
-        </a>
+        </a><br>
+
+        <span style="color:#666;font-size:13px">
+          You can use it online, download an editable Word copy,
+          or print/save a PDF.
+        </span>
       </p>
     `;
 
@@ -2606,6 +2460,7 @@ function buildPackage(){
     plainResources +=
 `\nYour Chapter Checklist
 ${currentChecklist}
+Use it online, download an editable Word copy, or print/save a PDF.
 `;
 
   }
@@ -2617,10 +2472,7 @@ ${currentChecklist}
 
     if(selectedProgram === "elementary"){
 
-      chips.push(
-        "Quick Start Guide"
-      );
-
+      chips.push("Quick Start Guide");
 
       preview +=
         guidePreview(
@@ -2628,13 +2480,11 @@ ${currentChecklist}
           QUICK_START_GUIDES.elementary
         );
 
-
       htmlResources +=
         guideHtml(
           "Elementary & Middle School Quick Start Guide",
           QUICK_START_GUIDES.elementary
         );
-
 
       plainResources +=
 `\nElementary & Middle School Quick Start Guide
@@ -2646,10 +2496,7 @@ ${QUICK_START_GUIDES.elementary}
 
     if(selectedProgram === "high"){
 
-      chips.push(
-        "Quick Start Guide"
-      );
-
+      chips.push("Quick Start Guide");
 
       preview +=
         guidePreview(
@@ -2657,13 +2504,11 @@ ${QUICK_START_GUIDES.elementary}
           QUICK_START_GUIDES.high
         );
 
-
       htmlResources +=
         guideHtml(
           "High School Quick Start Guide",
           QUICK_START_GUIDES.high
         );
-
 
       plainResources +=
 `\nHigh School Quick Start Guide
@@ -2675,10 +2520,7 @@ ${QUICK_START_GUIDES.high}
 
     if(selectedProgram === "combined"){
 
-      chips.push(
-        "2 Quick Start Guides"
-      );
-
+      chips.push("2 Quick Start Guides");
 
       preview +=
         guidePreview(
@@ -2686,13 +2528,11 @@ ${QUICK_START_GUIDES.high}
           QUICK_START_GUIDES.elementary
         );
 
-
       preview +=
         guidePreview(
           "High School Quick Start Guide",
           QUICK_START_GUIDES.high
         );
-
 
       htmlResources +=
         guideHtml(
@@ -2700,13 +2540,11 @@ ${QUICK_START_GUIDES.high}
           QUICK_START_GUIDES.elementary
         );
 
-
       htmlResources +=
         guideHtml(
           "High School Quick Start Guide",
           QUICK_START_GUIDES.high
         );
-
 
       plainResources +=
 `\nElementary & Middle School Quick Start Guide
@@ -2721,33 +2559,95 @@ ${QUICK_START_GUIDES.high}
   }
 
 
-  /* RESOURCE LIBRARY */
+  /* RESOURCES */
 
   if(packageItems.resources){
 
-    chips.push(
-      "Resource Library"
-    );
+    if(selectedProgram === "elementary"){
 
+      chips.push("Resource Library");
 
-    preview +=
-      resourcePreview(
-        "Best Buddies Resource Library",
-        RESOURCE_LIBRARY
-      );
+      preview +=
+        resourcePreview(
+          "Elementary & Middle Resource Library",
+          RESOURCE_FOLDERS.elementary
+        );
 
+      htmlResources +=
+        resourceHtml(
+          "Elementary & Middle Resource Library",
+          RESOURCE_FOLDERS.elementary
+        );
 
-    htmlResources +=
-      resourceHtml(
-        "Best Buddies Resource Library",
-        RESOURCE_LIBRARY
-      );
-
-
-    plainResources +=
-`\nBest Buddies Resource Library
-${RESOURCE_LIBRARY}
+      plainResources +=
+`\nElementary & Middle Resource Library
+${RESOURCE_FOLDERS.elementary}
 `;
+
+    }
+
+
+    if(selectedProgram === "high"){
+
+      chips.push("Resource Library");
+
+      preview +=
+        resourcePreview(
+          "High School Resource Library",
+          RESOURCE_FOLDERS.high
+        );
+
+      htmlResources +=
+        resourceHtml(
+          "High School Resource Library",
+          RESOURCE_FOLDERS.high
+        );
+
+      plainResources +=
+`\nHigh School Resource Library
+${RESOURCE_FOLDERS.high}
+`;
+
+    }
+
+
+    if(selectedProgram === "combined"){
+
+      chips.push("2 Resource Libraries");
+
+      preview +=
+        resourcePreview(
+          "Elementary & Middle Resource Library",
+          RESOURCE_FOLDERS.elementary
+        );
+
+      preview +=
+        resourcePreview(
+          "High School Resource Library",
+          RESOURCE_FOLDERS.high
+        );
+
+      htmlResources +=
+        resourceHtml(
+          "Elementary & Middle Resource Library",
+          RESOURCE_FOLDERS.elementary
+        );
+
+      htmlResources +=
+        resourceHtml(
+          "High School Resource Library",
+          RESOURCE_FOLDERS.high
+        );
+
+      plainResources +=
+`\nElementary & Middle Resource Library
+${RESOURCE_FOLDERS.elementary}
+
+High School Resource Library
+${RESOURCE_FOLDERS.high}
+`;
+
+    }
 
   }
 
@@ -2790,28 +2690,18 @@ ${RESOURCE_LIBRARY}
 
     htmlResources += `
       <p>
-
-        <strong>
-          Parent / Guardian Letter
-        </strong>
-
-        <br>
+        <strong>Parent / Guardian Letter</strong><br>
 
         Already personalized for ${escapeHtml(school)}
-        with the school-specific registration link and QR code.
-
-        <br>
+        with the school-specific registration link and QR code.<br>
 
         <a href="${escapeAttribute(currentParentLetter)}">
           Open the Parent Letter
-        </a>
-
-        <br>
+        </a><br>
 
         <span style="color:#666;font-size:13px">
           Download an editable Word version or print/save a PDF.
         </span>
-
       </p>
     `;
 
@@ -2819,11 +2709,13 @@ ${RESOURCE_LIBRARY}
     plainResources +=
 `\nParent / Guardian Letter
 ${currentParentLetter}
-Open the letter to download an editable Word version or print/save a PDF.
+Download an editable Word version or print/save a PDF.
 `;
 
   }
 
+
+  /* CHIPS */
 
   document.getElementById(
     "selectedResources"
@@ -2836,37 +2728,35 @@ Open the letter to download an editable Word version or print/save a PDF.
       .join("");
 
 
-  if(packageItems.checklist){
+  /*
+    WARM ONBOARDING FOLLOW-UP
+  */
 
-    preview += `
-      <p>
-        You can use the Chapter Checklist online and check things off
-        as you go, or print/save a copy if that works better for you.
-      </p>
-    `;
-
-  }
-
-
-  if(packageItems.parentLetter){
-
-    preview += `
-      <p>
-        The Parent Letter is ready to use as-is, or you can download
-        the editable Word version if you'd like to make any changes
-        before sharing it with families.
-      </p>
-    `;
-
-  }
-
-
-  preview += `
+  const followUpPreview = `
     <p>
-      Please reach out anytime if questions come up or if there’s
-      anything I can help with along the way.
+      Once you’ve had a chance to look through everything and do a bit
+      of thinking about what Best Buddies might look like at
+      ${escapeHtml(school)}, I’d love to sit down for a brief onboarding
+      chat. We can walk through the checklist together, talk through
+      what feels realistic for your school, and go over any questions
+      that have come up. No need to have everything figured out before
+      we chat.
+    </p>
+
+    <p>
+      Please feel free to reach out anytime in the meantime. I’m happy
+      to help with recruitment, first gathering ideas, registration,
+      student leadership, or anything else as you get things underway.
+    </p>
+
+    <p>
+      Looking forward to seeing how it comes together!
     </p>
   `;
+
+
+  preview +=
+    followUpPreview;
 
 
   document.getElementById(
@@ -2902,39 +2792,31 @@ Open the letter to download an editable Word version or print/save a PDF.
       <p>${greeting}</p>
 
       <p>
-        It was lovely connecting with you! I’ve pulled together
-        a few things to help make getting started with Best Buddies
-        as easy as possible.
+        It was lovely connecting with you! I’ve pulled together a few
+        things below to help make getting started with Best Buddies
+        a little easier.
       </p>
 
       ${htmlResources}
 
-      ${
-        packageItems.checklist
-          ? `
-            <p>
-              You can use the Chapter Checklist online and check things off
-              as you go, or print/save a copy if that works better for you.
-            </p>
-          `
-          : ""
-      }
-
-      ${
-        packageItems.parentLetter
-          ? `
-            <p>
-              The Parent Letter is ready to use as-is, or you can download
-              the editable Word version if you'd like to make any changes
-              before sharing it.
-            </p>
-          `
-          : ""
-      }
+      <p>
+        Once you’ve had a chance to look through everything and do a bit
+        of thinking about what Best Buddies might look like at
+        ${escapeHtml(school)}, I’d love to sit down for a brief onboarding
+        chat. We can walk through the checklist together, talk through
+        what feels realistic for your school, and go over any questions
+        that have come up. No need to have everything figured out before
+        we chat.
+      </p>
 
       <p>
-        Please reach out anytime if questions come up or if there’s
-        anything I can help with along the way.
+        Please feel free to reach out anytime in the meantime. I’m happy
+        to help with recruitment, first gathering ideas, registration,
+        student leadership, or anything else as you get things underway.
+      </p>
+
+      <p>
+        Looking forward to seeing how it comes together!
       </p>
 
     </div>
@@ -2944,11 +2826,14 @@ Open the letter to download an editable Word version or print/save a PDF.
   currentPlainEmail =
 `${recipientName ? `Hi ${recipientName},` : "Hi there,"}
 
-It was lovely connecting with you! I’ve pulled together a few things to help make getting started with Best Buddies as easy as possible.
+It was lovely connecting with you! I’ve pulled together a few things below to help make getting started with Best Buddies a little easier.
 ${plainResources}
-${packageItems.checklist ? "\nYou can use the Chapter Checklist online and check things off as you go, or print/save a copy if that works better for you.\n" : ""}
-${packageItems.parentLetter ? "\nThe Parent Letter is ready to use as-is, or you can download the editable Word version if you'd like to make any changes before sharing it.\n" : ""}
-Please reach out anytime if questions come up or if there’s anything I can help with along the way.`;
+
+Once you’ve had a chance to look through everything and do a bit of thinking about what Best Buddies might look like at ${school}, I’d love to sit down for a brief onboarding chat. We can walk through the checklist together, talk through what feels realistic for your school, and go over any questions that have come up. No need to have everything figured out before we chat.
+
+Please feel free to reach out anytime in the meantime. I’m happy to help with recruitment, first gathering ideas, registration, student leadership, or anything else as you get things underway.
+
+Looking forward to seeing how it comes together!`;
 
 }
 
@@ -2959,6 +2844,7 @@ function guidePreview(title,url){
 
   return `
     <div class="preview-link">
+
       <strong>${escapeHtml(title)}</strong>
 
       <div>
@@ -2971,6 +2857,7 @@ function guidePreview(title,url){
       >
         Open the Quick Start Guide
       </a>
+
     </div>
   `;
 
@@ -2982,6 +2869,7 @@ function guideHtml(title,url){
   return `
     <p>
       <strong>${escapeHtml(title)}</strong><br>
+
       Practical guidance for getting started.<br>
 
       <a href="${escapeAttribute(url)}">
@@ -2998,9 +2886,7 @@ function resourcePreview(title,url){
   return `
     <div class="preview-link">
 
-      <strong>
-        ${escapeHtml(title)}
-      </strong>
+      <strong>${escapeHtml(title)}</strong>
 
       <div>
         Activities, recruitment, fundraising and program resources.
@@ -3133,7 +3019,6 @@ function previewChecklist(){
 
   buildPackage();
 
-
   window.open(
     currentChecklist,
     "_blank"
@@ -3144,11 +3029,7 @@ function previewChecklist(){
 
 function previewParentLetter(){
 
-  if(
-    !valueOf(
-      "registrationLink"
-    )
-  ){
+  if(!valueOf("registrationLink")){
 
     alert(
       "Add the registration link first so the Parent Letter can generate its QR code."
@@ -3181,6 +3062,15 @@ function valueOf(id){
     ||
     ""
   );
+
+}
+
+
+function firstName(name){
+
+  return String(
+    name || ""
+  ).trim().split(/\s+/)[0] || "";
 
 }
 
@@ -3234,9 +3124,7 @@ function escapeHtml(value){
 
 function escapeAttribute(value){
 
-  return escapeHtml(
-    value
-  );
+  return escapeHtml(value);
 
 }
 
