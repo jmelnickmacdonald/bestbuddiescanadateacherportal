@@ -24,12 +24,9 @@
   --shadow:0 14px 42px rgba(55,35,68,.08);
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
-html,
-body{
+html,body{
   margin:0;
   min-height:100%;
 }
@@ -40,30 +37,18 @@ body{
   font-family:"Poppins",Arial,sans-serif;
 }
 
-button,
-input{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
-}
-
-.hidden{
-  display:none!important;
-}
+button,input{font:inherit}
+button{cursor:pointer}
+.hidden{display:none!important}
 
 
-/* =====================================================
-   LOGIN
-===================================================== */
+/* LOGIN */
 
 .login-screen{
   min-height:100vh;
   display:grid;
   place-items:center;
   padding:24px;
-
   background:
     radial-gradient(circle at 15% 15%,rgba(25,183,177,.16),transparent 32%),
     radial-gradient(circle at 90% 85%,rgba(111,44,145,.13),transparent 32%),
@@ -73,10 +58,8 @@ button{
 .login-card{
   width:min(450px,100%);
   padding:36px;
-
   border:1px solid rgba(111,44,145,.08);
   border-radius:24px;
-
   background:white;
   box-shadow:var(--shadow);
 }
@@ -97,7 +80,6 @@ button{
 
 .login-card h1{
   margin:7px 0 9px;
-
   font-size:1.95rem;
   line-height:1.08;
   letter-spacing:-.04em;
@@ -115,9 +97,7 @@ button{
 }
 
 
-/* =====================================================
-   HEADER
-===================================================== */
+/* HEADER */
 
 .site-header{
   height:72px;
@@ -130,7 +110,6 @@ button{
   height:100%;
   margin:auto;
   padding:0 22px;
-
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -146,7 +125,6 @@ button{
   height:46px;
   width:auto;
   padding:6px 8px;
-
   border-radius:9px;
   background:white;
 }
@@ -159,7 +137,6 @@ button{
 .brand-copy span{
   display:block;
   margin-top:2px;
-
   font-size:.76rem;
   opacity:.88;
 }
@@ -170,41 +147,31 @@ button{
 }
 
 
-/* =====================================================
-   BUTTONS
-===================================================== */
+/* BUTTONS */
 
 .btn{
   border:0;
   border-radius:10px;
   padding:10px 16px;
-
   font-weight:700;
-
   transition:.15s ease;
 }
 
-.btn:hover{
-  transform:translateY(-1px);
-}
+.btn:hover{transform:translateY(-1px)}
 
 .btn-primary{
   background:var(--purple);
   color:white;
 }
 
-.btn-primary:hover{
-  background:var(--purple-dark);
-}
+.btn-primary:hover{background:var(--purple-dark)}
 
 .btn-teal{
   background:var(--teal);
   color:white;
 }
 
-.btn-teal:hover{
-  background:var(--teal-dark);
-}
+.btn-teal:hover{background:var(--teal-dark)}
 
 .btn-light{
   border:1px solid var(--line);
@@ -223,9 +190,7 @@ button{
 }
 
 
-/* =====================================================
-   PAGE
-===================================================== */
+/* PAGE */
 
 .page{
   max-width:1140px;
@@ -239,24 +204,19 @@ button{
 
 .page-title h1{
   margin:4px 0 0;
-
   font-size:1.9rem;
   line-height:1.1;
   letter-spacing:-.035em;
 }
 
 
-/* =====================================================
-   PROGRESS
-===================================================== */
+/* PROGRESS */
 
 .progress-wrap{
   margin-bottom:12px;
   padding:11px 20px;
-
   border:1px solid var(--line);
   border-radius:15px;
-
   background:white;
 }
 
@@ -272,37 +232,27 @@ button{
 
 .progress-item:not(:last-child)::after{
   content:"";
-
   position:absolute;
   z-index:0;
-
   top:16px;
   left:55%;
-
   width:90%;
   height:2px;
-
   background:#e8e3ea;
 }
 
 .progress-circle{
   position:relative;
   z-index:1;
-
   width:33px;
   height:33px;
-
   margin:0 auto 4px;
-
   display:grid;
   place-items:center;
-
   border:4px solid white;
   border-radius:50%;
-
   background:#eeeaf0;
   color:#7b7480;
-
   font-size:.78rem;
   font-weight:800;
 }
@@ -329,18 +279,14 @@ button{
 }
 
 
-/* =====================================================
-   WORKSPACE
-===================================================== */
+/* WORKSPACE */
 
 .workspace{
   position:relative;
   min-height:560px;
   overflow:hidden;
-
   border:1px solid var(--line);
   border-radius:20px;
-
   background:white;
   box-shadow:var(--shadow);
 }
@@ -356,9 +302,7 @@ button{
 
 .step-number{
   margin-bottom:3px;
-
   color:var(--purple);
-
   font-size:.7rem;
   font-weight:800;
   letter-spacing:.1em;
@@ -372,9 +316,7 @@ button{
 }
 
 
-/* =====================================================
-   FIELDS
-===================================================== */
+/* FIELDS */
 
 .form-grid{
   display:grid;
@@ -382,24 +324,14 @@ button{
   gap:18px 12px;
 }
 
-.full{
-  grid-column:1/-1;
-}
-
-.status-field{
-  grid-column:span 2;
-}
-
-.year-field{
-  grid-column:span 1;
-}
+.full{grid-column:1/-1}
+.status-field{grid-column:span 2}
+.year-field{grid-column:span 1}
 
 .field label,
 .field-title{
   display:block;
-
   margin-bottom:7px;
-
   font-size:.84rem;
   font-weight:700;
 }
@@ -414,37 +346,28 @@ input[type="email"],
 input[type="password"]{
   width:100%;
   height:50px;
-
   padding:0 14px;
-
   border:1px solid #ddd7e0;
   border-radius:11px;
-
   background:white;
   color:var(--ink);
 }
 
 input:focus{
   outline:none;
-
   border-color:var(--teal);
-
   box-shadow:0 0 0 4px rgba(25,183,177,.11);
 }
 
 
-/* =====================================================
-   SEGMENTED CONTROLS
-===================================================== */
+/* SEGMENTS */
 
 .segmented-control{
   width:100%;
   display:grid;
   padding:4px;
-
   border:1px solid var(--line);
   border-radius:12px;
-
   background:#f7f5f8;
 }
 
@@ -458,39 +381,26 @@ input:focus{
 
 .segment{
   position:relative;
-
   height:46px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   padding:0 14px;
-
   border-radius:9px;
-
   color:var(--muted);
-
   font-size:.82rem;
   font-weight:700;
-
   text-align:center;
   cursor:pointer;
-
   transition:.15s ease;
 }
 
-.segment:hover{
-  color:var(--purple);
-}
+.segment:hover{color:var(--purple)}
 
 .segment.selected{
   background:var(--purple);
   color:white;
-
-  box-shadow:
-    0 3px 10px
-    rgba(111,44,145,.16);
+  box-shadow:0 3px 10px rgba(111,44,145,.16);
 }
 
 .segment input{
@@ -500,19 +410,15 @@ input:focus{
 }
 
 
-/* =====================================================
-   ADVISOR
-===================================================== */
+/* ADVISOR */
 
 .advisor-line{
   min-height:50px;
   padding:10px 13px;
-
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:14px;
-
   border:1px solid var(--line);
   border-radius:11px;
 }
@@ -524,21 +430,16 @@ input:focus{
 
 .advisor-line span{
   display:block;
-
   margin-top:2px;
-
   color:var(--muted);
-
   font-size:.72rem;
 }
 
 .toggle-row{
   margin-top:13px;
-
   display:flex!important;
   align-items:flex-start;
   gap:9px;
-
   font-size:.8rem;
   line-height:1.4;
 }
@@ -548,31 +449,23 @@ input:focus{
 }
 
 
-/* =====================================================
-   PACKAGE
-===================================================== */
+/* PACKAGE */
 
 .package-choice-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:12px;
-
   margin-top:12px;
 }
 
 .package-choice{
   position:relative;
-
   min-height:112px;
   padding:17px 44px 16px 17px;
-
   border:2px solid var(--line);
   border-radius:15px;
-
   background:white;
-
   cursor:pointer;
-
   transition:.15s ease;
 }
 
@@ -587,22 +480,16 @@ input:focus{
 
 .package-check{
   position:absolute;
-
   top:14px;
   right:14px;
-
   width:22px;
   height:22px;
-
   display:grid;
   place-items:center;
-
   border:2px solid #cbc4d0;
   border-radius:6px;
-
   background:white;
   color:transparent;
-
   font-size:.76rem;
   font-weight:900;
 }
@@ -621,9 +508,7 @@ input:focus{
 
 .package-choice p{
   margin:0;
-
   color:var(--muted);
-
   font-size:.71rem;
   line-height:1.4;
 }
@@ -631,20 +516,16 @@ input:focus{
 .parent-letter-details{
   margin-top:18px;
   padding-top:17px;
-
   border-top:1px solid var(--line);
 }
 
 
-/* =====================================================
-   SEND
-===================================================== */
+/* SEND */
 
 .send-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:16px 20px;
-
   margin-bottom:16px;
 }
 
@@ -652,38 +533,30 @@ input:focus{
   display:flex;
   flex-wrap:wrap;
   gap:7px;
-
   margin:7px 0 15px;
 }
 
 .resource-chip{
   padding:6px 10px;
-
   border-radius:999px;
-
   background:var(--purple-soft);
   color:var(--purple);
-
   font-size:.7rem;
   font-weight:700;
 }
 
 .message-preview{
   overflow:hidden;
-
   border:1px solid var(--line);
   border-radius:15px;
 }
 
 .preview-top{
   padding:9px 14px;
-
   display:flex;
   justify-content:space-between;
   gap:10px;
-
   border-bottom:1px solid var(--line);
-
   background:#faf9fb;
 }
 
@@ -699,9 +572,7 @@ input:focus{
 .preview-body{
   max-height:320px;
   overflow:auto;
-
   padding:16px 18px;
-
   font-family:Arial,Helvetica,sans-serif;
   font-size:.86rem;
   line-height:1.55;
@@ -721,80 +592,57 @@ input:focus{
 
 .preview-link a{
   color:var(--purple);
-
   font-weight:700;
   text-decoration:underline;
 }
 
 
-/* =====================================================
-   ACTIONS
-===================================================== */
+/* ACTIONS */
 
 .step-actions{
   position:absolute;
-
   right:0;
   bottom:0;
   left:0;
-
   min-height:68px;
-
   padding:12px 36px;
-
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:10px;
-
   border-top:1px solid var(--line);
-
   background:#fcfbfd;
 }
 
 .action-right{
   margin-left:auto;
-
   display:flex;
   gap:8px;
 }
 
 
-/* =====================================================
-   MODAL
-===================================================== */
+/* MODAL */
 
 .modal-bg{
   position:fixed;
-
   inset:0;
   z-index:100;
-
   padding:20px;
-
   display:grid;
   place-items:center;
-
   background:rgba(31,25,36,.48);
 }
 
 .modal{
   width:min(520px,100%);
-
   overflow:hidden;
-
   border-radius:20px;
-
   background:white;
-
-  box-shadow:
-    0 25px 80px
-    rgba(25,10,35,.25);
+  box-shadow:0 25px 80px rgba(25,10,35,.25);
 }
 
 .modal-head{
   padding:22px 24px 10px;
-
   display:flex;
   justify-content:space-between;
   gap:15px;
@@ -811,11 +659,9 @@ input:focus{
 
 .modal-footer{
   padding:15px 24px;
-
   display:flex;
   justify-content:flex-end;
   gap:8px;
-
   border-top:1px solid var(--line);
 }
 
@@ -833,48 +679,34 @@ input:focus{
 .close{
   width:32px;
   height:32px;
-
   border:0;
   border-radius:50%;
-
   background:#f1eef3;
 }
 
 
-/* =====================================================
-   TOAST
-===================================================== */
+/* TOAST */
 
 .toast{
   position:fixed;
-
   right:20px;
   bottom:20px;
   z-index:200;
-
   max-width:360px;
-
   padding:12px 15px;
-
   border-radius:12px;
-
   background:var(--ink);
   color:white;
-
   font-size:.8rem;
 }
 
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+/* RESPONSIVE */
 
 @media(max-width:1000px){
-
   .package-choice-grid{
     grid-template-columns:repeat(2,1fr);
   }
-
 }
 
 @media(max-width:800px){
@@ -883,17 +715,10 @@ input:focus{
     padding:18px 11px 30px;
   }
 
-  .brand-copy{
-    display:none;
-  }
+  .brand-copy{display:none}
 
-  .site-header{
-    height:64px;
-  }
-
-  .brand-logo{
-    height:41px;
-  }
+  .site-header{height:64px}
+  .brand-logo{height:41px}
 
   .workspace{
     min-height:0;
@@ -930,10 +755,8 @@ input:focus{
   .step-actions{
     position:sticky;
     bottom:0;
-
     padding:11px 17px;
   }
-
 }
 
 @media(max-width:520px){
@@ -951,17 +774,11 @@ input:focus{
     flex-wrap:wrap;
     justify-content:flex-end;
   }
-
 }
 </style>
 </head>
 
 <body>
-
-
-<!-- =====================================================
-     LOGIN
-===================================================== -->
 
 <section id="loginScreen" class="login-screen">
 
@@ -978,9 +795,7 @@ input:focus{
       Program Advisor Access
     </div>
 
-    <h1>
-      Advisor Hub
-    </h1>
+    <h1>Advisor Hub</h1>
 
     <p class="help">
       Chapter package builder.
@@ -1016,11 +831,6 @@ input:focus{
 </section>
 
 
-
-<!-- =====================================================
-     APP
-===================================================== -->
-
 <div id="app" class="hidden">
 
 <header class="site-header">
@@ -1037,19 +847,11 @@ input:focus{
       >
 
       <div class="brand-copy">
-
-        <strong>
-          Advisor Hub
-        </strong>
-
-        <span>
-          Best Buddies Canada
-        </span>
-
+        <strong>Advisor Hub</strong>
+        <span>Best Buddies Canada</span>
       </div>
 
     </div>
-
 
     <div class="header-actions">
 
@@ -1076,7 +878,6 @@ input:focus{
 
 <main class="page">
 
-
 <section class="page-title">
 
   <div class="eyebrow">
@@ -1095,41 +896,18 @@ input:focus{
   <div class="progress">
 
     <div class="progress-item active" id="progress1">
-
-      <div class="progress-circle">
-        1
-      </div>
-
-      <div class="progress-label">
-        Chapter
-      </div>
-
+      <div class="progress-circle">1</div>
+      <div class="progress-label">Chapter</div>
     </div>
-
 
     <div class="progress-item" id="progress2">
-
-      <div class="progress-circle">
-        2
-      </div>
-
-      <div class="progress-label">
-        Package
-      </div>
-
+      <div class="progress-circle">2</div>
+      <div class="progress-label">Package</div>
     </div>
 
-
     <div class="progress-item" id="progress3">
-
-      <div class="progress-circle">
-        3
-      </div>
-
-      <div class="progress-label">
-        Send
-      </div>
-
+      <div class="progress-circle">3</div>
+      <div class="progress-label">Send</div>
     </div>
 
   </div>
@@ -1140,33 +918,20 @@ input:focus{
 <section class="workspace">
 
 
-<!-- =====================================================
-     STEP 1
-===================================================== -->
+<!-- STEP 1 -->
 
 <div class="step" id="step1">
 
   <div class="step-head">
-
-    <div class="step-number">
-      Step 1 · Chapter
-    </div>
-
-    <h2>
-      Chapter details
-    </h2>
-
+    <div class="step-number">Step 1 · Chapter</div>
+    <h2>Chapter details</h2>
   </div>
-
 
   <div class="form-grid">
 
     <div class="field full">
 
-      <label
-        class="field-title"
-        for="schoolName"
-      >
+      <label class="field-title" for="schoolName">
         School / Chapter Name
       </label>
 
@@ -1187,10 +952,7 @@ input:focus{
 
       <div class="segmented-control program-segments">
 
-        <label
-          class="segment selected"
-          id="programElementaryCard"
-        >
+        <label class="segment selected" id="programElementaryCard">
 
           <input
             type="radio"
@@ -1200,17 +962,12 @@ input:focus{
             onchange="selectProgram('elementary')"
           >
 
-          <span>
-            Elementary & Middle
-          </span>
+          <span>Elementary & Middle</span>
 
         </label>
 
 
-        <label
-          class="segment"
-          id="programHighCard"
-        >
+        <label class="segment" id="programHighCard">
 
           <input
             type="radio"
@@ -1219,17 +976,12 @@ input:focus{
             onchange="selectProgram('high')"
           >
 
-          <span>
-            High School
-          </span>
+          <span>High School</span>
 
         </label>
 
 
-        <label
-          class="segment"
-          id="programCombinedCard"
-        >
+        <label class="segment" id="programCombinedCard">
 
           <input
             type="radio"
@@ -1238,9 +990,7 @@ input:focus{
             onchange="selectProgram('combined')"
           >
 
-          <span>
-            Elementary + Secondary
-          </span>
+          <span>Elementary + Secondary</span>
 
         </label>
 
@@ -1257,10 +1007,7 @@ input:focus{
 
       <div class="segmented-control status-segments">
 
-        <label
-          class="segment selected"
-          id="statusNewCard"
-        >
+        <label class="segment selected" id="statusNewCard">
 
           <input
             type="radio"
@@ -1270,17 +1017,12 @@ input:focus{
             onchange="selectStatus('new')"
           >
 
-          <span>
-            New / Restarting
-          </span>
+          <span>New / Restarting</span>
 
         </label>
 
 
-        <label
-          class="segment"
-          id="statusActiveCard"
-        >
+        <label class="segment" id="statusActiveCard">
 
           <input
             type="radio"
@@ -1289,9 +1031,7 @@ input:focus{
             onchange="selectStatus('active')"
           >
 
-          <span>
-            Existing / Active
-          </span>
+          <span>Existing / Active</span>
 
         </label>
 
@@ -1302,10 +1042,7 @@ input:focus{
 
     <div class="field year-field">
 
-      <label
-        class="field-title"
-        for="programYear"
-      >
+      <label class="field-title" for="programYear">
         Program Year
       </label>
 
@@ -1341,25 +1078,13 @@ input:focus{
 
 
 
-<!-- =====================================================
-     STEP 2
-===================================================== -->
+<!-- STEP 2 -->
 
-<div
-  class="step hidden"
-  id="step2"
->
+<div class="step hidden" id="step2">
 
   <div class="step-head">
-
-    <div class="step-number">
-      Step 2 · Package
-    </div>
-
-    <h2>
-      Build package
-    </h2>
-
+    <div class="step-number">Step 2 · Package</div>
+    <h2>Build package</h2>
   </div>
 
 
@@ -1367,14 +1092,9 @@ input:focus{
 
     <div class="field">
 
-      <label
-        class="field-title"
-        for="staffAdvisor"
-      >
+      <label class="field-title" for="staffAdvisor">
         Staff Advisor
-        <span class="optional">
-          optional
-        </span>
+        <span class="optional">optional</span>
       </label>
 
       <input
@@ -1388,10 +1108,7 @@ input:focus{
 
     <div class="field">
 
-      <label
-        class="field-title"
-        for="registrationLink"
-      >
+      <label class="field-title" for="registrationLink">
         Registration Link
       </label>
 
@@ -1406,14 +1123,9 @@ input:focus{
 
     <div class="field">
 
-      <label
-        class="field-title"
-        for="rosterLink"
-      >
+      <label class="field-title" for="rosterLink">
         Roster Link
-        <span class="optional">
-          optional
-        </span>
+        <span class="optional">optional</span>
       </label>
 
       <input
@@ -1474,10 +1186,7 @@ input:focus{
   </div>
 
 
-  <div
-    class="field-title"
-    style="margin-top:18px"
-  >
+  <div class="field-title" style="margin-top:18px">
     Include
   </div>
 
@@ -1490,9 +1199,7 @@ input:focus{
       onclick="togglePackageItem('checklist')"
     >
 
-      <div class="package-check">
-        ✓
-      </div>
+      <div class="package-check">✓</div>
 
       <strong>
         Chapter Checklist
@@ -1511,9 +1218,7 @@ input:focus{
       onclick="togglePackageItem('quickStart')"
     >
 
-      <div class="package-check">
-        ✓
-      </div>
+      <div class="package-check">✓</div>
 
       <strong id="quickStartCardName">
         Elementary & Middle Quick Start Guide
@@ -1532,9 +1237,7 @@ input:focus{
       onclick="togglePackageItem('resources')"
     >
 
-      <div class="package-check">
-        ✓
-      </div>
+      <div class="package-check">✓</div>
 
       <strong id="resourceCardName">
         Resource Library
@@ -1553,9 +1256,7 @@ input:focus{
       onclick="togglePackageItem('parentLetter')"
     >
 
-      <div class="package-check">
-        ✓
-      </div>
+      <div class="package-check">✓</div>
 
       <strong>
         Parent Letter
@@ -1577,9 +1278,7 @@ input:focus{
 
     <div class="field-title">
       Parent Letter Contact
-      <span class="optional">
-        optional
-      </span>
+      <span class="optional">optional</span>
     </div>
 
 
@@ -1587,10 +1286,7 @@ input:focus{
 
       <div class="field">
 
-        <label
-          class="field-title"
-          for="staffEmail"
-        >
+        <label class="field-title" for="staffEmail">
           Staff Advisor Email
         </label>
 
@@ -1605,14 +1301,9 @@ input:focus{
 
       <div class="field">
 
-        <label
-          class="field-title"
-          for="staffPhone"
-        >
+        <label class="field-title" for="staffPhone">
           Staff Advisor Phone
-          <span class="optional">
-            optional
-          </span>
+          <span class="optional">optional</span>
         </label>
 
         <input
@@ -1630,10 +1321,7 @@ input:focus{
 </div>
 
 
-<div
-  class="step-actions hidden"
-  id="actions2"
->
+<div class="step-actions hidden" id="actions2">
 
   <button
     class="btn btn-light"
@@ -1657,25 +1345,13 @@ input:focus{
 
 
 
-<!-- =====================================================
-     STEP 3
-===================================================== -->
+<!-- STEP 3 -->
 
-<div
-  class="step hidden"
-  id="step3"
->
+<div class="step hidden" id="step3">
 
   <div class="step-head">
-
-    <div class="step-number">
-      Step 3 · Send
-    </div>
-
-    <h2>
-      Review & send
-    </h2>
-
+    <div class="step-number">Step 3 · Send</div>
+    <h2>Review & send</h2>
   </div>
 
 
@@ -1683,10 +1359,7 @@ input:focus{
 
     <div class="field">
 
-      <label
-        class="field-title"
-        for="recipientName"
-      >
+      <label class="field-title" for="recipientName">
         Recipient First Name
       </label>
 
@@ -1702,10 +1375,7 @@ input:focus{
 
     <div class="field">
 
-      <label
-        class="field-title"
-        for="recipientEmail"
-      >
+      <label class="field-title" for="recipientEmail">
         Recipient Email
       </label>
 
@@ -1722,10 +1392,7 @@ input:focus{
 
   <div class="field">
 
-    <label
-      class="field-title"
-      for="subjectLine"
-    >
+    <label class="field-title" for="subjectLine">
       Subject
     </label>
 
@@ -1738,13 +1405,9 @@ input:focus{
   </div>
 
 
-  <div
-    class="field-title"
-    style="margin-top:15px"
-  >
+  <div class="field-title" style="margin-top:15px">
     Included
   </div>
-
 
   <div
     id="selectedResources"
@@ -1756,9 +1419,7 @@ input:focus{
 
     <div class="preview-top">
 
-      <strong>
-        Email Preview
-      </strong>
+      <strong>Email Preview</strong>
 
       <span>
         Outlook will add your signature
@@ -1776,10 +1437,7 @@ input:focus{
 </div>
 
 
-<div
-  class="step-actions hidden"
-  id="actions3"
->
+<div class="step-actions hidden" id="actions3">
 
   <button
     class="btn btn-light"
@@ -1834,9 +1492,7 @@ input:focus{
 
 
 
-<!-- =====================================================
-     ADVISOR MODAL
-===================================================== -->
+<!-- ADVISOR MODAL -->
 
 <div
   id="advisorModal"
@@ -1854,9 +1510,7 @@ input:focus{
           Advisor Profile
         </div>
 
-        <h2>
-          My Details
-        </h2>
+        <h2>My Details</h2>
 
       </div>
 
@@ -1958,18 +1612,11 @@ input:focus{
 </div>
 
 
-<div
-  id="toast"
-  class="toast hidden"
-></div>
+<div id="toast" class="toast hidden"></div>
 
 
 
 <script>
-
-/* =====================================================
-   CONFIG
-===================================================== */
 
 const PASSWORD =
   "BestBuddiesAdvisor2026";
@@ -1997,85 +1644,41 @@ const QUICK_START_GUIDES = {
 };
 
 
-let currentStep =
-  1;
-
-
-let selectedProgram =
-  "elementary";
-
-
-let selectedStatus =
-  "new";
-
+let currentStep = 1;
+let selectedProgram = "elementary";
+let selectedStatus = "new";
 
 let packageItems = {
-
-  checklist:
-    true,
-
-  quickStart:
-    true,
-
-  resources:
-    true,
-
-  parentLetter:
-    true
-
+  checklist:true,
+  quickStart:true,
+  resources:true,
+  parentLetter:true
 };
 
+let parentLetterManuallyChanged = false;
 
-let parentLetterManuallyChanged =
-  false;
-
-
-let currentChecklist =
-  "";
-
-
-let currentParentLetter =
-  "";
+let currentChecklist = "";
+let currentParentLetter = "";
+let currentSubject = "";
+let currentPlainEmail = "";
+let currentHtmlEmail = "";
+let subjectDirty = false;
 
 
-let currentSubject =
-  "";
-
-
-let currentPlainEmail =
-  "";
-
-
-let currentHtmlEmail =
-  "";
-
-
-let subjectDirty =
-  false;
-
-
-/* =====================================================
-   LOGIN
-===================================================== */
+/* LOGIN */
 
 function login(){
 
   const password =
-    valueOf(
-      "password"
-    );
+    valueOf("password");
 
 
-  if(
-    password ===
-    PASSWORD
-  ){
+  if(password === PASSWORD){
 
     sessionStorage.setItem(
       "bbAdvisorAccess",
       "yes"
     );
-
 
     showApp();
 
@@ -2097,7 +1700,6 @@ function logout(){
     "bbAdvisorAccess"
   );
 
-
   location.reload();
 
 }
@@ -2107,37 +1709,27 @@ function showApp(){
 
   document.getElementById(
     "loginScreen"
-  ).classList.add(
-    "hidden"
-  );
+  ).classList.add("hidden");
 
 
   document.getElementById(
     "app"
-  ).classList.remove(
-    "hidden"
-  );
+  ).classList.remove("hidden");
 
 
   loadAdvisor();
-
-
   updateParentLetterDetails();
 
 }
 
 
-/* =====================================================
-   ADVISOR
-===================================================== */
+/* ADVISOR */
 
 function openAdvisorModal(){
 
   document.getElementById(
     "advisorModal"
-  ).classList.remove(
-    "hidden"
-  );
+  ).classList.remove("hidden");
 
 }
 
@@ -2146,24 +1738,15 @@ function closeAdvisorModal(){
 
   document.getElementById(
     "advisorModal"
-  ).classList.add(
-    "hidden"
-  );
+  ).classList.add("hidden");
 
 }
 
 
-function closeModalBackdrop(
-  event
-){
+function closeModalBackdrop(event){
 
-  if(
-    event.target.id ===
-    "advisorModal"
-  ){
-
+  if(event.target.id === "advisorModal"){
     closeAdvisorModal();
-
   }
 
 }
@@ -2172,27 +1755,10 @@ function closeModalBackdrop(
 function getAdvisor(){
 
   return{
-
-    name:
-      valueOf(
-        "advisorName"
-      ),
-
-    title:
-      valueOf(
-        "advisorTitle"
-      ),
-
-    email:
-      valueOf(
-        "advisorEmail"
-      ),
-
-    phone:
-      valueOf(
-        "advisorPhone"
-      )
-
+    name:valueOf("advisorName"),
+    title:valueOf("advisorTitle"),
+    email:valueOf("advisorEmail"),
+    phone:valueOf("advisorPhone")
   };
 
 }
@@ -2206,17 +1772,12 @@ function saveAdvisor(){
 
   localStorage.setItem(
     "bbAdvisorProfile",
-    JSON.stringify(
-      advisor
-    )
+    JSON.stringify(advisor)
   );
 
 
   updateAdvisorSummary();
-
-
   closeAdvisorModal();
-
 
   showToast(
     "Advisor details saved."
@@ -2227,8 +1788,7 @@ function saveAdvisor(){
 
 function loadAdvisor(){
 
-  let advisor =
-    {};
+  let advisor = {};
 
 
   try{
@@ -2237,44 +1797,27 @@ function loadAdvisor(){
       JSON.parse(
         localStorage.getItem(
           "bbAdvisorProfile"
-        ) ||
-        "{}"
+        ) || "{}"
       );
 
   }catch(error){
 
-    advisor =
-      {};
+    advisor = {};
 
   }
 
 
-  document.getElementById(
-    "advisorName"
-  ).value =
-    advisor.name ||
-    "";
+  document.getElementById("advisorName").value =
+    advisor.name || "";
 
+  document.getElementById("advisorTitle").value =
+    advisor.title || "";
 
-  document.getElementById(
-    "advisorTitle"
-  ).value =
-    advisor.title ||
-    "";
+  document.getElementById("advisorEmail").value =
+    advisor.email || "";
 
-
-  document.getElementById(
-    "advisorEmail"
-  ).value =
-    advisor.email ||
-    "";
-
-
-  document.getElementById(
-    "advisorPhone"
-  ).value =
-    advisor.phone ||
-    "";
+  document.getElementById("advisorPhone").value =
+    advisor.phone || "";
 
 
   updateAdvisorSummary();
@@ -2295,29 +1838,15 @@ function updateAdvisorSummary(){
     "Add your details";
 
 
-  const details =
-    [];
+  const details = [];
 
 
-  if(
-    advisor.title
-  ){
-
-    details.push(
-      advisor.title
-    );
-
+  if(advisor.title){
+    details.push(advisor.title);
   }
 
-
-  if(
-    advisor.email
-  ){
-
-    details.push(
-      advisor.email
-    );
-
+  if(advisor.email){
+    details.push(advisor.email);
   }
 
 
@@ -2325,34 +1854,24 @@ function updateAdvisorSummary(){
     "advisorSummaryContact"
   ).textContent =
     details.length
-
-      ? details.join(
-          " · "
-        )
-
+      ? details.join(" · ")
       : "Use My Details.";
 
 }
 
 
-/* =====================================================
-   PROGRAM
-===================================================== */
+/* PROGRAM */
 
-function selectProgram(
-  value
-){
+function selectProgram(value){
 
-  selectedProgram =
-    value;
+  selectedProgram = value;
 
 
   document.getElementById(
     "programElementaryCard"
   ).classList.toggle(
     "selected",
-    value ===
-    "elementary"
+    value === "elementary"
   );
 
 
@@ -2360,8 +1879,7 @@ function selectProgram(
     "programHighCard"
   ).classList.toggle(
     "selected",
-    value ===
-    "high"
+    value === "high"
   );
 
 
@@ -2369,8 +1887,7 @@ function selectProgram(
     "programCombinedCard"
   ).classList.toggle(
     "selected",
-    value ===
-    "combined"
+    value === "combined"
   );
 
 
@@ -2379,20 +1896,16 @@ function selectProgram(
 }
 
 
-function selectStatus(
-  value
-){
+function selectStatus(value){
 
-  selectedStatus =
-    value;
+  selectedStatus = value;
 
 
   document.getElementById(
     "statusNewCard"
   ).classList.toggle(
     "selected",
-    value ===
-    "new"
+    value === "new"
   );
 
 
@@ -2400,19 +1913,15 @@ function selectStatus(
     "statusActiveCard"
   ).classList.toggle(
     "selected",
-    value ===
-    "active"
+    value === "active"
   );
 
 
-  if(
-    !parentLetterManuallyChanged
-  ){
+  if(!parentLetterManuallyChanged){
 
     setPackageItem(
       "parentLetter",
-      value ===
-      "new"
+      value === "new"
     );
 
   }
@@ -2430,18 +1939,15 @@ function updatePackageLabels(){
       "quickStartCardName"
     );
 
-
   const quickStartDescription =
     document.getElementById(
       "quickStartCardDescription"
     );
 
-
   const resourceName =
     document.getElementById(
       "resourceCardName"
     );
-
 
   const resourceDescription =
     document.getElementById(
@@ -2449,45 +1955,33 @@ function updatePackageLabels(){
     );
 
 
-  if(
-    selectedProgram ===
-    "elementary"
-  ){
+  if(selectedProgram === "elementary"){
 
     quickStartName.textContent =
       "Elementary & Middle Quick Start Guide";
 
-
     quickStartDescription.textContent =
       "Practical chapter launch guidance.";
-
 
     resourceName.textContent =
       "Elementary & Middle Resource Library";
 
-
     resourceDescription.textContent =
       "Activities, recruitment, fundraising and program resources.";
 
   }
 
 
-  if(
-    selectedProgram ===
-    "high"
-  ){
+  if(selectedProgram === "high"){
 
     quickStartName.textContent =
       "High School Quick Start Guide";
 
-
     quickStartDescription.textContent =
       "Practical chapter launch guidance.";
 
-
     resourceName.textContent =
       "High School Resource Library";
-
 
     resourceDescription.textContent =
       "Activities, recruitment, fundraising and program resources.";
@@ -2495,22 +1989,16 @@ function updatePackageLabels(){
   }
 
 
-  if(
-    selectedProgram ===
-    "combined"
-  ){
+  if(selectedProgram === "combined"){
 
     quickStartName.textContent =
       "Both Quick Start Guides";
 
-
     quickStartDescription.textContent =
       "Elementary/Middle and High School.";
 
-
     resourceName.textContent =
       "Both Resource Libraries";
-
 
     resourceDescription.textContent =
       "Elementary/Middle and High School collections.";
@@ -2520,30 +2008,18 @@ function updatePackageLabels(){
 }
 
 
-/* =====================================================
-   PACKAGE
-===================================================== */
+/* PACKAGE */
 
-function togglePackageItem(
-  item
-){
+function togglePackageItem(item){
 
-  if(
-    item ===
-    "parentLetter"
-  ){
-
-    parentLetterManuallyChanged =
-      true;
-
+  if(item === "parentLetter"){
+    parentLetterManuallyChanged = true;
   }
 
 
   setPackageItem(
     item,
-    !packageItems[
-      item
-    ]
+    !packageItems[item]
   );
 
 
@@ -2552,38 +2028,22 @@ function togglePackageItem(
 }
 
 
-function setPackageItem(
-  item,
-  selected
-){
+function setPackageItem(item,selected){
 
-  packageItems[
-    item
-  ] =
+  packageItems[item] =
     selected;
 
 
   const ids = {
-
-    checklist:
-      "includeChecklistCard",
-
-    quickStart:
-      "includeQuickStartCard",
-
-    resources:
-      "includeResourcesCard",
-
-    parentLetter:
-      "includeParentLetterCard"
-
+    checklist:"includeChecklistCard",
+    quickStart:"includeQuickStartCard",
+    resources:"includeResourcesCard",
+    parentLetter:"includeParentLetterCard"
   };
 
 
   document.getElementById(
-    ids[
-      item
-    ]
+    ids[item]
   ).classList.toggle(
     "selected",
     selected
@@ -2600,12 +2060,8 @@ function updateParentLetterDetails(){
     );
 
 
-  if(
-    !section
-  ){
-
+  if(!section){
     return;
-
   }
 
 
@@ -2617,29 +2073,17 @@ function updateParentLetterDetails(){
 }
 
 
-/* =====================================================
-   STEPS
-===================================================== */
+/* STEPS */
 
-function goToStep(
-  step
-){
+function goToStep(step){
 
-  if(
-    step ===
-    2
-  ){
+  if(step === 2){
 
-    if(
-      !valueOf(
-        "schoolName"
-      )
-    ){
+    if(!valueOf("schoolName")){
 
       alert(
         "Please enter the school or chapter name."
       );
-
 
       return;
 
@@ -2648,10 +2092,7 @@ function goToStep(
   }
 
 
-  if(
-    step ===
-    3
-  ){
+  if(step === 3){
 
     const advisor =
       getAdvisor();
@@ -2664,11 +2105,9 @@ function goToStep(
 
       openAdvisorModal();
 
-
       showToast(
         "Add your advisor name and email."
       );
-
 
       return;
 
@@ -2686,7 +2125,6 @@ function goToStep(
         "Choose at least one item to include."
       );
 
-
       return;
 
     }
@@ -2694,15 +2132,12 @@ function goToStep(
 
     if(
       packageItems.parentLetter &&
-      !valueOf(
-        "registrationLink"
-      )
+      !valueOf("registrationLink")
     ){
 
       alert(
         "Add the school-specific registration link to generate the Parent Letter and QR code."
       );
-
 
       return;
 
@@ -2710,87 +2145,64 @@ function goToStep(
 
 
     if(
-      !valueOf(
-        "recipientName"
-      ) &&
-      valueOf(
-        "staffAdvisor"
-      )
+      !valueOf("recipientName") &&
+      valueOf("staffAdvisor")
     ){
 
       document.getElementById(
         "recipientName"
       ).value =
         firstName(
-          valueOf(
-            "staffAdvisor"
-          )
+          valueOf("staffAdvisor")
         );
 
     }
 
 
     if(
-      !valueOf(
-        "recipientEmail"
-      ) &&
-      valueOf(
-        "staffEmail"
-      )
+      !valueOf("recipientEmail") &&
+      valueOf("staffEmail")
     ){
 
       document.getElementById(
         "recipientEmail"
       ).value =
-        valueOf(
-          "staffEmail"
-        );
+        valueOf("staffEmail");
 
     }
 
   }
 
 
-  currentStep =
-    step;
+  currentStep = step;
 
 
-  [1,2,3].forEach(
-    number=>{
+  [1,2,3].forEach(number=>{
 
-      document.getElementById(
-        "step"+number
-      ).classList.toggle(
-        "hidden",
-        number !==
-        step
-      );
+    document.getElementById(
+      "step"+number
+    ).classList.toggle(
+      "hidden",
+      number !== step
+    );
 
 
-      document.getElementById(
-        "actions"+number
-      ).classList.toggle(
-        "hidden",
-        number !==
-        step
-      );
+    document.getElementById(
+      "actions"+number
+    ).classList.toggle(
+      "hidden",
+      number !== step
+    );
 
-    }
-  );
+  });
 
 
   updateProgress();
 
 
-  if(
-    step ===
-    3
-  ){
+  if(step === 3){
 
-    subjectDirty =
-      false;
-
-
+    subjectDirty = false;
     buildPackage();
 
   }
@@ -2798,56 +2210,40 @@ function goToStep(
 }
 
 
-/* =====================================================
-   PROGRESS
-===================================================== */
+/* PROGRESS */
 
 function updateProgress(){
 
-  [1,2,3].forEach(
-    number=>{
+  [1,2,3].forEach(number=>{
 
-      const item =
-        document.getElementById(
-          "progress"+number
-        );
-
-
-      item.classList.remove(
-        "active",
-        "done"
+    const item =
+      document.getElementById(
+        "progress"+number
       );
 
 
-      if(
-        number <
-        currentStep
-      ){
+    item.classList.remove(
+      "active",
+      "done"
+    );
 
-        item.classList.add(
-          "done"
-        );
 
-      }else if(
-        number ===
-        currentStep
-      ){
+    if(number < currentStep){
 
-        item.classList.add(
-          "active"
-        );
+      item.classList.add("done");
 
-      }
+    }else if(number === currentStep){
+
+      item.classList.add("active");
 
     }
-  );
+
+  });
 
 }
 
 
-/* =====================================================
-   URL BUILDERS
-===================================================== */
+/* URL BUILDERS */
 
 function buildChecklistUrl(){
 
@@ -2858,48 +2254,18 @@ function buildChecklistUrl(){
   const params =
     new URLSearchParams({
 
-      school:
-        valueOf(
-          "schoolName"
-        ),
+      school:valueOf("schoolName"),
+      program:selectedProgram,
+      status:selectedStatus,
+      year:valueOf("programYear"),
+      staff:valueOf("staffAdvisor"),
+      registration:valueOf("registrationLink"),
+      roster:valueOf("rosterLink"),
 
-      program:
-        selectedProgram,
-
-      status:
-        selectedStatus,
-
-      year:
-        valueOf(
-          "programYear"
-        ),
-
-      staff:
-        valueOf(
-          "staffAdvisor"
-        ),
-
-      registration:
-        valueOf(
-          "registrationLink"
-        ),
-
-      roster:
-        valueOf(
-          "rosterLink"
-        ),
-
-      advisor:
-        advisor.name,
-
-      advisorTitle:
-        advisor.title,
-
-      advisorEmail:
-        advisor.email,
-
-      advisorPhone:
-        advisor.phone,
+      advisor:advisor.name,
+      advisorTitle:advisor.title,
+      advisorEmail:advisor.email,
+      advisorPhone:advisor.phone,
 
       showAdvisor:
         document.getElementById(
@@ -2934,42 +2300,16 @@ function buildParentLetterUrl(){
   const params =
     new URLSearchParams({
 
-      school:
-        valueOf(
-          "schoolName"
-        ),
+      school:valueOf("schoolName"),
+      registration:valueOf("registrationLink"),
+      staff:valueOf("staffAdvisor"),
+      staffEmail:valueOf("staffEmail"),
+      staffPhone:valueOf("staffPhone"),
 
-      registration:
-        valueOf(
-          "registrationLink"
-        ),
-
-      staff:
-        valueOf(
-          "staffAdvisor"
-        ),
-
-      staffEmail:
-        valueOf(
-          "staffEmail"
-        ),
-
-      staffPhone:
-        valueOf(
-          "staffPhone"
-        ),
-
-      advisor:
-        advisor.name,
-
-      advisorTitle:
-        advisor.title,
-
-      advisorEmail:
-        advisor.email,
-
-      advisorPhone:
-        advisor.phone
+      advisor:advisor.name,
+      advisorTitle:advisor.title,
+      advisorEmail:advisor.email,
+      advisorPhone:advisor.phone
 
     });
 
@@ -2988,28 +2328,18 @@ function buildParentLetterUrl(){
 }
 
 
-/* =====================================================
-   BUILD PACKAGE / EMAIL
-===================================================== */
+/* BUILD EMAIL */
 
 function buildPackage(){
 
   const school =
-    valueOf(
-      "schoolName"
-    );
-
+    valueOf("schoolName");
 
   const year =
-    valueOf(
-      "programYear"
-    );
-
+    valueOf("programYear");
 
   const recipientName =
-    valueOf(
-      "recipientName"
-    );
+    valueOf("recipientName");
 
 
   currentChecklist =
@@ -3021,11 +2351,8 @@ function buildPackage(){
 
 
   const defaultSubject =
-    selectedStatus ===
-    "new"
-
+    selectedStatus === "new"
       ? `Getting Started with Best Buddies | ${school}`
-
       : `Best Buddies ${year} | ${school}`;
 
 
@@ -3053,32 +2380,16 @@ function buildPackage(){
 
   const greeting =
     recipientName
-
       ? `Hi ${escapeHtml(recipientName)},`
-
       : "Hi there,";
 
 
-  /*
-    STATUS-SPECIFIC OPENING
-  */
-
-  let openingPreview =
-    "";
+  let openingPreview = "";
+  let openingHtml = "";
+  let openingPlain = "";
 
 
-  let openingHtml =
-    "";
-
-
-  let openingPlain =
-    "";
-
-
-  if(
-    selectedStatus ===
-    "new"
-  ){
+  if(selectedStatus === "new"){
 
     openingPreview = `
       <p>
@@ -3093,17 +2404,7 @@ function buildPackage(){
     `;
 
 
-    openingHtml = `
-      <p>
-        Thanks so much for sending along your Program Application Form!
-        I’m excited to have ${escapeHtml(school)} getting started with Best Buddies.
-      </p>
-
-      <p>
-        I’ve pulled together a few things below to help make the next steps
-        a little easier.
-      </p>
-    `;
+    openingHtml = openingPreview;
 
 
     openingPlain =
@@ -3122,13 +2423,7 @@ I’ve pulled together a few things below to help make the next steps a little e
     `;
 
 
-    openingHtml = `
-      <p>
-        Thanks so much for continuing Best Buddies at ${escapeHtml(school)}!
-        I’ve pulled together a few things below to help make the year
-        a little easier to get underway.
-      </p>
-    `;
+    openingHtml = openingPreview;
 
 
     openingPlain =
@@ -3139,32 +2434,21 @@ I’ve pulled together a few things below to help make the next steps a little e
 
   let preview = `
     <p>${greeting}</p>
-
     ${openingPreview}
   `;
 
 
-  let htmlResources =
-    "";
+  let htmlResources = "";
+  let plainResources = "";
 
-
-  let plainResources =
-    "";
-
-
-  const chips =
-    [];
+  const chips = [];
 
 
   /* CHECKLIST */
 
-  if(
-    packageItems.checklist
-  ){
+  if(packageItems.checklist){
 
-    chips.push(
-      "Chapter Checklist"
-    );
+    chips.push("Chapter Checklist");
 
 
     preview += `
@@ -3196,29 +2480,18 @@ I’ve pulled together a few things below to help make the next steps a little e
 
     htmlResources += `
       <p>
-
-        <strong>
-          Your Chapter Checklist
-        </strong>
-
-        <br>
-
+        <strong>Your Chapter Checklist</strong><br>
         A personalized checklist for ${escapeHtml(school)}
-        with your key chapter steps and links.
-
-        <br>
+        with your key chapter steps and links.<br>
 
         <a href="${escapeAttribute(currentChecklist)}">
           Open your Chapter Checklist
-        </a>
-
-        <br>
+        </a><br>
 
         <span style="color:#666;font-size:13px">
           You can use it online, download an editable Word copy,
           or print/save a PDF.
         </span>
-
       </p>
     `;
 
@@ -3234,19 +2507,11 @@ Use it online, download an editable Word copy, or print/save a PDF.
 
   /* QUICK START */
 
-  if(
-    packageItems.quickStart
-  ){
+  if(packageItems.quickStart){
 
-    if(
-      selectedProgram ===
-      "elementary"
-    ){
+    if(selectedProgram === "elementary"){
 
-      chips.push(
-        "Quick Start Guide"
-      );
-
+      chips.push("Quick Start Guide");
 
       preview +=
         guidePreview(
@@ -3254,13 +2519,11 @@ Use it online, download an editable Word copy, or print/save a PDF.
           QUICK_START_GUIDES.elementary
         );
 
-
       htmlResources +=
         guideHtml(
           "Elementary & Middle School Quick Start Guide",
           QUICK_START_GUIDES.elementary
         );
-
 
       plainResources +=
 `\nElementary & Middle School Quick Start Guide
@@ -3270,15 +2533,9 @@ ${QUICK_START_GUIDES.elementary}
     }
 
 
-    if(
-      selectedProgram ===
-      "high"
-    ){
+    if(selectedProgram === "high"){
 
-      chips.push(
-        "Quick Start Guide"
-      );
-
+      chips.push("Quick Start Guide");
 
       preview +=
         guidePreview(
@@ -3286,13 +2543,11 @@ ${QUICK_START_GUIDES.elementary}
           QUICK_START_GUIDES.high
         );
 
-
       htmlResources +=
         guideHtml(
           "High School Quick Start Guide",
           QUICK_START_GUIDES.high
         );
-
 
       plainResources +=
 `\nHigh School Quick Start Guide
@@ -3302,15 +2557,9 @@ ${QUICK_START_GUIDES.high}
     }
 
 
-    if(
-      selectedProgram ===
-      "combined"
-    ){
+    if(selectedProgram === "combined"){
 
-      chips.push(
-        "2 Quick Start Guides"
-      );
-
+      chips.push("2 Quick Start Guides");
 
       preview +=
         guidePreview(
@@ -3318,13 +2567,11 @@ ${QUICK_START_GUIDES.high}
           QUICK_START_GUIDES.elementary
         );
 
-
       preview +=
         guidePreview(
           "High School Quick Start Guide",
           QUICK_START_GUIDES.high
         );
-
 
       htmlResources +=
         guideHtml(
@@ -3332,13 +2579,11 @@ ${QUICK_START_GUIDES.high}
           QUICK_START_GUIDES.elementary
         );
 
-
       htmlResources +=
         guideHtml(
           "High School Quick Start Guide",
           QUICK_START_GUIDES.high
         );
-
 
       plainResources +=
 `\nElementary & Middle School Quick Start Guide
@@ -3355,19 +2600,11 @@ ${QUICK_START_GUIDES.high}
 
   /* RESOURCES */
 
-  if(
-    packageItems.resources
-  ){
+  if(packageItems.resources){
 
-    if(
-      selectedProgram ===
-      "elementary"
-    ){
+    if(selectedProgram === "elementary"){
 
-      chips.push(
-        "Resource Library"
-      );
-
+      chips.push("Resource Library");
 
       preview +=
         resourcePreview(
@@ -3375,13 +2612,11 @@ ${QUICK_START_GUIDES.high}
           RESOURCE_FOLDERS.elementary
         );
 
-
       htmlResources +=
         resourceHtml(
           "Elementary & Middle Resource Library",
           RESOURCE_FOLDERS.elementary
         );
-
 
       plainResources +=
 `\nElementary & Middle Resource Library
@@ -3391,15 +2626,9 @@ ${RESOURCE_FOLDERS.elementary}
     }
 
 
-    if(
-      selectedProgram ===
-      "high"
-    ){
+    if(selectedProgram === "high"){
 
-      chips.push(
-        "Resource Library"
-      );
-
+      chips.push("Resource Library");
 
       preview +=
         resourcePreview(
@@ -3407,13 +2636,11 @@ ${RESOURCE_FOLDERS.elementary}
           RESOURCE_FOLDERS.high
         );
 
-
       htmlResources +=
         resourceHtml(
           "High School Resource Library",
           RESOURCE_FOLDERS.high
         );
-
 
       plainResources +=
 `\nHigh School Resource Library
@@ -3423,15 +2650,9 @@ ${RESOURCE_FOLDERS.high}
     }
 
 
-    if(
-      selectedProgram ===
-      "combined"
-    ){
+    if(selectedProgram === "combined"){
 
-      chips.push(
-        "2 Resource Libraries"
-      );
-
+      chips.push("2 Resource Libraries");
 
       preview +=
         resourcePreview(
@@ -3439,13 +2660,11 @@ ${RESOURCE_FOLDERS.high}
           RESOURCE_FOLDERS.elementary
         );
 
-
       preview +=
         resourcePreview(
           "High School Resource Library",
           RESOURCE_FOLDERS.high
         );
-
 
       htmlResources +=
         resourceHtml(
@@ -3453,13 +2672,11 @@ ${RESOURCE_FOLDERS.high}
           RESOURCE_FOLDERS.elementary
         );
 
-
       htmlResources +=
         resourceHtml(
           "High School Resource Library",
           RESOURCE_FOLDERS.high
         );
-
 
       plainResources +=
 `\nElementary & Middle Resource Library
@@ -3476,13 +2693,9 @@ ${RESOURCE_FOLDERS.high}
 
   /* PARENT LETTER */
 
-  if(
-    packageItems.parentLetter
-  ){
+  if(packageItems.parentLetter){
 
-    chips.push(
-      "Parent Letter"
-    );
+    chips.push("Parent Letter");
 
 
     preview += `
@@ -3514,29 +2727,18 @@ ${RESOURCE_FOLDERS.high}
 
     htmlResources += `
       <p>
-
-        <strong>
-          Parent / Guardian Letter
-        </strong>
-
-        <br>
-
+        <strong>Parent / Guardian Letter</strong><br>
         Already personalized for ${escapeHtml(school)}
-        with the school-specific registration link and QR code.
-
-        <br>
+        with the school-specific registration link and QR code.<br>
 
         <a href="${escapeAttribute(currentParentLetter)}">
           Open the Parent Letter
-        </a>
-
-        <br>
+        </a><br>
 
         <span style="color:#666;font-size:13px">
           You can make small edits right on the page,
           download an editable Word copy, or print/save a PDF.
         </span>
-
       </p>
     `;
 
@@ -3553,7 +2755,6 @@ Make small edits right on the page, download an editable Word copy, or print/sav
   document.getElementById(
     "selectedResources"
   ).innerHTML =
-
     chips
       .map(
         item =>
@@ -3561,10 +2762,6 @@ Make small edits right on the page, download an editable Word copy, or print/sav
       )
       .join("");
 
-
-  /*
-    WARM ONBOARDING FOLLOW-UP
-  */
 
   preview += `
     <p>
@@ -3660,21 +2857,14 @@ Looking forward to seeing how it comes together!`;
 }
 
 
-/* =====================================================
-   EMAIL HELPERS
-===================================================== */
+/* EMAIL HELPERS */
 
-function guidePreview(
-  title,
-  url
-){
+function guidePreview(title,url){
 
   return `
     <div class="preview-link">
 
-      <strong>
-        ${escapeHtml(title)}
-      </strong>
+      <strong>${escapeHtml(title)}</strong>
 
       <div>
         Practical guidance for getting started.
@@ -3693,45 +2883,28 @@ function guidePreview(
 }
 
 
-function guideHtml(
-  title,
-  url
-){
+function guideHtml(title,url){
 
   return `
     <p>
-
-      <strong>
-        ${escapeHtml(title)}
-      </strong>
-
-      <br>
-
-      Practical guidance for getting started.
-
-      <br>
+      <strong>${escapeHtml(title)}</strong><br>
+      Practical guidance for getting started.<br>
 
       <a href="${escapeAttribute(url)}">
         Open the Quick Start Guide
       </a>
-
     </p>
   `;
 
 }
 
 
-function resourcePreview(
-  title,
-  url
-){
+function resourcePreview(title,url){
 
   return `
     <div class="preview-link">
 
-      <strong>
-        ${escapeHtml(title)}
-      </strong>
+      <strong>${escapeHtml(title)}</strong>
 
       <div>
         Activities, recruitment, fundraising and program resources.
@@ -3750,37 +2923,23 @@ function resourcePreview(
 }
 
 
-function resourceHtml(
-  title,
-  url
-){
+function resourceHtml(title,url){
 
   return `
     <p>
-
-      <strong>
-        ${escapeHtml(title)}
-      </strong>
-
-      <br>
-
-      Activities, recruitment, fundraising and program resources.
-
-      <br>
+      <strong>${escapeHtml(title)}</strong><br>
+      Activities, recruitment, fundraising and program resources.<br>
 
       <a href="${escapeAttribute(url)}">
         Explore the Resource Library
       </a>
-
     </p>
   `;
 
 }
 
 
-/* =====================================================
-   COPY
-===================================================== */
+/* COPY */
 
 async function copyPolishedEmail(){
 
@@ -3832,9 +2991,7 @@ async function copyPolishedEmail(){
 }
 
 
-/* =====================================================
-   OUTLOOK
-===================================================== */
+/* OUTLOOK */
 
 async function copyAndOpenOutlook(){
 
@@ -3842,9 +2999,7 @@ async function copyAndOpenOutlook(){
 
 
   const recipient =
-    valueOf(
-      "recipientEmail"
-    );
+    valueOf("recipientEmail");
 
 
   await copyPolishedEmail();
@@ -3855,15 +3010,11 @@ async function copyAndOpenOutlook(){
     +
     "?to="
     +
-    encodeURIComponent(
-      recipient
-    )
+    encodeURIComponent(recipient)
     +
     "&subject="
     +
-    encodeURIComponent(
-      currentSubject
-    );
+    encodeURIComponent(currentSubject);
 
 
   window.open(
@@ -3879,14 +3030,11 @@ async function copyAndOpenOutlook(){
 }
 
 
-/* =====================================================
-   PREVIEWS
-===================================================== */
+/* PREVIEWS */
 
 function previewChecklist(){
 
   buildPackage();
-
 
   window.open(
     currentChecklist,
@@ -3898,20 +3046,11 @@ function previewChecklist(){
 
 function previewParentLetter(){
 
-  const registration =
-    valueOf(
-      "registrationLink"
-    );
-
-
-  if(
-    !registration
-  ){
+  if(!valueOf("registrationLink")){
 
     alert(
       "Add the registration link first so the Parent Letter can generate its QR code."
     );
-
 
     return;
 
@@ -3929,18 +3068,12 @@ function previewParentLetter(){
 }
 
 
-/* =====================================================
-   HELPERS
-===================================================== */
+/* HELPERS */
 
-function valueOf(
-  id
-){
+function valueOf(id){
 
   return(
-    document.getElementById(
-      id
-    )
+    document.getElementById(id)
       ?.value
       ?.trim()
     ||
@@ -3950,9 +3083,7 @@ function valueOf(
 }
 
 
-function firstName(
-  name
-){
+function firstName(name){
 
   return String(
     name || ""
@@ -3961,9 +3092,7 @@ function firstName(
 }
 
 
-function showToast(
-  message
-){
+function showToast(message){
 
   const toast =
     document.getElementById(
@@ -3988,11 +3117,9 @@ function showToast(
   window.bbToastTimer =
     setTimeout(
       ()=>{
-
         toast.classList.add(
           "hidden"
         );
-
       },
       3000
     );
@@ -4000,13 +3127,9 @@ function showToast(
 }
 
 
-function escapeHtml(
-  value
-){
+function escapeHtml(value){
 
-  return String(
-    value || ""
-  )
+  return String(value || "")
     .replaceAll("&","&amp;")
     .replaceAll("<","&lt;")
     .replaceAll(">","&gt;")
@@ -4016,20 +3139,14 @@ function escapeHtml(
 }
 
 
-function escapeAttribute(
-  value
-){
+function escapeAttribute(value){
 
-  return escapeHtml(
-    value
-  );
+  return escapeHtml(value);
 
 }
 
 
-/* =====================================================
-   INIT
-===================================================== */
+/* INIT */
 
 if(
   sessionStorage.getItem(
@@ -4043,9 +3160,7 @@ if(
 
 
 updatePackageLabels();
-
 updateProgress();
-
 updateParentLetterDetails();
 
 </script>
