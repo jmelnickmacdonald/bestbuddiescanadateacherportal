@@ -4,22 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Best Buddies | Parent / Guardian Letter</title>
+<title>Best Buddies Canada | Chapter Checklist</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="https://unpkg.com/docx@9/dist/index.iife.js"></script>
 
 <style>
 :root{
   --purple:#6f2c91;
-  --purple-dark:#55206d;
-  --ink:#24212a;
-  --muted:#665f6b;
-  --line:#ded9e1;
+  --purple-soft:#f5eef8;
+  --teal:#18b8b1;
+  --navy:#173456;
+  --ink:#292633;
+  --muted:#69636f;
+  --line:#dcd7df;
   --bg:#efedf1;
 }
 
@@ -33,48 +34,54 @@ body{
   background:var(--bg);
   color:var(--ink);
 
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:"Poppins",Arial,sans-serif;
 }
 
-button{
+button,
+input{
   font:inherit;
-  cursor:pointer;
 }
 
 
 /* TOOLBAR */
 
 .toolbar{
-  max-width:850px;
+  max-width:1100px;
 
-  margin:18px auto 0;
-  padding:0 16px;
+  margin:17px auto 0;
+  padding:0 18px;
 
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  gap:12px;
   flex-wrap:wrap;
+
+  gap:9px;
 }
 
-.toolbar-actions{
+.toolbar-group{
   display:flex;
-  gap:8px;
   flex-wrap:wrap;
+  gap:8px;
 }
 
 .toolbar-note{
+  width:100%;
+
+  margin-top:2px;
+
   color:var(--muted);
-  font-size:.73rem;
+
+  font-size:.7rem;
 }
 
 .btn{
-  padding:10px 15px;
-
   border:0;
   border-radius:9px;
 
+  padding:10px 14px;
+
   font-weight:700;
+  cursor:pointer;
 }
 
 .btn-purple{
@@ -82,227 +89,466 @@ button{
   color:white;
 }
 
-.btn-purple:hover{
-  background:var(--purple-dark);
+.btn-teal{
+  background:var(--teal);
+  color:white;
 }
 
 .btn-light{
-  border:1px solid #d7d1da;
+  border:1px solid #d9d5dc;
+
   background:white;
   color:var(--ink);
 }
 
 
-/* LETTER */
+/* DOCUMENT */
 
-.letter{
-  width:min(8.5in,calc(100% - 24px));
-  min-height:11in;
+.document{
+  max-width:1100px;
+  min-height:700px;
 
-  margin:14px auto 40px;
-  padding:.58in .68in;
+  margin:14px auto 45px;
 
   background:white;
 
   box-shadow:
-    0 10px 34px
-    rgba(30,20,38,.10);
+    0 10px 30px
+    rgba(28,20,36,.11);
 }
 
-.brand-row{
+.topline{
+  padding:15px 26px 9px;
+
+  border-bottom:1px solid #eee;
+
+  color:#514b55;
+
+  font-size:.7rem;
+  font-weight:800;
+
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+
+/* HEADER */
+
+.chapter-header{
+  padding:23px 29px 21px;
+
+  border-bottom:1px solid var(--line);
+}
+
+.chapter-header-top{
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap:20px;
+  gap:17px;
 
-  margin-bottom:25px;
-  padding-bottom:14px;
-
-  border-bottom:3px solid var(--purple);
+  margin-bottom:21px;
 }
 
-.logo{
-  width:112px;
-  max-height:58px;
-  object-fit:contain;
+.checklist-logo{
+  width:65px;
+  height:auto;
+  flex:0 0 auto;
 }
 
-.brand-label{
+.chapter-header-title{
+  min-width:0;
+}
+
+.chapter-header-title h1{
+  margin:0 0 5px;
+
   color:var(--purple);
 
-  font-family:"Poppins",Arial,sans-serif;
-  font-size:11px;
-  font-weight:700;
+  font-size:1.5rem;
+  line-height:1.15;
+  letter-spacing:-.02em;
+}
+
+.checklist-subtitle{
+  margin:0 0 6px;
+
+  color:var(--muted);
+
+  font-size:.77rem;
+  line-height:1.4;
+}
+
+.chapter-meta{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:7px;
+
+  color:var(--muted);
+
+  font-size:.78rem;
+  font-weight:600;
+}
+
+.meta-dot{
+  color:var(--teal);
+  font-weight:800;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:1.2fr .9fr 1.1fr;
+  gap:17px 24px;
+}
+
+.info-item{
+  padding-bottom:7px;
+
+  border-bottom:1px solid var(--line);
+}
+
+.info-label{
+  display:block;
+
+  margin-bottom:3px;
+
+  color:var(--muted);
+
+  font-size:.66rem;
+  font-weight:800;
 
   letter-spacing:.05em;
   text-transform:uppercase;
 }
 
-p,
-li{
-  font-size:13.8px;
-  line-height:1.47;
-}
-
-p{
-  margin:0 0 13px;
-}
-
-h2{
-  margin:19px 0 5px;
-
-  font-family:"Poppins",Arial,sans-serif;
-
-  font-size:14.5px;
-  line-height:1.25;
+.info-value{
+  font-size:.84rem;
   font-weight:700;
 }
 
-.section-intro{
-  margin-bottom:8px;
+
+/* NOTICE */
+
+.notice{
+  margin:0;
+
+  padding:11px 26px;
+
+  border-bottom:1px solid #eadff0;
+
+  background:#f8f4fa;
+
+  font-size:.8rem;
+  line-height:1.45;
+}
+
+
+/* TABLE */
+
+table{
+  width:100%;
+
+  border-collapse:collapse;
+  table-layout:fixed;
+}
+
+th{
+  padding:10px 9px;
+
+  border-bottom:1px solid var(--line);
+
+  background:var(--navy);
+  color:white;
+
+  text-align:left;
+
+  font-size:.68rem;
+  font-weight:700;
+
+  letter-spacing:.035em;
+}
+
+td{
+  padding:12px 9px;
+
+  border-bottom:1px solid var(--line);
+
+  vertical-align:top;
+
+  font-size:.81rem;
+  line-height:1.4;
+}
+
+tbody tr:nth-child(even){
+  background:#fbfafc;
+}
+
+th:nth-child(1),
+td:nth-child(1){
+  width:62px;
+  text-align:center;
+}
+
+th:nth-child(2),
+td:nth-child(2){
+  width:45%;
+}
+
+th:nth-child(3),
+td:nth-child(3){
+  width:18%;
+}
+
+th:nth-child(4),
+td:nth-child(4){
+  width:auto;
+}
+
+.check{
+  width:21px;
+  height:21px;
+
+  cursor:pointer;
+
+  accent-color:var(--purple);
+}
+
+.task-title{
+  margin-bottom:3px;
+
+  font-weight:700;
+}
+
+.task-note{
+  color:var(--muted);
+
+  font-size:.74rem;
+}
+
+.resource-link{
+  display:inline-block;
+
+  margin-bottom:5px;
+
+  color:var(--purple);
+
+  font-size:.77rem;
+  font-weight:700;
+
+  text-decoration:underline;
+}
+
+
+/* DATE FIELDS */
+
+.inline-fields{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.inline-field-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+
+  color:var(--muted);
+
+  font-size:.7rem;
   font-weight:600;
 }
 
-ul{
-  margin:7px 0 12px 23px;
-  padding:0;
+.inline-field-row span{
+  line-height:1.25;
 }
 
-li{
-  margin:2px 0;
+.inline-field{
+  width:132px;
+  height:31px;
+
+  flex:0 0 132px;
+
+  padding:3px 6px;
+
+  border:1px solid #d4ced7;
+  border-radius:6px;
+
+  background:white;
+  color:var(--ink);
+
+  font-size:.68rem;
+}
+
+.inline-field:focus{
+  outline:none;
+
+  border-color:var(--purple);
+
+  box-shadow:
+    0 0 0 2px
+    rgba(111,44,145,.08);
 }
 
 
-/* REGISTRATION */
+/* BOTTOM */
 
-.registration-box{
-  margin:10px 0 16px;
-  padding:15px 17px;
+.bottom{
+  padding:21px 24px;
 
-  border:1px solid var(--line);
-  border-radius:10px;
+  display:grid;
+  grid-template-columns:1fr 330px;
+  gap:22px;
 
   background:#faf9fb;
 }
 
-.registration-grid{
-  display:grid;
-  grid-template-columns:1fr 145px;
-  gap:20px;
-  align-items:center;
-}
+.progress-card{
+  padding:17px;
 
-.registration-link{
-  display:inline-block;
-  margin:5px 0 7px;
-
-  color:var(--purple);
-  font-weight:700;
-
-  overflow-wrap:anywhere;
-  word-break:break-word;
-}
-
-.registration-url{
-  color:var(--muted);
-
-  font-size:9.5px;
-  line-height:1.3;
-
-  overflow-wrap:anywhere;
-  word-break:break-all;
-}
-
-.qr-area{
-  text-align:center;
-}
-
-#qrCode{
-  display:inline-block;
-  padding:6px;
+  border:1px solid #e2dde5;
+  border-radius:12px;
 
   background:white;
 }
 
-#qrCode img,
-#qrCode canvas{
-  display:block;
+.progress-card strong{
+  font-size:.9rem;
 }
 
-.qr-caption{
-  margin-top:4px;
+.progress-bar{
+  height:9px;
+
+  margin:11px 0 7px;
+
+  overflow:hidden;
+
+  border-radius:20px;
+
+  background:#ece8ef;
+}
+
+.progress-fill{
+  width:0;
+  height:100%;
+
+  background:var(--teal);
+
+  transition:.2s ease;
+}
+
+.progress-text{
+  font-size:.81rem;
+}
+
+.save-note{
+  margin:9px 0 0;
 
   color:var(--muted);
-  font-size:9.5px;
+
+  font-size:.73rem;
 }
 
+.advisor-card{
+  padding:19px;
 
-/* CONTACTS */
+  border-radius:12px;
 
-.help-note{
-  margin:16px 0 17px;
-  font-weight:700;
+  background:var(--purple);
+  color:white;
 }
 
-.contacts{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:24px;
+.advisor-card h3{
+  margin:0 0 6px;
 
-  margin-top:15px;
+  font-size:1rem;
 }
 
-.contact-card{
-  padding-top:10px;
-  border-top:1px solid var(--line);
+.advisor-card p{
+  margin:5px 0;
+
+  font-size:.8rem;
+  line-height:1.45;
 }
 
-.contact-name{
-  margin-bottom:2px;
-
-  font-family:"Poppins",Arial,sans-serif;
-  font-size:13px;
-  font-weight:700;
+.advisor-card a{
+  color:white;
 }
 
-.contact-line{
-  margin:2px 0;
-
-  font-size:12.5px;
-  line-height:1.4;
+.advisor-actions{
+  margin-top:13px;
 }
 
-.contact-line a{
+.advisor-actions .btn{
+  background:white;
   color:var(--purple);
 }
 
-.closing{
-  margin-top:23px;
-}
+.document-footer{
+  padding:11px 24px 17px;
 
-.footer{
-  margin-top:25px;
-  padding-top:9px;
-
-  border-top:1px solid var(--line);
+  background:#faf9fb;
 
   color:var(--muted);
-  font-size:9px;
+
+  text-align:center;
+
+  font-size:.7rem;
 }
 
 
 /* MOBILE */
 
-@media(max-width:650px){
+@media(max-width:780px){
 
-  .letter{
-    min-height:0;
-    padding:28px 22px;
+  .chapter-header{
+    padding:19px;
   }
 
-  .registration-grid,
-  .contacts{
+  .chapter-header-top{
+    align-items:flex-start;
+  }
+
+  .checklist-logo{
+    width:54px;
+  }
+
+  .info-grid{
     grid-template-columns:1fr;
+    gap:11px;
+  }
+
+  .bottom{
+    grid-template-columns:1fr;
+  }
+
+  .document{
+    margin:10px;
+  }
+
+  table{
+    table-layout:auto;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3){
+    display:none;
+  }
+
+  th:nth-child(1),
+  td:nth-child(1){
+    width:44px;
+  }
+
+  .inline-field-row{
+    align-items:flex-start;
+    flex-direction:column;
+
+    gap:4px;
+  }
+
+  .inline-field{
+    width:100%;
+    flex:auto;
   }
 
 }
@@ -314,7 +560,7 @@ li{
 
   @page{
     size:letter;
-    margin:0;
+    margin:.3in;
   }
 
   body{
@@ -325,14 +571,99 @@ li{
     display:none!important;
   }
 
-  .letter{
-    width:8.5in;
-    min-height:11in;
+  .document{
+    width:100%;
+    max-width:none;
+    min-height:0;
 
     margin:0;
-    padding:.48in .62in;
 
     box-shadow:none;
+  }
+
+  th,
+  .notice,
+  .bottom{
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  .topline{
+    padding-top:4px;
+  }
+
+  .chapter-header{
+    padding-top:12px;
+    padding-bottom:12px;
+  }
+
+  .chapter-header-top{
+    margin-bottom:12px;
+  }
+
+  .checklist-logo{
+    width:50px;
+  }
+
+  td{
+    padding:7px;
+
+    font-size:.67rem;
+    line-height:1.3;
+  }
+
+  th{
+    padding:6px 7px;
+
+    font-size:.59rem;
+  }
+
+  .task-note{
+    font-size:.6rem;
+  }
+
+  .resource-link{
+    color:black;
+
+    font-size:.61rem;
+
+    text-decoration:none;
+  }
+
+  .inline-fields{
+    gap:4px;
+  }
+
+  .inline-field-row{
+    font-size:.58rem;
+  }
+
+  .inline-field{
+    width:108px;
+    height:24px;
+
+    flex:0 0 108px;
+
+    padding:1px 4px;
+
+    border:1px solid #aaa;
+    border-radius:3px;
+
+    font-size:.56rem;
+
+    box-shadow:none;
+  }
+
+  .bottom{
+    padding:12px 18px;
+  }
+
+  .advisor-actions{
+    display:none;
+  }
+
+  .document-footer{
+    padding:5px 18px;
   }
 
 }
@@ -344,7 +675,7 @@ li{
 
 <div class="toolbar">
 
-  <div class="toolbar-actions">
+  <div class="toolbar-group">
 
     <button
       class="btn btn-purple"
@@ -360,143 +691,72 @@ li{
       Print / Save PDF
     </button>
 
+    <button
+      class="btn btn-light"
+      onclick="copyPageLink()"
+    >
+      Copy Checklist Link
+    </button>
+
   </div>
 
+
+  <div class="toolbar-group">
+
+    <button
+      class="btn btn-teal"
+      onclick="openHub()"
+    >
+      Open Chapter Hub
+    </button>
+
+  </div>
+
+
   <div class="toolbar-note">
-    Word is fully editable if you'd like to make changes for your school.
+    Use the checklist online to save progress on this device, or download an editable Word copy if you prefer to work offline.
   </div>
 
 </div>
 
 
-<main class="letter">
+<main class="document">
 
-  <div class="brand-row">
+<div class="topline">
+  Best Buddies Canada | Chapter Checklist
+</div>
+
+
+<section class="chapter-header">
+
+  <div class="chapter-header-top">
 
     <img
       src="assets/bb-logo-coloured.png"
       alt="Best Buddies Canada"
-      class="logo"
+      class="checklist-logo"
       onerror="this.style.display='none'"
     >
 
-    <div class="brand-label">
-      Parent & Guardian Information
-    </div>
 
-  </div>
+    <div class="chapter-header-title">
 
+      <h1 id="checklistTitle"></h1>
 
-  <p>
-    Dear Parents and Guardians,
-  </p>
+      <div
+        class="checklist-subtitle"
+        id="checklistSubtitle"
+      ></div>
 
+      <div class="chapter-meta">
 
-  <p>
-    Your child has been invited to participate in Best Buddies at
-    <strong id="schoolIntro"></strong>.
-  </p>
+        <span id="programLabel"></span>
 
+        <span class="meta-dot">
+          •
+        </span>
 
-  <p>
-    Best Buddies is a global nonprofit organization that creates
-    opportunities for friendship, leadership, inclusion, and belonging
-    for people with intellectual and developmental disabilities and their
-    peers. Through our school programs, students have opportunities to
-    build genuine friendships, take part in shared activities, develop
-    leadership skills, and help strengthen inclusion within their school
-    community.
-  </p>
-
-
-  <h2>
-    What is Best Buddies?
-  </h2>
-
-  <p class="section-intro">
-    Best Buddies brings students together to build friendships and create
-    a more inclusive school community.
-  </p>
-
-  <p>
-    Every chapter looks a little different. Depending on the age of
-    students and the way the school chooses to run its program, activities
-    may include:
-  </p>
-
-  <ul>
-    <li>Shared lunches and group activities</li>
-    <li>School events and social gatherings</li>
-    <li>Opportunities to build meaningful one-to-one friendships</li>
-    <li>Student leadership opportunities</li>
-    <li>School-wide inclusion and awareness activities</li>
-  </ul>
-
-  <p>
-    Some chapters focus mainly on group activities, while others,
-    particularly at the secondary level, may also include one-to-one
-    friendships based on shared interests. The program is flexible so
-    schools can create something that works well for their students and
-    community.
-  </p>
-
-
-  <h2>
-    Why participate?
-  </h2>
-
-  <p>
-    Best Buddies gives students opportunities to make new friends, build
-    confidence, strengthen social connections, develop leadership skills,
-    and take an active role in creating a more welcoming and inclusive
-    school community.
-  </p>
-
-
-  <h2>
-    How to Register
-  </h2>
-
-  <p>
-    We would love for your child to be part of Best Buddies at
-    <strong id="schoolRegister"></strong>.
-  </p>
-
-  <p>
-    To register, please visit the link below or scan the QR code:
-  </p>
-
-
-  <div class="registration-box">
-
-    <div class="registration-grid">
-
-      <div>
-
-        <a
-          id="registrationButton"
-          class="registration-link"
-          target="_blank"
-          rel="noopener"
-        >
-          Open the Best Buddies registration form
-        </a>
-
-        <div
-          id="registrationUrl"
-          class="registration-url"
-        ></div>
-
-      </div>
-
-
-      <div class="qr-area">
-
-        <div id="qrCode"></div>
-
-        <div class="qr-caption">
-          Scan to register
-        </div>
+        <span id="yearTop"></span>
 
       </div>
 
@@ -505,77 +765,163 @@ li{
   </div>
 
 
-  <p class="help-note">
-    If online registration is difficult, or if you have any questions
-    about the program or registration process, please contact us.
-    We’re happy to help.
-  </p>
+  <div class="info-grid">
 
+    <div class="info-item">
 
-  <div class="contacts">
+      <span class="info-label">
+        Chapter / School
+      </span>
 
-    <div class="contact-card">
-
-      <div
-        id="advisorName"
-        class="contact-name"
-      ></div>
-
-      <div
-        id="advisorTitle"
-        class="contact-line"
-      ></div>
-
-      <div
-        id="advisorEmail"
-        class="contact-line"
-      ></div>
-
-      <div
-        id="advisorPhone"
-        class="contact-line"
-      ></div>
+      <span
+        class="info-value"
+        id="school"
+      ></span>
 
     </div>
 
 
-    <div class="contact-card">
+    <div class="info-item">
 
-      <div
-        id="schoolContactName"
-        class="contact-name"
-      ></div>
+      <span class="info-label">
+        Staff Advisor
+      </span>
 
-      <div
-        id="schoolContactRole"
-        class="contact-line"
-      ></div>
+      <span
+        class="info-value"
+        id="staff"
+      ></span>
 
-      <div
-        id="schoolContactEmail"
-        class="contact-line"
-      ></div>
+    </div>
 
-      <div
-        id="schoolContactPhone"
-        class="contact-line"
-      ></div>
+
+    <div class="info-item">
+
+      <span class="info-label">
+        Best Buddies Program Advisor
+      </span>
+
+      <span
+        class="info-value"
+        id="advisorTop"
+      ></span>
 
     </div>
 
   </div>
 
-
-  <p class="closing">
-    Thank you for supporting your child’s participation in Best Buddies.
-    We’re excited to welcome them and look forward to seeing the
-    friendships and connections that grow throughout the year.
-  </p>
+</section>
 
 
-  <div class="footer">
-    Best Buddies Canada
+<div
+  class="notice"
+  id="notice"
+></div>
+
+
+<table>
+
+<thead>
+
+<tr>
+
+  <th>
+    Done
+  </th>
+
+  <th>
+    What your chapter completes
+  </th>
+
+  <th>
+    When
+  </th>
+
+  <th>
+    Link / notes
+  </th>
+
+</tr>
+
+</thead>
+
+<tbody id="checklistRows"></tbody>
+
+</table>
+
+
+<section class="bottom">
+
+  <div class="progress-card">
+
+    <strong>
+      Your progress
+    </strong>
+
+    <div class="progress-bar">
+
+      <div
+        class="progress-fill"
+        id="progressFill"
+      ></div>
+
+    </div>
+
+    <div
+      class="progress-text"
+      id="progressText"
+    >
+      0 of 0 complete
+    </div>
+
+    <p class="save-note">
+      Your checklist progress is saved on this device.
+    </p>
+
   </div>
+
+
+  <div
+    class="advisor-card"
+    id="advisorCard"
+  >
+
+    <h3>
+      Questions? I’m here to help.
+    </h3>
+
+    <p>
+
+      <strong id="advisorName"></strong>
+
+      <br>
+
+      <span id="advisorTitle"></span>
+
+    </p>
+
+    <p id="advisorContact"></p>
+
+
+    <div class="advisor-actions">
+
+      <button
+        class="btn"
+        onclick="emailAdvisor()"
+      >
+        Email Your Program Advisor
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="document-footer">
+  Questions? Contact your Best Buddies Program Advisor.
+</div>
 
 </main>
 
@@ -583,9 +929,24 @@ li{
 
 <script>
 
+const RESOURCE_FOLDERS = {
+
+  elementary:
+    "https://drive.google.com/drive/folders/16C0F-nopssdrhwHvULpLmmxCjjrQVMOF?usp=drive_link",
+
+  high:
+    "https://drive.google.com/drive/folders/16Uwn3LYo8EsuvttK0mPTNN7XhKpT33pc?usp=drive_link"
+
+};
+
+
+const FRIENDSHIP_WALK_URL =
+  "https://bestbuddiescanada.akaraisin.com/ui/FriendshipWalk2026/pledge/registration/start";
+
+
 const params =
   new URLSearchParams(
-    window.location.search
+    location.search
   );
 
 
@@ -593,22 +954,30 @@ const data = {
 
   school:
     params.get("school") ||
-    "your school",
+    "Your School",
+
+  program:
+    params.get("program") ||
+    "elementary",
+
+  status:
+    params.get("status") ||
+    "new",
+
+  year:
+    params.get("year") ||
+    "2026-27",
+
+  staff:
+    params.get("staff") ||
+    "To be confirmed",
 
   registration:
     params.get("registration") ||
     "",
 
-  staff:
-    params.get("staff") ||
-    "",
-
-  staffEmail:
-    params.get("staffEmail") ||
-    "",
-
-  staffPhone:
-    params.get("staffPhone") ||
+  roster:
+    params.get("roster") ||
     "",
 
   advisor:
@@ -621,59 +990,1511 @@ const data = {
 
   advisorEmail:
     params.get("advisorEmail") ||
-    "",
+    "info@bestbuddies.ca",
 
   advisorPhone:
     params.get("advisorPhone") ||
-    ""
+    "",
+
+  showAdvisor:
+    params.get("showAdvisor") !== "0"
 
 };
 
 
-function render(){
-
-  document.getElementById(
-    "schoolIntro"
-  ).textContent =
-    data.school;
-
-
-  document.getElementById(
-    "schoolRegister"
-  ).textContent =
-    data.school;
+const storageKey =
+  "bbChecklist:"
+  +
+  [
+    data.school,
+    data.program,
+    data.status,
+    data.year
+  ].join("|");
 
 
-  const registrationButton =
-    document.getElementById(
-      "registrationButton"
+const fieldStorageKey =
+  storageKey + ":fields";
+
+
+/* ELEMENTARY NEW */
+
+const elementaryNew = [
+
+  {
+    id:"contacts",
+    title:"Confirm the primary Staff Advisor, a second contact where possible, and any other staff supporting the chapter.",
+    note:"Email your Program Advisor with any contact updates.",
+    when:"Getting started",
+    type:"advisor"
+  },
+
+  {
+    id:"approval",
+    title:"Confirm school approval and complete the Program Application Form (PAF), where applicable.",
+    note:"",
+    when:"Getting started",
+    type:"advisor"
+  },
+
+  {
+    id:"format",
+    title:"Choose your chapter format, meeting time and accessible meeting location.",
+    note:"",
+    when:"Getting started",
+    type:"plain"
+  },
+
+  {
+    id:"recruit",
+    title:"Recruit participating students using current recruitment materials and share the Parent Letter with families.",
+    note:"",
+    when:"Getting started / as needed",
+    type:"resources"
+  },
+
+  {
+    id:"registration",
+    title:"Send the school’s unique current-year registration link to parents/guardians of every participating Buddy and Peer Buddy.",
+    note:"Parents/guardians register their own children. Do not reuse another school’s or a prior-year link.",
+    when:"After recruitment",
+    type:"registration"
+  },
+
+  {
+    id:"matching",
+    title:"Review registered participants and complete or update matches only if your chapter uses formal matching.",
+    note:"",
+    when:"Before first activity",
+    type:"resources"
+  },
+
+  {
+    id:"roster",
+    title:"Review the online roster using the school-specific roster link and report missing or incorrect registrations.",
+    note:"",
+    when:"Start of year / ongoing",
+    type:"roster"
+  },
+
+  {
+    id:"abuse",
+    title:"The designated teacher electronically signs the annual Abuse Policy when the separate Best Buddies email arrives.",
+    note:"This is mandatory for Best Buddies Canada’s insurance requirements.",
+    when:"Required annually",
+    type:"abuse"
+  },
+
+  {
+    id:"meet",
+    title:"Complete recruitment and hold your first gathering or Meet & Greet. Confirm both with your Program Advisor.",
+    note:"",
+    when:"Start of chapter",
+    type:"meet"
+  },
+
+  {
+    id:"activities",
+    title:"Schedule and hold regular inclusive chapter activities.",
+    note:"Consider taking part in a Friendship Walk to celebrate inclusion and build school spirit. Report participation, successes, concerns and support needs to your Program Advisor.",
+    when:"Throughout the year",
+    type:"walk"
+  },
+
+  {
+    id:"checkins",
+    title:"Reply to Program Advisor check-ins and report contact, participant or operating changes, along with any support needed.",
+    note:"",
+    when:"Monthly / term check-ins",
+    type:"advisor"
+  },
+
+  {
+    id:"funding",
+    title:"Discuss fundraising or activity support with your Program Advisor before using a funding or gift-card form.",
+    note:"",
+    when:"Only if needed",
+    type:"funding"
+  },
+
+  {
+    id:"yearend",
+    title:"Complete the End-of-Year Report when released and confirm plans for next year.",
+    note:"",
+    when:"End of program year",
+    type:"yearend"
+  }
+
+];
+
+
+/* ELEMENTARY ACTIVE */
+
+const elementaryActive = [
+
+  {
+    id:"contacts",
+    title:"Confirm the primary staff lead, second contact where possible, and any contact changes from last year. Email your Program Advisor with any updates.",
+    note:"",
+    when:"Start of year",
+    type:"contacts"
+  },
+
+  {
+    id:"continue",
+    title:"Confirm that the chapter will continue.",
+    note:"",
+    when:"Start of year",
+    type:"advisor"
+  },
+
+  {
+    id:"recruit",
+    title:"Recruit returning and new participants using the current recruitment materials. Share the Parent Letter with families.",
+    note:"",
+    when:"Start of year / as needed",
+    type:"resources"
+  },
+
+  {
+    id:"registration",
+    title:"Send this year’s unique school-specific registration link to parents/guardians of every participating Buddy and Peer Buddy.",
+    note:"Parents/guardians register their own children. Do not reuse another school’s or a prior-year link.",
+    when:"After recruitment",
+    type:"registration"
+  },
+
+  {
+    id:"matching",
+    title:"Review the registered participant list and update matches only if your chapter uses formal matching.",
+    note:"",
+    when:"Before first activity",
+    type:"resources"
+  },
+
+  {
+    id:"roster",
+    title:"Review the online roster using the school-specific roster link and report missing or incorrect registrations.",
+    note:"",
+    when:"Start of year / ongoing",
+    type:"roster"
+  },
+
+  {
+    id:"abuse",
+    title:"The designated teacher electronically signs the annual Abuse Policy when the separate Best Buddies email arrives.",
+    note:"This is mandatory for Best Buddies Canada’s insurance requirements.",
+    when:"Required annually",
+    type:"abuse"
+  },
+
+  {
+    id:"meet",
+    title:"Confirm with your Program Advisor when recruitment and the Meet & Greet have been completed.",
+    note:"",
+    when:"Start of year",
+    type:"meet"
+  },
+
+  {
+    id:"activities",
+    title:"Schedule and hold regular inclusive chapter activities.",
+    note:"Consider taking part in a Friendship Walk to celebrate inclusion and build school spirit. Report participation, successes, concerns and support needs to your Program Advisor.",
+    when:"Throughout the year",
+    type:"walk"
+  },
+
+  {
+    id:"checkins",
+    title:"Reply to Program Advisor check-ins and report contact, participant or operating changes, along with any support needed.",
+    note:"",
+    when:"Monthly / term check-ins",
+    type:"advisor"
+  },
+
+  {
+    id:"funding",
+    title:"Discuss fundraising or activity support with your Program Advisor before using a funding or gift-card form.",
+    note:"",
+    when:"Only if needed",
+    type:"funding"
+  },
+
+  {
+    id:"yearend",
+    title:"Complete the End-of-Year Report when released and confirm plans for next year.",
+    note:"",
+    when:"End of program year",
+    type:"yearend"
+  }
+
+];
+
+
+/* HIGH SCHOOL NEW */
+
+const highNew = [
+
+  {
+    id:"contacts",
+    title:"Confirm the primary Staff Advisor, a second contact where possible, and interested student leadership contacts.",
+    note:"Email your Program Advisor with any contact updates.",
+    when:"Getting started",
+    type:"advisor"
+  },
+
+  {
+    id:"approval",
+    title:"Confirm school approval and complete the Program Application Form (PAF), where applicable.",
+    note:"",
+    when:"Getting started",
+    type:"advisor"
+  },
+
+  {
+    id:"leadership",
+    title:"Identify a Chapter President or student leadership team and begin sharing chapter responsibilities.",
+    note:"",
+    when:"Getting started",
+    type:"resources"
+  },
+
+  {
+    id:"recruit",
+    title:"Recruit Buddies, Peer Buddies and student leaders using current recruitment materials. Share the Parent Letter with families.",
+    note:"",
+    when:"Getting started / as needed",
+    type:"resources"
+  },
+
+  {
+    id:"registration",
+    title:"Send the school’s unique current-year registration link to parents/guardians of participating Buddies and Peer Buddies.",
+    note:"Do not reuse another school’s or a prior-year registration link.",
+    when:"After recruitment",
+    type:"registration"
+  },
+
+  {
+    id:"training",
+    title:"Complete required Sensitivity Training and Chapter Leadership Training for student executives where applicable.",
+    note:"",
+    when:"Early in the year",
+    type:"resources"
+  },
+
+  {
+    id:"matching",
+    title:"Review registered participants and complete buddy matching only if your chapter uses formal one-to-one matches.",
+    note:"",
+    when:"Before first activity",
+    type:"resources"
+  },
+
+  {
+    id:"roster",
+    title:"Review the online roster using the school-specific roster link and report missing or incorrect registrations.",
+    note:"",
+    when:"Start of year / ongoing",
+    type:"roster"
+  },
+
+  {
+    id:"abuse",
+    title:"The designated teacher electronically signs the annual Abuse Policy when the separate Best Buddies email arrives.",
+    note:"This is mandatory for Best Buddies Canada’s insurance requirements.",
+    when:"Required annually",
+    type:"abuse"
+  },
+
+  {
+    id:"meet",
+    title:"Complete recruitment and hold your first gathering or Meet & Greet. Confirm both with your Program Advisor.",
+    note:"",
+    when:"Start of chapter",
+    type:"meet"
+  },
+
+  {
+    id:"activities",
+    title:"Schedule and hold regular inclusive chapter activities and support buddy friendships where applicable.",
+    note:"Consider taking part in a Friendship Walk to celebrate inclusion and build school spirit. Keep your Program Advisor updated on participation, successes, concerns and support needs.",
+    when:"Throughout the year",
+    type:"walk"
+  },
+
+  {
+    id:"checkins",
+    title:"Reply to Program Advisor check-ins and report contact, participant or operating changes, along with any support needed.",
+    note:"",
+    when:"Monthly / term check-ins",
+    type:"advisor"
+  },
+
+  {
+    id:"funding",
+    title:"Discuss fundraising or activity support with your Program Advisor before using a funding or gift-card form.",
+    note:"",
+    when:"Only if needed",
+    type:"funding"
+  },
+
+  {
+    id:"yearend",
+    title:"Complete the End-of-Year Report and confirm the chapter’s leadership and plans for next year.",
+    note:"",
+    when:"End of program year",
+    type:"yearend"
+  }
+
+];
+
+
+/* HIGH SCHOOL ACTIVE */
+
+const highActive = [
+
+  {
+    id:"contacts",
+    title:"Confirm the primary Staff Advisor, second contact where possible, student leadership contacts and any changes from last year.",
+    note:"",
+    when:"Start of year",
+    type:"contacts"
+  },
+
+  {
+    id:"continue",
+    title:"Confirm that the chapter will continue.",
+    note:"",
+    when:"Start of year",
+    type:"advisor"
+  },
+
+  {
+    id:"leadership",
+    title:"Confirm returning Chapter President / executive members and recruit new student leaders as needed.",
+    note:"",
+    when:"Start of year",
+    type:"resources"
+  },
+
+  {
+    id:"recruit",
+    title:"Recruit returning and new Buddies and Peer Buddies using current recruitment materials. Share the Parent Letter with families.",
+    note:"",
+    when:"Start of year / ongoing",
+    type:"resources"
+  },
+
+  {
+    id:"registration",
+    title:"Send this year’s unique school-specific registration link to participating families.",
+    note:"Do not reuse another school’s or a prior-year registration link.",
+    when:"After recruitment",
+    type:"registration"
+  },
+
+  {
+    id:"training",
+    title:"Confirm required Sensitivity Training and Chapter Leadership Training are completed where applicable.",
+    note:"",
+    when:"Early year",
+    type:"resources"
+  },
+
+  {
+    id:"matching",
+    title:"Review the registered participant list and update matches only if your chapter uses formal matching.",
+    note:"",
+    when:"Before first activity",
+    type:"resources"
+  },
+
+  {
+    id:"roster",
+    title:"Review the online roster using the school-specific roster link and report missing or incorrect registrations.",
+    note:"",
+    when:"Start of year / ongoing",
+    type:"roster"
+  },
+
+  {
+    id:"abuse",
+    title:"The designated teacher electronically signs the annual Abuse Policy when the separate Best Buddies email arrives.",
+    note:"This is mandatory for Best Buddies Canada’s insurance requirements.",
+    when:"Required annually",
+    type:"abuse"
+  },
+
+  {
+    id:"meet",
+    title:"Confirm with your Program Advisor when recruitment and the Meet & Greet have been completed.",
+    note:"",
+    when:"Start of year",
+    type:"meet"
+  },
+
+  {
+    id:"activities",
+    title:"Schedule and hold regular inclusive chapter activities and support buddy friendships where applicable.",
+    note:"Consider taking part in a Friendship Walk to celebrate inclusion and build school spirit. Keep your Program Advisor updated on participation, successes, concerns and support needs.",
+    when:"Throughout the year",
+    type:"walk"
+  },
+
+  {
+    id:"checkins",
+    title:"Reply to Program Advisor check-ins and report contact, participant or operating changes, along with any support needed.",
+    note:"",
+    when:"Monthly / term check-ins",
+    type:"advisor"
+  },
+
+  {
+    id:"funding",
+    title:"Discuss fundraising or activity support with your Program Advisor before using a funding or gift-card form.",
+    note:"",
+    when:"Only if needed",
+    type:"funding"
+  },
+
+  {
+    id:"yearend",
+    title:"Complete the End-of-Year Report and confirm next year’s student leadership and chapter plans.",
+    note:"",
+    when:"End of program year",
+    type:"yearend"
+  }
+
+];
+
+
+/* COMBINED NEW */
+
+const combinedNew = [
+
+  {
+    id:"contacts",
+    title:"Confirm the primary Staff Advisor, second contact where possible, and staff or student leadership contacts across the grades involved.",
+    note:"",
+    when:"Getting started",
+    type:"advisor"
+  },
+
+  {
+    id:"approval",
+    title:"Confirm school approval and complete the Program Application Form (PAF), where applicable.",
+    note:"",
+    when:"Getting started",
+    type:"advisor"
+  },
+
+  {
+    id:"format",
+    title:"Choose how the chapter will operate across the elementary, middle and secondary grades involved.",
+    note:"",
+    when:"Getting started",
+    type:"plain"
+  },
+
+  {
+    id:"recruit",
+    title:"Recruit participating students using current recruitment materials and share the Parent Letter with families.",
+    note:"",
+    when:"Getting started / as needed",
+    type:"resourcesBoth"
+  },
+
+  {
+    id:"registration",
+    title:"Send the school’s unique current-year registration link to participating families.",
+    note:"Do not reuse another school’s or a prior-year registration link.",
+    when:"After recruitment",
+    type:"registration"
+  },
+
+  {
+    id:"training",
+    title:"Complete required Sensitivity Training and Chapter Leadership Training for secondary student leaders where applicable.",
+    note:"",
+    when:"Early in the year",
+    type:"resourcesBoth"
+  },
+
+  {
+    id:"matching",
+    title:"Review registered participants and complete or update formal buddy matches only where your chapter uses them.",
+    note:"",
+    when:"Before first activity",
+    type:"resourcesBoth"
+  },
+
+  {
+    id:"roster",
+    title:"Review the online roster using the school-specific roster link and report missing or incorrect registrations.",
+    note:"",
+    when:"Start of year / ongoing",
+    type:"roster"
+  },
+
+  {
+    id:"abuse",
+    title:"The designated teacher electronically signs the annual Abuse Policy when the separate Best Buddies email arrives.",
+    note:"This is mandatory for Best Buddies Canada’s insurance requirements.",
+    when:"Required annually",
+    type:"abuse"
+  },
+
+  {
+    id:"meet",
+    title:"Complete recruitment and hold your first gathering or Meet & Greet. Confirm both with your Program Advisor.",
+    note:"",
+    when:"Start of chapter",
+    type:"meet"
+  },
+
+  {
+    id:"activities",
+    title:"Schedule and hold regular inclusive chapter activities across the grades involved.",
+    note:"Consider taking part in a Friendship Walk to celebrate inclusion and build school spirit. Report participation, successes, concerns and support needs to your Program Advisor.",
+    when:"Throughout the year",
+    type:"walk"
+  },
+
+  {
+    id:"checkins",
+    title:"Reply to Program Advisor check-ins and report contact, participant or operating changes, along with any support needed.",
+    note:"",
+    when:"Monthly / term check-ins",
+    type:"advisor"
+  },
+
+  {
+    id:"funding",
+    title:"Discuss fundraising or activity support with your Program Advisor before using a funding or gift-card form.",
+    note:"",
+    when:"Only if needed",
+    type:"funding"
+  },
+
+  {
+    id:"yearend",
+    title:"Complete the End-of-Year Report and confirm chapter plans and student leadership for next year.",
+    note:"",
+    when:"End of program year",
+    type:"yearend"
+  }
+
+];
+
+
+/* COMBINED ACTIVE */
+
+const combinedActive = [
+
+  {
+    id:"contacts",
+    title:"Confirm the primary Staff Advisor, second contact where possible, student leadership contacts and any changes from last year.",
+    note:"",
+    when:"Start of year",
+    type:"contacts"
+  },
+
+  {
+    id:"continue",
+    title:"Confirm that the chapter will continue.",
+    note:"",
+    when:"Start of year",
+    type:"advisor"
+  },
+
+  {
+    id:"recruit",
+    title:"Recruit returning and new participants using current recruitment materials. Share the Parent Letter with families.",
+    note:"",
+    when:"Start of year / ongoing",
+    type:"resourcesBoth"
+  },
+
+  {
+    id:"registration",
+    title:"Send this year’s unique school-specific registration link to participating families.",
+    note:"Do not reuse another school’s or a prior-year registration link.",
+    when:"After recruitment",
+    type:"registration"
+  },
+
+  {
+    id:"training",
+    title:"Confirm required Sensitivity Training and Chapter Leadership Training are completed for secondary student leaders where applicable.",
+    note:"",
+    when:"Early year",
+    type:"resourcesBoth"
+  },
+
+  {
+    id:"matching",
+    title:"Review registered participants and update formal matches only where your chapter uses them.",
+    note:"",
+    when:"Before first activity",
+    type:"resourcesBoth"
+  },
+
+  {
+    id:"roster",
+    title:"Review the online roster using the school-specific roster link and report missing or incorrect registrations.",
+    note:"",
+    when:"Start of year / ongoing",
+    type:"roster"
+  },
+
+  {
+    id:"abuse",
+    title:"The designated teacher electronically signs the annual Abuse Policy when the separate Best Buddies email arrives.",
+    note:"This is mandatory for Best Buddies Canada’s insurance requirements.",
+    when:"Required annually",
+    type:"abuse"
+  },
+
+  {
+    id:"meet",
+    title:"Confirm with your Program Advisor when recruitment and the Meet & Greet have been completed.",
+    note:"",
+    when:"Start of year",
+    type:"meet"
+  },
+
+  {
+    id:"activities",
+    title:"Schedule and hold regular inclusive chapter activities across the grades involved.",
+    note:"Consider taking part in a Friendship Walk to celebrate inclusion and build school spirit. Report participation, successes, concerns and support needs to your Program Advisor.",
+    when:"Throughout the year",
+    type:"walk"
+  },
+
+  {
+    id:"checkins",
+    title:"Reply to Program Advisor check-ins and report contact, participant or operating changes, along with any support needed.",
+    note:"",
+    when:"Monthly / term check-ins",
+    type:"advisor"
+  },
+
+  {
+    id:"funding",
+    title:"Discuss fundraising or activity support with your Program Advisor before using a funding or gift-card form.",
+    note:"",
+    when:"Only if needed",
+    type:"funding"
+  },
+
+  {
+    id:"yearend",
+    title:"Complete the End-of-Year Report and confirm chapter plans and student leadership for next year.",
+    note:"",
+    when:"End of program year",
+    type:"yearend"
+  }
+
+];
+
+
+/* TASK SET */
+
+function getTasks(){
+
+  if(
+    data.program ===
+    "elementary"
+  ){
+
+    return(
+      data.status ===
+      "active"
+
+        ? elementaryActive
+
+        : elementaryNew
     );
 
+  }
 
-  registrationButton.href =
-    data.registration;
+
+  if(
+    data.program ===
+    "high"
+  ){
+
+    return(
+      data.status ===
+      "active"
+
+        ? highActive
+
+        : highNew
+    );
+
+  }
+
+
+  return(
+    data.status ===
+    "active"
+
+      ? combinedActive
+
+      : combinedNew
+  );
+
+}
+
+
+/* HEADER */
+
+function renderHeader(){
+
+  const statusLabel =
+    data.status === "active"
+
+      ? "Existing / Active Chapter Annual Checklist"
+
+      : "New / Restarting Chapter Checklist";
+
+
+  const subtitle =
+    data.status === "active"
+
+      ? "Use this at the start of the school year and during regular chapter check-ins."
+
+      : "Use this as you get started and during regular chapter check-ins.";
+
+
+  let programLabel =
+    "Elementary & Middle School";
+
+
+  if(
+    data.program ===
+    "high"
+  ){
+
+    programLabel =
+      "High School";
+
+  }
+
+
+  if(
+    data.program ===
+    "combined"
+  ){
+
+    programLabel =
+      "Elementary + Secondary";
+
+  }
 
 
   document.getElementById(
-    "registrationUrl"
+    "checklistTitle"
   ).textContent =
-    data.registration;
+    statusLabel;
 
 
-  if(data.registration){
+  document.getElementById(
+    "checklistSubtitle"
+  ).textContent =
+    subtitle;
 
-    new QRCode(
-      document.getElementById(
-        "qrCode"
-      ),
-      {
-        text:data.registration,
-        width:130,
-        height:130,
-        correctLevel:
-          QRCode.CorrectLevel.M
+
+  document.getElementById(
+    "programLabel"
+  ).textContent =
+    programLabel;
+
+
+  document.getElementById(
+    "yearTop"
+  ).textContent =
+    data.year;
+
+
+  document.getElementById(
+    "school"
+  ).textContent =
+    data.school;
+
+
+  document.getElementById(
+    "staff"
+  ).textContent =
+    data.staff;
+
+
+  document.getElementById(
+    "advisorTop"
+  ).textContent =
+    data.advisor;
+
+
+  document.getElementById(
+    "notice"
+  ).innerHTML =
+
+    `<strong>Registration reminder:</strong>
+     Use only the current school-specific registration link included in this checklist.
+     Teachers share the link with families, and parents/guardians register their own children
+     as Buddies or Peer Buddies. Do not use another school’s or a prior-year link.`;
+
+}
+
+
+/* LINKS / NOTES */
+
+function taskLinks(
+  task
+){
+
+  if(
+    task.type ===
+    "contacts"
+  ){
+
+    return `
+      <span class="task-note">
+
+        ${
+          data.staff
+            ? `Primary contact: ${escapeHtml(data.staff)}<br>`
+            : ""
+        }
+
+        Program Advisor:
+        ${escapeHtml(data.advisor)}
+
+        ${
+          data.advisorEmail
+            ? `<br>${escapeHtml(data.advisorEmail)}`
+            : ""
+        }
+
+      </span>
+    `;
+
+  }
+
+
+  if(
+    task.type ===
+    "registration"
+  ){
+
+    return(
+      data.registration
+
+        ? `
+          <a
+            class="resource-link"
+            href="${escapeAttribute(data.registration)}"
+            target="_blank"
+          >
+            Open Registration Form
+          </a>
+        `
+
+        : `
+          <span class="task-note">
+            Contact your Program Advisor for the current registration link.
+          </span>
+        `
+    );
+
+  }
+
+
+  if(
+    task.type ===
+    "roster"
+  ){
+
+    return(
+      data.roster
+
+        ? `
+          <a
+            class="resource-link"
+            href="${escapeAttribute(data.roster)}"
+            target="_blank"
+          >
+            Open Chapter Roster
+          </a>
+        `
+
+        : `
+          <span class="task-note">
+            Contact your Program Advisor for the school-specific roster link.
+          </span>
+        `
+    );
+
+  }
+
+
+  if(
+    task.type ===
+    "resources"
+  ){
+
+    const folder =
+      data.program === "high"
+
+        ? RESOURCE_FOLDERS.high
+
+        : RESOURCE_FOLDERS.elementary;
+
+
+    let label =
+      "Chapter Resources";
+
+
+    if(
+      task.id ===
+      "recruit"
+    ){
+
+      label =
+        "Recruitment Resources";
+
+    }
+
+
+    if(
+      task.id ===
+      "matching"
+    ){
+
+      label =
+        "Matching Resources";
+
+    }
+
+
+    if(
+      task.id ===
+      "leadership" ||
+      task.id ===
+      "training"
+    ){
+
+      label =
+        "Leadership & Training Resources";
+
+    }
+
+
+    return `
+      <a
+        class="resource-link"
+        href="${escapeAttribute(folder)}"
+        target="_blank"
+      >
+        ${escapeHtml(label)}
+      </a>
+
+      ${
+        task.id === "recruit"
+          ? `<div class="task-note">Parent Letter included with your chapter package.</div>`
+          : ""
       }
+    `;
+
+  }
+
+
+  if(
+    task.type ===
+    "resourcesBoth"
+  ){
+
+    return `
+      <a
+        class="resource-link"
+        href="${escapeAttribute(RESOURCE_FOLDERS.elementary)}"
+        target="_blank"
+      >
+        Elementary & Middle Resources
+      </a>
+
+      <br>
+
+      <a
+        class="resource-link"
+        href="${escapeAttribute(RESOURCE_FOLDERS.high)}"
+        target="_blank"
+      >
+        High School Resources
+      </a>
+
+      ${
+        task.id === "recruit"
+          ? `<div class="task-note">Parent Letter included with your chapter package.</div>`
+          : ""
+      }
+    `;
+
+  }
+
+
+  if(
+    task.type ===
+    "walk"
+  ){
+
+    return `
+      <a
+        class="resource-link"
+        href="${escapeAttribute(FRIENDSHIP_WALK_URL)}"
+        target="_blank"
+      >
+        Friendship Walk Registration
+      </a>
+
+      <div class="task-note">
+        Speak with your Program Advisor if you’re interested in hosting a school walk
+        or joining a community walk.
+      </div>
+    `;
+
+  }
+
+
+  if(
+    task.type ===
+    "advisor"
+  ){
+
+    return(
+      data.advisorEmail
+
+        ? `
+          <a
+            class="resource-link"
+            href="mailto:${escapeAttribute(data.advisorEmail)}"
+          >
+            Email Your Program Advisor
+          </a>
+        `
+
+        : `<span class="task-note">—</span>`
     );
+
+  }
+
+
+  if(
+    task.type ===
+    "abuse"
+  ){
+
+    return `
+      <span class="task-note">
+        Sent separately by email. Contact your Program Advisor if it is not received.
+      </span>
+    `;
+
+  }
+
+
+  if(
+    task.type ===
+    "meet"
+  ){
+
+    return `
+      <div class="inline-fields">
+
+        <label class="inline-field-row">
+
+          <span>
+            Recruitment completed
+          </span>
+
+          <input
+            type="date"
+            class="inline-field"
+            data-field="recruitmentCompleted"
+            aria-label="Recruitment completed date"
+          >
+
+        </label>
+
+
+        <label class="inline-field-row">
+
+          <span>
+            Meet & Greet completed
+          </span>
+
+          <input
+            type="date"
+            class="inline-field"
+            data-field="meetGreetCompleted"
+            aria-label="Meet and Greet completed date"
+          >
+
+        </label>
+
+      </div>
+    `;
+
+  }
+
+
+  if(
+    task.type ===
+    "funding"
+  ){
+
+    return `
+      <span class="task-note">
+        Program Advisor approval required first.
+      </span>
+    `;
+
+  }
+
+
+  if(
+    task.type ===
+    "yearend"
+  ){
+
+    return `
+      <span class="task-note">
+        Report link: Provided later.
+      </span>
+    `;
+
+  }
+
+
+  return `
+    <span class="task-note">
+      —
+    </span>
+  `;
+
+}
+
+
+/* SAVED CHECKBOXES */
+
+function loadState(){
+
+  try{
+
+    return JSON.parse(
+      localStorage.getItem(
+        storageKey
+      ) || "{}"
+    );
+
+  }catch{
+
+    return {};
+
+  }
+
+}
+
+
+function saveState(){
+
+  const state = {};
+
+
+  document.querySelectorAll(
+    ".check"
+  ).forEach(
+    checkbox=>{
+
+      state[
+        checkbox.dataset.task
+      ] =
+        checkbox.checked;
+
+    }
+  );
+
+
+  localStorage.setItem(
+    storageKey,
+    JSON.stringify(state)
+  );
+
+
+  updateProgress();
+
+}
+
+
+/* DATE STATE */
+
+function loadFieldState(){
+
+  try{
+
+    return JSON.parse(
+      localStorage.getItem(
+        fieldStorageKey
+      ) || "{}"
+    );
+
+  }catch{
+
+    return {};
+
+  }
+
+}
+
+
+function saveFieldState(){
+
+  const state = {};
+
+
+  document.querySelectorAll(
+    ".inline-field"
+  ).forEach(
+    input=>{
+
+      state[
+        input.dataset.field
+      ] =
+        input.value;
+
+    }
+  );
+
+
+  localStorage.setItem(
+    fieldStorageKey,
+    JSON.stringify(state)
+  );
+
+}
+
+
+function setupInlineFields(){
+
+  const saved =
+    loadFieldState();
+
+
+  document.querySelectorAll(
+    ".inline-field"
+  ).forEach(
+    input=>{
+
+      const fieldName =
+        input.dataset.field;
+
+
+      if(
+        saved[
+          fieldName
+        ]
+      ){
+
+        input.value =
+          saved[
+            fieldName
+          ];
+
+      }
+
+
+      input.addEventListener(
+        "change",
+        saveFieldState
+      );
+
+
+      input.addEventListener(
+        "input",
+        saveFieldState
+      );
+
+    }
+  );
+
+}
+
+
+/* RENDER */
+
+function renderTasks(){
+
+  const tasks =
+    getTasks();
+
+
+  const saved =
+    loadState();
+
+
+  const tbody =
+    document.getElementById(
+      "checklistRows"
+    );
+
+
+  tbody.innerHTML =
+    "";
+
+
+  tasks.forEach(
+    task=>{
+
+      const row =
+        document.createElement(
+          "tr"
+        );
+
+
+      row.innerHTML = `
+
+        <td>
+
+          <input
+            class="check"
+            type="checkbox"
+            data-task="${escapeAttribute(task.id)}"
+            ${saved[task.id] ? "checked" : ""}
+            aria-label="${escapeAttribute(task.title)}"
+          >
+
+        </td>
+
+
+        <td>
+
+          <div class="task-title">
+            ${escapeHtml(task.title)}
+          </div>
+
+          ${
+            task.note
+              ? `
+                <div class="task-note">
+                  ${escapeHtml(task.note)}
+                </div>
+              `
+              : ""
+          }
+
+        </td>
+
+
+        <td>
+          ${escapeHtml(task.when)}
+        </td>
+
+
+        <td>
+          ${taskLinks(task)}
+        </td>
+
+      `;
+
+
+      tbody.appendChild(
+        row
+      );
+
+    }
+  );
+
+
+  document.querySelectorAll(
+    ".check"
+  ).forEach(
+    checkbox=>{
+
+      checkbox.addEventListener(
+        "change",
+        saveState
+      );
+
+    }
+  );
+
+
+  setupInlineFields();
+
+  updateProgress();
+
+}
+
+
+/* PROGRESS */
+
+function updateProgress(){
+
+  const boxes =
+    [
+      ...document.querySelectorAll(
+        ".check"
+      )
+    ];
+
+
+  const completed =
+    boxes.filter(
+      checkbox =>
+        checkbox.checked
+    ).length;
+
+
+  const total =
+    boxes.length;
+
+
+  document.getElementById(
+    "progressText"
+  ).textContent =
+    `${completed} of ${total} complete`;
+
+
+  document.getElementById(
+    "progressFill"
+  ).style.width =
+    total
+      ? `${completed / total * 100}%`
+      : "0%";
+
+}
+
+
+/* ADVISOR */
+
+function renderAdvisor(){
+
+  const card =
+    document.getElementById(
+      "advisorCard"
+    );
+
+
+  if(
+    !data.showAdvisor
+  ){
+
+    card.style.display =
+      "none";
+
+    return;
 
   }
 
@@ -690,85 +2511,81 @@ function render(){
     data.advisorTitle;
 
 
-  renderContact(
-    "advisorEmail",
-    data.advisorEmail,
-    "mailto:"
-  );
+  const contact = [];
 
 
-  renderContact(
-    "advisorPhone",
-    data.advisorPhone,
-    "tel:"
-  );
+  if(
+    data.advisorEmail
+  ){
 
-
-  document.getElementById(
-    "schoolContactName"
-  ).textContent =
-    data.staff ||
-    "Best Buddies Teacher Advisor";
-
-
-  document.getElementById(
-    "schoolContactRole"
-  ).textContent =
-    `Best Buddies Teacher Advisor, ${data.school}`;
-
-
-  renderContact(
-    "schoolContactEmail",
-    data.staffEmail,
-    "mailto:"
-  );
-
-
-  renderContact(
-    "schoolContactPhone",
-    data.staffPhone,
-    "tel:"
-  );
-
-}
-
-
-function renderContact(
-  id,
-  value,
-  prefix
-){
-
-  const element =
-    document.getElementById(id);
-
-
-  if(!value){
-
-    element.style.display =
-      "none";
-
-    return;
+    contact.push(
+      `
+        <a href="mailto:${escapeAttribute(data.advisorEmail)}">
+          ${escapeHtml(data.advisorEmail)}
+        </a>
+      `
+    );
 
   }
 
 
-  element.innerHTML =
-    `<a href="${prefix}${value}">
-       ${value}
-     </a>`;
+  if(
+    data.advisorPhone
+  ){
+
+    contact.push(
+      escapeHtml(
+        data.advisorPhone
+      )
+    );
+
+  }
+
+
+  document.getElementById(
+    "advisorContact"
+  ).innerHTML =
+    contact.join(
+      "<br>"
+    );
 
 }
 
 
-/* WORD */
+function emailAdvisor(){
+
+  const subject =
+    `Best Buddies question | ${data.school}`;
+
+
+  const body =
+`Hi ${firstName(data.advisor)},
+
+I have a question about our Best Buddies chapter at ${data.school}.
+
+`;
+
+
+  window.location.href =
+    `mailto:${encodeURIComponent(data.advisorEmail)}`
+    +
+    `?subject=${encodeURIComponent(subject)}`
+    +
+    `&body=${encodeURIComponent(body)}`;
+
+}
+
+
+/* WORD DOWNLOAD */
 
 async function downloadEditableWord(){
 
-  if(!window.docx){
+  if(
+    !window.docx
+  ){
 
     alert(
-      "The Word generator could not load. Please refresh and try again."
+      "The Word document generator could not load. Please refresh and try again."
     );
 
     return;
@@ -781,217 +2598,137 @@ async function downloadEditableWord(){
     Packer,
     Paragraph,
     TextRun,
-    ImageRun,
+    CheckBox,
+    Table,
+    TableRow,
+    TableCell,
     ExternalHyperlink,
-    AlignmentType
+    WidthType,
+    AlignmentType,
+    ShadingType,
+    VerticalAlign
   } = window.docx;
 
 
-  const children = [];
+  const tasks =
+    getTasks();
 
 
-  let logoBytes =
-    null;
+  const checkedState =
+    loadState();
 
 
-  try{
-
-    const response =
-      await fetch(
-        "assets/bb-logo-coloured.png"
-      );
+  const fields =
+    loadFieldState();
 
 
-    logoBytes =
-      new Uint8Array(
-        await response.arrayBuffer()
-      );
+  const title =
+    data.status === "active"
 
-  }catch(error){}
+      ? "Existing / Active Chapter Annual Checklist"
+
+      : "New / Restarting Chapter Checklist";
 
 
-  if(logoBytes){
+  const subtitle =
+    data.status === "active"
 
-    children.push(
-      new Paragraph({
-        children:[
-          new ImageRun({
-            type:"png",
-            data:logoBytes,
-            transformation:{
-              width:115,
-              height:55
-            }
-          })
-        ],
-        spacing:{
-          after:220
-        }
-      })
-    );
+      ? "Use this at the start of the school year and during regular chapter check-ins."
+
+      : "Use this as you get started and during regular chapter check-ins.";
+
+
+  let program =
+    "Elementary & Middle School";
+
+
+  if(
+    data.program ===
+    "high"
+  ){
+
+    program =
+      "High School";
 
   }
 
 
-  children.push(
-    p(
-      Paragraph,
-      TextRun,
-      "Dear Parents and Guardians,"
-    )
-  );
+  if(
+    data.program ===
+    "combined"
+  ){
+
+    program =
+      "Elementary + Secondary";
+
+  }
 
 
-  children.push(
-    richParagraph(
-      Paragraph,
-      TextRun,
-      [
-        ["Your child has been invited to participate in Best Buddies at ",false],
-        [data.school,true],
-        [".",false]
-      ]
-    )
-  );
+  const rows = [];
 
 
-  children.push(
-    p(
-      Paragraph,
-      TextRun,
-      "Best Buddies is a global nonprofit organization that creates opportunities for friendship, leadership, inclusion, and belonging for people with intellectual and developmental disabilities and their peers. Through our school programs, students have opportunities to build genuine friendships, take part in shared activities, develop leadership skills, and help strengthen inclusion within their school community."
-    )
-  );
+  rows.push(
 
-
-  children.push(
-    h(
-      Paragraph,
-      TextRun,
-      "What is Best Buddies?"
-    )
-  );
-
-
-  children.push(
-    boldP(
-      Paragraph,
-      TextRun,
-      "Best Buddies brings students together to build friendships and create a more inclusive school community."
-    )
-  );
-
-
-  children.push(
-    p(
-      Paragraph,
-      TextRun,
-      "Every chapter looks a little different. Depending on the age of students and the way the school chooses to run its program, activities may include:"
-    )
-  );
-
-
-  [
-    "Shared lunches and group activities",
-    "School events and social gatherings",
-    "Opportunities to build meaningful one-to-one friendships",
-    "Student leadership opportunities",
-    "School-wide inclusion and awareness activities"
-  ].forEach(item=>{
-
-    children.push(
-      new Paragraph({
-        bullet:{
-          level:0
-        },
-        children:[
-          new TextRun({
-            text:item,
-            size:22
-          })
-        ],
-        spacing:{
-          after:40
-        }
-      })
-    );
-
-  });
-
-
-  children.push(
-    p(
-      Paragraph,
-      TextRun,
-      "Some chapters focus mainly on group activities, while others, particularly at the secondary level, may also include one-to-one friendships based on shared interests. The program is flexible so schools can create something that works well for their students and community."
-    )
-  );
-
-
-  children.push(
-    h(
-      Paragraph,
-      TextRun,
-      "Why participate?"
-    )
-  );
-
-
-  children.push(
-    p(
-      Paragraph,
-      TextRun,
-      "Best Buddies gives students opportunities to make new friends, build confidence, strengthen social connections, develop leadership skills, and take an active role in creating a more welcoming and inclusive school community."
-    )
-  );
-
-
-  children.push(
-    h(
-      Paragraph,
-      TextRun,
-      "How to Register"
-    )
-  );
-
-
-  children.push(
-    richParagraph(
-      Paragraph,
-      TextRun,
-      [
-        ["We would love for your child to be part of Best Buddies at ",false],
-        [data.school,true],
-        [".",false]
-      ]
-    )
-  );
-
-
-  children.push(
-    p(
-      Paragraph,
-      TextRun,
-      "To register, please visit the link below or scan the QR code:"
-    )
-  );
-
-
-  children.push(
-    new Paragraph({
+    new TableRow({
 
       children:[
 
-        new ExternalHyperlink({
+        wordHeaderCell(
+          TableCell,
+          Paragraph,
+          TextRun,
+          ShadingType,
+          "Done"
+        ),
 
-          link:data.registration,
+        wordHeaderCell(
+          TableCell,
+          Paragraph,
+          TextRun,
+          ShadingType,
+          "What your chapter completes"
+        ),
+
+        wordHeaderCell(
+          TableCell,
+          Paragraph,
+          TextRun,
+          ShadingType,
+          "When"
+        ),
+
+        wordHeaderCell(
+          TableCell,
+          Paragraph,
+          TextRun,
+          ShadingType,
+          "Link / notes"
+        )
+
+      ]
+
+    })
+
+  );
+
+
+  tasks.forEach(
+    task=>{
+
+      const taskParagraphs = [
+
+        new Paragraph({
+
+          spacing:{
+            after:60
+          },
 
           children:[
 
             new TextRun({
-              text:data.registration,
-              color:"6F2C91",
-              underline:{},
+              text:
+                task.title,
+              bold:true,
               size:18
             })
 
@@ -999,163 +2736,134 @@ async function downloadEditableWord(){
 
         })
 
-      ],
+      ];
 
-      spacing:{
-        after:90
+
+      if(
+        task.note
+      ){
+
+        taskParagraphs.push(
+
+          new Paragraph({
+
+            spacing:{
+              after:0
+            },
+
+            children:[
+
+              new TextRun({
+                text:
+                  task.note,
+                color:
+                  "69636F",
+                size:16
+              })
+
+            ]
+
+          })
+
+        );
+
       }
 
-    })
-  );
+
+      rows.push(
+
+        new TableRow({
+
+          children:[
+
+            new TableCell({
+
+              verticalAlign:
+                VerticalAlign.CENTER,
+
+              children:[
+
+                new Paragraph({
+
+                  alignment:
+                    AlignmentType.CENTER,
+
+                  children:[
+
+                    new CheckBox({
+
+                      checked:
+                        !!checkedState[
+                          task.id
+                        ],
+
+                      alias:
+                        task.title
+
+                    })
+
+                  ]
+
+                })
+
+              ]
+
+            }),
 
 
-  const qrBytes =
-    getQrBytes();
+            new TableCell({
+
+              children:
+                taskParagraphs
+
+            }),
 
 
-  if(qrBytes){
+            new TableCell({
 
-    children.push(
-      new Paragraph({
+              children:[
 
-        alignment:
-          AlignmentType.CENTER,
+                new Paragraph({
 
-        children:[
-          new ImageRun({
-            type:"png",
-            data:qrBytes,
-            transformation:{
-              width:125,
-              height:125
-            }
-          })
-        ],
+                  children:[
 
-        spacing:{
-          after:110
-        }
+                    new TextRun({
+                      text:
+                        task.when,
+                      size:17
+                    })
 
-      })
-    );
+                  ]
 
-  }
+                })
+
+              ]
+
+            }),
 
 
-  children.push(
-    boldP(
-      Paragraph,
-      TextRun,
-      "If online registration is difficult, or if you have any questions about the program or registration process, please contact us. We’re happy to help."
-    )
-  );
+            new TableCell({
 
+              children:
+                getWordNotes(
+                  task,
+                  {
+                    Paragraph,
+                    TextRun,
+                    ExternalHyperlink
+                  },
+                  fields
+                )
 
-  children.push(
-    boldP(
-      Paragraph,
-      TextRun,
-      data.advisor
-    )
-  );
+            })
 
+          ]
 
-  if(data.advisorTitle){
+        })
 
-    children.push(
-      p(
-        Paragraph,
-        TextRun,
-        data.advisorTitle,
-        30
-      )
-    );
+      );
 
-  }
-
-
-  if(data.advisorEmail){
-
-    children.push(
-      p(
-        Paragraph,
-        TextRun,
-        data.advisorEmail,
-        30
-      )
-    );
-
-  }
-
-
-  if(data.advisorPhone){
-
-    children.push(
-      p(
-        Paragraph,
-        TextRun,
-        data.advisorPhone,
-        100
-      )
-    );
-
-  }
-
-
-  children.push(
-    boldP(
-      Paragraph,
-      TextRun,
-      data.staff ||
-      "Best Buddies Teacher Advisor"
-    )
-  );
-
-
-  children.push(
-    p(
-      Paragraph,
-      TextRun,
-      `Best Buddies Teacher Advisor, ${data.school}`,
-      30
-    )
-  );
-
-
-  if(data.staffEmail){
-
-    children.push(
-      p(
-        Paragraph,
-        TextRun,
-        data.staffEmail,
-        30
-      )
-    );
-
-  }
-
-
-  if(data.staffPhone){
-
-    children.push(
-      p(
-        Paragraph,
-        TextRun,
-        data.staffPhone,
-        110
-      )
-    );
-
-  }
-
-
-  children.push(
-    p(
-      Paragraph,
-      TextRun,
-      "Thank you for supporting your child’s participation in Best Buddies. We’re excited to welcome them and look forward to seeing the friendships and connections that grow throughout the year."
-    )
+    }
   );
 
 
@@ -1163,228 +2871,813 @@ async function downloadEditableWord(){
     new Document({
 
       sections:[
+
         {
+
           properties:{
+
             page:{
+
               margin:{
-                top:650,
-                right:800,
-                bottom:650,
-                left:800
+                top:550,
+                right:550,
+                bottom:550,
+                left:550
               }
+
             }
+
           },
 
-          children:children
+
+          children:[
+
+            new Paragraph({
+
+              spacing:{
+                after:100
+              },
+
+              children:[
+
+                new TextRun({
+                  text:
+                    "BEST BUDDIES CANADA | CHAPTER CHECKLIST",
+                  bold:true,
+                  color:
+                    "514B55",
+                  size:16
+                })
+
+              ]
+
+            }),
+
+
+            new Paragraph({
+
+              spacing:{
+                after:45
+              },
+
+              children:[
+
+                new TextRun({
+                  text:
+                    title,
+                  bold:true,
+                  color:
+                    "6F2C91",
+                  size:30
+                })
+
+              ]
+
+            }),
+
+
+            new Paragraph({
+
+              spacing:{
+                after:60
+              },
+
+              children:[
+
+                new TextRun({
+                  text:
+                    subtitle,
+                  color:
+                    "69636F",
+                  size:17
+                })
+
+              ]
+
+            }),
+
+
+            new Paragraph({
+
+              spacing:{
+                after:180
+              },
+
+              children:[
+
+                new TextRun({
+                  text:
+                    `${program}  •  ${data.year}`,
+                  bold:true,
+                  color:
+                    "69636F",
+                  size:18
+                })
+
+              ]
+
+            }),
+
+
+            infoParagraph(
+              Paragraph,
+              TextRun,
+              "Chapter / School: ",
+              data.school
+            ),
+
+
+            infoParagraph(
+              Paragraph,
+              TextRun,
+              "Staff Advisor: ",
+              data.staff ||
+              "To be confirmed"
+            ),
+
+
+            infoParagraph(
+              Paragraph,
+              TextRun,
+              "Best Buddies Program Advisor: ",
+              data.advisor,
+              150
+            ),
+
+
+            new Paragraph({
+
+              spacing:{
+                after:180
+              },
+
+              children:[
+
+                new TextRun({
+                  text:
+                    "Registration reminder: ",
+                  bold:true,
+                  color:
+                    "6F2C91",
+                  size:17
+                }),
+
+                new TextRun({
+                  text:
+                    "Use only the current school-specific registration link. Teachers share the link with families, and parents/guardians register their own children as Buddies or Peer Buddies. Do not use another school’s or a prior-year link.",
+                  size:17
+                })
+
+              ]
+
+            }),
+
+
+            new Table({
+
+              width:{
+                size:100,
+                type:
+                  WidthType.PERCENTAGE
+              },
+
+              columnWidths:[
+                800,
+                5100,
+                1800,
+                2300
+              ],
+
+              rows:
+                rows
+
+            }),
+
+
+            new Paragraph({
+
+              spacing:{
+                before:180,
+                after:40
+              },
+
+              children:[
+
+                new TextRun({
+                  text:
+                    "Questions? Contact your Best Buddies Program Advisor.",
+                  bold:true,
+                  color:
+                    "6F2C91",
+                  size:18
+                })
+
+              ]
+
+            }),
+
+
+            new Paragraph({
+
+              children:[
+
+                new TextRun({
+                  text:
+                    `${data.advisor}${data.advisorEmail ? " · " + data.advisorEmail : ""}${data.advisorPhone ? " · " + data.advisorPhone : ""}`,
+                  size:17
+                })
+
+              ]
+
+            })
+
+          ]
+
         }
+
       ]
 
     });
 
 
-  const blob =
-    await Packer.toBlob(
-      doc
+  try{
+
+    const blob =
+      await Packer.toBlob(
+        doc
+      );
+
+
+    const url =
+      URL.createObjectURL(
+        blob
+      );
+
+
+    const anchor =
+      document.createElement(
+        "a"
+      );
+
+
+    anchor.href =
+      url;
+
+
+    anchor.download =
+      `Best Buddies Chapter Checklist - ${safeFilename(data.school)} - ${safeFilename(data.year)}.docx`;
+
+
+    document.body.appendChild(
+      anchor
     );
 
 
-  const url =
-    URL.createObjectURL(
-      blob
+    anchor.click();
+
+
+    anchor.remove();
+
+
+    setTimeout(
+      ()=>{
+
+        URL.revokeObjectURL(
+          url
+        );
+
+      },
+      1000
     );
+
+  }catch(error){
+
+    console.error(
+      error
+    );
+
+
+    alert(
+      "The Word checklist could not be generated. You can still use the online checklist or Print / Save PDF."
+    );
+
+  }
+
+}
+
+
+function infoParagraph(
+  Paragraph,
+  TextRun,
+  label,
+  value,
+  after = 40
+){
+
+  return new Paragraph({
+
+    spacing:{
+      after:after
+    },
+
+    children:[
+
+      new TextRun({
+        text:
+          label,
+        bold:true,
+        size:18
+      }),
+
+      new TextRun({
+        text:
+          value,
+        size:18
+      })
+
+    ]
+
+  });
+
+}
+
+
+function wordHeaderCell(
+  TableCell,
+  Paragraph,
+  TextRun,
+  ShadingType,
+  text
+){
+
+  return new TableCell({
+
+    shading:{
+      type:
+        ShadingType.CLEAR,
+      fill:
+        "173456",
+      color:
+        "auto"
+    },
+
+    children:[
+
+      new Paragraph({
+
+        children:[
+
+          new TextRun({
+            text:
+              text,
+            bold:true,
+            color:
+              "FFFFFF",
+            size:16
+          })
+
+        ]
+
+      })
+
+    ]
+
+  });
+
+}
+
+
+function getWordNotes(
+  task,
+  classes,
+  fields
+){
+
+  const {
+    Paragraph,
+    TextRun,
+    ExternalHyperlink
+  } = classes;
+
+
+  const plain =
+    text => [
+
+      new Paragraph({
+
+        children:[
+
+          new TextRun({
+            text:
+              text,
+            size:16,
+            color:
+              "69636F"
+          })
+
+        ]
+
+      })
+
+    ];
 
 
   const link =
-    document.createElement(
-      "a"
+    (
+      label,
+      url
+    ) => [
+
+      new Paragraph({
+
+        children:[
+
+          new ExternalHyperlink({
+
+            link:
+              url,
+
+            children:[
+
+              new TextRun({
+                text:
+                  label,
+                color:
+                  "6F2C91",
+                underline:{},
+                bold:true,
+                size:16
+              })
+
+            ]
+
+          })
+
+        ]
+
+      })
+
+    ];
+
+
+  if(
+    task.type ===
+    "registration"
+  ){
+
+    return(
+      data.registration
+
+        ? link(
+            "Open Registration Form",
+            data.registration
+          )
+
+        : plain(
+            "Contact your Program Advisor for the current registration link."
+          )
     );
 
-
-  link.href =
-    url;
+  }
 
 
-  link.download =
-    `Best Buddies Parent Letter - ${safeFile(data.school)}.docx`;
+  if(
+    task.type ===
+    "roster"
+  ){
+
+    return(
+      data.roster
+
+        ? link(
+            "Open Chapter Roster",
+            data.roster
+          )
+
+        : plain(
+            "Contact your Program Advisor for the school-specific roster link."
+          )
+    );
+
+  }
 
 
-  link.click();
+  if(
+    task.type ===
+    "resources"
+  ){
+
+    const url =
+      data.program ===
+      "high"
+
+        ? RESOURCE_FOLDERS.high
+
+        : RESOURCE_FOLDERS.elementary;
 
 
-  setTimeout(
-    ()=>{
-      URL.revokeObjectURL(
+    let label =
+      "Chapter Resources";
+
+
+    if(
+      task.id ===
+      "recruit"
+    ){
+
+      label =
+        "Recruitment Resources";
+
+    }
+
+
+    if(
+      task.id ===
+      "matching"
+    ){
+
+      label =
+        "Matching Resources";
+
+    }
+
+
+    if(
+      task.id ===
+      "leadership" ||
+      task.id ===
+      "training"
+    ){
+
+      label =
+        "Leadership & Training Resources";
+
+    }
+
+
+    const output =
+      link(
+        label,
         url
       );
-    },
-    1000
+
+
+    if(
+      task.id ===
+      "recruit"
+    ){
+
+      output.push(
+        ...plain(
+          "Parent Letter included with your chapter package."
+        )
+      );
+
+    }
+
+
+    return output;
+
+  }
+
+
+  if(
+    task.type ===
+    "resourcesBoth"
+  ){
+
+    const output = [
+
+      ...link(
+        "Elementary & Middle Resources",
+        RESOURCE_FOLDERS.elementary
+      ),
+
+      ...link(
+        "High School Resources",
+        RESOURCE_FOLDERS.high
+      )
+
+    ];
+
+
+    if(
+      task.id ===
+      "recruit"
+    ){
+
+      output.push(
+        ...plain(
+          "Parent Letter included with your chapter package."
+        )
+      );
+
+    }
+
+
+    return output;
+
+  }
+
+
+  if(
+    task.type ===
+    "walk"
+  ){
+
+    return [
+
+      ...link(
+        "Friendship Walk Registration",
+        FRIENDSHIP_WALK_URL
+      ),
+
+      ...plain(
+        "Speak with your Program Advisor if you’re interested in hosting a school walk or joining a community walk."
+      )
+
+    ];
+
+  }
+
+
+  if(
+    task.type ===
+    "contacts"
+  ){
+
+    const contactText =
+      data.staff
+        ? `Primary contact: ${data.staff}`
+        : `Program Advisor: ${data.advisor}`;
+
+
+    return plain(
+      contactText
+    );
+
+  }
+
+
+  if(
+    task.type ===
+    "advisor"
+  ){
+
+    return(
+      data.advisorEmail
+
+        ? link(
+            "Email Your Program Advisor",
+            `mailto:${data.advisorEmail}`
+          )
+
+        : plain(
+            data.advisor
+          )
+    );
+
+  }
+
+
+  if(
+    task.type ===
+    "abuse"
+  ){
+
+    return plain(
+      "Sent separately by email. Contact your Program Advisor if it is not received."
+    );
+
+  }
+
+
+  if(
+    task.type ===
+    "meet"
+  ){
+
+    return [
+
+      ...plain(
+        `Recruitment completed: ${formatDateForWord(fields.recruitmentCompleted) || "Enter date"}`
+      ),
+
+      ...plain(
+        `Meet & Greet completed: ${formatDateForWord(fields.meetGreetCompleted) || "Enter date"}`
+      )
+
+    ];
+
+  }
+
+
+  if(
+    task.type ===
+    "funding"
+  ){
+
+    return plain(
+      "Program Advisor approval required first."
+    );
+
+  }
+
+
+  if(
+    task.type ===
+    "yearend"
+  ){
+
+    return plain(
+      "Report link: Provided later."
+    );
+
+  }
+
+
+  return plain(
+    ""
   );
 
 }
 
 
-/* DOCX HELPERS */
+/* ACTIONS */
 
-function p(
-  Paragraph,
-  TextRun,
-  text,
-  after = 145
-){
+async function copyPageLink(){
 
-  return new Paragraph({
+  try{
 
-    spacing:{
-      after:after,
-      line:270
-    },
-
-    children:[
-      new TextRun({
-        text:text,
-        size:22
-      })
-    ]
-
-  });
-
-}
+    await navigator.clipboard.writeText(
+      location.href
+    );
 
 
-function boldP(
-  Paragraph,
-  TextRun,
-  text
-){
+    alert(
+      "Checklist link copied."
+    );
 
-  return new Paragraph({
+  }catch{
 
-    spacing:{
-      after:120
-    },
+    prompt(
+      "Copy this checklist link:",
+      location.href
+    );
 
-    children:[
-      new TextRun({
-        text:text,
-        bold:true,
-        size:22
-      })
-    ]
-
-  });
+  }
 
 }
 
 
-function h(
-  Paragraph,
-  TextRun,
-  text
-){
+function openHub(){
 
-  return new Paragraph({
-
-    spacing:{
-      before:110,
-      after:45
-    },
-
-    children:[
-      new TextRun({
-        text:text,
-        bold:true,
-        size:23
-      })
-    ]
-
-  });
+  window.location.href =
+    "index.html";
 
 }
 
 
-function richParagraph(
-  Paragraph,
-  TextRun,
-  parts
+/* HELPERS */
+
+function formatDateForWord(
+  value
 ){
 
-  return new Paragraph({
-
-    spacing:{
-      after:150
-    },
-
-    children:
-      parts.map(
-        part =>
-          new TextRun({
-            text:part[0],
-            bold:part[1],
-            size:22
-          })
-      )
-
-  });
-
-}
-
-
-function getQrBytes(){
-
-  const canvas =
-    document
-      .getElementById(
-        "qrCode"
-      )
-      .querySelector(
-        "canvas"
-      );
-
-
-  if(!canvas){
-    return null;
+  if(!value){
+    return "";
   }
 
 
-  const dataUrl =
-    canvas.toDataURL(
-      "image/png"
+  const parts =
+    value.split(
+      "-"
     );
 
 
-  const binary =
-    atob(
-      dataUrl.split(",")[1]
-    );
-
-
-  const bytes =
-    new Uint8Array(
-      binary.length
-    );
-
-
-  for(
-    let i=0;
-    i<binary.length;
-    i++
+  if(
+    parts.length !==
+    3
   ){
 
-    bytes[i] =
-      binary.charCodeAt(i);
+    return value;
 
   }
 
 
-  return bytes;
+  return(
+    `${parts[1]}/${parts[2]}/${parts[0]}`
+  );
 
 }
 
 
-function safeFile(value){
+function safeFilename(
+  value
+){
 
   return String(
-    value || "School"
+    value || ""
   )
     .replace(
       /[<>:"/\\|?*]/g,
@@ -1395,7 +3688,51 @@ function safeFile(value){
 }
 
 
-render();
+function firstName(
+  name
+){
+
+  return String(
+    name || ""
+  ).trim().split(/\s+/)[0] || "";
+
+}
+
+
+function escapeHtml(
+  value
+){
+
+  return String(
+    value || ""
+  )
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+
+}
+
+
+function escapeAttribute(
+  value
+){
+
+  return escapeHtml(
+    value
+  );
+
+}
+
+
+/* INIT */
+
+renderHeader();
+
+renderTasks();
+
+renderAdvisor();
 
 </script>
 
