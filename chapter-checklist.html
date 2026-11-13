@@ -14,15 +14,11 @@
 :root{
   --purple:#6f2c91;
   --purple-soft:#f5eef8;
-
   --teal:#18b8b1;
-
   --navy:#173456;
-
   --ink:#292633;
   --muted:#69636f;
   --line:#dcd7df;
-
   --white:#ffffff;
   --bg:#efedf1;
 }
@@ -33,10 +29,8 @@
 
 body{
   margin:0;
-
   background:var(--bg);
   color:var(--ink);
-
   font-family:"Poppins",Arial,sans-serif;
 }
 
@@ -46,20 +40,16 @@ input{
 }
 
 
-/* =====================================================
-   TOOLBAR
-===================================================== */
+/* TOOLBAR */
 
 .toolbar{
   max-width:1100px;
-
   margin:17px auto 0;
   padding:0 18px;
 
   display:flex;
   justify-content:space-between;
   flex-wrap:wrap;
-
   gap:9px;
 }
 
@@ -72,9 +62,7 @@ input{
 .btn{
   border:0;
   border-radius:9px;
-
   padding:10px 14px;
-
   font-weight:700;
   cursor:pointer;
 }
@@ -91,49 +79,36 @@ input{
 
 .btn-light{
   border:1px solid #d9d5dc;
-
   background:white;
   color:var(--ink);
 }
 
 
-/* =====================================================
-   DOCUMENT
-===================================================== */
+/* DOCUMENT */
 
 .document{
   max-width:1100px;
   min-height:700px;
-
   margin:14px auto 45px;
-
   background:white;
-
   box-shadow:0 10px 30px rgba(28,20,36,.11);
 }
 
 .topline{
   padding:15px 26px 9px;
-
   border-bottom:1px solid #eee;
-
   color:#514b55;
-
   font-size:.7rem;
   font-weight:800;
-
   letter-spacing:.07em;
   text-transform:uppercase;
 }
 
 
-/* =====================================================
-   HEADER
-===================================================== */
+/* HEADER */
 
 .chapter-header{
   padding:23px 29px 21px;
-
   border-bottom:1px solid var(--line);
 }
 
@@ -141,7 +116,6 @@ input{
   display:flex;
   align-items:center;
   gap:17px;
-
   margin-bottom:21px;
 }
 
@@ -151,15 +125,9 @@ input{
   flex:0 0 auto;
 }
 
-.chapter-header-title{
-  min-width:0;
-}
-
 .chapter-header-title h1{
   margin:0 0 5px;
-
   color:var(--purple);
-
   font-size:1.5rem;
   line-height:1.15;
   letter-spacing:-.02em;
@@ -172,7 +140,6 @@ input{
   gap:7px;
 
   color:var(--muted);
-
   font-size:.78rem;
   font-weight:600;
 }
@@ -190,7 +157,6 @@ input{
 
 .info-item{
   padding-bottom:7px;
-
   border-bottom:1px solid var(--line);
 }
 
@@ -202,7 +168,6 @@ input{
 
   font-size:.66rem;
   font-weight:800;
-
   letter-spacing:.05em;
   text-transform:uppercase;
 }
@@ -213,13 +178,9 @@ input{
 }
 
 
-/* =====================================================
-   NOTICE
-===================================================== */
+/* NOTICE */
 
 .notice{
-  margin:0;
-
   padding:11px 26px;
 
   border-bottom:1px solid #eadff0;
@@ -231,40 +192,28 @@ input{
 }
 
 
-/* =====================================================
-   TABLE
-===================================================== */
+/* TABLE */
 
 table{
   width:100%;
-
   border-collapse:collapse;
   table-layout:fixed;
 }
 
 th{
   padding:10px 9px;
-
   border-bottom:1px solid var(--line);
-
   background:var(--navy);
   color:white;
-
   text-align:left;
-
   font-size:.68rem;
   font-weight:700;
-
-  letter-spacing:.035em;
 }
 
 td{
   padding:12px 9px;
-
   border-bottom:1px solid var(--line);
-
   vertical-align:top;
-
   font-size:.81rem;
   line-height:1.4;
 }
@@ -289,17 +238,10 @@ td:nth-child(3){
   width:18%;
 }
 
-th:nth-child(4),
-td:nth-child(4){
-  width:auto;
-}
-
 .check{
   width:21px;
   height:21px;
-
   cursor:pointer;
-
   accent-color:var(--purple);
 }
 
@@ -315,21 +257,15 @@ td:nth-child(4){
 
 .resource-link{
   display:inline-block;
-
   margin-bottom:5px;
-
   color:var(--purple);
-
   font-size:.77rem;
   font-weight:700;
-
   text-decoration:underline;
 }
 
 
-/* =====================================================
-   INLINE DATE FIELDS
-===================================================== */
+/* DATE FIELDS */
 
 .inline-fields{
   display:flex;
@@ -349,15 +285,9 @@ td:nth-child(4){
   font-weight:600;
 }
 
-.inline-field-row span{
-  line-height:1.25;
-}
-
 .inline-field{
   width:132px;
   height:31px;
-
-  flex:0 0 132px;
 
   padding:3px 6px;
 
@@ -365,23 +295,12 @@ td:nth-child(4){
   border-radius:6px;
 
   background:white;
-  color:var(--ink);
 
   font-size:.68rem;
 }
 
-.inline-field:focus{
-  outline:none;
 
-  border-color:var(--purple);
-
-  box-shadow:0 0 0 2px rgba(111,44,145,.08);
-}
-
-
-/* =====================================================
-   BOTTOM
-===================================================== */
+/* BOTTOM */
 
 .bottom{
   padding:21px 24px;
@@ -402,29 +321,18 @@ td:nth-child(4){
   background:white;
 }
 
-.progress-card strong{
-  font-size:.9rem;
-}
-
 .progress-bar{
   height:9px;
-
   margin:11px 0 7px;
-
   overflow:hidden;
-
   border-radius:20px;
-
   background:#ece8ef;
 }
 
 .progress-fill{
   width:0;
   height:100%;
-
   background:var(--teal);
-
-  transition:.2s ease;
 }
 
 .progress-text{
@@ -432,10 +340,7 @@ td:nth-child(4){
 }
 
 .save-note{
-  margin:9px 0 0;
-
   color:var(--muted);
-
   font-size:.73rem;
 }
 
@@ -454,18 +359,12 @@ td:nth-child(4){
 }
 
 .advisor-card p{
-  margin:5px 0;
-
   font-size:.8rem;
   line-height:1.45;
 }
 
 .advisor-card a{
   color:white;
-}
-
-.advisor-actions{
-  margin-top:13px;
 }
 
 .advisor-actions .btn{
@@ -475,40 +374,18 @@ td:nth-child(4){
 
 .document-footer{
   padding:11px 24px 17px;
-
   background:#faf9fb;
-
   color:var(--muted);
-
   text-align:center;
-
   font-size:.7rem;
 }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* MOBILE */
 
 @media(max-width:780px){
 
-  .chapter-header{
-    padding:19px;
-  }
-
-  .chapter-header-top{
-    align-items:flex-start;
-  }
-
-  .checklist-logo{
-    width:54px;
-  }
-
-  .info-grid{
-    grid-template-columns:1fr;
-    gap:11px;
-  }
-
+  .info-grid,
   .bottom{
     grid-template-columns:1fr;
   }
@@ -517,37 +394,15 @@ td:nth-child(4){
     margin:10px;
   }
 
-  table{
-    table-layout:auto;
-  }
-
   th:nth-child(3),
   td:nth-child(3){
     display:none;
   }
 
-  th:nth-child(1),
-  td:nth-child(1){
-    width:44px;
-  }
-
-  .inline-field-row{
-    align-items:flex-start;
-    flex-direction:column;
-    gap:4px;
-  }
-
-  .inline-field{
-    width:100%;
-    flex:auto;
-  }
-
 }
 
 
-/* =====================================================
-   PRINT
-===================================================== */
+/* PRINT */
 
 @media print{
 
@@ -567,92 +422,18 @@ td:nth-child(4){
   .document{
     width:100%;
     max-width:none;
-    min-height:0;
-
     margin:0;
-
     box-shadow:none;
-  }
-
-  th,
-  .notice,
-  .bottom{
-    -webkit-print-color-adjust:exact;
-    print-color-adjust:exact;
-  }
-
-  .topline{
-    padding-top:4px;
-  }
-
-  .chapter-header{
-    padding-top:12px;
-    padding-bottom:12px;
-  }
-
-  .chapter-header-top{
-    margin-bottom:12px;
-  }
-
-  .checklist-logo{
-    width:50px;
   }
 
   td{
     padding:7px;
-
     font-size:.67rem;
-    line-height:1.3;
   }
 
   th{
     padding:6px 7px;
     font-size:.59rem;
-  }
-
-  .task-note{
-    font-size:.6rem;
-  }
-
-  .resource-link{
-    color:black;
-    font-size:.61rem;
-    text-decoration:none;
-  }
-
-  .inline-fields{
-    gap:4px;
-  }
-
-  .inline-field-row{
-    font-size:.58rem;
-  }
-
-  .inline-field{
-    width:108px;
-    height:24px;
-    flex:0 0 108px;
-
-    padding:1px 4px;
-
-    border:1px solid #aaa;
-    border-radius:3px;
-
-    font-size:.56rem;
-
-    box-shadow:none;
-  }
-
-  .bottom{
-    padding:12px 18px;
-  }
-
-  .advisor-actions{
-    display:none;
-  }
-
-  .document-footer{
-    padding:5px 18px;
   }
 
 }
@@ -661,10 +442,6 @@ td:nth-child(4){
 
 <body>
 
-
-<!-- =====================================================
-     TOOLBAR
-===================================================== -->
 
 <div class="toolbar">
 
@@ -687,26 +464,17 @@ td:nth-child(4){
   </div>
 
 
-  <div class="toolbar-group">
-
-    <button
-      class="btn btn-teal"
-      onclick="openHub()"
-    >
-      Open Chapter Hub
-    </button>
-
-  </div>
+  <button
+    class="btn btn-teal"
+    onclick="openHub()"
+  >
+    Open Chapter Hub
+  </button>
 
 </div>
 
 
-<!-- =====================================================
-     DOCUMENT
-===================================================== -->
-
 <main class="document">
-
 
 <div class="topline">
   Best Buddies Canada | Chapter Checklist
@@ -724,21 +492,14 @@ td:nth-child(4){
       onerror="this.style.display='none'"
     >
 
-
     <div class="chapter-header-title">
 
       <h1 id="checklistTitle"></h1>
 
       <div class="chapter-meta">
-
         <span id="programLabel"></span>
-
-        <span class="meta-dot">
-          •
-        </span>
-
+        <span class="meta-dot">•</span>
         <span id="yearTop"></span>
-
       </div>
 
     </div>
@@ -749,44 +510,18 @@ td:nth-child(4){
   <div class="info-grid">
 
     <div class="info-item">
-
-      <span class="info-label">
-        Chapter / School
-      </span>
-
-      <span
-        class="info-value"
-        id="school"
-      ></span>
-
+      <span class="info-label">Chapter / School</span>
+      <span class="info-value" id="school"></span>
     </div>
 
-
     <div class="info-item">
-
-      <span class="info-label">
-        Staff Advisor
-      </span>
-
-      <span
-        class="info-value"
-        id="staff"
-      ></span>
-
+      <span class="info-label">Staff Advisor</span>
+      <span class="info-value" id="staff"></span>
     </div>
 
-
     <div class="info-item">
-
-      <span class="info-label">
-        Best Buddies Program Advisor
-      </span>
-
-      <span
-        class="info-value"
-        id="advisorTop"
-      ></span>
-
+      <span class="info-label">Best Buddies Program Advisor</span>
+      <span class="info-value" id="advisorTop"></span>
     </div>
 
   </div>
@@ -827,20 +562,16 @@ td:nth-child(4){
     </strong>
 
     <div class="progress-bar">
-
       <div
         class="progress-fill"
         id="progressFill"
       ></div>
-
     </div>
 
     <div
       class="progress-text"
       id="progressText"
-    >
-      0 of 0 complete
-    </div>
+    ></div>
 
     <p class="save-note">
       Your checklist progress is saved on this device.
@@ -885,31 +616,16 @@ td:nth-child(4){
   Questions? Contact your Best Buddies Program Advisor.
 </div>
 
-
 </main>
-
 
 
 <script>
 
-/* =====================================================
-   RESOURCE FOLDERS
-===================================================== */
+/* NEW SHARED RESOURCE LIBRARY */
 
-const RESOURCE_FOLDERS = {
+const RESOURCE_LIBRARY =
+  "https://drive.google.com/drive/folders/1FwFQG06iV3-saDjPgxNaJ9QZ2m0WjB8w?usp=sharing";
 
-  elementary:
-    "https://drive.google.com/drive/folders/16C0F-nopssdrhwHvULpLmmxCjjrQVMOF?usp=drive_link",
-
-  high:
-    "https://drive.google.com/drive/folders/16Uwn3LYo8EsuvttK0mPTNN7XhKpT33pc?usp=drive_link"
-
-};
-
-
-/* =====================================================
-   DATA FROM GENERATED LINK
-===================================================== */
 
 const params =
   new URLSearchParams(
@@ -985,7 +701,7 @@ const fieldStorageKey =
 
 
 /* =====================================================
-   ELEMENTARY / MIDDLE — NEW
+   TASKS
 ===================================================== */
 
 const elementaryNew = [
@@ -1096,10 +812,6 @@ const elementaryNew = [
 ];
 
 
-/* =====================================================
-   ELEMENTARY / MIDDLE — ACTIVE
-===================================================== */
-
 const elementaryActive = [
 
   {
@@ -1200,10 +912,6 @@ const elementaryActive = [
 
 ];
 
-
-/* =====================================================
-   HIGH SCHOOL — NEW
-===================================================== */
 
 const highNew = [
 
@@ -1322,10 +1030,6 @@ const highNew = [
 ];
 
 
-/* =====================================================
-   HIGH SCHOOL — ACTIVE
-===================================================== */
-
 const highActive = [
 
   {
@@ -1443,242 +1147,11 @@ const highActive = [
 ];
 
 
-/* =====================================================
-   ELEMENTARY + SECONDARY — NEW
-===================================================== */
-
-const combinedNew = [
-
-  {
-    id:"contacts",
-    title:"Confirm the primary Staff Advisor, second contact where possible, and staff or student leadership contacts across the grades involved.",
-    note:"",
-    when:"Getting started",
-    type:"advisor"
-  },
-
-  {
-    id:"approval",
-    title:"Confirm school approval and complete the Program Application Form (PAF), where applicable.",
-    note:"",
-    when:"Getting started",
-    type:"advisor"
-  },
-
-  {
-    id:"format",
-    title:"Choose how the chapter will operate across the elementary, middle and secondary grades involved.",
-    note:"",
-    when:"Getting started"
-  },
-
-  {
-    id:"recruit",
-    title:"Recruit participating students using current recruitment materials and share the Parent Letter with families.",
-    note:"",
-    when:"Getting started / as needed",
-    type:"resourcesBoth"
-  },
-
-  {
-    id:"registration",
-    title:"Send the school’s unique current-year registration link to participating families.",
-    note:"Do not reuse another school’s or a prior-year registration link.",
-    when:"After recruitment",
-    type:"registration"
-  },
-
-  {
-    id:"training",
-    title:"Complete required Sensitivity Training and Chapter Leadership Training for secondary student leaders where applicable.",
-    note:"",
-    when:"Early in the year",
-    type:"resourcesBoth"
-  },
-
-  {
-    id:"matching",
-    title:"Review registered participants and complete or update formal buddy matches only where your chapter uses them.",
-    note:"",
-    when:"Before first activity",
-    type:"resourcesBoth"
-  },
-
-  {
-    id:"roster",
-    title:"Review the online roster using the school-specific roster link and report missing or incorrect registrations.",
-    note:"",
-    when:"Start of year / ongoing",
-    type:"roster"
-  },
-
-  {
-    id:"abuse",
-    title:"The designated teacher electronically signs the annual Abuse Policy when the separate Best Buddies email arrives.",
-    note:"This is mandatory for Best Buddies Canada’s insurance requirements.",
-    when:"Required annually",
-    type:"abuse"
-  },
-
-  {
-    id:"meet",
-    title:"Complete recruitment and hold your first gathering or Meet & Greet. Confirm both with your Program Advisor.",
-    note:"",
-    when:"Start of chapter",
-    type:"meet"
-  },
-
-  {
-    id:"activities",
-    title:"Schedule and hold regular inclusive chapter activities across the grades involved.",
-    note:"Consider Friendship Walk opportunities and report participation, successes, concerns and support needs.",
-    when:"Throughout the year",
-    type:"walksBoth"
-  },
-
-  {
-    id:"checkins",
-    title:"Reply to Program Advisor check-ins and report contact, participant or operating changes, along with any support needed.",
-    note:"",
-    when:"Monthly / term check-ins",
-    type:"advisor"
-  },
-
-  {
-    id:"funding",
-    title:"Discuss fundraising or activity support with your Program Advisor before using a funding or gift-card form.",
-    note:"",
-    when:"Only if needed",
-    type:"funding"
-  },
-
-  {
-    id:"yearend",
-    title:"Complete the End-of-Year Report and confirm chapter plans and student leadership for next year.",
-    note:"",
-    when:"End of program year",
-    type:"yearend"
-  }
-
-];
+const combinedNew = highNew;
+const combinedActive = highActive;
 
 
-/* =====================================================
-   ELEMENTARY + SECONDARY — ACTIVE
-===================================================== */
-
-const combinedActive = [
-
-  {
-    id:"contacts",
-    title:"Confirm the primary Staff Advisor, second contact where possible, student leadership contacts and any changes from last year.",
-    note:"",
-    when:"Start of year",
-    type:"contacts"
-  },
-
-  {
-    id:"continue",
-    title:"Confirm that the chapter will continue.",
-    note:"",
-    when:"Start of year",
-    type:"advisor"
-  },
-
-  {
-    id:"recruit",
-    title:"Recruit returning and new participants using current recruitment materials. Share the Parent Letter with families.",
-    note:"",
-    when:"Start of year / ongoing",
-    type:"resourcesBoth"
-  },
-
-  {
-    id:"registration",
-    title:"Send this year’s unique school-specific registration link to participating families.",
-    note:"Do not reuse another school’s or a prior-year registration link.",
-    when:"After recruitment",
-    type:"registration"
-  },
-
-  {
-    id:"training",
-    title:"Confirm required Sensitivity Training and Chapter Leadership Training are completed for secondary student leaders where applicable.",
-    note:"",
-    when:"Early year",
-    type:"resourcesBoth"
-  },
-
-  {
-    id:"matching",
-    title:"Review registered participants and update formal matches only where your chapter uses them.",
-    note:"",
-    when:"Before first activity",
-    type:"resourcesBoth"
-  },
-
-  {
-    id:"roster",
-    title:"Review the online roster using the school-specific roster link and report missing or incorrect registrations.",
-    note:"",
-    when:"Start of year / ongoing",
-    type:"roster"
-  },
-
-  {
-    id:"abuse",
-    title:"The designated teacher electronically signs the annual Abuse Policy when the separate Best Buddies email arrives.",
-    note:"This is mandatory for Best Buddies Canada’s insurance requirements.",
-    when:"Required annually",
-    type:"abuse"
-  },
-
-  {
-    id:"meet",
-    title:"Confirm with your Program Advisor when recruitment and the Meet & Greet have been completed.",
-    note:"",
-    when:"Start of year",
-    type:"meet"
-  },
-
-  {
-    id:"activities",
-    title:"Schedule and hold regular inclusive chapter activities across the grades involved.",
-    note:"Consider Friendship Walk opportunities and report participation, successes, concerns and support needs.",
-    when:"Throughout the year",
-    type:"walksBoth"
-  },
-
-  {
-    id:"checkins",
-    title:"Reply to Program Advisor check-ins and report contact, participant or operating changes, along with any support needed.",
-    note:"",
-    when:"Monthly / term check-ins",
-    type:"advisor"
-  },
-
-  {
-    id:"funding",
-    title:"Discuss fundraising or activity support with your Program Advisor before using a funding or gift-card form.",
-    note:"",
-    when:"Only if needed",
-    type:"funding"
-  },
-
-  {
-    id:"yearend",
-    title:"Complete the End-of-Year Report and confirm chapter plans and student leadership for next year.",
-    note:"",
-    when:"End of program year",
-    type:"yearend"
-  }
-
-];
-
-
-/* =====================================================
-   CHOOSE TASK SET
-===================================================== */
+/* TASK SET */
 
 function getTasks(){
 
@@ -1707,13 +1180,13 @@ function getTasks(){
 }
 
 
-/* =====================================================
-   HEADER
-===================================================== */
+/* HEADER */
 
 function renderHeader(){
 
-  const statusLabel =
+  document.getElementById(
+    "checklistTitle"
+  ).textContent =
     data.status === "active"
       ? "Existing / Active Chapter Annual Checklist"
       : "New / Restarting Chapter Checklist";
@@ -1724,25 +1197,13 @@ function renderHeader(){
 
 
   if(data.program === "high"){
-
-    programLabel =
-      "High School";
-
+    programLabel = "High School";
   }
 
 
   if(data.program === "combined"){
-
-    programLabel =
-      "Elementary + Secondary";
-
+    programLabel = "Elementary + Secondary";
   }
-
-
-  document.getElementById(
-    "checklistTitle"
-  ).textContent =
-    statusLabel;
 
 
   document.getElementById(
@@ -1781,39 +1242,23 @@ function renderHeader(){
 
     `<strong>Registration reminder:</strong>
      Use only the current school-specific registration link included in this checklist.
-     Teachers share the link with families, and parents/guardians register their own children as Buddies or Peer Buddies.
+     Teachers share the link with families, and parents/guardians register participating students.
      Do not use another school’s or a prior-year link.`;
 
 }
 
 
-/* =====================================================
-   LINK / NOTES COLUMN
-===================================================== */
+/* LINKS */
 
 function taskLinks(task){
-
-  if(task.type === "contacts"){
-
-    return `
-      <span class="task-note">
-        Program Advisor: ${escapeHtml(data.advisor)}
-        ${data.advisorEmail ? `<br>${escapeHtml(data.advisorEmail)}` : ""}
-      </span>
-    `;
-
-  }
-
 
   if(task.type === "registration"){
 
     return data.registration
 
-      ? `<a
-           class="resource-link"
-           href="${escapeAttribute(data.registration)}"
-           target="_blank"
-         >
+      ? `<a class="resource-link"
+            href="${escapeAttribute(data.registration)}"
+            target="_blank">
            Open Registration Form
          </a>`
 
@@ -1828,11 +1273,9 @@ function taskLinks(task){
 
     return data.roster
 
-      ? `<a
-           class="resource-link"
-           href="${escapeAttribute(data.roster)}"
-           target="_blank"
-         >
+      ? `<a class="resource-link"
+            href="${escapeAttribute(data.roster)}"
+            target="_blank">
            Open Chapter Roster
          </a>`
 
@@ -1843,103 +1286,37 @@ function taskLinks(task){
   }
 
 
-  if(task.type === "resources"){
-
-    const folder =
-      data.program === "high"
-        ? RESOURCE_FOLDERS.high
-        : RESOURCE_FOLDERS.elementary;
-
+  if(
+    task.type === "resources" ||
+    task.type === "resourcesBoth"
+  ){
 
     return `
       <a
         class="resource-link"
-        href="${escapeAttribute(folder)}"
+        href="${escapeAttribute(RESOURCE_LIBRARY)}"
         target="_blank"
       >
-        Recruitment & Chapter Resources
+        Open Resource Library
       </a>
     `;
 
   }
 
 
-  if(task.type === "resourcesBoth"){
+  if(
+    task.type === "walks" ||
+    task.type === "walksBoth"
+  ){
 
     return `
       <a
         class="resource-link"
-        href="${escapeAttribute(RESOURCE_FOLDERS.elementary)}"
-        target="_blank"
-      >
-        Elementary & Middle Resources
-      </a>
-
-      <br>
-
-      <a
-        class="resource-link"
-        href="${escapeAttribute(RESOURCE_FOLDERS.high)}"
-        target="_blank"
-      >
-        High School Resources
-      </a>
-    `;
-
-  }
-
-
-  if(task.type === "walks"){
-
-    const folder =
-      data.program === "high"
-        ? RESOURCE_FOLDERS.high
-        : RESOURCE_FOLDERS.elementary;
-
-
-    return `
-      <a
-        class="resource-link"
-        href="${escapeAttribute(folder)}"
+        href="${escapeAttribute(RESOURCE_LIBRARY)}"
         target="_blank"
       >
         Activity & Friendship Walk Resources
       </a>
-
-      <div class="task-note">
-        Youth Walks: Sept–Nov / Apr–Jun<br>
-        Community Walks: Sept–Oct / Apr–Jun
-      </div>
-    `;
-
-  }
-
-
-  if(task.type === "walksBoth"){
-
-    return `
-      <a
-        class="resource-link"
-        href="${escapeAttribute(RESOURCE_FOLDERS.elementary)}"
-        target="_blank"
-      >
-        Elementary & Middle Resources
-      </a>
-
-      <br>
-
-      <a
-        class="resource-link"
-        href="${escapeAttribute(RESOURCE_FOLDERS.high)}"
-        target="_blank"
-      >
-        High School Resources
-      </a>
-
-      <div class="task-note">
-        Youth Walks: Sept–Nov / Apr–Jun<br>
-        Community Walks: Sept–Oct / Apr–Jun
-      </div>
     `;
 
   }
@@ -1947,27 +1324,13 @@ function taskLinks(task){
 
   if(task.type === "advisor"){
 
-    return data.advisorEmail
-
-      ? `<a
-           class="resource-link"
-           href="mailto:${escapeAttribute(data.advisorEmail)}"
-         >
-           Email Your Program Advisor
-         </a>`
-
-      : `<span class="task-note">—</span>`;
-
-  }
-
-
-  if(task.type === "abuse"){
-
     return `
-      <span class="task-note">
-        Sent separately by email.
-        Contact your Program Advisor if it is not received.
-      </span>
+      <a
+        class="resource-link"
+        href="mailto:${escapeAttribute(data.advisorEmail)}"
+      >
+        Email Your Program Advisor
+      </a>
     `;
 
   }
@@ -1988,7 +1351,6 @@ function taskLinks(task){
             type="date"
             class="inline-field"
             data-field="recruitmentCompleted"
-            aria-label="Recruitment completed date"
           >
 
         </label>
@@ -2004,12 +1366,22 @@ function taskLinks(task){
             type="date"
             class="inline-field"
             data-field="meetGreetCompleted"
-            aria-label="Meet and Greet completed date"
           >
 
         </label>
 
       </div>
+    `;
+
+  }
+
+
+  if(task.type === "abuse"){
+
+    return `
+      <span class="task-note">
+        Sent separately by email.
+      </span>
     `;
 
   }
@@ -2042,9 +1414,7 @@ function taskLinks(task){
 }
 
 
-/* =====================================================
-   SAVED CHECKBOX STATE
-===================================================== */
+/* STATE */
 
 function loadState(){
 
@@ -2072,16 +1442,14 @@ function saveState(){
 
   document.querySelectorAll(
     ".check"
-  ).forEach(
-    checkbox=>{
+  ).forEach(checkbox=>{
 
-      state[
-        checkbox.dataset.task
-      ] =
-        checkbox.checked;
+    state[
+      checkbox.dataset.task
+    ] =
+      checkbox.checked;
 
-    }
-  );
+  });
 
 
   localStorage.setItem(
@@ -2095,9 +1463,7 @@ function saveState(){
 }
 
 
-/* =====================================================
-   SAVED DATE FIELD STATE
-===================================================== */
+/* DATE STATE */
 
 function loadFieldState(){
 
@@ -2153,14 +1519,16 @@ function setupInlineFields(){
     ".inline-field"
   ).forEach(input=>{
 
-    const fieldName =
-      input.dataset.field;
-
-
-    if(saved[fieldName]){
+    if(
+      saved[
+        input.dataset.field
+      ]
+    ){
 
       input.value =
-        saved[fieldName];
+        saved[
+          input.dataset.field
+        ];
 
     }
 
@@ -2170,20 +1538,12 @@ function setupInlineFields(){
       saveFieldState
     );
 
-
-    input.addEventListener(
-      "input",
-      saveFieldState
-    );
-
   });
 
 }
 
 
-/* =====================================================
-   RENDER TASKS
-===================================================== */
+/* RENDER */
 
 function renderTasks(){
 
@@ -2201,7 +1561,8 @@ function renderTasks(){
     );
 
 
-  tbody.innerHTML = "";
+  tbody.innerHTML =
+    "";
 
 
   tasks.forEach(task=>{
@@ -2215,17 +1576,13 @@ function renderTasks(){
     row.innerHTML = `
 
       <td>
-
         <input
           class="check"
           type="checkbox"
           data-task="${escapeAttribute(task.id)}"
           ${saved[task.id] ? "checked" : ""}
-          aria-label="${escapeAttribute(task.title)}"
         >
-
       </td>
-
 
       <td>
 
@@ -2243,11 +1600,9 @@ function renderTasks(){
 
       </td>
 
-
       <td>
         ${escapeHtml(task.when)}
       </td>
-
 
       <td>
         ${taskLinks(task)}
@@ -2265,16 +1620,14 @@ function renderTasks(){
 
   document.querySelectorAll(
     ".check"
-  ).forEach(
-    checkbox=>{
+  ).forEach(checkbox=>{
 
-      checkbox.addEventListener(
-        "change",
-        saveState
-      );
+    checkbox.addEventListener(
+      "change",
+      saveState
+    );
 
-    }
-  );
+  });
 
 
   setupInlineFields();
@@ -2284,9 +1637,7 @@ function renderTasks(){
 }
 
 
-/* =====================================================
-   PROGRESS
-===================================================== */
+/* PROGRESS */
 
 function updateProgress(){
 
@@ -2300,8 +1651,7 @@ function updateProgress(){
 
   const completed =
     boxes.filter(
-      checkbox =>
-        checkbox.checked
+      box => box.checked
     ).length;
 
 
@@ -2325,9 +1675,7 @@ function updateProgress(){
 }
 
 
-/* =====================================================
-   ADVISOR CARD
-===================================================== */
+/* ADVISOR */
 
 function renderAdvisor(){
 
@@ -2359,12 +1707,12 @@ function renderAdvisor(){
     data.advisorTitle;
 
 
-  const contact = [];
+  const parts = [];
 
 
   if(data.advisorEmail){
 
-    contact.push(
+    parts.push(
       `<a href="mailto:${escapeAttribute(data.advisorEmail)}">
          ${escapeHtml(data.advisorEmail)}
        </a>`
@@ -2375,7 +1723,7 @@ function renderAdvisor(){
 
   if(data.advisorPhone){
 
-    contact.push(
+    parts.push(
       escapeHtml(
         data.advisorPhone
       )
@@ -2387,81 +1735,44 @@ function renderAdvisor(){
   document.getElementById(
     "advisorContact"
   ).innerHTML =
-    contact.join("<br>");
+    parts.join("<br>");
 
 }
 
 
 function emailAdvisor(){
 
-  const subject =
-    `Best Buddies question | ${data.school}`;
-
-
-  const body =
-`Hi ${firstName(data.advisor)},
-
-I have a question about our Best Buddies chapter at ${data.school}.
-
-`;
-
-
-  window.location.href =
+  location.href =
     `mailto:${encodeURIComponent(data.advisorEmail)}`
-    + `?subject=${encodeURIComponent(subject)}`
-    + `&body=${encodeURIComponent(body)}`;
+    +
+    `?subject=${encodeURIComponent(`Best Buddies question | ${data.school}`)}`;
 
 }
 
 
-/* =====================================================
-   PAGE ACTIONS
-===================================================== */
-
 async function copyPageLink(){
 
-  try{
+  await navigator.clipboard.writeText(
+    location.href
+  );
 
-    await navigator.clipboard.writeText(
-      location.href
-    );
 
-    alert(
-      "Checklist link copied."
-    );
-
-  }catch{
-
-    prompt(
-      "Copy this checklist link:",
-      location.href
-    );
-
-  }
+  alert(
+    "Checklist link copied."
+  );
 
 }
 
 
 function openHub(){
 
-  window.location.href =
+  location.href =
     "index.html";
 
 }
 
 
-/* =====================================================
-   HELPERS
-===================================================== */
-
-function firstName(name){
-
-  return String(
-    name || ""
-  ).trim().split(/\s+/)[0] || "";
-
-}
-
+/* HELPERS */
 
 function escapeHtml(value){
 
@@ -2482,9 +1793,7 @@ function escapeAttribute(value){
 }
 
 
-/* =====================================================
-   INIT
-===================================================== */
+/* INIT */
 
 renderHeader();
 renderTasks();
