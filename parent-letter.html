@@ -25,7 +25,9 @@
   --bg:#efedf1;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
@@ -176,7 +178,7 @@ li{
 }
 
 
-/* EDITING */
+/* EDITABLE */
 
 body.editing [data-editable="true"]{
   outline:1px dashed #bba1c7;
@@ -508,6 +510,7 @@ body.editing .edit-only{
 
 <main class="letter" id="letter">
 
+
   <div class="brand-row">
 
     <img
@@ -540,6 +543,14 @@ body.editing .edit-only{
   ></p>
 
 
+  <p
+    data-editable="true"
+    data-edit-key="intro"
+  >
+    Best Buddies is a global nonprofit organization that creates opportunities for friendship, leadership, inclusion, and belonging for people with intellectual and developmental disabilities and their peers. Through our school programs, students have opportunities to build genuine friendships, take part in shared activities, develop leadership skills, and help strengthen inclusion within their school community.
+  </p>
+
+
   <h2>
     What is Best Buddies?
   </h2>
@@ -549,21 +560,15 @@ body.editing .edit-only{
     data-editable="true"
     data-edit-key="whatIs"
   >
-    Best Buddies is a friendship program. It brings students with and without intellectual and developmental disabilities together. Students get to know each other, do activities, and make friends. Everyone should feel welcome and included.
+    Best Buddies brings students together to build friendships and create a more inclusive school community.
   </p>
 
 
-  <h2>
-    What will students do?
-  </h2>
-
-
   <p
-    style="margin-bottom:3px"
     data-editable="true"
-    data-edit-key="studentsMay"
+    data-edit-key="chapterIntro"
   >
-    Students may:
+    Every chapter looks a little different. Depending on the age of students and the way the school chooses to run its program, activities may include:
   </p>
 
 
@@ -572,11 +577,11 @@ body.editing .edit-only{
     data-editable="true"
     data-edit-key="activities"
   >
-    <li>Eat lunch together.</li>
-    <li>Play games or join group activities.</li>
-    <li>Take part in school events.</li>
-    <li>Spend time with a friend who enjoys the same things.</li>
-    <li>Help plan activities.</li>
+    <li>Shared lunches and group activities</li>
+    <li>School events and social gatherings</li>
+    <li>Opportunities to build meaningful one-to-one friendships</li>
+    <li>Student leadership opportunities</li>
+    <li>School-wide inclusion and awareness activities</li>
   </ul>
 
 
@@ -584,12 +589,12 @@ body.editing .edit-only{
     data-editable="true"
     data-edit-key="chapterFlexibility"
   >
-    Each school plans its own Best Buddies activities. Some schools have group activities. Others also match two students to spend time together as friends.
+    Some chapters focus mainly on group activities, while others, particularly at the secondary level, may also include one-to-one friendships based on shared interests. The program is flexible so schools can create something that works well for their students and community.
   </p>
 
 
   <h2>
-    Why join?
+    Why participate?
   </h2>
 
 
@@ -597,13 +602,20 @@ body.editing .edit-only{
     data-editable="true"
     data-edit-key="whyJoin"
   >
-    Your child can meet new people, make friends, and practise new skills.
+    Best Buddies gives students opportunities to make new friends, build confidence, strengthen social connections, develop leadership skills, and take an active role in creating a more welcoming and inclusive school community.
   </p>
 
 
   <h2>
-    How do I sign up my child?
+    How to Register
   </h2>
+
+
+  <p
+    data-editable="true"
+    data-edit-key="registrationIntro"
+    id="registrationIntro"
+  ></p>
 
 
   <div class="registration-box">
@@ -636,7 +648,7 @@ body.editing .edit-only{
 
         <p style="margin:12px 0 0">
           <strong>2.</strong>
-          Fill in the form.
+          Complete the registration form.
         </p>
 
 
@@ -666,7 +678,7 @@ body.editing .edit-only{
     data-editable="true"
     data-edit-key="helpText"
   >
-    If you need help with the form, please contact us.
+    If you have any questions about Best Buddies or need help with registration, please reach out.
   </p>
 
 
@@ -676,7 +688,7 @@ body.editing .edit-only{
     <div>
 
       <div class="contact-title">
-        Questions or help
+        School Contact
       </div>
 
 
@@ -810,14 +822,20 @@ let editMode = false;
 let editSnapshot = null;
 
 
-/* BASE */
+/* BASE RENDER */
 
 function render(){
 
   document.getElementById(
     "invitationText"
   ).innerHTML =
-    `Your child is invited to join Best Buddies at <strong>${escapeHtml(data.school)}</strong>.`;
+    `Your child has been invited to participate in Best Buddies at <strong>${escapeHtml(data.school)}</strong>.`;
+
+
+  document.getElementById(
+    "registrationIntro"
+  ).innerHTML =
+    `We would love for your child to be part of Best Buddies at <strong>${escapeHtml(data.school)}</strong>.`;
 
 
   renderRegistration();
@@ -827,6 +845,8 @@ function render(){
 
 }
 
+
+/* REGISTRATION */
 
 function renderRegistration(){
 
@@ -893,6 +913,8 @@ function renderRegistration(){
 
 }
 
+
+/* CONTACTS */
 
 function renderBaseContacts(){
 
@@ -972,8 +994,6 @@ function renderAdvisor(){
 }
 
 
-/* CONTACTS */
-
 function addSchoolContact(
   contact = {},
   removable = true
@@ -1041,7 +1061,9 @@ function addSchoolContact(
   `;
 
 
-  container.appendChild(card);
+  container.appendChild(
+    card
+  );
 
 
   if(editMode){
@@ -1452,7 +1474,7 @@ function contactValue(
 }
 
 
-/* WORD */
+/* WORD DOWNLOAD */
 
 async function downloadEditableWord(){
 
@@ -1611,6 +1633,15 @@ async function downloadEditableWord(){
 
 
   children.push(
+    wordParagraph(
+      Paragraph,
+      TextRun,
+      textOf("intro")
+    )
+  );
+
+
+  children.push(
     wordHeading(
       Paragraph,
       TextRun,
@@ -1629,19 +1660,10 @@ async function downloadEditableWord(){
 
 
   children.push(
-    wordHeading(
-      Paragraph,
-      TextRun,
-      "What will students do?"
-    )
-  );
-
-
-  children.push(
     wordParagraph(
       Paragraph,
       TextRun,
-      textOf("studentsMay"),
+      textOf("chapterIntro"),
       70
     )
   );
@@ -1693,7 +1715,7 @@ async function downloadEditableWord(){
     wordHeading(
       Paragraph,
       TextRun,
-      "Why join?"
+      "Why participate?"
     )
   );
 
@@ -1711,7 +1733,16 @@ async function downloadEditableWord(){
     wordHeading(
       Paragraph,
       TextRun,
-      "How do I sign up my child?"
+      "How to Register"
+    )
+  );
+
+
+  children.push(
+    wordParagraph(
+      Paragraph,
+      TextRun,
+      textOf("registrationIntro")
     )
   );
 
@@ -1845,7 +1876,7 @@ async function downloadEditableWord(){
 
         new TextRun({
           text:
-            "Fill in the form.",
+            "Complete the registration form.",
           size:22
         })
 
@@ -1869,7 +1900,7 @@ async function downloadEditableWord(){
     wordHeading(
       Paragraph,
       TextRun,
-      "Questions or help"
+      "School Contact"
     )
   );
 
@@ -2310,6 +2341,8 @@ function getScaledImageSize(
 
 }
 
+
+/* HELPERS */
 
 function safeFilename(value){
 
