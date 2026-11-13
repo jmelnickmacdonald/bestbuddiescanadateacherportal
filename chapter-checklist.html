@@ -24,37 +24,26 @@
   --bg:#efedf1;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
   margin:0;
-
   background:var(--bg);
   color:var(--ink);
-
   font-family:"Poppins",Arial,sans-serif;
 }
 
-button,
-input{
-  font:inherit;
-}
+button,input{font:inherit}
 
 
 /* TOOLBAR */
 
 .toolbar{
   max-width:1100px;
-
   margin:17px auto 0;
   padding:0 18px;
-
   display:flex;
-  justify-content:space-between;
   flex-wrap:wrap;
-
   gap:9px;
 }
 
@@ -66,20 +55,15 @@ input{
 
 .toolbar-note{
   width:100%;
-
   margin-top:2px;
-
   color:var(--muted);
-
   font-size:.7rem;
 }
 
 .btn{
   border:0;
   border-radius:9px;
-
   padding:10px 14px;
-
   font-weight:700;
   cursor:pointer;
 }
@@ -89,14 +73,8 @@ input{
   color:white;
 }
 
-.btn-teal{
-  background:var(--teal);
-  color:white;
-}
-
 .btn-light{
   border:1px solid #d9d5dc;
-
   background:white;
   color:var(--ink);
 }
@@ -107,26 +85,17 @@ input{
 .document{
   max-width:1100px;
   min-height:700px;
-
   margin:14px auto 45px;
-
   background:white;
-
-  box-shadow:
-    0 10px 30px
-    rgba(28,20,36,.11);
+  box-shadow:0 10px 30px rgba(28,20,36,.11);
 }
 
 .topline{
   padding:15px 26px 9px;
-
   border-bottom:1px solid #eee;
-
   color:#514b55;
-
   font-size:.7rem;
   font-weight:800;
-
   letter-spacing:.07em;
   text-transform:uppercase;
 }
@@ -136,7 +105,6 @@ input{
 
 .chapter-header{
   padding:23px 29px 21px;
-
   border-bottom:1px solid var(--line);
 }
 
@@ -144,7 +112,6 @@ input{
   display:flex;
   align-items:center;
   gap:17px;
-
   margin-bottom:21px;
 }
 
@@ -160,9 +127,7 @@ input{
 
 .chapter-header-title h1{
   margin:0 0 5px;
-
   color:var(--purple);
-
   font-size:1.5rem;
   line-height:1.15;
   letter-spacing:-.02em;
@@ -170,9 +135,7 @@ input{
 
 .checklist-subtitle{
   margin:0 0 6px;
-
   color:var(--muted);
-
   font-size:.77rem;
   line-height:1.4;
 }
@@ -182,9 +145,7 @@ input{
   flex-wrap:wrap;
   align-items:center;
   gap:7px;
-
   color:var(--muted);
-
   font-size:.78rem;
   font-weight:600;
 }
@@ -202,20 +163,15 @@ input{
 
 .info-item{
   padding-bottom:7px;
-
   border-bottom:1px solid var(--line);
 }
 
 .info-label{
   display:block;
-
   margin-bottom:3px;
-
   color:var(--muted);
-
   font-size:.66rem;
   font-weight:800;
-
   letter-spacing:.05em;
   text-transform:uppercase;
 }
@@ -230,13 +186,9 @@ input{
 
 .notice{
   margin:0;
-
   padding:11px 26px;
-
   border-bottom:1px solid #eadff0;
-
   background:#f8f4fa;
-
   font-size:.8rem;
   line-height:1.45;
 }
@@ -246,34 +198,25 @@ input{
 
 table{
   width:100%;
-
   border-collapse:collapse;
   table-layout:fixed;
 }
 
 th{
   padding:10px 9px;
-
   border-bottom:1px solid var(--line);
-
   background:var(--navy);
   color:white;
-
   text-align:left;
-
   font-size:.68rem;
   font-weight:700;
-
   letter-spacing:.035em;
 }
 
 td{
   padding:12px 9px;
-
   border-bottom:1px solid var(--line);
-
   vertical-align:top;
-
   font-size:.81rem;
   line-height:1.4;
 }
@@ -306,34 +249,26 @@ td:nth-child(4){
 .check{
   width:21px;
   height:21px;
-
   cursor:pointer;
-
   accent-color:var(--purple);
 }
 
 .task-title{
   margin-bottom:3px;
-
   font-weight:700;
 }
 
 .task-note{
   color:var(--muted);
-
   font-size:.74rem;
 }
 
 .resource-link{
   display:inline-block;
-
   margin-bottom:5px;
-
   color:var(--purple);
-
   font-size:.77rem;
   font-weight:700;
-
   text-decoration:underline;
 }
 
@@ -351,9 +286,7 @@ td:nth-child(4){
   align-items:center;
   justify-content:space-between;
   gap:10px;
-
   color:var(--muted);
-
   font-size:.7rem;
   font-weight:600;
 }
@@ -365,28 +298,19 @@ td:nth-child(4){
 .inline-field{
   width:132px;
   height:31px;
-
   flex:0 0 132px;
-
   padding:3px 6px;
-
   border:1px solid #d4ced7;
   border-radius:6px;
-
   background:white;
   color:var(--ink);
-
   font-size:.68rem;
 }
 
 .inline-field:focus{
   outline:none;
-
   border-color:var(--purple);
-
-  box-shadow:
-    0 0 0 2px
-    rgba(111,44,145,.08);
+  box-shadow:0 0 0 2px rgba(111,44,145,.08);
 }
 
 
@@ -394,20 +318,16 @@ td:nth-child(4){
 
 .bottom{
   padding:21px 24px;
-
   display:grid;
   grid-template-columns:1fr 330px;
   gap:22px;
-
   background:#faf9fb;
 }
 
 .progress-card{
   padding:17px;
-
   border:1px solid #e2dde5;
   border-radius:12px;
-
   background:white;
 }
 
@@ -417,22 +337,16 @@ td:nth-child(4){
 
 .progress-bar{
   height:9px;
-
   margin:11px 0 7px;
-
   overflow:hidden;
-
   border-radius:20px;
-
   background:#ece8ef;
 }
 
 .progress-fill{
   width:0;
   height:100%;
-
   background:var(--teal);
-
   transition:.2s ease;
 }
 
@@ -442,30 +356,24 @@ td:nth-child(4){
 
 .save-note{
   margin:9px 0 0;
-
   color:var(--muted);
-
   font-size:.73rem;
 }
 
 .advisor-card{
   padding:19px;
-
   border-radius:12px;
-
   background:var(--purple);
   color:white;
 }
 
 .advisor-card h3{
   margin:0 0 6px;
-
   font-size:1rem;
 }
 
 .advisor-card p{
   margin:5px 0;
-
   font-size:.8rem;
   line-height:1.45;
 }
@@ -485,13 +393,9 @@ td:nth-child(4){
 
 .document-footer{
   padding:11px 24px 17px;
-
   background:#faf9fb;
-
   color:var(--muted);
-
   text-align:center;
-
   font-size:.7rem;
 }
 
@@ -542,7 +446,6 @@ td:nth-child(4){
   .inline-field-row{
     align-items:flex-start;
     flex-direction:column;
-
     gap:4px;
   }
 
@@ -575,9 +478,7 @@ td:nth-child(4){
     width:100%;
     max-width:none;
     min-height:0;
-
     margin:0;
-
     box-shadow:none;
   }
 
@@ -607,14 +508,12 @@ td:nth-child(4){
 
   td{
     padding:7px;
-
     font-size:.67rem;
     line-height:1.3;
   }
 
   th{
     padding:6px 7px;
-
     font-size:.59rem;
   }
 
@@ -624,9 +523,7 @@ td:nth-child(4){
 
   .resource-link{
     color:black;
-
     font-size:.61rem;
-
     text-decoration:none;
   }
 
@@ -641,16 +538,11 @@ td:nth-child(4){
   .inline-field{
     width:108px;
     height:24px;
-
     flex:0 0 108px;
-
     padding:1px 4px;
-
     border:1px solid #aaa;
     border-radius:3px;
-
     font-size:.56rem;
-
     box-shadow:none;
   }
 
@@ -701,18 +593,6 @@ td:nth-child(4){
   </div>
 
 
-  <div class="toolbar-group">
-
-    <button
-      class="btn btn-teal"
-      onclick="openHub()"
-    >
-      Open Chapter Hub
-    </button>
-
-  </div>
-
-
   <div class="toolbar-note">
     Use the checklist online to save progress on this device, or download an editable Word copy if you prefer to work offline.
   </div>
@@ -738,7 +618,6 @@ td:nth-child(4){
       onerror="this.style.display='none'"
     >
 
-
     <div class="chapter-header-title">
 
       <h1 id="checklistTitle"></h1>
@@ -752,9 +631,7 @@ td:nth-child(4){
 
         <span id="programLabel"></span>
 
-        <span class="meta-dot">
-          •
-        </span>
+        <span class="meta-dot">•</span>
 
         <span id="yearTop"></span>
 
@@ -824,23 +701,10 @@ td:nth-child(4){
 <thead>
 
 <tr>
-
-  <th>
-    Done
-  </th>
-
-  <th>
-    What your chapter completes
-  </th>
-
-  <th>
-    When
-  </th>
-
-  <th>
-    Link / notes
-  </th>
-
+  <th>Done</th>
+  <th>What your chapter completes</th>
+  <th>When</th>
+  <th>Link / notes</th>
 </tr>
 
 </thead>
@@ -891,17 +755,11 @@ td:nth-child(4){
     </h3>
 
     <p>
-
-      <strong id="advisorName"></strong>
-
-      <br>
-
+      <strong id="advisorName"></strong><br>
       <span id="advisorTitle"></span>
-
     </p>
 
     <p id="advisorContact"></p>
-
 
     <div class="advisor-actions">
 
@@ -1703,48 +1561,27 @@ const combinedActive = [
 
 function getTasks(){
 
-  if(
-    data.program ===
-    "elementary"
-  ){
+  if(data.program === "elementary"){
 
-    return(
-      data.status ===
-      "active"
-
-        ? elementaryActive
-
-        : elementaryNew
-    );
+    return data.status === "active"
+      ? elementaryActive
+      : elementaryNew;
 
   }
 
 
-  if(
-    data.program ===
-    "high"
-  ){
+  if(data.program === "high"){
 
-    return(
-      data.status ===
-      "active"
-
-        ? highActive
-
-        : highNew
-    );
+    return data.status === "active"
+      ? highActive
+      : highNew;
 
   }
 
 
-  return(
-    data.status ===
-    "active"
-
-      ? combinedActive
-
-      : combinedNew
-  );
+  return data.status === "active"
+    ? combinedActive
+    : combinedNew;
 
 }
 
@@ -1755,17 +1592,13 @@ function renderHeader(){
 
   const statusLabel =
     data.status === "active"
-
       ? "Existing / Active Chapter Annual Checklist"
-
       : "New / Restarting Chapter Checklist";
 
 
   const subtitle =
     data.status === "active"
-
       ? "Use this at the start of the school year and during regular chapter check-ins."
-
       : "Use this as you get started and during regular chapter check-ins.";
 
 
@@ -1773,25 +1606,13 @@ function renderHeader(){
     "Elementary & Middle School";
 
 
-  if(
-    data.program ===
-    "high"
-  ){
-
-    programLabel =
-      "High School";
-
+  if(data.program === "high"){
+    programLabel = "High School";
   }
 
 
-  if(
-    data.program ===
-    "combined"
-  ){
-
-    programLabel =
-      "Elementary + Secondary";
-
+  if(data.program === "combined"){
+    programLabel = "Elementary + Secondary";
   }
 
 
@@ -1849,16 +1670,11 @@ function renderHeader(){
 }
 
 
-/* LINKS / NOTES */
+/* LINKS */
 
-function taskLinks(
-  task
-){
+function taskLinks(task){
 
-  if(
-    task.type ===
-    "contacts"
-  ){
+  if(task.type === "contacts"){
 
     return `
       <span class="task-note">
@@ -1884,72 +1700,57 @@ function taskLinks(
   }
 
 
-  if(
-    task.type ===
-    "registration"
-  ){
+  if(task.type === "registration"){
 
-    return(
-      data.registration
+    return data.registration
 
-        ? `
-          <a
-            class="resource-link"
-            href="${escapeAttribute(data.registration)}"
-            target="_blank"
-          >
-            Open Registration Form
-          </a>
-        `
+      ? `
+        <a
+          class="resource-link"
+          href="${escapeAttribute(data.registration)}"
+          target="_blank"
+        >
+          Open Registration Form
+        </a>
+      `
 
-        : `
-          <span class="task-note">
-            Contact your Program Advisor for the current registration link.
-          </span>
-        `
-    );
+      : `
+        <span class="task-note">
+          Contact your Program Advisor for the current registration link.
+        </span>
+      `;
 
   }
 
 
-  if(
-    task.type ===
-    "roster"
-  ){
+  if(task.type === "roster"){
 
-    return(
-      data.roster
+    return data.roster
 
-        ? `
-          <a
-            class="resource-link"
-            href="${escapeAttribute(data.roster)}"
-            target="_blank"
-          >
-            Open Chapter Roster
-          </a>
-        `
+      ? `
+        <a
+          class="resource-link"
+          href="${escapeAttribute(data.roster)}"
+          target="_blank"
+        >
+          Open Chapter Roster
+        </a>
+      `
 
-        : `
-          <span class="task-note">
-            Contact your Program Advisor for the school-specific roster link.
-          </span>
-        `
-    );
+      : `
+        <span class="task-note">
+          Contact your Program Advisor for the school-specific roster link.
+        </span>
+      `;
 
   }
 
 
-  if(
-    task.type ===
-    "resources"
-  ){
+  if(task.type === "resources"){
 
     const folder =
       data.program === "high"
-
         ? RESOURCE_FOLDERS.high
-
         : RESOURCE_FOLDERS.elementary;
 
 
@@ -1957,38 +1758,21 @@ function taskLinks(
       "Chapter Resources";
 
 
-    if(
-      task.id ===
-      "recruit"
-    ){
+    if(task.id === "recruit"){
+      label = "Recruitment Resources";
+    }
 
-      label =
-        "Recruitment Resources";
 
+    if(task.id === "matching"){
+      label = "Matching Resources";
     }
 
 
     if(
-      task.id ===
-      "matching"
+      task.id === "leadership" ||
+      task.id === "training"
     ){
-
-      label =
-        "Matching Resources";
-
-    }
-
-
-    if(
-      task.id ===
-      "leadership" ||
-      task.id ===
-      "training"
-    ){
-
-      label =
-        "Leadership & Training Resources";
-
+      label = "Leadership & Training Resources";
     }
 
 
@@ -2011,10 +1795,7 @@ function taskLinks(
   }
 
 
-  if(
-    task.type ===
-    "resourcesBoth"
-  ){
+  if(task.type === "resourcesBoth"){
 
     return `
       <a
@@ -2045,10 +1826,7 @@ function taskLinks(
   }
 
 
-  if(
-    task.type ===
-    "walk"
-  ){
+  if(task.type === "walk"){
 
     return `
       <a
@@ -2068,33 +1846,25 @@ function taskLinks(
   }
 
 
-  if(
-    task.type ===
-    "advisor"
-  ){
+  if(task.type === "advisor"){
 
-    return(
-      data.advisorEmail
+    return data.advisorEmail
 
-        ? `
-          <a
-            class="resource-link"
-            href="mailto:${escapeAttribute(data.advisorEmail)}"
-          >
-            Email Your Program Advisor
-          </a>
-        `
+      ? `
+        <a
+          class="resource-link"
+          href="mailto:${escapeAttribute(data.advisorEmail)}"
+        >
+          Email Your Program Advisor
+        </a>
+      `
 
-        : `<span class="task-note">—</span>`
-    );
+      : `<span class="task-note">—</span>`;
 
   }
 
 
-  if(
-    task.type ===
-    "abuse"
-  ){
+  if(task.type === "abuse"){
 
     return `
       <span class="task-note">
@@ -2105,10 +1875,7 @@ function taskLinks(
   }
 
 
-  if(
-    task.type ===
-    "meet"
-  ){
+  if(task.type === "meet"){
 
     return `
       <div class="inline-fields">
@@ -2150,10 +1917,7 @@ function taskLinks(
   }
 
 
-  if(
-    task.type ===
-    "funding"
-  ){
+  if(task.type === "funding"){
 
     return `
       <span class="task-note">
@@ -2164,10 +1928,7 @@ function taskLinks(
   }
 
 
-  if(
-    task.type ===
-    "yearend"
-  ){
+  if(task.type === "yearend"){
 
     return `
       <span class="task-note">
@@ -2187,7 +1948,7 @@ function taskLinks(
 }
 
 
-/* SAVED CHECKBOXES */
+/* STATE */
 
 function loadState(){
 
@@ -2266,16 +2027,14 @@ function saveFieldState(){
 
   document.querySelectorAll(
     ".inline-field"
-  ).forEach(
-    input=>{
+  ).forEach(input=>{
 
-      state[
-        input.dataset.field
-      ] =
-        input.value;
+    state[
+      input.dataset.field
+    ] =
+      input.value;
 
-    }
-  );
+  });
 
 
   localStorage.setItem(
@@ -2294,40 +2053,32 @@ function setupInlineFields(){
 
   document.querySelectorAll(
     ".inline-field"
-  ).forEach(
-    input=>{
+  ).forEach(input=>{
 
-      const fieldName =
-        input.dataset.field;
-
-
-      if(
-        saved[
-          fieldName
-        ]
-      ){
-
-        input.value =
-          saved[
-            fieldName
-          ];
-
-      }
+    const fieldName =
+      input.dataset.field;
 
 
-      input.addEventListener(
-        "change",
-        saveFieldState
-      );
+    if(saved[fieldName]){
 
-
-      input.addEventListener(
-        "input",
-        saveFieldState
-      );
+      input.value =
+        saved[fieldName];
 
     }
-  );
+
+
+    input.addEventListener(
+      "change",
+      saveFieldState
+    );
+
+
+    input.addEventListener(
+      "input",
+      saveFieldState
+    );
+
+  });
 
 }
 
@@ -2350,71 +2101,66 @@ function renderTasks(){
     );
 
 
-  tbody.innerHTML =
-    "";
+  tbody.innerHTML = "";
 
 
-  tasks.forEach(
-    task=>{
+  tasks.forEach(task=>{
 
-      const row =
-        document.createElement(
-          "tr"
-        );
-
-
-      row.innerHTML = `
-
-        <td>
-
-          <input
-            class="check"
-            type="checkbox"
-            data-task="${escapeAttribute(task.id)}"
-            ${saved[task.id] ? "checked" : ""}
-            aria-label="${escapeAttribute(task.title)}"
-          >
-
-        </td>
-
-
-        <td>
-
-          <div class="task-title">
-            ${escapeHtml(task.title)}
-          </div>
-
-          ${
-            task.note
-              ? `
-                <div class="task-note">
-                  ${escapeHtml(task.note)}
-                </div>
-              `
-              : ""
-          }
-
-        </td>
-
-
-        <td>
-          ${escapeHtml(task.when)}
-        </td>
-
-
-        <td>
-          ${taskLinks(task)}
-        </td>
-
-      `;
-
-
-      tbody.appendChild(
-        row
+    const row =
+      document.createElement(
+        "tr"
       );
 
-    }
-  );
+
+    row.innerHTML = `
+
+      <td>
+
+        <input
+          class="check"
+          type="checkbox"
+          data-task="${escapeAttribute(task.id)}"
+          ${saved[task.id] ? "checked" : ""}
+          aria-label="${escapeAttribute(task.title)}"
+        >
+
+      </td>
+
+
+      <td>
+
+        <div class="task-title">
+          ${escapeHtml(task.title)}
+        </div>
+
+        ${
+          task.note
+            ? `
+              <div class="task-note">
+                ${escapeHtml(task.note)}
+              </div>
+            `
+            : ""
+        }
+
+      </td>
+
+
+      <td>
+        ${escapeHtml(task.when)}
+      </td>
+
+
+      <td>
+        ${taskLinks(task)}
+      </td>
+
+    `;
+
+
+    tbody.appendChild(row);
+
+  });
 
 
   document.querySelectorAll(
@@ -2432,7 +2178,6 @@ function renderTasks(){
 
 
   setupInlineFields();
-
   updateProgress();
 
 }
@@ -2487,9 +2232,7 @@ function renderAdvisor(){
     );
 
 
-  if(
-    !data.showAdvisor
-  ){
+  if(!data.showAdvisor){
 
     card.style.display =
       "none";
@@ -2514,9 +2257,7 @@ function renderAdvisor(){
   const contact = [];
 
 
-  if(
-    data.advisorEmail
-  ){
+  if(data.advisorEmail){
 
     contact.push(
       `
@@ -2529,9 +2270,7 @@ function renderAdvisor(){
   }
 
 
-  if(
-    data.advisorPhone
-  ){
+  if(data.advisorPhone){
 
     contact.push(
       escapeHtml(
@@ -2545,9 +2284,7 @@ function renderAdvisor(){
   document.getElementById(
     "advisorContact"
   ).innerHTML =
-    contact.join(
-      "<br>"
-    );
+    contact.join("<br>");
 
 }
 
@@ -2576,13 +2313,11 @@ I have a question about our Best Buddies chapter at ${data.school}.
 }
 
 
-/* WORD DOWNLOAD */
+/* WORD */
 
 async function downloadEditableWord(){
 
-  if(
-    !window.docx
-  ){
+  if(!window.docx){
 
     alert(
       "The Word document generator could not load. Please refresh and try again."
@@ -2624,17 +2359,13 @@ async function downloadEditableWord(){
 
   const title =
     data.status === "active"
-
       ? "Existing / Active Chapter Annual Checklist"
-
       : "New / Restarting Chapter Checklist";
 
 
   const subtitle =
     data.status === "active"
-
       ? "Use this at the start of the school year and during regular chapter check-ins."
-
       : "Use this as you get started and during regular chapter check-ins.";
 
 
@@ -2642,25 +2373,13 @@ async function downloadEditableWord(){
     "Elementary & Middle School";
 
 
-  if(
-    data.program ===
-    "high"
-  ){
-
-    program =
-      "High School";
-
+  if(data.program === "high"){
+    program = "High School";
   }
 
 
-  if(
-    data.program ===
-    "combined"
-  ){
-
-    program =
-      "Elementary + Secondary";
-
+  if(data.program === "combined"){
+    program = "Elementary + Secondary";
   }
 
 
@@ -2712,151 +2431,45 @@ async function downloadEditableWord(){
   );
 
 
-  tasks.forEach(
-    task=>{
+  tasks.forEach(task=>{
 
-      const taskParagraphs = [
+    const taskParagraphs = [
+
+      new Paragraph({
+
+        spacing:{
+          after:60
+        },
+
+        children:[
+          new TextRun({
+            text:task.title,
+            bold:true,
+            size:18
+          })
+        ]
+
+      })
+
+    ];
+
+
+    if(task.note){
+
+      taskParagraphs.push(
 
         new Paragraph({
 
           spacing:{
-            after:60
+            after:0
           },
 
           children:[
-
             new TextRun({
-              text:
-                task.title,
-              bold:true,
-              size:18
+              text:task.note,
+              color:"69636F",
+              size:16
             })
-
-          ]
-
-        })
-
-      ];
-
-
-      if(
-        task.note
-      ){
-
-        taskParagraphs.push(
-
-          new Paragraph({
-
-            spacing:{
-              after:0
-            },
-
-            children:[
-
-              new TextRun({
-                text:
-                  task.note,
-                color:
-                  "69636F",
-                size:16
-              })
-
-            ]
-
-          })
-
-        );
-
-      }
-
-
-      rows.push(
-
-        new TableRow({
-
-          children:[
-
-            new TableCell({
-
-              verticalAlign:
-                VerticalAlign.CENTER,
-
-              children:[
-
-                new Paragraph({
-
-                  alignment:
-                    AlignmentType.CENTER,
-
-                  children:[
-
-                    new CheckBox({
-
-                      checked:
-                        !!checkedState[
-                          task.id
-                        ],
-
-                      alias:
-                        task.title
-
-                    })
-
-                  ]
-
-                })
-
-              ]
-
-            }),
-
-
-            new TableCell({
-
-              children:
-                taskParagraphs
-
-            }),
-
-
-            new TableCell({
-
-              children:[
-
-                new Paragraph({
-
-                  children:[
-
-                    new TextRun({
-                      text:
-                        task.when,
-                      size:17
-                    })
-
-                  ]
-
-                })
-
-              ]
-
-            }),
-
-
-            new TableCell({
-
-              children:
-                getWordNotes(
-                  task,
-                  {
-                    Paragraph,
-                    TextRun,
-                    ExternalHyperlink
-                  },
-                  fields
-                )
-
-            })
-
           ]
 
         })
@@ -2864,7 +2477,95 @@ async function downloadEditableWord(){
       );
 
     }
-  );
+
+
+    rows.push(
+
+      new TableRow({
+
+        children:[
+
+          new TableCell({
+
+            verticalAlign:
+              VerticalAlign.CENTER,
+
+            children:[
+
+              new Paragraph({
+
+                alignment:
+                  AlignmentType.CENTER,
+
+                children:[
+
+                  new CheckBox({
+                    checked:
+                      !!checkedState[
+                        task.id
+                      ],
+
+                    alias:
+                      task.title
+                  })
+
+                ]
+
+              })
+
+            ]
+
+          }),
+
+
+          new TableCell({
+            children:
+              taskParagraphs
+          }),
+
+
+          new TableCell({
+
+            children:[
+
+              new Paragraph({
+
+                children:[
+                  new TextRun({
+                    text:task.when,
+                    size:17
+                  })
+                ]
+
+              })
+
+            ]
+
+          }),
+
+
+          new TableCell({
+
+            children:
+              getWordNotes(
+                task,
+                {
+                  Paragraph,
+                  TextRun,
+                  ExternalHyperlink
+                },
+                fields
+              )
+
+          })
+
+        ]
+
+      })
+
+    );
+
+  });
 
 
   const doc =
@@ -2875,18 +2576,14 @@ async function downloadEditableWord(){
         {
 
           properties:{
-
             page:{
-
               margin:{
                 top:550,
                 right:550,
                 bottom:550,
                 left:550
               }
-
             }
-
           },
 
 
@@ -2899,16 +2596,12 @@ async function downloadEditableWord(){
               },
 
               children:[
-
                 new TextRun({
-                  text:
-                    "BEST BUDDIES CANADA | CHAPTER CHECKLIST",
+                  text:"BEST BUDDIES CANADA | CHAPTER CHECKLIST",
                   bold:true,
-                  color:
-                    "514B55",
+                  color:"514B55",
                   size:16
                 })
-
               ]
 
             }),
@@ -2921,16 +2614,12 @@ async function downloadEditableWord(){
               },
 
               children:[
-
                 new TextRun({
-                  text:
-                    title,
+                  text:title,
                   bold:true,
-                  color:
-                    "6F2C91",
+                  color:"6F2C91",
                   size:30
                 })
-
               ]
 
             }),
@@ -2943,15 +2632,11 @@ async function downloadEditableWord(){
               },
 
               children:[
-
                 new TextRun({
-                  text:
-                    subtitle,
-                  color:
-                    "69636F",
+                  text:subtitle,
+                  color:"69636F",
                   size:17
                 })
-
               ]
 
             }),
@@ -2964,16 +2649,12 @@ async function downloadEditableWord(){
               },
 
               children:[
-
                 new TextRun({
-                  text:
-                    `${program}  •  ${data.year}`,
+                  text:`${program}  •  ${data.year}`,
                   bold:true,
-                  color:
-                    "69636F",
+                  color:"69636F",
                   size:18
                 })
-
               ]
 
             }),
@@ -3014,11 +2695,9 @@ async function downloadEditableWord(){
               children:[
 
                 new TextRun({
-                  text:
-                    "Registration reminder: ",
+                  text:"Registration reminder: ",
                   bold:true,
-                  color:
-                    "6F2C91",
+                  color:"6F2C91",
                   size:17
                 }),
 
@@ -3048,8 +2727,7 @@ async function downloadEditableWord(){
                 2300
               ],
 
-              rows:
-                rows
+              rows:rows
 
             }),
 
@@ -3062,16 +2740,12 @@ async function downloadEditableWord(){
               },
 
               children:[
-
                 new TextRun({
-                  text:
-                    "Questions? Contact your Best Buddies Program Advisor.",
+                  text:"Questions? Contact your Best Buddies Program Advisor.",
                   bold:true,
-                  color:
-                    "6F2C91",
+                  color:"6F2C91",
                   size:18
                 })
-
               ]
 
             }),
@@ -3080,13 +2754,11 @@ async function downloadEditableWord(){
             new Paragraph({
 
               children:[
-
                 new TextRun({
                   text:
                     `${data.advisor}${data.advisorEmail ? " · " + data.advisorEmail : ""}${data.advisorPhone ? " · " + data.advisorPhone : ""}`,
                   size:17
                 })
-
               ]
 
             })
@@ -3103,21 +2775,15 @@ async function downloadEditableWord(){
   try{
 
     const blob =
-      await Packer.toBlob(
-        doc
-      );
+      await Packer.toBlob(doc);
 
 
     const url =
-      URL.createObjectURL(
-        blob
-      );
+      URL.createObjectURL(blob);
 
 
     const anchor =
-      document.createElement(
-        "a"
-      );
+      document.createElement("a");
 
 
     anchor.href =
@@ -3134,27 +2800,19 @@ async function downloadEditableWord(){
 
 
     anchor.click();
-
-
     anchor.remove();
 
 
     setTimeout(
       ()=>{
-
-        URL.revokeObjectURL(
-          url
-        );
-
+        URL.revokeObjectURL(url);
       },
       1000
     );
 
   }catch(error){
 
-    console.error(
-      error
-    );
+    console.error(error);
 
 
     alert(
@@ -3183,15 +2841,13 @@ function infoParagraph(
     children:[
 
       new TextRun({
-        text:
-          label,
+        text:label,
         bold:true,
         size:18
       }),
 
       new TextRun({
-        text:
-          value,
+        text:value,
         size:18
       })
 
@@ -3215,10 +2871,8 @@ function wordHeaderCell(
     shading:{
       type:
         ShadingType.CLEAR,
-      fill:
-        "173456",
-      color:
-        "auto"
+      fill:"173456",
+      color:"auto"
     },
 
     children:[
@@ -3226,16 +2880,12 @@ function wordHeaderCell(
       new Paragraph({
 
         children:[
-
           new TextRun({
-            text:
-              text,
+            text:text,
             bold:true,
-            color:
-              "FFFFFF",
+            color:"FFFFFF",
             size:16
           })
-
         ]
 
       })
@@ -3266,15 +2916,11 @@ function getWordNotes(
       new Paragraph({
 
         children:[
-
           new TextRun({
-            text:
-              text,
+            text:text,
             size:16,
-            color:
-              "69636F"
+            color:"69636F"
           })
-
         ]
 
       })
@@ -3283,10 +2929,7 @@ function getWordNotes(
 
 
   const link =
-    (
-      label,
-      url
-    ) => [
+    (label,url) => [
 
       new Paragraph({
 
@@ -3294,21 +2937,16 @@ function getWordNotes(
 
           new ExternalHyperlink({
 
-            link:
-              url,
+            link:url,
 
             children:[
-
               new TextRun({
-                text:
-                  label,
-                color:
-                  "6F2C91",
+                text:label,
+                color:"6F2C91",
                 underline:{},
                 bold:true,
                 size:16
               })
-
             ]
 
           })
@@ -3320,59 +2958,39 @@ function getWordNotes(
     ];
 
 
-  if(
-    task.type ===
-    "registration"
-  ){
+  if(task.type === "registration"){
 
-    return(
-      data.registration
-
-        ? link(
-            "Open Registration Form",
-            data.registration
-          )
-
-        : plain(
-            "Contact your Program Advisor for the current registration link."
-          )
-    );
+    return data.registration
+      ? link(
+          "Open Registration Form",
+          data.registration
+        )
+      : plain(
+          "Contact your Program Advisor for the current registration link."
+        );
 
   }
 
 
-  if(
-    task.type ===
-    "roster"
-  ){
+  if(task.type === "roster"){
 
-    return(
-      data.roster
-
-        ? link(
-            "Open Chapter Roster",
-            data.roster
-          )
-
-        : plain(
-            "Contact your Program Advisor for the school-specific roster link."
-          )
-    );
+    return data.roster
+      ? link(
+          "Open Chapter Roster",
+          data.roster
+        )
+      : plain(
+          "Contact your Program Advisor for the school-specific roster link."
+        );
 
   }
 
 
-  if(
-    task.type ===
-    "resources"
-  ){
+  if(task.type === "resources"){
 
     const url =
-      data.program ===
-      "high"
-
+      data.program === "high"
         ? RESOURCE_FOLDERS.high
-
         : RESOURCE_FOLDERS.elementary;
 
 
@@ -3380,38 +2998,24 @@ function getWordNotes(
       "Chapter Resources";
 
 
-    if(
-      task.id ===
-      "recruit"
-    ){
-
+    if(task.id === "recruit"){
       label =
         "Recruitment Resources";
-
     }
 
 
-    if(
-      task.id ===
-      "matching"
-    ){
-
+    if(task.id === "matching"){
       label =
         "Matching Resources";
-
     }
 
 
     if(
-      task.id ===
-      "leadership" ||
-      task.id ===
-      "training"
+      task.id === "leadership" ||
+      task.id === "training"
     ){
-
       label =
         "Leadership & Training Resources";
-
     }
 
 
@@ -3422,10 +3026,7 @@ function getWordNotes(
       );
 
 
-    if(
-      task.id ===
-      "recruit"
-    ){
+    if(task.id === "recruit"){
 
       output.push(
         ...plain(
@@ -3441,10 +3042,7 @@ function getWordNotes(
   }
 
 
-  if(
-    task.type ===
-    "resourcesBoth"
-  ){
+  if(task.type === "resourcesBoth"){
 
     const output = [
 
@@ -3461,10 +3059,7 @@ function getWordNotes(
     ];
 
 
-    if(
-      task.id ===
-      "recruit"
-    ){
+    if(task.id === "recruit"){
 
       output.push(
         ...plain(
@@ -3480,10 +3075,7 @@ function getWordNotes(
   }
 
 
-  if(
-    task.type ===
-    "walk"
-  ){
+  if(task.type === "walk"){
 
     return [
 
@@ -3501,49 +3093,32 @@ function getWordNotes(
   }
 
 
-  if(
-    task.type ===
-    "contacts"
-  ){
-
-    const contactText =
-      data.staff
-        ? `Primary contact: ${data.staff}`
-        : `Program Advisor: ${data.advisor}`;
-
+  if(task.type === "contacts"){
 
     return plain(
-      contactText
+      data.staff
+        ? `Primary contact: ${data.staff}`
+        : `Program Advisor: ${data.advisor}`
     );
 
   }
 
 
-  if(
-    task.type ===
-    "advisor"
-  ){
+  if(task.type === "advisor"){
 
-    return(
-      data.advisorEmail
-
-        ? link(
-            "Email Your Program Advisor",
-            `mailto:${data.advisorEmail}`
-          )
-
-        : plain(
-            data.advisor
-          )
-    );
+    return data.advisorEmail
+      ? link(
+          "Email Your Program Advisor",
+          `mailto:${data.advisorEmail}`
+        )
+      : plain(
+          data.advisor
+        );
 
   }
 
 
-  if(
-    task.type ===
-    "abuse"
-  ){
+  if(task.type === "abuse"){
 
     return plain(
       "Sent separately by email. Contact your Program Advisor if it is not received."
@@ -3552,10 +3127,7 @@ function getWordNotes(
   }
 
 
-  if(
-    task.type ===
-    "meet"
-  ){
+  if(task.type === "meet"){
 
     return [
 
@@ -3572,10 +3144,7 @@ function getWordNotes(
   }
 
 
-  if(
-    task.type ===
-    "funding"
-  ){
+  if(task.type === "funding"){
 
     return plain(
       "Program Advisor approval required first."
@@ -3584,10 +3153,7 @@ function getWordNotes(
   }
 
 
-  if(
-    task.type ===
-    "yearend"
-  ){
+  if(task.type === "yearend"){
 
     return plain(
       "Report link: Provided later."
@@ -3596,9 +3162,7 @@ function getWordNotes(
   }
 
 
-  return plain(
-    ""
-  );
+  return plain("");
 
 }
 
@@ -3630,19 +3194,9 @@ async function copyPageLink(){
 }
 
 
-function openHub(){
-
-  window.location.href =
-    "index.html";
-
-}
-
-
 /* HELPERS */
 
-function formatDateForWord(
-  value
-){
+function formatDateForWord(value){
 
   if(!value){
     return "";
@@ -3650,18 +3204,11 @@ function formatDateForWord(
 
 
   const parts =
-    value.split(
-      "-"
-    );
+    value.split("-");
 
 
-  if(
-    parts.length !==
-    3
-  ){
-
+  if(parts.length !== 3){
     return value;
-
   }
 
 
@@ -3672,13 +3219,9 @@ function formatDateForWord(
 }
 
 
-function safeFilename(
-  value
-){
+function safeFilename(value){
 
-  return String(
-    value || ""
-  )
+  return String(value || "")
     .replace(
       /[<>:"/\\|?*]/g,
       ""
@@ -3688,9 +3231,7 @@ function safeFilename(
 }
 
 
-function firstName(
-  name
-){
+function firstName(name){
 
   return String(
     name || ""
@@ -3699,13 +3240,9 @@ function firstName(
 }
 
 
-function escapeHtml(
-  value
-){
+function escapeHtml(value){
 
-  return String(
-    value || ""
-  )
+  return String(value || "")
     .replaceAll("&","&amp;")
     .replaceAll("<","&lt;")
     .replaceAll(">","&gt;")
@@ -3715,13 +3252,9 @@ function escapeHtml(
 }
 
 
-function escapeAttribute(
-  value
-){
+function escapeAttribute(value){
 
-  return escapeHtml(
-    value
-  );
+  return escapeHtml(value);
 
 }
 
@@ -3729,9 +3262,7 @@ function escapeAttribute(
 /* INIT */
 
 renderHeader();
-
 renderTasks();
-
 renderAdvisor();
 
 </script>
