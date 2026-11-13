@@ -10,18 +10,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- QR code generator -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-<!-- Browser DOCX generator -->
 <script src="https://unpkg.com/docx@9/dist/index.iife.js"></script>
 
 <style>
 :root{
   --purple:#6f2c91;
   --purple-dark:#55206d;
-  --purple-soft:#f6eff9;
-  --teal:#19b7b1;
   --ink:#24212a;
   --muted:#665f6b;
   --line:#ded9e1;
@@ -34,8 +29,10 @@
 
 body{
   margin:0;
+
   background:var(--bg);
   color:var(--ink);
+
   font-family:Arial,Helvetica,sans-serif;
 }
 
@@ -45,12 +42,11 @@ button{
 }
 
 
-/* =====================================================
-   TOOLBAR
-===================================================== */
+/* TOOLBAR */
 
 .toolbar{
   max-width:850px;
+
   margin:18px auto 0;
   padding:0 16px;
 
@@ -97,9 +93,7 @@ button{
 }
 
 
-/* =====================================================
-   LETTER
-===================================================== */
+/* LETTER */
 
 .letter{
   width:min(8.5in,calc(100% - 24px));
@@ -157,9 +151,8 @@ p{
 h2{
   margin:19px 0 5px;
 
-  color:var(--ink);
-
   font-family:"Poppins",Arial,sans-serif;
+
   font-size:14.5px;
   line-height:1.25;
   font-weight:700;
@@ -180,9 +173,7 @@ li{
 }
 
 
-/* =====================================================
-   REGISTRATION
-===================================================== */
+/* REGISTRATION */
 
 .registration-box{
   margin:10px 0 16px;
@@ -203,11 +194,9 @@ li{
 
 .registration-link{
   display:inline-block;
-
   margin:5px 0 7px;
 
   color:var(--purple);
-
   font-weight:700;
 
   overflow-wrap:anywhere;
@@ -231,6 +220,7 @@ li{
 #qrCode{
   display:inline-block;
   padding:6px;
+
   background:white;
 }
 
@@ -241,14 +231,13 @@ li{
 
 .qr-caption{
   margin-top:4px;
+
   color:var(--muted);
   font-size:9.5px;
 }
 
 
-/* =====================================================
-   HELP / CONTACTS
-===================================================== */
+/* CONTACTS */
 
 .help-note{
   margin:16px 0 17px;
@@ -298,14 +287,11 @@ li{
   border-top:1px solid var(--line);
 
   color:var(--muted);
-
   font-size:9px;
 }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* MOBILE */
 
 @media(max-width:650px){
 
@@ -319,16 +305,10 @@ li{
     grid-template-columns:1fr;
   }
 
-  .qr-area{
-    text-align:left;
-  }
-
 }
 
 
-/* =====================================================
-   PRINT
-===================================================== */
+/* PRINT */
 
 @media print{
 
@@ -355,61 +335,12 @@ li{
     box-shadow:none;
   }
 
-  .brand-row,
-  .registration-box{
-    -webkit-print-color-adjust:exact;
-    print-color-adjust:exact;
-  }
-
-  p,
-  li{
-    font-size:11.5px;
-    line-height:1.35;
-  }
-
-  p{
-    margin-bottom:9px;
-  }
-
-  h2{
-    margin-top:12px;
-    margin-bottom:3px;
-    font-size:12px;
-  }
-
-  ul{
-    margin-top:4px;
-    margin-bottom:8px;
-  }
-
-  .registration-box{
-    margin-top:6px;
-    margin-bottom:9px;
-    padding:10px 13px;
-  }
-
-  .help-note{
-    margin:10px 0;
-  }
-
-  .contacts{
-    margin-top:8px;
-  }
-
-  .closing{
-    margin-top:15px;
-  }
-
 }
 </style>
 </head>
 
 <body>
 
-
-<!-- =====================================================
-     TEACHER ACTIONS
-===================================================== -->
 
 <div class="toolbar">
 
@@ -438,10 +369,6 @@ li{
 </div>
 
 
-<!-- =====================================================
-     LETTER
-===================================================== -->
-
 <main class="letter">
 
   <div class="brand-row">
@@ -450,7 +377,6 @@ li{
       src="assets/bb-logo-coloured.png"
       alt="Best Buddies Canada"
       class="logo"
-      id="letterLogo"
       onerror="this.style.display='none'"
     >
 
@@ -580,16 +506,13 @@ li{
 
 
   <p class="help-note">
-    If online registration is difficult for your family, or if you have
-    any questions about the program or registration process, please
-    contact us. We’re happy to help.
+    If online registration is difficult, or if you have any questions
+    about the program or registration process, please contact us.
+    We’re happy to help.
   </p>
 
 
   <div class="contacts">
-
-
-    <!-- PROGRAM ADVISOR -->
 
     <div class="contact-card">
 
@@ -615,8 +538,6 @@ li{
 
     </div>
 
-
-    <!-- SCHOOL ADVISOR -->
 
     <div class="contact-card">
 
@@ -661,10 +582,6 @@ li{
 
 
 <script>
-
-/* =====================================================
-   DATA
-===================================================== */
 
 const params =
   new URLSearchParams(
@@ -713,10 +630,6 @@ const data = {
 };
 
 
-/* =====================================================
-   RENDER WEB VERSION
-===================================================== */
-
 function render(){
 
   document.getElementById(
@@ -737,30 +650,22 @@ function render(){
     );
 
 
+  registrationButton.href =
+    data.registration;
+
+
+  document.getElementById(
+    "registrationUrl"
+  ).textContent =
+    data.registration;
+
+
   if(data.registration){
 
-    registrationButton.href =
-      data.registration;
-
-
-    document.getElementById(
-      "registrationUrl"
-    ).textContent =
-      data.registration;
-
-
-    const qrElement =
+    new QRCode(
       document.getElementById(
         "qrCode"
-      );
-
-
-    qrElement.innerHTML =
-      "";
-
-
-    new QRCode(
-      qrElement,
+      ),
       {
         text:data.registration,
         width:130,
@@ -770,32 +675,8 @@ function render(){
       }
     );
 
-  }else{
-
-    registrationButton.removeAttribute(
-      "href"
-    );
-
-
-    registrationButton.textContent =
-      "Registration link to be provided";
-
-
-    document.getElementById(
-      "registrationUrl"
-    ).textContent =
-      "";
-
-
-    document.getElementById(
-      "qrCode"
-    ).innerHTML =
-      "<div style='font-size:11px;color:#777'>QR code unavailable</div>";
-
   }
 
-
-  /* PROGRAM ADVISOR */
 
   document.getElementById(
     "advisorName"
@@ -809,21 +690,19 @@ function render(){
     data.advisorTitle;
 
 
-  renderContactLink(
+  renderContact(
     "advisorEmail",
     data.advisorEmail,
     "mailto:"
   );
 
 
-  renderContactLink(
+  renderContact(
     "advisorPhone",
     data.advisorPhone,
     "tel:"
   );
 
-
-  /* SCHOOL ADVISOR */
 
   document.getElementById(
     "schoolContactName"
@@ -838,14 +717,14 @@ function render(){
     `Best Buddies Teacher Advisor, ${data.school}`;
 
 
-  renderContactLink(
+  renderContact(
     "schoolContactEmail",
     data.staffEmail,
     "mailto:"
   );
 
 
-  renderContactLink(
+  renderContact(
     "schoolContactPhone",
     data.staffPhone,
     "tel:"
@@ -854,7 +733,7 @@ function render(){
 }
 
 
-function renderContactLink(
+function renderContact(
   id,
   value,
   prefix
@@ -874,53 +753,22 @@ function renderContactLink(
   }
 
 
-  const link =
-    document.createElement(
-      "a"
-    );
-
-
-  link.textContent =
-    value;
-
-
-  link.href =
-    prefix +
-    value.replace(/\s/g,"");
-
-
   element.innerHTML =
-    "";
-
-
-  element.appendChild(
-    link
-  );
+    `<a href="${prefix}${value}">
+       ${value}
+     </a>`;
 
 }
 
 
-/* =====================================================
-   EDITABLE WORD DOWNLOAD
-===================================================== */
+/* WORD */
 
 async function downloadEditableWord(){
-
-  if(!data.registration){
-
-    alert(
-      "This parent letter does not have a registration link yet."
-    );
-
-    return;
-
-  }
-
 
   if(!window.docx){
 
     alert(
-      "The Word document generator could not load. Refresh the page and try again."
+      "The Word generator could not load. Please refresh and try again."
     );
 
     return;
@@ -939,6 +787,9 @@ async function downloadEditableWord(){
   } = window.docx;
 
 
+  const children = [];
+
+
   let logoBytes =
     null;
 
@@ -951,41 +802,18 @@ async function downloadEditableWord(){
       );
 
 
-    if(response.ok){
-
-      logoBytes =
-        new Uint8Array(
-          await response.arrayBuffer()
-        );
-
-    }
-
-  }catch(error){
-
     logoBytes =
-      null;
+      new Uint8Array(
+        await response.arrayBuffer()
+      );
 
-  }
+  }catch(error){}
 
-
-  const qrBytes =
-    getQrBytes();
-
-
-  const children = [];
-
-
-  /* LOGO */
 
   if(logoBytes){
 
     children.push(
       new Paragraph({
-
-        spacing:{
-          after:220
-        },
-
         children:[
           new ImageRun({
             type:"png",
@@ -995,39 +823,18 @@ async function downloadEditableWord(){
               height:55
             }
           })
-        ]
-
-      })
-    );
-
-  }else{
-
-    children.push(
-      new Paragraph({
-
+        ],
         spacing:{
           after:220
-        },
-
-        children:[
-          new TextRun({
-            text:"Best Buddies Canada",
-            bold:true,
-            size:26,
-            color:"6F2C91"
-          })
-        ]
-
+        }
       })
     );
 
   }
 
 
-  /* INTRO */
-
   children.push(
-    paragraphText(
+    p(
       Paragraph,
       TextRun,
       "Dear Parents and Guardians,"
@@ -1036,38 +843,20 @@ async function downloadEditableWord(){
 
 
   children.push(
-    new Paragraph({
-
-      spacing:{
-        after:160
-      },
-
-      children:[
-
-        new TextRun({
-          text:"Your child has been invited to participate in Best Buddies at ",
-          size:22
-        }),
-
-        new TextRun({
-          text:data.school,
-          bold:true,
-          size:22
-        }),
-
-        new TextRun({
-          text:".",
-          size:22
-        })
-
+    richParagraph(
+      Paragraph,
+      TextRun,
+      [
+        ["Your child has been invited to participate in Best Buddies at ",false],
+        [data.school,true],
+        [".",false]
       ]
-
-    })
+    )
   );
 
 
   children.push(
-    paragraphText(
+    p(
       Paragraph,
       TextRun,
       "Best Buddies is a global nonprofit organization that creates opportunities for friendship, leadership, inclusion, and belonging for people with intellectual and developmental disabilities and their peers. Through our school programs, students have opportunities to build genuine friendships, take part in shared activities, develop leadership skills, and help strengthen inclusion within their school community."
@@ -1075,10 +864,8 @@ async function downloadEditableWord(){
   );
 
 
-  /* WHAT IS */
-
   children.push(
-    heading(
+    h(
       Paragraph,
       TextRun,
       "What is Best Buddies?"
@@ -1087,30 +874,19 @@ async function downloadEditableWord(){
 
 
   children.push(
-    new Paragraph({
-
-      spacing:{
-        after:110
-      },
-
-      children:[
-        new TextRun({
-          text:"Best Buddies brings students together to build friendships and create a more inclusive school community.",
-          bold:true,
-          size:22
-        })
-      ]
-
-    })
+    boldP(
+      Paragraph,
+      TextRun,
+      "Best Buddies brings students together to build friendships and create a more inclusive school community."
+    )
   );
 
 
   children.push(
-    paragraphText(
+    p(
       Paragraph,
       TextRun,
-      "Every chapter looks a little different. Depending on the age of students and the way the school chooses to run its program, activities may include:",
-      80
+      "Every chapter looks a little different. Depending on the age of students and the way the school chooses to run its program, activities may include:"
     )
   );
 
@@ -1125,22 +901,18 @@ async function downloadEditableWord(){
 
     children.push(
       new Paragraph({
-
         bullet:{
           level:0
         },
-
-        spacing:{
-          after:35
-        },
-
         children:[
           new TextRun({
             text:item,
             size:22
           })
-        ]
-
+        ],
+        spacing:{
+          after:40
+        }
       })
     );
 
@@ -1148,7 +920,7 @@ async function downloadEditableWord(){
 
 
   children.push(
-    paragraphText(
+    p(
       Paragraph,
       TextRun,
       "Some chapters focus mainly on group activities, while others, particularly at the secondary level, may also include one-to-one friendships based on shared interests. The program is flexible so schools can create something that works well for their students and community."
@@ -1156,10 +928,8 @@ async function downloadEditableWord(){
   );
 
 
-  /* WHY PARTICIPATE */
-
   children.push(
-    heading(
+    h(
       Paragraph,
       TextRun,
       "Why participate?"
@@ -1168,7 +938,7 @@ async function downloadEditableWord(){
 
 
   children.push(
-    paragraphText(
+    p(
       Paragraph,
       TextRun,
       "Best Buddies gives students opportunities to make new friends, build confidence, strengthen social connections, develop leadership skills, and take an active role in creating a more welcoming and inclusive school community."
@@ -1176,10 +946,8 @@ async function downloadEditableWord(){
   );
 
 
-  /* REGISTER */
-
   children.push(
-    heading(
+    h(
       Paragraph,
       TextRun,
       "How to Register"
@@ -1188,52 +956,29 @@ async function downloadEditableWord(){
 
 
   children.push(
-    new Paragraph({
-
-      spacing:{
-        after:120
-      },
-
-      children:[
-
-        new TextRun({
-          text:"We would love for your child to be part of Best Buddies at ",
-          size:22
-        }),
-
-        new TextRun({
-          text:data.school,
-          bold:true,
-          size:22
-        }),
-
-        new TextRun({
-          text:".",
-          size:22
-        })
-
+    richParagraph(
+      Paragraph,
+      TextRun,
+      [
+        ["We would love for your child to be part of Best Buddies at ",false],
+        [data.school,true],
+        [".",false]
       ]
-
-    })
+    )
   );
 
 
   children.push(
-    paragraphText(
+    p(
       Paragraph,
       TextRun,
-      "To register, please visit the link below or scan the QR code:",
-      80
+      "To register, please visit the link below or scan the QR code:"
     )
   );
 
 
   children.push(
     new Paragraph({
-
-      spacing:{
-        after:80
-      },
 
       children:[
 
@@ -1242,20 +987,30 @@ async function downloadEditableWord(){
           link:data.registration,
 
           children:[
+
             new TextRun({
               text:data.registration,
               color:"6F2C91",
               underline:{},
               size:18
             })
+
           ]
 
         })
 
-      ]
+      ],
+
+      spacing:{
+        after:90
+      }
 
     })
   );
+
+
+  const qrBytes =
+    getQrBytes();
 
 
   if(qrBytes){
@@ -1266,10 +1021,6 @@ async function downloadEditableWord(){
         alignment:
           AlignmentType.CENTER,
 
-        spacing:{
-          after:100
-        },
-
         children:[
           new ImageRun({
             type:"png",
@@ -1279,7 +1030,11 @@ async function downloadEditableWord(){
               height:125
             }
           })
-        ]
+        ],
+
+        spacing:{
+          after:110
+        }
 
       })
     );
@@ -1287,53 +1042,28 @@ async function downloadEditableWord(){
   }
 
 
-  /* HELP */
-
   children.push(
-    new Paragraph({
-
-      spacing:{
-        after:160
-      },
-
-      children:[
-        new TextRun({
-          text:"If online registration is difficult for your family, or if you have any questions about the program or registration process, please contact us. We’re happy to help.",
-          bold:true,
-          size:22
-        })
-      ]
-
-    })
+    boldP(
+      Paragraph,
+      TextRun,
+      "If online registration is difficult, or if you have any questions about the program or registration process, please contact us. We’re happy to help."
+    )
   );
 
 
-  /* PROGRAM ADVISOR */
-
   children.push(
-    new Paragraph({
-
-      spacing:{
-        before:100,
-        after:35
-      },
-
-      children:[
-        new TextRun({
-          text:data.advisor,
-          bold:true,
-          size:22
-        })
-      ]
-
-    })
+    boldP(
+      Paragraph,
+      TextRun,
+      data.advisor
+    )
   );
 
 
   if(data.advisorTitle){
 
     children.push(
-      paragraphText(
+      p(
         Paragraph,
         TextRun,
         data.advisorTitle,
@@ -1347,7 +1077,7 @@ async function downloadEditableWord(){
   if(data.advisorEmail){
 
     children.push(
-      paragraphText(
+      p(
         Paragraph,
         TextRun,
         data.advisorEmail,
@@ -1361,43 +1091,29 @@ async function downloadEditableWord(){
   if(data.advisorPhone){
 
     children.push(
-      paragraphText(
+      p(
         Paragraph,
         TextRun,
         data.advisorPhone,
-        110
+        100
       )
     );
 
   }
 
 
-  /* TEACHER ADVISOR */
-
   children.push(
-    new Paragraph({
-
-      spacing:{
-        before:80,
-        after:35
-      },
-
-      children:[
-        new TextRun({
-          text:
-            data.staff ||
-            "Best Buddies Teacher Advisor",
-          bold:true,
-          size:22
-        })
-      ]
-
-    })
+    boldP(
+      Paragraph,
+      TextRun,
+      data.staff ||
+      "Best Buddies Teacher Advisor"
+    )
   );
 
 
   children.push(
-    paragraphText(
+    p(
       Paragraph,
       TextRun,
       `Best Buddies Teacher Advisor, ${data.school}`,
@@ -1409,7 +1125,7 @@ async function downloadEditableWord(){
   if(data.staffEmail){
 
     children.push(
-      paragraphText(
+      p(
         Paragraph,
         TextRun,
         data.staffEmail,
@@ -1423,25 +1139,22 @@ async function downloadEditableWord(){
   if(data.staffPhone){
 
     children.push(
-      paragraphText(
+      p(
         Paragraph,
         TextRun,
         data.staffPhone,
-        130
+        110
       )
     );
 
   }
 
 
-  /* CLOSING */
-
   children.push(
-    paragraphText(
+    p(
       Paragraph,
       TextRun,
-      "Thank you for supporting your child’s participation in Best Buddies. We’re excited to welcome them and look forward to seeing the friendships and connections that grow throughout the year.",
-      0
+      "Thank you for supporting your child’s participation in Best Buddies. We’re excited to welcome them and look forward to seeing the friendships and connections that grow throughout the year."
     )
   );
 
@@ -1451,7 +1164,6 @@ async function downloadEditableWord(){
 
       sections:[
         {
-
           properties:{
             page:{
               margin:{
@@ -1464,74 +1176,56 @@ async function downloadEditableWord(){
           },
 
           children:children
-
         }
       ]
 
     });
 
 
-  try{
-
-    const blob =
-      await Packer.toBlob(doc);
-
-
-    const url =
-      URL.createObjectURL(blob);
+  const blob =
+    await Packer.toBlob(
+      doc
+    );
 
 
-    const anchor =
-      document.createElement(
-        "a"
+  const url =
+    URL.createObjectURL(
+      blob
+    );
+
+
+  const link =
+    document.createElement(
+      "a"
+    );
+
+
+  link.href =
+    url;
+
+
+  link.download =
+    `Best Buddies Parent Letter - ${safeFile(data.school)}.docx`;
+
+
+  link.click();
+
+
+  setTimeout(
+    ()=>{
+      URL.revokeObjectURL(
+        url
       );
-
-
-    anchor.href =
-      url;
-
-
-    anchor.download =
-      `Best Buddies Parent Letter - ${safeFilename(data.school)}.docx`;
-
-
-    document.body.appendChild(
-      anchor
-    );
-
-
-    anchor.click();
-
-    anchor.remove();
-
-
-    setTimeout(
-      ()=>{
-        URL.revokeObjectURL(
-          url
-        );
-      },
-      1000
-    );
-
-  }catch(error){
-
-    console.error(error);
-
-    alert(
-      "The Word document could not be generated. You can still use Print / Save PDF."
-    );
-
-  }
+    },
+    1000
+  );
 
 }
 
 
-/* =====================================================
-   WORD HELPERS
-===================================================== */
+/* DOCX HELPERS */
 
-function paragraphText(
+function p(
   Paragraph,
   TextRun,
   text,
@@ -1557,7 +1251,32 @@ function paragraphText(
 }
 
 
-function heading(
+function boldP(
+  Paragraph,
+  TextRun,
+  text
+){
+
+  return new Paragraph({
+
+    spacing:{
+      after:120
+    },
+
+    children:[
+      new TextRun({
+        text:text,
+        bold:true,
+        size:22
+      })
+    ]
+
+  });
+
+}
+
+
+function h(
   Paragraph,
   TextRun,
   text
@@ -1583,66 +1302,60 @@ function heading(
 }
 
 
-function getQrBytes(){
+function richParagraph(
+  Paragraph,
+  TextRun,
+  parts
+){
 
-  const qrElement =
-    document.getElementById(
-      "qrCode"
-    );
+  return new Paragraph({
 
+    spacing:{
+      after:150
+    },
 
-  const canvas =
-    qrElement.querySelector(
-      "canvas"
-    );
-
-
-  if(canvas){
-
-    return dataUrlToBytes(
-      canvas.toDataURL(
-        "image/png"
+    children:
+      parts.map(
+        part =>
+          new TextRun({
+            text:part[0],
+            bold:part[1],
+            size:22
+          })
       )
-    );
 
-  }
-
-
-  const image =
-    qrElement.querySelector(
-      "img"
-    );
-
-
-  if(
-    image &&
-    image.src.startsWith(
-      "data:"
-    )
-  ){
-
-    return dataUrlToBytes(
-      image.src
-    );
-
-  }
-
-
-  return null;
+  });
 
 }
 
 
-function dataUrlToBytes(
-  dataUrl
-){
+function getQrBytes(){
 
-  const base64 =
-    dataUrl.split(",")[1];
+  const canvas =
+    document
+      .getElementById(
+        "qrCode"
+      )
+      .querySelector(
+        "canvas"
+      );
+
+
+  if(!canvas){
+    return null;
+  }
+
+
+  const dataUrl =
+    canvas.toDataURL(
+      "image/png"
+    );
 
 
   const binary =
-    atob(base64);
+    atob(
+      dataUrl.split(",")[1]
+    );
 
 
   const bytes =
@@ -1668,7 +1381,7 @@ function dataUrlToBytes(
 }
 
 
-function safeFilename(value){
+function safeFile(value){
 
   return String(
     value || "School"
@@ -1681,10 +1394,6 @@ function safeFilename(value){
 
 }
 
-
-/* =====================================================
-   INIT
-===================================================== */
 
 render();
 
